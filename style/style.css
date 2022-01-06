@@ -65,6 +65,10 @@
 .tamanoCatar{
     text-align: center;
 }
+.margenIdeas{
+    margin-left: 2%;
+    margin-right: 2%;
+}
 .tamanoImagen{
     width: 140px;
     height: 110px;
@@ -73,6 +77,8 @@
 }
 .reciclarTitulo{
     text-align: justify;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 .piePpal{
     font-style: italic;
@@ -80,6 +86,12 @@
     padding-top: 30px;
     text-align: center;
     word-spacing: 130%;
+}
+.centrar{
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: antiquewhite;
+    text-align: center;
 }
 
 
