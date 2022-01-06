@@ -194,7 +194,7 @@
         font-weight: bold;
         text-align: center;
         word-spacing: 130%;
-        padding-top: 50%;
+        padding-top: 70%;
 }
 /* CHAMPAGNE */
 .tamanoLogoCh{
@@ -223,7 +223,7 @@
     margin-left: 1%;
 }
 .champagneTexto{
-    padding-top: 20%;
+    padding-top: 30%;
     text-align: center;
     margin-left: 2%;
     margin-right: 1%;
@@ -243,7 +243,7 @@
     font-weight: bold;
     text-align: center;
     word-spacing: 130%;
-    padding-top: 50%;
+    padding-top: 80%;
 }
 /* VINOS */
 .fondoVinos{
@@ -264,10 +264,9 @@
     width: 7%;
     height: auto;
     left: 70%;
-
 }
 .listaVinos{
-    padding-top: 20%;
+    padding-top: 30%;
     padding-bottom: 10%;
 }
 .tamanoLogoVinos{
@@ -280,7 +279,81 @@
     font-style: italic;
     font-weight: bold;
     text-align: center;
-    padding-top: 20%;
+    padding-top: 60%;
+}
+    /* WHISKY */
+.fondoW{
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 160px;
+    position: relative;
+}
+.tamanoLogoW{
+    position: absolute;
+    width: 15%;
+    height: 5%;
+    top: -0.5%;
+    right: 43%;
+}
+.carroW{
+    position: relative;
+    width: 6%;
+    height: auto;
+    left: 60%;
+    top: 20%;
+}
+.homeW{
+    position: relative;
+    width: 7%;
+    height: auto;
+    left: 80%;
+}
+.bajaW{
+    padding-top: 14%;
+}
+.pieW{
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 70%;
+}
+    /* GIFTCARDS */
+
+.logoGC{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.homeGC{
+    position: absolute;
+    width: 7%;
+    height: 8%;
+    margin-left: 80%;
+}
+.flexRegalosGC{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 5%;
+    padding-top: 15%;
+    width: 100%;
+    list-style: none;
+}
+.comprarGC{
+    border-style: double;
+    border-style: outset;
+    width: 23%;
+    margin-left: 40%;
+    text-align: center;
+}
+.imagengiftcard{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 27%;
+    height: 60%;
 }
 
 
@@ -568,3 +641,43 @@
 
 
 
+/* GIFTCARDS */
+@media screen and (min-width: 900px){
+.logoGC{
+    position: relative;
+    width: 100%;
+    height: auto;
+    
+}
+.homeGC{
+    position: absolute;
+    width: 7%;
+    height: 19%;
+    margin-left: 80%;
+}
+.flexRegalosGC{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 5%;
+    padding-top: 15%;
+    width: 100%;
+}
+.comprarGC{
+    border-style: double;
+    border-style: outset;
+    width: 23%;
+    margin-left: 40%;
+    text-align: center;
+}
+.imagengiftcard{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 27%;
+    height: auto;
+}
+
+}
