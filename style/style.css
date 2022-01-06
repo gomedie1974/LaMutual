@@ -94,7 +94,6 @@
     text-align: center;
 }
 
-
     /* APERITIVOS */
 .tamanoLogoAp{
     position: relative;
@@ -155,8 +154,49 @@
     padding-top: 55%;
     text-align: center;
 }
-
-
+/* CERVEZA */
+.tamanoLogoCerveza{
+    position: relative;
+    width: 15%;
+    height: 5%;
+    padding-top: 26%;
+}
+.fondoCerveza{
+    background-repeat: no-repeat;
+    width: 62%;
+    height: 97%;
+    position: relative;
+}
+.tamanoCarroAp{
+    position: relative;
+    width: 6%;
+    height: auto;
+    left: 8%;
+    top: 20%;
+}
+.homeCerveza{
+    position: relative;
+    width: 7%;
+    height: auto;
+    left: 9%;
+}
+.cervezaTexto{
+    padding-top: 30%;
+    margin-left: 8%;
+}
+.menuCerveza{
+    font-size: 40%;
+    font-style: inherit;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: linear-gradient(white, black);
+}
+.pieCerveza{
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+        word-spacing: 130%;
+        padding-top: 30%;
+}
 
 
 
