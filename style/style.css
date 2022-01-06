@@ -112,14 +112,13 @@
     position: relative;
     width: 6%;
     height: auto;
-    margin-left: -15%;
-    top: 20%;
+    margin-left: -14%;
 }
 .homeAp{
     position: relative;
     width: 7%;
     height: auto;
-    margin-left: -6%;
+    margin-left: -5%;
 }
 .aperitivoTexto{
     padding-top: 23%;
@@ -167,18 +166,18 @@
     height: 97%;
     position: relative;
 }
-.tamanoCarroAp{
+.tamanoCarroCerveza{
     position: relative;
     width: 6%;
     height: auto;
-    left: 8%;
+    margin-left: 1%;
     top: 20%;
 }
 .homeCerveza{
     position: relative;
     width: 7%;
     height: auto;
-    left: 9%;
+    margin-left: 1%;
 }
 .cervezaTexto{
     padding-top: 30%;
@@ -397,8 +396,7 @@
         margin-left: 2%;
         margin-right: 2%;
         text-align: center;
-    }
-    
+    }    
     .gridContenedorMenu{
         display: flex;
         flex-direction: row;    
@@ -437,3 +435,51 @@
         word-spacing: 130%;
     }
 }
+    /* CERVEZA */
+@media screen and (min-width: 900px) {
+    .tamanoLogoCerveza{
+        position: relative;
+        width: 15%;
+        height: 5%;
+        padding-top: 26%;
+    }
+    .fondoCerveza{
+        background-repeat: no-repeat;
+        width: 70%;
+        height: 60%;
+        position: absolute;
+    }
+    .tamanoCarroCerveza{
+        position: relative;
+        width: 5%;
+        height: auto;
+        left: 65%;
+    }
+    .homeCerveza{
+        position: relative;
+        width: 6%;
+        height: auto;
+        left: 65%;
+    }
+    .cervezaTexto{
+        padding-top: 10%;
+        margin-left: 2%;
+    }
+    .menuCerveza{
+        font-size: 140%;
+        font-style: inherit;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-image: linear-gradient(white, black);
+    }
+    .pieCerveza{
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            word-spacing: 130%;
+            padding-top: 20%;
+    }
+}    
+    
+
+
+
