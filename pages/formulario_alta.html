@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AltaSocio</title>
+    <!-- pone el logo en la pestana -->
+    <link rel="shortcut icon" href="../image/mitos_boutique_de_vinos.jpg">
+    <title>CSS</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+
+
+<body>
+    <header >
+        <section >
+            <div >
+                <img class="logoAlta" src="../image/mitos_boutique_de_vinos.jpg" alt="Logo Vinoteca" > 
+            <div>
+            <div>
+                <a href="../index.html" ><img class="homeAlta" src="../image/home.jpg" alt="home"></a>
+                        
+            </div>
+        </section> 
+      
+        <section >    
+            <h1 class="bordeAlta">
+                <p > 
+                Alta Usuario 
+                </p>  
+                </h1>
+        </section>
+    
+    </header>
+    
+    <main>
+    <form action="" method="get" enctype="text/plain">
+
+        <fieldset class="fondoAlta">
+            <!--<legend>Formulario de contacto</legend>-->
+
+        <label for="name">Nombre</label>
+        <input type="text" id="name" placeholder="Ingrese su nombre" required>
+        <label for="name">Apellido</label>
+        <input type="text" id="lastname" placeholder="Ingrese su apellido" required>
+        <br><br>
+        <label for="domicilio">Domicilio</label>
+        <input type="text" id="domicilio" placeholder="Ingrese su domicilio" required>
+        <label for="localidad">Localidad</label>
+        <input type="text" id="localidad" placeholder="Ingrese su localidad" required>
+        <br>
+        <br>
+        <label for="cp">Codigo Postal</label>
+        <input type="number" id="cp" placeholder="Ingrese su CP" required>
+        <br><br>
+        <br><br>
+
+        <label for="nac">Fecha de Nacimiento</label>
+        <input type="date" id="nac" placeholder="Ingrese fecha de nacimiento" required>
+        <br><br>
+        
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <br><br>
+        <label for="pass">Contraseña</label>
+        <input type="password" id="pass">
+        <br><br>
+        
+        <p>Seleccione el sexo</p>
+        <label for="">H</label>
+        <input type="radio" name="sexo" value="hombre">
+        <label for="">M</label>
+        <input type="radio" name="sexo" value="mujer">
+        <br><br>
+        <p>Acepto terminos y condiciones:</p>
+        <input type="checkbox" name="acepta"> Si acepto
+        <br><br>
+
+        <label for="paises">Elegir el país</label>
+        <select name="paises" id="paises">
+            <option value="col"></option>
+            <option value="arg">Argentina</option>
+            <option value="chi">Chile</option>
+            <option value="col">Colombia</option>
+            <option value="uru">Uruguay</option>
+            <option value="uru">OTRO</option>
+
+        </select>
+        <br><br>
+
+        <label for="comentario">Comentarios</label><br>
+        <textarea name="comentario" id="comentario" cols="30" rows="5"></textarea>
+        <br><br>
+
+        <!-- botones -->
+        <input type="submit" value="Enviar ahora">
+        <input type="reset" value="Borrar todo">
+        <br><br>
+
+        </fieldset>
+    </form>
+    </main>
+    
+
+    <footer class="pieAlta">
+        <hr>
+    <!-- &nbsp;para dejar espacios -->
+        <p> Mail:mito@mito.com.ar </p>
+        <p> Domicilio:Libertador 101</p>
+        <p>  Te:4444-4444 </p>       
+        <hr> 
+    </footer>
+
+</body>
+</html>
