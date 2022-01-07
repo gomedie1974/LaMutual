@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cervezas</title>
-    <!-- pone el logo en la pestana -->
-    <link rel="shortcut icon" href="../image/mitos_boutique_de_vinos.jpg">
-    <title>CSS</title>
-    <link rel="stylesheet" href="../style/style.css">
-</head>
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GiftCardCompra</title>
+        <!-- pone el logo en la pestana -->
+        <link rel="shortcut icon" href="../image/mitos_boutique_de_vinos.jpg">
+        <title>CSS</title>
+        <link rel="stylesheet" href="../style/style.css">
+        <!-- BOOTSTRAP -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
+    </head>
+        
 <body>
     <div id="gridContenedor">
         <header >      
@@ -21,51 +24,96 @@
 
                 <a href="../index.html" ><img class="homeCerveza" src="../image/home.jpg" alt="home"></a>
 
-                <a href=""><img class="tamanoCarroCerveza" src="../image/carrito compras.jpg" alt="carro compras"></a>
             </div>
          
-            <ul class="gridContenedorMenu cervezaTexto">
-                <li><a>Cerveza Rubia</a>
-                    <label for="rubia"></label>
-                    <select class="menuCerveza" name="rubia" id="rubia">
-                        <option value=""></option>
-                        <option value="marca1">Stella Artois</option>
-                        <option value="marca2">Heinekenn</option>
-                        <option value="marca3">Budweiser</option>
-                        <option value="marca4">Corona</option>
-                        <option value="marca5">Quilmes</option> 
-                        <option value="marca6">Imperial</option>     
-                    </select></li>
-
-                <li> <a >Cerveza Roja</a>
-                    <label for="roja"></label>
-                    <select class="menuCerveza" name="roja" id="roja">
-                        <option value=""></option>
-                        <option value="marca1">Stella Artois</option>
-                        <option value="marca2">Heinekenn</option>
-                        <option value="marca3">Quilmes</option> 
-                        <option value="marca4">Imperial</option>     
-                    </select></li>
+            <div class="bajarMenu">    
+            <ul class="nav nav-tabs ">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Cerveza Rubia</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Andes</a></li>
+                    <li><a class="dropdown-item" href="#">Budweiser</a></li>
+                    <li><a class="dropdown-item" href="#">Corona</a></li>
+                    <li><a class="dropdown-item" href="#">Heinekenn</a></li>
+                    <li><a class="dropdown-item" href="#">Imperial</a></li>
+                    <li><a class="dropdown-item" href="#">Quilmes</a></li>
+                    <li><a class="dropdown-item" href="#">Stella Artois</a></li>
+                  </ul>
+                </li>
+        
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Cerveza Roja</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Andes</a></li>
+                      <li><a class="dropdown-item" href="#">Budweiser</a></li>
+                      <li><a class="dropdown-item" href="#">Corona</a></li>
+                      <li><a class="dropdown-item" href="#">Heinekenn</a></li>
+                      <li><a class="dropdown-item" href="#">Imperial</a></li>
+                      <li><a class="dropdown-item" href="#">Quilmes</a></li>
+                      <li><a class="dropdown-item" href="#">Stella Artois</a></li>
+                    </ul>
+                </li>
                 
-                <li> <a >Cerveza Negra</a>
-                    <label for="gin"></gin>
-                        <label for="negra"></label>
-                        <select class="menuCerveza" name="negra" id="negra">
-                            <option value=""></option>
-                            <option value="marca1">Stella Artois</option>
-                            <option value="marca2">Quilmes</option> 
-                            <option value="marca3">Imperial</option>       
-                    </select></li>
-
-                <li><a >Cerveza Artesanal</a>
-                    <label for="artesa"></label>
-                    <select class="menuCerveza" name="artesa" id="artesa">
-                        <option value=""></option>
-                        <option value="marca2">DG</option>
-                        <option value="marca3">Mito</option>
-                        <option value="marca4">Piru</option>     
-                    </select></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Cerveza Negra</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Andes</a></li>
+                      <li><a class="dropdown-item" href="#">Budweiser</a></li>
+                      <li><a class="dropdown-item" href="#">Corona</a></li>
+                      <li><a class="dropdown-item" href="#">Heinekenn</a></li>
+                      <li><a class="dropdown-item" href="#">Imperial</a></li>
+                      <li><a class="dropdown-item" href="#">Quilmes</a></li>
+                      <li><a class="dropdown-item" href="#">Stella Artois</a></li>
+                    </ul>
+                </li>
+          
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Cerveza Artesanal</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">IPA</a></li>
+                      <li><a class="dropdown-item" href="#">MITO</a></li>
+                      <li><a class="dropdown-item" href="#">MGD</a></li>
+                      <li><a class="dropdown-item" href="#">TGD</a></li>
+                      <li><a class="dropdown-item" href="#">PIRU</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=""><img class="tamanoCarro" src="../image/carrito compras.jpg" alt="carro compras"></a>
+                </li>
                 </ul>
+            </div>
+
+                <br><br><br>    
+                <p >
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Cervezas</a>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Cerveza Artesanal</button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Descripcion de ambas</button>
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                            La cerveza es una bebida alcohólica, no destilada, de sabor amargo, que se fabrica con granos de cebada germinados u otros cereales cuyo almidón se fermenta en agua con levadura y se aromatiza a menudo con lúpulo, entre otras plantas.Es la bebida alcohólica más consumida del mundo, y una de las bebidas más consumidas, solo por detrás del agua, el té y el café.
+                                    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample2">
+                        <div class="card card-body">
+                            La cerveza artesanal se elabora a partir de ingredientes totalmente naturales, que no llevan aditivos artificiales ni conservantes, simplemente agua, levadura, maltas y lúpulos. En cambio, la cerveza industrial se pasteuriza y contiene conservantes.
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
         </header>
         
         
@@ -79,6 +127,9 @@
         <hr> 
     </footer>
     </div>    
+    
+    <!-- BOOSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
 </body>
 </html>

@@ -636,14 +636,15 @@
     }
     .homeAp{
         position: relative;
-        width: 4%;
+        width: 5%;
         height: auto;
-        left: 85%;        
+        padding-top: 21%;
+        margin-left: -1%;
     }
     .piePpalAp{
         font-style: italic;
         font-weight: bold;
-        padding-top: 140px;
+        padding-top: 200px;
         text-align: center;
         word-spacing: 130%;
     }
@@ -659,7 +660,7 @@
     .fondoCerveza{
         background-repeat: no-repeat;
         width: 70%;
-        height: 60%;
+        height: 40%;
         position: absolute;
     }
     .tamanoCarroCerveza{
@@ -673,6 +674,7 @@
         width: 6%;
         height: auto;
         left: 65%;
+        padding-top: 25%;
     }
     .cervezaTexto{
         padding-top: 10%;
@@ -690,6 +692,9 @@
             text-align: center;
             word-spacing: 130%;
             padding-top: 20%;
+    }
+    .bajarMenu{
+        padding-top: 6%;
     }
 }    
     
