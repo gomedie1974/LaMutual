@@ -1,104 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinos</title>
-    <!-- pone el logo en la pestana -->
-    <link rel="shortcut icon" href="../image/mitos_boutique_de_vinos.jpg">
-    <title>CSS</title>
-    <link rel="stylesheet" href="../style/style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GiftCardCompra</title>
+        <!-- pone el logo en la pestana -->
+        <link rel="shortcut icon" href="./image/mitos_boutique_de_vinos.jpg">
+        <title>CSS</title>
+        <link rel="stylesheet" href="../style/style.css">
+        <!-- BOOTSTRAP -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
+    </head>
     
-<body>
-    <section>
-        <img class="fondoVinos" src="../image/vinos.jpg" alt="banner vinos">
-        <div class="gridTitulo">
-            <img class="tamanoLogoVinos" src="../image/mitos_boutique_de_vinos.jpg" alt="Logo">
+<body >
+    <div id="gridContenedor">
+        <header >      
+            <div class="gridTitulo">
+                <img class="tamanoLogoAp" src="../image/mitos_boutique_de_vinos.jpg" alt="Logo">
 
-            <a href="../index.html" ><img class="homeVinos" src="../image/home.jpg" alt="home"></a>
+                <img class="fondoVinos" src="../image/vinos.jpg" alt="">
+                
+                <a href="../index.html" ><img class="homeVinos" src="../image/home.jpg" alt="home"></a>
 
-            <a href=""><img class="carroVinos" src="../image/carrito compras.jpg" alt="carro compras"></a>
-        </div>
-     </section>
-     
-     <section>
-        <div  >
-            <ul class="flexVinos listaVinos" >
-                <li > 
-                    <ul >
-                        <li><a>Vino Tinto</a>
-                            <label for="tinto`"></label>
-                            <select class="menuCerveza" name="tinto" id="tinto">
-                                <option value=""></option>
-                                <option value="Malbec">Malbec</option>
-                                <option value="CabSav">Cabernet Savignon</option>
-                                <option value="Blend">Blend</option>
-                                <option value="Pinot">Pinot</option>
-                                <option value="OTRO">OTRO</option>     
-                            </select>
-                        </li>
-                    </ul>
+            </div>
+            
+            <div class="bajarMenu">
+            <ul class="nav nav-tabs">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Blanco</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Chardonnay</a></li>
+                    <li><a class="dropdown-item" href="#">Sauvignon Blanc</a></li>
+                    <li><a class="dropdown-item" href="#">Semillon</a></li>
+                    <li><a class="dropdown-item" href="#">Torrontes</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Rosado</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Cabernet Savignon</a></li>
+                    <li><a class="dropdown-item" href="#">Syrah</a></li>
+                    <li><a class="dropdown-item" href="#">Pinot Noir</a></li>
+                  </ul>
                 </li>
                 
-                <li> 
-                    <ul>
-                        <li><a >Vino Blanco</a>
-                            <label for="Blanco"></label>
-                            <select class="menuCerveza" name="Blanco" id="Blanco">
-                                <option value=""></option>
-                                <option value="Chard">Chardonnay</option>
-                                <option value="SavB">Savignon Blanc</option>
-                                <option value="Torr">Torrontes</option>
-                                <option value="OTRO">OTRO</option>     
-                            </select>
-                        </li>
-                    </ul>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Tinto</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Bonarda</a></li>
+                    <li><a class="dropdown-item" href="#">Cabernet Franc</a></li>
+                    <li><a class="dropdown-item" href="#">Cabernet Savignon</a></li>
+                    <li><a class="dropdown-item" href="#">Malbec</a></li>
+                    <li><a class="dropdown-item" href="#">Syrah</a></li>
+                    <li><a class="dropdown-item" href="#">Tannat</a></li>
+                </ul>
+                </li>    
+        
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">De Guarda</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Medalle 1988</a></li>
+                    <li><a class="dropdown-item" href="#">Messi 30</a></li>
+                    <li><a class="dropdown-item" href="#">Diego 10</a></li>
+                </ul>
                 </li>
-
-                <li> 
-                    <ul>
-                        <li><a >Vino Rosado</a>
-                            <label for="Rosado"></label>
-                            <select class="menuCerveza" name="Rosado" id="Rosado">
-                                <option value=""></option>
-                                <option value="Dulce">Dulce</option>
-                                <option value="Sav">Savignon</option>
-                                <option value="Malbec">Malbec</option>
-                                <option value="OTRO">OTRO</option>     
-                            </select>
-                        </li>
-                    </ul>
+               
+                
+                <li class="nav-item">
+                    <a class="nav-link" href=""><img class="tamanoCarro" src="../image/carrito compras.jpg" alt="carro compras"></a>
                 </li>
-
-                <li> 
-                    <ul>
-                        <li><a >Vino Dulce</a>
-                            <label for="Dulce"></label>
-                            <select class="menuCerveza" name="Dulce" id="Dulce">
-                                <option value=""></option>
-                                <option value="Cabernet">Cabernet</option>
-                                <option value="Pinot">Pinot</option>
-                                <option value="Malbec">Malbec</option>
-                                <option value="OTRO">OTRO</option>     
-                            </select>
-                        </li>
-                    </ul>    
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!--pie de pagina-->
-    <footer class="pieVinos">
+            </div>
+            
+        </header>
+        
+        
+        <!--pie de pagina-->
+    <footer class="piePpalAp">
         <hr>
-        <!-- &nbsp;para dejar espacios -->
         <p> Mail:mito@mito.com.ar </p>
         <p> Domicilio:Libertador 101</p>
         <p>  Te:4444-4444 </p>       
         <hr> 
     </footer>
+    </div>
+
+    <!-- BOOSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
 
 </body>
 </html>

@@ -119,6 +119,7 @@
     width: 7%;
     height: auto;
     margin-left: -5%;
+    padding-top: 40%;
 }
 .aperitivoTexto{
     padding-top: 23%;
@@ -248,9 +249,10 @@
 /* VINOS */
 .fondoVinos{
     background-repeat: no-repeat;
-    width: 100%;
-    height: 97%;
-    position: relative;
+    width: 99%;
+    height: 17%;
+    margin-left: -16%;
+    position: absolute;
 }
 .carroVinos{
     position: relative;
@@ -263,7 +265,8 @@
     position: relative;
     width: 7%;
     height: auto;
-    left: 70%;
+    padding-top: 30%;
+    margin-left: 70%;
 }
 .listaVinos{
     padding-top: 30%;
@@ -649,6 +652,16 @@
         word-spacing: 130%;
     }
 }
+    /* VINOS */
+@media screen and (min-width: 900px) {
+    .fondoVinos{
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 45%;
+        margin-left: -15.5%;
+        position: absolute;
+    }
+}
     /* CERVEZA */
 @media screen and (min-width: 900px) {
     .tamanoLogoCerveza{
@@ -696,11 +709,37 @@
     .bajarMenu{
         padding-top: 6%;
     }
-}    
+}
+/* CHAMPAGNE */
+@media screen and (min-width: 900px){
+    .imagenCH{
+        display: flex;
+        flex-direction: column;    
+        list-style: none;
+        left: 0%;
+        top: 0%;
+        width: 30%;
+        
+        position: relative;
+    }
+    .alinear{
+        margin-left: 30%;
+        
+    }
+    .tamanoCarroCh{
+        width: 33px;
+        height: 43px;
+        padding-top: 1%;
+    }
+    .pieCh{
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 3%;
+    }
+
+}
     
-
-
-
 /* GIFTCARDS */
 @media screen and (min-width: 900px){
 .logoGC{
@@ -739,5 +778,37 @@
     width: 27%;
     height: auto;
 }
+}
+/* ALTASOCIO */
+@media screen and (min-width: 900px){
+    .logoAlta{
+        position: relative;
+        width: 15%;
+        height: auto;
+    }
+    .homeAlta{
+        position: relative;
+        width: 4%;
+        height: 8%;
+        left: 84%;
+    }   
+    .bordeAlta{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 160%;
+        padding-bottom: 1%;
+        margin-bottom: 3%;
+        text-align: center;
+        background-image: radial-gradient( rgb(102, 158, 233), white, rgb(196, 234, 246));
+    }    
+    .fondoAlta{
+        margin-left: 5%;
+     }
+    .pieAlta{
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 3%;
+    }
+    
 
 }
