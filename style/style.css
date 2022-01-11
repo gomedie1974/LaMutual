@@ -749,10 +749,18 @@
     
 }
 .homeGC{
-    position: absolute;
+    position: relative;
     width: 7%;
     height: 19%;
     margin-left: 80%;
+    
+}
+.homeGCCompra{
+    position: relative;
+    width: 7%;
+    height: 19%;
+    margin-left: 80%;
+    
 }
 .flexRegalosGC{
     display: flex;
@@ -808,7 +816,9 @@
         font-weight: bold;
         text-align: center;
         padding-top: 3%;
+    }    
+    .formBaja{
+        padding-top: 2%;
+        margin-left: 2%;
     }
-    
-
 }
