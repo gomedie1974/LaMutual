@@ -822,3 +822,41 @@
         margin-left: 2%;
     }
 }
+/* WHISKY */
+@media screen and (min-width: 900px){
+    .fondoW{
+        position: relative;
+        width: 100%;
+        height: 55%;
+    }
+    .tamanoLogoW{
+        position: relative;
+        width: 15%;
+        height: 5%;
+        bottom: 25%;
+        right: 2%;
+    }
+    .carroW{
+        position: relative;
+        width: 4%;
+        height: auto;
+        margin-left: -170%;
+        top: 20%;
+    }
+    .homeW{
+        position: relative;
+        width: 5%;
+        height: auto;
+        left: 80%;
+    }
+    .bajaW{
+        margin-top: -20%;
+    }
+    .pieW{
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 30%;
+    }
+    
+}
