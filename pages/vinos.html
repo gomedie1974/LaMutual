@@ -1,89 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GiftCardCompra</title>
-        <!-- pone el logo en la pestana -->
-        <link rel="shortcut icon" href="./image/mitos_boutique_de_vinos.jpg">
-        <title>CSS</title>
-        <!-- BOOTSTRAP -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="../style/style.css">
-        
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftCardCompra</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- pone el logo en la pestana -->
+    <link rel="shortcut icon" href="../image/mitos_boutique_de_vinos.jpg">
+    <title>CSS</title>
+    <link rel="stylesheet" href="../style/style.css">
     
+</head>
+  
 <body >
-    <div id="gridContenedor">
-        <header >      
-            <div class="gridTitulo">
-                <img class="tamanoLogoAp" src="../image/mitos_boutique_de_vinos.jpg" alt="Logo">
+    <nav class="navbar navbar-dark bg-dark">    
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Vinos</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blancos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link ">Rosados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link ">Tintos</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+  </nav>
 
-                <img class="fondoVinos" src="../image/vinos.jpg" alt="">
-                
-                <a href="../index.html" ><img class="homeVinos" src="../image/home.jpg" alt="home"></a>
+  <!-- Page Content-->
+  <div class="container px-4 px-lg-5">
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../image/vinos10.jpg" alt="..." /></div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">Destacados 2021</h1>
+            <p>El crítico estadounidense James Suckling publicó su reporte anual con el top 100 de los mejores vinos argentinos de 2021. El que calificó con el puntaje más alto -98 sobre 100- fue un tinto elaborado en Mendoza, el Iscay 2017 de Trapiche, un blend de uvas Malbec y Cabernet Franc de Valle de Uco. </p>
+            <a class="btn btn-primary" href="https://www.clarin.com/gourmet/mejores-vinos-argentinos-2021-critico-james-suckling_0_BBXGVjZ0Y.html">Leer nota completa</a>
+        </div>
+    </div>
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Vino Blanco</h2>
+                    <p class="card-text">El vino blanco es una bebida producida mediante la fermentación alcohólica de diferentes tipos de uvas blancas. Puede beberse tanto solo como acompañado de comida, y tradicionalmente se ha asociado con el maridaje de pescados, mariscos y algunas carnes blancas.</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="https://es.wikipedia.org/wiki/Vino_blanco">Mas informacion</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Vino Tinto</h2>
+                    <p class="card-text">El vino tinto es un tipo de vino procedente mayormente de mostos de uvas tintas, con la elaboración pertinente para conseguir la difusión de la materia colorante que contienen los hollejos de la uva. ... También se le conoce como vino rojo (en inglés red wine).</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="https://es.wikipedia.org/wiki/Vino_tinto">Mas informacion</a></div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">Vino Rosado</h2>
+                    <p class="card-text">Es un vino intenso, de aromas frescos, con algunas notas cítricas y minerales perfectamente equilibradas con toques de frutos rojos, frambuesas y grosellas.</p>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="https://es.wikipedia.org/wiki/Vino_rosado">Mas informacion</a></div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            </div>
-            
-            <div class="bajarMenu p-4">
-            <ul class="nav nav-tabs">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Blanco</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Chardonnay</a></li>
-                    <li><a class="dropdown-item" href="#">Sauvignon Blanc</a></li>
-                    <li><a class="dropdown-item" href="#">Semillon</a></li>
-                    <li><a class="dropdown-item" href="#">Torrontes</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Rosado</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Cabernet Savignon</a></li>
-                    <li><a class="dropdown-item" href="#">Syrah</a></li>
-                    <li><a class="dropdown-item" href="#">Pinot Noir</a></li>
-                  </ul>
-                </li>
-                
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Tinto</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Bonarda</a></li>
-                    <li><a class="dropdown-item" href="#">Cabernet Franc</a></li>
-                    <li><a class="dropdown-item" href="#">Cabernet Savignon</a></li>
-                    <li><a class="dropdown-item" href="#">Malbec</a></li>
-                    <li><a class="dropdown-item" href="#">Syrah</a></li>
-                    <li><a class="dropdown-item" href="#">Tannat</a></li>
-                </ul>
-                </li>    
-        
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">De Guarda</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Medalle 1988</a></li>
-                    <li><a class="dropdown-item" href="#">Messi 30</a></li>
-                    <li><a class="dropdown-item" href="#">Diego 10</a></li>
-                </ul>
-                </li>
-               
-                
-                <li class="nav-item">
-                    <a class="nav-link" href=""><img class="tamanoCarro" src="../image/carrito compras.jpg" alt="carro compras"></a>
-                </li>
-            </div>
-            
-        </header>
-        
-        
-        <footer class="py-5 bg-dark ">
-            <div class="container">
-                <p class="m-0 text-center text-white ">Mail:mito@mito.com.ar  - Domicilio:Libertador 101  -  Te:4444-4444 </p></div>
-        </footer>
-        
-        <!-- JAVA -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        
+
+    <footer class="py-5 bg-dark ">
+        <div class="container">
+            <p class="m-0 text-center text-white ">Mail:mito@mito.com.ar  - Domicilio:Libertador 101  -  Te:4444-4444 </p></div>
+    </footer>
+    
+    <!-- JAVA -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
     
 
 </body>
