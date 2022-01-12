@@ -262,14 +262,12 @@
     height: auto;
     left: 80%;
 }
-.bajaW{
-    padding-top: 14%;
-}
-.pieW{
-    font-style: italic;
-    font-weight: bold;
+.textoW{
+    margin-top: 4%;
+    padding: 2%;
     text-align: center;
-    padding-top: 70%;
+    color: rgb(4, 4, 31);
+    background-color: rgb(177, 170, 161);
 }
     /* GIFTCARDS */
 .logoGC{
