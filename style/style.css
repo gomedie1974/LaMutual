@@ -698,10 +698,10 @@
     
 }
 .homeGC{
-    position: relative;
+    position: absolute;
     width: 7%;
     height: 19%;
-    margin-left: 80%;
+    
     
 }
 .homeGCCompra{
