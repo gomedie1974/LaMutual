@@ -80,13 +80,6 @@
     margin-left: 2%;
     margin-right: 2%;
 }
-.piePpal{
-    font-style: italic;
-    font-weight: bold;
-    padding-top: 30px;
-    text-align: center;
-    word-spacing: 130%;
-}
 .centrar{
     margin-left: 2%;
     margin-right: 2%;
@@ -132,13 +125,6 @@
     margin-right: 2%;
     text-align: center;
 }
-.pieAp{
-        font-style: italic;
-        font-weight: bold;
-        text-align: center;
-        word-spacing: 130%;
-        padding-top: 30%;
-}
 .gridContenedorMenu{
     display: flex;
     flex-direction: row;    
@@ -149,10 +135,6 @@
     font-style: inherit;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-image: linear-gradient(white, black);
-}
-.piePpalAp{
-    padding-top: 55%;
-    text-align: center;
 }
 /* CERVEZA */
 .tamanoLogoCerveza{
@@ -473,10 +455,11 @@
     .bordeMes{
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size: 180%;
-        padding-bottom: 1%;
         text-align: center;
-        background-image: radial-gradient( rgb(102, 158, 233), white, rgb(196, 234, 246));
+        color: white;
+        background-image: radial-gradient( rgb(57, 57, 66), rgb(63, 53, 53), rgb(23, 31, 34));
         padding-bottom: 3%;
+        margin-top: 5%;
     }
     .tamanoCatar{
         text-align: center;
@@ -808,4 +791,9 @@
         padding-top: 30%;
     }
     
+}
+@media screen and (max-width: 700px){
+    .imagenPortada{
+        width: 20rem;
+    }
 }

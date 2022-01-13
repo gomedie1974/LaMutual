@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GiftCardCompra</title>
+    <title>PaginaPpal</title>
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- pone el logo en la pestana -->
@@ -12,42 +12,71 @@
     <title>CSS</title>
     <link rel="stylesheet" href="./style/style.css">
     
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+    </style>
+    
+      <!-- Custom styles for this template -->
+    <link href="headers.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="gridContenedor">   
+
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            
+            <img src="./image/mitos_boutique_de_vinos.jpg" class="bi me-2" width="180" height="142" role="img" ></img>
+            <h1>Boutique de Vinos</h1>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="./pages/aperitivos.html" class="nav-link px-2 text-white">Aperitivos</a></li>
+              <li><a href="./pages/cervezas.html" class="nav-link px-2 text-white">Cervezas</a></li>
+              <li><a href="./pages/vinos.html" class="nav-link px-2 text-white">Vinos</a></li>
+              <li><a href="./pages/whisky.html" class="nav-link px-2 text-white">Whisky</a></li>
+              <li><a href="./pages/giftcardPpal.html" class="nav-link px-2 text-white">GiftCard</a></li>
+              <li><a href="./pages/formulario_alta.html" class="nav-link px-2 text-white">Alta Usuario</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/formulario_alta.html"><img class="tamanoCarro" src="./image/carrito compras.jpg" alt="carro compras"></a>
+            </li>
+            </ul>
     
-        <div>
-            <img class="banerPpal" src="./image/baner.png" alt="baner principal">
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+              <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+            </form>
+    
+            <div class="text-end">
+              <button type="button" class="btn btn-outline-light me-2">Buscar</button>
+            </div>
+          </div>
         </div>
-        <div >
-            <img class="logoPpal" src="./image/mitos_boutique_de_vinos.jpg" alt="logo">
-        </div>
-        <header>
-            <ul class="nav justify-content-center">
-                <li class="nav-item ">
-                  <a class="nav-link" href="./pages/aperitivos.html"> Aperitivos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./pages/cervezas.html">Cervezas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/vinos.html">Vinos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/whisky.html">Whisky</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/giftcardPpal.html">GiftCard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/formulario_alta.html">Alta Usuario</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/formulario_alta.html"><img class="tamanoCarro" src="./image/carrito compras.jpg" alt="carro compras"></a>
-                </li>
-              </ul>
-        </header>
+      </header>
+
+    <section class="m-2">
+        <h1 class="font-weight-light pt-3">Historia</h1>
+            <p>MITO es un espacio de casi 300 metros cuadrados dedicados al vino y otras bebidas. </p> 
+            <p> En la vinoteca contamos con una destacada variedad de bodegas de la mayoría de las regiones vitivinícolas de la Argentina. Hay vinos, licores y destilados; y nuestra característica distintiva es la cantidad de bodegas con las que trabajamos. Esas bodegas que están por fuera de los circuitos masivos de comercialización encuentran aquí un lugar ideal para dar a conocer sus creaciones.</p>
+            <p>Tenemos también un sector de novedades y nuevas incorporaciones, con estuches y presentaciones especiales , y algunos productos regionales y aceites.</p>
+            <p>    
+            La atención es familiar y nos encanta que vengan a conocer nuestro espacio.</p>
+                <img class="imagenPortada" src="./image/portada.jpg" alt="">
+        </section>
+
+        
     <div>
         <p class="bordeMes">Promo del mes</p>
     </div>
@@ -69,13 +98,7 @@
             </ul>
         </div>
     </section>
-    <br>
-    <article class="tamanoCatar" >
-        <h3> Catar un vino paso a paso </h3>
-        <!--hacer click derecho y copio el codigo de insercion-->
-        <iframe src="https://www.youtube.com/embed/ri5mPDy9e5o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </article>
-    <br>
+    
     <section class="gridIdeas">
         <h4 class="margenIdeas">
             <p >4 Ideas creativas para reciclar tus botellas de vino</p>
@@ -92,10 +115,7 @@
         <img class="tamanoImagen" src="./image/Flor4" alt="reciclar"
         >
     </article> 
-    
-    <!--  
-   -->
-
+   
     <section>
         <p class="reciclarTitulo"> Si eres un amante del vino, es posible que más de una vez te hayas preguntado qué hacer con todas las botellas de vino que se acumulan para reciclar y que te da pena tirar ya que no tienes ideas creativas para reciclarlas. Una de las cosas que nos permiten las manualidades, es utilizar y reciclar objetos que ya tenemos en nuestro hogar y transformarlos.</p>
         <p class="reciclarTitulo"> Así pues, en vez de tirar todas estas botellas, ¿no es mejor intentar ser un poco más productivos y buscar una nueva útilidad para tus botellas vacías? En este post te vamos a dar 4 ideas geniales para reciclar tus botellas de vino de manera casera y darles un nuevo uso.
@@ -121,8 +141,20 @@
             </p></div>            
         </div>
     </section>
-    </div>
+    
 
+
+
+
+
+
+
+
+
+
+
+
+      <br><br><br>
     <footer class="py-5 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Mail:mito@mito.com.ar  - Domicilio:Libertador 101  -  Te:4444-4444 </p></div>
