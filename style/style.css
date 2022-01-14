@@ -246,7 +246,7 @@
 }
 .textoW{
     margin-top: 4%;
-    padding: 2%;
+    padding: 3%;
     text-align: center;
     color: rgb(4, 4, 31);
     background-color: rgb(177, 170, 161);
@@ -789,5 +789,12 @@
 @media screen and (max-width: 700px){
     .imagenPortada{
         width: 10rem;
+    }
+}
+@media screen and (max-width: 700px){
+    .cambio{
+        display: flex;
+        flex-direction: row;       
+        padding-bottom: 2%;
     }
 }
