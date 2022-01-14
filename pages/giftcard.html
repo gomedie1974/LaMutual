@@ -4,77 +4,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AltaSocio</title>
+    <title>PaginaPpal</title>
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- pone el logo en la pestana -->
-    <link rel="shortcut icon" href="../image/mitos_boutique_de_vinos.jpg">
+    <link rel="shortcut icon" href="./image/mitos_boutique_de_vinos.jpg">
     <title>CSS</title>
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
+    
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+    </style>
+    
+      <!-- Custom styles for this template -->
+    <link href="headers.css" rel="stylesheet">
 </head>
 
-
 <body>
-    <header >
-        <section >
-            <div >
-                <img class="logoAlta" src="../image/mitos_boutique_de_vinos.jpg" alt="Logo Vinoteca" > 
-            <div>
-            <div>
-                <a href="../index.html" ><img class="homeAlta" src="../image/home.jpg" alt="home"></a>
-                        
-            </div>
-        </section> 
+
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            
+          <img src="../image/mitos_boutique_de_vinos.jpg" class="bi me-2" width="180" height="142" role="img" ></img>
+          <h1>Gift Card Compra</h1>
+          
+          </div>
+          
       
-        <section >    
-            <h1 class="bordeAlta">
-                 Alta Usuario 
-                </h1>
-        </section>
-    
-    </header>
-    
-    <main>
+        </div>
+  </header>
+  
+  <div>
+    <a class="nav-link active text-dark  " aria-current="page" href="../index.html">  Volver</a>
+  </div>
+
+
+    <main class="pt-4 m-5">
 
         <div class="row">
-            <div class="col pb-5">
-              <input type="text" class="form-control" placeholder="Ingrese su nombre" aria-label="Ingrese su nombre">
+            <div class="pb-5">
+              <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
             </div>
-            <div class="col pb-5">
-              <input type="text" class="form-control" placeholder="Ingrese su apellido" aria-label="Ingrese su apellido">
+            <div class="pb-5 "> 
+              <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
             </div>
-            <div class="row-ml-2 pb-5">
-                <input type="text" class="form-control" placeholder="Ingrese su domicilio" aria-label="Ingrese su domicilio">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Ingrese localidad" aria-label="Ingrese localidad">
+            <div class="pb-5">
+                <input type="text" class="form-control" placeholder="Domicilio" aria-label="Domicilio">
             </div>
             <div class="col">
-                <input type="number" class="form-control" placeholder="Ingrese codigo postal" aria-label="Ingrese codigo postal">
+                <input type="text" class="form-control" placeholder="Localidad" aria-label="Localidad">
             </div>
             <div class="col">
-                <input type="date" class="form-control" placeholder="Nacimiento" aria-label="Nacimiento">
+                <input type="number" class="form-control" placeholder="CP" aria-label="CP">
+            </div>
+            <div class="col ml-8 mr-8">
+                <input type="date" class="form-control" placeholder="Nacimiento" aria-l abel="Nacimiento">
             </div>    
             
             <form class="row gx-4 gy-4 align-items-center">
                 <div class="col-sm-5">
                   <label class="visually-hidden" for="specificSizeInputName">Name</label>
-                  <input type="text" class="form-control" id="specificSizeInputName" placeholder="Jane Doe">
+                  <input type="text" class="form-control" id="specificSizeInputName" placeholder="Usuario">
                 </div>
-                <div class="col">
-                    <a class="input-group-text">@</a>
-                </div>
-                <div class="col-sm-3">
+               <div class="col-sm-3">
                   <label class="visually-hidden" for="specificSizeSelect">Preference</label>
                   <select class="form-select" id="specificSizeSelect">
                     <option selected>Cambiar...</option>
-                    <option value="1">Hotmail.com</option>
-                    <option value="2">Yahoo.com</option>
-                    <option value="3">Gmail.com</option>
+                    <option value="1">@Hotmail.com</option>
+                    <option value="1">@Hotmail.com.ar</option>
+                    <option value="2">@Yahoo.com</option>
+                    <option value="2">@Yahoo.com</option>
+                    <option value="3">@Gmail.com</option>
+                    <option value="3">@Gmail.com</option>
                   </select>
                 </div>
                 <div class="col-auto">
                   <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
                     <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
                     <label class="form-check-label" for="autoSizingCheck2">
                       Recordarme
@@ -107,24 +129,25 @@
                     <option value="uru">OTRO</option>
                 </select>
               </div>
-              <div class="formBaja pb-3">
+              <div class="formBaja pt-3">
                 <label for="comentario">Comentarios</label><br>
                 <textarea name="comentario" id="comentario" cols="30" rows="5"></textarea>
                 <br><br>
                 <!-- botones -->
                 <input type="submit" value="Enviar ahora">
                 <input type="reset" value="Borrar todo">
-        
+                
               </div>
         </div>
     </main>
     
 
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-dark mt-2">
       <div class="container">
           <p class="m-0 text-center text-white">Mail: mito@mito.com.ar  - Domicilio: Libertador 101  -  Te: 4444-4444 </p></div>
   </footer>
   
+
   <!-- JAVA -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   
