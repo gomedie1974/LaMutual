@@ -2,6 +2,18 @@
     width: 23px;
     height: 23px;
 }
+.carousel-item{
+   width: 70%;
+   height: 30%;
+   bottom: 25px;
+   margin-left: 15%; 
+}
+.carousel-control-next-icon{
+    background-color: black;
+}
+.carousel-control-prev-icon{
+    background-color: black;
+}
 .slider{
     width: 95%;
     margin: 0% 0% 0% 3%;
@@ -34,15 +46,17 @@
 }
 .bordeMes{
     padding: 3%;
+    margin-top: 4%;
     color: white;
     text-align: center;
-    background-image: radial-gradient( rgb(45, 47, 49), white, rgb(82, 83, 83));
+    background-color: rgb(114, 110, 110);
     font-size: 30px;
 }
 div{
     h6{
-    margin: 1%;
     padding: 1%;
+    color: black;
+    font-size: larger;
     background-color: rgb(175, 170, 165);
     text-align: center;
     border-style: groove;
