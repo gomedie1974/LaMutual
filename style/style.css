@@ -1,812 +1,237 @@
-*{/*esto es un reseteo*/ 
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+.tamanoCarro {
+  width: 23px;
+  height: 23px;
 }
 
-/* MOVIL  */
-    /* INDEX */
-.banerPpal{
-    width: 360px;
-    height: 130px;
+.slider {
+  width: 95%;
+  margin: 0% 0% 0% 3%;
+  overflow: hidden;
 }
-.logoPpal{
-    width: auto;
-    height: 130px;
-    position: relative;
-    margin-left: 25%;
+
+.slider ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0%;
+  width: 300%;
+  list-style: none;
+  -webkit-animation: cambio 10s infinite alternate;
+          animation: cambio 10s infinite alternate;
 }
-.categorias{
-    text-align: center;
+
+.slider ul li {
+  width: 100%;
+  list-style: none;
 }
-.tamanoCarro{
-    width: 23px;
-    height: 23px;
+
+.slider ul img {
+  width: 60%;
 }
-.bordeMes{
-    padding-top: 3%;
-    text-align: center;
-    background-image: radial-gradient( rgb(102, 158, 233), white, rgb(196, 234, 246));
+
+@-webkit-keyframes cambio {
+  0% {
+    margin-left: 0;
+  }
+  10% {
+    margin-left: 0;
+  }
+  11% {
+    margin-left: -100%;
+  }
+  21% {
+    margin-left: -100%;
+  }
+  22% {
+    margin-left: -100%;
+  }
+  32% {
+    margin-left: -100%;
+  }
 }
-.tamanoImagen{
-    width: 140px;
-    height: 110px;
-    position: relative;
+
+@keyframes cambio {
+  0% {
+    margin-left: 0;
+  }
+  10% {
+    margin-left: 0;
+  }
+  11% {
+    margin-left: -100%;
+  }
+  21% {
+    margin-left: -100%;
+  }
+  22% {
+    margin-left: -100%;
+  }
+  32% {
+    margin-left: -100%;
+  }
 }
-.slider{
-    width: 95%;
-    margin: 0% 0% 0% 3%;
-    overflow: hidden;
+
+.bordeMes {
+  padding: 3%;
+  color: white;
+  text-align: center;
+  background-image: radial-gradient(#2d2f31, white, #525353);
+  font-size: 30px;
 }
-.slider ul{
+
+div h3 {
+  margin: 1%;
+  padding: 1%;
+  background-color: #afaaa5;
+  text-align: center;
+  border-style: groove;
+}
+article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1px;
+}
+
+article img {
+  width: 270px;
+  height: 280px;
+  position: relative;
+  margin: auto;
+  padding-bottom: 2%;
+}
+
+@media screen and (max-width: 800px) {
+  article {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    padding: 0%;
-    width: 300%;
-    list-style: none;
-    animation: cambio 10s infinite alternate;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1px;
+  }
+  article img {
+    width: 330px;
+    height: 280px;
+    position: relative;
+    margin: auto;
+    padding-bottom: 2%;
+  }
 }
-.slider li{
+
+@media screen and (max-width: 800px) {
+  .imagenMobile {
     width: 100%;
-    list-style: none;
-}
-.slider img{
-    width: 60%;
-}
-@keyframes cambio{
-    0% {margin-left: 0;}
-    10% {margin-left: 0;}
-
-    11% {margin-left: -100%;}
-    21% {margin-left: -100%;}
-
-    22% {margin-left: -100%;}
-    32% {margin-left: -100%;}
-}
-.tamanoCatar{
-    text-align: center;
-}
-.margenIdeas{
-    margin: 1%;
-    padding: 1%;
-}
-.formaIdeas{
-    background-color: rgb(175, 170, 165);
-    border-style: groove;
-}
-.tamanoImagen{
-    width: 140px;
-    height: 110px;
-    position: relative;
-    margin-left: 5%;
-}
-.reciclarTitulo{
-    text-align: justify;
-    margin-left: 2%;
-    margin-right: 2%;
-}
-.centrar{
-    margin-left: 2%;
-    margin-right: 2%;
-    background-color: antiquewhite;
-    text-align: center;
+  }
 }
 
-    /* APERITIVOS */
-.tamanoLogoAp{
+@media screen and (min-width: 800px) {
+  .imagenMobile {
     position: relative;
-    width: 15%;
-    height: 5%;
-    padding-top: 36%;
-}
-.fondoAp{
-    background-repeat: no-repeat;
-    width: 72%;
-    height: 27%;
-    top: 3%;
-    position: relative;
-}
-.tamanoCarroAp{
-    position: relative;
-    width: 6%;
-    height: auto;
-    margin-left: -14%;
-}
-.homeAp{
-    position: relative;
-    width: 7%;
-    height: auto;
-    margin-left: -5%;
-    padding-top: 40%;
-}
-.aperitivoTexto{
-    padding-top: 23%;
-    padding-bottom: 20%;
-    font-size: 100%;
-    font-style: oblique;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: rgb(29, 31, 3),;     
-    margin-left: 2%;
-    margin-right: 2%;
-    text-align: center;
-}
-.gridContenedorMenu{
-    display: flex;
-    flex-direction: row;    
-    list-style: none;
-}
-.menuAperitivo{
-    font-size: 40%;
-    font-style: inherit;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image: linear-gradient(white, black);
-}
-/* CERVEZA */
-.tamanoLogoCerveza{
-    position: relative;
-    width: 15%;
-    height: 5%;
-    padding-top: 26%;
-}
-.fondoCerveza{
-    background-repeat: no-repeat;
-    width: 62%;
-    height: 97%;
-    position: relative;
-}
-.tamanoCarroCerveza{
-    position: relative;
-    width: 6%;
-    height: auto;
-    margin-left: 1%;
-    top: 20%;
-}
-.homeCerveza{
-    position: relative;
-    width: 7%;
-    height: auto;
-    margin-left: 1%;
-}
-.cervezaTexto{
     padding-top: 30%;
-    margin-left: 8%;
-}
-.menuCerveza{
-    font-size: 40%;
-    font-style: inherit;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image: linear-gradient(white, black);
-}
-.pieCerveza{
-        font-style: italic;
-        font-weight: bold;
-        text-align: center;
-        word-spacing: 130%;
-        padding-top: 70%;
-}
-/* VINOS */
-.fondoVinos{
-    background-repeat: no-repeat;
-    width: 99%;
-    height: 17%;
-    margin-left: -16%;
-    position: absolute;
-}
-.carroVinos{
-    position: relative;
-    width: 6%;
-    height: auto;
-    left: 50%;
-    top: 20%;
-}
-.homeVinos{
-    position: relative;
-    width: 7%;
-    height: auto;
-    padding-top: 30%;
-    margin-left: 70%;
-}
-.listaVinos{
-    padding-top: 30%;
-    padding-bottom: 10%;
-}
-.tamanoLogoVinos{
-    position: relative;
-    width: 15%;
-    height: 5%;
-    padding-top: 3%;
-}
-.pieVinos{
-    font-style: italic;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 60%;
-}
-    /* WHISKY */
-.fondoW{
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 160px;
-    position: relative;
-}
-.tamanoLogoW{
-    position: absolute;
-    width: 15%;
-    height: 5%;
-    top: -0.5%;
-    right: 43%;
-}
-.carroW{
-    position: relative;
-    width: 20%;
-    height: auto;
-    left: 5%;
-    top: 20%;
-}
-.homeW{
-    position: relative;
-    width: 7%;
-    height: auto;
-    left: 80%;
-}
-.textoW{
-    margin-top: 7%;
-    padding: 3%;
-    text-align: center;
-    color: rgb(4, 4, 31);
-    background-color: rgb(177, 170, 161);
-}
-    /* GIFTCARDS */
-.logoGC{
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-.homeGC{
-    position: absolute;
-    width: 7%;
-    height: 8%;
-    margin-left: 80%;
-}
-.flexRegalosGC{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-bottom: 5%;
-    padding-top: 15%;
-    width: 100%;
-    list-style: none;
-}
-.comprarGC{
-    border-style: double;
-    border-style: outset;
-    width: 23%;
-    margin-left: 40%;
-    text-align: center;
-}
-.imagengiftcard{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    width: 27%;
-    height: 60%;
-}
-.pieGC{
-    font-style: italic;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 10%;
-}
-    /* FORMULARIO ALTA */
-.logoAlta{
-    position: relative;
-    width: 30%;
-    height: auto;
-}
-.bordeAlta{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 110%;
-    padding-bottom: 1%;
-    text-align: center;
-    background-image: radial-gradient( rgb(102, 158, 233), white, rgb(196, 234, 246));
-}    
-.fondoAlta{
-    padding-top: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: auto;
-    margin-left: 2%;
-    margin-right: 2%;
-}
-.pieAlta{
-    font-style: italic;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 3%;
-}
-    /* COMPRA GIFTCARD */
-.bordeGC{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 150%;
-    padding-bottom: 1%;
-    text-align: center;
-    background-image: radial-gradient( rgb(102, 158, 233), white, rgb(196, 234, 246));
-}
-.homeGCCompra{
-    position: absolute;
-    width: 7%;
-    height: 8%;
-    margin-left: 80%;
+  }
 }
 
-      
-
-/* TABLET desde 768px*/
-/* INDEX */
-@media screen and (min-width: 760px) {
-    .banerPpal{
-        width: 790px;
-        height: 280px;
-    }    
-    .logoPpal{
-        width: auto;
-        height: 130px;
-        position: relative;
-        margin-left: 38%;
-    }
-    .reciclarTitulo{
-        padding-top: 5%;
-    }
+section.reciclarTitulo p {
+  padding-top: 2%;
+  text-align: justify;
+  margin-right: 2%;
+  margin-left: 1%;
 }
 
-/* APERITIVO */
-@media screen and (min-width: 760px) {
-    .aperitivoTexto{
-        padding-top: 23%;
-        padding-bottom: 20%;
-        font-size: 200%;
-        margin-left: 15%;
-        font-style: oblique;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        color: rgb(29, 31, 3),;     
-    }
-    .fondoAp{
-        background-repeat: no-repeat;
-        width: 72%;
-        height: 25%;
-        top: 1%;
-        left: 15%;
-        position: absolute;
-    }
-    .tamanoLogoAp{
-        position: relative;
-        width: 20%;
-        height: 10%;
-        padding-top: 36%;
-    }
-    .tamanoCarroAp{
-        position: relative;
-        width: 7%;
-        height: auto;
-        left: 45%;
-    }
-    .homeAp{
-        position: relative;
-        width: 9%;
-        height: auto;
-        left: 65%;
-    }
+.gridReciclar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: whitesmoke;
+  gap: 30px;
+  margin: 1% 1%;
 }
 
-/* DESKTOP desde 1024px*/
-/* INDEX */
-@media screen and (min-width: 900px) {
-    .banerPpal{
-        width: 973px;
-        height: 230px;
-    }    
-    .logoPpal{
-        width: auto;
-        height: 130px;
-        position: relative;
-        margin-left: 41%;
-    }
-    .tamanoImagen{
-        width: 140px;
-        height: 210px;
-        position: relative;
-    } 
-    .slider{
-        width: 95%;
-        height: auto;
-        margin: 0% 0% 0% 3%;
-        overflow: hidden;
-    }
-    .slider ul{
-        display: flex;
-        padding: 0%;
-        width: 400%;
-        list-style: none;
-        animation: cambio 10s infinite alternate;
-    }
-    .slider li{
-        width: 100%;
-        list-style: none;
-    }
-    .slider img{
-        width: 60%;
-    }
-    @keyframes cambio{
-        0% {margin-left: 0;}
-        10% {margin-left: 0;}
-    
-        11% {margin-left: -100%;}
-        21% {margin-left: -100%;}
-    
-        22% {margin-left: -100%;}
-        32% {margin-left: -100%;}
-    }
-    
-    .bordeMes{
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 180%;
-        text-align: center;
-        color: white;
-        background-image: radial-gradient( rgb(57, 57, 66), rgb(63, 53, 53), rgb(23, 31, 34));
-        padding-bottom: 3%;
-        margin-top: 5%;
-    }
-    .tamanoCatar{
-        text-align: center;
-        padding-top: 2%;
-        padding-bottom: 2%;
-    }   
-    #gridContenedor{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto 40px auto auto auto auto auto;
-    }
-    .gridLista{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;    
-        padding-top: 9%;
-        list-style: none;
-    }
-    .gridCat{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        padding: 1%;
-        align-items: center;
-    }
-    ul li{
-        list-style: none;
-        margin-left: 2%;
-        margin-right: 2%;
-    }
-    .gridReciclar{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        background-color: whitesmoke;
-        gap: 30px;
-        margin: 1% 1%;
-    }
-    .gridArticulo{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 1px;
-    }
-    .tamanoImagen{
-        width: 230px;
-        height: 280px;
-        position: relative;
-        margin: auto;
-        padding-bottom: 2%;
-    }
-    .margenIdeas{
-        text-align: center;
-        font-size: large;
-    }
-    .reciclarTitulo{
-        padding-top: 2%;
-        text-align: justify;
-        margin-right: 2%;
-        margin-left: 1%;
-    }
-    .piePpal{
-        font-style: italic;
-        font-weight: bold;
-        padding-top: 40px;
-        text-align: center;
-        word-spacing: 130%;
-    }
+div div h4 {
+  text-align: center;
+  background-color: tan;
 }
 
-/* APERITIVO */
-@media screen and (min-width: 900px) {
-    .aperitivoTexto{
-        padding-top: 7%;
-        font-size: 200%;
-        font-style: oblique;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        color: rgb(29, 31, 3),;     
-        margin-left: 2%;
-        margin-right: 2%;
-        text-align: center;
-    }    
-    .gridContenedorMenu{
-        display: flex;
-        flex-direction: row;    
-    }
-    .fondoAp{
-        background-repeat: no-repeat;
-        width: 72%;
-        height: 45%;
-        top: 1%;
-        left: 15%;
-        position: absolute;
-    }
-    .tamanoLogoAp{
-        position: relative;
-        width: 15%;
-        height: 10%;
-        padding-top: 20%;
-    }
-    .tamanoCarroAp{
-        position: relative;
-        width: 3%;
-        height: auto;
-        left: 92%;
-    }
-    .homeAp{
-        position: relative;
-        width: 5%;
-        height: auto;
-        padding-top: 21%;
-        margin-left: -1%;
-    }
-    .piePpalAp{
-        font-style: italic;
-        font-weight: bold;
-        padding-top: 200px;
-        text-align: center;
-        word-spacing: 130%;
-    }
+section.GcEstilo div img {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
-    /* VINOS */
-@media screen and (min-width: 900px) {
-    .fondoVinos{
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 45%;
-        margin-left: -15.5%;
-        position: absolute;
-    }
-}
-    /* CERVEZA */
-@media screen and (min-width: 900px) {
-    .tamanoLogoCerveza{
-        position: relative;
-        width: 15%;
-        height: 5%;
-        padding-top: 26%;
-    }
-    .fondoCerveza{
-        background-repeat: no-repeat;
-        width: 70%;
-        height: 40%;
-        position: absolute;
-    }
-    .tamanoCarroCerveza{
-        position: relative;
-        width: 5%;
-        height: auto;
-        left: 65%;
-    }
-    .homeCerveza{
-        position: relative;
-        width: 6%;
-        height: auto;
-        left: 65%;
-        padding-top: 25%;
-    }
-    .cervezaTexto{
-        padding-top: 10%;
-        margin-left: 2%;
-    }
-    .menuCerveza{
-        font-size: 140%;
-        font-style: inherit;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        background-image: linear-gradient(white, black);
-    }
-    .pieCerveza{
-            font-style: italic;
-            font-weight: bold;
-            text-align: center;
-            word-spacing: 130%;
-            padding-top: 20%;
-    }
-    .bajarMenu{
-        padding-top: 6%;
-    }
-}
-/* CHAMPAGNE */
-@media screen and (min-width: 900px){
-    .imagenCH{
-        display: flex;
-        flex-direction: column;    
-        list-style: none;
-        left: 0%;
-        top: 0%;
-        width: 30%;
-        
-        position: relative;
-    }
-    .alinear{
-        margin-left: 30%;
-        
-    }
-    .tamanoCarroCh{
-        width: 33px;
-        height: 43px;
-        padding-top: 1%;
-    }
-    .pieCh{
-        font-style: italic;
-        font-weight: bold;
-        text-align: center;
-        padding-top: 3%;
-    }
 
+section.GcEstilo div a {
+  position: absolute;
+  width: 7%;
+  left: 80%;
+  height: 19%;
 }
-    
-/* GIFTCARDS */
-@media screen and (min-width: 900px){
-.logoGC{
-    position: relative;
-    width: 100%;
-    height: auto;
-    
+
+section div.flexRegalosGC {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 5%;
+  padding-top: 15%;
+  width: 100%;
 }
-.homeGC{
-    position: absolute;
-    width: 7%;
-    height: 19%;
-    
-    
+
+section div ul.imagenGiftCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 27%;
+  height: auto;
+  list-style: none;
 }
-.homeGCCompra{
-    position: relative;
-    width: 7%;
-    height: 19%;
-    margin-left: 80%;
-    
+
+.comprarGC {
+  border-style: double;
+  border-style: outset;
+  width: 23%;
+  margin-left: 40%;
+  text-align: center;
 }
-.flexRegalosGC{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-bottom: 5%;
-    padding-top: 15%;
-    width: 100%;
-}
-.comprarGC{
-    border-style: double;
-    border-style: outset;
-    width: 23%;
-    margin-left: 40%;
-    text-align: center;
-}
-.imagengiftcard{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    width: 27%;
-    height: auto;
-}
-}
-/* ALTASOCIO */
-@media screen and (min-width: 900px){
-    .logoAlta{
-        position: relative;
-        width: 15%;
-        height: auto;
-    }
-    .homeAlta{
-        position: relative;
-        width: 4%;
-        height: 8%;
-        left: 84%;
-    }   
-    .bordeAlta{
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 160%;
-        padding-bottom: 1%;
-        margin-bottom: 3%;
-        text-align: center;
-        background-image: radial-gradient( rgb(102, 158, 233), white, rgb(196, 234, 246));
-    }    
-    .fondoAlta{
-        margin-left: 5%;
-     }
-    .pieAlta{
-        font-style: italic;
-        font-weight: bold;
-        text-align: center;
-        padding-top: 3%;
-    }    
-    .formBaja{
-        padding-top: 2%;
-        margin-left: 2%;
-    }
-}
-/* WHISKY */
-@media screen and (min-width: 900px){
-    .fondoW{
-        position: relative;
-        width: 100%;
-        height: 55%;
-    }
-    .tamanoLogoW{
-        position: relative;
-        width: 15%;
-        height: 5%;
-        bottom: 25%;
-        right: 2%;
-    }
-    .carroW{
-        position: relative;
-        width: 4%;
-        height: auto;
-        margin-left: -170%;
-        top: 20%;
-    }
-    .homeW{
-        position: relative;
-        width: 5%;
-        height: auto;
-        left: 80%;
-    }
-    .bajaW{
-        margin-top: -20%;
-    }
-    .pieW{
-        font-style: italic;
-        font-weight: bold;
-        text-align: center;
-        padding-top: 30%;
-    }
-    
-}
-@media screen and (max-width: 700px){
-    .imagenPortada{
-        width: 10rem;
-    }
-}
-@media screen and (max-width: 700px){
-    .cambio{
-        display: flex;
-        flex-direction: row;       
-        padding-bottom: 2%;
-    }
-}
-.compra{
-    width: 32px;
-    height: 22px;
-}
-.btn:hover {
-    background: rgb(162, 162, 206);
-    
-}    
+/*# sourceMappingURL=style.css.map */

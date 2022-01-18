@@ -1,0 +1,172 @@
+.tamanoCarro{
+    width: 23px;
+    height: 23px;
+}
+.slider{
+    width: 95%;
+    margin: 0% 0% 0% 3%;
+    overflow: hidden;
+    & ul{
+        display: flex;
+    padding: 0%;
+    width: 300%;
+    list-style: none;
+    animation: cambio 10s infinite alternate;    
+    li{
+        width: 100%;
+        list-style: none;
+        }
+        img{
+            width: 60%;
+        }
+    }
+}
+
+@keyframes cambio{
+    0% {margin-left: 0;}
+    10% {margin-left: 0;}
+
+    11% {margin-left: -100%;}
+    21% {margin-left: -100%;}
+
+    22% {margin-left: -100%;}
+    32% {margin-left: -100%;}
+}
+.bordeMes{
+    padding: 3%;
+    color: white;
+    text-align: center;
+    background-image: radial-gradient( rgb(45, 47, 49), white, rgb(82, 83, 83));
+    font-size: 30px;
+}
+div{
+    h6{
+    margin: 1%;
+    padding: 1%;
+    background-color: rgb(175, 170, 165);
+    text-align: center;
+    border-style: groove;
+    }
+}
+
+article{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    img{
+        width: 270px;
+        height: 280px;
+        position: relative;
+        margin: auto;
+        padding-bottom: 2%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+        img{
+            width: 330px;
+            height: 280px;
+            position: relative;
+            margin: auto;
+            padding-bottom: 2%;
+        }
+    }    
+}
+
+@media screen and (max-width: 800px){
+    .imagenMobile{
+        width: 100%;
+        
+    }    
+}
+@media screen and (min-width: 800px){
+    .imagenMobile{
+        position: relative;
+        padding-top: 30%;        
+    }    
+}
+section{
+    &.reciclarTitulo{
+        p{
+            padding-top: 2%;
+            text-align: justify;
+            margin-right: 2%;
+            margin-left: 1%;
+            }
+    }
+}
+
+.gridReciclar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: whitesmoke;
+    gap: 30px;
+    margin: 1% 1%;
+}
+div{
+    div{
+        h4{
+            text-align: center;
+            background-color: tan;
+        }
+    }
+}
+section{
+    &.GcEstilo{
+        div{
+            img{
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            a{
+                position: absolute;
+                width: 7%;
+                left: 80%;
+                height: 19%;
+            }
+        }
+    }
+}
+section{
+    div{
+        &.flexRegalosGC{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-bottom: 5%;
+            padding-top: 15%;
+            width: 100%;
+            
+        }
+        ul{
+           &.imagenGiftCard{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 27%;
+                height: auto;
+                list-style: none;
+            }
+        }
+    }
+}
+.comprarGC{
+    border-style: double;
+    border-style: outset;
+    width: 23%;
+    margin-left: 40%;
+    text-align: center;
+}
+
