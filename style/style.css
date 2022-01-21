@@ -309,7 +309,8 @@ section div ul.imagenGiftCard {
 }
 
 .detalleEmpresa {
-  background-color: #defdb5;
+  background-color: #e0f6c4;
+  color: crimson;
 }
 
 /* EXTEND */
@@ -318,12 +319,12 @@ section div ul.imagenGiftCard {
   margin-top: 4%;
   color: white;
   text-align: center;
-  background-color: #726e6e;
+  background-color: #fdafaf;
   font-size: 30px;
 }
 
 .bordeMes-cambio {
-  background-color: #e8f3d2;
+  background-color: #8f8e90;
   font-family: sans-serif;
   color: black;
 }

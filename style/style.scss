@@ -222,7 +222,8 @@ $colores:(
     background: map-get($colores, fondo);
 }
 .detalleEmpresa{
-    background-color: rgb(222, 253, 181);
+    background-color: rgb(224, 246, 196);
+    color: crimson;
 }
 
 /* EXTEND */
@@ -231,12 +232,12 @@ $colores:(
     margin-top: 4%;
     color: white;
     text-align: center;
-    background-color: rgb(114, 110, 110);
+    background-color: rgb(253, 175, 175);
     font-size: 30px;
 }
 .bordeMes-cambio{
     @extend .bordeMes;
-    background-color: rgb(232, 243, 210);
+    background-color: rgb(143, 142, 144);
     font-family: sans-serif;
     color: black;
 }
