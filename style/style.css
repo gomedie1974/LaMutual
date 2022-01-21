@@ -254,4 +254,21 @@ section div ul.imagenGiftCard {
   margin-top: 2%;
   margin-left: 30%;
 }
+
+.grid-datos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  gap: 15px;
+  margin: 3%;
+  text-align: center;
+}
+
+@media screen and (min-width: 501px) {
+  .grid-datos {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 /*# sourceMappingURL=style.css.map */
