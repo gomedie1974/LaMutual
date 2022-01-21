@@ -24,7 +24,7 @@
   display: -ms-flexbox;
   display: flex;
   padding: 0%;
-  width: 300%;
+  width: 150%;
   list-style: none;
   -webkit-animation: cambio 5s infinite alternate;
           animation: cambio 5s infinite alternate;
@@ -36,8 +36,8 @@
 }
 
 .slider ul img {
-  width: 500px;
-  height: 510px;
+  width: 480px;
+  height: 450px;
 }
 
 @-webkit-keyframes cambio {
