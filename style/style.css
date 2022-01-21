@@ -1,3 +1,15 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wp {
+  position: fixed;
+  bottom: 80px;
+  right: 90px;
+  width: 70px;
+}
+
 .carousel-item {
   width: 70%;
   height: 30%;
@@ -34,7 +46,7 @@
     list-style: none;
   }
   .slider ul li img {
-    width: 180px;
+    width: auto;
     height: 150px;
   }
   @-webkit-keyframes cambio {
@@ -92,8 +104,8 @@
   padding: 0%;
   width: 150%;
   list-style: none;
-  -webkit-animation: cambio 5s infinite alternate;
-          animation: cambio 5s infinite alternate;
+  -webkit-animation: cambio 10s infinite alternate;
+          animation: cambio 10s infinite alternate;
 }
 
 .slider ul li {
@@ -102,8 +114,8 @@
 }
 
 .slider ul img {
-  width: 450px;
-  height: 450px;
+  width: auto;
+  height: 350px;
 }
 
 @-webkit-keyframes cambio {
@@ -120,10 +132,10 @@
     margin-left: -100%;
   }
   22% {
-    margin-left: -100%;
+    margin-left: -200%;
   }
   32% {
-    margin-left: -100%;
+    margin-left: -200%;
   }
 }
 
@@ -141,10 +153,10 @@
     margin-left: -100%;
   }
   22% {
-    margin-left: -100%;
+    margin-left: -200%;
   }
   32% {
-    margin-left: -100%;
+    margin-left: -200%;
   }
 }
 
@@ -155,6 +167,7 @@ div h6 {
   background-color: #afaaa5;
   text-align: center;
   border-style: groove;
+  margin-top: 3%;
 }
 
 article {
@@ -295,6 +308,10 @@ section div ul.imagenGiftCard {
   background: #e5e5f1;
 }
 
+.detalleEmpresa {
+  background-color: #fbc5fb;
+}
+
 /* EXTEND */
 .bordeMes, .bordeMes-cambio {
   padding: 3%;
@@ -314,11 +331,9 @@ section div ul.imagenGiftCard {
 /* MIXIN */
 .boton--cambio {
   display: inline-block;
-  padding: 3px;
   border: 1px solid black;
-  background-color: #8e94e7;
-  margin-top: 2%;
-  margin-left: 30%;
+  background-color: #dedff0;
+  color: black;
 }
 
 .grid-datos {

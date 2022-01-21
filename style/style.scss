@@ -1,4 +1,13 @@
+* {
+    box-sizing: border-box;
+}
 
+.wp{
+    position: fixed;
+    bottom: 80px;
+    right: 90px;
+    width: 70px;
+}
 .carousel-item{
    width: 70%;
    height: 30%;
@@ -26,7 +35,7 @@
             width: 100%;
             list-style: none;
             img{
-                width: 180px;
+                width: auto;
                 height: 150px;
             }
             }
@@ -55,14 +64,14 @@
     padding: 0%;
     width: 150%;
     list-style: none;
-    animation: cambio 5s infinite alternate;    
+    animation: cambio 10s infinite alternate;    
     li{
         width: 100%;
         list-style: none;
         }
         img{
-            width: 450px;
-            height: 450px;
+            width: auto;
+            height: 350px;
         }
     }
 }
@@ -74,8 +83,8 @@
     11% {margin-left: -100%;}
     21% {margin-left: -100%;}
 
-    22% {margin-left: -100%;}
-    32% {margin-left: -100%;}
+    22% {margin-left: -200%;}
+    32% {margin-left: -200%;}
 }
 
 div{
@@ -86,6 +95,7 @@ div{
     background-color: rgb(175, 170, 165);
     text-align: center;
     border-style: groove;
+    margin-top: 3%;
     }
 }
 
@@ -211,6 +221,10 @@ $colores:(
 .colores-footer{
     background: map-get($colores, fondo);
 }
+.detalleEmpresa{
+    background-color: rgb(251, 197, 251);
+}
+
 /* EXTEND */
 .bordeMes{
     padding: 3%;
@@ -229,14 +243,12 @@ $colores:(
 /* MIXIN */
 @mixin boton {
     display: inline-block;
-    padding: 3px;
     border: 1px solid black;   
 }
 .boton--cambio{
     @include boton;
-    background-color: #8e94e7;
-    margin-top: 2%;
-    margin-left: 30%;
+    background-color: #dedff0;
+    color: black;
 }
 .grid-datos{
     display: grid;
@@ -250,5 +262,4 @@ $colores:(
         grid-template-columns: 1fr 1fr 1fr;
     }    
 }
-
 
