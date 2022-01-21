@@ -1,7 +1,4 @@
-.tamanoCarro{
-    width: 23px;
-    height: 23px;
-}
+
 .carousel-item{
    width: 70%;
    height: 30%;
@@ -19,7 +16,7 @@
     margin: 0% 0% 0% 3%;
     overflow: hidden;
     & ul{
-        display: flex;
+    display: flex;
     padding: 0%;
     width: 300%;
     list-style: none;
@@ -29,7 +26,8 @@
         list-style: none;
         }
         img{
-            width: 60%;
+            width: 450px;
+            height: 450px;
         }
     }
 }
@@ -44,14 +42,7 @@
     22% {margin-left: -100%;}
     32% {margin-left: -100%;}
 }
-.bordeMes{
-    padding: 3%;
-    margin-top: 4%;
-    color: white;
-    text-align: center;
-    background-color: rgb(114, 110, 110);
-    font-size: 30px;
-}
+
 div{
     h6{
     padding: 1%;
@@ -118,14 +109,6 @@ section{
     }
 }
 
-.gridReciclar{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: whitesmoke;
-    gap: 30px;
-    margin: 1% 1%;
-}
 div{
     div{
         h4{
@@ -182,4 +165,41 @@ section{
     width: 23%;
     margin-left: 40%;
     text-align: center;
+}
+/* map-get */
+$colores:(
+    principal: red,
+    base: rgb(169, 241, 169),
+    fondo: rgb(229, 229, 241),
+);
+
+.colores-footer{
+    background: map-get($colores, fondo);
+}
+/* EXTEND */
+.bordeMes{
+    padding: 3%;
+    margin-top: 4%;
+    color: white;
+    text-align: center;
+    background-color: rgb(114, 110, 110);
+    font-size: 30px;
+}
+.bordeMes-cambio{
+    @extend .bordeMes;
+    background-color: rgb(232, 243, 210);
+    font-family: sans-serif;
+    color: black;
+}
+/* MIXIN */
+@mixin boton {
+    display: inline-block;
+    padding: 3px;
+    border: 1px solid black;   
+}
+.boton--cambio{
+    @include boton;
+    background-color: #8e94e7;
+    margin-top: 2%;
+    margin-left: 30%;
 }
