@@ -302,7 +302,9 @@ section div ul.imagenGiftCard {
 
 .detalleEmpresa {
   background-color: #e0f6c4;
-  color: crimson;
+  color: #414141;
+  padding: 2%;
+  text-align: left;
 }
 
 /* EXTEND */
