@@ -309,12 +309,12 @@ section div ul.imagenGiftCard {
 
 /* EXTEND */
 .bordeMes, .bordeMes-cambio {
-  padding: 3%;
+  padding: 2%;
   margin-top: 4%;
   color: white;
   text-align: center;
   background-color: #fdafaf;
-  font-size: 30px;
+  font-size: 27px;
 }
 
 .bordeMes-cambio {
@@ -373,5 +373,32 @@ div h3 {
 .imgPromo {
   width: 110%;
   margin-left: -3%;
+}
+
+.banerPpal {
+  width: 100%;
+  padding-top: 4%;
+  padding-bottom: 1%;
+}
+
+.bodegas {
+  width: 128px;
+}
+
+.grid-bod {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  gap: 15px;
+  margin: 3%;
+  text-align: center;
+}
+
+@media screen and (min-width: 501px) {
+  .grid-bod {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 /*# sourceMappingURL=style.css.map */
