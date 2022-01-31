@@ -42,6 +42,7 @@
     
 </head>
 
+<<<<<<< HEAD
 <body>
     <header class="p-3 bg-dark text-white">
         <div class="container">
@@ -328,3 +329,34 @@
     
 </body>
 </html>
+=======
+<body class="fondo">
+  <header class="bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">        
+        <img src="./image/mitos_boutique_de_vinos.jpg" class="bi me-2" width="130" height="92" role="img" ></img>
+        <h1>Boutique de Vinos</h1>
+
+  </header>
+
+    
+    <section class="form-login">
+        <h6>Ingrese Usuario y Contraseña</h6>
+        <p>Usuario admin / pass 1234</p>
+    <script>
+        function usrpas(){
+        if (document.form1.txt.value=="admin" && document.form1.num.value=="1234"){window.location="pages/inicio.html"}
+        else {alert("Error en Usuario o Contraseña. Intenta de nuevo.")}
+        }
+        document.oncontextmenu=new Function("return false");
+        </script>
+        <form name="form1">
+        <input class="control" type="text" name="txt" placeholder="Usuario"> 
+        <input class="control" type="text" name="num" placeholder="Contraseña">  
+        <input class="boton" type="button" value="Ingresar" onclick="usrpas()">
+        <p><a href="./pages/formulario_alta.html">Acceda aqui para darse de alta</a></p>
+        </form>
+    
+  </body>
+  </html>
+>>>>>>> e652b6e799513235eac64851e62e5f3879a6a9b1
