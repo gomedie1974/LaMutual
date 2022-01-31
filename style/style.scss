@@ -15,73 +15,6 @@
    margin-left: 2%;
 }
 
-@media screen and (max-width: 800px){
-    .slider{
-        width: 95%;
-        margin: 0% 0% 0% 3%;
-        overflow: hidden;
-        & ul{
-        display: flex;
-        padding: 0%;
-        width: 150%;
-        list-style: none;
-        animation: cambio 5s infinite alternate;    
-        li{
-            width: 100%;
-            list-style: none;
-            img{
-                width: auto;
-                height: 150px;
-            }
-            }
-        }
-    }
-            
-        @keyframes cambio{
-            0% {margin-left: 0;}
-            10% {margin-left: 0;}
-
-            11% {margin-left: -100%;}
-            21% {margin-left: -100%;}
-
-            22% {margin-left: -100%;}
-            32% {margin-left: -100%;}
-        }
-                    
-}
-
-.slider{
-    width: 95%;
-    margin: 0% 0% 0% 3%;
-    overflow: hidden;
-    & ul{
-    display: flex;
-    padding: 0%;
-    width: 150%;
-    list-style: none;
-    animation: cambio 10s infinite alternate;    
-    li{
-        width: 100%;
-        list-style: none;
-        }
-        img{
-            width: auto;
-            height: 350px;
-        }
-    }
-}
-
-@keyframes cambio{
-    0% {margin-left: 0;}
-    10% {margin-left: 0;}
-
-    11% {margin-left: -100%;}
-    21% {margin-left: -100%;}
-
-    22% {margin-left: -200%;}
-    32% {margin-left: -200%;}
-}
-
 div{
     h6{
     padding: 1%;
@@ -270,7 +203,7 @@ $colores:(
 }
 @media screen and (min-width: 501px){
     .grid-sucu{
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
 
     }    
 }
@@ -304,4 +237,22 @@ div{
         grid-template-columns: 1fr 1fr 1fr ;
 
     }    
+}
+.grid-datosinfo{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 15px;
+    margin: 3%;
+    text-align: center;
+}
+@media screen and (min-width: 501px){
+    .grid-datosinfo{
+        grid-template-columns: 1fr 1fr;
+    }    
+}
+.logoTamano{
+    padding-top: 4%;
+    padding-bottom: 1%;
+    width: 250px;
+    height: 150px;
 }
