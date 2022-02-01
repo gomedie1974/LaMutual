@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -290,5 +291,41 @@ div h3 {
   padding-bottom: 1%;
   width: 250px;
   height: 150px;
+}
+
+/* Ocultar botón radio */
+input[id^="spoiler"] {
+  display: none;
+}
+
+/* Estilo botón clicable */
+input[id^="spoiler"] + label {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  padding: 5px 20px;
+  background: #eeb9da;
+  cursor: pointer;
+}
+
+/* Estilo botón cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label {
+  color: #333;
+  background: #ccc;
+}
+
+/* Estilo caja SPOILER (inicialmente oculto) */
+input[id^="spoiler"] ~ .spoiler {
+  width: 90%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 10px auto 0;
+}
+
+/* Estilo caja SPOILER cuando su INPUT está seleccionado */
+input[id^="spoiler"]:checked + label + .spoiler {
+  height: auto;
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
