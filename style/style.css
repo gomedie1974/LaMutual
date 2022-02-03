@@ -4,13 +4,6 @@
           box-sizing: border-box;
 }
 
-.wp {
-  position: fixed;
-  bottom: 80px;
-  right: 90px;
-  width: 70px;
-}
-
 .carousel-item {
   width: 95%;
   height: 30%;
@@ -237,8 +230,14 @@ div h3 {
 }
 
 .imgPromo {
-  width: 110%;
-  margin-left: -3%;
+  width: 900px;
+  margin-left: 3%;
+}
+
+.imgJD {
+  width: 900px;
+  height: 370px;
+  margin-left: 3%;
 }
 
 .banerPpal {
