@@ -232,12 +232,15 @@ div h3 {
 .imgPromo {
   width: 900px;
   margin-left: 3%;
+  height: 370px;
 }
 
-.imgJD {
-  width: 900px;
-  height: 370px;
-  margin-left: 3%;
+@media screen and (max-width: 700px) {
+  .imgPromo {
+    width: 300px;
+    margin-left: 3%;
+    height: 170px;
+  }
 }
 
 .banerPpal {
