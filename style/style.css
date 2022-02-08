@@ -245,7 +245,7 @@ div h3 {
 
 .banerPpal {
   width: 100%;
-  padding-top: 4%;
+  padding-top: 1%;
   padding-bottom: 1%;
 }
 
@@ -363,5 +363,13 @@ input[id^="spoiler"] ~ .spoiler {
 input[id^="spoiler"]:checked + label + .spoiler {
   height: auto;
   opacity: 1;
+}
+
+.mutualN {
+  color: orange;
+}
+
+.mutualV {
+  color: green;
 }
 /*# sourceMappingURL=style.css.map */
