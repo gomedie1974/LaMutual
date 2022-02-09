@@ -235,17 +235,17 @@ div h3 {
   height: 370px;
 }
 
-@media screen and (max-width: 700px) {
-  .imgPromo {
-    width: 300px;
-    margin-left: 3%;
-    height: 170px;
-  }
-}
-
+/* 
+@media screen and (max-width: 700px){
+    .imgPromo{
+        width: 300px;
+        margin-left: 3%;
+        height: 170px;
+    } 
+} */
 @media screen and (min-width: 1000px) {
   .imgPromo {
-    width: 950px;
+    width: 1250px;
     margin-left: 3%;
     height: 370px;
   }
