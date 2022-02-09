@@ -206,6 +206,11 @@ div{
         font-family: sans-serif;
     }
 }
+.imgPromo{
+    width: 300px;
+    margin-left: 3%;
+    height: 170px;
+}
 @media screen and (min-width: 700px){
 .imgPromo{
     width: 900px;
@@ -213,14 +218,7 @@ div{
     height: 370px;
     }
 }
-
-@media screen and (min-width: 100px){
-    .imgPromo{
-        width: 300px;
-        margin-left: 3%;
-        height: 170px;
-    } 
-}
+ 
 @media screen and (min-width: 1001px){
     .imgPromo{
         width: 1250px;

@@ -229,19 +229,17 @@ div h3 {
   font-family: sans-serif;
 }
 
+.imgPromo {
+  width: 300px;
+  margin-left: 3%;
+  height: 170px;
+}
+
 @media screen and (min-width: 700px) {
   .imgPromo {
     width: 900px;
     margin-left: 3%;
     height: 370px;
-  }
-}
-
-@media screen and (min-width: 100px) {
-  .imgPromo {
-    width: 300px;
-    margin-left: 3%;
-    height: 170px;
   }
 }
 
