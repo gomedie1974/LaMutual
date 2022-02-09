@@ -206,11 +206,14 @@ div{
         font-family: sans-serif;
     }
 }
+@media screen and (max-width: 1000px){
 .imgPromo{
     width: 900px;
     margin-left: 3%;
     height: 370px;
-}/* 
+    }
+}
+/* 
 @media screen and (max-width: 700px){
     .imgPromo{
         width: 300px;
