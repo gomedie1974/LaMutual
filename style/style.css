@@ -248,8 +248,8 @@ div h3 {
 @media screen and (min-width: 1000px) {
   .imgPromo {
     width: 1250px;
-    margin-left: 3%;
-    height: 370px;
+    margin-left: -3%;
+    height: 440px;
   }
 }
 
