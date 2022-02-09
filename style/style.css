@@ -255,6 +255,12 @@ div h3 {
   font-size: 140%;
 }
 
+@media screen and (min-width: 1001px) {
+  .tamanoMision {
+    font-size: 190%;
+  }
+}
+
 .banerPpal {
   width: 100%;
   height: 100px;
