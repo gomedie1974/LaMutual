@@ -222,7 +222,7 @@ div{
 @media screen and (min-width: 1001px){
     .imgPromo{
         width: 1250px;
-        margin-left: 3%;
+        margin-left: -3%;
         height: 440px;
     } 
 }
@@ -348,3 +348,18 @@ input[id^="spoiler"]{
     .mutualV{
         color: green;
     }
+
+.banerMargen{
+        padding-top: 50%;
+}
+
+@media screen and (min-width: 701px){    
+    .banerMargen{
+        padding-top: 15%;
+    }
+}    
+@media screen and (min-width: 1020px){    
+    .banerMargen{
+        padding-top: 10%;
+    }
+}    
