@@ -363,3 +363,13 @@ input[id^="spoiler"]{
         padding-top: 10%;
     }
 }   
+@media screen and (max-width: 700px){    
+    .logoPaginas{
+        padding-top: 20%;
+    }
+}   
+@media screen and (min-width: 701px){    
+    .logoPaginas{
+        padding-top: 5%;
+    }
+}   
