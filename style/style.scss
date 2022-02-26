@@ -211,6 +211,7 @@ div{
     margin-left: 3%;
     height: 170px;
 }
+
 @media screen and (min-width: 700px){
 .imgPromo{
     width: 900px;
@@ -218,11 +219,11 @@ div{
     height: 370px;
     }
 }
- 
+
 @media screen and (min-width: 1001px){
     .imgPromo{
         width: 1250px;
-        margin-left: 2%;
+        margin-left: -2%;
         height: 440px;
     } 
 }
