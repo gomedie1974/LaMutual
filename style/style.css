@@ -393,7 +393,7 @@ input[id^="spoiler"]:checked + label + .spoiler {
 }
 
 .banerMargen {
-  padding-top: 50%;
+  padding-top: 60%;
 }
 
 @media screen and (min-width: 701px) {
