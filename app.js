@@ -16,3 +16,12 @@ function mensajeR(){
       })    
 };
  */
+/* setTimeout(() => {Swal.fire({
+  title: 'BIENVENIDO!',
+  imageUrl: '../image/Logo Asociacion Mutual.jpg',
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: 'Custom image',
+})
+}, 500);
+ */
