@@ -41,7 +41,7 @@ function infoAperol() {
       imageHeight: 250,
       imageAlt: 'Custom image',
       title: `<strong><u>Aperol</u></strong>`,  
-      text: 'Campari ha sido siempre símbolo de intriga y placer en el mundo de los aperitivos. Su intenso aroma y su sabor inspirador lo convierten una experiencia única y cautivadora. Éstos son los valores que han hecho de Campari una marca famosa en el mundo como ícono de estilo y excelencia italianos..'
+      text: 'Aperol es una bebida alcohólica de origen italiano, entre sus ingredientes se encuentran la naranja amarga, el ruibarbo, la genciana y la quina. Aunque sabe y huele muy similar al Campari, Aperol tiene una graduación alcohólica de 11%, menos de la mitad que Campari. Sin embargo, es más suave y menos amargo, mientras que el Campari es más oscuro de color.'
     })   
 }
 
