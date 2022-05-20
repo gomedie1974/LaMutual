@@ -77,3 +77,4 @@ function infoMonkey() {
       text: 'Licor de Crema, hecho de una mezcla de crema de leche fresca, whisky irlandés, vainilla, cacao puro y azúcar. Su graduación alcohólica es de 17%. Notas: Cremosidad y notas de vainilla y de cacao.'
     })   
 }
+

@@ -421,7 +421,8 @@ input[id^="spoiler"]:checked + label + .spoiler {
 }
 
 .nav li a:hover {
-  background-color: #434343;
+  background-color: blue;
   font-weight: bold;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */
