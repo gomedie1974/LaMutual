@@ -25,8 +25,8 @@ function infoJw() {
 
   function infoJd() {
     Swal.fire({
-        title: `<strong><u>Jack Daniel's</u></strong>`,  
-        text: 'Whiskey Jack Daniel’s es una reconocida marca de whiskey de origen estadounidense. Se trata de un whiskey Tennesse, y este tipo de destilado se diferencia en que su elaboración se filtra a través de carbon de madera de arce.'
+        title: `<strong><u>J. Walker Red Label</u></strong>`,  
+        text: 'Tiene un sabor acentuado y lleno de carácter que se mantiene incluso al ser mezclado. Johnnie Walker Red Label es, ahora, el whisky escocés más vendido en todo el mundo. Se destaca por su carácter e intensidad, por sus notas especiadas que estallan con sabores vibrantes y ahumados. Es una mezcla que combina whiskies ligeros de la costa este escocesa y whiskies ahumados y oscuros de la costa oeste, creando una extraordinaria profundidad de sabor. Johnnie Walker Red Label explota en el paladar con la frescura de la espuma de una ola, seguida por un estallido de especias aromáticas -canela y pimienta- cuya efervescencia se asienta en el centro de la lengua. Al paladar, se siente una dulzura frutal, como manzanas frescas o pera y notas de vainilla para después dar lugar a un final persistente y ahumado.'
       })   
   }
   
