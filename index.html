@@ -44,6 +44,35 @@
 
 <body>
     <header class="p-3 bg-secondary text-white fixed-top">
+      
+      <div style="float:right;">
+        <script type="text/javascript">
+        let  today = new Date();
+        let m = today.getMonth() + 1;
+        let mes = (m < 10) ? "0" + m : m;
+        document.write(today.getDate(),"/" +mes,"/"+today.getFullYear());
+        </script>
+      </div>    
+      
+      <script type="text/javascript">
+        function startTime(){
+        today=new Date();
+        h=today.getHours();
+        m=today.getMinutes();
+        s=today.getSeconds();
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById("reloj").innerHTML=h+":"+m+":"+s;
+        t=setTimeout("startTime()",500);}
+        function checkTime(i)
+        {if (i<10) {i="0" + i;}return i;}
+        window.onload=function(){startTime();}
+      </script>
+        <div id="reloj" style="font-family: ‘DS-Digital’; width: 150px;font-size:20px;color: white ; text-align: center ">
+        </div>
+      
+        
+                  
         <div class="container"> 
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-center">
             <h2>Asociación Mutual del personal de La Nación</h2>
@@ -66,9 +95,9 @@
               <div class="text-end">
                 <button id="botonBuscar" type="button" class="btn btn-outline-light me-2 ">Buscar</button>
               </div>
-              -->
-              <div id="ww_b40c7cdfd57d8" v='1.20' loc='auto' a='{"t":"ticker","lang":"es","ids":[],"cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_sot":"celsius","sl_ics":"one_a","font":"Arial"}'><a href="https://weatherwidget.org/es/" id="ww_b40c7cdfd57d8_u" target="_blank">Widget clima HTML</a> para el sitio web de Weatherwidget.org</div><script async src="https://srv1.weatherwidget.org/js/?id=ww_b40c7cdfd57d8"></script>        
-
+              -->  
+                
+                
 </header>
       <br>
       <div class="banerMargen"> <br>
