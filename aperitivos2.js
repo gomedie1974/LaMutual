@@ -43,3 +43,5 @@ function infoJw() {
         text: 'MG es una ginebra de corte clásico, elaborada artesanalmente a partir de productos 100% naturales (sin artificios, sin aditivos y sin potenciadores), donde el enebro es el ingrediente predominante. Una ginebra de tradición y experiencia, con más de 75 años de historia. La etiqueta refleja todo aquello que Gin MG es y quiere transmitir: herencia, calidad y tradición.'
       })   
   }
+
+
