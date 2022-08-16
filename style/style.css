@@ -425,4 +425,21 @@ input[id^="spoiler"]:checked + label + .spoiler {
   font-weight: bold;
   text-transform: uppercase;
 }
+
+.consejo {
+  text-align: center;
+  font-weight: bold;
+}
+
+.consejo1:hover {
+  color: orange;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.staff:hover {
+  color: orange;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 /*# sourceMappingURL=style.css.map */
