@@ -24,4 +24,17 @@ function infoLongvie() {
   })
   }
 
+  const boton16 = document.getElementById("infoFirst");
+  boton16.addEventListener("click", infoFirst);
+  
+  function infoFirst() {
+    Swal.fire({
+      
+      imageUrl: '../image/First.png',
+      imageWidth: 800,
+      imageHeight: 300,
+      imageAlt: 'Custom image',
+    })
+    }
+  
   
