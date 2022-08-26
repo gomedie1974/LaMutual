@@ -420,7 +420,7 @@ input[id^="spoiler"]:checked + label + .spoiler {
   }
 }
 
-.nav li a:hover {
+.inicio a:hover {
   background-color: blue;
   font-weight: bold;
   text-transform: uppercase;
@@ -441,5 +441,32 @@ input[id^="spoiler"]:checked + label + .spoiler {
   color: orange;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.beneficio a:hover {
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.autos {
+  text-align: justify;
+}
+
+.fotoAuto {
+  text-align: center;
+}
+
+.fondoLn {
+  background-color: #dfe4f9;
+}
+
+.fondoM {
+  background-color: #f1d197;
+}
+
+.volverLn {
+  text-align: right;
+  padding-right: 12%;
 }
 /*# sourceMappingURL=style.css.map */
