@@ -440,4 +440,17 @@ thead tr th {
 .table-responsive {
   height: 300px;
   overflow: scroll;
+}
+
+div ul span {
+  color: blue;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.tienda {
+  background-color: floralwhite;
+}
+
+.baner {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
