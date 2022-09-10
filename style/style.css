@@ -181,7 +181,7 @@ div h3 {
 }
 
 .imgPromo {
-  width: 300px;
+  width: 100%;
   margin-left: 3%;
   height: 170px;
 }
@@ -419,7 +419,7 @@ input[id^=spoiler]:checked + label + .spoiler {
 
 @media screen and (min-width: 501px) {
   .grid-inicio {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 thead tr {
@@ -453,4 +453,9 @@ div ul span {
 
 .baner {
   width: 100%;
+}
+
+.irabeneficiosmutual {
+  text-align: right;
+  padding-right: 12%;
 }/*# sourceMappingURL=style.css.map */
