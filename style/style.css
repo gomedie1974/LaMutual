@@ -458,4 +458,10 @@ div ul span {
 .irabeneficiosmutual {
   text-align: right;
   padding-right: 12%;
+}
+
+@media screen and (max-width: 801px) {
+  .baner {
+    padding-top: 8%;
+  }
 }/*# sourceMappingURL=style.css.map */
