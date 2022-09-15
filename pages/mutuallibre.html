@@ -13,14 +13,18 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.6/css/dataTables.fixedHeader.min.css">        
         
+
             <!-- BOOTSTRAP -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- pone el logo en la pestana -->
         <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
         <title>CSS</title>
         <link rel="stylesheet" href="../style/style.css">
-        
+    
     </head>
     
         
@@ -61,7 +65,8 @@
 
       <div >   
       <div>
-        <ul class="fa-ul mb-0">
+        <ul class="fa-ul mb-0"><br>
+          <p class="ml"><b> Sitio donde los empleados y socios de La Mutual pueden vender y/o comprar tanto productos nuevos como usados.</b></p>
           <li class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contentss-collapse" aria-controls="contentss-collapse">
               <span class="fa-li"><i class="fas fa-hand-point-right text-secondary"></i></span>
               <span> CÓMO PUBLICAR</span>
@@ -149,104 +154,136 @@
         </ul>
       </div>
     </div>
-      
+      <br>
       <h4 class="text-center">Productos disponibles</h4>
         <br>
 
-        <div class="table-responsive table-wrapper m-2 ">
-          <table class="table table-striped table-sm ">
+<!--         <div class="table-responsive table-wrapper m-2"> -->
+          <table id="example" class="table is-striped " style="width:100%">
             <thead>
-              <tr >
-                <th scope="col">Código</th>
-                <th scope="col">Producto</th>
-                <th scope="col">Marca</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Valor</th>
-                <th scope="col">Imagen</th>
-                <th scope="col">Obs</th>
+              <tr>
+                <th >Producto</th>
+                <th >Marca</th>
+                <th >Descripción</th>
+                <th >Valor</th>
+                <th >Imagen</th>
+                <th >Estado</th>
               </tr>
             </thead>
-            <tbody>
+            
+            <tbody>  
               <tr>
-                <td>K2</td>
+                <!-- GAVIÑA SOFIA -->
+                <td>Bici Plegable</td>
+                <td>Folding Aurorita</td>
+                <td>GEO FRAME - SMART bk - 3 V Shimano NEXUS <br>
+                  <span class="text-danger"><b> Se puede abonar en 2 cuotas</b></span></td>
+                <td>$60.000</td>
+                <td><a href="../image/mutuallibre/BICI.pdf" target="_blank" >Foto</a></td>
+                <td>Usado</td>
+              </tr>
+              <tr>
+                <!-- MONTES DE OCA ANGEL -->
+                <td>Bolsa de palos</td>
+                <td>Titleist</td>
+                <td>Premiun Stand Bag <br>
+                  Bolsa de palos con tripode <br></td>
+                <td>$99.000</td>
+                <td><a href="../image/mutuallibre/bolsapalos.pdf" target="_blank">Foto</a></td>
+                <td>Usado</td>
+              </tr>
+              <tr>
+                <!-- LUZ PIÑERO -->
+                <td>Pileta Lavadero</td>
+                <td>Ferrum</td>
+                <td>Pileta Ferrum Plk Loza Con Fregadero P/colgar. Modelo PLK <br>
+                  Altura 27 cm - Ancho 54 cm - Profundidad 37 cm <br>
+                  <span class="text-danger"><b> Se puede abonar en 2 cuotas</b></span>
+                    </td>
+                <td>$15.000</td>
+                <td><a href="../image/mutuallibre/piletapinero.jpg" target="_blank">Foto</a></td>
+                <td>Usado</td>
+              </tr>
+              <tr>
+                <!-- PODESTA GABRIEL -->
+                <td>Bici niño</td>
+                <td>B Twin Decathlon</td>
+                <td>Bicicleta niño 6 a 8 años rodado 16 sin cambios. <br> Esta como nueva con nada de uso. <br> Se vende con casquito, protector y luces. <br>
+                  <span class="text-danger"><b> Se puede abonar en 2 cuotas</b></span>
+                    </td>
+                <td>$30.000</td>
+                <td><a href="../image/mutuallibre/bicipodesta.pdf" target="_blank">Foto</a></td>
+                <td>Usado</td>
+              </tr>
+              <tr>
                 <td>Juego Play</td>
                 <td>PS3</td>
                 <td>KILLZONE 2</td>
-                <td>$ 3200</td>
-                <td><a href="../image/mutuallibre/killzone.jpg" target="_blank" rel="noopener noreferrer">Foto</a></td>
+                <td>$3.200</td>
+                <td><a href="../image/mutuallibre/killzone.jpg" target="_blank">Foto</a></td>
                 <td>Usado</td>
               </tr>
               <tr>
-                <td>BA1</td>
                 <td>Juego Play</td>
                 <td>PS4</td>
                 <td>BATTLEFRONT</td>
-                <td>$ 2350</td>
-                <td><a href="../image/mutuallibre/battlefornt.jpg" target="_blank" rel="noopener noreferrer">Foto</a></td>
+                <td>$2.350</td>
+                <td><a href="../image/mutuallibre/battlefornt.jpg" target="_blank" >Foto</a></td>
                 <td>Usado</td>
               </tr>
               <tr>
-                
-                <td>TD</td>
                 <td>Juego Play</td>
                 <td>PS4</td>
                 <td>THE DIVISION</td>
-                <td>$ 2600</td>
-                <td><a href="../image/mutuallibre/division.jpg" target="_blank" rel="noopener noreferrer">Foto</a></td>
+                <td>$2.600</td>
+                <td><a href="../image/mutuallibre/division.jpg" target="_blank" >Foto</a></td>
                 <td>Usado</td>
               </tr>
               <tr>
-                <td>SE3</td>
                 <td>Juego Play</td>
                 <td>PS4</td>
                 <td>SNIPER ELITE III</td>
-                <td>$ 3900</td>
-                <td><a href="../image/mutuallibre/sniper.jpg" target="_blank" rel="noopener noreferrer">Foto</a></td>
+                <td>$3.900</td>
+                <td><a href="../image/mutuallibre/sniper.jpg" target="_blank" >Foto</a></td>
                 <td>Usado</td>
               </tr>
               <tr>
-                
-                <td>D12</td>
                 <td>Juego Play</td>
                 <td>PS4</td>
                 <td>DESTINY</td>
-                <td>$ 2300</td>
-                <td><a href="../image/mutuallibre/destiny.jpg" target="_blank" rel="noopener noreferrer">Foto</a></td>
+                <td>$2.300</td>
+                <td><a href="../image/mutuallibre/destiny.jpg" target="_blank" >Foto</a></td>
                 <td>Usado</td>
               </tr>
               <tr>
-                <td>BF4</td>
                 <td>Juego Play</td>
                 <td>PS4</td>
                 <td>BATTLEFIELD 4</td>
-                <td>$ 3900</td>
-                <td><a href="../image/mutuallibre/battlefild.jpg" target="_blank" rel="noopener noreferrer">Foto</a></td>
+                <td>$3.900</td>
+                <td><a href="../image/mutuallibre/battlefild.jpg" target="_blank">Foto</a></td>
                 <td>Usado</td>
               </tr>
               <tr>
-                <td>WD</td>
                 <td>Juego Play</td>
                 <td>PS4</td>
                 <td>WATCH DOGS</td>
-                <td>$ 1900</td>
-                <td><a href="../image/mutuallibre/dogs.jpg" target="_blank" rel="noopener noreferrer">Foto</a></td>
+                <td>$1.900</td>
+                <td><a href="../image/mutuallibre/dogs.jpg" target="_blank">Foto</a></td>
                 <td>Usado</td>
               </tr>
               <tr>
-                <td>ASC</td>
                 <td>Juego Play</td>
                 <td>PS4</td>
                 <td>ASSASSIN CREED IV </td>
-                <td>$ 2200</td>
-                <td><a href="../image/mutuallibre/assasin.jpg" target="_blank" rel="noopener noreferrer">Foto</a></td>
+                <td>$2.200</td>
+                <td><a href="../image/mutuallibre/assasin.jpg" target="_blank">Foto</a></td>
                 <td>Usado</td>
-              </tr>
-              
+              </tr>       
             </tbody>
           </table>
-  
-
-      
+        <!-- </div>   -->
+     
+    <br><br>
 </section>
 
 <div class="m-3 colores-footer" >
@@ -267,10 +304,17 @@
 
 
     <!-- JAVA -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>  
+
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> 
+    <script src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script> 
+    <script src="../tablaMutualLibre.js"></script>   
+              
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-     
+  
+  
+
 </body>
 </html>
