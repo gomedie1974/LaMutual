@@ -15,13 +15,12 @@
     if (response.ok){
       this.reset()
       Swal.fire({
-        position: 'top-center ',
+        title: '<strong>Mensaje enviado</strong>',
         icon: 'success',
-        title: 'Mensaje enviado',
-        showConfirmButton: false,
-        timer: 2000
+        confirmButtonText:
+          '<a href="//lnmutual.com.ar"><i class="text-white">Volver</i></a> ',
       })
-            
-    }
+
+   }
   }
   
