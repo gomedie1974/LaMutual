@@ -462,6 +462,7 @@ thead tr  {
   .baner{
     width: 100%;
   }
+
   .irabeneficiosmutual{
     text-align: right;
     padding-right: 12%;
@@ -471,7 +472,6 @@ thead tr  {
   @media screen and (max-width: 801px){
     .baner{
         padding-top: 8%;
-        
     }    
 } 
 
@@ -479,4 +479,40 @@ thead tr  {
     font-size: large;
     color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.tabmutu{
+    overflow-x: scroll;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.estiloML{
+    text-align: center;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media screen and (max-width: 801px){
+    .banerMl{
+        width: 20rem;
+        height: 10rem;
+    }    
+} 
+
+@media screen {
+    .dropdown:hover .dropdown-menu,
+    .btn-group:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu {
+        margin: auto;
+    }
+    .dropdown-toggle {
+        margin: auto;
+    }
+    .navbar .dropdown-toggle,
+    .nav-tabs .dropdown-toggle {
+        margin: auto;
+    }
+}
+.textoML{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
