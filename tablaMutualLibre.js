@@ -128,15 +128,15 @@ let idiomaEsp = {
 $(document).ready(function(){
     let table = $('#example').DataTable({
         "language": idiomaEsp       
-/*        orderCellsTop: true,
-       fixedHeader: false  */
+         /* orderCellsTop: true,
+        fixedHeader: false  */
     });
 
     //una fila en el head de la tabla y lo clono para cada columna
-     /* $('#example thead tr').clone(true).appendTo( '#example thead' ); */
+    //   $('#example thead tr').clone(true).appendTo( '#example thead' ); 
     $('#example thead tr:eq(1) th').each( function (i) {
-        /* let title = $(this).text(); //es el nombre de la columna
-        $(this).html( '<input type="text" placeholder="Buscar'+title+'" />' ); */
+         /* let title = $(this).text(); //es el nombre de la columna
+        $(this).html( '<input type="text" placeholder="Buscar'+title+'" />' );  */
  
         $( 'input', this ).on( 'keyup change', function () {
             if ( table.column(i).search() !== this.value ) {
@@ -151,3 +151,4 @@ $(document).ready(function(){
 
 
  
+
