@@ -228,13 +228,13 @@ div{
     } 
 }
 .tamanoMision{
-    font-size: 140%;
-}
+    font-family: 'Times New Roman', Times, serif;
+}/* 
 @media screen and (min-width: 1001px){   
     .tamanoMision{
         font-size: 190%;
     } 
-}
+} */
 .banerPpal{
     width: 100%;
     height: 100px;
@@ -409,7 +409,7 @@ input[id^="spoiler"]{
     background-color: rgb(223, 228, 249);
 }
 .fondoM{
-    background-color: rgb(241, 209, 151);
+    background-color: rgb(246, 245, 226);
 }
 .volverLn{
     text-align: right;
