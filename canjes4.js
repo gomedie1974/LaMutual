@@ -12,3 +12,16 @@ function botonMac() {
     })   
 }
 
+const btnrum = document.getElementById("botonRum");
+btnrum.addEventListener("click", botonRum);
+
+
+function botonRum() {
+  Swal.fire({
+      imageUrl: '../image/ruminfo.png', 
+      imageWidth: 600,
+      imageHeight: 320,
+      imageAlt: 'Custom image',
+    })   
+}
+

@@ -428,7 +428,7 @@ input[id^="spoiler"]{
 }
 @media screen and (min-width: 501px){
     .grid-inicio{
-        grid-template-columns: 1fr 1fr 1fr /* 1fr */;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
         
     }    
 } 
