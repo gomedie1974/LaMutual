@@ -1,16 +1,22 @@
 //info productos
 const boton1 = document.getElementById("infoFernetB");
-const boton2 = document.getElementById("infoCampari");
-const boton3 = document.getElementById("infoAperol");
-const boton4 = document.getElementById("infoCynar");
-const boton5 = document.getElementById("infoBaileys");
-const boton6 = document.getElementById("infoMonkey");
 boton1.addEventListener("click", infoFernetB);
+const boton2 = document.getElementById("infoCampari");
 boton2.addEventListener("click", infoCampari);
+const boton3 = document.getElementById("infoAperol");
 boton3.addEventListener("click", infoAperol);
+const boton4 = document.getElementById("infoCynar");
 boton4.addEventListener("click", infoCynar);
-boton5.addEventListener("click", infoBaileys);
-boton6.addEventListener("click", infoMonkey);
+const botonM = document.getElementById("infoMonkey");
+botonM.addEventListener("click", infoMonkey);
+const botonMerle = document.getElementById("infoMerle");
+botonMerle.addEventListener("click", infoMerle);
+const botonJD = document.getElementById("infoJd");
+botonJD.addEventListener("click", infoJd);
+const botonGB = document.getElementById("infoGb");
+botonGB.addEventListener("click", infoGb);
+
+
 
 function infoFernetB() {
     Swal.fire({
@@ -48,33 +54,40 @@ function infoAperol() {
 function infoCynar() {
   Swal.fire({
     imageUrl: '../image/cynarsweet.jpg',
-      imageWidth: 400,
-      imageHeight: 250,
-      imageAlt: 'Custom image',
-      title: `<strong><u>Cynar</u></strong>`,  
-      text: 'El Cynar es un aperitivo italiano creado en 1952 por la empresa italiana Pezziol y elaborado con alcachofas y 13 hierbas distintas. Su nombre hace referencia a Cynara scolymus, la alcachofa. Su color es marrón con reflejos rojizos, tiene un aroma intenso y su sabor es amargo, aunque con un final dulzón.'
+    imageWidth: 400,
+    imageHeight: 250,
+    imageAlt: 'Custom image',
+    title: `<strong><u>Cynar</u></strong>`,  
+    text: 'El Cynar es un aperitivo italiano creado en 1952 por la empresa italiana Pezziol y elaborado con alcachofas y 13 hierbas distintas. Su nombre hace referencia a Cynara scolymus, la alcachofa. Su color es marrón con reflejos rojizos, tiene un aroma intenso y su sabor es amargo, aunque con un final dulzón.'
     })   
 }
 
-function infoBaileys() {
-  Swal.fire({
-    imageUrl: '../image/baileyssweet.jpg',
-      imageWidth: 300,
-      imageHeight: 250,
-      imageAlt: 'Custom image',
-      title: `<strong><u>Baileys</u></strong>`,  
-      text: 'Licor de Crema, hecho de una mezcla de crema de leche fresca, whisky irlandés, vainilla, cacao puro y azúcar. Su graduación alcohólica es de 17%. Notas: Cremosidad y notas de vainilla y de cacao.'
-    })   
-}
 
 function infoMonkey() {
   Swal.fire({
-      /* imageUrl: '../image/baileyssweet.jpg', */
-      imageWidth: 300,
-      imageHeight: 250,
-      imageAlt: 'Custom image',
       title: `<strong><u>Monkey Shoulder</u></strong>`,  
-      text: 'Licor de Crema, hecho de una mezcla de crema de leche fresca, whisky irlandés, vainilla, cacao puro y azúcar. Su graduación alcohólica es de 17%. Notas: Cremosidad y notas de vainilla y de cacao.'
+      text: 'Este single malt es especial por su triple combinación de maltas, the Glenfiddich, the Balnvenie y the Kininvie, combinación que le da el acabado suave y redondo que le caracteriza. En nariz es suave y con aromas dulces. En boca, tiene toques de malta y vainilla, con ligeras notas de dulzor a mermelada y azúcar de la cebada.'
+    })   
+}
+  
+function infoMerle() {
+  Swal.fire({
+      title: `<strong><u>Gin MERLE</u></strong>`,  
+      text: 'Gin Merle se elabora a partir de la combinación de 12 botánicos cuidadosamente seleccionados. Tiene un carácter de enebro redondo, notas cítricas que le dan frescura y un complejo floral. Se caracteriza por su rica textura, levemente aceitosa, fresca y picante de cilantro.'
+    })   
+}
+
+function infoJd() {
+  Swal.fire({
+      title: `<strong><u>J. Walker Red Label</u></strong>`,  
+      text: 'Tiene un sabor acentuado y lleno de carácter que se mantiene incluso al ser mezclado. Johnnie Walker Red Label es, ahora, el whisky escocés más vendido en todo el mundo. Se destaca por su carácter e intensidad, por sus notas especiadas que estallan con sabores vibrantes y ahumados. Es una mezcla que combina whiskies ligeros de la costa este escocesa y whiskies ahumados y oscuros de la costa oeste, creando una extraordinaria profundidad de sabor. Johnnie Walker Red Label explota en el paladar con la frescura de la espuma de una ola, seguida por un estallido de especias aromáticas -canela y pimienta- cuya efervescencia se asienta en el centro de la lengua. Al paladar, se siente una dulzura frutal, como manzanas frescas o pera y notas de vainilla para después dar lugar a un final persistente y ahumado.'
+    })   
+}
+
+function infoGb() {
+  Swal.fire({
+      title: `<strong><u>Gin Bulldog</u></strong>`,  
+      text: 'Su sabor es muy suave, apetecible y bien equilibrado. Cuenta con los botánicos clásicos como el limón, almendra, lavanda, enebro, cassia, angélica y regaliz, pero también con otros más exóticos como la amapola, las hojas de loto, el cilantro y el longan. Este último, también conocido como "ojo de dragón", es una fruta exótica translúcida que suele emplearse en la medicina tradicional china y es probablemente el responsable de su aroma floral.'
     })   
 }
 

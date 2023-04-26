@@ -53,35 +53,35 @@
         let mes = (m < 10) ? "0" + m : m;
         document.write(today.getDate(),"/" +mes,"/"+today.getFullYear());
         </script>
-
       </div>    
-      
-      <script type="text/javascript">
-        function startTime(){
-        today=new Date();
-        h=today.getHours();
-        m=today.getMinutes();
-        s=today.getSeconds();
-        m=checkTime(m);
-        s=checkTime(s);
-        document.getElementById("reloj").innerHTML=h+":"+m+":"+s;
-        t=setTimeout("startTime()",500);}
-        function checkTime(i)
-        {if (i<10) {i="0" + i;}return i;}
-        window.onload=function(){startTime();}
-      </script>
-        <div id="reloj" style="font-family: ‘DS-Digital’; width: 150px;font-size:20px;color: white ; text-align: center ">
-        </div>
 
+      <span id="reloj" style="float: left;"></span>
+      <script>
+        function mostrarHora() {
+          let fecha = new Date();
+          let horas = fecha.getHours();
+          let minutos = fecha.getMinutes();
+          let segundos = fecha.getSeconds();
+          let ampm = horas >= 12 ? 'pm' : 'am'; // para mostrar AM o PM
+          horas = horas % 12;
+          horas = horas ? horas : 12; // para mostrar 12 en vez de 0
+          minutos = minutos < 10 ? '0'+minutos : minutos;
+          segundos = segundos < 10 ? '0'+segundos : segundos;
+          let horaCompleta = horas + ':' + minutos + ':' + segundos + ' ' + ampm;
+          document.getElementById('reloj').innerHTML = horaCompleta;
+        }
+        setInterval(mostrarHora, 1000); // actualizar la hora cada segundo
+        </script>
+        
+<br>
         <div class="container"> 
-      
            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-center">
-            <h5>Asociación Mutual del personal de La Nación </h5></div>
-            
+            <h5>Asociación Mutual del personal de La Nación </h5>
+        </div>
 </header>
 
 <div  class="p-3 bg-secondary text-white ">
-  <ul class="nav col-12 col-lg-center me-lg-center mb-2 justify-content-center mb-md-0 inicio   ">
+  <ul class="nav col-12 col-lg-center me-lg-center mb-2 justify-content-center mb-md-0 inicio">
     <li class="nav-item dropdown ">
       <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> Descuentos</a>
       <ul class="dropdown-menu"> 
@@ -93,21 +93,36 @@
     <li><a href="./pages/ruibal.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
     <li><a href="./pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
     <li><a href="./pages/solares.html" class="nav-link px-2 text-white bg-secondary">Solares</a></li>
+    <li><a href="./pages/tienda.html" class="nav-link px-2 text-white bg-secondary">Tienda</a></li>
       </ul> 
     </li>
     <li><a href="./pages/colecciones.html" class="nav-link px-2 text-white">Colecciones LN</a></li>
     <li><a href="./pages/ayudaeconomica.html" class="nav-link px-2 text-white">Ayuda Económica</a></li>
     <li><a href="./pages/subsidios.html" class="nav-link px-2 text-white">Subsidios</a></li>
-    <li><a href="./pages/productos.html" class="nav-link px-2 text-white ">Productos Publicados </a></li>
+    <li><a href="./pages/productos.html" class="nav-link px-2 text-white ">Productos Publicados</a></li>
     <li><a href="./pages/asociarse.html" class="nav-link px-2 text-white ">Asociarse </a></li>
     <li><a href="./pages/contacto.html" class="nav-link px-2 text-white ">Contacto</a></li>             
     </ul>                     
 </div>
 
-<div >
-  <img src="./image/VERANO.jpg" width="100%"  alt="">
+<!-- banner -->
+<div id="banner">
+  <a href="./pages/tienda.html"> <img src="./image/bannertienda.png" alt="tu imagen"></a> 
 </div>
- 
+
+<script>
+  window.onload = function() {
+    setTimeout(function() {
+      document.getElementById("banner").style.display = "none";
+    }, 3000); // tiempo en milisegundos (5 segundos = 5000 ms)
+    document.getElementById("banner").style.display = "block";
+  };
+  </script>
+<!-- fin banner -->  
+
+<div >
+  <img src="./image/OTONO.jpg" width="100%"  alt="">
+</div>  
 
 
 <br>  
@@ -194,11 +209,12 @@
         <p class="lead   fondoM"><strong> Beneficio especial para el socio con importantes descuentos.</strong> <br> Ponemos a su disposición las coberturas más convenientes, con una amplia plataforma de servicios.  <br>
           Productos dinámicos y transparentes que se adaptan a sus necesidades con la mejor asistencia profesional. <br>        
           Le ofrecemos beneficios exclusivos para el seguro del auto, hogar, accidentes personales, viajes y embarcaciones de placer.  <br></p>
-          Para contactarse con nuestro productor Laviana José haga click aquí <a href="mailto:jlaviana.seguros@gmail.com">mail </a>
-
+          <h5><b> Para contactarse con nuestro productor Laviana José puede hacerlo vía <a href="mailto:jlaviana.seguros@gmail.com">mail </a> 
+          o telefonicamente al 114578-7236</b></h5>
       </div>
       <div class="col-md-5"><br>
-        <img src="./image/meridional.png" alt="">
+        <a href="./image/meridionalseguro.jpg" target="_blank" rel="noopener noreferrer">
+        <img src="./image/meridional.png" alt=""></a>
       </div>
     </div>
 
@@ -255,32 +271,32 @@
         
       </div>
       <div class="col-md-5">
-        <img width="310" height="230" src="./image/arcor.jpg" alt="">
+        <img width="280" height="230" src="./image/arcor.jpg" alt="">
       </div>
     </div>
 
     <hr>
-  
+    
+    
+    <div class="row featurette m-2 tamanoMision">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading"><u>FelFort</u></h2>
+        <p class="lead   fondoM">Beneficio especial con importantes descuentos y posibilidad de abonar hasta en 4 cuotas.
+        FelFort produce los más deliciosos chocolates artesanales.
+        Puede adquirir en La Mutual diversos productos como, golosinas, chocolates, etc.          
+        </p>
+      </div>
+      <div class="col-md-5"> <br><br>
+        <img src="./image/felfort.jfif" alt="">
+
+      </div>
+    </div>
+    
+    <hr>
 
     
     <div class="row featurette m-2 tamanoMision">
-      <div class="col-md-7 order-md-2"> <br><br><br>
-        <h2 class="featurette-heading"><u> Útiles escolares </u></h2>
-        <p class="lead   fondoM">Se entregan útiles escolares al comienzo de cada año lectivo a los hijos de los socios que estén cursando la escuela primaria. <br> Los útiles varían según la etapa en curso: Preescolar, de 1º a 3º grado y de 4º a 7º grado en CABA y hasta 6to grado en la Provincia de Buenos Aires. <br> 
-        Este beneficio se otorga a los socios que acrediten seis meses de antigüedad y estén con las cuotas sociales al día. <br> <u>Documentación a presentar:</u>  Boletin año anterior o Pago matrícula o Constancia de alumno regular. 
-        
-        </p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <a href="./image/utiles.jpg">
-        <img width="370" height="480" src="./image/utiles.jpg" alt=""></a>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row featurette m-2 tamanoMision">
-      <div class="col-md-7"> <br><br>
+      <div class="col-md-7"> 
         <h2 class="featurette-heading"><u> Beca secundaria </u></h2>
         <p class="lead  fondoM">Al inicio de cada período lectivo, La Mutual otorga una beca secundaria a los   hijos de los socios. <br> 
         Valor de la beca 2023 $ 10.000,00 en un solo pago. <br>
@@ -288,23 +304,35 @@
         <em> <strong style="color: red;"> <b> El pago de la misma le será acreditado a cada socio en su cuenta corriente de La Mutual. </b></em></strong>
         </p>
       </div>
-      <div class="col-md-5"><br><br>
-        <a href="./image/becasec.png">
-        <img width="370" height="500" src="./image/becasec.png" alt=""></a>
+      <div class="col-md-5"><br><br><br><br><br>
+      <img width="330" src="./image/beca2.jpg" alt=""></a>
+      </div>
+    </div>
+
+    <hr>
+    
+    <div class="row featurette m-2 tamanoMision">
+      <div class="col-md-7 order-md-2"> 
+        <h2 class="featurette-heading"><u> Útiles escolares </u></h2>
+        <p class="lead   fondoM">Se entregan útiles escolares al comienzo de cada año lectivo a los hijos de los socios que estén cursando la escuela primaria. <br> Los útiles varían según la etapa en curso: Preescolar, de 1º a 3º grado y de 4º a 7º grado en CABA y hasta 6to grado en la Provincia de Buenos Aires. <br> 
+        Este beneficio se otorga a los socios que acrediten seis meses de antigüedad y estén con las cuotas sociales al día. <br> <u>Documentación a presentar:</u>  Boletin año anterior o Pago matrícula o Constancia de alumno regular. 
+        
+        </p>
+      </div>
+      <div class="col-md-5 order-md-1"> <br><br>
+        <!-- <a href="./image/utiles.jpg"> -->
+        <img width="280"  src="./image/utiles2.jpg" alt=""></a>
       </div>
     </div>
 
     <hr>
 
-    <br>
-
     <div class="row featurette m-2 tamanoMision">
-      <div class="col-md-7 order-md-2">
+      <div class="col-md-7"> 
         <h2 class="featurette-heading"><u> Ruibal juegos</u></h2>
-        <p class="lead  fondoM">Descuento del 20% con juegos de mesa, los mimsos pueden ser abonados hasta en 4 cuotas. <br> <br>
-        Productos disponibles en La Mutual. <br>
-        <a href="./pages/ruibal.html">Ver productos</a>
-        
+        <p class="lead fondoM">Descuento del 25% con juegos de mesa, los mimsos pueden ser abonados hasta en 4 cuotas. <br> 
+          Productos disponibles en La Mutual. <br>
+          <a href="./pages/ruibal.html">Ver productos</a>
         </p>
       </div>
       <div class="col-md-5 order-md-1">
@@ -313,8 +341,8 @@
       </div>
     </div>
 
-
     <hr>
+
 
         
     <section >
@@ -327,14 +355,10 @@
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button> 
-          <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 4"></button>   -->
+          
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <a href="./pages/aperitivos.html"> <img src="./image/slider1.jpg" class="imgPromo" alt="baileys"></a>
-          </div>
-          <div class="carousel-item">
             <a href="./pages/aperitivos.html"> <img src="./image/fernetbanner.jpg" class="imgPromo" alt="fernet"></a>
           </div>
           <div class="carousel-item">
@@ -342,10 +366,7 @@
           </div>
           <div class="carousel-item">
             <a href="./pages/aperitivos.html"> <img src="./image/jwbl.jpg" class="imgPromo" alt="black"></a>
-          </div> <!-- 
-          <div class="carousel-item">
-            <img src="./image/redlabel.jfif" class="imgPromo" alt="fotos">
-          </div>   -->
+          </div> 
 
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -408,15 +429,14 @@
     </section>
 
 
-<hr>
-    <div>  
+    <!-- <div>  
       <h3>Retire en la oficina o solicite envío con cargo</h3>
     </div>
     <section class="grid-sucu">
       <div >
         <h5 class="text-danger">Oficina </h5>
         <p>
-          A. del Libertador 101 - PB<br>
+          Av. del Libertador 101 - PB<br>
           Torre al río <br>
           Vte. López<br>
           116090-5775
@@ -435,23 +455,51 @@
           Entrega en domicilio <br>
           116090-5775
           </p>
-      </div>
+      </div> -->
       </section>
       <hr>
+        <div>
+          <h5 class="text-center"><a href="./pages/consejo.html">Consejo Directivo</a></h5> 
+        </div> 
+      <hr>
       <div class="m-3 colores-footer" >
-       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4  align-items-center">
-              <p> <img src="../image/mapa.png" alt="mapa" srcset="" width="40">Av. Libertador 101-Vte. López </p>
-              <p> <img src="../image/te.png" alt="mapa" srcset="" width="40">011-6090-5775 </p>
-              <p> <a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="40"></a>mutual@lanacion.com.ar </p>
-              
-              
-            </div>
+       <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> --> 
+        <footer>
+            <!-- <div class="col-md-4 align-items-center">
+              <p> <img src="../image/mapa.png" alt="mapa" srcset="" width="40">Av. Libertador 101 PB - Vte. López </p>
+              <p > <img src="../image/te.png" alt="mapa" srcset="" width="40">011-6090-5775 </p>
+              <p> <a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="40"></a>mutual@lanacion.com.ar </p>  
+            </div> -->
+           
+            <section class="grid-sucu">
+              <div >
+                <h5><img src="./image/mapa.png" alt="mapa" srcset="" width="40"></h5>
+                <p >
+                  Av. del Libertador 101 - PB<br>
+                  Torre al Río - Vte. López
+                  </p>
+              </div>
+              <div>
+                <h5><img src="../image/te.png" alt="mapa" srcset="" width="40"></h5>
+                <p>L a V 9.00 a 19.00 hs<br>
+                  11-6090-5775
+                  </p>
+              </div>
+              <div>
+                <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="40"></a></h5>
+                <p>mutual@lanacion.com.ar
+                  </p>
+              </div>
+             
+              </section>
             
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!--     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      
+           -->
+        </footer>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       
           
-        </footer>
       </div>
       
 
