@@ -215,6 +215,11 @@ div h3 {
   padding-bottom: 1%;
 }
 
+@media screen and (max-width: 1001px) {
+  .banerPpal {
+    height: 60px;
+  }
+}
 .bodegas {
   width: 128px;
 }
@@ -355,7 +360,6 @@ input[id^=spoiler]:checked + label + .spoiler {
   }
 }
 .inicio a:hover {
-  background-color: blue;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -418,7 +422,7 @@ input[id^=spoiler]:checked + label + .spoiler {
 
 @media screen and (min-width: 501px) {
   .grid-inicio {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 thead tr {
@@ -753,10 +757,52 @@ body {
 }
 
 #banner img {
-  max-width: 60%;
-}
-
-#banner a {
+  width: 100%;
+  height: 100%;
+} /* 
+  #banner a {
   color: #5a0101;
   margin-left: 20%;
+} */
+/* .imagen:hover {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.imagen:hover img {
+  width: 120%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.2);
+}
+
+.contenedor:hover .imagen:not(:hover) img {
+  opacity: 0;
+} */
+.grid-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin: 1%;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .grid-footer {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 801px) {
+  .termo {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .carrouselimagen {
+    height: 8rem;
+  }
 }/*# sourceMappingURL=style.css.map */

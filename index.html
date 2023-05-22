@@ -21,6 +21,11 @@
     <!-- Bootstrap core CSS -->
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  
+
+
     <style>
         .bd-placeholder-img {
           font-size: 1.125rem;
@@ -44,8 +49,7 @@
 
 <body>
 
-    <header class="p-3 bg-secondary text-white ">
-       
+    <header class="p-3 text-black" style="background-color: rgb(225, 225, 225);">
       <div style="float:right;">
         <script type="text/javascript">
         let  today = new Date();
@@ -73,28 +77,29 @@
         setInterval(mostrarHora, 1000); // actualizar la hora cada segundo
         </script>
         
-<br>
         <div class="container"> 
            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-center">
-            <h5>Asociación Mutual del personal de La Nación </h5>
+            <!-- <h5>Asociación Mutual del personal de La Nación </h5> -->
+            <img src="./image/logosinfondo.png" width="150" alt="" srcset="">
         </div>
 </header>
 
-<div  class="p-3 bg-secondary text-white ">
+<div  class="pb-2 bg-secondary text-white ">
   <ul class="nav col-12 col-lg-center me-lg-center mb-2 justify-content-center mb-md-0 inicio">
     <li class="nav-item dropdown ">
       <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> Descuentos</a>
-      <ul class="dropdown-menu"> 
-    <li><a href="./pages/almacen.html" class="nav-link px-2 text-white bg-secondary">Almacén</a></li>
-    <li><a href="./pages/aperitivos.html" class="nav-link px-2 text-white bg-secondary">Bebidas</a></li>    
-    <li><a href="./pages/canjes.html" class="nav-link px-2 text-white bg-secondary">Canjes</a></li>
-    <li><a href="./pages/feria.html" class="nav-link px-2 text-white bg-secondary">Feria</a></li>  
-    <li><a href="./pages/hogar.html" class="nav-link px-2 text-white bg-secondary">Hogar</a></li>
-    <li><a href="./pages/ruibal.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
-    <li><a href="./pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
-    <li><a href="./pages/solares.html" class="nav-link px-2 text-white bg-secondary">Solares</a></li>
-    <li><a href="./pages/tienda.html" class="nav-link px-2 text-white bg-secondary">Tienda</a></li>
-      </ul> 
+        <ul class="dropdown-menu"> 
+          <li><a href="./pages/almacen.html" class="nav-link px-2 text-white bg-secondary">Almacén</a></li>
+          <li><a href="./pages/aperitivos.html" class="nav-link px-2 text-white bg-secondary">Bebidas</a></li>    
+          <li><a href="./pages/canjes.html" class="nav-link px-2 text-white bg-secondary">Canjes</a></li>
+          <li><a href="./pages/feria.html" class="nav-link px-2 text-white bg-secondary">Feria</a></li>  
+          <li><a href="./pages/hogar.html" class="nav-link px-2 text-white bg-secondary">Hogar</a></li>
+          <li><a href="./pages/ruibal.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
+          <li><a href="./pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
+          <li><a href="./pages/solares.html" class="nav-link px-2 text-white bg-secondary">Solares</a></li>
+          <li><a href="./pages/tienda.html" class="nav-link px-2 text-white bg-secondary">Indumentaria</a></li>
+          <li><a href="./pages/novedades.html" class="nav-link px-2 text-warning bg-secondary"><b>NOVEDADES</b></a></li> 
+        </ul> 
     </li>
     <li><a href="./pages/colecciones.html" class="nav-link px-2 text-white">Colecciones LN</a></li>
     <li><a href="./pages/ayudaeconomica.html" class="nav-link px-2 text-white">Ayuda Económica</a></li>
@@ -106,36 +111,56 @@
 </div>
 
 <!-- banner -->
-<div id="banner">
-  <a href="./pages/tienda.html"> <img src="./image/bannertienda.png" alt="tu imagen"></a> 
-</div>
+   <div id="banner">
+    <a href="./pages/perfumes.html"> <img src="./image/EspecialDíadelPadre.png" ></a> 
+  </div>
 
-<script>
-  window.onload = function() {
-    setTimeout(function() {
-      document.getElementById("banner").style.display = "none";
-    }, 3000); // tiempo en milisegundos (5 segundos = 5000 ms)
-    document.getElementById("banner").style.display = "block";
-  };
-  </script>
+  <script>
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById("banner").style.display = "none";
+      }, 3000); // tiempo en milisegundos (5 segundos = 50  00 ms)
+      document.getElementById("banner").style.display = "block";
+    };
+  </script> 
 <!-- fin banner -->  
 
-<div >
-  <img src="./image/OTONO.jpg" width="100%"  alt="">
+<!-- <div>
+  <img src="./image/OTONO.jpg" width="100%" height="150rem" alt="">
 </div>  
+ -->
+
+ <div class="owl-carousel owl-theme ">
+  <div class="item"><a href="./pages/asociarse.html"><img src="./image/1.png" class="carrouselimagen"></a></div>
+  <div class="item"><a href="./pages/novedades.html"><img src="./image/5.png" class="carrouselimagen"></a></div>
+  <div class="item"><a href="./pages/perfumes.html"><img src="./image/2.png" class="carrouselimagen"></a></div>
+  <div class="item"><a href="./pages/tienda.html"><img src="./image/4.png" class="carrouselimagen"></a></div>
+  <div class="item"><a href="./pages/productos.html"><img src="./image/3.png" class="carrouselimagen"></a></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      //nav:true,
+      autoplay:true,
+      autoplayTimeout:3000, // especifica el tiempo de espera en milisegundos
+      responsive:{
+        0:{
+          items:1
+        },
+      }
+    })
+  });
+</script>
 
 
-<br>  
-<div class="grid-inicio ">
-  <div >
-    <h1 class="text-center "><img width="200" src="./image/Logo Asociacion Mutual.JPG" alt="">             
-    </h1>
-    <div class="tamanoMision text-center m-3">
-    <h5 >La Mutual es una entidad constituida bajo los principios de la solidaridad y la ayuda mutua.
-    </h5>
-    </div>
-  </div>
-  
+
+
+
+ <!-- <div class="grid-inicio ">   
   <div > 
     <div ><img width="180" src="./image/web.jpg" alt="">             
     </div>
@@ -153,13 +178,11 @@
     <div ><img width="180" src="./image/asociarse.jpg" alt="">             
     </div>
     <div class="tamanoMision text-center m-3">
-      
-      <span class="tamanoMision"><strong><u> DISFRUTÁ DE MÁS BENEFICIOS SIENDO SOCIO</u></strong></span><br>
-          
-      <p > Si aun no sos socio y queres hacerlo ingresá <a href="./pages/asociarse.html"><b> aquí</b></a>  </p>
+      <h5 >
+        Disfrutá de más beneficios siendo socio, para poder hacerlo ingresá <a href="./pages/asociarse.html"><b> aquí</b></a>. </h5>
     </div>
     <div> 
-  </div>
+</div>
     
   </div>    
 
@@ -169,13 +192,13 @@
      <img width="180" src="./image/ventaprod.jfif" alt=""> </a>
   </div><br>
   <div >  
-    <span class="lead tamanoMision "><strong><u>Artículos y Productos</u></strong> <br>Publicación de artículos y productos usados/nuevos </span>
-    </div>
-    <span class="tamanoMision "> Para ver los mismos click <a href="./pages/productos.html"><b> aquí</b></a></span>
-    </div>
+    <span class="lead tamanoMision "><strong><u>Artículos y Productos</u></strong> <br>Publicación de artículos y productos usados/nuevos <a href="./pages/productos.html"><b>ingresar</b></a></span>
+    </div> --> <!-- 
+    <span class="tamanoMision "> Para ver los mismos click <a href="./pages/productos.html"><b> aquí</b></a></span> -->
+     <!-- </div>
 </div>
-
-</div>
+</div> -->
+  
 
 
 <hr>    
@@ -196,7 +219,8 @@
         </p>
       </div>
       <div class="col-md-5 order-md-1">
-        <img src="./image/prestamo.jpg" alt="">
+        <!-- <img src="./image/prestamo.jpg" alt=""> -->
+        <img src="./image/ayudaec.png"  alt="">
 
       </div>
     </div>
@@ -299,7 +323,7 @@
       <div class="col-md-7"> 
         <h2 class="featurette-heading"><u> Beca secundaria </u></h2>
         <p class="lead  fondoM">Al inicio de cada período lectivo, La Mutual otorga una beca secundaria a los   hijos de los socios. <br> 
-        Valor de la beca 2023 $ 10.000,00 en un solo pago. <br>
+        Valor de la beca 2024 $ 12.500,00 en un solo pago. <br>
         <u>Documentación a presentar:</u> <br> 1) Boletín original <br> 2) Certificado de inscripción que acredite tener aprobadas todas las materias sin objetivos pendientes al finalizar el ciclo anterior, caso contrario la beca NO será otorgada. <br> Este beneficio es para los socios que acrediten un año de antigüedad y estén con las cuotas sociales al día. <br><br>
         <em> <strong style="color: red;"> <b> El pago de la misma le será acreditado a cada socio en su cuenta corriente de La Mutual. </b></em></strong>
         </p>
@@ -321,7 +345,7 @@
       </div>
       <div class="col-md-5 order-md-1"> <br><br>
         <!-- <a href="./image/utiles.jpg"> -->
-        <img width="280"  src="./image/utiles2.jpg" alt=""></a>
+        <img width="280"  src="./image/utilesesc.jfif" alt=""></a>
       </div>
     </div>
 
@@ -428,74 +452,49 @@
       
     </section>
 
+   </section>
 
-    <!-- <div>  
-      <h3>Retire en la oficina o solicite envío con cargo</h3>
-    </div>
-    <section class="grid-sucu">
-      <div >
-        <h5 class="text-danger">Oficina </h5>
-        <p>
-          Av. del Libertador 101 - PB<br>
-          Torre al río <br>
-          Vte. López<br>
-          116090-5775
-          </p>
-      </div>
-      <div>
-        <h5 class="text-danger">HOP </h5>
-        <p>Envío en algún punto HOP <br>
-          72hs la entrega <br>
-          116090-5775
-          </p>
-      </div>
-      <div>
-        <h5 class="text-danger">MOTO</h5>
-        <p>Envío por Moto en 24 hs.<br>
-          Entrega en domicilio <br>
-          116090-5775
-          </p>
-      </div> -->
-      </section>
+
+
       <hr>
         <div>
           <h5 class="text-center"><a href="./pages/consejo.html">Consejo Directivo</a></h5> 
         </div> 
       <hr>
-      <div class="m-3 colores-footer" >
-       <!-- <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> --> 
+
+
+
+      <div class="m-3 " >
+
         <footer>
-            <!-- <div class="col-md-4 align-items-center">
-              <p> <img src="../image/mapa.png" alt="mapa" srcset="" width="40">Av. Libertador 101 PB - Vte. López </p>
-              <p > <img src="../image/te.png" alt="mapa" srcset="" width="40">011-6090-5775 </p>
-              <p> <a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="40"></a>mutual@lanacion.com.ar </p>  
-            </div> -->
            
-            <section class="grid-sucu">
+            <section class="grid-footer">
               <div >
-                <h5><img src="./image/mapa.png" alt="mapa" srcset="" width="40"></h5>
-                <p >
+                <h5><img src="./image/localizacion.png" alt="mapa" srcset="" width="120"></h5>
+                <p>
                   Av. del Libertador 101 - PB<br>
                   Torre al Río - Vte. López
                   </p>
               </div>
               <div>
-                <h5><img src="../image/te.png" alt="mapa" srcset="" width="40"></h5>
+                <h5><img src="./image/te.jpg" alt="mapa" srcset="" width="50"></h5>
                 <p>L a V 9.00 a 19.00 hs<br>
                   11-6090-5775
                   </p>
               </div>
               <div>
-                <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="40"></a></h5>
+                <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="50"></a></h5>
                 <p>mutual@lanacion.com.ar
+                  </p>
+              </div>
+              <div>
+                <h5><a href="https://www.instagram.com/lnmutual/" target="_blank"><img src="./image/instagram.jfif" alt="mapa" srcset="" width="40"></a></h5>
+                <p>@lnmutual
                   </p>
               </div>
              
               </section>
-            
-      <!--     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      
-           -->
+           
         </footer>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       
@@ -510,5 +509,7 @@
  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
+
+
     </body>
   </html>
