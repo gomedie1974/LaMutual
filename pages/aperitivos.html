@@ -60,21 +60,26 @@
       </nav>
   
   
-  
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var zoomableImages = document.querySelectorAll(".zoomable");
+        
+        for (var i = 0; i < zoomableImages.length; i++) {
+          zoomableImages[i].addEventListener("click", function() {
+            this.classList.toggle("zoomed");
+          });
+        }
+      });
+      </script>
 
   <section class="py-4"><br><br>
-    <!-- <a href="../index.html">
-    <img class="logoPaginas " width="150" src="../image/Logo Asociacion Mutual.JPG" alt=""></a> -->
-  <!--   
-  <div >
-    <img src="../image/OTONO.jpg" width="100%" alt="">
-  </div> -->
-    <div class="container px-4 px-lg-5 mt-2">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5">
+    
+    <div class="container px-4 px-lg-5 mt-2 ">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center ">
+            <div class="col mb-5 ">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="../image/fernet.jpg" alt="JWRED" />
+                    <img class="card-img-top zoomable" src="../image/brancahd.png" alt="JWRED" />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -85,8 +90,8 @@
                             <button id="infoFernetB" class="btn btn-outline-primary mt-auto">Mas Info
                             </button> <br>
                             <!-- Product price -->
-                            $ 2.150,00 <br>
-                            4 cuotas de<br> $ 537,50 
+                            $ 2.412,00 <br>
+                            4 cuotas de<br> $ 603,00 
                         </div>
                     </div>
                     
@@ -95,7 +100,7 @@
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="../image/campari.jpg" alt="Bayli" />
+                    <img class="card-img-top zoomable" src="../image/camparihd.png" alt="Bayli" />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -115,7 +120,7 @@
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="../image/aperol.jpg" alt="Wblanco" />
+                    <img class="card-img-top zoomable" src="../image/aperolhd.png" alt="Wblanco" />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -135,7 +140,7 @@
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="../image/cynar.jpg" alt="cynar" />
+                    <img class="card-img-top zoomable" src="../image/cynarhd.png" alt="cynar" />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -160,7 +165,7 @@
               <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div> -->
                 
                 <!-- Product image-->
-                <img class="card-img-top" src="../image/tanqueray.jpg" alt="gintanqueray" />
+                <img class="card-img-top zoomable" src="../image/tanquerayhd1.png" alt="gintanqueray" />
                 <!-- Product details-->
                 <div class="card-body p-4">
                     <div class="text-center">
@@ -189,7 +194,7 @@
             <!-- Sale badge--><!-- 
               <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div> -->                  
               <!-- Product image-->
-              <img class="card-img-top" src="../image/wjwalker.jpg" alt="black" />
+              <img class="card-img-top zoomable" src="../image/jwblackhd.png" alt="black" />
               <!-- Product details-->
               <div class="card-body p-4">
                   <div class="text-center">
@@ -199,8 +204,8 @@
 <!--                       <p style="color: red;"><b> Sin Stock</b></p>                    
  -->                      <!-- Product price-->
                       <!-- <span class="text-muted text-decoration-line-through">$ 9.500,00</span> <br> -->
-                      <span>$ 10.850,00 <br>
-                      4 cuotas de <br> $ 2.712,50
+                      <span>$ 12.250,00 <br>
+                      4 cuotas de <br> $ 3.062,50
                       </span>
                       
                   </div>
@@ -214,7 +219,7 @@
             <!-- Sale badge--><!-- 
             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div> -->
               <!-- Product image-->
-              <img class="card-img-top" src="../image/jhonnyrojo.jpg" alt="red" />
+              <img class="card-img-top zoomable" src="../image/redhd.png" alt="red" />
               <!-- Product details-->
               <div class="card-body p-4">
                   <div class="text-center">
@@ -222,8 +227,8 @@
                       <h5 class="fw-bolder pb-1">J. Walker Red Label<br>
                         750ml</h5> 
                         <!-- <p style="color: red;"><b> Sin Stock</b></p> -->
-                      <button id="infoJd" class="btn btn-outline-primary mt-auto">Mas Info
-                      </button> <br>   
+                      <!-- <button id="infoJd" class="btn btn-outline-primary mt-auto">Mas Info
+                      </button> <br>    -->
                       <!-- Product price--> 
                       <span >$ 8.260,00 <br>
                       4 cuotas de <br> $ 2.065,00</span>   
@@ -231,65 +236,15 @@
               </div>
           </div>
       </div>
-
-
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-40%</div>
-          
-            <!-- Product image-->
-            <img class="card-img-top" src="../image/nicasia.jpg" alt="JWRED" />
-            <!-- Product details-->
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <!-- Product name-->
-                    <h5 class="fw-bolder"> Nicasia Red Blend Malbec<br> caja x 6</h5>
-                    <!-- Product price-->
-                     <!--<p style="color: RED;">SIN STOCK</p> -->      
-           <span class="text-muted text-decoration-line-through">$ 20.520,00</span> <br>
-                    <span>$ 12.312,00 <br>
-                      4 cuotas de <br> $ 3.078,00</span>   
-                </div>
-            </div>
-        </div>
-    </div>
-
       
-
-      
-    <div class="col mb-5">
-      <div class="card h-100">
-        <!-- Sale badge-->
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-            
-          <!-- Product image-->
-          <img class="card-img-top" src="../image/famigliablanco.jfif" alt="famiglia" />
-          <!-- Product details-->
-          <div class="card-body p-4">
-              <div class="text-center">
-                  <!-- Product name-->
-                  <h5 class="fw-bolder">Famiglia Bianchi White Blend<br>
-                  caja x 6</h5>
-                    <!-- Product price--> 
-                  <span class="text-muted text-decoration-line-through">$ 9.552,00</span>  <br>                   
-                    <span >$ 6.686,40 <br>
-                      4 cuotas de <br> $ 1.671,60</span> 
-                  
-              </div>
-          </div>
-      </div>
-      </div>
-
 
     
-
       <div class="col mb-5">
         <div class="card h-100">
           <!-- Sale badge-->
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
             <!-- Product image-->
-            <img class="card-img-top" src="../image/navarrocorreas.jpg" alt="cordero" />
+            <img class="card-img-top zoomable" src="../image/navarrocorreashd.png" alt="cordero" />
             <!-- Product details-->
             <div class="card-body p-4">
                 <div class="text-center">
@@ -312,7 +267,7 @@
           <!-- Sale badge-->
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-40%</div>
             <!-- Product image-->
-            <img class="card-img-top" src="../image/ninaextrabrut.jfif" alt="cordero" />
+            <img class="card-img-top zoomable" src="../image/ninaextrabruthd.png" alt="cordero" />
             <!-- Product details-->
             <div class="card-body p-4">
                 <div class="text-center">
@@ -320,13 +275,63 @@
                     <h5 class="fw-bolder">Nina Extra Brut<br>
                     caja x 6</h5>
                       <!-- Product price-->
-                    <span class="text-muted text-decoration-line-through">$ 18.404,00</span> <br>                   
-                      <span >$ 11.042,40 <br>
-                        4 cuotas de <br> $ 2.760,60</span>
+                     <span class="text-muted text-decoration-line-through">$ 22.268,30</span> <br>                   
+                      <span >$ 13.360,98 <br>
+                        4 cuotas de <br> $ 3.340,25</span> 
+                </div>
+            </div>
+        </div>
+        </div>  
+
+
+
+    <div class="col mb-5">
+      <div class="card h-100">
+        <!-- Sale badge-->
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+            
+          <!-- Product image-->
+          <img class="card-img-top zoomable" src="../image/famigliablancohd.png" alt="famiglia" />
+          <!-- Product details-->
+          <div class="card-body p-4">
+              <div class="text-center">
+                  <!-- Product name-->
+                  <h5 class="fw-bolder">Famiglia Bianchi White Blend<br>
+                  caja x 6</h5>
+                    <!-- Product price--> 
+                  <span class="text-muted text-decoration-line-through">$ 9.552,00</span>  <br>                   
+                    <span >$ 6.686,40 <br>
+                      4 cuotas de <br> $ 1.671,60</span> 
+                  
+              </div>
+          </div>
+      </div>
+      </div>
+
+
+      <div class="col mb-5">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-40%</div> 
+            <!-- Product image-->
+            <img class="card-img-top zoomable" src="../image/ninagoldchardonnayhd.png" alt="cordero" />
+            <!-- Product details-->
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder">Nina Gold Chardonnay<br>
+                    caja x 6</h5>
+                      <!-- Product price-->
+                      <span class="text-muted text-decoration-line-through">$ 12.813,00</span> <br>                   
+                      <span >$ 7.687,80 <br>
+                        4 cuotas de <br>$ 1.921,95</span>
                 </div>
             </div>
         </div>
         </div>
+
+    
+
         
         
       <div class="col mb-5">
@@ -334,17 +339,17 @@
           <!-- Sale badge-->
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-40%</div>
             <!-- Product image-->
-            <img class="card-img-top" src="../image/ninanatural.jfif" alt="cordero" />
+            <img class="card-img-top zoomable" src="../image/ninanaturalhd.png" alt="cordero" />
             <!-- Product details-->
             <div class="card-body p-4">
                 <div class="text-center">
                     <!-- Product name-->
                     <h5 class="fw-bolder">Nina Natural Tinto<br>
                     caja x 6</h5>
-                      <!-- Product price-->
-                    <span class="text-muted text-decoration-line-through">$ 11.846,00</span> <br>                   
-                      <span >$ 7.107,60 <br>
-                        4 cuotas de <br> $ 1.776,90</span>
+                      <!-- Product price-->                      
+                     <span class="text-muted text-decoration-line-through">$ 14.333,50</span> <br>                   
+                      <span >$ 8.600,10 <br>
+                        4 cuotas de <br> $ 2.150,03</span> 
                 </div>
             </div>
         </div>
@@ -356,7 +361,7 @@
             <!-- Sale badge-->
             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-40%</div> 
               <!-- Product image-->
-              <img class="card-img-top" src="../image/cabodehornos.jfif" alt="cordero" />
+              <img class="card-img-top zoomable" src="../image/cabodehornoshd.png" alt="cordero" />
               <!-- Product details-->
               <div class="card-body p-4">
                   <div class="text-center">
@@ -374,34 +379,13 @@
 
 
         
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-40%</div> 
-            <!-- Product image-->
-            <img class="card-img-top" src="../image/ninagoldchardonnay.jfif" alt="cordero" />
-            <!-- Product details-->
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <!-- Product name-->
-                    <h5 class="fw-bolder">Nina Gold Chardonnay<br>
-                    caja x 6</h5>
-                      <!-- Product price-->
-                    <span class="text-muted text-decoration-line-through">$ 11.648,30</span> <br>                   
-                      <span >$ 6.988,98 <br>
-                        4 cuotas de <br>$ 1.747,25</span>
-                </div>
-            </div>
-        </div>
-        </div>
-
 
         <div class="col mb-5">
           <div class="card h-100">
             <!-- Sale badge-->
             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-40%</div> 
               <!-- Product image-->
-              <img class="card-img-top" src="../image/ninagoldcfranc.jfif" alt="cordero" />
+              <img class="card-img-top zoomable" src="../image/ninagoldcfranchd.png" alt="cordero" />
               <!-- Product details-->
               <div class="card-body p-4">
                   <div class="text-center">
@@ -409,9 +393,9 @@
                       <h5 class="fw-bolder">Nina Gold Cabernet Franc<br>
                       caja x 6</h5>
                         <!-- Product price-->
-                        <span class="text-muted text-decoration-line-through">$ 11.648,30</span> <br>                   
-                      <span >$ 6.988,98 <br>
-                        4 cuotas de <br>$ 1.747,25</span>
+                        <span class="text-muted text-decoration-line-through">$ 12.813,00</span> <br>                   
+                      <span >$ 7.687,80 <br>
+                        4 cuotas de <br>$ 1.921,95</span>
                   </div>
               </div>
           </div>
@@ -424,7 +408,7 @@
             <!-- Sale badge-->
             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-40%</div> 
               <!-- Product image-->
-              <img class="card-img-top" src="../image/ninagoldmalbec.jfif" alt="cordero" />
+              <img class="card-img-top zoomable" src="../image/ninagoldmalbechd.png" alt="cordero" />
               <!-- Product details-->
               <div class="card-body p-4">
                   <div class="text-center">
@@ -432,9 +416,9 @@
                       <h5 class="fw-bolder">Nina Gold Malbec<br>
                       caja x 6</h5>
                         <!-- Product price-->
-                        <span class="text-muted text-decoration-line-through">$ 11.648,30</span> <br>                   
-                      <span >$ 6.988,98 <br>
-                        4 cuotas de <br>$ 1.747,25</span>
+                        <span class="text-muted text-decoration-line-through">$ 12.813,00</span> <br>                   
+                      <span >$ 7.687,80 <br>
+                        4 cuotas de <br>$ 1.921,95</span>
                   </div>
               </div>
           </div>
@@ -446,7 +430,7 @@
               <!-- Sale badge-->
               <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-40%</div> 
                 <!-- Product image-->
-                <img class="card-img-top" src="../image/grannina.jfif" alt="cordero" />
+                <img class="card-img-top zoomable" src="../image/granninahd.png" alt="cordero" />
                 <!-- Product details-->
                 <div class="card-body p-4">
                     <div class="text-center">
@@ -454,14 +438,36 @@
                         <h5 class="fw-bolder">Gran Nina Malbec<br>
                         caja x 6</h5>
                           <!-- Product price-->
-                        <span class="text-muted text-decoration-line-through">$ 20.236,94</span> <br>                   
-                          <span >$ 12.142,16 <br>
-                            4 cuotas de <br>$ 3.035,54</span>
+                        <span class="text-muted text-decoration-line-through">$ 22.250,00</span> <br>                   
+                          <span >$ 13.350,00 <br>
+                            4 cuotas de <br>$ 3.337,50</span>
                     </div>
                 </div>
             </div>
             </div>
 
+
+            <div class="col mb-5">
+              <div class="card h-100">
+                <!-- Sale badge-->
+                <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-40%</div> 
+                  <!-- Product image-->
+                  <img class="card-img-top zoomable" src="../image/puntodevilhd.png" alt="cordero" />
+                  <!-- Product details-->
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <!-- Product name-->
+                          <h5 class="fw-bolder">Punto Devil Malbec<br>
+                          caja x 6</h5>
+                            <!-- Product price-->
+                          <span class="text-muted text-decoration-line-through">$ 11.759,00</span> <br>                   
+                            <span >$ 7.055,40 <br>
+                              4 cuotas de <br>$ 1.763,85</span>
+                      </div>
+                  </div>
+              </div>
+              </div>
+  
 
 
         <div class="col mb-5">
@@ -470,7 +476,7 @@
             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
               
               <!-- Product image-->
-              <img class="card-img-top" src="../image/aceitebot1.jpg" alt="Oliva" />
+              <img class="card-img-top zoomable" src="../image/aceitebothd.png" alt="Oliva" />
               <!-- Product details-->
               <div class="card-body p-4">
                   <div class="text-center">
