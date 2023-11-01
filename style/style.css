@@ -922,4 +922,167 @@ body {
   background-color: #f0f0f0;
   padding: 20px;
   text-align: center;
+}
+
+.navegacion {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-150%);
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+}
+
+button#anterior {
+  left: 10px;
+}
+
+button#siguiente {
+  right: 10px;
+}
+
+/* Estilo para los botones del segundo slider */
+.navegacion1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-200%);
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+  padding: 0;
+  z-index: 1;
+}
+
+button#anterior2 {
+  left: 5px; /* Ajusta la posición izquierda */
+}
+
+button#siguiente2 {
+  right: 5px; /* Ajusta la posición derecha */
+}
+
+/* Estilos para el filtro a la izquierda */
+.filtro {
+  width: 100%; /* Ancho completo en dispositivos móviles */
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+/* Estilos para la sección de productos */
+.productos {
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Estilos para cada fila de productos */
+.fila-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Estilos para cada producto */
+.producto {
+  flex: 0 1 calc(33.333% - 20px); /* Tamaño máximo para cada producto (ajusta según tus necesidades) */
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  text-align: center;
+  min-height: 350px; /* Altura mínima para evitar saltos al mostrar/ocultar elementos */
+}
+
+/* Consulta de medios para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .filtro {
+    order: 1; /* Cambiamos el orden del filtro a 1 (arriba) */
+  }
+  .productos {
+    flex-direction: column; /* Cambiamos la dirección a columna para dispositivos móviles */
+  }
+  .producto {
+    max-width: 100%; /* Un producto por fila en dispositivos móviles */
+  }
+}
+/* Config para el nav del Index */
+ul, ol {
+  list-style: none;
+  padding: 0; /* Agregar un relleno cero para eliminar el espacio predeterminado */
+}
+
+.nav {
+  margin: 0; /* Agregar un margen cero para eliminar el espacio predeterminado */
+  padding: 0;
+}
+
+.nav li {
+  position: relative; /* Agregar posición relativa para el posicionamiento absoluto de los submenús */
+}
+
+.nav li a {
+  padding: 10px 15px;
+  display: block;
+  font-weight: 350;
+  color: rgb(255, 255, 255);
+  text-decoration: none; /* Eliminar el subrayado de los enlaces */
+}
+
+.nav li a:hover {
+  background-color: rgb(11, 29, 133);
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+
+.nav > li {
+  float: left;
+  position: relative;
+}
+
+.nav li ul {
+  display: none;
+  position: absolute;
+  min-width: 140px;
+  background-color: #888888; /* Añadir un fondo al submenú */
+  left: 0; /* Alinear el submenú con el elemento padre */
+  top: 100%; /* Colocar el submenú debajo del elemento padre */
+  z-index: 2;
+}
+
+.nav li:hover > ul {
+  display: block;
+}
+
+.nav li ul li {
+  position: relative;
+}
+
+.nav li ul li ul {
+  left: 100%; /* Colocar el submenú a la derecha del elemento padre */
+  top: 0;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  vertical-align: middle;
+  content: "";
+  margin-left: 5px;
+}
+
+.down {
+  border-width: 5px 4px 0 4px;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+.right {
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent #ffffff;
 }/*# sourceMappingURL=style.css.map */

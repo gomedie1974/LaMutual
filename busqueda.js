@@ -1,6 +1,6 @@
 //Busqueda de productos
 // Variables
-const baseDeDatos = [];
+/* const baseDeDatos = [];
 class Producto {
     constructor (codigo, nombre, precio, marca, cantidad){
         this.id = this.id;
@@ -41,3 +41,38 @@ document.getElementById("botonBuscar").addEventListener("click", function(){
 
     } 
 })
+   */
+
+  // Obtén el elemento del botón y el campo de búsqueda por su ID.
+  const boton = document.getElementById('boton');
+  const formulario = document.getElementById('formulario');
+  const mensajeError = document.getElementById('mensaje-error');
+
+
+  // Agrega un controlador de eventos para el clic en el botón.
+  boton.addEventListener('click', function() {
+    // Obtén el valor ingresado en el campo de búsqueda.
+    const busqueda = formulario.value;
+
+    if (busqueda === 'campari' || busqueda === 'cynar' || busqueda === 'aperol' || busqueda === 'gin' || busqueda === 'whisky' || busqueda === 'aceite' || busqueda === 'fernet') {
+      // Redirige a la página de aperitivos.
+      window.location.href = 'http://127.0.0.1:5504/pages/aperitivos.html';
+    } else if (busqueda === 'canjes') {
+      // Redirige a la página de canjes.
+      window.location.href = 'http://127.0.0.1:5504/pages/canjes.html';
+    } else if (busqueda === 'lidherma') {
+      // Redirige a la página de canjes.
+      window.location.href = 'http://127.0.0.1:5504/pages/lidherma.html';
+    } else {
+      // Redirige a otra página por defecto o muestra un mensaje de error.
+      mensajeError.style.display = 'block';
+            // Establece un temporizador para ocultar el mensaje después de 5 segundos.
+            setTimeout(function() {
+        mensajeError.style.display = 'none';
+      }, 5000);
+
+    }
+  });
+
+
+  
