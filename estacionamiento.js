@@ -8,7 +8,7 @@ function showPasswordPrompt() {
       event.preventDefault();
       const passwordInput = document.getElementById("password");
       const enteredPassword = passwordInput.value;
-      const correctPassword = "Messi8balonesdeoro"; // Reemplaza "tuclave" con la clave correcta
+      const correctPassword = "ladgs55"; // Reemplaza "tuclave" con la clave correcta
   
       if (enteredPassword === correctPassword) {
         window.location.href = "./pages/estacionamiento.html";
@@ -96,33 +96,41 @@ function generarCodigosQR() {
   mostrarCodigosQR(codigosGenerados);
 }
 }
+
 function mostrarCodigosQR(codigos) {
   var codigosDiv = document.getElementById("codigos");
   codigosDiv.innerHTML = "";
 
   for (var i = 0; i < codigos.length; i++) {
       var codigoDiv = document.createElement("div");
-      codigoDiv.innerHTML += `<p style="margin-left: 20px;"> Nombre: ${codigos[i].nombre}</p>`;
-      codigoDiv.innerHTML += `<p style="margin-left: 20px;"> Código: ${codigos[i].codigo}</p>`;
-      codigoDiv.innerHTML += `<p style="margin-left: 20px;"> Vehículo: ${codigos[i].vehiculo}</p>`;
-      codigoDiv.innerHTML += `<p style="margin-left: 20px;"> Patente: ${codigos[i].patente}</p>`;
-      codigoDiv.innerHTML += `<p style="margin-left: 20px;">Fecha de generación: ${codigos[i].fecha}</p>`;
-      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Sello:</span>    <span style="margin-left: 300px;"> Firma:</span>`;
- 
-      // Agrega la línea horizontal debajo de "Firma"
-      codigoDiv.innerHTML += `<hr style="margin-left: 20px;">`;
-
-      codigosDiv.appendChild(codigoDiv);
-
       var codigoQRDiv = document.createElement("div");
+      
       codigoQRDiv.id = "qrcode" + i;
       codigosDiv.appendChild(codigoQRDiv);
+      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Nombre: ${codigos[i].nombre}</span><br>`;
+      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Código: ${codigos[i].codigo}</span><br>`;
+      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Vehículo: ${codigos[i].vehiculo}</span><br>`;
+      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Patente: ${codigos[i].patente}</span><br>`;
+      codigoDiv.innerHTML += `<span style="margin-left: 20px;">Fecha de generación: ${codigos[i].fecha}</span><br><br>`;
+      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Sello:</span> <span style="margin-left: 200px;"> Firma:</span>`;
+ 
+      // Aplicar margen izquierdo al contenedor
+      codigoQRDiv.style.marginLeft = "120px";
+      
+      // Agrega la línea horizontal debajo de "Firma"
+/*       codigoDiv.innerHTML += `<hr style="margin-left: 10px;"><br>`;
+ */
+      codigosDiv.appendChild(codigoDiv);
+
+      /* var codigoQRDiv = document.createElement("div");
+      codigoQRDiv.id = "qrcode" + i;
+      codigosDiv.appendChild(codigoQRDiv); */
 
       
       var qrcode = new QRCode(codigoQRDiv, {
           text: codigos[i].codigo,
-          width: 128,
-          height: 128,
+          width: 100,
+          height: 100,
       });
   }
 }

@@ -96,3 +96,10 @@ function Desodorante() {
     html: 'Antibacteriano, libre de aluminio, elimina el mal olor, hidrata y nutre la piel.<br>Para todo tipo de piel, ideal para pieles sensibles y alérgicas.<br><br><b>Principales Activos:</b><br>Fécula de maíz, aceite coco orgánico,manteca de karite, bicarbonato, aceite esencial limón y lavanda.'
     })   
 }
+const btnrum11 = document.getElementById("Ritual");
+btnrum11.addEventListener("click", Ritual);
+function Ritual() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>RITUAL FACIAL </u></span>',
+    html: '<b>DÍA</b> <br><span style="font-size: 15px;">▪️Agua Micelar que protege tu piel limpiándola de manera gentil con principios activos de la más alta calidad.<br>▪️ Agua de Rosas, fragancia usada ancestralmente con beneficios tanto a nivel estético como a tu espíritu.<br>▪️Serum Dia: Premium con aceite de JOJOBA y Aceites Esenciales puros.<br>▪️Emulsión Hidratante Liviana.</span><br><br><b>NOCHE</b><br><span style="font-size: 15px;">▪️ Agua Micelar que protege tu piel limpiándola de manera gentil con principios activos de la más alta calidad<br>▪️ Agua de Rosas, fragancia usada ancestralmente con beneficios tanto a nivel estético como a tu espíritu.<br>▪️ Serum Noche: Premium con aceite de Jojoba Golden, Rosa Mosqueta y aceites esenciales  de primera calidad.<br>▪️ Crema Regeneradora con Acido Hialurónico.</span>'   })   
+}
