@@ -127,8 +127,8 @@ const btnrum16 = document.getElementById("Celluintense");
 btnrum16.addEventListener("click", Celluintense);
 function Celluintense() {
   Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Celluintense</u></span>',
-    html: '<span style="font-size: 15px;">Emulsión liviana formulada con un concentrado bioherbáceo.<br>Su activo de origen natural combina especies botánicas marinas y terrestres y, por su efecto sinérgico, ayuda a minimizar el aspecto de la piel con celulitis y adiposidad localizada, y a mejorar la tonicidad. Tiene la textura justa para un corto masaje que ayude a la circulación, se absorbe rápidamente y le otorga a la piel un aspecto suave y terso.<br><br><div style="text-align: left;"><span style="color:red;">*</span> Función: Reductores y afirmantes corporales, Anticelulí­ticos.<br> <span style="color:red;">*</span> Tipo de piel: Todo tipo. <br> <span style="color:red;">*</span> Tipo: Cuerpo. <br><span style="color:red;">*</span> Solución para: Con flacidez, Con celulitis, Con adiposidad.<br> <span style="color:red;">*</span> Efecto: Reductor, Anticelulítico, Afirmante.</div></span><br>'      
+    title: '<span style="font-size: 25px;"><u>SOLAR UVA PLUS SPF 50+</u></span>',
+    html: '<span style="font-size: 15px;">Protector solar con una excelente dispersión y combinación de pantallas físicas y químicas que otorgan una protección solar de amplio espectro y previene el estrés oxidativo.<br><br><div style="text-align: left;"><span style="color:red;">*</span> Tipo de piel: Seca, normal, mixta. <br> <span style="color:red;">*</span> Tipo: Solares. <br><span style="color:red;">*</span> Solución para: Fotodañadas, Con manchas.<br> <span style="color:red;">*</span> Efecto: Protector solar, Antioxidante.</div></span><br>'      
     })   
 }
 const btnrum17 = document.getElementById("hyaluronic4d");
@@ -219,14 +219,7 @@ function DhermaTC() {
     html: '<span style="font-size: 15px;">Crema de uso diario formulada con múltiples activos que brindan resistencia, firmeza y cohesión a la piel. <br>Reestructura la unión dermo-epidérmica, lo que otorga al rostro un aspecto de lozanía y juventud. <br><br><div style="text-align: left;"><span style="color:red;">*</span> Función: Afirmante.<br> <span style="color:red;">*</span> Tipo de piel: Seca, Normal, Grasa, Mixta. <br> <span style="color:red;">*</span> Tipo: Rostro. <br><span style="color:red;">*</span> Solución para: Involutivas.<br> <span style="color:red;">*</span> Efecto: Tensor, Afirmante.</div></span><br>'      
     })   
 }
-const btnrum28 = document.getElementById("radiancs");
-btnrum28.addEventListener("click", radiancs);
-function radiancs() {
-  Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Radian C Brightening Serum</u></span>',
-    html: '<span style="font-size: 15px;">Gel para rostro con una innovadora molécula de vitamina C, alfa arbutina y ácido hialurónico que atenúan los signos del envejecimiento, mejoran la formación de colágeno y unifican el tono de la piel.<br>Otorga mayor firmeza y ayuda a incrementar la formación de colágeno y a disminuir la producción de melanina. Por su contenido de ácido hialurónico, mantiene la piel hidratada y fresca.<br><br><div style="text-align: left;"><span style="color:red;">*</span> Función: Manchas, Antiage, Antioxidantes.<br> <span style="color:red;">*</span> Tipo de piel: Seca, Normal, Grasa, Mixta. <br> <span style="color:red;">*</span> Tipo: Rostro. <br><span style="color:red;">*</span> Solución para: Con arrugas y/o lí­neas de expresión, Involutivas, Fotodañadas.<br> <span style="color:red;">*</span> Efecto: Antiage, Blanqueador, Antioxidante.</div></span><br>'      
-    })   
-}
+
 const btnrum29 = document.getElementById("hydraeye");
 btnrum29.addEventListener("click", hydraeye);
 function hydraeye() {
@@ -235,11 +228,27 @@ function hydraeye() {
     html: '<span style="font-size: 15px;">Fluido refrescante con potentes activos que hidratan profundamente la zona periocular. <br>Contiene una combinación de ingredientes que ayudan a reparar la barrera lipídica y a mantener una hidratación confortable y prolongada. Su aplicador, un práctico roll on de acero, permite realizar un suave masaje que deja la mirada despejada y fresca. <br><br><div style="text-align: left;"><span style="color:red;">*</span> Función: Hidratación, Ojos y Labios, Antiage.<br> <span style="color:red;">*</span> Tipo de piel: Seca, Normal, Grasa, Mixta. <br> <span style="color:red;">*</span> Tipo: Rostro. <br><span style="color:red;">*</span> Solución para: Con arrugas y/o lí­neas de expresión, Involutivas, Fotodañadas.<br> <span style="color:red;">*</span> Efecto: Antiage, Descongestivo, Humectante.</div></span><br>'      
     })   
 }
+const btnrumSkinbioma = document.getElementById("Skinbioma");
+btnrumSkinbioma.addEventListener("click", Skinbioma);
+function Skinbioma() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Skinbioma Face Cream</u></span>',
+    html: '<span style="font-size: 15px;">Crema facial de suave emoliencia que repara e hidrata la piel y le devuelve el brillo y la luminosidad de las pieles jóvenes.<br>Sus activos prebióticos protegen la salud de la piel porque ayudan a mantener el equilibrio y la diversidad de la flora bacteriana.<br><br><div style="text-align: left;"><span style="color:red;">*</span> Función: Hidratación, Afirmante, Antiage, Pieles con rojeces.<br> <span style="color:red;">*</span> Tipo de piel: Seca, Normal, Mixta. <br> <span style="color:red;">*</span> Tipo: Rostro. <br><span style="color:red;">*</span> Solución para: Con arrugas y/o lí­neas de expresión, Involutivas, Sensibles, Fotodañadas, Deshidratadas.<br> <span style="color:red;">*</span> Efecto: Antiage, Humectante, Reparador.</div></span><br>'      
+    })   
+}
 const btnrum30 = document.getElementById("Mimika");
 btnrum30.addEventListener("click", Mimika);
 function Mimika() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Mimika Waterproof Eyeliner</u></span>',
     html: '<span style="font-size: 15px;">Delineador retráctil con textura gel. De color intenso, fácil aplicación y con alto poder cubritivo.<br>Se desliza muy suavemente sobre la piel del pàrpado. Puede utilizarse dentro y fuera del ojo. <br><br><div style="text-align: left;"><span style="color:red;">*</span> Tipo: Maquillaje. <br> <span style="color:red;">*</span> Línea maquillaje: Ojos. '      
+    })   
+}
+const btnrum28 = document.getElementById("radiancs");
+btnrum28.addEventListener("click", radiancs);
+function radiancs() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Radian C Brightening Serum</u></span>',
+    html: '<span style="font-size: 15px;">Gel para rostro con una innovadora molécula de vitamina C, alfa arbutina y ácido hialurónico que atenúan los signos del envejecimiento, mejoran la formación de colágeno y unifican el tono de la piel.<br>Otorga mayor firmeza y ayuda a incrementar la formación de colágeno y a disminuir la producción de melanina. Por su contenido de ácido hialurónico, mantiene la piel hidratada y fresca.<br><br><div style="text-align: left;"><span style="color:red;">*</span> Función: Manchas, Antiage, Antioxidantes.<br> <span style="color:red;">*</span> Tipo de piel: Seca, Normal, Grasa, Mixta. <br> <span style="color:red;">*</span> Tipo: Rostro. <br><span style="color:red;">*</span> Solución para: Con arrugas y/o lí­neas de expresión, Involutivas, Fotodañadas.<br> <span style="color:red;">*</span> Efecto: Antiage, Blanqueador, Antioxidante.</div></span><br>'      
     })   
 }

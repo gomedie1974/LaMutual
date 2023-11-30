@@ -1,3 +1,4 @@
+/* INGRESO CON CLAVE AL SISTEMA */
 function showPasswordPrompt() {
     const passwordForm = document.getElementById("passwordForm");
     passwordForm.style.display = "block";
@@ -47,6 +48,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+/* GENERAR CODIGO QR */
 
 function generarCodigoAleatorio() {
           var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -59,82 +61,86 @@ function generarCodigoAleatorio() {
       }
 
       
-function generarCodigosQR() {
-  var nombre = document.getElementById("nombre").value;
-  var vehiculo = document.getElementById("vehiculo").value;
-  var patente = document.getElementById("patente").value;
-  var cantidad = parseInt(document.getElementById("cantidad").value, 10);
-  var codigosGenerados = [];
-  
-  if (nombre.trim() === "" ) {
-    alert("Por favor, ingrese un nombre antes de generar códigos.");
-    return; // Detener la función si el nombre está vacío
-  }
-  if (vehiculo.trim() === "" ) {
-    alert("Por favor, ingrese datos del vehículo antes de generar códigos.");
-    return; // Detener la función si el nombre está vacío
-  } 
-  if (patente.trim() === "" ) {
-    alert("Por favor, ingrese un número de patente antes de generar códigos.");
-    return; // Detener la función si el nombre está vacío
-  }
-
-  for (var i = 0; i < cantidad; i++) {
-      var codigo = generarCodigoAleatorio();
-      var codigoDeCompra = codigo;
-      var fechaGeneracion = new Date().toLocaleString(); // Obtenemos la fecha actual
-      codigosGenerados.push({ 
-          codigo: codigoDeCompra,
-          nombre: nombre,  // Agregar Apellido y Nombre 
-          vehiculo: vehiculo,  // Agregar datos vehiculo 
-          patente: patente,  // Agregar patente 
-          fecha: fechaGeneracion,          
-          sello: '',  // Agregar Sello (deja vacío por ahora)
-          firma: '',  // Agregar Firma (deja vacío por ahora) });
-      })
-
-  mostrarCodigosQR(codigosGenerados);
-}
-}
-
-function mostrarCodigosQR(codigos) {
-  var codigosDiv = document.getElementById("codigos");
-  codigosDiv.innerHTML = "";
-
-  for (var i = 0; i < codigos.length; i++) {
-      var codigoDiv = document.createElement("div");
-      var codigoQRDiv = document.createElement("div");
+      function generarCodigosQR() {
+        var nombre = document.getElementById("nombre").value;
+        var vehiculo = document.getElementById("vehiculo").value;
+        var patente = document.getElementById("patente").value;
+        var cantidad = parseInt(document.getElementById("cantidad").value, 10);
+        var codigosGenerados = [];
       
-      codigoQRDiv.id = "qrcode" + i;
-      codigosDiv.appendChild(codigoQRDiv);
-      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Nombre: ${codigos[i].nombre}</span><br>`;
-      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Código: ${codigos[i].codigo}</span><br>`;
-      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Vehículo: ${codigos[i].vehiculo}</span><br>`;
-      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Patente: ${codigos[i].patente}</span><br>`;
-      codigoDiv.innerHTML += `<span style="margin-left: 20px;">Fecha de generación: ${codigos[i].fecha}</span><br><br>`;
-      codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Sello:</span> <span style="margin-left: 200px;"> Firma:</span>`;
- 
-      // Aplicar margen izquierdo al contenedor
-      codigoQRDiv.style.marginLeft = "120px";
+        if (nombre.trim() === "") {
+          alert("Por favor, ingrese un nombre antes de generar códigos.");
+          return; // Detener la función si el nombre está vacío
+        }
+        if (vehiculo.trim() === "") {
+          alert("Por favor, ingrese datos del vehículo antes de generar códigos.");
+          return; // Detener la función si el nombre está vacío
+        }
+        if (patente.trim() === "") {
+          alert("Por favor, ingrese un número de patente antes de generar códigos.");
+          return; // Detener la función si el nombre está vacío
+        }
       
-      // Agrega la línea horizontal debajo de "Firma"
-/*       codigoDiv.innerHTML += `<hr style="margin-left: 10px;"><br>`;
- */
-      codigosDiv.appendChild(codigoDiv);
-
-      /* var codigoQRDiv = document.createElement("div");
-      codigoQRDiv.id = "qrcode" + i;
-      codigosDiv.appendChild(codigoQRDiv); */
-
+        for (var i = 0; i < cantidad; i++) {
+          var codigo = generarCodigoAleatorio();
+          var codigoDeCompra = codigo;
+          var fechaGeneracion = new Date().toLocaleString(); // Obtenemos la fecha actual
       
-      var qrcode = new QRCode(codigoQRDiv, {
-          text: codigos[i].codigo,
-          width: 100,
-          height: 100,
-      });
-  }
-}
-   
+          // Calcular la fecha de vencimiento (60 días después)
+          var fechaVencimiento = new Date();
+          fechaVencimiento.setDate(fechaVencimiento.getDate() + 60);
+      
+          // Formatear la fecha de vencimiento en el mismo formato que la fecha de generación
+          var fechaVencimientoFormateada = fechaVencimiento.toLocaleString();
+      
+          codigosGenerados.push({
+            codigo: codigoDeCompra,
+            nombre: nombre,
+            vehiculo: vehiculo,
+            patente: patente,
+            fecha: fechaGeneracion,
+            fechaVencimiento: fechaVencimientoFormateada, // Agregar fecha de vencimiento
+            sello: '',
+            firma: ''
+          });
+        }
+      
+        mostrarCodigosQR(codigosGenerados);
+      }
+      
+      function mostrarCodigosQR(codigos) {
+        var codigosDiv = document.getElementById("codigos");
+        codigosDiv.innerHTML = "";
+      
+        for (var i = 0; i < codigos.length; i++) {
+          var codigoDiv = document.createElement("div");
+          var codigoQRDiv = document.createElement("div");
+      
+          codigoQRDiv.id = "qrcode" + i;
+          codigosDiv.appendChild(codigoQRDiv);
+          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Nombre: ${codigos[i].nombre}</span><br>`;
+          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Código: ${codigos[i].codigo}</span><br>`;
+          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Vehículo: ${codigos[i].vehiculo}</span><br>`;
+          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Patente: ${codigos[i].patente}</span><br>`;
+          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Fecha de generación: ${codigos[i].fecha}</span><br>`;
+          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Fecha de vencimiento: ${codigos[i].fechaVencimiento}</span><br><br>`;
+          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Sello:</span> <span style="margin-left: 100px;"> Firma:</span> <br><br><br><br><br><br>`;
+          
+          // Aplicar margen izquierdo al contenedor
+          codigoQRDiv.style.marginLeft = "120px";
+      
+          codigosDiv.appendChild(codigoDiv);
+      
+          var qrcode = new QRCode(codigoQRDiv, {
+            text: codigos[i].codigo,
+            width: 100,
+            height: 100,
+          });
+        }
+      }
+         
+/* IMPRIMIR CODIGO QR */
+
 function imprimirCodigosQR() {
   var codigosDiv = document.getElementById("codigos");
   var ventanaImpresion = window.open('', '', 'width=600,height=600');
