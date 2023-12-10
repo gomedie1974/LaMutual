@@ -69,7 +69,35 @@
         }
         .subtotal-row {
          color: rgb(166, 0, 0);
-    }
+         font-style: italic;
+        }
+        .info-box {
+          background-color: rgb(244, 249, 208);
+            float: right; /* Alinea el cuadro a la derecha */
+            width: 350px; /* Ajusta el ancho según tus necesidades */
+            padding: 1px;
+            border: 1px solid #800404;
+            border-radius: 5px;
+            margin-left: 20px; /* Espacio entre el título y el cuadro */
+            margin-right: 10px;
+            box-sizing: border-box; /* Incluye el padding y border en el ancho y alto */
+            margin-top: -40px; /* Ajusta este valor para subir o bajar el cuadro */
+        }
+                /* Media query para hacer el cuadro responsive */
+        @media (max-width: 767px) {
+            .info-box {
+                float: none; /* Desactiva la alineación a la derecha */
+                width: 90%; /* Ocupa todo el ancho disponible */
+                /* margin-left: 0; */ /* Elimina el margen izquierdo */
+                margin-top: 10px; /* Ajusta el espacio entre el título y el cuadro */
+            }
+        }
+        .total-general {
+          color: #000000; /* Cambia este color al que prefieras */
+          font-weight: bold; /* Otras propiedades de estilo si lo deseas */
+       }
+
+      
     </style>
 </head>
 <body >
@@ -112,11 +140,17 @@
         </div>
       </nav>
       <br> 
-  <div>
-    <p style="text-align: center; color: rgb(0, 0, 0); font-size: 130%;"><b><u>ESTADO DE CUENTA CORRIENTE</u></b></p>
-    <p style="text-align: center; color: rgb(0, 65, 216); font-size: 100%;"><b> Última actualización 05/12/2023 13:58 hs</b></p>
-  </div>
-<div class="mt-4 pt-4 m-2" > 
+      <div>
+        <p style="text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>ESTADO DE CUENTA CORRIENTE</u></b></p>
+        <p style="text-align: center">Última actualización: <strong>09/12/2023 09:50 hs</strong></p>
+        <!-- Agrega el cuadro de información al lado derecho del título -->
+        <div class="info-box">
+            <span>Pago por transferencia </span> <br><button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
+            <span ><b><u>Fechas de pago</u></b> <br>ADHERENTES y JUBILADOS<strong><br> 1 al 8 de cada mes</strong></span>
+        </div><br>
+    </div>
+    
+<div class="mt-4 m-2" > 
 <!-- Agrega dos nuevos campos de entrada para el apellido y nombre -->
 <label for="numeroSocioInput">Número de Socio:</label>
 <input type="text" id="numeroSocioInput">
@@ -151,13 +185,24 @@
             <tr>
                 <td colspan="2"></td>
                 <td><strong>Total General</strong></td>
-                <td id="totalGeneral" ></td>
+                <td id="totalGeneral" class="total-general"></td>
                 <td></td>
             </tr>
         </tfoot>
     </table>
 </div>
     <script>
+      //informacion CBU
+      const boton1 = document.getElementById("infocbu");
+      boton1.addEventListener("click", infocbu);
+      function infocbu() {
+              Swal.fire({
+                  imageUrl: '../image/CBU.png',
+                  imageWidth: 400,
+                  imageHeight: 200,
+                  })   
+                }
+
 /*     function convertirFormatoCuota(cuota) {
     // Mapea los nombres de los meses a sus números correspondientes
     const meses = {
@@ -192,13 +237,20 @@
     var numeroSocioBuscado = document.getElementById("numeroSocioInput").value;
     var apellidoNombreBuscado = document.getElementById("apellidoNombreInput").value;
     var mensajeDiv = document.getElementById("mensaje");
-
+     
     // Verifica que los campos obligatorios estén llenos
     if (!numeroSocioBuscado || !apellidoNombreBuscado) {
         // Muestra el mensaje de error
         mensajeDiv.textContent = "Por favor, complete ambos campos: Número de Socio y Apellido y Nombre.";
         return;
     }
+        // Verifico que el campo Apellido y Nombre tenga al menos 6 caracteres
+        if (apellidoNombreBuscado.length < 9) {
+        // Muestra el mensaje de error
+        mensajeDiv.textContent = "Datos incompletos";
+        return;
+    }
+
 
     // Limpia el mensaje si los campos están llenos
     mensajeDiv.textContent = "";
@@ -229,7 +281,8 @@
                 // Verifica si coincide el número de socio o el apellido y nombre
                 if (
                     movimiento.numeroSocio == numeroSocioBuscado && 
-                    movimiento.apellidoNombre.toLowerCase().includes(apellidoNombreBuscado.toLowerCase().substring(0, 2))
+                    movimiento.apellidoNombre.toLowerCase().includes(apellidoNombreBuscado.toLowerCase()/* .substring(0, 2) */)
+                    
                 ) { /* con el substring hago que coincidan por lo menos las 2 letras */
                     // Calcular el total general
                     totalGeneral += parseFloat(movimiento.monto.replace("$", "").replace(",", ""));
@@ -292,7 +345,15 @@
             }
 
             // Mostrar el total general en la tabla
-            totalGeneralCell.textContent = `$ ${totalGeneral.toFixed(2)}`;
+            //totalGeneralCell.textContent = `$ ${totalGeneral.toFixed(2)}`;
+            totalGeneralCell.textContent = formatNumber(totalGeneral);
+            function formatNumber(number) {
+                return number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+               // return number.toFixed(2).replace(/\./g, ',').replace(/\d(?=(\d{3})+,)/g, '$&.');
+
+            }
+
+
 
             console.log(JSON.stringify(data, null, 2));
 
@@ -340,7 +401,7 @@
 
   <!-- JAVA -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>
