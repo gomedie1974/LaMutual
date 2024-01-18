@@ -47,9 +47,9 @@ function jazmin() {
     title: '<span style="font-size: 25px;"><u>Vela Jazmín</u></span>',
     html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br> Dimensiones: 10 cm. de diámetro x 10 cm. de alto.<br>460 grs de cera de soja.<br>Aroma: Pera-Pepino-Manzana.</span></div>'    })   
 }
-const btnrumlola = document.getElementById("lola");
-btnrumlola.addEventListener("click", lola);
-function lola() {
+const btnrumlola = document.getElementById("lolas");
+btnrumlola.addEventListener("click", lolas);
+function lolas() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Vela Lola</u></span>',
     html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br> Dimensiones: 0.7 cm. de diámetro x 12 cm. de alto.<br>400 grs de cera de soja.<br>Aroma: Bambú / Coco Lima.</span></div>'    })   

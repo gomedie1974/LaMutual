@@ -24,7 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
 
-    <title>Buscar por Número de Socio</title>
+    <title>Buscar por Número de dni</title>
     <style>
         .content-container {
             margin-left: 20px; /* Ajusta el margen izquierdo según tus necesidades */
@@ -86,7 +86,6 @@
         font-style: italic;
         }
         .info-box {
-            background-color: rgb(244, 249, 208);
             float: right; /* Alinea el cuadro a la derecha */
             width: 300px; /* Ajusta el ancho según tus necesidades */
             padding: 1px;
@@ -157,7 +156,7 @@
 <br> 
       <div >
         <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>ESTADO DE CUENTA CORRIENTE</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">05/01/2024 10:30 hs</strong></p>
+        <p style="text-align: center">Última actualización: <strong style="color: red;">17/01/2024 11:20 hs</strong></p>
         <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
             <span>Pago por transferencia </span>  <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
@@ -167,13 +166,13 @@
 
 <div class="content-container">
     <form action="" method="post" onsubmit="return validarFormulario()">
+        <label for="numeroSocioInput">Número de DNI (sin . ni ,):</label>
+        <input type="text" id="dniInput" name="dni" required style="width: 100px;" autocomplete="off">
+         
         <label for="numeroSocioInput">Número de Socio:</label>
         <input type="text" id="numeroSocioInput" name="numeroSocio" required style="width: 50px;" autocomplete="off">
-
-        <label for="apellidoNombreInput">Apellido y Nombre:</label>
-        <input type="text" id="apellidoNombreInput" name="apellidoNombre" required autocomplete="off">
-        <button class='btn btn-dark btn-sm' type='submit' >Buscar </button>
-        <!-- <input type="submit" value="Buscar"> -->
+        <br> 
+         <button class='btn btn-dark btn-sm' type='submit' >Buscar </button>
     </form>
 </div>
 <?php
@@ -190,20 +189,19 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+
+
 // Verificar si se envió el formulario  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
+    $dni = $_POST["dni"];
     $numeroSocio = $_POST["numeroSocio"];
-    $apellidoNombre = $_POST["apellidoNombre"];
-
-    // Validar longitud del campo "Apellido y Nombre"
-    if (strlen($apellidoNombre) < 5) {
-        echo "El campo 'Apellido y Nombre' es erroneo.";
-    } else {
+ 
+     
         // Consulta SQL para recuperar datos filtrados
-        $sql = "SELECT numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM tablaSocios
-                WHERE numeroSocio = '$numeroSocio' AND apellidoNombre LIKE '%$apellidoNombre%'";
+        $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
+                FROM socioscuenta1801                 
+                WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
 
         // Variable para almacenar el subtotal
@@ -272,7 +270,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "No se encontraron resultados.";
         }
       }
-}
+ 
 
 // Cerrar la conexión
 $conn->close();

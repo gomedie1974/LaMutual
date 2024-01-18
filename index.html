@@ -39,14 +39,51 @@
           .bd-placeholder-img-lg {
             font-size: 3.5rem;
           }
-        }
+        }  
+        
+        .resultado img {
+            max-width: 10%;
+            height: auto;
+            display: block; /* Para evitar márgenes extra en la parte inferior */
+            margin: 0 auto; /* Centrar la imagen dentro del contenedor */
+            max-height: 200px; /* Establecer la altura máxima deseada */
+            margin-top: 2%;
+        } 
+        #busquedaInputForm {
+          width: 100%; /* Ajusta el ancho según tus necesidades */
+          max-width: 600px; /* Puedes establecer un ancho máximo si lo deseas */
+          margin: 0 auto; /* Centra la barra de búsqueda en la pantalla */
+          border: 2px solid #000000; /* Agrega un borde */
+          overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
+          display: flex; /* Para alinear el ícono y el campo de entrada en la misma línea */
 
+      }
+
+      #busquedaInput {
+          width: auto; /* Ajusta el ancho del campo de entrada según tus necesidades */
+          padding: 10px; /* Ajusta el relleno según tus necesidades */
+          float: left; /* Permite que el botón de búsqueda esté en la misma línea */
+          border-radius: 20px; /* Establece bordes redondeados */
+
+      }
+      .cerrar-btn {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background-color: #000000;
+        border: 1px solid #000000;
+        padding: 5px 10px;
+        cursor: pointer;
+        color: aliceblue;    
+        z-index: 1000; /* Ajusta este valor según sea necesario */
+      }
+     
     </style>
     
       <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
     
-  
+   
 </head>
 
 <body>
@@ -88,7 +125,7 @@
 </header>
 
 
-<div id="header" style="background-color: #9f9999;"  >
+<div id="header" style="background-color: #1847a5;"  >
 <ul class="nav justify-content-center"  >
   <li ><a href="#"  >Descuentos <i class="arrow down"></i></a>
           <ul style="background-color: #5e6165;">
@@ -115,19 +152,98 @@
              <hr style="color: white;">  
             <li><a href="javascript:void(0);"class="nav-link px-2" onclick="showPasswordPrompt()">Estacionamiento</a></li>    
           </ul>
-          <li><a href="./pages/colecciones.html" class="nav-link px-2 ">Colecciones LN</a></li>
+          <li><a href="./pages/colecciones.html" class="nav-link px-2 ">Opcionales</a></li>
           <li><a href="./pages/ayudaeconomica.html" class="nav-link px-2 ">Ayuda Económica</a></li>
           <li><a href="./pages/subsidios.html" class="nav-link px-2">Subsidios</a></li>
-          <li><a href="./pages/productos.html" class="nav-link px-2">Productos Publicados</a></li>
+          <li><a href="./pages/productos.html" class="nav-link px-2">Productos </a></li>
           <li><a href="./pages/asociarse.html" class="nav-link px-2 ">Asociarse </a></li>
           <li><a href="./pages/contacto.html" class="nav-link px-2 ">Contacto</a></li>        
-          <li><a href="./pages/datos.php" class="nav-link px-2" style="background-color: black;">Cuenta Corriente</a></li>            
-                       
-           <br> 
+          <li><a href="./pages/datos.php" class="nav-link px-2" style="background-color: rgb(255, 174, 24);color: black;">Cuenta Corriente</a></li>            
+           <li><div style="display: flex; align-items: center;">
+            <input type="text" id="busquedaInput" style="margin-left: 2%;" placeholder="Buscar">
+            <a href="#" id="btnBuscar" style="text-decoration: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg>
+            </a>
+          </div></li>
+                      
+          
   </li>
 </ul> 
-</div>
 
+</div>
+ 
+
+<section  > 
+  
+  
+
+  <!-- búsqueda -->
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+
+      // Muestra los resultados en el área correspondiente
+      var resultadosDiv = document.getElementById("resultados");
+      var btnCerrar = document.getElementById("btnCerrar");
+
+
+          document.getElementById("btnBuscar").addEventListener("click", function () {
+              // Obtiene el valor de la entrada de búsqueda
+              var consulta = document.getElementById("busquedaInput").value.toLowerCase();
+
+              // Lista de páginas a buscar
+              var paginas = ["../pages/aperitivos.html"  , "../pages/almacen.html", "../pages/tienda.html", "../pages/canjes.html" , "../pages/hogar.html"  , "../pages/electro.html", "../pages/feria.html", "../pages/juegos.html", "../pages/puravida.html", "../pages/biferdil.html" ,"../pages/lidherma.html", "../pages/perfumes.html","../pages/nega.html"/* , "../pages/raiz.html"  */];
+                                          
+
+              // Array para almacenar las promesas de las llamadas fetch
+              var fetchPromises = paginas.map(pagina => fetch("pages/" + pagina));
+
+              // Cuando todas las promesas estén resueltas, muestra los resultados combinados
+              Promise.all(fetchPromises)
+                  .then(responses => Promise.all(responses.map(response => response.text())))
+                  .then(htmlArray => {
+                      // Combina todo el HTML en una cadena
+                      var htmlTotal = htmlArray.join("");
+
+                      // Crea un elemento temporal para contener los productos
+                      var temporalDiv = document.createElement("div");
+                      temporalDiv.innerHTML = htmlTotal;
+
+                      // Obtiene todos los productos
+                      var productos = temporalDiv.querySelectorAll(".card");
+
+                      // Filtra los productos que coinciden con la consulta
+                      var resultados = Array.from(productos).filter(producto => {
+                          var nombreProducto = producto.querySelector("h5").innerText.toLowerCase();
+                          return nombreProducto.includes(consulta);
+                      });
+
+                      // Muestra los resultados en el área correspondiente
+                      var resultadosDiv = document.getElementById("resultados");
+                      resultadosDiv.innerHTML = resultados.length > 0
+                          ?  resultados.map(producto => `<div class="resultado">${producto.outerHTML}</div>`).join("")
+                          : "<p>No se encontraron resultados.</p>";
+                          btnCerrar.style.display = resultados.length > 0 ? "block" : "none";
+
+                  })
+                          // Agrega un evento al botón "Cerrar" para ocultar los resultados
+                        btnCerrar.addEventListener("click", function () {
+                            resultadosDiv.innerHTML = "";
+                            btnCerrar.style.display = "none";
+                        });
+
+/*                   .catch(error => console.error("Error al cargar páginas:", error)); */
+          });
+      });
+  </script>
+   
+  <div id="resultados">
+      <!-- Aquí se mostrarán los resultados de la búsqueda -->
+  </div>
+  <button id="btnCerrar" class="cerrar-btn" style="display: none;">Cerrar</button>
+
+</section>
 
 
 <!-- Agrega un div oculto para mostrar el formulario -->
@@ -156,24 +272,6 @@
  
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $('.owl-carousel').owlCarousel({
-      loop:true,
-      margin:10,
-      //nav:true,
-      autoplay:true,
-      autoplayTimeout:5000, // especifica el tiempo de espera en milisegundos
-      responsive:{
-        0:{
-          items:1
-        },
-      }
-    })
-  });
-</script>
 <div class="owl-carousel owl-theme ">
   <div class="item"><a href="./pages/asociarse.html"><img src="./image/1.png" class="carrouselimagen" ></a></div>
   <div class="item"><a href="./pages/canjes.html"><img src="./image/7.png" class="carrouselimagen" alt="pinocha"></a></div>
@@ -282,8 +380,9 @@
         <em> <strong style="color: red;"> <b> El pago de la misma le será acreditado a cada socio en su cuenta corriente de La Mutual. </b></em></strong>
         </p>
       </div>
-      <div class="col-md-5"><br><br><br><br><br>
-      <img width="330" src="./image/beca2.jpg" alt=""></a>
+      <div class="col-md-5"> 
+      <a href="./image/becasec.png" target="_blank" rel="noopener noreferrer"><img width="330"  src="./image/becasec.png" alt=""></a>
+
       </div>
     </div>
 
@@ -500,6 +599,25 @@
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+          loop:true,
+          margin:10,
+          //nav:true,
+          autoplay:true,
+          autoplayTimeout:5000, // especifica el tiempo de espera en milisegundos
+          responsive:{
+            0:{
+              items:1
+            },
+          }
+        })
+      });
+    </script>
 
     </body>
   </html>

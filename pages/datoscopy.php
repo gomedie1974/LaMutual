@@ -86,7 +86,6 @@
         font-style: italic;
         }
         .info-box {
-            background-color: rgb(244, 249, 208);
             float: right; /* Alinea el cuadro a la derecha */
             width: 300px; /* Ajusta el ancho según tus necesidades */
             padding: 1px;
@@ -157,7 +156,7 @@
 <br> 
       <div >
         <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>ESTADO DE CUENTA CORRIENTE</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">03/01/2024 10:30 hs</strong></p>
+        <p style="text-align: center">Última actualización: <strong style="color: red;">12/01/2024 11:30 hs</strong></p>
         <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
             <span>Pago por transferencia </span>  <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
@@ -167,7 +166,7 @@
 
 <div class="content-container">
     <form action="" method="post" onsubmit="return validarFormulario()">
-        <label for="numeroSocioInput">Número de DNI:</label>
+        <label for="numeroSocioInput">Número de DNI (sin . ni ,):</label>
         <input type="text" id="dniInput" name="dni" required style="width: 100px;" autocomplete="off">
          
         <label for="numeroSocioInput">Número de Socio:</label>
@@ -193,6 +192,8 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+
+
 // Verificar si se envió el formulario  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
@@ -206,7 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM prueba 
+                FROM socioscuenta120124                 
                 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' AND apellidoNombre LIKE '%$apellidoNombre%'";
         $result = $conn->query($sql);
 
@@ -365,3 +366,7 @@ function descargarPDF() {
 
 </body>
 </html>
+
+
+
+
