@@ -966,6 +966,14 @@ button#siguiente2 {
   right: 5px; /* Ajusta la posición derecha */
 }
 
+button#anterior3 {
+  left: 3px; /* Ajusta la posición izquierda */
+}
+
+button#siguiente3 {
+  right: 3px; /* Ajusta la posición derecha */
+}
+
 /* Estilos para el filtro a la izquierda */
 .filtro {
   width: 100%; /* Ancho completo en dispositivos móviles */

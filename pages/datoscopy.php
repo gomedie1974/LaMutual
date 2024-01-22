@@ -156,7 +156,7 @@
 <br> 
       <div >
         <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>ESTADO DE CUENTA CORRIENTE</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">12/01/2024 11:30 hs</strong></p>
+        <p style="text-align: center">Última actualización: <strong style="color: red;">19/01/2024 11:20 hs</strong></p>
         <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
             <span>Pago por transferencia </span>  <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
@@ -171,11 +171,8 @@
          
         <label for="numeroSocioInput">Número de Socio:</label>
         <input type="text" id="numeroSocioInput" name="numeroSocio" required style="width: 50px;" autocomplete="off">
-        <br><br>
-        <label for="apellidoNombreInput">Apellido y Nombre:</label>
-        <input type="text" id="apellidoNombreInput" name="apellidoNombre" style="width: 350px;" required autocomplete="off">
-
-        <button class='btn btn-dark btn-sm' type='submit' >Buscar </button>
+        <br> 
+         <button class='btn btn-dark btn-sm' type='submit' >Buscar </button>
     </form>
 </div>
 <?php
@@ -199,16 +196,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
     $dni = $_POST["dni"];
     $numeroSocio = $_POST["numeroSocio"];
-    $apellidoNombre = $_POST["apellidoNombre"];
-
-    // Validar longitud del campo "Apellido y Nombre"
-    if (strlen($apellidoNombre) < 5) {
-        echo "El campo 'Apellido y Nombre' es erroneo.";
-    } else {
+ 
+     
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM socioscuenta120124                 
-                WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' AND apellidoNombre LIKE '%$apellidoNombre%'";
+                FROM socioscuenta2201                 
+                WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
 
         // Variable para almacenar el subtotal
@@ -277,7 +270,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "No se encontraron resultados.";
         }
       }
-}
+ 
 
 // Cerrar la conexión
 $conn->close();
@@ -313,15 +306,52 @@ function validarFormulario() {
 
 </script>
 <br>
-<!-- Botón para descargar como PDF -->
-<button class='btn btn-primary m-2' onclick="descargarPDF()">Descargar como PDF</button>
-<script>
-function descargarPDF() {
-    const element = document.getElementById("tablaDatos");  
-    html2pdf(element);
-}
-</script>
 
+
+
+<style>
+       #spinner-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        #spinner {
+            width: 100px; /* Ajusta el ancho según sea necesario */
+            height: 100px; /* Ajusta la altura según sea necesario */
+        }
+  </style>
+
+ <!-- Botón para descargar como PDF -->
+ <button class='btn btn-primary m-2' onclick="descargarPDF()">Descargar como PDF</button>
+
+<!-- Spinner Container (por defecto oculto) -->
+<div id="spinner-container" style="display: none;">
+    <div id="spinner">
+        <img src="../image/loading.gif" alt="Loading..." />
+    </div>
+</div>
+
+<script>
+    function descargarPDF() {
+        // Desplazar la pantalla hacia el inicio
+        document.documentElement.scrollTop = 0;
+
+        // Mostrar el spinner al iniciar la descarga
+        document.getElementById("spinner-container").style.display = "block";
+
+        const element = document.getElementById("tablaDatos");
+        html2pdf(element);
+
+        // Ocultar el spinner cuando la descarga haya finalizado
+        setTimeout(function() {
+            document.getElementById("spinner-container").style.display = "none";
+        }, 5000); // Ajusta el tiempo según sea necesario
+    }
+  </script>
+ 
 
 <footer class="mt-4 pt-4">
     <br><br>
@@ -337,7 +367,7 @@ function descargarPDF() {
       <div>
         <h5><img src="../image/te.jpg" alt="mapa" srcset="" width="50"></h5>
         <p>L a V 9.00 a 19.00 hs<br>
-          6090-5147 / 5033 
+        6090-5770
         </p>
       </div>
       <div>
@@ -366,7 +396,3 @@ function descargarPDF() {
 
 </body>
 </html>
-
-
-
-

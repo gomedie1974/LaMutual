@@ -43,7 +43,7 @@
   });
  
 
-/* SEGUNDO SLIDE CAJA NAVIDAD */
+/* SEGUNDO SLIDE TROMEN */
 const slides2 = document.querySelectorAll('.slider2 img');
 const anteriorBtn2 = document.getElementById('anterior2');
 const siguienteBtn2 = document.getElementById('siguiente2');
@@ -79,3 +79,42 @@ mostrarSlide2(indice2);
 siguienteBtn2.addEventListener('click', avanzarSlide2);
 anteriorBtn2.addEventListener('click', retrocederSlide2);
 
+ 
+
+/* TERCER SLIDE SAMSONITE */
+const slides3 = document.querySelectorAll('.slider3 img');
+const anteriorBtn3 = document.getElementById('anterior3');
+const siguienteBtn3 = document.getElementById('siguiente3');
+let indice3 = 0;
+
+function mostrarSlide3(index) {
+    slides3.forEach((slide, i) => {
+        if (i === index) {
+            slide.style.display = 'block';
+        } else {
+            slide.style.display = 'none';
+        }
+    });
+}
+
+function avanzarSlide3() {
+    indice3++;
+    if (indice3 === slides3.length) {
+        indice3 = 0;
+    }
+    mostrarSlide3(indice3);
+}
+
+function retrocederSlide3() {
+    indice3--;
+    if (indice3 < 0) {
+        indice3 = slides3.length - 1;
+    }
+    mostrarSlide3(indice3);
+}
+
+mostrarSlide3(indice3);
+siguienteBtn3.addEventListener('click', avanzarSlide3);
+anteriorBtn3.addEventListener('click', retrocederSlide3);
+
+ 
