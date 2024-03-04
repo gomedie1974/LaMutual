@@ -88,6 +88,30 @@
 
 <body>
 
+  
+ <!-- banner -->
+ <div id="banner" style="position: fixed; top: 0; left: 0; width: 100%; background-color: #ffffff; padding: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+  <button id="cerrarBanner" class="btn btn-danger" style="position: absolute; top: 0; right: 0;">X</button>
+  <a href="./pages/novedad.html"><img src="./image/lolla.jpg"></a>
+</div>
+
+<script>
+  document.getElementById('cerrarBanner').addEventListener('click', function() {
+      document.getElementById('banner').style.display = 'none';
+  });
+</script>
+
+<!-- 
+  <script>
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById("banner").style.display = "none";
+      }, 3000); // tiempo en milisegundos (5 segundos = 50  00 ms)
+      document.getElementById("banner").style.display = "block";
+    };
+  </script>    --> 
+<!-- fin banner -->  
+
     <header class="p-3 text-black" style="background-color: rgb(225, 225, 225); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
  
       <div style="float:right;">
@@ -129,13 +153,13 @@
 <ul class="nav justify-content-center"  >
   <li ><a href="#"  >Descuentos <i class="arrow down"></i></a>
           <ul style="background-color: #5e6165;">
+            <li><a href="./pages/accesorios.html" class="nav-link px-2 ">Accesorios</a></li>
             <li><a href="./pages/almacen.html" class="nav-link px-2 ">Almacén</a></li>
             <li><a href="./pages/aperitivos.html" class="nav-link px-2">Bebidas</a></li>    
             <li><a href="#" class="nav-link px-2 ">Belleza<i class="arrow right"></i></a>
               <ul style="background-color: #5e6165; width: 200%;">
                 <li><a href="./pages/biferdil.html" class="nav-link px-2 ">Biferdil</a>
                 <li><a href="./pages/lidherma.html" class="nav-link px-2 ">Lidherma</a></li>
-                <li><a href="./pages/nega.html" class="nav-link px-2 ">Nega Velas y Aromas</a></li>
                 <li><a href="./pages/perfumes.html" class="nav-link px-2 ">Perfumes y Solares</a></li>
                 <li><a href="./pages/raiz.html" class="nav-link px-2 ">Raiz Cosmética</a></li>
               </ul></li>    
@@ -145,20 +169,22 @@
                 <li><a href="./pages/hogar.html" class="nav-link px-2 ">Blanco</a></li>
                 <li><a href="./pages/electro.html" class="nav-link px-2 ">Electro</a></li>
                 <li><a href="./pages/feria.html" class="nav-link px-2 ">Feria</a></li>  
+                <li><a href="./pages/nega.html" class="nav-link px-2 ">Nega Velas y Aromas</a></li>
               </ul></li>    
              <li><a href="./pages/juegos.html" class="nav-link px-2">Juegos</a></li>  
             <li><a href="./pages/puravida.html" class="nav-link px-2 ">Pura Vida</a></li>
             <li><a href="./pages/tienda.html" class="nav-link px-2 ">Indumentaria</a></li>
              <hr style="color: white;">  
-            <li><a href="javascript:void(0);"class="nav-link px-2" onclick="showPasswordPrompt()">Estacionamiento</a></li>    
+            <li><a href="javascript:void(0);"class="nav-link px-2" onclick="showPasswordPrompt()">Config</a></li>    
           </ul>
+          <li><a href="./pages/cocheras.html" class="nav-link px-2 ">Estacionamiento</a></li>
           <li><a href="./pages/colecciones.html" class="nav-link px-2 ">Opcionales</a></li>
           <li><a href="./pages/ayudaeconomica.html" class="nav-link px-2 ">Ayuda Económica</a></li>
           <li><a href="./pages/subsidios.html" class="nav-link px-2">Subsidios</a></li>
-          <li><a href="./pages/productos.html" class="nav-link px-2">Productos </a></li>
+          <li><a href="./pages/productos.html" class="nav-link px-2">Productos Publicados</a></li>
           <li><a href="./pages/asociarse.html" class="nav-link px-2 ">Asociarse </a></li>
           <li><a href="./pages/contacto.html" class="nav-link px-2 ">Contacto</a></li>        
-          <li><a href="./pages/datos.php" class="nav-link px-2" style="background-color: rgb(255, 174, 24);color: black;">Cuenta Corriente</a></li>            
+          <li><a href="./pages/datos.php" class="nav-link px-2" style="background-color: rgb(255, 174, 24);color: black;">Detalle de Gastos</a></li>            
            <li><div style="display: flex; align-items: center;">
             <input type="text" id="busquedaInput" style="margin-left: 2%;" placeholder="¿Qué estás buscando?">
             <a href="#" id="btnBuscar" style="text-decoration: none;">
@@ -193,7 +219,7 @@
               var consulta = document.getElementById("busquedaInput").value.toLowerCase();
 
               // Lista de páginas a buscar
-              var paginas = ["../pages/aperitivos.html"  , "../pages/almacen.html", "../pages/tienda.html", "../pages/canjes.html" , "../pages/hogar.html"  , "../pages/electro.html", "../pages/feria.html", "../pages/juegos.html", "../pages/puravida.html", "../pages/biferdil.html" ,"../pages/lidherma.html", "../pages/perfumes.html","../pages/nega.html"/* , "../pages/raiz.html"  */];
+              var paginas = ["../pages/aperitivos.html"  , "../pages/almacen.html", "../pages/tienda.html", "../pages/canjes.html" , "../pages/hogar.html"  , "../pages/electro.html", "../pages/feria.html", "../pages/juegos.html", "../pages/puravida.html", "../pages/biferdil.html" ,"../pages/lidherma.html", "../pages/perfumes.html","../pages/nega.html", "../pages/accesorios.html"];
                                           
 
               // Array para almacenar las promesas de las llamadas fetch
@@ -255,30 +281,16 @@
   </form>
 </div>
   
- <!-- banner --> 
-<!--   <div id="banner">
-    <a href="./pages/perfumes.html"> <img src="./image/dia de la madre.png" ></a> 
-  </div> 
-
-  <script>
-    window.onload = function() {
-      setTimeout(function() {
-        document.getElementById("banner").style.display = "none";
-      }, 3000); // tiempo en milisegundos (5 segundos = 50  00 ms)
-      document.getElementById("banner").style.display = "block";
-    };
-  </script>    -->
-<!-- fin banner -->  
  
 
 
-<div class="owl-carousel owl-theme ">
+<div class="owl-carousel owl-theme " >
   <div class="item"><a href="./pages/asociarse.html"><img src="./image/1.png" class="carrouselimagen" ></a></div>
+  <div class="item"><a href="./pages/accesorios.html"><img src="./image/9.png" class="carrouselimagen" ></a></div>
   <div class="item"><a href="./pages/canjes.html"><img src="./image/7.png" class="carrouselimagen" alt="pinocha"></a></div>
   <div class="item"><a href="./pages/biferdil.html"><img src="./image/6.png" class="carrouselimagen"></a></div>
   <div class="item"><a href="./pages/lidherma.html"><img src="./image/8.png" class="carrouselimagen"></a></div>
   <div class="item"><a href="./pages/perfumes.html"><img src="./image/2.png" class="carrouselimagen"></a></div>
-  <div class="item"><a href="./pages/tienda.html"><img src="./image/4.png" class="carrouselimagen"></a></div>
   <div class="item"><a href="./pages/productos.html"><img src="./image/3.png" class="carrouselimagen"></a></div>
 </div>
 
@@ -290,6 +302,21 @@
 
 <hr>
 
+<div class="row featurette m-2 tamanoMision">
+  <div class="col-md-7">
+    <h2 class="featurette-heading"><u> Estacionamiento</u></h2>
+    <p class="lead   fondoM"> Se ha firmado un contrato de alquiler de un playón para el estacionamiento de 70 vehículos dentro del predio de Carrefour, ingresando por la calle Juan Carlos Cruz. <br>Se utiliza mediante la compra anticipada de tickets de copago a través de La Mutual. <br> El valor de los tickets es significativamente menor al de mercado, y representa una pequeña parte del costo que asume La Nación por dicho predio. <br>
+       Para más información ingresar <a href="./pages/cocheras.html">aquí</a>
+      <br></p>
+  </div>
+  <div class="col-md-5"><br>
+    <a href="./pages/cocheras.html">
+    <img height="260" width="330" src="./image/estacionaubic.png" alt="">
+  </a>
+  </div>
+</div>
+
+<hr>
     
     <div class="row featurette m-2 tamanoMision">
       <div class="col-md-7 order-md-2 ">
@@ -389,16 +416,15 @@
     <hr>
     
     <div class="row featurette m-2 tamanoMision">
-      <div class="col-md-7 order-md-2"> 
+      <div class="col-md-7 order-md-2"> <br><br>
         <h2 class="featurette-heading"><u> Útiles escolares </u></h2>
         <p class="lead   fondoM">Se entregan útiles escolares al comienzo de cada año lectivo a los hijos de los socios que estén cursando la escuela primaria. <br> Los útiles varían según la etapa en curso: Preescolar, de 1º a 3º grado y de 4º a 7º grado en CABA y hasta 6to grado en la Provincia de Buenos Aires. <br> 
         Este beneficio se otorga a los socios que acrediten seis meses de antigüedad y estén con las cuotas sociales al día. <br> <u>Documentación a presentar:</u>  Boletin año anterior o Pago matrícula o Constancia de alumno regular. 
         
         </p>
       </div>
-      <div class="col-md-5 order-md-1"> <br><br>
-        <!-- <a href="./image/utiles.jpg"> -->
-        <img width="280"  src="./image/utilesesc.jfif" alt=""></a>
+      <div class="col-md-5 order-md-1">  
+        <a href="./image/utiles.jpg" target="_blank" rel="noopener noreferrer"><img width="300"  src="./image/utiles.jpg" alt=""></a>
       </div>
     </div>
 

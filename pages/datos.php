@@ -116,7 +116,7 @@
 <body>
 <nav class="navbar navbar-dark  bg-secondary">    
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Cuenta Corriente</a>
+          <a class="navbar-brand" href="#">Detalle de Gastos</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -155,8 +155,8 @@
       <br> 
 <br> 
       <div >
-        <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>ESTADO DE CUENTA CORRIENTE</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">22/01/2024 11:20 hs</strong></p>
+        <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
+        <p style="text-align: center">Última actualización: <strong style="color: red;">01/03/2024 13:20 hs</strong></p>
         <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
             <span>Pago por transferencia </span>  <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
@@ -166,15 +166,15 @@
 
 <div class="content-container">
     <form action="" method="post" onsubmit="return validarFormulario()">
-        <label for="numeroSocioInput">Número de DNI (sin . ni ,):</label>
+        <label for="numeroSocioInput">DNI (sin . ni ,):</label>
         <input type="text" id="dniInput" name="dni" required style="width: 100px;" autocomplete="off">
-         
-        <label for="numeroSocioInput">Número de Socio:</label>
-        <input type="text" id="numeroSocioInput" name="numeroSocio" required style="width: 50px;" autocomplete="off">
-        <br> 
+           
+        <label for="numeroSocioInput">Socio:</label>
+        <input type="text" id="numeroSocioInput" name="numeroSocio" required style="width: 50px; margin-right: 10px;" autocomplete="off">
          <button class='btn btn-dark btn-sm' type='submit' >Buscar </button>
     </form>
 </div>
+
 <?php
 // Crear la conexión a la base de datos
 $servername = "localhost";
@@ -197,10 +197,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dni = $_POST["dni"];
     $numeroSocio = $_POST["numeroSocio"];
  
-     
+
+     // Obtener el apellido y nombre desde la base de datos
+     $sqlNombre = "SELECT apellidoNombre FROM socioscuenta0103 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
+     $resultNombre = $conn->query($sqlNombre);
+     if ($resultNombre->num_rows > 0) {
+         $rowNombre = $resultNombre->fetch_assoc();
+         $apellidoNombre = $rowNombre["apellidoNombre"];
+     } else {
+         $apellidoNombre = "No encontrado"; // Puedes ajustar este valor predeterminado según sea necesario
+     }
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM socioscuenta2201                 
+                FROM socioscuenta0103                 
                 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
 
@@ -212,8 +221,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $totalGeneral = 0;
         
         if ($result->num_rows > 0) {
-            echo '<div style="margin: 20px;">'; // Inicio del contenedor con margen
-        
+            echo '<div style="margin: 20px;"><br><br>'; // Inicio del contenedor con margen
+            // Mostrar el apellido y nombre
+            echo "<div style='text-align: center; font-weight: bold; font-size: 18px;'>$apellidoNombre</div> ";
+
+
             echo "<table id='tablaDatos' border='1'>
                     <tr>
                         <th>Fecha</th>

@@ -109,14 +109,16 @@
           color: #000000; /* Cambia este color al que prefieras */
           font-weight: bold; /* Otras propiedades de estilo si lo deseas */
       }
-
+      body {
+            background-color: #e0e0e0; /* Cambia #e0e0e0 al color que desees */
+        }
       
     </style>
 </head>
 <body>
 <nav class="navbar navbar-dark  bg-secondary">    
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Cuenta Corriente</a>
+          <a class="navbar-brand" href="#">Detalle de Gastos</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -155,26 +157,25 @@
       <br> 
 <br> 
       <div >
-        <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>ESTADO DE CUENTA CORRIENTE</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">19/01/2024 11:20 hs</strong></p>
-        <!-- Agrega el cuadro de información al lado derecho del título -->
-        <div class="info-box">
+        <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
+        <p style="text-align: center">Última actualización: <strong style="color: red;">12/02/2024 12:30 hs</strong></p>
+         <div class="info-box">
             <span>Pago por transferencia </span>  <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
             <span ><b><u>Fechas de pago</u></b> <br>ADHERENTES y JUBILADOS<strong><br> 1 al 8 de cada mes</strong></span>
         </div><br>
+    </div>  
+
+    <div class="content-container">
+        <form action="" method="post" onsubmit="return validarFormulario()">
+            <label for="numeroSocioInput">DNI (sin . ni ,):</label>
+            <input type="text" id="dniInput" name="dni" required style="width: 100px;" autocomplete="off">
+            
+            <label for="numeroSocioInput">Socio:</label>
+            <input type="text" id="numeroSocioInput" name="numeroSocio" required style="width: 50px; margin-right: 10px;" autocomplete="off">
+            <button class='btn btn-dark btn-sm' type='submit' >Buscar </button>
+        </form>
     </div>
 
-<div class="content-container">
-    <form action="" method="post" onsubmit="return validarFormulario()">
-        <label for="numeroSocioInput">Número de DNI (sin . ni ,):</label>
-        <input type="text" id="dniInput" name="dni" required style="width: 100px;" autocomplete="off">
-         
-        <label for="numeroSocioInput">Número de Socio:</label>
-        <input type="text" id="numeroSocioInput" name="numeroSocio" required style="width: 50px;" autocomplete="off">
-        <br> 
-         <button class='btn btn-dark btn-sm' type='submit' >Buscar </button>
-    </form>
-</div>
 <?php
 // Crear la conexión a la base de datos
 $servername = "localhost";
@@ -196,11 +197,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
     $dni = $_POST["dni"];
     $numeroSocio = $_POST["numeroSocio"];
- 
+
+    // Obtener el apellido y nombre desde la base de datos
+    $sqlNombre = "SELECT apellidoNombre FROM socioscuenta160224 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
+    $resultNombre = $conn->query($sqlNombre);
+
+    if ($resultNombre->num_rows > 0) {
+        $rowNombre = $resultNombre->fetch_assoc();
+        $apellidoNombre = $rowNombre["apellidoNombre"];
+    } else {
+        $apellidoNombre = "No encontrado"; // Puedes ajustar este valor predeterminado según sea necesario
+    }
      
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM socioscuenta2201                 
+                FROM socioscuenta160224                 
                 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
 
@@ -212,14 +223,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $totalGeneral = 0;
         
         if ($result->num_rows > 0) {
-            echo '<div style="margin: 20px;">'; // Inicio del contenedor con margen
+            echo '<div style="margin: 20px;">  <br><br>'; // Inicio del contenedor con margen
+
+            // Mostrar el apellido y nombre
+            echo "<p style='text-align: center; font-weight: bold; font-size: 18px;'>$apellidoNombre</p> ";
+
+
         
             echo "<table id='tablaDatos' border='1'>
                     <tr>
                         <th>Fecha</th>
                         <th>Cuota</th>
                         <th>Detalle</th>
-                        <th>Concepto</th>
+                        <th>Comprobante</th>
                         <th>Monto</th>
                     </tr>";
         
@@ -303,10 +319,8 @@ function validarFormulario() {
 
     return true;
 }                               
-
 </script>
 <br>
-
 
 
 <style>
@@ -351,42 +365,10 @@ function validarFormulario() {
         }, 5000); // Ajusta el tiempo según sea necesario
     }
   </script>
- 
 
-<footer class="mt-4 pt-4">
-    <br><br>
-     <hr> 
-    <section class="grid-footer" > 
-      <div >
-        <h5><img src="../image/localizacion.png" alt="mapa" srcset="" width="120"></h5>
-        <p>
-          Av. del Libertador 101 - PB<br>
-          Torre al Río - Vte. López
-          </p>
-      </div>
-      <div>
-        <h5><img src="../image/te.jpg" alt="mapa" srcset="" width="50"></h5>
-        <p>L a V 9.00 a 19.00 hs<br>
-        6090-5770
-        </p>
-      </div>
-      <div>
-        <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="50"></a></h5>
-        <p>mutual@lanacion.com.ar
-          </p>
-      </div>
-      <div>
-        <h5><a href="https://www.instagram.com/lnmutual/" target="_blank"><img src="../image/instagram.jfif" alt="mapa" srcset="" width="40"></a></h5>
-        <p>@lnmutual
-          </p>
-      </div>
-     
-      </section>
-   
-</footer>
-<div class="m-2">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+
+
+  
 </div>
 
 
