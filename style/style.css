@@ -1093,4 +1093,22 @@ ul, ol {
 .right {
   border-width: 4px 0 4px 5px;
   border-color: transparent transparent transparent #ffffff;
+}
+
+/* Estilo opcional para el ícono */
+.whatsapp-icon {
+  background-color: rgb(55, 165, 55);
+  color: white;
+  border-radius: 50%;
+  width: 60px; /* Ancho del círculo */
+  height: 60px; /* Altura del círculo */
+  font-size: 2em; /* Ajusta el tamaño del ícono según prefieras */
+  position: fixed;
+  bottom: 20px; /* Distancia desde abajo */
+  right: 20px; /* Distancia desde la derecha */
+  z-index: 9999; /* Asegura que esté sobre otros elementos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none; /* Evita la subrayado al hacer clic */
 }/*# sourceMappingURL=style.css.map */

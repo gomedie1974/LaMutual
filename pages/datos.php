@@ -8,7 +8,8 @@
     <title>Mutual LN Asociarse</title>
     <meta name="keywords" content="mutual">
     <meta name="description" content="Asociacion mutual del personal de La Nacion">
-        
+    <!-- Whatsapp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
     <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- pone el logo en la pestana -->
@@ -114,6 +115,10 @@
     </style>
 </head>
 <body>
+<a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
+    <!-- Ícono de WhatsApp -->
+    <i class="fab fa-whatsapp"></i>
+  </a>
 <nav class="navbar navbar-dark  bg-secondary">    
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Detalle de Gastos</a>
@@ -156,7 +161,7 @@
 <br> 
       <div >
         <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">01/03/2024 13:20 hs</strong></p>
+        <p style="text-align: center">Última actualización: <strong style="color: red;">22/03/2024 10:00 hs</strong></p>
         <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
             <span>Pago por transferencia </span>  <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
@@ -199,7 +204,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
 
      // Obtener el apellido y nombre desde la base de datos
-     $sqlNombre = "SELECT apellidoNombre FROM socioscuenta0103 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
+     $sqlNombre = "SELECT apellidoNombre FROM socioscuenta2203 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
      $resultNombre = $conn->query($sqlNombre);
      if ($resultNombre->num_rows > 0) {
          $rowNombre = $resultNombre->fetch_assoc();
@@ -209,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      }
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM socioscuenta0103                 
+                FROM socioscuenta2203                 
                 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
 
