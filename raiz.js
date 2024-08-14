@@ -92,14 +92,34 @@ const btnrum10 = document.getElementById("Desodorante");
 btnrum10.addEventListener("click", Desodorante);
 function Desodorante() {
   Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Serum Noche</u></span>',
+    title: '<span style="font-size: 25px;"><u>Desodorante Natural</u></span>',
     html: 'Antibacteriano, libre de aluminio, elimina el mal olor, hidrata y nutre la piel.<br>Para todo tipo de piel, ideal para pieles sensibles y alérgicas.<br><br><b>Principales Activos:</b><br>Fécula de maíz, aceite coco orgánico,manteca de karite, bicarbonato, aceite esencial limón y lavanda.'
     })   
 }
-const btnrum11 = document.getElementById("Ritual");
-btnrum11.addEventListener("click", Ritual);
-function Ritual() {
+
+const btnrum12 = document.getElementById("Shampo");
+btnrum12.addEventListener("click", Shampo);
+function Shampo() {
   Swal.fire({
-    title: '<span style="font-size: 25px;"><u>RITUAL FACIAL </u></span>',
-    html: '<b>DÍA</b> <br><span style="font-size: 15px;">▪️Agua Micelar que protege tu piel limpiándola de manera gentil con principios activos de la más alta calidad.<br>▪️ Agua de Rosas, fragancia usada ancestralmente con beneficios tanto a nivel estético como a tu espíritu.<br>▪️Serum Dia: Premium con aceite de JOJOBA y Aceites Esenciales puros.<br>▪️Emulsión Hidratante Liviana.</span><br><br><b>NOCHE</b><br><span style="font-size: 15px;">▪️ Agua Micelar que protege tu piel limpiándola de manera gentil con principios activos de la más alta calidad<br>▪️ Agua de Rosas, fragancia usada ancestralmente con beneficios tanto a nivel estético como a tu espíritu.<br>▪️ Serum Noche: Premium con aceite de Jojoba Golden, Rosa Mosqueta y aceites esenciales  de primera calidad.<br>▪️ Crema Regeneradora con Acido Hialurónico.</span>'   })   
+    title: '<span style="font-size: 25px;"><u>Shampoo Sólido Normal a Seco</u></span>',
+    html: 'El shampoo sólido está formulado con aceites de primera prensión, preservando las propiedades terapéuticas de las plantas. <br> No contiene químicos ni conservantes.<br>Cabello graso fortalecedor.<br>Cabello normal.<br>Acondicionador cabello seco.'
+    })   
+}
+
+const btnrum13 = document.getElementById("Regeneradora");
+btnrum13.addEventListener("click", Regeneradora);
+function Regeneradora() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Crema Regeneradora</u></span>',
+    html: 'c/Ácido Hialurónico.'
+    })   
+}
+
+ 
+const btnrum14 = document.getElementById("Ritualnoche");
+btnrum14.addEventListener("click", Ritualnoche);
+function Ritualnoche() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>KIT ANTIAGE</u></span>',
+    html: '<span style="font-size: 15px;">▪️ Agua Micelar que protege tu piel limpiándola de manera gentil con principios activos de la más alta calidad<br>▪️ Serum Noche: Premium con aceite de Jojoba Golden, Rosa Mosqueta y aceites esenciales  de primera calidad.<br>▪️ Crema Regeneradora con Acido Hialurónico.<br>▪️ Bruma facial.</span>'   })   
 }

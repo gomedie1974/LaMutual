@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO -->
-    <title>Mutual LN Asociarse</title>
+    <title>Detalle de gastos</title>
     <meta name="keywords" content="mutual">
     <meta name="description" content="Asociacion mutual del personal de La Nacion">
     <!-- Whatsapp -->
@@ -83,9 +83,11 @@
             margin-right: 20px;
         }
         .subtotal-row {
-        color: rgb(166, 0, 0);
+        color: blue;
         font-style: italic;
-        }
+        font-weight: bold;
+/*         background-color: rgb(225, 173, 112);
+ */        }
         .info-box {
             float: right; /* Alinea el cuadro a la derecha */
             width: 300px; /* Ajusta el ancho según tus necesidades */
@@ -161,14 +163,16 @@
 <br> 
       <div >
         <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">22/03/2024 10:00 hs</strong></p>
-        <!-- Agrega el cuadro de información al lado derecho del título -->
+        <p style="text-align: center">Última actualización: <strong style="color: red;">14/08/2024 19:00 hs</strong></p>
+<!--         <p style="text-align: center; color: blue"><b><u>Próxima actualización 05/08/2024 </u></b></p>
+ -->        <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
             <span>Pago por transferencia </span>  <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
             <span ><b><u>Fechas de pago</u></b> <br>ADHERENTES y JUBILADOS<strong><br> 1 al 8 de cada mes</strong></span>
         </div><br>
     </div>
 
+    
 <div class="content-container">
     <form action="" method="post" onsubmit="return validarFormulario()">
         <label for="numeroSocioInput">DNI (sin . ni ,):</label>
@@ -204,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
 
      // Obtener el apellido y nombre desde la base de datos
-     $sqlNombre = "SELECT apellidoNombre FROM socioscuenta2203 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
+     $sqlNombre = "SELECT apellidoNombre FROM socios140824 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
      $resultNombre = $conn->query($sqlNombre);
      if ($resultNombre->num_rows > 0) {
          $rowNombre = $resultNombre->fetch_assoc();
@@ -214,10 +218,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      }
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM socioscuenta2203                 
+                FROM socios140824               
                 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
-
+        
         // Variable para almacenar el subtotal
         $subTotal = 0;
         // Variable para almacenar el mes actual
@@ -284,7 +288,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
             echo "</table>";
         } else {
-            echo "No se encontraron resultados.";
+            echo "<br> <spam style='margin: 20px;' > <b>No se encontraron resultados.</b></spam><br> ";
         }
       }
  

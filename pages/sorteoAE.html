@@ -22,7 +22,7 @@
   <script>
     window.onload = function() {
       const paperFallContainer = document.getElementById('paper-fall');
-      const numPapers = 30; // Cambia este número para ajustar la cantidad de papelitos
+      const numPapers = 15; // Cambia este número para ajustar la cantidad de papelitos
   
       for (let i = 0; i < numPapers; i++) {
           const paper = document.createElement('div');
@@ -33,47 +33,57 @@
           paperFallContainer.appendChild(paper);
       }
   }
-  </script> 
+  </script>
+  
 
-<div class="text-center  fixed-top" style="background-color: rgb(129, 129, 212);" id="paper-fall" >    
-      <h5 style="color: white;">GANADORES SORTEO AIR EUROPA</h5> 
-      <a href="../index.html"><p style="color: white;">Volver</p></a>
-</div>  <br><br>
- <section class="m-4 ">
+<div class="text-center fixed-top pt-4" style="background-color: rgb(129, 129, 212);" id="paper-fall" >    
+      <h5 style="color: white;">Ganadores sorteo AIR EUROPA <br>16/05/2024 </h5> 
+      <a href="../index.html"><p style="color: white;"><b>Volver</b></p></a>
+</div>  <br>
+
+ <section class="m-4 pt-4 mt-4">
    <hr>
-  <h4 style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Titulares</h4> <br>
+  <h4 class="pt-4 mt-4" style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><u>Titulares</u></h4> 
+  <div >
+    <a href="../image/aireuropacondiciones.pdf" target="_blank"><b>Condiciones del canje</b></a>
+  </div> 
+  <hr>
+  <style>
+    .column1 .rechazado {
+        color: red;
+        margin-left: 10px;
+    }
+    .column1 .nombre {
+      text-decoration: line-through;
+    }
+</style>
   <div class="grid-containerSorteo">
-    <div class="column">1-Pontoriero Maria Angélica</div>
-    <div class="column">2-Galliano Andrea</div>
-    <div class="column">3-Fuente Celeste</div>
-    <div class="column">4-Rulli José</div>
-    <div class="column">5-Falvo José</div>
-    <div class="column">6-Galdón Silvares Victoria</div>
-    <div class="column">7-Bevivino Nahuel</div>
-    <div class="column">8-Dávalo Rita Natalí</div>
-    <div class="column">9-Fernandez Gisela</div>
-    <div class="column">10-Coliva María Sol</div>
-    <div class="column">11-Gallardo Patricia</div>
-    <div class="column">12-Autalan Natalia </div>
-    <div class="column">13-Louzau Natalia </div>
-    <div class="column">14-Saúl Javier </div>
-    <div class="column">15-Vilela Maria Inés </div>
-</div>
+    <div class="column">1- ROCHA, Laura </div>
+    <div class="column">2- TERRIZI, Mauro </div>
+    <div class="column">3- D'ADAMO, Martin </div>
+    <div class="column">4- SORIA, Fabio </div>
+    <div class="column column1">5- <span class="nombre">SAGUIER, Julio</span> 
+      <span class="rechazado">Rechazado</span> </div>
+    <div class="column">6- ZORRILLA, Eugenia </div>
+    <div class="column">7- COLIVA, Sol </div>
+    <div class="column">8- MONTI, Ignacio </div>
+    <div class="column">9- FALVO, Jose </div>
+    <div class="column">10- PRIETO, Ignacio </div>
+    <div class="column">11- LOSCRI, Pablo </div>
+    <div class="column">12- LLORENTE, Enriqueta  </div>
+    <div class="column">13- CAMPBELL, Horacio  </div>
+  </div>
 <br>
 <hr>
 
-<h4 style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Suplentes</h4> <br>
+<h4 style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"><u style="color: red;">Suplentes</u></h4> <br>
   <div class="grid-containerSorteo">
-    <div class="column">Suplente 1<br>Rubí Veronica</div>
-    <div class="column">Suplente 2<br>Campbell Horacio</div>
-    <div class="column">Suplente 3<br>Mazorco Ivan</div>
-    <div class="column">Suplente 4<br>Fuertes Manuela</div>
-    <div class="column">Suplente 5<br>Acevedo Díaz Carmen</div>  
-</div>
-
-
-
-
+    <div class="column" style="background-color: rgb(251, 218, 183);"><b style="text-decoration: line-through;">Suplente 1</b><br>Bianchi Luciano <br><b>Titular</b></div>
+    <div class="column" style="background-color: rgb(219, 255, 185);"><b>Suplente 2</b><br>Elizalde Teresa </div>
+    <div class="column" style="background-color: rgb(219, 255, 185);"><b>Suplente 3</b><br>Allevato Ana </div>
+    <div class="column" style="background-color: rgb(219, 255, 185);"><b>Suplente 4</b><br>Duarte Valeria </div>
+ </div>
+ 
 
 </section>
 

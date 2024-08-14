@@ -182,22 +182,23 @@ div h3 {
 
 .imgPromo {
   width: 100%;
-  margin-left: 3%;
+  margin-left: 1%;
   height: 170px;
 }
 
 @media screen and (min-width: 700px) {
   .imgPromo {
     width: 900px;
-    margin-left: 3%;
-    height: 370px;
+    margin-left: 1%;
+    height: 310px;
   }
 }
 @media screen and (min-width: 1001px) {
   .imgPromo {
-    width: 1250px;
+    width: 1150px;
     margin-left: -2%;
-    height: 440px;
+    margin-right: 50%;
+    height: 340px;
   }
 }
 .tamanoMision {
@@ -1042,8 +1043,8 @@ ul, ol {
 }
 
 .nav li a:hover {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: 700;
 }
 
