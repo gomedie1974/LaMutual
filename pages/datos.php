@@ -163,7 +163,7 @@
 <br> 
       <div >
         <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">14/08/2024 19:00 hs</strong></p>
+        <p style="text-align: center">Última actualización: <strong style="color: red;">27/08/2024 11:00 hs</strong></p>
 <!--         <p style="text-align: center; color: blue"><b><u>Próxima actualización 05/08/2024 </u></b></p>
  -->        <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
@@ -208,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
 
      // Obtener el apellido y nombre desde la base de datos
-     $sqlNombre = "SELECT apellidoNombre FROM socios140824 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
+     $sqlNombre = "SELECT apellidoNombre FROM socios270824 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
      $resultNombre = $conn->query($sqlNombre);
      if ($resultNombre->num_rows > 0) {
          $rowNombre = $resultNombre->fetch_assoc();
@@ -218,7 +218,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      }
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM socios140824               
+                FROM socios270824               
                 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
         
@@ -407,6 +407,7 @@ function validarFormulario() {
 </footer>
 <div class="m-2">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: small;">Desarrollado por <a href="http://gomezdiego.com.ar" target="_blank" rel="noopener noreferrer"><img src="../image/DG.png" width="35" alt=""></a></p>
 </div>
 </div>
 

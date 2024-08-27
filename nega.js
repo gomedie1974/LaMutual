@@ -46,12 +46,12 @@ function blanca() {
 
 
 
-const btnrumLotus = document.getElementById("Lotus");
-btnrumLotus.addEventListener("click", Lotus);
-function Lotus() {
+const btnrumAmbar = document.getElementById("Ambar");
+btnrumAmbar.addEventListener("click", Ambar);
+function Ambar() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Vela Lotus</u></span>',
-    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br> <b>Dimensiones:</b> 10.5 cm. de diámetro x 16 cm. de alto.<br><b>Capacidad:</b> 800 grs de cera de soja.<br><b>Aroma:</b> Vainilla Especiada.</span></div>'    })   
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;"><b>Aromas:<br></b> Nega.<br>Flor de Loto.<br>Fresh Grass.<br>Sandía Frambuesa.<br>Bambú.<br>Pera Pepino Manzana.</span></div>'    })   
 }
 
 
@@ -61,6 +61,14 @@ function popi() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Vela Popi</u></span>',
     html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Dimensiones:</b> 8 cm. de diámetro x 6 cm. de alto.<br><b>Aromas:</b> <br>Vainilla Especiada</span></div>'})   
+}
+
+const btnrumNana = document.getElementById("Nana");
+btnrumNana.addEventListener("click", Nana);
+function Nana() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Vela Nana</u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Aromas:</b> <br>Vainilla Especiada.<br>Flores Blancas.<br>Tilo y Lavanda.<br>Pera Pepino Manzana.<br>Bambú.</span></div>'})   
 }
 
 
