@@ -62,7 +62,7 @@
         }
 
         #busquedaInput {
-            width: auto; /* Ajusta el ancho del campo de entrada según tus necesidades */
+            width: 60%; /* Ajusta el ancho del campo de entrada según tus necesidades */
             padding: 10px; /* Ajusta el relleno según tus necesidades */
             float: left; /* Permite que el botón de búsqueda esté en la misma línea */
             border-radius: 20px; /* Establece bordes redondeados */
@@ -87,17 +87,31 @@
         }
 
         header {
-              
-            color: rgb(0, 0, 0);
-            padding: 10px 0;
-        }  
+    background-color: #dcd7d7;
+     
+    position: relative; /* Asegura que el header no esté afectado por la posición fija del nav */
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+      /* Estilo del nav */
+      nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          background-color: #dcd7d7; /* Color de fondo del nav */
+          position: fixed; /* Hace que el nav sea fijo */
+          top: 0; /* Posiciona el nav en la parte superior de la página */
+          left: 0; /* Asegura que el nav esté alineado a la izquierda */
+          width: 100%; /* Hace que el nav ocupe todo el ancho de la página */
+          z-index: 1000; /* Asegura que el nav esté encima de otros elementos */
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil para darle profundidad */
+      }
+
+    /* Espacio adicional para el contenido debajo del nav fijo */
+    body {
+        padding-top: 60px; /* Ajusta este valor según la altura del nav */
+    }
+
 
         .menu-hamburguesa {
             display: none;
@@ -222,6 +236,38 @@
           }
         }
 
+       .textomov {
+            width: 100%;
+            overflow: hidden;
+            background-color: #000000;
+            white-space: nowrap;
+            position: relative;
+            height: 50px;  
+        }
+
+        .marquee {
+            display: inline-block;
+            padding: 10px;
+            font-size: 24px;
+            white-space: nowrap;
+            position: absolute;
+            will-change: transform;
+            animation: marquee 20s linear infinite;
+        }
+        @media (max-width: 768px) {
+            .marquee {
+                font-size: 18px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+                animation: marquee 7s linear infinite; /* Ajusta la duración de la animación en pantallas pequeñas */
+            }
+        }
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);  
+            }
+            to {
+                transform: translateX(-100%);  
+            }
+        }  
     </style>
           <!-- Custom styles for this template -->
           <link href="headers.css" rel="stylesheet">
@@ -229,6 +275,9 @@
 
 </head>
 <body>
+  <div class="textomov">
+    <div class="marquee" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,Verdana, sans-serif; color: white;">Disfrutá de más benficios siendo socio....descuentos hasta el 40% y cuotas sin interés.....</div>
+  </div> 
     <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >      
         <!-- Ícono de WhatsApp -->
         <i class="fab fa-whatsapp"></i>        
@@ -264,7 +313,7 @@
                     &#9776; <!-- Icono de hamburguesa -->
                 </div>
                 
-                <ul class="nav justify-content-center menu" id="menu" >
+                <ul class="nav justify-content-center menu" id="menu">
                     <li class="close-btn-li"><a href="#" class="close-btn" id="menu-close">&times;</a></li>
 
                     <li><a href="#">Descuentos <i class="fas fa-chevron-down"></i></a>
@@ -328,15 +377,16 @@
                             <li><a href="./pages/contacto.html" class="nav-link px-2 ">Contacto</a></li>   
                                  
                             <li><a href="./pages/datos.php" class="nav-link px-2" style="color: rgb(2, 145, 78);"><b>Detalle de Gastos</b></a> </li>  
-
+                            
                             <li><div style="display: flex" >
-                              <input type="text" id="busquedaInput" style="margin-left: 2%;" placeholder="¿Qué estás buscando?">
+                              <input type="text" id="busquedaInput" style="margin-left: 2%;" placeholder="¿Buscas algo?">
                               <a href="#" id="btnBuscar" style="text-decoration: none;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" class="bi bi-search" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-search" viewBox="0 0 16 16">
                                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                                 </svg>
                               </a>
                             </div>
+                          </li>
             </nav>
         </div>
     </header>
