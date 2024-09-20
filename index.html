@@ -240,6 +240,7 @@
             width: 100%;
             overflow: hidden;
             background-color: #000000;
+            color: white;
             white-space: nowrap;
             position: relative;
             height: 50px;  
@@ -268,6 +269,27 @@
                 transform: translateX(-100%);  
             }
         }  
+        /* Estilos para los botones */
+        .styledButton {
+          background-color: #08007d; /* Color de fondo verde */
+          border: none; /* Sin borde */
+          color: white; /* Color de texto blanco */
+          padding: 15px 32px; /* Espaciado interno del botón */
+          text-align: center; /* Centrar el texto */
+          text-decoration: none; /* Sin subrayado */
+          display: inline-block; /* Mostrar como bloque en línea */
+          font-size: 16px; /* Tamaño de la fuente */
+          margin: 4px 2px; /* Espaciado entre botones */
+          cursor: pointer; /* Cambia el cursor a una mano cuando pases sobre el botón */
+          border-radius: 12px; /* Esquinas redondeadas */
+          transition: background-color 0.3s ease; /* Efecto de transición para el color de fondo */
+        }
+
+        .styledButton:hover {
+          background-color: #ffff59; /* Cambia a un verde más oscuro al pasar el ratón */
+          color: black;
+        }
+
     </style>
           <!-- Custom styles for this template -->
           <link href="headers.css" rel="stylesheet">
@@ -276,7 +298,7 @@
 </head>
 <body>
   <div class="textomov">
-    <div class="marquee" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,Verdana, sans-serif; color: white;">Disfrutá de más benficios siendo socio....descuentos hasta el 40% y cuotas sin interés.....</div>
+    <div class="marquee" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,Verdana, sans-serif;">INFORMAMOS QUE EL DÍA LUNES 30/09/2024 LA MUTUAL PERMANECERÁ CERRADA POR BALANCE </div>
   </div> 
     <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >      
         <!-- Ícono de WhatsApp -->
@@ -285,9 +307,9 @@
 
     <!-- banner -->
 <!-- <div id="banner" style="position: fixed; margin: auto; top: 0; left: 0; right: 0; width: 100%; max-width: 800px; height: auto; max-height: 100%; padding: 10px"> 
-  <button id="cerrarBanner" class="btn btn-danger" style="position: absolute; top: 30%; right: 0;">X</button>
-  <a href="./pages/juegos.html"><img src="./image/Banner - Día del Niño 01.png" style="width: 100%; height: auto;" id="bannerImage"></a>
-</div>
+  <button id="cerrarBanner" class="btn btn-danger" style="position: absolute; top: 30%; right: 30%;">X</button>
+   <a href="./pages/juegos.html"><img src="./image/Banner - Día del Niño 01.png" style="width: 100%; height: auto;" id="bannerImage"></a>  
+ </div>
 
 <script>
   document.getElementById('cerrarBanner').addEventListener('click', function() {
@@ -346,6 +368,7 @@
                               <li><a href="#" class="nav-link px-2 ">Tienda <i class="fas fa-chevron-right"></i></a>
                                 <ul style="background-color: rgb(225, 220, 220);" >
                                   <li><a href="./pages/calzado.html" class="nav-link px-2 ">Calzado </a></li>
+                                  <li><a href="./pages/deportes.html" class="nav-link px-2 ">Deportes </a></li>
                                   <li><a href="./pages/tienda.html" class="nav-link px-2 ">Indumentaria</a></li>
                                   <li><a href="./pages/lenceria.html" class="nav-link px-2 ">Lenceria</a></li>
                                  </ul>
@@ -471,7 +494,13 @@
         <input type="submit" value="Ingresar" />
       </form>
     </div>
-       
+    <!-- Agrega un div para mostrar las opciones una vez que la clave es correcta -->
+    <div id="optionsDiv" style="display: none;">
+      <button id="parkingButton" class="styledButton">Entrar a Estacionamiento</button>
+      <button id="procesos" class="styledButton">Entrar a Procesos</button>
+     </div>   
+ 
+
     
     <div class="owl-carousel owl-theme " >
       <div class="item"><a href="./pages/asociarse.html"><img src="./image/1.gif" class="carrouselimagen" alt="asociarse"></a></div>

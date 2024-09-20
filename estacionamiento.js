@@ -1,26 +1,42 @@
 /* INGRESO CON CLAVE AL SISTEMA */
 function showPasswordPrompt() {
-    const passwordForm = document.getElementById("passwordForm");
-    passwordForm.style.display = "block";
-    
-    const passwordInputForm = document.getElementById("passwordInputForm");
+  const passwordForm = document.getElementById("passwordForm");
+  const optionsDiv = document.getElementById("optionsDiv");
+  const parkingButton = document.getElementById("parkingButton");
+ 
+  passwordForm.style.display = "block";
   
-    passwordInputForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-      const passwordInput = document.getElementById("password");
-      const enteredPassword = passwordInput.value;
-      const correctPassword = "ladgs55"; // Reemplaza "tuclave" con la clave correcta
-  
-      if (enteredPassword === correctPassword) {
-        window.location.href = "./pages/estacionamiento.html";
-      } else {
-        alert("Clave incorrecta. Acceso denegado.");
-      }
-  
-      // Oculta nuevamente el formulario
+  const passwordInputForm = document.getElementById("passwordInputForm");
+
+  passwordInputForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const passwordInput = document.getElementById("password");
+    const enteredPassword = passwordInput.value;
+    const correctPassword = "ladgs55"; // Reemplaza "tuclave" con la clave correcta
+
+    if (enteredPassword === correctPassword) {
+      // Oculta el formulario de la clave
       passwordForm.style.display = "none";
-    });
-  }
+
+      // Muestra las opciones
+      optionsDiv.style.display = "block";
+
+      // Agrega eventos a los botones
+      parkingButton.addEventListener("click", function() {
+        window.location.href = "./pages/estacionamiento.html";
+      });
+
+      procesos.addEventListener("click", function() {
+        window.location.href = "./pages/procesos.html";
+      });
+
+    } else {
+      alert("Clave incorrecta. Acceso denegado.");
+    }
+  });
+}
+
+
 
 window.addEventListener('DOMContentLoaded', event => {
 

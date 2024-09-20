@@ -26,12 +26,12 @@ function Pipa() {
 
 
 
-const btnrumPepa= document.getElementById("Pepa");
-btnrumPepa.addEventListener("click", Pepa);
-function Pepa() {
+const btnrumlotus= document.getElementById("lotus");
+btnrumlotus.addEventListener("click", lotus);
+function lotus() {
   Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Vela Pepa</u></span>',
-    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de concreto hecho a mano e impermeabilizado.<br><b> Dimensiones: </b>10cm de diámetro x 10cm de alto.<br><b>Capacidad:</b> 250cc.<br><b>Aroma:</b><br> Naranja Pimienta.<br>Flores Blancas.</span></div>'    })   
+    title: '<span style="font-size: 25px;"><u>Vela Lotus</u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b> Dimensiones: </b>10,5 cm. de diámetro x 16 cm. de alto.<br><b>Capacidad:</b> 800cc.<br><b>Aroma:</b><br> Vainilla Especiada</span></div>'})   
 }
 
 

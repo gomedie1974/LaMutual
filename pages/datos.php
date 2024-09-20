@@ -163,7 +163,7 @@
 <br> 
       <div >
         <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">27/08/2024 11:00 hs</strong></p>
+        <p style="text-align: center">Última actualización: <strong style="color: red;">16/09/2024 20:00 hs</strong></p>
 <!--         <p style="text-align: center; color: blue"><b><u>Próxima actualización 05/08/2024 </u></b></p>
  -->        <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
@@ -208,17 +208,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
 
      // Obtener el apellido y nombre desde la base de datos
-     $sqlNombre = "SELECT apellidoNombre FROM socios270824 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
+     $sqlNombre = "SELECT apellidoNombre FROM socios160924 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
      $resultNombre = $conn->query($sqlNombre);
      if ($resultNombre->num_rows > 0) {
          $rowNombre = $resultNombre->fetch_assoc();
          $apellidoNombre = $rowNombre["apellidoNombre"];
      } else {
          $apellidoNombre = "No encontrado"; // Puedes ajustar este valor predeterminado según sea necesario
-     }
+     }            
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM socios270824               
+                FROM socios160924               
                 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
         
@@ -278,12 +278,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
             // Agregar el último subtotal y el total general
             echo "<tr class='subtotal-row' style='text-align: center;'>
-                    <td colspan='4'>Subtotal</td> <!-- Ajustar el número de celdas -->
-                    <td>$ " . number_format($subtotal, 2) . "</td>
+                  <td colspan='4'>Subtotal</td> <!-- Ajustar el número de celdas -->
+                  <td>$ " . number_format($subtotal, 2) . "</td>
                   </tr>";
             echo "<tr class='total-general' style='text-align: center;'>
-                    <td colspan='4'>Total General</td>
-                    <td>$ " . number_format($totalGeneral, 2) . "</td>
+                  <td colspan='4'>Total General</td>
+                  <td>$ " . number_format($totalGeneral, 2) . "</td>
                   </tr>";
         
             echo "</table>";
