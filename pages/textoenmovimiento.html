@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto en Movimiento</title>
+    <style>
+        .textomov {
+            width: 100%;
+            overflow: hidden;
+            background-color: #f3f3f3;
+            position: relative;
+            height: 50px; /* Altura del contenedor */
+        }
+
+        .marquee {
+            display: inline-block;
+            padding: 10px;
+            font-size: 24px;
+            white-space: nowrap;
+            position: absolute;
+            will-change: transform;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(1000%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="textomov">
+        <div class="marquee">FELIZ DÍA</div>
+    </div>
+</body>
+</html>
