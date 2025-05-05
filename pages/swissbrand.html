@@ -27,7 +27,7 @@
   </a>
   <nav class="navbar navbar-dark fixed-top bg-secondary">    
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Swiss Brand</a>
+      <a class="navbar-brand" href="#">SwissBrand</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -65,6 +65,14 @@
   </nav>
    
   <style>
+     .color-btn {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin: 5px;
+      cursor: pointer;
+      display: inline-block; /* Alinea los botones en una línea horizontal */
+    }
     .thumbnail {
         cursor: pointer;
     }
@@ -84,99 +92,1089 @@
 <!--      <a href="../index.html">
       <img class="logoPaginas " width="150" src="../image/Logo Asociacion Mutual.JPG" alt=""></a>  -->
       
-<div class="container px-4 px-lg-5 mt-2"><br><br>
-  <div class="filtro"  >
-    <label for="filtro" >Filtra por:</label>
-    <select id="filtro">
-        <option value="todos">Todos</option>
-        <option value="categoria2">Bolsos/Necessaires </option>
-        <option value="categoria3">Mochilas </option>
-        <option value="categoria4">Morral/Riñoneras</option>
-        <option value="categoria5">Paraguas</option>
-        <option value="categoria1">Valijas</option>
-    </select> 
+      <div class="container px-4 px-lg-5 mt-2"><br><br>
+        <div class="filtro">
+          <label for="filtro">Filtra por:</label>
+          <select id="filtro" onchange="mostrarSubfiltro()">
+              <option value="todos">Todos</option>
+              <option value="categoria2">Calzado</option>
+              <option value="categoria4">Campera</option>
+              <option value="categoria3">Mochilas</option>
+              <option value="categoria1">Valijas</option>
+          </select><br><br>
+      
+          <!-- Subfiltro que se despliega solo si se selecciona "Calzado" -->
+          <div id="subfiltro-container" style="display:none;">
+              <label for="subfiltro">Selecciona Género:</label>
+              <select id="subfiltro" onchange="filtrarProductos()">
+                  <option value="todos">Todos</option>
+                  <option value="Men">Men</option>
+                  <option value="Women">Women</option>
+              </select><br><br>
+          </div>
+          <hr>
+    <span><b>Para realizar el cambio de calzado por talle, dirigirse al showroom ubicado en:</b> <br>
+    * Av. Corrientes 1464 - caba <br>
+    * Piso 11 oficina 1103 <br>
+    * Lunes a Jueves de 10.00 a 17.00 hs</span>
+    <hr>
+
   </div>
   <br>
-    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
+  
+  <div class="row gx-4 gx-lg-3 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center">
 
-      <div class="col mb-5 categoria1">
+ 
+      <div class="col mb-5 categoria2 generoWomen">
         <div class="card h-100">
           <!-- Sale badge-->
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-            <img  class="card-img-top main-image zoomable" src="../image/swissbrand/valija-swissbrand-anvers-navy.jpg">
+          <div class="badge bg-danger text-white position-absolute" style="top: 2.5rem; right: 0.5rem">WOMEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075607-021.webp">         
             <div class="card-body ">
               <div class="text-center "> <hr>
                   <!-- Product name-->  
-                  <h5 class="fw-bolder  "> Anvers<br>
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
                     </h5>
-                    <!-- Product price-->  
-                     <a href="../image/swissbrand/anvers.jpg" target="_blank">Catálogo</a> <br> <hr>
-                    <a href="../image/swissbrand/anversprecio.png" target="_blank">Precios</a>
+                    <span>Alitop Waterproof <br>Black Pink<br>Talle 5-5.9</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesMujer.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 139.900,00</span> <br>
+                      <span>$ $ 97.930,00 <br>
+                      4 cuotas de <br>$ 24.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 140.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+ 
+      <div class="col mb-5 categoria2 generoWomen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-danger text-white position-absolute" style="top: 2.5rem; right: 0.5rem">WOMEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075607-020.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Alitop Waterproof <br>Grey Mint<br>Talle 5-5.9</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesMujer.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 139.900,00</span> <br>
+                      <span>$ $ 97.930,00 <br>
+                      4 cuotas de <br>$ 24.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 140.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+ 
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075606-610.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Alitop Waterproof <br>Wine<br>Talle 8-12</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 139.900,00</span> <br>
+                      <span>$ $ 97.930,00 <br>
+                      4 cuotas de <br>$ 24.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 140.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+ 
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075606-000.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Alitop Waterproof <br>Black<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 139.900,00</span> <br>
+                      <span>$ $ 97.930,00 <br>
+                      4 cuotas de <br>$ 24.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 140.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+ 
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/877528-042.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Traning<br>
+                    </h5>
+                    <span>PINELLI <br>Grey Charcoal<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 99.900,00</span> <br>
+                      <span>$ $ 69.930,00 <br>
+                      4 cuotas de <br>$ 17.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 100.000,00  
+                      </span>  
               </div>
           </div> 
         </div>
       </div>
 
-
-
-       <div class="col mb-5 categoria1">
+      <div class="col mb-5 categoria2 generoMen">
         <div class="card h-100">
           <!-- Sale badge-->
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-            <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/valija-swissbrand-austria.png">
-     
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/877528-041.webp">         
             <div class="card-body ">
               <div class="text-center "> <hr>
                   <!-- Product name-->  
-                  <h5 class="fw-bolder  "> Austria<br>
+                  <h5 class="fw-bolder  ">Zapatillas Traning<br>
                     </h5>
-                    <!-- Product price-->  
-                     <a href="../image/swissbrand/austria.jpg" target="_blank">Catálogo</a> <br> <hr>
-                    <a href="../image/swissbrand/austriaprecio.png" target="_blank">Precios</a>
+                    <span>PINELLI <br>Charcoal Black<br>Talle 8-12</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 99.900,00</span> <br>
+                      <span>$ $ 69.930,00 <br>
+                      4 cuotas de <br>$ 17.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 100.000,00  
+                      </span>  
               </div>
           </div> 
         </div>
       </div>
 
-       <div class="col mb-5 categoria1">
+      <div class="col mb-5 categoria2 generoMen">
         <div class="card h-100">
           <!-- Sale badge-->
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-            <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/valija-swissbrand-dublin.png">
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/877528-401.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Traning<br>
+                    </h5>
+                    <span>PINELLI <br>Navy<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 99.900,00</span> <br>
+                      <span>$ $ 69.930,00 <br>
+                      4 cuotas de <br>$ 17.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 100.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoWomen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-danger text-white position-absolute" style="top: 2.5rem; right: 0.5rem">WOMEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/877530-045.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Traning<br>
+                    </h5>
+                    <span>PINELLI <br>Grey Teal<br>Talle 5-5.9</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesMujer.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 99.900,00</span> <br>
+                      <span>$ $ 69.930,00 <br>
+                      4 cuotas de <br>$ 17.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 100.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoWomen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-danger text-white position-absolute" style="top: 2.5rem; right: 0.5rem">WOMEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/877530-806.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Traning<br>
+                    </h5>
+                    <span>PINELLI <br>Peach Purple<br>Talle 5-5.9</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesMujer.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 99.900,00</span> <br>
+                      <span>$ $ 69.930,00 <br>
+                      4 cuotas de <br>$ 17.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 100.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/877531-043.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Traning<br>
+                    </h5>
+                    <span>QUILTON <br>Dark Grey Black<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 109.900,00</span> <br>
+                      <span>$ $ 76.930,00 <br>
+                      4 cuotas de <br>$ 19.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 110.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/877531-044.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Traning<br>
+                    </h5>
+                    <span>QUILTON <br>Grey Navy<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 109.900,00</span> <br>
+                      <span>$ $ 76.930,00 <br>
+                      4 cuotas de <br>$ 19.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 110.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoWomen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-danger text-white position-absolute" style="top: 2.5rem; right: 0.5rem">WOMEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/877534-100.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Traning<br>
+                    </h5>
+                    <span>QUILTON <br>White<br>Talle 5-5.9</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesMujer.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 109.900,00</span> <br>
+                      <span>$ $ 76.930,00 <br>
+                      4 cuotas de <br>$ 19.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 110.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoWomen" >
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-danger text-white position-absolute" style="top: 2.5rem; right: 0.5rem">WOMEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/877534-110.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Traning<br>
+                    </h5>
+                    <span>QUILTON <br>White Black<br>Talle 5-5.9</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesMujer.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 109.900,00</span> <br>
+                      <span>$ $ 76.930,00 <br>
+                      4 cuotas de <br>$ 19.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 110.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/879536-000.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Trail<br>
+                    </h5>
+                    <span>LIGHTNING <br>Black<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 119.900,00</span> <br>
+                      <span>$ $ 83.930,00 <br>
+                      4 cuotas de <br>$ 20.982,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 120.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/879536-041.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Trail<br>
+                    </h5>
+                    <span>LIGHTNING <br>Charcoal Black<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 119.900,00</span> <br>
+                      <span>$ $ 83.930,00 <br>
+                      4 cuotas de <br>$ 20.982,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 120.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/879538-000.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Trail<br>
+                    </h5>
+                    <span>GLADEK <br>Charcoal Black<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 109.900,00</span> <br>
+                      <span>$ $ 76.930,00 <br>
+                      4 cuotas de <br>$ 19.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 110.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/879538-001.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Trail<br>
+                    </h5>
+                    <span>GLADEK <br>Charcoal Black<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 109.900,00</span> <br>
+                      <span>$ $ 76.930,00 <br>
+                      4 cuotas de <br>$ 19.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 110.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1074511-000.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>AMAZONAS<br>Black<br>Talle 7-10.5</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 99.900,00</span> <br>
+                      <span>$ $ 69.930,00 <br>
+                      4 cuotas de <br>$ 17.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 100.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+    
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1074511-400.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>AMAZONAS<br>Blue<br>Talle 7-10.5</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 99.900,00</span> <br>
+                      <span>$ $ 69.930,00 <br>
+                      4 cuotas de <br>$ 17.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 100.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+    
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1074513-003.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>VOLGA<br>Dark Grey<br>Talle 7-10.5</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 119.900,00</span> <br>
+                      <span>$ $ 83.930,00 <br>
+                      4 cuotas de <br>$ 20.982,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 120.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1074590-000.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Mekong Waterproof<br>Black<br>Talle 7-10.5</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 149.900,00</span> <br>
+                      <span>$ $ 104.930,00 <br>
+                      4 cuotas de <br>$ 26.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 150.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1074590-202.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Mekong Waterproof<br>Tan<br>Talle 7-10.5</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 149.900,00</span> <br>
+                      <span>$ $ 104.930,00 <br>
+                      4 cuotas de <br>$ 26.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 150.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1074592-000.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Nile<br>Black<br>Talle 7-10.5</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 139.900,00</span> <br>
+                      <span>$ $ 97.930,00 <br>
+                      4 cuotas de <br>$ 24.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 140.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1074592-401.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Nile<br>Navy<br>Talle 7-10.5</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 139.900,00</span> <br>
+                      <span>$ $ 97.930,00 <br>
+                      4 cuotas de <br>$ 24.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 140.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoWomen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-danger text-white position-absolute" style="top: 2.5rem; right: 0.5rem">WOMEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1074593-401.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Nile<br>Navy<br>Talle 5-9</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesMujer.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 139.900,00</span> <br>
+                      <span>$ $ 97.930,00 <br>
+                      4 cuotas de <br>$ 24.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 140.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+
+      <div class="col mb-5 categoria2 generoWomen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-danger text-white position-absolute" style="top: 2.5rem; right: 0.5rem">WOMEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1074593-408.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Nile<br>Light Blue<br>Talle 5-9</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesMujer.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 139.900,00</span> <br>
+                      <span>$ $ 97.930,00 <br>
+                      4 cuotas de <br>$ 24.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 140.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075601-000.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Dewoth Waterproof<br>Black<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 179.900,00</span> <br>
+                      <span>$ $ 125.930,00 <br>
+                      4 cuotas de <br>$ 31.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 180.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075601-112.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Dewoth Waterproof<br>Khaki Black<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 179.900,00</span> <br>
+                      <span>$ $ 125.930,00 <br>
+                      4 cuotas de <br>$ 31.482,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 180.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075602-200.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Boaris<br>Brown<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 149.900,00</span> <br>
+                      <span>$ $ 104.930,00 <br>
+                      4 cuotas de <br>$ 26.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 150.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075602-202.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Boaris<br>Tan<br>Talle 7.5-11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 149.900,00</span> <br>
+                      <span>$ $ 104.930,00 <br>
+                      4 cuotas de <br>$ 26.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 150.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+
+      <div class="col mb-5 categoria2 generoWomen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-danger text-white position-absolute" style="top: 2.5rem; right: 0.5rem">WOMEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075603-021.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Kinebile<br>Black Pink<br>Talle 5-5.9</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesMujer.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 149.900,00</span> <br>
+                      <span>$ $ 104.930,00 <br>
+                      4 cuotas de <br>$ 26.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 150.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoWomen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-danger text-white position-absolute" style="top: 2.5rem; right: 0.5rem">WOMEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075603-040.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Kinebile<br>Grey Light Blue<br>Talle 5-5.9</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesMujer.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 149.900,00</span> <br>
+                      <span>$ $ 104.930,00 <br>
+                      4 cuotas de <br>$ 26.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 150.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075604-000.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Earthite<br>Black<br>Talle 7-5.11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 119.900,00</span> <br>
+                      <span>$ $ 83.930,00 <br>
+                      4 cuotas de <br>$ 20.982,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 120.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075604-400.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Earthite<br>Blue<br>Talle 7-5.11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 119.900,00</span> <br>
+                      <span>$ $ 83.930,00 <br>
+                      4 cuotas de <br>$ 20.982,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 120.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075604-002.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Earthite<br>Grey<br>Talle 7-5.11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 119.900,00</span> <br>
+                      <span>$ $ 83.930,00 <br>
+                      4 cuotas de <br>$ 20.982,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 120.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+
+      <div class="col mb-5 categoria2 generoMen">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <div class="badge bg-primary text-white position-absolute" style="top: 2.5rem; right: 0.5rem">MEN</div>
+            <img class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/calzado swiss/1075605-000.webp">         
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  ">Zapatillas Hiking<br>
+                    </h5>
+                    <span>Turtusk<br>Black<br>Talle 7-5.11</span>  <br> 
+                    <a href="../image/swissbrand/calzado swiss/tallesHombre.png" target="_blank">Rango talles</a><hr>
+                      <!-- Product price -->
+                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                      <span class="text-muted text-decoration-line-through">$ $ 109.900,00</span> <br>
+                      <span>$ $ 76.930,00 <br>
+                      4 cuotas de <br>$ 19.232,50 <br><hr>
+                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                      $ 110.000,00  
+                      </span>  
+              </div>
+          </div> 
+        </div>
+      </div>
+    
+ 
+
+      <div class="col mb-5 categoria4">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+          <!-- Product image-->  
+          <img id="main-Vostok" class="card-img-top mx-auto pt-4 mt-4 main-image zoomable" src="../image/swissbrand/vostokNegro.jpg" onclick="expandImage(this.src)" />  
+          <!-- Paleta de colores debajo de la imagen-->
+          <div class="colors text-center mt-3">
+            <div class="color-btn" style="background-color: black;" onclick="changeImageVostok('negro')"></div>
+            <div class="color-btn" style="background-color: #161c91;" onclick="changeImageVostok('azul')"></div>
+            <div class="color-btn" style="background-color: gray" onclick="changeImageVostok('gris')"></div>
+           </div>
+          <!-- Product details-->
+          <div class="card-body">
+            <div class="text-center">
+              <h5 class="fw-bolder  ">Campera Hombre <br>
+                Vostok Swissbrand
+              </h5> 
+              <p>S a XL</p>
+              <!-- Product price-->  
+              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+              <span class="text-danger text-decoration-line-through">$ 149.990,00 </span> <br>
+              <span>$ 104.993,00 <br>
+              4 cuotas de <br>$ 26.248,25 <br><hr>
+              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+               $ 150.000,00                 
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        function changeImageVostok(color) {
+          var mainImage = document.getElementById('main-Vostok');
+          // Cambia la ruta de la imagen principal según el color seleccionado
+          switch(color) {
+            case 'negro':
+              mainImage.src = '../image/swissbrand/vostokNegro.jpg';
+              break;
+            case 'azul':
+              mainImage.src = '../image/swissbrand/vostokAzul.jpg';
+              break;
+            case 'gris':
+              mainImage.src = '../image/swissbrand/vostokGris.jpg';
+              break;     
+          
+           }
+        }
+      </script>
       
-            <div class="card-body ">
-              <div class="text-center "> <hr>
-                  <!-- Product name-->  
-                  <h5 class="fw-bolder  "> Dublin<br>
-                    </h5>
-                    <!-- Product price-->  
-                     <a href="../image/swissbrand/dublin.jpg" target="_blank">Catálogo</a> <br> <hr>
-                    <a href="../image/swissbrand/dublinprecio.png" target="_blank">Precios</a>
-              </div>
-          </div> 
-        </div>
-      </div>
-
-
-       <div class="col mb-5 categoria1">
+      <div class="col mb-5 categoria4">
         <div class="card h-100">
           <!-- Sale badge-->
           <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-            <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/valija-swissbrand-hexa.png">
-        
-            <div class="card-body ">
-              <div class="text-center "> <hr>
-                  <!-- Product name-->  
-                  <h5 class="fw-bolder  "> Hexa<br>
-                    </h5>
-                    <!-- Product price-->  
-                     <a href="../image/swissbrand/hexa.jpg" target="_blank">Catálogo</a> <br> <hr>
-                    <a href="../image/swissbrand/hexaprecio.png" target="_blank">Precios</a>
-              </div>
-          </div> 
+          <!-- Product image-->  
+          <img id="main-nary" class="card-img-top mx-auto pt-4 mt-4 main-image zoomable" src="../image/swissbrand/narynNegro.jpg" onclick="expandImage(this.src)" />  
+          <!-- Paleta de colores debajo de la imagen-->
+          <div class="colors text-center mt-3">
+            <div class="color-btn" style="background-color: black;" onclick="changeImageNaryn('negro')"></div>
+            <div class="color-btn" style="background-color: #161c91;" onclick="changeImageNaryn('navy')"></div>
+            <div class="color-btn" style="background-color: rgb(155, 103, 185)" onclick="changeImageNaryn('plum')"></div>
+            <div class="color-btn" style="background-color: rgb(119, 16, 91)" onclick="changeImageNaryn('wine')"></div>
+          </div>
+          <!-- Product details-->
+          <div class="card-body">
+            <div class="text-center">
+              <h5 class="fw-bolder  ">Campera Mujer <br>
+                Naryn Swissbrand
+              </h5> 
+              <p>S a XL</p>
+              <!-- Product price-->  
+              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+              <span class="text-danger text-decoration-line-through">$ 149.990,00 </span> <br>
+              <span>$ 104.993,00 <br>
+              4 cuotas de <br>$ 26.248,25 <br><hr>
+              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+              $ 150.000,00                 
+            </div>
+          </div>
         </div>
       </div>
-
+      <script>
+        function changeImageNaryn(color) {
+          var mainImage = document.getElementById('main-nary');
+          // Cambia la ruta de la imagen principal según el color seleccionado
+          switch(color) {
+            case 'negro':
+              mainImage.src = '../image/swissbrand/narynNegro.jpg';
+              break;
+            case 'navy':
+              mainImage.src = '../image/swissbrand/narynNavy.jpg';
+              break;
+            case 'plum':
+              mainImage.src = '../image/swissbrand/narynPlum.jpg';
+              break;     
+            case 'wine':
+              mainImage.src = '../image/swissbrand/narynWine.jpg';
+              break;     
+           }
+        }
+      </script>
+          
+      
        <div class="col mb-5 categoria1">
         <div class="card h-100">
           <!-- Sale badge-->
@@ -209,7 +1207,75 @@
                     </h5>
                     <!-- Product price-->  
                      <a href="../image/swissbrand/riga.jpg" target="_blank">Catálogo</a> <br> <hr>
-                    <a href="../image/swissbrand/rigaprecios.pdf" target="_blank">Precios</a>
+                    <a href="../image/swissbrand/rigaprecios.png" target="_blank">Precios</a>
+              </div>
+          </div> 
+        </div>
+      </div>
+      
+       <div class="col mb-5 categoria1">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+            <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/bremen.jpg">
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  "> Bremen<br>
+                    </h5>
+                    <!-- Product price-->  
+                    <a href="../image/swissbrand/bremenPrecio.png" target="_blank">Precios</a>
+              </div>
+          </div> 
+        </div>
+      </div>
+
+       <div class="col mb-5 categoria1">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+            <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/Freya black 28_.jpg">
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  "> Freya<br>
+                    </h5>
+                    <!-- Product price-->  
+                    <a href="../image/swissbrand/freyaPrecios.png" target="_blank">Precios</a>
+              </div>
+          </div> 
+        </div>
+      </div>
+
+       <div class="col mb-5 categoria1">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+            <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/Stuttgart Familia Navy.jpg">
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  "> Stuttgart<br>
+                    </h5>
+                    <!-- Product price-->  
+                    <a href="../image/swissbrand/Stuttgart.png" target="_blank">Precios</a>
+              </div>
+          </div> 
+        </div>
+      </div>
+
+       <div class="col mb-5 categoria1">
+        <div class="card h-100">
+          <!-- Sale badge-->
+          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+            <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/paris.png">
+            <div class="card-body ">
+              <div class="text-center "> <hr>
+                  <!-- Product name-->  
+                  <h5 class="fw-bolder  "> Paris<br>
+                    </h5>
+                    <!-- Product price-->  
+                    <a href="../image/swissbrand/parisPrecios.png" target="_blank">Precios</a>
               </div>
           </div> 
         </div>
@@ -235,265 +1301,8 @@
             </div> 
           </div>
         </div>
-
-        <div class="col mb-5 categoria2">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable" src="../image/swissbrand/boxterduffle.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  "> Boxster Duffle<br>
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 139.900,00 </span> <br>
-                      <span>$ 97.930,00 <br>
-                      4 cuotas de <br>$ 24.482,50 <br><hr>
-                      <a href="../image/swissbrand/boxterdufflecatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-        <div class="col mb-5 categoria2">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable" src="../image/swissbrand/aleppo.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Aleppo<br>
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 39.900,00 </span> <br>
-                      <span>$ 27.930,00 <br>
-                      4 cuotas de <br>$ 6.982,50 <br><hr>
-                      <a href="../image/swissbrand/aleppocatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-        <div class="col mb-5 categoria2">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable" src="../image/swissbrand/boxtertoiletry.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  "> Boxster Toiletry<br>
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 39.900,00 </span> <br>
-                      <span>$ 27.930,00 <br>
-                      4 cuotas de <br>$ 6.982,50 <br><hr>
-                      <a href="../image/swissbrand/boxtertoirletycatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-       
-
-        <div class="col mb-5 categoria2">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable" src="../image/swissbrand/boxtertote.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  "> Boxster Duffle<br>
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 119.900,00 </span> <br>
-                      <span>$ 83.930,00 <br>
-                      4 cuotas de <br>$ 20.982,50 <br><hr>
-                      <a href="../image/swissbrand/boxsertotecatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
  
-        <div class="col mb-5 categoria2">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable" src="../image/swissbrand/explorer.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  "> Explorer<br>
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 49.900,00 </span> <br>
-                      <span>$ 34.930,00 <br>
-                      4 cuotas de <br>$ 8.732,50 <br><hr>
-                      <a href="../image/swissbrand/explorercatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-        <div class="col mb-5 categoria2">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-2" src="../image/swissbrand/hexxaduffel.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Hexa Duffel<br>
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 129.900,00 </span> <br>
-                      <span>$ 90.930,00 <br>
-                      4 cuotas de <br>$ 27.732,50 <br><hr>
-                      <a href="../image/swissbrand/hexaduffelcatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-        <div class="col mb-5 categoria2">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-2" src="../image/swissbrand/hexatroley.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Hexa Trolley<br>
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 249.900,00 </span> <br>
-                      <span>$ 174.930,00 <br>
-                      4 cuotas de <br>$ 43.732,50 <br><hr>
-                      <a href="../image/swissbrand/hexatroleycatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-        <div class="col mb-5 categoria4">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-2" src="../image/swissbrand/kayseri.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Kayseri<br>
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 59.900,00 </span> <br>
-                      <span>$ 41.930,00 <br>
-                      4 cuotas de <br>$ 10.482,50 <br><hr>
-                      <a href="../image/swissbrand/kaysericatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-      
-        
-        <div class="col mb-5 categoria5">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-2" src="../image/swissbrand/taipei.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Taipei
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 29.900,00 </span> <br>
-                      <span>$ 20.930,00 <br>
-                      4 cuotas de <br>$ 2.232,50 <br><hr>
-                      <a href="../image/swissbrand/taipeicatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-        <div class="col mb-5 categoria5">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-2" src="../image/swissbrand/cayene.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Cayenne
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 39.900,00 </span> <br>
-                      <span>$ 27.930,00 <br>
-                      4 cuotas de <br>$ 6.982,50 <br><hr>
-                      <a href="../image/swissbrand/cayennecatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-        <div class="col mb-5 categoria5">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-2" src="../image/swissbrand/montenegro.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Montenegro
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 39.900,00 </span> <br>
-                      <span>$ 27.930,00 <br>
-                      4 cuotas de <br>$ 6.982,50 <br><hr>
-                      <a href="../image/swissbrand/montenegrocatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-                
-        <div class="col mb-5 categoria2">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-2" src="../image/swissbrand/dallas.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Dallas<br>
-                      Bolso tablet
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 39.900,00 </span> <br>
-                      <span>$ 27.930,00 <br>
-                      4 cuotas de <br>$ 6.982,50 <br><hr>
-                      <a href="../image/swissbrand/dallascatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
+ 
         <div class="col mb-5 categoria3">
           <div class="card h-100">
             <!-- Sale badge-->
@@ -514,90 +1323,7 @@
             </div> 
           </div>
         </div>
-
-        <div class="col mb-5 categoria3">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/hunter.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Hunter
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 249.900,00 </span> <br>
-                      <span>$ 174.930,00 <br>
-                      4 cuotas de <br>$ 43.732,50 <br><hr>
-                      <a href="../image/swissbrand/huntercatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-        <div class="col mb-5 categoria3">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/logan.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Logan
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 279.900,00 </span> <br>
-                      <span>$ 195.930,00 <br>
-                      4 cuotas de <br>$ 48.982,50 <br><hr>
-                      <a href="../image/swissbrand/logancatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-  
-        <div class="col mb-5 categoria3">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/olympic.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Olympic
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 329.900,00 </span> <br>
-                      <span>$ 230.930,00 <br>
-                      4 cuotas de <br>$ 57.732,50 <br><hr>
-                      <a href="../image/swissbrand/olympiccatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
-
-        <div class="col mb-5 categoria3">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-              <img  class="card-img-top main-image zoomable pt-4" src="../image/swissbrand/makalu.png">
-              <div class="card-body ">
-                <div class="text-center "> <hr>
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder  ">Makalu
-                      </h5>
-                       <!-- Product price-->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-danger text-decoration-line-through">$ 29.900,00 </span> <br>
-                      <span>$ 20.930,00 <br>
-                      4 cuotas de <br>$ 5.232,50 <br><hr>
-                      <a href="../image/swissbrand/makalucatalogo.jpg" target="_blank">Catálogo</a> <br>  
-                </div>
-            </div> 
-          </div>
-        </div>
+ 
   
  
 
@@ -643,41 +1369,16 @@
 </nav> -->
 
 <br><br>
-  <hr>
+  
 
-  <footer>
-     
-      <section class="grid-footer">
-        <div >
-          <h5><img src="../image/localizacion.png" alt="mapa" srcset="" width="120"></h5>
-          <p>
-            Av. del Libertador 101 - PB<br>
-            Torre al Río - Vte. López
-            </p>
-        </div>
-        <div>
-          <h5><img src="../image/te.jpg" alt="mapa" srcset="" width="50"></h5>
-          <p>L a V 9.00 a 19.00 hs<br>
-            6090-5770
-          </p>
-        </div>
-        <div>
-          <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="50"></a></h5>
-          <p>mutual@lanacion.com.ar
-            </p>
-        </div>
-        <div>
-          <h5><a href="https://www.instagram.com/lnmutual/" target="_blank"><img src="../image/instagram.jfif" alt="mapa" srcset="" width="40"></a></h5>
-          <p>@lnmutual
-            </p>
-        </div>
-       
-        </section>
-     
-  </footer>
-  <iframe class="p-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  <p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: small;margin-left: 1%">Desarrollado por <a href="http://gomezdiego.com.ar" target="_blank" rel="noopener noreferrer"><img src="../image/DG.png" width="35" alt=""></a></p>
-</div>
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 
 
     <!-- JAVA -->

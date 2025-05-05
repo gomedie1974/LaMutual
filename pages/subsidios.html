@@ -18,6 +18,60 @@
     <link rel="stylesheet" href="../style/style.css">
     
 </head>
+
+<style>
+  body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  padding-top: 70px; /* evitar solapado con navbar */
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: #495057;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  background-color: #25D366;
+  padding: 10px 15px;
+  border-radius: 50%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+.whatsapp-icon:hover {
+  background-color: #1ebe5f;
+}
+
+img.img-fluid {
+  border-radius: 10px;
+}
+
+</style>
   
 <body >
   <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
@@ -66,7 +120,7 @@
   
       
   <!-- Page Content-->
-  <div class="container px-4 px-lg-5"><br><br>
+  <div class="container px-4 px-lg-5">
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
 <!--       <h4 style="text-align: center;">Valores a partir del 1 de septiembre 2024</h4>
@@ -75,7 +129,8 @@
         </div>
         <div class="col-lg-5">
             <h1 class="font-weight-light ">Subsidio por Casamiento</h1>
-            <p >Se otorga un subsidio por casamiento de <strong><br> $ 18.000,00</strong>  a los socios que tengan una antigüedad de al menos 6 meses. <br> Se deberá presentar una fotocopia del acta de matrimonio dentro de los 90 días de producido el evento. <br>
+            <p >Se otorga un subsidio por casamiento de <strong><br><span class="badge bg-success">$ 21.600</span>
+            </strong>  a los socios que tengan una antigüedad de al menos 6 meses. <br> Se deberá presentar una fotocopia del acta de matrimonio dentro de los 90 días de producido el evento. <br>
             El subsidio se hará efectivo dentro de los 10 días hábiles a partir de la presentación de la documentación requerida.
                </p>
         </div>
@@ -86,7 +141,8 @@
             <div class="card h-100">
                 <div class="card-body">
                     <h2 class="card-title">Subsidio por Nacimiento o Adopción</h2>
-                    <p class="card-text">Se otorga un subsidio por nacimiento o adopción de <strong>$ 18.000,00</strong> a los socios que tengan una antigüedad de al menos 6 meses. <br>
+                    <p class="card-text">Se otorga un subsidio por nacimiento o adopción de <strong><span class="badge bg-success">$ 21.600</span>
+                    </strong> a los socios que tengan una antigüedad de al menos 6 meses. <br>
                     Se deberá presentar fotocopia del certificado que lo acredite dentro de los 90 días de producido el evento. <br>
                     El subsidio se hará efectivo dentro de los 10 días hábiles a partir de la presentación de la documentación requerida.
                       </p>
@@ -103,8 +159,9 @@
             <div class="card h-100">
                 <div class="card-body">
                     <h2 class="card-title">Subsidio servicio de Sepelio</h2>
-                    <p class="card-text">Se otorga un subsidio para el servicio de sepelio por un importe de <strong> $ 123.000,00 </strong> a los socios y sus familiares directos (esposa/o e hijas/hijos- estos últimos hasta los 21 años), acreditando una antigüedad de 6 meses como socio y con las cuotas sociales al día. <br>
-                    El socio tiene la posibilidad de incorporar al <strong>  subsidio a un amparado </strong>(cualquier persona menor a los 60 años) por una cuota mensual de $ 12.300 y sólo podrá ser efectivizado después del pago de 12 cuotas. <br>
+                    <p class="card-text">Se otorga un subsidio para el servicio de sepelio por un importe de <strong> <span class="badge bg-success">$ 147.600</span>
+                    </strong> a los socios y sus familiares directos (esposa/o e hijas/hijos- estos últimos hasta los 21 años), acreditando una antigüedad de 6 meses como socio y con las cuotas sociales al día. <br>
+                    El socio tiene la posibilidad de incorporar al <strong>  subsidio a un amparado </strong>(cualquier persona menor a los 60 años) por una cuota mensual de $ 14.750 y sólo podrá ser efectivizado después del pago de 12 cuotas. <br>
                     Para el cobro del subsidio deberá presentarse fotocopia autenticada del certificado de defunción y fotocopia del documento del fallecido dentro de los 90 días de producido el deceso. <br>
                     El subsidio se hará efectivo dentro de los 10 días hábiles a partir de la presentación de la documentación requerida.
                   </p>
@@ -115,41 +172,17 @@
 
 </div>
 <br>
-<hr>
 
-<footer>
-     
-  <section class="grid-footer">
-    <div >
-      <h5><img src="../image/localizacion.png" alt="mapa" srcset="" width="120"></h5>
-      <p>
-        Av. del Libertador 101 - PB<br>
-        Torre al Río - Vte. López
-        </p>
-    </div>
-    <div>
-      <h5><img src="../image/te.jpg" alt="mapa" srcset="" width="50"></h5>
-      <p>L a V 9.00 a 19.00 hs<br>
-        6090-5770
-      </p>
-    </div>
-    <div>
-      <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="50"></a></h5>
-      <p>mutual@lanacion.com.ar
-        </p>
-    </div>
-    <div>
-      <h5><a href="https://www.instagram.com/lnmutual/" target="_blank"><img src="../image/instagram.jfif" alt="mapa" srcset="" width="40"></a></h5>
-      <p>@lnmutual
-        </p>
-    </div>
-   
-    </section>
- 
-</footer>
-<iframe class="p-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: small;margin-left: 1%">Desarrollado por <a href="http://gomezdiego.com.ar" target="_blank" rel="noopener noreferrer"><img src="../image/DG.png" width="35" alt=""></a></p>
-</div>  
+
+
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 
 
 

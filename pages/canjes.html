@@ -14,7 +14,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- pone el logo en la pestana -->
         <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
-        <title>CSS</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../style/style.css">        
     </head>
     
@@ -62,7 +62,12 @@
       </div>
     </div>
   </nav>
-  
+  <style>
+  body {
+    font-family: 'Poppins', sans-serif;
+  } 
+
+  </style>
 
   <section class="py-4">
     
@@ -73,7 +78,246 @@
     <div class="container px-4 px-lg-5 mt-2"><br><br>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
 
-  
+ 
+          
+
+    <div class="col mb-5">
+      <div class="card h-100">
+      <!-- Product image-->
+      <img class="card-img-top" src="../image/elpuente.jpg"/>
+      <!-- Product details-->
+      <div class="card-body ">
+          <div class="text-center">
+              <!-- Product name-->
+              <h5 class="fw-bolder">El Puente
+              </h5>
+              <!-- Product price-->
+             35% descuento <br>
+              en 4 cuotas <br><br> 
+              <div class="text-center">
+                <button class="btn btn-outline-primary" onclick="toggleSpoiler('spoilerpuente')">+ info</button>
+              </div>
+              <div id="spoilerpuente" class="spoiler mt-2" style="display: none; text-align: left;">
+                <b>Se abona con vouchers que se envían por mail</b><br><br>
+                <u>Valor de los códigos:</u><br> 
+                $30.000<br> 
+                $40.000<br> 
+                $50.000<br>
+                Vto. 31/10/2025
+              </div>
+              <script>
+                function toggleSpoiler(id) {
+                  const element = document.getElementById(id);
+                  element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+                }
+              </script>
+                <br>
+
+              <div class="text-center">
+                <button class="btn btn-primary" onclick="toggleSpoiler('spoilersuc')">Sucursales</button>
+              </div>            
+              <div id="spoilersuc" class="spoiler mt-2" style="display: none; text-align: left;">
+                <b>CABA</b> <br>
+              . Almagro - Av. Corrientes 4637<br>
+              . Boedo I - Av. Carlos Calvo 4000<br>
+              . Boedo II - Av. Rivadavia 3700<br>
+              . Chacarita - Av. Corrientes 6001<br>
+              . Floresta I - Av. Juan B. Justo 5884<br>
+              . Floresta II - Av. Rivadavia 8484<br>
+              . Mataderos - Av. Lisandro de la Torre 2215<br>
+              . Palermo - Av. Scalabrini Ortiz 1215<br>
+              . San Cristobal - Av. San Juan 2200<br>
+              <b>GBA</b> <br>
+              . Quilmes - Av. Calchaquí 1930/90<br>
+              . San Martín - Estrada 2768
+              </div>
+              <script>
+                function toggleSpoiler(id) {
+                  const element = document.getElementById(id);
+                  element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+                }
+              </script>               
+            </div>
+          </div>
+        </div>
+    </div>
+          
+
+
+<div class="col mb-5">
+  <div class="card h-100">
+  <!-- Product image-->
+  <img class="card-img-top" src="../image/AIREUROPA.png"/>
+  <!-- Product details-->
+  <div class="card-body ">
+      <div class="text-center">
+          <!-- Product name-->
+          <h5 class="fw-bolder">Air Europa
+          </h5>
+          10% descuento <br>
+          en 4 cuotas <br><br> 
+           <!-- Product price-->
+           <a href="./sorteoAE.html" target="_blank" rel="noopener noreferrer">Ganadores</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+          <div class="col mb-5">
+            <div class="card h-100">
+            <!-- Product image-->
+            <img class="card-img-top" src="../image/megatlon.jpg"/>
+            <!-- Product details-->
+            <div class="card-body ">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder">Megatlon
+                    </h5>
+                    <!-- Product price-->
+                    45% descuento <br>
+                    en 12 cuotas <br><br> 
+                    <div class="text-center">
+                      <button class="btn btn-outline-primary" onclick="toggleSpoiler('mega')">+ info</button>
+                    </div>                
+                    <div id="mega" class="spoiler mt-2" style="display: none; text-align: left;">
+                      <b>Freepass 12 meses <br> Vto. 28/06/2025 <br> Categoría BLACK
+                      </b> <br> <br>
+                      <u >Valor c/desc. aplicado </u><br> 
+                      12 cuotas de  <br>$ 48.305,47<br>                   
+                    </div>
+                    <script>
+                      function toggleSpoiler(id) {
+                        const element = document.getElementById(id);
+                        element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+                      }
+                    </script>
+                      <br> 
+                   </div>
+                  </div>
+                </div>
+              </div> 
+                 
+
+    <div class="col mb-5">
+      <div class="card h-100">
+            <!-- Product image-->  
+            <img class="card-img-top  " src="../image/colonia.png" alt="cajas" /> 
+            <!-- Product details-->
+             <div class="card-body  ">
+              <div class="text-center  ">
+                  <!-- Product name-->  
+                     <h5 class="fw-bolder  ">Colonia Express </h5>
+                    <!-- Product price-->    
+                       40% descuento <br> en 6 cuotas<br><br>      
+
+                       <div class="text-center">
+                        <button class="btn btn-outline-primary" onclick="toggleSpoiler('condiciones')">Condiciones</button>
+                      </div>
+                      <div id="condiciones" class="spoiler mt-2" style="display: none; text-align: left;">
+                        <span><b>* LOS PEDIDOS DEBEN SER ENVIADOS CON 15 DÍAS DE ANTICIPACIÓN COMO MÍNIMO </b></span><br>
+                        * Válido para pasajes y bodega. <br>
+                        * A las tarifas publicadas en la página, se realiza el 40% de descuento. <br>
+                        <span style="background-color: rgb(195, 195, 255);"><u><b>* No valido para fines de semana largo, ni feriados.</b> </u></span><br>
+                        <span style="color: red;"><b>* No se podrán realizar cambios ni anulaci
+                          ones sobre los pasajes ya emitidos.</b></span><br>                                
+                      </div>
+                      <script>
+                        function toggleSpoiler(id) {
+                          const element = document.getElementById(id);
+                          element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+                        }
+                      </script>
+                        <br>
+                       <div class="text-center">
+                        <button class="btn btn-outline-primary" onclick="toggleSpoiler('reserva')">Reserva</button>
+                      </div>
+                      <div id="reserva" class="spoiler mt-2" style="display: none; text-align: left;">
+                        <u> Enviar un mail a <b>mutual@lanacion.com.ar</b> indicando:</u> <br>
+                      <p style="color: red;"> 1-Fecha y hora de salida.<br>
+                      2-Fecha y hora de regreso.<br>
+                      3-Apellido y nombre de los pasajeros.<br>
+                      4-DNI de los pasajeros.<br>
+                      5-Fecha de Nacimiento de los pasajeros.<br>
+                      6-Teléfono de contacto.</p>
+                      <a href="https://coloniaexpress.com/ar/" target="_blank" rel="noopener noreferrer">Colonia Express</a>                        
+                      </div>
+                      <script>
+                        function toggleSpoiler(id) {
+                          const element = document.getElementById(id);
+                          element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+                        }
+                      </script>
+                        <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col mb-5">
+      <div class="card h-100">
+      <!-- Product image-->
+      <img class="card-img-top mt-4 pt-4" src="../image/costagalana-logo.jpg"/>
+      <!-- Product details-->
+      <div class="card-body ">
+          <div class="text-center  mt-4 pt-4">
+              <!-- Product name-->
+              <h5 class="fw-bolder  mt-4  ">Costa Galana
+              </h5>
+               <!-- Product price-->
+               30% descuento <br>
+               en 4 cuotas <br><br> 
+                <a href="../image/costagalanaprecios.png" target="_blank">condiciones y precios</a>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+    <div class="col mb-5">
+      <div class="card h-100">
+      <!-- Product image-->
+      <img class="card-img-top " src="../image/LosCauquenesfoto.jpg"/>
+      <!-- Product details-->
+      <div class="card-body ">
+          <div class="text-center ">
+              <!-- Product name-->
+              <h5 class="fw-bolder pt-4 "> Hotel Los Cauquenes<br>
+              </h5>
+               <!-- Product price-->
+                40% descuento <br>
+               en 6 cuotas <br><br> 
+               Válido hasta el 30/06/2025<br> 
+               Válido desde el 01/10/2025 al 31/10/2025<br> <br> 
+               <a href="../image/cauquenescondiciones.pdf" target="_blank">Precios</a>   
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        
+ <div class="col mb-5">
+  <div class="card h-100">
+      <!-- Product image-->  
+      <img class="card-img-top  " src="../image/bahiamanzano.jpg" alt="cajas" /> 
+      <!-- Product details-->
+       <div class="card-body  ">
+          <div class="text-center">
+            <!-- Product name-->  
+               <h5 class="fw-bolder  pt-4">Bahía Manzano</h5>
+              <!-- Product price-->  
+              <p>No válido semana santa</p> 
+              <p><b>Válido del <br>15/03/2025 al 02/05/2025</b></p>
+              30% descuento <br> en 8 cuotas  <br><br>
+              <a href="../image/BAHIACONDICIONES.png" target="_blank" rel="noopener noreferrer">Condiciones</a> <br><br>
+  <!--               <a href="../image/BAHIATARIFAS.png" target="_blank" rel="noopener noreferrer">Tarifas</a>   
+ -->      </div>
+    </div>  
+  </div>
+</div>
+
+ 
           <div class="col mb-5">
             <div class="card h-100">
             <!-- Product image-->
@@ -86,6 +330,7 @@
                     </h5>
                      <!-- Product price-->
                      40% descuento <br> en 4 cuotas  <br><br>
+                     <span><b>Micros solo operados por Rutatlantica</b></span><br><br>
                      <span><b>Al valor del pasaje se debe sumar un seguro de viaje obligatorio según destino</b></span><br><br>
                      <a href="../image/rutatlanticaRestricciones.png" target="_blank">Restricciones</a>  <br><br>
                      <a href="https://rutatlantica.com.ar/" target="_blank">Destinos y tarifas</a> <br><br>
@@ -96,17 +341,36 @@
               </div>
           
  
-  <div class="col mb-5">
+<div class="col mb-5">
+  <div class="card h-100">
+  <!-- Product image-->
+  <img class="card-img-top" src="../image/kankay.png"/>
+  <!-- Product details-->
+  <div class="card-body ">
+      <div class="text-center  ">
+          <!-- Product name-->
+          <h5 class="fw-bolder ">Kankay
+          </h5>
+           <!-- Product price-->
+            30% descuento <br>
+           en 6 cuotas   <br><br>  
+           <button type="button" class="btn btn-outline-info"><a href="./kankay.html" target="_blank">Productos</a> </button>
+           </div>
+        </div>
+      </div>
+    </div>
+
+<!--   <div class="col mb-5">
     <div class="card h-100">
-        <!-- Product image-->  <br>
-        <img class="card-img-top pt-4 mt-4 " src="../image/pizza.png" alt="cajas" /> 
-        <!-- Product details-->
-         <div class="card-body  ">
-            <div class="text-center  mt-4 pt-4 ">
+ -->        <!-- Product image-->  <br>
+<!--         <img class="card-img-top pt-4 mt-4 " src="../image/pizza.png" alt="cajas" /> 
+ -->        <!-- Product details-->
+       <!--   <div class="card-body  ">
+            <div class="text-center  mt-4 pt-4 "> -->
               <!-- Product name-->  
-                 <h5 class="fw-bolder pt-4 mt-4">Fuego Pizzas del Mundo </h5>
-                <!-- Product price-->    
-                30% descuento <br> en 4 cuotas<br><br>Se abona con Mutualcheck<br><br>
+<!--                  <h5 class="fw-bolder pt-4 mt-4">Fuego Pizzas del Mundo </h5>
+ -->                <!-- Product price-->    
+          <!--       30% descuento <br> en 4 cuotas<br><br>Se abona con Mutualcheck<br><br>
                 <input type="checkbox" id="spoilerFuego"></input>
                   <label for="spoilerFuego" class="text-center">+info</label>
                   <div class="spoiler" style="text-align: left;">
@@ -119,74 +383,8 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-          <div class="col mb-5">
-            <div class="card h-100">
-                  <!-- Product image-->  
-                  <img class="card-img-top  " src="../image/colonia.png" alt="cajas" /> 
-                  <!-- Product details-->
-                   <div class="card-body  ">
-                    <div class="text-center  ">
-                        <!-- Product name-->  
-                           <h5 class="fw-bolder  ">Colonia Express </h5>
-                          <!-- Product price-->    
-                             40% descuento <br> en 6 cuotas<br><br>                  
-                            <input type="checkbox" id="spoilerColonia"></input>
-                            <label for="spoilerColonia" class="text-center">Condiciones</label>
-                            <div class="spoiler" style="text-align: left;">
-                              <span><b>* LOS PEDIDOS DEBEN SER ENVIADOS CON 15 DÍAS DE ANTICIPACIÓN COMO MÍNIMO </b></span><br>
-                              * Válido para pasajes y bodega. <br>
-                              * A las tarifas publicadas en la página, se realiza el 40% de descuento. <br>
-                              <span style="background-color: rgb(195, 195, 255);"><u><b>* No valido para fines de semana largo, ni feriados.</b> </u></span><br>
-                              <span style="color: red;"><b>* No se podrán realizar cambios ni anulaciones sobre los pasajes ya emitidos.</b></span><br>                                
-                            </div>            
-                            <input type="checkbox" id="spoilerColonia1"></input>
-                            <label for="spoilerColonia1" class="text-center">Reserva</label>
-                            <div class="spoiler" style="text-align: left;">       
-                            <u> Enviar un mail a <b>mutual@lanacion.com.ar</b> indicando:</u> <br>
-                            <p style="color: red;"> 1-Fecha y hora de salida.<br>
-                            2-Fecha y hora de regreso.<br>
-                            3-Apellido y nombre de los pasajeros.<br>
-                            4-DNI de los pasajeros.<br>
-                            5-Fecha de Nacimiento de los pasajeros.<br>
-                            6-Teléfono de contacto.</p>
-                            <a href="https://coloniaexpress.com/ar/" target="_blank" rel="noopener noreferrer">Colonia Express</a>                        
-                            </div>             
-                </div>
-              </div>
-            </div>
-          </div>
-          
-  
-<div class="col mb-5">
-  <div class="card h-100">
-      <!-- Product image-->  
-      <img class="card-img-top  " src="../image/pinocha.png" alt="cajas" /> 
-      <!-- Product details-->
-       <div class="card-body  ">
-          <div class="text-center ">
-            <!-- Product name-->  
-               <h5 class="fw-bolder  ">La Pinocha </h5>
-              <!-- Product price-->    
-              35% descuento <br> en 4 cuotas<br><br>                
-              <input type="checkbox" id="spoilerPinocha"></input>
-                  <label for="spoilerPinocha" class="text-center">+info</label>
-                  <div class="spoiler" style="text-align: left;">
-                    * Válido para chocolates (no alfajores, no confituras) <br>
-                    * Códigos de $ 12.500 <br>
-                    * Pueden imprimirlo o presentarlo de manera digital
-                    * Vto. 30-10-2024<br>
-                    * Solo válido para compra en el local <br>
-                    <a href="https://www.lapinochachocolates.com/ar/" target="_blank" rel="noopener noreferrer">La Pinocha</a> <br>                                 
-                  </div>            
-      </div>
-    </div>
-  </div>
-</div>
-
-
-         
   
  <div class="col mb-5">
   <div class="card h-100"> 
@@ -205,28 +403,7 @@
     </div>
   </div>
 </div>  
-
- <div class="col mb-5">
-  <div class="card h-100">
-      <!-- Product image-->  
-      <img class="card-img-top  " src="../image/bahiamanzano.jpg" alt="cajas" /> 
-      <!-- Product details-->
-       <div class="card-body  ">
-          <div class="text-center">
-            <!-- Product name-->  
-               <h5 class="fw-bolder  ">Bahía Manzano</h5>
-              <!-- Product price-->  
-              <!-- <p style="color: red;"><b>Agotado</b></p>   --><hr>
-              <p>No válido semana santa</p> 
-              30% descuento <br> en 8 cuotas  <!-- 
-              <a href="../image/BAHIACONDICIONES.png" target="_blank" rel="noopener noreferrer">Condiciones</a> <br>
-              <a href="../image/BAHIATARIFAS.png" target="_blank" rel="noopener noreferrer">Tarifas</a>   -->
-      </div>
-    </div>  
-  </div>
-</div>
-
-  
+ 
 
            
       <div class="col mb-5">
@@ -241,7 +418,7 @@
                     <!-- Product price-->
                     35% descuento <br>
                     en 4 cuotas <br> <br>
-                    <a href="./biferdil.html" rel="noopener noreferrer" class="text-center"><strong style="color: red;"> Ver stock en la oficina</strong></a>
+                    <a href="./lidherma.html" rel="noopener noreferrer" class="text-center"><strong style="color: red;"> Ver stock en la oficina</strong></a>
                 </div>
             </div> 
         </div>
@@ -268,23 +445,7 @@
             </div>    
       </div> 
   </div>
-
-    <div class="col mb-5">
-      <div class="card h-100"> 
-        <img class="card-img-top  " src="../image/raiz/raiz.jpg"  />
-        <!-- Product details-->
-        <div class="card-body "> 
-            <div class="text-center  ">
-                <!-- Product name-->
-                <h5 class="fw-bolder   ">Raíz Cosmética
-                </h5>
-                <!-- Product price-->
-                4 cuotas <br><br>
-                <a href="./raiz.html" rel="noopener noreferrer" class="text-center"><strong style="color: red;"> Ver stock en la oficina</strong></a> <br><br>
-            </div>
-            </div>    
-      </div> 
-  </div>
+ 
 
     <div class="col mb-5">
       <div class="card h-100"> <br><br>
@@ -304,87 +465,7 @@
       </div> 
   </div>
 
-
-  <div class="col mb-5">
-      <div class="card h-100">
-          <!-- Product image-->
-          <img class="card-img-top " src="../image/rayban.jpg" alt="rayban" />
-          <!-- Product details-->
-          <div class="card-body p-4">
-              <div class="text-center">
-                  <!-- Product name-->
-                  <h5 class="fw-bolder">Ray Ban
-                  </h5>
-                  <!-- Product price-->
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  $ 160.000,00 <br>
-                  en 4 cuotas <br> de $ 40.000,00<hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                  $ 200.000,00  
-              </div>
-          </div>
-          <input type="checkbox" id="spoiler1"></input>
-          <label for="spoiler1" class="text-center">Catálogos</label>
-          <div class="spoiler">El pedido puede realizarse via mail, la entrega es aproximadamente en 15 dias. <br>
-          <a href="../image/CATALOGO 2021 RAY BAN PARTE 1.pdf"target="_blank">Catalogo 1</a> <br>
-          <a href="../image/CATALOGO 2021 RAY BAN PARTE 2.pdf"target="_blank">Catalogo 2</a> <br><br>
-           
-          </div>  
-      </div>
-  </div>
-
-
-    <div class="col mb-5">
-        <div class="card h-100">
-            <!-- Product image--> <br>
-            <img class="card-img-top pt-4" src="../image/ferrari.jpg" alt="ferrari" />
-            <!-- Product details-->
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <!-- Product name-->
-                    <h5 class="fw-bolder pt-4">Anteojos Ferrari</h5>
-                  <!-- Product price-->
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  $ 160.000,00 <br>
-                  en 4 cuotas <br> de $ 40.000,00<hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                  $ 200.000,00  
-                  </div>
-            </div>
-             <input type="checkbox" id="spoilerb"></input>
-            <label for="spoilerb" class="text-center">Catálogos</label>
-            <div class="spoiler">El pedido puede realizarse via mail, la entrega es aproximadamente en 15 dias. <br>
-            <a href="../image/CATALOGO SCUDERIA FERRARI 2021.pdf"target="_blank">Catalogo</a> <br><br>
-          </div>  
-        </div>
-    </div>
-
-  <div class="col mb-5">
-      <div class="card h-100">
-          <!-- Product image--> <br>
-          <img class="card-img-top pt-4 mt-4" src="../image/oakley.png" alt="oakley" />
-          <!-- Product details-->
-          <div class="card-body pt-4 mt-4">
-              <div class="text-center">
-                  <!-- Product name-->
-                  <h5 class="fw-bolder "><br> Anteojos Oakley <br>
-                  </h5>
-                  <!-- Product price-->
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  $ 160.000,00 <br>
-                  en 4 cuotas <br> de $ 40.000,00<hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                  $ 200.000,00  
-              </div>
-          </div>
-           <input type="checkbox" id="spoilerc"></input>
-          <label for="spoilerc" class="text-center">Catálogos</label>
-          <div class="spoiler">El pedido puede realizarse via mail, la entrega es aproximadamente en 15 dias. <br>
-          <a href="../image/CATALOGOOAKLEY.pdf"target="_blank">Catalogo</a> <br><br>         
-        </div>  
-      </div>
-  </div>
-            
+ 
     
     <div class="col mb-5">
       <div class="card h-100">
@@ -452,9 +533,8 @@
                 <h5 class="fw-bolder ">Hotel San Pedro</h5>
                 Río Ceballos <br>Córdoba <br>
                 <!-- Product price-->
-                4 cuotas <br><br>
-                <a href="../image/TarifarioSanPedro.pdf" target="_blank">Tarifas </a>            
-            </div>
+                4 cuotas <br> 
+             </div>
         </div>
         <input type="checkbox" id="spoiler6"></input>
           <label for="spoiler6" class="text-center">Reserva</label>
@@ -484,10 +564,13 @@
                   Purificadores de agua <br>
                   <!-- Product price-->
                   Hasta 12 cuotas <br><br>
-                  <a href="../image/Ducha con precio.jpg" target="_blank" rel="noopener noreferrer">Ducha</a> <br>
-              <a href="../image/modelos.png" target="_blank" rel="noopener noreferrer">Purificador</a> <br>
-              <a href="../image/preciospsa.pdf" target="_blank" rel="noopener noreferrer">Precios</a><br>       
-              </div>
+<!--                   <a href="../image/Ducha con precio.jpg" target="_blank" rel="noopener noreferrer">Ducha</a> <br>
+ -->                <a href="../image/modelos.png" target="_blank" rel="noopener noreferrer">Purificadores</a> <br>
+                     <hr>
+                    <a href="../image/DuchaPsa.jpg" target="_blank" rel="noopener noreferrer">Ducha</a><br>                           
+                    <hr>
+                    <a href="../image/preciospsa.pdf">Precios</a>                
+               </div>
           </div>
       </div>
   </div>
@@ -553,9 +636,9 @@
                         <!-- Product price--> 
                         <!-- <p style="color: red;"><b>Sin stock</b> </p> -->  
                         <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                        $ 15.700,00 <br> 4 cuotas de $ 3.925,00  <br><hr>
+                        $ 16.700,00 <br> 4 cuotas de $ 4.175,00  <br><hr>
                         <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                        $ 18.900,00      
+                        $ 19.900,00      
                     </div>
                     
                 </div>
@@ -571,35 +654,6 @@
        </div>
   
       
-
-
-    <div class="col mb-5">
-      <div class="card h-100">
-        <!-- Product image-->  
-        <img class="card-img-top mt-4 pt-4" src="../image/lumilagro.png" alt="Air" />
-        <!-- Product details-->
-        <div class="card-body    ">
-            <div class="text-center">
-                <!-- Product name-->
-                <h5 class="fw-bolder   ">Lumilagro
-                </h5> 
-                <!-- Product price-->
-                15% en 4 cuotas <br>  
-                <a href="../image/lumilagrotangorosa.png" target="_blank" rel="noopener noreferrer">Termo Tango</a>
-                <hr>
-                <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                <span class="text-muted text-decoration-line-through">$ 13.500,00</span> <br>
-                $ 11.475,00 <br>
-                  4 cuotas de $ 2.868,75 <br><hr>
-                <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                $ 17.000,00  
-            </div>
-        </div>
-        </div>  
-    </div>
-
-
-       
        
  <div class="col mb-5">
   <div class="card h-100"> 
@@ -662,40 +716,11 @@
   </div>
 
 
-     
-  
-
-  <div class="col mb-5">
-    <div class="card h-100">
-        <!-- Product image-->  
-        <div class="slider">
-          <button id="anterior" class="navegacion">&#60;</button>
-<!--            <img class="card-img-top   zoomable" src="../image/terrawhite.png"   /> 
- -->           <img class="card-img-top   zoomable" src="../image/sodanaranja.png"   /> 
-           <img class="card-img-top  zoomable" src="../image/sodapomelo.png"  /> 
-           <button id="siguiente" class="navegacion">&#62;</button>
-        </div>  
-        <!-- Product details-->
-         <div class="card-body ">
-            <div class="text-center">
-              <!-- Product name-->  
-                 <h5 class="fw-bolder  ">Soda Stream
-                </h5> 
-                <!-- Product price-->   
-                  40% en 6 cuotas<br><br>
-                <a href="https://cdn.shopify.com/videos/c/o/v/b3bb3b85a7c641c8bf9ef8b4548730bf.mp4" target="_blank" rel="noopener noreferrer">Soda Mixer</a>   <br>
-                <a href="../image/sodaprecios.png" target="_blank"><b>Precios</b>  </a>   
-        </div>
-      </div>
-    </div>
-  </div>
-   
-
 
 <div class="col mb-5">
   <div class="card h-100">
       <!-- Product image-->  
-      <img class="card-img-top pt-4" src="../image/lidherma.png" alt="cajas" /> 
+      <img class="card-img-top " src="../image/lidherma.png" alt="cajas" /> 
       <!-- Product details-->
        <div class="card-body  ">
           <div class="text-center ">
@@ -711,78 +736,7 @@
   </div>
 </div>
 
-
-
-
-<div class="col mb-5">
-  <div class="card h-100">
-      <!-- Product image-->  
-      <img class="card-img-top mt-4 pt-4" src="../image/inf1.jpg" alt="cajas" /> 
-      <!-- Product details-->
-       <div class="card-body  ">
-          <div class="text-center pt-4 mt-4">
-            <!-- Product name-->  
-               <h5 class="fw-bolder ">Infinitos</h5>
-               Tapa dura <br>
-              <!-- Product price-->  
-              30% en 4 cuotas <br>  
-              <hr>
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-muted text-decoration-line-through">$ 10.000,00</span> <br>
-              $ 7.000,00 <br>
-                4 cuotas de $ 1.750,00 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-              $ 10.000,00  
-               
-      </div>
-    </div>
-  </div>
-</div>
-
- <div class="col mb-5">
-  <div class="card h-100"> 
-      <!-- Product image-->  
-     <img class="card-img-top" src="../image/agendaOhlala.jpg" alt="cajas" /> 
-        <!-- Product details-->
-         <div class="card-body ">
-          <div class="text-center">
-              <!-- Product name-->  
-                <h5 class="fw-bolder pt-4  ">Agenda Ohlalá </h5>
-                <!-- Product price-->  
-                30% en 4 cuotas <br>  
-                <hr>
-                <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                <span class="text-muted text-decoration-line-through">$ 5.000,00</span> <br>
-                $ 3.500,00 <br>4 cuotas de $ 875,00 <br><hr>
-                <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                $ 5.000,00             
-       </div>
-    </div>
-  </div>
-</div>  
-
- <div class="col mb-5">
-  <div class="card h-100"> 
-      <!-- Product image-->  
-     <img class="card-img-top " src="../image/agendaJardin.jpg" alt="cajas" /> 
-        <!-- Product details-->
-         <div class="card-body ">
-          <div class="text-center">
-              <!-- Product name-->  
-                <h5 class="fw-bolder pt-4  ">Agenda Jardín </h5>
-                <!-- Product price-->  
-                30% en 4 cuotas <br>  
-                <hr>
-                <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                <span class="text-muted text-decoration-line-through">$ 3.900,00</span> <br>
-                $ 2.730,00 <br>4 cuotas de $ 682,50 <br><hr>
-                <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                $ 3.900,00             
-       </div>
-    </div>
-  </div>
-</div> 
-
+ 
  <div class="col mb-5">
   <div class="card h-100"> 
       <!-- Product image-->  
@@ -805,26 +759,7 @@
     </div>
   </div>
 </div>  
-
- <div class="col mb-5">
-  <div class="card h-100"> 
-      <!-- Product image-->  
-     <img class="card-img-top " src="../image/logoaccesorios.png" alt="cajas" /> 
-        <!-- Product details-->
-         <div class="card-body ">
-          <div class="text-center">
-              <!-- Product name-->  
-                <h5 class="fw-bolder  pt-4 ">Accesorios<br>
-                </h5>
-                <!-- Product price-->  
-                20% en 4 cuotas <br>  <hr>
-                <span>Mochilas <br>Termos <br> Mates <br>Carteras</span>
-                <hr>
-              <a href="./accesorios.html">Productos</a>
-       </div>
-    </div>
-  </div>
-</div>  
+ 
 
 <div class="col mb-5">
   <div class="card h-100"> 
@@ -887,10 +822,10 @@
 <div class="col mb-5">
   <div class="card h-100">
   <!-- Product image-->
-  <img class="card-img-top " src="../image/sophenia.png"/>
+  <img class="card-img-top mt-4 pt-4" src="../image/sophenia.png"/>
   <!-- Product details-->
   <div class="card-body ">
-      <div class="text-center pt-2">
+      <div class="text-center pt-4">
           <!-- Product name-->
           <h5 class="fw-bolder "><br>Finca Sophenia<br>
           </h5>
@@ -914,108 +849,126 @@
           <!-- Product name-->
           <h5 class="fw-bolder ">Moda Circular <br>Usa Sports<br>
           </h5>
-          <p >Ropa deportiva de las mejores marcas americanas e internacionales, cuidadosamente inspeccionada y lista para una segunda vida. <br> Uníte a la experiencia de la moda circular.</p>
+          <p >Ropa deportiva de las mejores marcas internacionales, cuidadosamente inspeccionada y lista para una segunda vida. <br> Uníte a la experiencia de la moda circular.</p>
            <!-- Product price-->
-             20% descuento <br>
-          en 4 cuotas <br><br> 
+           20% descuento <br>
+           en 4 cuotas <br><br> 
             <a href="../pages/deportes.html">Productos</a>   
           </div>
         </div>
         
       </div>
     </div>
+ 
 
+         
+    <div class="col mb-5">
+      <div class="card h-100">
+      <!-- Product image-->
+      <img class="card-img-top" src="../image/cafemactostado.webp"/>
+      <!-- Product details-->
+      <div class="card-body ">
+          <div class="text-center">
+              <!-- Product name-->
+              <h5 class="fw-bolder">Cafe Lata <br>Macchiato
+              </h5>
+              <!-- Product price-->
+                10% + 30% descuento <br>
+              en 4 cuotas <br><br>   
+               <button id="lata" class="btn btn-primary">Valor</button><br>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          const btnlata = document.getElementById("lata");
+          btnlata.addEventListener("click", lata);
+          function lata() {
+            Swal.fire({
+              imageUrl: '../image/cafemacLata.png',
+              imageWidth: 600,
+              imageHeight: 150,
+              imageAlt: 'Custom image',
+              })
+            }
+        </script>
+        
+    
+
+<div class="col mb-5">
+  <div class="card h-100">
+  <!-- Product image-->
+  <img class="card-img-top" src="../image/definit.png"/>
+  <!-- Product details-->
+  <div class="card-body ">
+      <div class="text-center">
+          <!-- Product name-->
+          <h5 class="fw-bolder">Definit
+          </h5>
+           <!-- Product price-->
+           <p style="color: blue;"><b>Proximamente</b></p> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="col mb-5">
+  <div class="card h-100">
+  <!-- Product image-->
+  <img class="card-img-top" src="../image/tiotom.jpeg"/>
+  <!-- Product details-->
+  <div class="card-body ">
+      <div class="text-center">
+          <!-- Product name-->
+          <h5 class="fw-bolder">Tio Tom
+          </h5>
+           <!-- Product price-->
+           <p style="color: blue;"><b>Proximamente</b></p> 
+          </div>
+        </div>
+      </div>
+    </div>
  
 
 <div class="col mb-5">
   <div class="card h-100">
   <!-- Product image-->
-  <img class="card-img-top " src="../image/kankay.png"/>
+  <img class="card-img-top" src="../image/achavalferrer.jpg"/>
   <!-- Product details-->
   <div class="card-body ">
-      <div class="text-center pt-2">
+      <div class="text-center">
           <!-- Product name-->
-          <h5 class="fw-bolder "><br>Kankay<br>
+          <h5 class="fw-bolder">Achaval Ferrer
           </h5>
            <!-- Product price-->
-          <p style="color: blue;"><b>Proximamente</b></p><br> 
-<!--           <a href="https://www.kankayargentina.com/">kankay</a>   
- -->         </div>
+           <p style="color: blue;"><b>Proximamente</b></p> 
+          </div>
         </div>
-        
       </div>
     </div>
-
- 
-
- 
-
-
- 
-
  
   
  
 
 
-          </div>
+      </div>
     </div>
-</section>
-<!-- 
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item"><a class="page-link boton--cambio bg-info" href="../pages/canjes.html">1</a></li>
-    <li class="page-item"><a class="page-link boton--cambio" href="../pages/canjes2.html">2</a></li>
-    <li class="page-item"><a class="page-link boton--cambio" href="../pages/canjes3.html">3</a></li>
-    <li class="page-item">
-      <li class="page-item"><a class="page-link boton--cambio" href="../pages/canjes4.html">4</a></li>
-      <li class="page-item"><a class="page-link boton--cambio" href="../pages/canjes5.html">5</a></li>
-    
-    
-      <a class="page-link boton--cambio" href="./canjes2.html"><i class="bi bi-arrow-right-square-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
-        <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
-      </svg></a>
-    </li>
-  </ul>
-</nav> -->
+</section> 
 
 <br><br>
-  <hr>
 
-  <footer>
-     
-      <section class="grid-footer">
-        <div >
-          <h5><img src="../image/localizacion.png" alt="mapa" srcset="" width="120"></h5>
-          <p>
-            Av. del Libertador 101 - PB<br>
-            Torre al Río - Vte. López
-            </p>
-        </div>
-        <div>
-          <h5><img src="../image/te.jpg" alt="mapa" srcset="" width="50"></h5>
-          <p>L a V 9.00 a 19.00 hs<br>
-            6090-5770
-          </p>
-        </div>
-        <div>
-          <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="50"></a></h5>
-          <p>mutual@lanacion.com.ar
-            </p>
-        </div>
-        <div>
-          <h5><a href="https://www.instagram.com/lnmutual/" target="_blank"><img src="../image/instagram.jfif" alt="mapa" srcset="" width="40"></a></h5>
-          <p>@lnmutual
-            </p>
-        </div>
-       
-        </section>
-     
-  </footer>
-  <iframe class="p-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  <p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: small;margin-left: 1%">Desarrollado por <a href="http://gomezdiego.com.ar" target="_blank" rel="noopener noreferrer"><img src="../image/DG.png" width="35" alt=""></a></p>
-</div>
 
+
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+  
 
     <!-- JAVA -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -1,4 +1,11 @@
 
+const btnrummama = document.getElementById("mama");
+btnrummama.addEventListener("click", mama);
+function mama() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Box Día de la Madre</u></span>',
+    html: '<div style="text-align: left;"> <span   style="font-size: 15px;">Cada box trae: vela aromática en cerámica, difusor de 200grs y aromatizador de 250grs.<br><b>Box sandia frambuesa:</b><br> Vela ROSA <br><b>Box pera pepino manzana:</b><br> Vela AMARILLA <br> <b>Box vainilla especiada:</b><br> Vela NATURAL <br><b>Box bambú:</b><br> Vela VERDE SECO  </span></div>'})   
+}
 const btnrumJAZMIN = document.getElementById("JAZMIN");
 btnrumJAZMIN.addEventListener("click", JAZMIN);
 function JAZMIN() {
@@ -87,4 +94,20 @@ function DifusorRefill() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Difusor Refill</u></span>',
     html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Disponible en los siguientes blends:<br><br>▪️ Lavanda<br>▪️ Nega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br>▪️ Vainilla Especiada</span></div>'})   
+}
+
+const btnrumHawaii = document.getElementById("Hawaii");
+btnrumHawaii.addEventListener("click", Hawaii);
+function Hawaii() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Combo Refill + Difusor HAWAII</u></span>',
+    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Envase pet de 500ml. <br>Difusor Hawaii envase de vidrio Altura: 12,5cm, Capacidad: 450ml, Diámetro de boca: 6,5cm. con tapa de madera.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Lavanda<br>▪️ Nega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br></span></div>'})   
+}
+
+const btnrumRoma = document.getElementById("Roma");
+btnrumRoma.addEventListener("click", Roma);
+function Roma() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Combo Refill + Difusor ROMA</u></span>',
+    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Envase pet de 500ml. <br>Difusor Roma envase de vidrio labrado de 110 ml.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Lavanda<br>▪️ Nega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br></span></div>'})   
 }

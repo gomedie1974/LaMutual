@@ -86,29 +86,43 @@
                       500grs
                        <!-- <p style="color: red;"><b>Sin stock</b></p>    -->
                         <!-- Product price--> <br>
-                     $ 2.390,00 <br> 4 cuotas de $ 597,50   
+                     $ 2.420,00 <br> 4 cuotas de $ 605,00   
                      </div>
               </div>
           </div>
          </div>
             
-         <div class="col mb-5">
-          <div class="card h-100">
-              <!-- Product image--> 
-              <img class="card-img-top" src="../image/amanda.jpg" alt="union" />
-              <!-- Product details-->
-              <div class="card-body mt-2">
-                  <div class="text-center">
-                      <!-- Product name-->
-                      <h5 class="fw-bolder pt-2">Yerba Amanda</h5>
-                      500grs
-<!--                       <p style="color: red;"><b>Sin stock</b></p>  
- -->                        <!-- Product price--> <br>
-                      $ 2.100,00 <br> 4 cuotas de $ 525,00   
+        
+    <div class="col mb-5">
+      <div class="card h-100">
+      <!-- Product image-->
+      <img class="card-img-top" src="../image/cafemactostado.webp"/>
+      <!-- Product details-->
+      <div class="card-body ">
+          <div class="text-center">
+              <!-- Product name-->
+              <h5 class="fw-bolder">Cafe Lata <br>Macchiato
+              </h5>
+              <!-- Product price-->
+                10% + 30% descuento <br>
+              en 4 cuotas <br><br>   
+               <button id="lata" class="btn btn-primary">Valor</button><br>
                   </div>
-              </div>
+            </div>
           </div>
-         </div>
+        </div>
+        <script>
+          const btnlata = document.getElementById("lata");
+          btnlata.addEventListener("click", lata);
+          function lata() {
+            Swal.fire({
+              imageUrl: '../image/cafemacLata.png',
+              imageWidth: 600,
+              imageHeight: 150,
+              imageAlt: 'Custom image',
+            })
+            }
+        </script>
             
          
          <div class="col mb-5">
@@ -124,9 +138,9 @@
                           <!-- Product price--> 
                           <!-- <p style="color: red;"><b>Sin stock</b> </p> -->  
                           <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                        $ 15.700,00 <br> 4 cuotas de $ 3.925,00  <br><hr>
-                        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                        $ 18.900,00      
+                          $ 16.700,00 <br> 4 cuotas de $ 4.175,00  <br><hr>
+                          <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                          $ 19.900,00         
                    </div>
               </div>
           </div>
@@ -198,44 +212,17 @@
     </div>
 </section>
 
-<hr >
 
-<div class="m-3 " >
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 
-  <footer>
-     
-      <section class="grid-footer">
-        <div >
-          <h5><img src="../image/localizacion.png" alt="mapa" srcset="" width="120"></h5>
-          <p>
-            Av. del Libertador 101 - PB<br>
-            Torre al Río - Vte. López
-            </p>
-        </div>
-        <div>
-          <h5><img src="../image/te.jpg" alt="mapa" srcset="" width="50"></h5>
-          <p>L a V 9.00 a 19.00 hs<br>
-            6090-5770
-          </p>
-        </div>
-        <div>
-          <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="50"></a></h5>
-          <p>mutual@lanacion.com.ar
-            </p>
-        </div>
-        <div>
-          <h5><a href="https://www.instagram.com/lnmutual/" target="_blank"><img src="../image/instagram.jfif" alt="mapa" srcset="" width="40"></a></h5>
-          <p>@lnmutual
-            </p>
-        </div>
-       
-        </section>
-     
-  </footer>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  <p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: small;margin-left: 1%">Desarrollado por <a href="http://gomezdiego.com.ar" target="_blank" rel="noopener noreferrer"><img src="../image/DG.png" width="35" alt=""></a></p>
 
-</div>
 
 
 

@@ -8,20 +8,21 @@
         <title>Mutual LN Canjes</title>
         <meta name="keywords" content="mutual">
         <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
+          <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
         <!-- Whatsapp -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
         <!-- BOOTSTRAP -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- pone el logo en la pestana -->
         <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
-        <title>CSS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" href="../style/style.css">
         
 
         
     </head>
     
-      
         
 <body >
   <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
@@ -83,180 +84,778 @@
     </div>
   </nav>
   
+  <style>
+  .card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+  font-family: 'Segoe UI', sans-serif;
+}
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    var zoomableImages = document.querySelectorAll(".zoomable");
-    
-    for (var i = 0; i < zoomableImages.length; i++) {
-      zoomableImages[i].addEventListener("click", function() {
-        this.classList.toggle("zoomed");
-      });
-    }
-  });
-  </script>
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.card img {
+  padding: 10px;
+  max-height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  cursor: zoom-in; /* 👈 cambia el puntero a "+" */
+
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+.card h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.card-body {
+  padding: 1.25rem;
+  background-color: #fff;
+}
+
+.card .badge {
+  background-color: #ff3366;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35em 0.7em;
+  border-radius: 1rem;
+}
+
+.card .card-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card .btn-primary {
+  background-color: #0066cc;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.card .btn-primary:hover {
+  background-color: #004c99;
+  transform: scale(1.05);
+}
+
+.price-section {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.price-section span {
+  display: block;
+}
+
+.zoom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.zoom-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+
+       </style>
+   
+     
 
 <section class="py-4"><br><br>  
   <div class="container px-4 px-lg-5 mt-2 ">
 
-    <div class="filtro">
-        <label for="filtro">Categoría:</label>
-        <select id="filtro">
-            <option value="todos">Todos</option>
-            <option value="categoria1">Fragancias  </option>
-<!--             <option value="categoria2">Fragancias Masculinas</option>
- -->        <option value="categoria3">Solares </option>
-            <option value="categoria4">Otros</option>
-        </select> <br><br>
-        <div class="spoiler"><a href="../image/perfumes/FRAGANCIAS.xlsx" target="_blank"><strong>Catálogo fragancias</strong></a>  
-        </div>
-        </div>
+    <div class="mb-4 text-center">
+      <div class="btn-group" role="group" aria-label="Filtro de productos">
+        <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="todos">
+          <i class="fas fa-th-large"></i> Todos
+        </button>
+        <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="categoria1">
+          <i class="fas fa-spray-can"></i> Perfumes
+        </button>
+        <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="categoria3">
+          <i class="fas fa-sun"></i> Solares
+        </button>
+        <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="categoria4">
+          <i class="fas fa-box"></i> Otros
+        </button>
+      </div>
+      <br><br>
+      <div class="spoiler">
+        <a href="../image/perfumes/FRAGANCIAS.xlsx" target="_blank"><strong>📥 Catálogo fragancias</strong></a>
+      </div>
+    </div>
+              
           
-<!--         <img src="../image/proximamente.jfif" style="width: 100%;">
- -->
+  
   <div class="pt-4 row gx-4 gx-lg-5 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center">
 
 
-    <div class="col mb-5 categoria4">
+    
+    
+    
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute " style="top: 0.5rem; right: 0.5rem">-20%</div> 
+        <!-- Product image-->   
+        <img class="card-img-top  mx-auto  " src="../image/perfumes/testerAgua-Fresca-Rosas-Blancas.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">TESTER
+              <br>  
+              Rosas Blancas<br> edt 120ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 79.000,00</span> <br>
+            <span>$ 63.200,00 <br>
+              4 cuotas de <br>$ 15.800,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 80.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+      
+        <div class="col mb-5 categoria1">
+          <div class="card h-100">
+            <div class="badge bg-dark text-white position-absolute " style="top: 0.5rem; right: 0.5rem">-20%</div> 
+              <!-- Product image-->   
+              <img class="card-img-top  mx-auto pt-4 mt-4 " src="../image/perfumes/bossnumberone.webp" />
+             <!-- Product details-->
+               <div class="card-body ">
+                  <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder ">Boss
+                      <br>  
+                      Number One<br> edt 100ml
+                     </h5> 
+                   <!-- Product price--> <hr>
+                   <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                   <span class="text-danger text-decoration-line-through">$ 129.000,00</span> <br>
+                   <span>$ 103.200,00 <br>
+                   4 cuotas de <br>$ 25.800,00 <br><hr>
+                   <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                    $ 140.000,00  
+                  </div>
+              </div>  
+          </div>
+        </div> 
+      
+      
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute " style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto  " src="../image/perfumes/adrop.webp" />
+         <!-- Product details-->
+           <div class="card-body ">
+              <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder ">A Drop
+                  <br>  
+                  Issey Miyake<br> edp 90ml
+                 </h5> 
+               <!-- Product price--> <hr>
+               <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+               <span class="text-danger text-decoration-line-through">$ 242.000,00</span> <br>
+               <span>$ 193.600,00 <br>
+               4 cuotas de <br>$ 48.400,00 <br><hr>
+               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                $ 252.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+    
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute " style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto  " src="../image/perfumes/isseysport.jpg" />
+         <!-- Product details-->
+           <div class="card-body ">
+              <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder ">L'Eau D'Issey 
+                  <br> Sport <br> 
+                  Issey Miyake<br> edt 100ml
+                 </h5> 
+               <!-- Product price--> <hr>
+               <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+               <span class="text-danger text-decoration-line-through">$ 212.000,00</span> <br>
+               <span>$ 169.600,00 <br>
+               4 cuotas de <br>$ 42.400,00 <br><hr>
+               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                $ 212.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute " style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto  " src="../image/perfumes/leaudissey.webp" />
+         <!-- Product details-->
+           <div class="card-body ">
+              <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder ">L'Eau D'Issey 
+                  <br>  
+                  Issey Miyake<br> edt 100ml
+                 </h5> 
+               <!-- Product price--> <hr>
+               <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+               <span class="text-danger text-decoration-line-through">$ 238.000,00</span> <br>
+               <span>$ 190.400,00 <br>
+               4 cuotas de <br>$ 47.600,00 <br><hr>
+               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                $ 250.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+    
+   
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute " style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto  " src="../image/perfumes/sisterlandblush.webp" />
+         <!-- Product details-->
+           <div class="card-body ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Sisterland
+                    <br>  
+                    Blush Cherry<br> edp 80ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 53.900,00</span> <br>
+                 <span>$ 43.120,00 <br>
+                 4 cuotas de <br>$ 10.780,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 55.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+    <div class="col mb-5 categoria1">
       <div class="card h-100">
         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
           <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/vichylidtactiv.jpeg" />
+          <img class="card-img-top  mx-auto  " src="../image/perfumes/teriaq.webp" />
          <!-- Product details-->
            <div class="card-body  ">
               <div class="text-center">
-                  <!-- Product name-->   
-                   <h5 class="fw-bolder ">Serum Facial Antiedad  <br>
-                    Liftactiv Supreme<br>Vichy <br>30ml
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Teriaq
+                    <br>  
+                    Intense<br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 128.080,00</span> <br>
+                 <span>$ 102.464,00 <br>
+                 4 cuotas de <br>$ 25.616,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 94.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto pt-4 " src="../image/perfumes/salvointense.webp" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Salvo
+                    <br>  
+                    Intense<br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 84.500,00</span> <br>
+                 <span>$ 68.320,00 <br>
+                 4 cuotas de <br>$ 17.080,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 94.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto pt-4 " src="../image/perfumes/badee.webp" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Badee Al Oud
+                    <br>  
+                    Noble Blush<br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 89.000,00</span> <br>
+                 <span>$ 71.200,00 <br>
+                 4 cuotas de <br>$ 17.800,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 94.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto pt-4 " src="../image/perfumes/vintageradio.webp" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Vintage
+                    <br>  
+                    Radio<br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 87.500,00</span> <br>
+                 <span>$ 70.000,00 <br>
+                 4 cuotas de <br>$ 17.500,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 94.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto pt-4 " src="../image/perfumes/supremacysilver.webp" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Supremacy
+                    <br>  
+                    Silver<br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 99.000,00</span> <br>
+                 <span>$ 79.200,00 <br>
+                 4 cuotas de <br>$ 19.800,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 104.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto pt-4 " src="../image/perfumes/philos.jpg" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Philos
+                    <br>  
+                    Centro<br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 68.990,00</span> <br>
+                 <span>$ 55.192,00 <br>
+                 4 cuotas de <br>$ 13.798,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 74.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+ 
+ 
+    
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto pt-4 " src="../image/perfumes/fucsia.jpg" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Fucsia
+                    <br>  
+                    Shakira<br> edp 80ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 42.000,00</span> <br>
+                 <span>$ 33.600,00 <br>
+                 4 cuotas de <br>$ 8.400,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 46.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto pt-4 " src="../image/perfumes/KISMETmagic.webp" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Kismet Magic
+                    <br>  
+                    Maison Alhambra<br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 62.500,00</span> <br>
+                 <span>$ 50.000,00 <br>
+                 4 cuotas de <br>$ 12.500,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 63.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+     
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto pt-4" src="../image/perfumes/oudisgreat.webp" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Oud Is Great
+                    <br>  
+                    Zimaya<br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 53.600,00</span> <br>
+                 <span>$ 42.880,00 <br>
+                 4 cuotas de <br>$ 10.720,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 56.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+  
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto  " src="../image/perfumes/cherzarcielixirparfum100ml.jpg" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Cher 
+                    <br>
+                    Zarci Elixir<br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 53.000,00</span> <br>
+                 <span>$ 42.400,00 <br>
+                 4 cuotas de <br>$ 10.600,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 55.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+    
+
+
+     <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/lintrude.webp" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">L'Intrude 
+                    <br>
+                    Maison Alhambra <br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 58.000,00</span> <br>
+                 <span>$ 46.400,00 <br>
+                 4 cuotas de <br>$ 11.600,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 69.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+ 
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/vivaciteintense.webp" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">La Vivacité Intensa 
+                    <br>
+                    Maison Alhambra <br> edp 100ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 58.000,00</span> <br>
+                 <span>$ 46.400,00 <br>
+                 4 cuotas de <br>$ 11.600,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 69.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+ 
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/leonie.webp" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Leonie  
+                    <br>
+                    Maison Alhambra <br> edp 100ml
                    </h5> 
                   <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 86.455,00</span> <br>
-                  <span>$ 69.164,00 <br>
-                  4 cuotas de <br>$ 17.291,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 89.000,00  
+                  <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                  <span class="text-danger text-decoration-line-through">$ 58.000,00</span> <br>
+                  <span>$ 46.400,00 <br>
+                  4 cuotas de <br>$ 11.600,00 <br><hr>
+                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                    $ 69.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+ 
+   
+    <div class="col mb-5 categoria3">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/larochebruma.png"/>
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">La Roche Posay
+                    <br>Anthelios Bruma   <br>50+ 200ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 61.800,00</span> <br>
+                 <span>$ 49.440,00 <br>
+                 4 cuotas de <br>$ 12.360,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 65.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+    
+    
+    <div class="col mb-5 categoria3">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/laroche50ninos.png"/>
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">La Roche Posay
+                    <br> dermo pediatrico <br>
+                    Anthelios 50+  <br>Invisible Spray<br>200ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 71.800,00</span> <br>
+                 <span>$ 57.440,00 <br>
+                 4 cuotas de <br>$ 14.360,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 72.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+    
+    
+    <div class="col mb-5 categoria3">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/laroche50.png"/>
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">La Roche Posay
+                    <br>
+                    Anthelios 50+  <br>Invisible Spray<br>200ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 69.500,00</span> <br>
+                 <span>$ 55.600,00 <br>
+                 4 cuotas de <br>$ 13.900,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 72.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+    
+    <div class="col mb-5 categoria3">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/larochegelcrema.jpg" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">La Roche Posay
+                    <br>
+                    Anthelios  <br>Oil Control <br>UVMune 400
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 49.900,00</span> <br>
+                 <span>$ 39.920,00 <br>
+                 4 cuotas de <br>$ 9.980,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 52.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+    
+    <div class="col mb-5 categoria3">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/larocheoilcontrol.jpg" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">La Roche Posay
+                    <br>
+                    Con Color  <br>Oil Control <br>UVMune 400
+                   </h5> 
+                  <!-- Product price--> <hr>
+                  <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                  <span class="text-danger text-decoration-line-through">$ 49.900,00</span> <br>
+                  <span>$ 39.920,00 <br>
+                  4 cuotas de <br>$ 9.980,00 <br><hr>
+                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                   $ 52.000,00  
               </div>
           </div>  
       </div>
     </div> 
 
 
-    <div class="col mb-5 categoria1">
+    <div class="col mb-5 categoria3">
       <div class="card h-100">
         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
           <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/pachainsane.png" />
+          <img class="card-img-top  mx-auto " src="../image/perfumes/vichy30capital.png" />
          <!-- Product details-->
            <div class="card-body  ">
               <div class="text-center">
                   <!-- Product name-->
-                   <h5 class="fw-bolder mt-4">Sarkany <br>
-                    Be Insane <br>edp 100ml
+                   <h5 class="fw-bolder ">Vichy Capital Soleil 
+                    <br>
+                    Agua protectora fps30 x 200ml
                    </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 46.000,00</span> <br>
-                  <span>$ 36.800,00 <br>
-                  4 cuotas de <br>$ 9.200,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 48.000,00  
-              </div>
-          </div>  
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/dragoness.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Sarkany <br>
-                    Dragones <br>edp 100ml
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 46.000,00</span> <br>
-                  <span>$ 36.800,00 <br>
-                  4 cuotas de <br>$ 9.200,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 48.000,00  
-              </div>
-          </div>  
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/ibiza2.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Pacha Ibiza  <br>
-                    24/7 Vip <br>edt 100ml
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 17.000,00</span> <br>
-                  <span>$ 13.600,00 <br>
-                  4 cuotas de <br>$ 3.400,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 18.000,00  
-              </div>
-          </div>  
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/ibiza1.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Pacha Ibiza  <br>
-                    24/7 Vip <br>edt 100ml
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 17.000,00</span> <br>
-                  <span>$ 13.600,00 <br>
-                  4 cuotas de <br>$ 3.400,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 18.000,00  
-              </div>
-          </div>  
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/ibiza.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Pacha Ibiza  <br>
-                    24/7 Vip <br>edt 80ml
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 17.000,00</span> <br>
-                  <span>$ 13.600,00 <br>
-                  4 cuotas de <br>$ 3.400,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 18.000,00  
+                   <span> <b>Potencia el bronceado</b></span>
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 67.600,00</span> <br>
+                 <span>$ 54.080,00 <br>
+                 4 cuotas de <br>$ 13.520,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 68.000,00  
               </div>
           </div>  
       </div>
@@ -266,7 +865,111 @@
       <div class="card h-100">
         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
           <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/isdinfotoprotectorpediatrico.png" />
+          <img class="card-img-top  mx-auto " src="../image/perfumes/vichy50capital.jpg" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Vichy Capital Soleil 
+                    <br>
+                    Agua protectora fps50 x 200ml 
+                   </h5>  
+                  <span> <b>Potencia el bronceado</b></span>
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 67.600,00</span> <br>
+                 <span>$ 54.080,00 <br>
+                 4 cuotas de <br>$ 13.520,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 68.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+
+    <div class="col mb-5 categoria3">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/vichy50capital.png" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Vichy Capital Soleil 
+                    <br>
+                    Agua protectora fps50 x 200ml
+                   </h5> 
+                   <span> <b> Hidratación </b></span>
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 67.600,00</span> <br>
+                 <span>$ 54.080,00 <br>
+                 4 cuotas de <br>$ 13.520,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 68.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+
+    <div class="col mb-5 categoria3">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/vichy30.png" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Vichy Capital Soleil 
+                    <br>
+                    fps30 x 300ml
+                   </h5> 
+                 <!-- Product price--> <hr>
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-danger text-decoration-line-through">$ 63.000,00</span> <br>
+                 <span>$ 50.400,00 <br>
+                 4 cuotas de <br>$ 12.600,00 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                  $ 65.000,00   
+              </div>
+          </div>  
+      </div>
+    </div> 
+  
+ 
+    <div class="col mb-5 categoria1">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/jeanlowemaitre.webp" />
+         <!-- Product details-->
+           <div class="card-body  ">
+              <div class="text-center">
+                  <!-- Product name-->
+                   <h5 class="fw-bolder ">Jean Lowe 
+                    <br>
+                    MATIÈRE <br>100ml
+                   </h5> 
+                  <!-- Product price--> <hr>
+                  <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                  <span class="text-danger text-decoration-line-through">$ 60.000,00</span> <br>
+                  <span>$ 48.000,00 <br>
+                  4 cuotas de <br>$ 12.000,00 <br><hr>
+                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                   $ 70.000,00  
+              </div>
+          </div>  
+      </div>
+    </div> 
+ 
+
+    <div class="col mb-5 categoria3">
+      <div class="card h-100">
+        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+          <!-- Product image-->   
+          <img class="card-img-top  mx-auto " src="../image/perfumes/isdinfotoprotectorpediatrico.png" />
          <!-- Product details-->
            <div class="card-body  ">
               <div class="text-center">
@@ -276,48 +979,23 @@
                     Fusion Fluid
                    </h5> 
                   <!-- Product price--> <hr>
-                   <!-- <p style="color: red;"><b>Sin stock</b></p> -->
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 42.280,00</span> <br>
-                  <span>$ 33.824,00 <br>
-                  4 cuotas de <br>$ 8.456,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 45.000,00   
+                   <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                  <span class="text-danger text-decoration-line-through">$ 47.000,00</span> <br>
+                  <span>$ 37.600,00 <br>
+                  4 cuotas de <br>$ 9.400,00 <br><hr>
+                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                   $ 50.000,00     
               </div>
           </div>  
       </div>
     </div> 
+ 
 
     <div class="col mb-5 categoria3">
       <div class="card h-100">
         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
           <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/isdinfotoprotector.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Isdin  <br>
-                    Fotoprotector<br>
-                    Fusion Water
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 37.842,00</span> <br>
-                  <span>$ 30.273,60 <br>
-                  4 cuotas de <br>$ 7.568,40 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 40.000,00  
-              </div>
-          </div>  
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/invisiblefluid.jpg" />
+          <img class="card-img-top  mx-auto " src="../image/perfumes/invisiblefluid.jpg" />
          <!-- Product details-->
            <div class="card-body  ">
               <div class="text-center">
@@ -327,11 +1005,11 @@
                     Anthelios<br>La Roche Possay
                    </h5> 
                   <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                  <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                   <span class="text-danger text-decoration-line-through">$ 54.600,00</span> <br>
                   <span>$ 43.680,00 <br>
                   4 cuotas de <br>$ 10.920,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                    $ 60.000,00  
               </div>
           </div>  
@@ -342,7 +1020,7 @@
       <div class="card h-100">
         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
           <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/agecorrect.png" />
+          <img class="card-img-top  mx-auto " src="../image/perfumes/agecorrect.png" />
          <!-- Product details-->
            <div class="card-body  ">
               <div class="text-center">
@@ -351,11 +1029,11 @@
                     Anthelios<br>La Roche Possay
                    </h5> 
                   <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                  <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                   <span class="text-danger text-decoration-line-through">$ 65.000,00</span> <br>
                   <span>$ 52.000,00 <br>
                   4 cuotas de <br>$ 13.000,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                    $ 68.000,00  
               </div>
           </div>  
@@ -366,342 +1044,26 @@
       <div class="card h-100">
         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
           <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/luxurycollection.jpg  " />
+          <img class="card-img-top  mx-auto pt-4 mt-4" src="../image/perfumes/bedelicious.webp" />
          <!-- Product details-->
            <div class="card-body  ">
               <div class="text-center">
                   <!-- Product name-->
-                   <h5 class="fw-bolder ">Set Miniaturas Orientica <br>
-                    5 Perfumes Diferentes <br> 30ml
+                   <h5 class="fw-bolder ">Be Delicious <br>
+                    Dkny <br>edp 100ml
                    </h5> 
                   <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 160.000,00</span> <br>
-                  <span>$ 128.000,00 <br>
-                  4 cuotas de <br>$ 32.000,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 162.000,00  
+                  <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                  <span class="text-danger text-decoration-line-through">$ 159.500,00</span> <br>
+                  <span>$ 127.600,00 <br>
+                  4 cuotas de <br>$ 31.900,00 <br><hr>
+                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                   $ 168.000,00  
               </div>
-          </div>
+          </div>  
       </div>
     </div> 
-
  
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/zimayalarose.jpg" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder "> La Rose  <br>
-                    Zimaya
-                    <br>
-                    100ml <br>edp
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 160.000,00</span> <br>
-                  <span>$ 128.000,00 <br>
-                  4 cuotas de <br>$ 32.000,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 160.000,00  
-              </div>
-          </div>
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/rawaan.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Rawaan<br>
-                    Zimaya
-                    <br>
-                    100ml <br>edp
-                   </h5> 
-                  <!-- Product price--> <hr>
-                   <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 153.000,00</span> <br>
-                  <span>$ 122.400,00 <br>
-                  4 cuotas de <br>$ 30.600,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 153.000,00    
-              </div>
-          </div>
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto  mt-2 " src="../image/perfumes/honorlataffa.jpg" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder mt-2 ">Honor & Glory<br>
-                    Lataffa
-                    <br>
-                    100ml <br>edp
-                   </h5> 
-                  <!-- Product price--> <hr>
-                   <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 124.000,00</span> <br>
-                  <span>$ 99.200,00 <br>
-                  4 cuotas de <br>$ 24.800,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 130.000,00    
-              </div>
-          </div>
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto" src="../image/perfumes/salvo.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Salvo<br>
-                    Elixir
-                    <br>
-                    60ml <br>edp
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 138.000,00</span> <br>
-                  <span>$ 110.400,00 <br>
-                  4 cuotas de <br>$ 27.600,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 140.000,00  
-              </div>
-          </div>
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto" src="../image/perfumes/amethyst.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Amethyst<br>
-                    Lattafa
-                    <br>
-                    100ml <br>edp
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 138.000,00</span> <br>
-                  <span>$ 110.400,00 <br>
-                  4 cuotas de <br>$ 27.600,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 140.000,00  
-              </div>
-          </div>
-      </div>
-    </div> 
-  
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto" src="../image/perfumes/nebras.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Nebras<br>
-                    Lattafa
-                    <br>
-                    100ml <br>edp
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 175.000,00</span> <br>
-                  <span>$ 140.000,00 <br>
-                  4 cuotas de <br>$ 35.000,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 180.000,00  
-              </div>
-          </div>
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">   
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto" src="../image/perfumes/bharara.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Bharara<br>
-                    King
-                    <br>
-                    100ml <br>edp
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 275.000,00</span> <br>
-                  <span>$ 220.000,00 <br>
-                  4 cuotas de <br>$ 55.000,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 280.000,00  
-              </div>
-          </div>
-      </div>
-    </div> 
-   
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto" src="../image/perfumes/portoneroli.jpg" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Porto Neroli <br>
-                    M. Alhambra
-                    <br>
-                    80ml <br>edp
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 99.500,00</span> <br>
-                  <span>$ 79.600,00 <br>
-                  4 cuotas de <br>$ 19.900,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 100.000,00   
-              </div>
-          </div>
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto" src="../image/perfumes/rosepetals.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Rose Petals <br>
-                    M. Alhambra
-                    <br>
-                    80ml <br>edp
-                   </h5> 
-                 <!-- Product price--> <hr>
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                 <span class="text-danger text-decoration-line-through">$ 99.500,00</span> <br>
-                 <span>$ 79.600,00 <br>
-                 4 cuotas de <br>$ 19.900,00 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                  $ 100.000,00   
-              </div>
-          </div>
-      </div>
-    </div> 
-
-   
-    
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/versaceyellow.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Yellow Diamond<br>
-                    Versace 
-                    <br>
-                    Cofre
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 183.000,00</span> <br>
-                  <span>$ 146.400,00 <br>
-                  4 cuotas de <br>$ 36.600,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 198.000,00  
-              </div>
-          </div>
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/versaceerosflame.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Eros Flame<br>
-                    Versace 
-                    <br>
-                    Cofre
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 170.000,00</span> <br>
-                  <span>$ 136.000,00 <br>
-                  4 cuotas de <br>$ 34.000,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 190.000,00  
-              </div>
-          </div>
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1">
-      <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
-          <!-- Product image-->   
-          <img class="card-img-top zoomable mx-auto " src="../image/perfumes/versacedylan.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Dylan Blue Tourquise <br>
-                    Versace 
-                    <br>
-                    Cofre
-                   </h5> 
-                  <!-- Product price--> <hr>
-                  <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-danger text-decoration-line-through">$ 196.000,00</span> <br>
-                  <span>$ 156.800,00 <br>
-                  4 cuotas de <br>$ 39.200,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                   $ 210.000,00  
-              </div>
-          </div>
-      </div>
-    </div> 
      
     
 
@@ -711,54 +1073,76 @@
 </section>
 
 
+<script>
+  document.querySelectorAll('.filtro-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const categoria = this.getAttribute('data-categoria');
+      const productos = document.querySelectorAll('.col');
+
+      productos.forEach(function(producto) {
+        if (categoria === 'todos') {
+          producto.style.display = 'block';
+        } else {
+          if (producto.classList.contains(categoria)) {
+            producto.style.display = 'block';
+          } else {
+            producto.style.display = 'none';
+          }
+        }
+      });
+
+      // Quitar clase activa a todos los botones
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+      // Agregar clase activa al botón clicado
+      this.classList.add('active');
+    });
+  });
+</script>
+
+
 <section>
   <p class="text-center">Precios sujetos a modificación sin previo aviso</p>
 </section>
 
 <br>
-<hr>
 
-<footer>
-     
-  <section class="grid-footer">
-    <div >
-      <h5><img src="../image/localizacion.png" alt="mapa" srcset="" width="120"></h5>
-      <p>
-        Av. del Libertador 101 - PB<br>
-        Torre al Río - Vte. López
-        </p>
-    </div>
-    <div>
-      <h5><img src="../image/te.jpg" alt="mapa" srcset="" width="50"></h5>
-      <p>L a V 9.00 a 19.00 hs<br>
-        6090-5770
-      </p>
-    </div>
-    <div>
-      <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="50"></a></h5>
-      <p>mutual@lanacion.com.ar
-        </p>
-    </div>
-    <div>
-      <h5><a href="https://www.instagram.com/lnmutual/" target="_blank"><img src="../image/instagram.jfif" alt="mapa" srcset="" width="40"></a></h5>
-      <p>@lnmutual
-        </p>
-    </div>
-   
-    </section>
- 
-</footer>
-<iframe class="p-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: small;margin-left: 1%">Desarrollado por <a href="http://gomezdiego.com.ar" target="_blank" rel="noopener noreferrer"><img src="../image/DG.png" width="35" alt=""></a></p>
-</div>  
+
+
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 
 
     <!-- JAVA -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="../filtro.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <div id="zoomModal" class="zoom-modal" onclick="cerrarZoom()">
+      <img id="zoomImg" src="" alt="Imagen ampliada">
+    </div>
+    <script>
+      const zoomModal = document.getElementById("zoomModal");
+      const zoomImg = document.getElementById("zoomImg");
+    
+      document.querySelectorAll(".card img").forEach(img => {
+        img.addEventListener("click", () => {
+          zoomImg.src = img.src;
+          zoomModal.style.display = "flex";
+        });
+      });
+    
+      function cerrarZoom() {
+        zoomModal.style.display = "none";
+        zoomImg.src = "";
+      }
+    </script>
+    
 </body>
 </html>

@@ -68,10 +68,10 @@
   <div class="container px-4 px-lg-5 "><br>
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
-        <div class="row-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../image/lolla.png" alt="..." /></div>
+        <div class="row-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../image/lollapalooza.jpg" alt="..." /></div>
         <div class="row-lg-5 "><br>
-         <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"> Se cerró un canje con LOLLAPALOOZA 2024 con un descuento del 30% en 4 cuotas.</p>
-         <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">PRECIOS CONGELADOS HASTA EL 07/03/2024 , PASADA ESA FECHA SE INFORMARÁ NUEVOS VALORES.</p>
+         <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"> Se cerró un canje con LOLLAPALOOZA 2025 con un descuento del 30% en 4 cuotas.</p>
+         
 
          <p style="background-color: antiquewhite;"><b><u>Valor Pulsera x día</u></b> <br>
           <b>$ 56.350 con descuento aplicado en 4 cuotas de $ 14.087,50 </b><br>
@@ -82,13 +82,11 @@
           Valor Bruto $ 172.500  </p> <br><hr>
 
         <p style="font-size: xx-large; font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;"><b>Lineup</b></p>
-        <div class="row-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../image/lollalineup.png"/></div>
+        <div class="row-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../image/lollalineup.jpg"/></div>
 
         <br><hr>
         <p style="font-size: xx-large; font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;"><b>Horarios</b></p>
-        <div class="row-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../image/LollaViernes.JPG"/></div><br>
-        <div class="row-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../image/LollaSabado.JPG"/></div><br>
-        <div class="row-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../image/LollaDomingo.JPG"/></div>
+        <div class="row-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../image/lolahorarios.jpg"/></div>
         <br><hr>
         <span style="color: red;"><b>Cómo realizar tu pedido?</b></span>
         <br> 
@@ -101,44 +99,15 @@
     </div>
   </div>
 
-  <hr>
-
-
-
-
-  <footer>
-     
-      <section class="grid-footer">
-        <div >
-          <h5><img src="../image/localizacion.png" alt="mapa" srcset="" width="120"></h5>
-          <p>
-            Av. del Libertador 101 - PB<br>
-            Torre al Río - Vte. López
-            </p>
-        </div>
-        <div>
-          <h5><img src="../image/te.jpg" alt="mapa" srcset="" width="50"></h5>
-          <p>L a V 9.00 a 19.00 hs<br>
-            6090-5770
-          </p>
-        </div>
-        <div>
-          <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="50"></a></h5>
-          <p>mutual@lanacion.com.ar
-            </p>
-        </div>
-        <div>
-          <h5><a href="https://www.instagram.com/lnmutual/" target="_blank"><img src="../image/instagram.jfif" alt="mapa" srcset="" width="40"></a></h5>
-          <p>@lnmutual
-            </p>
-        </div>
-       
-        </section>
-     
-  </footer>
-  <iframe class="p-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  <p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: small;margin-left: 1%">Desarrollado por <a href="http://gomezdiego.com.ar" target="_blank" rel="noopener noreferrer"><img src="../image/DG.png" width="35" alt=""></a></p>
-</div>
+ 
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 
 
     <!-- JAVA -->

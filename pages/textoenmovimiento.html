@@ -3,39 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texto en Movimiento</title>
+    <title>Explosion de Imagen</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
     <style>
-        .textomov {
-            width: 100%;
-            overflow: hidden;
-            background-color: #f3f3f3;
-            position: relative;
-            height: 50px; /* Altura del contenedor */
+        /* Estilos básicos para el body */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
         }
 
-        .marquee {
-            display: inline-block;
-            padding: 10px;
+        /* Estilo para el nombre (enlace clickeable) */
+        #nombre {
+            cursor: pointer;
             font-size: 24px;
-            white-space: nowrap;
-            position: absolute;
-            will-change: transform;
-            animation: marquee 10s linear infinite;
+            color: #333;
+            transition: color 0.3s ease;
         }
 
-        @keyframes marquee {
-            0% {
-                transform: translateX(1000%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+        #nombre:hover {
+            color: #007bff;
+        }
+
+        /* Estilo del contenedor de la explosión */
+        #explosion-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            display: none; /* Ocultar todo al principio */
+        }
+
+        /* Estilo para los fragmentos de la imagen */
+        .fragmento {
+            position: absolute;
+            width: 33.33%;
+            height: 33.33%;
+            background-image: url('../image/aminga.png'); /* Usar una imagen de prueba */
+            background-size: 300px 300px;
+            opacity: 0;
         }
     </style>
 </head>
 <body>
-    <div class="textomov">
-        <div class="marquee">FELIZ DÍA</div>
+    <h2 id="nombre" onclick="mostrarExplosion()">Haz clic aquí</h2>
+
+    <div id="explosion-container">
+        <!-- Los fragmentos de la imagen se crearán dinámicamente en JavaScript -->
     </div>
+
+    <script>
+        function mostrarExplosion() {
+            const explosionContainer = document.getElementById('explosion-container');
+            explosionContainer.style.display = 'block'; // Mostrar el contenedor
+
+            // Crear fragmentos de la imagen (9 fragmentos)
+            const fragmentos = [];
+            const totalFragmentos = 9; // 3x3 = 9 fragmentos
+            const posicionesOriginales = [];
+
+            // Crear los fragmentos y guardar las posiciones originales
+            for (let i = 0; i < totalFragmentos; i++) {
+                const fragmento = document.createElement('div');
+                fragmento.classList.add('fragmento');
+                
+                // Calcular la posición de cada fragmento
+                const row = Math.floor(i / 3); // Fila (0, 1, 2)
+                const col = i % 3; // Columna (0, 1, 2)
+
+                // Ajustar la posición del fondo para cada fragmento
+                fragmento.style.backgroundPosition = `-${col * 100}px -${row * 100}px`;
+
+                // Guardar las posiciones originales de los fragmentos
+                posicionesOriginales.push({ x: col * 33.33 + '%', y: row * 33.33 + '%' });
+
+                // Establecer las posiciones iniciales de los fragmentos (en el centro)
+                fragmento.style.left = `${col * 33.33}%`;
+                fragmento.style.top = `${row * 33.33}%`;
+
+                // Agregar el fragmento al contenedor
+                explosionContainer.appendChild(fragmento);
+                fragmentos.push(fragmento);
+            }
+
+            // Animación de explosión usando GSAP
+            gsap.to(fragmentos, {
+                x: () => gsap.utils.random(-400, 400),  // Movimiento aleatorio en X
+                y: () => gsap.utils.random(-400, 400),  // Movimiento aleatorio en Y
+                scale: gsap.utils.random(0.5, 2),        // Escala aleatoria para dispersar
+                rotation: gsap.utils.random(-720, 720), // Rotación aleatoria
+                opacity: 1,                             // Hacer visibles los fragmentos
+                stagger: 0.05,                          // Retraso entre fragmentos
+                duration: 1.5,                          // Duración de la explosión
+                ease: "power4.out",                     // Efecto de aceleración
+                onComplete: function() {
+                    // Después de la explosión, los fragmentos deben regresar a sus posiciones originales
+
+                    gsap.to(fragmentos, {
+                        x: 0, // Regresar a la posición original
+                        y: 0,
+                        scale: 1,
+                        rotation: 0,
+                        opacity: 1, // Hacer visibles nuevamente los fragmentos
+                        stagger: 0.05,
+                        duration: 1.5, // Duración de la reconstrucción
+                        ease: "power4.in", // Efecto de desaceleración
+                         
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>

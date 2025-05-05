@@ -82,12 +82,7 @@
             margin-top: 10px;
             margin-right: 20px;
         }
-        .subtotal-row {
-        color: blue;
-        font-style: italic;
-        font-weight: bold;
-/*         background-color: rgb(225, 173, 112);
- */        }
+    
         .info-box {
             float: right; /* Alinea el cuadro a la derecha */
             width: 300px; /* Ajusta el ancho según tus necesidades */
@@ -108,12 +103,47 @@
                 margin-top: 10px; /* Ajusta el espacio entre el título y el cuadro */
             }
         }
-        .total-general {
-          color: #000000; /* Cambia este color al que prefieras */
-          font-weight: bold; /* Otras propiedades de estilo si lo deseas */
-      }
+        
+      #tablaDatos {
+        width: 100%;
+        border-collapse: collapse; /* Elimina los espacios entre celdas */
+        margin-top: 20px;
+        text-align: center;
+        background-color: #f9f9f9;
+    }
 
-      
+    #tablaDatos th, #tablaDatos td {
+        border: 1px solid #ccc; /* Borde para celdas */
+        padding: 10px;
+        text-align: center;
+    }
+
+    #tablaDatos th {
+        background-color: #007bff; /* Color de encabezado */
+        color: #ffffff; /* Texto blanco */
+        font-weight: bold;
+    }
+
+    #tablaDatos tr:nth-child(even) {
+        background-color: #f2f2f2; /* Color para filas pares */
+    }
+
+    .subtotal-row {
+        font-weight: bold;
+    }
+
+    .total-general {
+        background-color:rgb(113, 175, 242);
+        color:rgb(18, 15, 15);
+        font-weight: bold;
+    }
+    .page-break {
+    page-break-before: always; /* Hace que el contenido siguiente empiece en una nueva página */
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    }
+  
     </style>
 </head>
 <body>
@@ -163,9 +193,9 @@
 <br> 
       <div >
         <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">16/09/2024 20:00 hs</strong></p>
-<!--         <p style="text-align: center; color: blue"><b><u>Próxima actualización 05/08/2024 </u></b></p>
- -->        <!-- Agrega el cuadro de información al lado derecho del título -->
+        <p style="text-align: center">Última actualización: <strong style="color: red;">05/05/2025 13:00 hs</strong></p>
+          <!-- <p style="text-align: center; color: blue"><b><u>PRÓXIMA ACTUALIZACIÓN 03/02/2025 </u></b></p> -->
+          <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
             <span>Pago por transferencia </span>  <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
             <span ><b><u>Fechas de pago</u></b> <br>ADHERENTES y JUBILADOS<strong><br> 1 al 8 de cada mes</strong></span>
@@ -181,6 +211,7 @@
         <label for="numeroSocioInput">Socio:</label>
         <input type="text" id="numeroSocioInput" name="numeroSocio" required style="width: 50px; margin-right: 10px;" autocomplete="off">
          <button class='btn btn-dark btn-sm' type='submit' >Buscar </button>
+         
     </form>
 </div>
 
@@ -200,15 +231,15 @@ if ($conn->connect_error) {
 
 
 
-// Verificar si se envió el formulario  
+// Verifico si se envió el formulario  
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
     $dni = $_POST["dni"];
     $numeroSocio = $_POST["numeroSocio"];
  
 
-     // Obtener el apellido y nombre desde la base de datos
-     $sqlNombre = "SELECT apellidoNombre FROM socios160924 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
+     // Obtengo el apellido y nombre desde la base de datos
+     $sqlNombre = "SELECT apellidoNombre FROM cc050525 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
      $resultNombre = $conn->query($sqlNombre);
      if ($resultNombre->num_rows > 0) {
          $rowNombre = $resultNombre->fetch_assoc();
@@ -218,7 +249,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      }            
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM socios160924               
+                FROM cc050525               
                 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
         
@@ -243,47 +274,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <th>Comprobante</th>
                         <th>Monto</th>
                     </tr>";
-        
-            // Inicializar variables para el control de subtotales y totales
-            $mesActual = null;
-            $subtotal = 0;
-            $totalGeneral = 0;
-        
-            while ($row = $result->fetch_assoc()) {
-                // Verificar si la fecha ha cambiado para agregar un subtotal
-                if ($mesActual !== $row["fecha"]) {
-                    if ($mesActual !== null) {
-                        echo "<tr class='subtotal-row' style='text-align: center;'>
-                                <td colspan='4'>Subtotal</td> <!-- Ajustar el número de celdas -->
-                                <td>$ " . number_format($subtotal, 2) . "</td>
-                              </tr>";
-                    }
-        
-                    $mesActual = $row["fecha"];
-                    $subtotal = 0;
-                }
-        
-                $subtotal += $row["monto"];
-                $totalGeneral += $row["monto"];
-        
-                // Excluir la columna "Apellido y Nombre" de la visualización
-                echo "<tr>
-                        <td>" . $row["fecha"] . "</td>
-                        <td>" . $row["cuota"] . "</td>
-                        <td>" . $row["detalle"] . "</td>
-                        <td>" . $row["concepto"] . "</td>
-                        <td>$ " . number_format($row["monto"], 2) . "</td>
-                      </tr>";
-            }
+          
+                    
+// Contador de filas
+$contadorFilas = 0;
+
+while ($row = $result->fetch_assoc()) {
+    // Salto de página cada 15 filas
+    if ($contadorFilas % 13 == 0 && $contadorFilas != 0) {
+        echo "<tr><td colspan='5'><div class='page-break'></div></td></tr>";
+    }
+
+    // Verificar si la fecha ha cambiado para agregar un subtotal
+    if ($mesActual !== $row["fecha"]) {
+        if ($mesActual !== null) {
+            echo "<tr class='subtotal-row'>
+                    <td colspan='4'>Subtotal</td> 
+                    <td>$ " . number_format($subtotal, 2) . "</td>
+                  </tr>";
+        }
+        $mesActual = $row["fecha"];
+        $subtotal = 0;
+    }
+
+    $subtotal += $row["monto"];
+    $totalGeneral += $row["monto"];
+
+    // Imprimir fila con datos
+    echo "<tr>
+            <td>" . $row["fecha"] . "</td>
+            <td>" . $row["cuota"] . "</td>
+            <td>" . $row["detalle"] . "</td>
+            <td>" . $row["concepto"] . "</td>
+            <td>$ " . number_format($row["monto"], 2) . "</td>
+          </tr>";
+
+    $contadorFilas++;
+}
+
         
             // Agregar el último subtotal y el total general
-            echo "<tr class='subtotal-row' style='text-align: center;'>
+            echo "<tr class='subtotal-row'>
                   <td colspan='4'>Subtotal</td> <!-- Ajustar el número de celdas -->
-                  <td>$ " . number_format($subtotal, 2) . "</td>
+                  <td >$ " . number_format($subtotal, 2) . "</td>
                   </tr>";
-            echo "<tr class='total-general' style='text-align: center;'>
-                  <td colspan='4'>Total General</td>
-                  <td>$ " . number_format($totalGeneral, 2) . "</td>
+            echo "<tr class='total-general'>
+                  <td colspan='4' ><br>Total General</td>
+                  <td><br> $ " . number_format($totalGeneral, 2) .  "</td> 
                   </tr>";
         
             echo "</table>";
@@ -292,7 +329,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
       }
  
-
 // Cerrar la conexión
 $conn->close();
 ?>
@@ -373,43 +409,16 @@ function validarFormulario() {
 
 
 
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 
-<footer class="mt-4 pt-4">
-    <br><br>
-     <hr> 
-    <section class="grid-footer" > 
-      <div >
-        <h5><img src="../image/localizacion.png" alt="mapa" srcset="" width="120"></h5>
-        <p>
-          Av. del Libertador 101 - PB<br>
-          Torre al Río - Vte. López
-          </p>
-      </div>
-      <div>
-        <h5><img src="../image/te.jpg" alt="mapa" srcset="" width="50"></h5>
-        <p>L a V 9.00 a 19.00 hs<br>
-        6090-5770
-        </p>
-      </div>
-      <div>
-        <h5><a href="mailto:mutual@lanacion.com.ar"><img src="../image/mail.png" alt="mapa" srcset="" width="50"></a></h5>
-        <p>mutual@lanacion.com.ar
-          </p>
-      </div>
-      <div>
-        <h5><a href="https://www.instagram.com/lnmutual/" target="_blank"><img src="../image/instagram.jfif" alt="mapa" srcset="" width="40"></a></h5>
-        <p>@lnmutual
-          </p>
-      </div>
-     
-      </section>
-   
-</footer>
-<div class="m-2">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.7792704454764!2d-58.46981028627339!3d-34.53381988047762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb6a6413ab341%3A0x3bcb7f994f576a0c!2sAv.%20del%20Libertador%20101%2C%20B1638BEK%20Vicente%20L%C3%B3pez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1659731461935!5m2!1sen!2sar" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <p style="text-align: left; font-family: 'Times New Roman', Times, serif; font-size: small;">Desarrollado por <a href="http://gomezdiego.com.ar" target="_blank" rel="noopener noreferrer"><img src="../image/DG.png" width="35" alt=""></a></p>
-</div>
-</div>
+
 
 
   <!-- JAVA -->
