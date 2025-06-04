@@ -20,7 +20,108 @@
 
         
     </head>
-    
+  
+    <style>
+
+     .card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+ 
+.card h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.card-body {
+  padding: 1.25rem;
+  background-color: #fff;
+}
+
+.card .badge {
+  background-color: #ff3366;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35em 0.7em;
+  border-radius: 1rem;
+}
+
+.card .card-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card .btn-primary {
+  background-color: #0066cc;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.card .btn-primary:hover {
+  background-color: #004c99;
+  transform: scale(1.05);
+}
+
+.price-section {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.price-section span {
+  display: block;
+}
+
+.price-socio {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #129c00;
+}
+.zoom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.zoom-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+.badge-discount {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: #ff6b6b;
+      color: white;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      border-radius: 8px;
+}
+
+</style>
+
       
         
 <body id="paper-fall">
@@ -28,44 +129,6 @@
     <!-- Ícono de WhatsApp -->
     <i class="fab fa-whatsapp"></i>
   </a>
-  <nav class="navbar navbar-dark fixed-top bg-secondary">    
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Nega Velas y Aromas</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <li class="nav-item">
-              <hr class="bg-light">
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
-              <ul class="dropdown-menu"> 
-              <li><a href="../pages/almacen.html" class="nav-link px-2 text-white bg-secondary">Almacen</a></li>    
-              <li><a href="../pages/aperitivos.html" class="nav-link px-2 text-white bg-secondary">Bebidas</a></li>    
-              <li><a href="../pages/canjes.html" class="nav-link px-2 text-white bg-secondary">Canjes</a></li>
-              <li><a href="../pages/feria.html" class="nav-link px-2 text-white bg-secondary">Feria</a></li>  
-              <li><a href="../pages/hogar.html" class="nav-link px-2 text-white bg-secondary">Hogar</a></li>
-              <li><a href="../pages/juegos.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
-              <li><a href="../pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
-                 </ul> 
-              </li>
-              
-                <a class="nav-link active" aria-current="page" href="../pages/ayudaeconomica.html">Ayuda Económica</a>
-                <a class="nav-link active" aria-current="page" href="../pages/colecciones.html">Colecciones LN</a>
-                <a class="nav-link active" aria-current="page" href="../pages/productos.html">Productos</a>
-                <a class="nav-link active" aria-current="page" href="../pages/subsidios.html">Subsidios</a>
-                <a class="nav-link active" aria-current="page" href="../pages/asociarse.html">Asociarse</a>
-                <a class="nav-link active" aria-current="page" href="../pages/contacto.html">Contacto</a>
-                <hr class="bg-light">
-                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-              </li>
-          </li>
-        </ul> 
-      </div>
-    </div>
-  </nav>
   
   
   <script>
@@ -81,7 +144,7 @@
   </script>
   
  <section class="py-4">
-  <div class="container px-4 px-lg-5 mt-2"><br><br>
+  <div class="container px-4 px-lg-5 mt-2"> 
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center">
 
 
@@ -89,7 +152,7 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+          <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
         <img class="card-img-top  zoomable" src="../image//nega/diadelamadrecombo.jpg "/>
         <!-- Product details-->
@@ -101,11 +164,11 @@
                 <button id="mama" class="btn btn-outline-primary mt-auto">+Info 
                 </button> <br><br>
                   <!-- Product price -->   
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                  <span class="text-muted text-decoration-line-through">$ 70.000,00</span> <br>
-                 <span>$ 59.500,00 <br>
+                 <span class="price-socio">$ 59.500,00 <br></span>
                  4 cuotas de <br>$ 14.875,00 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
                  $ 75.000,00
                  </span>    
             </div>
@@ -116,7 +179,7 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+        <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
         <img class="card-img-top  zoomable" src="../image//nega/JAZMIN.jpeg"/>
         <!-- Product details-->
@@ -128,11 +191,11 @@
                 <button id="JAZMIN" class="btn btn-outline-primary mt-auto">+Info 
                 </button> <br><br>
                   <!-- Product price -->   
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                  <span class="text-muted text-decoration-line-through">$ 28.500,00</span> <br>
-                 <span>$ 24.225,00 <br>
+                 <span class="price-socio">$ 24.225,00 <br> </span>
                  4 cuotas de <br>$ 6.056,25 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b><br>
                  $ 30.000,00
                  </span>    
             </div>
@@ -144,7 +207,7 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+        <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
         <img class="card-img-top  zoomable" src="../image//nega/FELIPA.jpeg" alt="ferrari" />
         <!-- Product details-->
@@ -155,11 +218,11 @@
                 <button id="Felipa" class="btn btn-outline-primary mt-auto">+Info
                 </button> <br><br>
                  <!-- Product price -->   
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                  <span class="text-muted text-decoration-line-through">$ 13.000,00</span> <br>
-                 <span>$ 11.050,00 <br>
+                 <span class="price-socio">$ 11.050,00 <br> </span>
                  4 cuotas de <br>$ 2.762,50 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b><br>
                  $ 16.000,00
                  </span>  
             </div>
@@ -172,7 +235,7 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+        <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
         <img class="card-img-top  zoomable" src="../image//nega/PIPA.jpeg" alt="ferrari" />
         <!-- Product details-->
@@ -183,11 +246,11 @@
                 <button id="Pipa" class="btn btn-outline-primary mt-auto">+Info
                 </button> <br><br>
                  <!-- Product price -->   
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                  <span class="text-muted text-decoration-line-through">$ 21.000,00</span> <br>
-                 <span>$ 17.850,00 <br>
+                 <span class="price-socio">$ 17.850,00 <br> </span>
                  4 cuotas de <br>$ 4.462,50 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b><br>
                  $ 24.000,00
                  </span>  
             </div>
@@ -198,23 +261,23 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+        <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
-        <img class="card-img-top  zoomable" src="../image//nega/lotus.jpg" alt="ferrari" />
+        <img class="card-img-top  zoomable" src="../image//nega/MENA.jpeg" alt="ferrari" />
         <!-- Product details-->
         <div class="card-body ">
             <div class="  text-center ">
                 <!-- Product name--> 
-                <h5 class="fw-bolder ">Vela Lotus</h5><hr>
-                <button id="lotus" class="btn btn-outline-primary mt-auto">+Info
+                <h5 class="fw-bolder ">Vela Mena</h5><hr>
+                <button id="mena" class="btn btn-outline-primary mt-auto">+Info
                 </button> <br><br>
                  <!-- Product price -->    
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                 <span class="text-muted text-decoration-line-through">$ 56.000,00</span> <br>
-                 <span>$ 47.600,00 <br>
-                 4 cuotas de <br>$ 11.900,00 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                 $ 56.000,00
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-muted text-decoration-line-through">$ 25.500,00</span> <br>
+                 <span class="price-socio"> $ 21.675,00 <br> </span>
+                 4 cuotas de <br>$ 5.418,75 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b><br>
+                 $ 30.000,00
                  </span>    
             </div>
         </div> 
@@ -228,22 +291,22 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+        <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
-        <img class="card-img-top  zoomable" src="../image//nega/BLANCA.jpeg" alt="ferrari" />
+        <img class="card-img-top  zoomable" src="../image//nega/lola.webp" alt="ferrari" />
         <!-- Product details-->
         <div class="card-body ">
             <div class="  text-center ">
                 <!-- Product name--> 
-                <h5 class="fw-bolder ">Vela Blanca</h5><hr>
-                <button id="blanca" class="btn btn-outline-primary mt-auto">+Info
+                <h5 class="fw-bolder ">Vela Lola</h5><hr>
+                <button id="lola" class="btn btn-outline-primary mt-auto">+Info
                 </button> <br><br>
                  <!-- Product price -->   
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                  <span class="text-muted text-decoration-line-through">$ 24.000,00</span> <br>
-                 <span>$ 20.400,00 <br>
+                 <span class="price-socio">$ 20.400,00 <br> </span>
                  4 cuotas de <br>$ 5.100,00 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
                  $ 24.000,00
                  </span>  
             </div>
@@ -256,23 +319,50 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+        <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
-        <img class="card-img-top  zoomable" src="../image//nega/POPI.jpeg" alt="ferrari" />
+        <img class="card-img-top  zoomable" src="../image//nega/juli.webp" alt="ferrari" />
         <!-- Product details-->
         <div class="card-body ">
             <div class="  text-center ">
                 <!-- Product name--> 
-                <h5 class="fw-bolder ">Vela Popi</h5><hr>
-                <button id="popi" class="btn btn-outline-primary mt-auto">+Info
+                <h5 class="fw-bolder ">Vela Juli</h5><hr>
+                <button id="juli" class="btn btn-outline-primary mt-auto">+Info
                 </button> <br><br>
                  <!-- Product price -->   
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                 <span class="text-muted text-decoration-line-through">$ 13.000,00</span> <br>
-                 <span>$ 11.050,00 <br>
-                 4 cuotas de <br>$ 2.762,50 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                 $ 16.000,00
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-muted text-decoration-line-through">$ 15.000,00</span> <br>
+                 <span class="price-socio">$ 12.750,00 <br> </span>
+                 4 cuotas de <br>$ 3.187,50 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+                 $ 20.000,00
+                 </span>  
+            </div>
+        </div> 
+    </div>
+  </div>
+  
+  
+  <div class="col mb-5">
+    <div class="card h-100">
+      <!-- Sale badge-->
+        <span class="badge-discount">15% OFF</span>
+        <!-- Product image-->
+        <img class="card-img-top  zoomable" src="../image//nega/rene.webp" alt="ferrari" />
+        <!-- Product details-->
+        <div class="card-body ">
+            <div class="  text-center ">
+                <!-- Product name--> 
+                <h5 class="fw-bolder ">Vela Rene</h5><hr>
+                <button id="rene" class="btn btn-outline-primary mt-auto">+Info
+                </button> <br><br>
+                 <!-- Product price -->   
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-muted text-decoration-line-through">$ 15.000,00</span> <br>
+                 <span class="price-socio">$ 12.750,00 <br> </span>
+                 4 cuotas de <br>$ 3.187,50 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b><br>
+                 $ 20.000,00
                  </span>  
             </div>
         </div> 
@@ -282,7 +372,7 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+        <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
         <img class="card-img-top  zoomable mt-2" src="../image//nega/NANA.jpeg" alt="ferrari" />
         <!-- Product details-->
@@ -293,11 +383,11 @@
                 <button id="Nana" class="btn btn-outline-primary mt-auto">+Info
                 </button> <br><br>
                  <!-- Product price -->   
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                  <span class="text-muted text-decoration-line-through">$ 11.000,00</span> <br>
-                 <span>$ 9.350,00 <br>
+                 <span class="price-socio">$ 9.350,00 <br> </span>
                  4 cuotas de <br>$ 2.337,50 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b><br>
                  $ 14.000,00
                  </span>  
             </div>
@@ -309,7 +399,7 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+        <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
         <img class="card-img-top  zoomable" src="../image//nega/refill.jpeg" alt="ferrari" />
         <!-- Product details-->
@@ -320,11 +410,11 @@
                 <button id="DifusorRefill" class="btn btn-outline-primary mt-auto">+Info
                 </button> <br><br>
                  <!-- Product price -->
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                  <span class="text-muted text-decoration-line-through">$ 29.000,00</span> <br>
-                 <span>$ 24.650,00 <br>
+                 <span class="price-socio">$ 24.650,00 <br> </span>
                  4 cuotas de <br>$ 6.162,50 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
                  $ 32.000,00
                  </span>
             </div>
@@ -335,8 +425,8 @@
   <div class="col mb-5">
     <div class="card h-100">
        <!-- Sale badge-->
-       <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-        <!-- Product image-->
+        <span class="badge-discount">15% OFF</span>
+         <!-- Product image-->
         <img class="card-img-top  zoomable" src="../image//nega/AROMATIZADOR.jpeg" alt="ferrari" />
         <!-- Product details-->
         <div class="card-body ">
@@ -346,11 +436,11 @@
                 <button id="Aromatizador" class="btn btn-outline-primary mt-auto">+Info
                 </button> <br><br>
                  <!-- Product price -->
-                 <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                  <span class="text-muted text-decoration-line-through">$ 19.000,00</span> <br>
-                 <span>$ 16.150,00 <br>
+                 <span class="price-socio">$ 16.150,00 <br> </span>
                  4 cuotas de <br>$ 4.037,50 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b><br>
                  $ 23.000,00
                  </span>
             </div>
@@ -362,7 +452,7 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+        <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
         <img class="card-img-top  zoomable" src="../image//nega/DIFUSOR AMBAR.jpeg" alt="ferrari" />
         <!-- Product details-->
@@ -373,11 +463,11 @@
                 <button id="Ambar" class="btn btn-outline-primary mt-auto">+Info
                 </button> <br><br>
                  <!-- Product price -->
-                   <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                   <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                  <span class="text-muted text-decoration-line-through">$ 23.000,00</span> <br>
-                 <span>$ 19.550,00 <br>
+                 <span class="price-socio">$ 19.550,00 <br> </span>
                  4 cuotas de<br> $ 4.887,50 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
                  $ 25.000,00 
                  </span>    
             </div>
@@ -390,7 +480,33 @@
   <div class="col mb-5">
     <div class="card h-100">
       <!-- Sale badge-->
-      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
+        <span class="badge-discount">15% OFF</span>
+        <!-- Product image-->
+        <img class="card-img-top  zoomable" src="../image//nega/kaikoura.webp"  />
+        <!-- Product details-->
+        <div class="card-body ">
+            <div class="  text-center ">
+                <!-- Product name--> 
+                <h5 class="fw-bolder ">Difusor Kaikoura </h5><hr>
+                <button id="Kaikoura" class="btn btn-outline-primary mt-auto">+Info
+                </button> <br><br>
+                 <!-- Product price -->
+                   <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-muted text-decoration-line-through">$ 21.000,00</span> <br>
+                 <span class="price-socio">$ 17.850,00 <br> </span>
+                 4 cuotas de<br> $ 4.462,50 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+                 $ 25.000,00 
+                 </span>    
+            </div>
+        </div> 
+    </div>
+  </div>
+  
+  <div class="col mb-5">
+    <div class="card h-100">
+      <!-- Sale badge-->
+        <span class="badge-discount">15% OFF</span>
         <!-- Product image-->
         <img class="card-img-top  zoomable" src="../image//nega/COMBO REFILL + DIFUSOR HAWAII.jpeg"  />
         <!-- Product details-->
@@ -401,13 +517,39 @@
                 <button id="Hawaii" class="btn btn-outline-primary mt-auto">+Info
                 </button> <br><br>
                  <!-- Product price -->
-                   <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                   <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                  <span class="text-muted text-decoration-line-through">$ 35.000,00</span> <br>
-                 <span>$ 29.750,00 <br>
+                 <span class="price-socio">$ 29.750,00 <br> </span>
                  4 cuotas de<br> $ 7.437,50 <br><hr>
-                 <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
                  $ 37.000,00 
                  </span>    
+            </div>
+        </div> 
+    </div>
+  </div>
+  
+  <div class="col mb-5">
+    <div class="card h-100">
+      <!-- Sale badge-->
+        <span class="badge-discount">15% OFF</span>
+        <!-- Product image-->
+        <img class="card-img-top  zoomable" src="../image//nega/apagavelas.webp"  />
+        <!-- Product details-->
+        <div class="card-body ">
+            <div class="  text-center ">
+                <!-- Product name--> 
+                <h5 class="fw-bolder ">Apagavelas</h5><hr>
+                <button id="apaga" class="btn btn-outline-primary mt-auto">+Info
+                </button> <br><br>
+                 <!-- Product price -->   
+                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+                 <span class="text-muted text-decoration-line-through">$ 15.000,00</span> <br>
+                 <span class="price-socio">$ 12.750,00 <br> </span>
+                 4 cuotas de <br>$ 3.187,50 <br><hr>
+                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+                 $ 20.000,00
+                 </span>      
             </div>
         </div> 
     </div>
@@ -444,6 +586,41 @@
     <script src="../nega.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+      <div id="navbar"></div>
+    <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Mover aquí el contenido de navbar.js
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuClose = document.getElementById("menu-close");
+
+      if (menuToggle && menu && menuClose) {
+        menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+        });
+
+        menuClose.addEventListener("click", function () {
+          menu.classList.remove("active");
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+</script>
      
 </body>
 </html>

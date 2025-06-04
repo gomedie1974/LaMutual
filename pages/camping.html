@@ -8,1348 +8,950 @@
         <title>Mutual LN Canjes</title>
         <meta name="keywords" content="mutual">
         <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
+          <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
         <!-- Whatsapp -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
         <!-- BOOTSTRAP -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- pone el logo en la pestana -->
         <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
-        <title>CSS</title>
-        <link rel="stylesheet" href="../style/style.css">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="../style/style.css">
+        
+
+        
     </head>
-  
+    
         
 <body >
   <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
     <!-- Ícono de WhatsApp -->
     <i class="fab fa-whatsapp"></i>
   </a>
-  <nav class="navbar navbar-dark fixed-top bg-secondary">    
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Waterdog/Stanley/Trento</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <li class="nav-item">
-              <hr class="bg-light">
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
-              <ul class="dropdown-menu"> 
-              <li><a href="../pages/almacen.html" class="nav-link px-2 text-white bg-secondary">Almacen</a></li>    
-              <li><a href="../pages/aperitivos.html" class="nav-link px-2 text-white bg-secondary">Bebidas</a></li>    
-              <li><a href="../pages/canjes.html" class="nav-link px-2 text-white bg-secondary">Canjes</a></li>
-              <li><a href="../pages/feria.html" class="nav-link px-2 text-white bg-secondary">Feria</a></li>  
-              <li><a href="../pages/hogar.html" class="nav-link px-2 text-white bg-secondary">Hogar</a></li>
-              <li><a href="../pages/juegos.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
-              <li><a href="../pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
-                 </ul> 
-              </li>
-              
-                <a class="nav-link active" aria-current="page" href="../pages/ayudaeconomica.html">Ayuda Económica</a>
-                <a class="nav-link active" aria-current="page" href="../pages/colecciones.html">Colecciones LN</a>
-                <a class="nav-link active" aria-current="page" href="../pages/productos.html">Productos</a>
-                <a class="nav-link active" aria-current="page" href="../pages/subsidios.html">Subsidios</a>
-                <a class="nav-link active" aria-current="page" href="../pages/asociarse.html">Asociarse</a>
-                <a class="nav-link active" aria-current="page" href="../pages/contacto.html">Contacto</a>
-                <hr class="bg-light">
-                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-              </li>
-          </li>
-        </ul> 
-      </div>
-    </div>
-  </nav>
+   
   
   <style>
-    .color-btn {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      margin: 5px;
-      cursor: pointer;
-      display: inline-block; /* Alinea los botones en una línea horizontal */
-    }
-    .main-image {
-      max-width: 170px; /* Modifica este valor según lo que desees */
-    }
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    .overlay img {
-      max-width: 90%;
-      max-height: 90%;
-    }    
-    /* Cambia el cursor del ratón cuando pasa sobre la imagen */
-    .main-image {
-      cursor: zoom-in;
-    }
+  .card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+  font-family: 'Segoe UI', sans-serif;
+}
 
-    /* Cambia el cursor del ratón cuando la imagen está agrandada */
-    #expanded-image {
-      cursor: zoom-out;
-    }
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
 
-  </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    var zoomableImages = document.querySelectorAll(".zoomable");
-    
-    for (var i = 0; i < zoomableImages.length; i++) {
-      zoomableImages[i].addEventListener("click", function() {
-        this.classList.toggle("zoomed");
-      });
-    }
-  });
-  function expandImage(src) {
-      var overlay = document.getElementById('overlay');
-      var expandedImage = document.getElementById('expanded-image');
-      expandedImage.src = src;
-      overlay.style.display = 'flex';
-    }
+.card img {
+  padding: 10px;
+  max-height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  cursor: zoom-in; /* 👈 cambia el puntero a "+" */
 
-    function closeOverlay() {
-      var overlay = document.getElementById('overlay');
-      overlay.style.display = 'none';
-    }
+}
 
-  </script>
+.card img:hover {
+  transform: scale(1.05);
+}
 
-  <section class="py-4">
-    
-  
-<!--      <a href="../index.html">
-      <img class="logoPaginas " width="150" src="../image/Logo Asociacion Mutual.JPG" alt=""></a>  -->
- 
-<div class="container px-4 px-lg-5 mt-2"><br><br>
-    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center">
+.card h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
 
+.card-body {
+  padding: 1.25rem;
+  background-color: #fff;
+}
 
-      <div class="overlay" id="overlay" onclick="closeOverlay()">
-        <img id="expanded-image">
-      </div>
+.card .badge {
+  background-color: #ff3366;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35em 0.7em;
+  border-radius: 1rem;
+}
 
-      
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-imageobus" class="card-img-top p-4 mx-auto zoomable" src="../image/pescaycamping/obus550bco.png"  /> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center ">
-       <div class="color-btn" style="background-color: rgb(245, 232, 232);" onclick=" changeImageobus('blanco')"></div>
-      <div class="color-btn" style="background-color: rgb(0, 0, 0);" onclick=" changeImageobus('negro')"></div>
-     </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder  ">Termo OBUS  <br>Waterdog <br></h5>
-            550cc <br>
-            <b>Cod. obus550</b><hr>
-        <!-- Product price-->  
-         <p style="color: red;"><b>Sin stock</b></p><!-- 
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 62.500,00 </span> <br>
-        <span>$ 53.125,00 <br>
-        4 cuotas de <br>$ 13.281,25 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 67.000,00                  -->
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImageobus(color) {
-    var mainImage = document.getElementById('main-imageobus');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'blanco':
-        mainImage.src = '../image/pescaycamping/obus550bco.png';
-        break;
-      case 'negro':
-        mainImage.src = '../image/pescaycamping/obus550negro.jpg';
-        break;     
-     }
-  }
-</script> 
-      
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-imageocontigo" class="card-img-top p-4 mx-auto zoomable" src="../image/pescaycamping/contigo1.png"  /> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center ">
-       <div class="color-btn" style="background-color: rgb(141, 151, 234);" onclick=" changeImagecontigo('azul')"></div>
-      <div class="color-btn" style="background-color: rgb(225, 127, 127);" onclick=" changeImagecontigo('rosa')"></div>
-      <div class="color-btn" style="background-color: rgb(177, 137, 137);" onclick=" changeImagecontigo('camu')"></div>
-      <div class="color-btn" style="background-color: rgb(139, 145, 55);" onclick=" changeImagecontigo('dorado')"></div>
-     </div>
-    <!-- Product details-->
-    <div class="card-body"> 
-      <div class="text-center">
-        <h5 class="fw-bolder  ">Botella Matterhorn  <br>Contigo<br></h5>
-            591cc <br>
-            <b>Cod. contigo</b><hr>
-        <!-- Product price-->  
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 45.000,00 </span> <br>
-        <span>$ 38.250,00 <br>
-        4 cuotas de <br>$ 9.562,50 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 47.000,00                 
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImagecontigo(color) {
-    var mainImage = document.getElementById('main-imageocontigo');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'azul':
-        mainImage.src = '../image/pescaycamping/contigo1.png';
-        break;
-      case 'rosa':
-        mainImage.src = '../image/pescaycamping/contigo3.png';
-        break;     
-      case 'camu':
-        mainImage.src = '../image/pescaycamping/contigo2.png';
-        break;     
-      case 'dorado':
-        mainImage.src = '../image/pescaycamping/contigo4.jpg';
-        break;     
-     }
-  }
-</script> 
+.card .card-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
 
+.card .btn-primary {
+  background-color: #0066cc;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.card .btn-primary:hover {
+  background-color: #004c99;
+  transform: scale(1.05);
+}
+
+.price-section {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.price-section span {
+  display: block;
+}
+.price-socio{
+  font-size: 1rem;
+  font-weight: bold;
+  color: #129c00;
+
+}
+.zoom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.zoom-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+.badge-discount {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: #ff6b6b;
+      color: white;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      border-radius: 8px;
+} 
+.color-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-circle:hover {
+  transform: scale(1.1);
+  border-color: #000;
+}
+
+       </style>
+   
      
-  
-  <div class="col mb-5">
-    <div class="card h-100"> 
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-      <!-- Product image-->  
-     <img class="main-image card-img-top mx-auto  pt-4 mt-4"  src="../image/pescaycamping/bolsadormir.png" onclick="expandImage(this.src)" /> 
-        <!-- Product details-->
-         <div class="card-body ">
-          <div class="text-center">
-              <!-- Product name-->  
-              <h5 class="fw-bolder pt-4 ">Bolsa de dormir  <br>con capucha
-                <br>Waterdog - Inca 200
-              </h5>
-              <b>Cod inca200</b> <br><hr>
-                <!-- Product price-->  
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-danger text-decoration-line-through">$ 58.500,00 </span> <br>
-              <span>$ 49.725,00 <br>
-              4 cuotas de <br>$ 12.431,25 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-               $ 65.000,00       
-       </div>
-    </div>
-    </div>
-    </div>  
+
+<section class="py-4"> 
+  <div class="container px-4 px-lg-5 mt-2 ">
+
+   <div class="pt-4 row gx-2 gx-lg-3 row-cols-1 row-cols-md-4 row-cols-xl-3 justify-content-center">
 
     
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-chop480" class="  card-img-top mx-auto pt-4 mt-4 main-image" style="width: 100px;" src="../image/pescaycamping/chop480negro.png" onclick="expandImage(this.src)" />  
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <div class="color-btn" style="background-color: black;" onclick="changeImagechop480('negro')"></div>
-      <div class="color-btn" style="background-color: #f3aaaa;" onclick="changeImagechop480('pink')"></div>
-      <div class="color-btn" style="background-color: rgb(246, 232, 232)" onclick="changeImagechop480('blanco')"></div>
-      <div class="color-btn" style="background-color: rgb(11, 123, 106)" onclick="changeImagechop480('verde')"></div>
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder  ">Vaso Cervecero 
-        </h5>
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/setmatero.png"/>
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Set Matero <br>Termo 550ml + bombilla + Bolso
+            <br> Waterdog <br></h5><hr> 
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 105.720,00 </span> <br>
+            <span class="price-socio">$ 89.862,00 <br></span>
+            4 cuotas de <br> $ 22.465,00<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 110.000,00
+            </span>   
+            </div>
+          </div>  
+        </div>
+      </div> 
+    
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/termota501p.png"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Termo Waterdog </h5>
+            500cc <br>
+             Color plateado <br>Cod. ta501p<hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 54.500,00 </span> <br>
+            <span class="price-socio">$ 46.325,00 <br></span>
+            4 cuotas de <br> $ 11.581,25<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 56.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/obus550bco.png"/>
+        <!-- Paleta de colores debajo de la imagen-->
+        <div class="d-flex justify-content-center my-2 color-options">
+          <div class="color-circle mx-1" style="background-color: white;" data-img="../image/pescaycamping/obus550bco.png"></div>
+          <div class="color-circle mx-1" style="background-color: black;" data-img="../image/pescaycamping/obus550negro.jpg"></div>
+          <div class="color-circle mx-1" style="background-color: rgb(153, 125, 72);" data-img="../image/pescaycamping/obusconcrete.jpg"></div>
+          <div class="color-circle mx-1" style="background-color: rgb(222, 160, 149);" data-img="../image/pescaycamping/obus550rosa.jpg"></div>
+          <div class="color-circle mx-1" style="background-color: rgb(154, 234, 164);" data-img="../image/pescaycamping/obus550verdeclaro.jpg"></div>
+          <div class="color-circle mx-1" style="background-color: rgb(186, 221, 106);" data-img="../image/pescaycamping/obus550amarillo.jpg"></div>
+          <div class="color-circle mx-1" style="background-color: rgb(108, 76, 103);" data-img="../image/pescaycamping/obus550lila.jpg"></div>
+         </div>
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Termo OBUS  <br>Waterdog <br></h5>
+            550cc <br>
+            Cod. obus550<hr> 
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 60.600,00 </span> <br>
+            <span class="price-socio">$ 51.510,00 <br></span>
+            4 cuotas de <br> $ 12.877,50<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 61.000,00
+            </span>   
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+    
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/ombu1000blanco.png"/>
+        <!-- Paleta de colores debajo de la imagen-->
+        <div class="d-flex justify-content-center my-2 color-options">
+          <div class="color-circle mx-1" style="background-color: white;" data-img="../image/pescaycamping/ombu1000blanco.png"></div>
+          <div class="color-circle mx-1" style="background-color: black;" data-img="../image/pescaycamping/ombu1000negro.png"></div>
+          <div class="color-circle mx-1" style="background-color: grey;" data-img="../image/pescaycamping/ombu1000dark.png"></div>
+         </div>
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Termo OMBU<br>Waterdog <br></h5>
+            1000cc <br>
+            Cod. ombu1000<hr> 
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 60.900,00 </span> <br>
+            <span class="price-socio">$ 51.765,00 <br></span>
+            4 cuotas de <br> $ 12.941,25<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 61.000,00
+            </span>   
+            </div>
+          </div>  
+        </div>
+      </div> 
+
+      
+      
+  
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/ta751p.png"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder pt-4  "> Termo Waterdog </h5>
+            750cc <br>
+             Color plateado <br>Cod. ta751p<hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 65.466,67 </span> <br>
+            <span class="price-socio">$ 55.647,00 <br></span>
+            4 cuotas de <br> $ 13.911,67<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 67.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/stanley1lazul.png"/>
+        <!-- Paleta de colores debajo de la imagen-->
+        <div class="d-flex justify-content-center my-2 color-options">
+          <div class="color-circle mx-1" style="background-color:  rgb(57, 53, 98)" data-img="../image/pescaycamping/stanley1lazul.png"></div>
+          <div class="color-circle mx-1" style="background-color: red;" data-img="../image/pescaycamping/stanley1lrojo.png"></div>
+         </div>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Termo Stanley </h5>
+            1000cc <br>
+            Cod. 46747<hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 164.801,23 </span> <br>
+            <span class="price-socio">$ 140.081,00 <br></span>
+            4 cuotas de <br> $ 35.020,26<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 170.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+
+    
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/bombilla.webp"/>
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Bombilla Acero Inoxidable 
+            <br> Color Plateado<br>Waterdog <br></h5>
+            19 Cm <br><hr> 
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 12.840,00 </span> <br>
+            <span class="price-socio">$ 10.914,00 <br></span>
+            4 cuotas de <br> $ 2.728,50<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 13.000,00
+            </span>   
+            </div>
+          </div>  
+        </div>
+      </div> 
+    
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/matero.webp"/>
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Bolso Matero  <br>Doble Cierre Correa  <br>Waterdog <br></h5>
+            <hr> 
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 32.280,00 </span> <br>
+            <span class="price-socio">$ 27.438,00 <br></span>
+            4 cuotas de <br> $ 6.859,50<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 33.000,00
+            </span>   
+            </div>
+          </div>  
+        </div>
+      </div> 
+    
+  
+    
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/buhobeige.webp"/>
+        <!-- Paleta de colores debajo de la imagen-->
+        <div class="d-flex justify-content-center my-2 color-options">
+          <div class="color-circle mx-1" style="background-color: rgb(134, 134, 8);" data-img="../image/pescaycamping/buhobeige.webp"></div>
+          <div class="color-circle mx-1" style="background-color: black;" data-img="../image/pescaycamping/buhonegro.webp"></div>
+          <div class="color-circle mx-1" style="background-color: white;" data-img="../image/pescaycamping/buhoblanco.webp"></div>
+          <div class="color-circle mx-1" style="background-color: grey;" data-img="../image/pescaycamping/buhogris.webp"></div>
+          <div class="color-circle mx-1" style="background-color: pink;" data-img="../image/pescaycamping/buhorosa.webp"></div>
+          <div class="color-circle mx-1" style="background-color: rgb(59, 161, 141);" data-img="../image/pescaycamping/buhoverde.webp"></div>
+          <div class="color-circle mx-1" style="background-color: violet;" data-img="../image/pescaycamping/buhovioleta.webp"></div>
+         </div>
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Botella Térmica<br>Waterdog <br></h5>
+            600cc <br>
+            Cod. buho600<hr> 
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 49.290,00 </span> <br>
+            <span class="price-socio">$ 41.888,00 <br></span>
+            4 cuotas de <br> $ 10.472,00<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 50.000,00
+            </span>   
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+     
+    
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/chop480negro.png"/>
+        <!-- Paleta de colores debajo de la imagen-->
+        <div class="d-flex justify-content-center my-2 color-options">
+          <div class="color-circle mx-1" style="background-color:  black" data-img="../image/pescaycamping/chop480negro.png"></div>
+          <div class="color-circle mx-1" style="background-color: rgb(225, 127, 127);" data-img="../image/pescaycamping/chop480rosa.png"></div>
+          <div class="color-circle mx-1" style="background-color:  white;" data-img="../image/pescaycamping/chop480blanco.png"></div>
+          <div class="color-circle mx-1" style="background-color:  rgb(68, 98, 56);" data-img="../image/pescaycamping/chop480verde.png"></div>
+         </div>
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Vaso Cervecero</h5>
           Broksol<br>
           480ml<br>
-          <b>Cod. vasc500</b><hr>
-        <!-- Product price-->  
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 30.200,00 </span> <br>
-        <span>$ 25.670,00 <br>
-        4 cuotas de <br>$ 6.417,50 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 34.000,00                 
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImagechop480(color) {
-    var mainImage = document.getElementById('main-chop480');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'negro':
-        mainImage.src = '../image/pescaycamping/chop480negro.png';
-        break;
-      case 'pink':
-        mainImage.src = '../image/pescaycamping/chop480rosa.png';
-        break;
-      case 'blanco':
-        mainImage.src = '../image/pescaycamping/chop480blanco.png';
-        break;     
-      case 'verde':
-        mainImage.src = '../image/pescaycamping/chop480verde.png';
-        break;     
-     }
-  }
-</script>
+           Cod. vasc500 <hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 40.266,67 </span> <br>
+            <span class="price-socio">$ 34.226,67 <br></span>
+            4 cuotas de <br> $ 8.556,67<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 41.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
     
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-chop700" class="  card-img-top mx-auto pt-4 mt-4 main-image" style="width: 150px;"  src="../image/pescaycamping/chop700bl.png" onclick="expandImage(this.src)" />  
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <div class="color-btn" style="background-color: black;" onclick="changeImagechop700('negro')"></div>
-      <div class="color-btn" style="background-color: #f3aaaa;" onclick="changeImagechop700('pink')"></div>
-      <div class="color-btn" style="background-color: rgb(246, 232, 232)" onclick="changeImagechop700('blanco')"></div>
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder  ">Vaso Cervecero <br> Con manija 
-        </h5>
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/chop700bl.png"/>
+        <!-- Paleta de colores debajo de la imagen-->
+        <div class="d-flex justify-content-center my-2 color-options">
+          <div class="color-circle mx-1" style="background-color:  black" data-img="../image/pescaycamping/chop700bl.png"></div>
+          <div class="color-circle mx-1" style="background-color: rgb(225, 127, 127);" data-img="../image/pescaycamping/chop700pk.png"></div>
+         </div>
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Vaso Cervecero <br> Con manija </h5>
           Broksol<br>
           700ml<br>
-          <b>Cod. vasc700</b><hr>
-        <!-- Product price-->  
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 33.400,00 </span> <br>
-        <span>$ 28.930,00 <br>
-        4 cuotas de <br>$ 7.097,50 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 38.000,00                 
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImagechop700(color) {
-    var mainImage = document.getElementById('main-chop700');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'negro':
-        mainImage.src = '../image/pescaycamping/chop700bl.png';
-        break;
-      case 'pink':
-        mainImage.src = '../image/pescaycamping/chop700pk.png';
-        break;
-      case 'blanco':
-        mainImage.src = '../image/pescaycamping/chop700wh.png';
-        break;     
-     }
-  }
-</script>
-
-
-
-  <div class="col mb-5">
-    <div class="card h-100"> 
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-      <!-- Product image-->  
-     <img class="main-image card-img-top mx-auto  pt-4 mt-4" style="width: 160px;" src="../image/pescaycamping/luncheraSB3048.png" onclick="expandImage(this.src)" /> 
-        <!-- Product details-->
-         <div class="card-body ">
+          Cod. vasc700<hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 33.400,00 </span> <br>
+            <span class="price-socio">$ 28.930,00 <br></span>
+            4 cuotas de <br> $ 7.097,50<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 40.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+    
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/luncheraSB3048.png"/>
+       <!-- Product details-->
+        <div class="card-body ">
           <div class="text-center">
-              <!-- Product name-->  
-              <h5 class="fw-bolder pt-4 ">Lunchera Térmica  <br>Waterdog
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Lunchera Térmica  <br>Waterdog
               </h5>
               Color plateado <br>
               480 cm3<br>
-              <b>Cod sb3048</b> <br><hr>
-                <!-- Product price-->  
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-danger text-decoration-line-through">$ 62.266,67 </span> <br>
-              <span>$ 52.927,00 <br>
-              4 cuotas de <br>$ 13.231,67 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-               $ 65.000,00       
-       </div>
-    </div>
-    </div>
-    </div>  
-    
+              Cod sb3048<br><hr>
+            <!-- Product price -->   
+             <p style="color: red;"><b>Sin stock</b></p><!-- 
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 62.266,67 </span> <br>
+            <span class="price-socio">$ 52.927,00 <br></span>
+            4 cuotas de <br> $ 13.231,67<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 62.000,00
+            </span>  -->
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+     
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/zoilo160negro.png"/>
+        <!-- Paleta de colores debajo de la imagen-->
+        <div class="d-flex justify-content-center my-2 color-options">
+          <div class="color-circle mx-1" style="background-color:  black" data-img="../image/pescaycamping/zoilo160negro.png"></div>
+          <div class="color-circle mx-1" style="background-color: rgb(204, 154, 88);" data-img="../image/pescaycamping/zoilo160verdeoliva.png"></div>
+          <div class="color-circle mx-1" style="background-color:   rgb(5, 0, 52)" data-img="../image/pescaycamping/zoilo160indigo.png"></div>
+          <div class="color-circle mx-1" style="background-color: gray;" data-img="../image/pescaycamping/zoilo160grafito.png"></div>
+          <div class="color-circle mx-1" style="background-color:  rgb(226, 203, 203)" data-img="../image/pescaycamping/zoilo160concreto.png"></div>
+          <div class="color-circle mx-1" style="background-color: white;" data-img="../image/pescaycamping/zoilo160blanco.png"></div>
+         </div>
 
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-imageta500" class="  card-img-top mx-auto pt-4 mt-4 main-image" style="width: 200px;" src="../image/pescaycamping/vasota500.png" onclick="expandImage(this.src)" />  
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <div class="color-btn" style="background-color: black;" onclick="changeImageimageta500('negro')"></div>
-      <div class="color-btn" style="background-color: #f2f2f2;" onclick="changeImageimageta500('blanco')"></div>
-      <div class="color-btn" style="background-color: grey" onclick="changeImageimageta500('gris')"></div>
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder  ">Vaso Jarro <br> Térmico Waterdog 
-        </h5>
-          Acero Inoxidable <br>
-          500 cc<br>
-          <b>Cod. ta500</b><hr>
-        <!-- Product price-->  
-        <p style="color: red;"><b>Sin stock</b></p> <!-- 
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 63.333,33 </span> <br>
-        <span>$ 53.833,00 <br>
-        4 cuotas de <br>$ 13.458,33 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 65.000,00                  -->
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImageimageta500(color) {
-    var mainImage = document.getElementById('main-imageta500');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'negro':
-        mainImage.src = '../image/pescaycamping/vasota500.png';
-        break;
-      case 'blanco':
-        mainImage.src = '../image/pescaycamping/vasota500blanco.png';
-        break;
-      case 'gris':
-        mainImage.src = '../image/pescaycamping/vasota500gris.png';
-        break;     
-     }
-  }
-</script>
-
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-imagefita" class="main-image card-img-top p-4 mx-auto  " src="../image/pescaycamping/fita500negro.png" onclick="expandImage(this.src)" /> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <div class="color-btn" style="background-color: black;" onclick="changeImagef('negro')"></div>
-      <div class="color-btn" style="background-color: rgb(5, 0, 52);" onclick="changeImagef('indigo')"></div>
-      <div class="color-btn" style="background-color: #f2f2f2;" onclick="changeImagef('blanco')"></div>
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder  ">Vaso  <br>Waterdog</h5>
-          Acero Inoxidable <br>
-          <b>Cod. Fita500</b><hr>
-        <!-- Product price-->  
-         <p style="color: red;"><b>Sin stock</b></p><!-- 
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 15.733,33 </span> <br>
-        <span>$ 13.373,00 <br>
-        4 cuotas de <br>$ 3.343,33 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 17.000,00              -->    
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImagef(color) {
-    var mainImage = document.getElementById('main-imagefita');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'negro':
-        mainImage.src = '../image/pescaycamping/fita500negro.png';
-        break;
-      case 'indigo':
-        mainImage.src = '../image/pescaycamping/fita500indigo.png';
-        break;
-      case 'blanco':
-        mainImage.src = '../image/pescaycamping/fita500blanco.png';
-        break;     
-     }
-  }
-</script>
-
- 
-
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-image" class="main-image card-img-top p-4 mx-auto  " src="../image/pescaycamping/zoilo160negro.png" onclick="expandImage(this.src)" /> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <div class="color-btn" style="background-color: black;" onclick="changeImage('negro')"></div>
-      <div class="color-btn" style="background-color: olive;" onclick="changeImage('oliva')"></div>
-      <div class="color-btn" style="background-color: rgb(5, 0, 52);" onclick="changeImage('indigo')"></div>
-      <div class="color-btn" style="background-color: gray;" onclick="changeImage('grafito')"></div>
-      <div class="color-btn" style="background-color: rgb(226, 203, 203);" onclick="changeImage('concreto')"></div>
-      <div class="color-btn" style="background-color: #f2f2f2;" onclick="changeImage('blanco')"></div>
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder">Mate Térmico</h5>
-        Acero Inoxidable <br>
-        <b>Cod. Zoilo160</b><hr>
-        <!-- Product price-->  
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 30.944,44 </span> <br>
-        <span>$ 26.303,00 <br>
-        4 cuotas de <br>$ 6.575,69 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 33.000,00                 
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImage(color) {
-    var mainImage = document.getElementById('main-image');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'negro':
-        mainImage.src = '../image/pescaycamping/zoilo160negro.png';
-        break;
-      case 'oliva':
-        mainImage.src = '../image/pescaycamping/zoilo160verdeoliva.png';
-        break;
-      case 'indigo':
-        mainImage.src = '../image/pescaycamping/zoilo160indigo.png';
-        break;
-      case 'grafito':
-        mainImage.src = '../image/pescaycamping/zoilo160grafito.png';
-        break;
-      case 'concreto':
-        mainImage.src = '../image/pescaycamping/zoilo160concreto.png';
-        break;
-      case 'blanco':
-        mainImage.src = '../image/pescaycamping/zoilo160blanco.png';
-        break;     
-     }
-  }
-</script>
-
-
-
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-image1" class="main-image card-img-top p-4 mx-auto  " src="../image/pescaycamping/american380blanco.png" onclick="expandImage(this.src)"/> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <div class="color-btn" style="background-color: rgb(5, 0, 52);" onclick="changeImage1('indigo')"></div>
-      <div class="color-btn" style="background-color: #f2f2f2;" onclick="changeImage1('blanco')"></div>
-      <div class="color-btn" style="background-color: black;" onclick="changeImage1('negro')"></div>
-      <div class="color-btn" style="background-color: rgb(1, 79, 38);" onclick="changeImage1('verde')"></div>
-      <div class="color-btn" style="background-color: rgb(126, 126, 126);" onclick="changeImage1('dark')"></div>
-      <div class="color-btn" style="background-color: #bcc5a6;" onclick="changeImage1('concret')"></div>
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder">Vaso Térmico</h5>
-        Acero Inoxidable <br>
-        380cc <br>
-        <b>Cod. American380</b><hr>
-        <!-- Product price-->  
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 33.000,00 </span> <br>
-        <span>$ 28.050,00 <br>
-        4 cuotas de <br>$ 7.012,50 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 35.000,00                 
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImage1(color) {
-    var mainImage = document.getElementById('main-image1');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'indigo':
-        mainImage.src = '../image/pescaycamping/american380azul.png';
-        break;
-      case 'blanco':
-        mainImage.src = '../image/pescaycamping/american380blanco.png';
-        break;
-      case 'negro':
-        mainImage.src = '../image/pescaycamping/american380negro.png';
-        break;
-      case 'verde':
-        mainImage.src = '../image/pescaycamping/american380verde.png';
-        break;
-      case 'dark':
-        mainImage.src = '../image/pescaycamping/american380darkgraphite.png';
-        break;
-      case 'concret':
-        mainImage.src = '../image/pescaycamping/american380concrete.png';
-        break;     
-     }
-  }
-</script>
-
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-image2" class="main-image card-img-top p-4 mx-auto  " src="../image/pescaycamping/borda500indigo.png" onclick="expandImage(this.src)"/> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <div class="color-btn" style="background-color: rgb(5, 0, 52);" onclick="changeImage2('indigo')"></div>
-      <div class="color-btn" style="background-color: #f2f2f2;" onclick="changeImage2('blanco')"></div>
-      <div class="color-btn" style="background-color: black;" onclick="changeImage2('negro')"></div>
-      <div class="color-btn" style="background-color: rgb(1, 79, 38);" onclick="changeImage2('verde')"></div>
-       <div class="color-btn" style="background-color: #bcc5a6;" onclick="changeImage2('concret')"></div>
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder">Vaso Térmico</h5>
-        Acero Inoxidable <br>
-        500cc <br>
-        <b>Cod. Borda500 </b><hr>
-        <!-- Product price--> 
-          <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 40.555,56 </span> <br>
-        <span>$ 34.472,00 <br>
-        4 cuotas de <br>$ 8.618,06 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 43.000,00                  
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImage2(color) {
-    var mainImage = document.getElementById('main-image2');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'indigo':
-        mainImage.src = '../image/pescaycamping/borda500indigo.png';
-        break;
-      case 'blanco':
-        mainImage.src = '../image/pescaycamping/borda500blanco.png';
-        break;
-      case 'negro':
-        mainImage.src = '../image/pescaycamping/borda500negro.png';
-        break;
-      case 'verde':
-        mainImage.src = '../image/pescaycamping/borda500verde.png';
-        break;
-      case 'concret':
-        mainImage.src = '../image/pescaycamping/borda500concreto.png';
-        break;     
-     }
-  }
-</script>
-
- 
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-      <!-- Product image-->  
-      <img class="card-img-top zoomable" src="../image/pescaycamping/botellapb1080.png" alt="cajas" /> 
-      <!-- Product details-->
-       <div class="card-body  ">
-          <div class="text-center  ">
-             <!-- Product name-->
-             <h5 class="fw-bolder ">Botella Deportiva     <br>Tritan Waterdog
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Mate Térmico</h5>
+            Acero Inoxidable <br>
+            Cod. Zoilo160<hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 30.944,44 </span> <br>
+            <span class="price-socio">$ 26.303,00 <br></span>
+            4 cuotas de <br> $ 6.575,69<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 35.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/american380azul.png"/>
+        <!-- Paleta de colores debajo de la imagen-->
+        <div class="d-flex justify-content-center my-2 color-options">
+          <div class="color-circle mx-1" style="background-color:  rgb(5, 0, 52)" data-img="../image/pescaycamping/american380azul.png"></div>
+          <div class="color-circle mx-1" style="background-color: white;" data-img="../image/pescaycamping/american380blanco.png"></div>
+          <div class="color-circle mx-1" style="background-color: black;" data-img="../image/pescaycamping/american380negro.png"></div>
+          <div class="color-circle mx-1" style="background-color: green;" data-img="../image/pescaycamping/american380verde.png"></div>
+          <div class="color-circle mx-1" style="background-color:  grey" data-img="../image/pescaycamping/american380darkgraphite.png"></div>
+          <div class="color-circle mx-1" style="background-color:  rgb(203, 187, 189)" data-img="../image/pescaycamping/american380concrete.png"></div>
+         </div>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Vaso Térmico</h5>
+            Acero Inoxidable <br>
+            380cc <br>
+            Cod. American380<hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 33.000,00 </span> <br>
+            <span class="price-socio">$ 28.050,00 <br></span>
+            4 cuotas de <br> $ 7.012,50<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 35.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/borda500indigo.png"/>
+        <!-- Paleta de colores debajo de la imagen-->
+        <div class="d-flex justify-content-center my-2 color-options">
+          <div class="color-circle mx-1" style="background-color:  rgb(5, 0, 52)" data-img="../image/pescaycamping/borda500indigo.png"></div>
+          <div class="color-circle mx-1" style="background-color: white;" data-img="../image/pescaycamping/borda500blanco.png"></div>
+          <div class="color-circle mx-1" style="background-color: black;" data-img="../image/pescaycamping/borda500negro.png"></div>
+          <div class="color-circle mx-1" style="background-color: green;" data-img="../image/pescaycamping/borda500verde.png"></div>
+          <div class="color-circle mx-1" style="background-color:  rgb(203, 187, 189)" data-img="../image/pescaycamping/borda500concreto.png"></div>
+         </div>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Vaso Térmico</h5>
+            Acero Inoxidable <br>
+            500cc <br>
+            Cod. Borda500<hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 40.555,56 </span> <br>
+            <span class="price-socio">$ 34.472,00 <br></span>
+            4 cuotas de <br> $ 8.618,06<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 43.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/botellapb1080.png"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Botella Deportiva <br>Tritan Waterdog
              </h5>
              Color  Celeste  <br>
              800 cc<br>
-             <b>Cod pb1080</b> <br><hr>
-             <!-- Product price-->  
-             <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-             <span class="text-danger text-decoration-line-through">$ 37.500,00 </span> <br>
-             <span>$ 31.875,00 <br>
-             4 cuotas de <br>$ 7.968,75 <br><hr>
-             <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-              $ 39.000,00                  
-      </div>
-    </div>
-  </div>
-  </div>
+             Cod pb1080<br><hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 37.500,00 </span> <br>
+            <span class="price-socio">$ 31.875,00 <br></span>
+            4 cuotas de <br> $ 7.968,75<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 39.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
   
- 
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-image3" class=" card-img-top p-4 mx-auto main-image" style="width: 150px;" src="../image/pescaycamping/buho600indigo.png" onclick="expandImage(this.src)"/> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <div class="color-btn" style="background-color: rgb(5, 0, 52);" onclick="changeImage3('indigo')"></div>
-      <div class="color-btn" style="background-color: #f2f2f2;" onclick="changeImage3('blanco')"></div>
-      <div class="color-btn" style="background-color: black;" onclick="changeImage3('negro')"></div>
-      <div class="color-btn" style="background-color: rgb(178, 197, 96);" onclick="changeImage3('verde')"></div>
-      <div class="color-btn" style="background-color: #bcc5a6;" onclick="changeImage3('concret')"></div>
-      <div class="color-btn" style="background-color: rgb(126, 126, 126);" onclick="changeImage3('dark')"></div>
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder">Botella Térmica </h5>
-        Acero Inoxidable <br>
-        600cc <br>
-        <b>Cod. Buho600 </b><hr>
-        <!-- Product price-->  
-         <p style="color: red;"><b>Sin stock</b></p><!-- 
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 44.533,33 </span> <br>
-        <span>$ 37.853,00 <br>
-        4 cuotas de <br>$ 9.463,33 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 47.000,00                  -->
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImage3(color) {
-    var mainImage = document.getElementById('main-image3');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'indigo':
-        mainImage.src = '../image/pescaycamping/buho600indigo.png';
-        break;
-      case 'blanco':
-        mainImage.src = '../image/pescaycamping/buho600blanco.png';
-        break;
-      case 'negro':
-        mainImage.src = '../image/pescaycamping/buho600negro.png';
-        break;
-      case 'verde':
-        mainImage.src = '../image/pescaycamping/buho600verde.png';
-        break;
-      case 'concret':
-        mainImage.src = '../image/pescaycamping/buho600concrete.png';
-        break;     
-      case 'dark':
-        mainImage.src = '../image/pescaycamping/buho600darkg.png';
-        break;     
-     }
-  }
-</script>
+        
 
-
-
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-image4" class="card-img-top p-4 mx-auto  main-image" style="width: 200px;" src="../image/pescaycamping/ombu1000blanco.png" onclick="expandImage(this.src)" /> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <!-- <div class="color-btn" style="background-color: rgb(112, 0, 0);" onclick="changeImage4('rojo')"></div> -->
-      <div class="color-btn" style="background-color: #f2f2f2;" onclick="changeImage4('blanco')"></div>
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder  ">Termo </h5>
-            Acero Inoxidable <br>
-            1000cc <br>
-            <b>Cod. Ombu1000</b><hr>
-        <!-- Product price-->  
-         <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 64.700,00 </span> <br>
-        <span>$ 54.995,00 <br>
-        4 cuotas de <br>$ 13.748,75 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 67.000,00                   
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImage4(color) {
-    var mainImage = document.getElementById('main-image4');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      /* case 'rojo':
-        mainImage.src = '../image/pescaycamping/ombu1000rojo.webp';
-        break; */
-      case 'blanco':
-        mainImage.src = '../image/pescaycamping/ombu1000blanco.png';
-        break;     
-     }
-  }
-</script>
-
-  
-<div class="col mb-5">
-  <div class="card h-100"> 
-   <!-- Sale badge-->
-   <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-   <img class="card-img-top mx-auto zoomable" style="width: 25%;" src="../image/pescaycamping/termota501p.png"  /> 
-      <!-- Product details-->
-       <div class="card-body ">
-        <div class="text-center">
-            <!-- Product name-->  
-            <h5 class="fw-bolder mt-4 pt-4 ">Termo Waterdog </h5>
-            500cc <br>
-             Color plateado <br><b>Cod. ta501p</b><hr>
-              <!-- Product price-->  
-             <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-            <span class="text-danger text-decoration-line-through">$ 54.500,00 </span> <br>
-            <span>$ 46.325,00 <br>
-            4 cuotas de <br>$ 11.581,25 <br><hr>
-            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-             $ 56.000,00                  
-     </div>
-  </div>
-  </div>
-  </div>  
-  
-<div class="col mb-5">
-  <div class="card h-100"> 
-   <!-- Sale badge-->
-   <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-   <img class="card-img-top mx-auto zoomable" src="../image/pescaycamping/ta751p.png"  /> 
-      <!-- Product details-->
-       <div class="card-body ">
-        <div class="text-center">
-            <!-- Product name-->  
-            <h5 class="fw-bolder mt-4  ">Termo Waterdog </h5>
-            750cc <br>
-             Color plateado <br><b>Cod. ta751p</b><hr>
-              <!-- Product price-->  
-             <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-            <span class="text-danger text-decoration-line-through">$ 65.466,67 </span> <br>
-            <span>$ 55.647,00 <br>
-            4 cuotas de <br>$ 13.911,67 <br><hr>
-            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-             $ 67.000,00                  
-     </div>
-  </div>
-  </div>
-  </div>  
-
-
- 
- 
-
-<div class="col mb-5">
-<div class="card h-100">
-  <!-- Sale badge-->
-  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img class="card-img-top zoomable" src="../image/pescaycamping/cold1200.png" alt="cajas" /> 
-    <!-- Product details-->
-     <div class="card-body  ">
-        <div class="text-center  ">
-           <!-- Product name-->
-           <h5 class="fw-bolder ">Vaso Térmico  <br>Waterdog
-           </h5>
-           1200 cm3<br>
-           Color negro  <br>
-           <b> Cold 1200</b><hr>
-           <!-- Product price-->  
-           <p><b style="color: red;">Sin stock</b></p> <!-- 
-           <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-           <span class="text-danger text-decoration-line-through">$ 67.200,00 </span> <br>
-           <span>$ 57.120,00 <br>
-           4 cuotas de <br>$ 14.280,00 <br><hr>
-           <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-            $ 69.000,00            -->
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-imagezumo" class="card-img-top p-4 mx-auto zoomable" src="../image/pescaycamping/zumo600azul.png"  /> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-       <div class="color-btn" style="background-color: rgb(5, 0, 52);" onclick=" changeImagezumo('indigo')"></div>
-      <div class="color-btn" style="background-color: green;" onclick=" changeImagezumo('verde')"></div>
-     </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder  ">Vaso Térmico <br>Waterdog <br></h5>
-            600cc <br>
-            <b>Cod. zumo600</b><hr>
-        <!-- Product price-->  
-         <p style="color: red;"><b>Sin stock</b></p><!-- 
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 67.333,33 </span> <br>
-        <span>$ 57.233,00 <br>
-        4 cuotas de <br>$ 14.308,33 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 69.000,00                  -->
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImagezumo(color) {
-    var mainImage = document.getElementById('main-imagezumo');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'indigo':
-        mainImage.src = '../image/pescaycamping/zumo600azul.png';
-        break;
-      case 'verde':
-        mainImage.src = '../image/pescaycamping/zumo600verde.png';
-        break;     
-     }
-  }
-</script> 
-
- 
-
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-imagestan" class="card-img-top p-4 mx-auto main-image " src="../image/pescaycamping/stanley1lazul.png" onclick="expandImage(this.src)" /> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <div class="color-btn" style="background-color: rgb(3, 102, 118);" onclick=" changeImageimageta1001('azul')"></div>
-      <div class="color-btn" style="background-color: rgb(255, 0, 0);" onclick=" changeImageimageta1001('rojo')"></div>
-     </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <!-- Product name-->  
-        <h5 class="fw-bolder mt-4  ">Termo Stanley </h5>
-        1000cc <br>
-       <b>Cod. 46747</b><hr>
-         <!-- Product price-->  
-         <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-         <span class="text-danger text-decoration-line-through">$ 164.801,23 </span> <br>
-         <span>$ 140.081,00 <br>
-         4 cuotas de <br>$ 35.020,26 <br><hr>
-         <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-          $ 166.000,00                
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImageimageta1001(color) {
-    var mainImage = document.getElementById('main-imagestan');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) { 
-      case 'azul':
-        mainImage.src = '../image/pescaycamping/stanley1lazul.png';
-        break;     
-        case 'rojo':
-        mainImage.src = '../image/pescaycamping/stanley1lrojo.png';
-        break;
-       
-     }
-  }
-</script> 
-
-
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-imageasas" class="card-img-top  mx-auto zoomable"  src="../image/pescaycamping/stanleyclasiconegro.png" onclick="expandImage(this.src)" /> 
-    <!-- Paleta de colores debajo de la imagen-->
-    <div class="colors text-center mt-3">
-      <div class="color-btn" style="background-color: black;" onclick="changeImageasas('negro')"></div>
-      <div class="color-btn" style="background-color: rgb(91, 122, 91);" onclick="changeImageasas('verde')"></div>
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder  ">Termo Stanley<br>
-          Asa Plegable   </h5>
-          1400cc <br>
-          <b>Cod. aspleg</b><hr>
-        <!-- Product price-->  
-        <p><b style="color: red;">Sin stock</b></p> <!-- 
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 148.147,78 </span> <br>
-        <span>$ 125.926,00 <br>
-        4 cuotas de <br>$ 31.481,40 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-         $ 152.000,00                  -->
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImageasas(color) {
-    var mainImage = document.getElementById('main-imageasas');
-    // Cambia la ruta de la imagen principal según el color seleccionado
-    switch(color) {
-      case 'negro':
-        mainImage.src = '../image/pescaycamping/stanleyclasiconegro.png';
-        break;
-      case 'verde':
-        mainImage.src = '../image/pescaycamping/stanleyclasicoverde.png';
-        break;
-     }
-  }
-</script>
- 
-
- 
-<div class="col mb-5">
-  <div class="card h-100"> 
-  <!-- Sale badge-->
-  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-   <img class="main-image card-img-top mx-auto  pt-4 mt-4" style="width: 160px;" src="../image/pescaycamping/cuchillo+trinche.jpg" onclick="expandImage(this.src)" /> 
-      <!-- Product details-->
-       <div class="card-body ">
-        <div class="text-center">
-            <!-- Product name-->  
-            <h5 class="fw-bolder pt-4 ">Set de cuchillos
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/cuchillo+trinche.jpg"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Set de cuchillos
             </h5>
-            <b>Cod set</b> <br><hr>
-              <!-- Product price-->  
-            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+            Cod set<br><hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
             <span class="text-danger text-decoration-line-through">$ 31.500,00 </span> <br>
-            <span>$ 26.775,00 <br>
-            4 cuotas de <br>$ 6.693,75 <br><hr>
-            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-             $ 32.000,00       
-     </div>
-  </div>
-  </div>
-  </div>  
-
+            <span class="price-socio">$ 26.775,00 <br></span>
+            4 cuotas de <br> $ 6.693,75<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 32.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
   
 
-<div class="col mb-5">
-  <div class="card h-100"> 
-  <!-- Sale badge-->
-  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image--> 
-   <img class="card-img-top mx-auto mt-4 pt-4 zoomable" src="../image/pescaycamping/setparrilla.png"/> 
-      <!-- Product details-->
-       <div class="card-body ">
-        <div class="text-center ">
-            <!-- Product name-->  
-              <h5 class="fw-bolder mt-4 pt-4 ">Set Asado Trento <br></h5>
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/setparrilla.png"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Set Asado Trento <br></h5>
               Cuchillo <br> Trinchante <br> Chaira Rayada <br> Color Plateado con MANGO <br><hr>
-                <!-- Product price-->  
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-danger text-decoration-line-through">$ 74.200,00 </span> <br>
-              <span>$ 63.070,00 <br>
-              4 cuotas de <br>$ 15.767,50 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-               $ 77.000,00                 
-     </div>
-  </div>
-  </div>
-  </div>   
-
-<div class="col mb-5">
-  <div class="card h-100"> 
-  <!-- Sale badge-->
-  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image--> 
-   <img class="card-img-top mx-auto mt-4 pt-4 zoomable" src="../image/pescaycamping/settrento.png"/> 
-      <!-- Product details-->
-       <div class="card-body ">
-        <div class="text-center ">
-            <!-- Product name-->  
-              <h5 class="fw-bolder mt-4 pt-4 ">Set cuchillos <br> 5 piezas </h5>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 74.200,00 </span> <br>
+            <span class="price-socio">$ 63.070,00 <br></span>
+            4 cuotas de <br> $ 15.767,50<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 77.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+      
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/settrento.png"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Set cuchillos <br> 5 piezas </h5>
               Trento<br><hr>
-                <!-- Product price-->  
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-danger text-decoration-line-through">$ 49.987,78 </span> <br>
-              <span>$ 42.490,00 <br>
-              4 cuotas de <br>$ 10.622,40 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-               $ 52.000,00                 
-     </div>
-  </div>
-  </div>
-  </div>   
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 49.987,78 </span> <br>
+            <span class="price-socio">$ 42.490,00 <br></span>
+            4 cuotas de <br> $ 10.622,40<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 52.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+      
 
-
- 
-  <style>
-    .color-img {
-      width: 50px; /* Define el ancho deseado para las miniaturas */
-      height: 50px; /* Define la altura deseada para las miniaturas */
-      margin: 5px; /* Añade un pequeño margen entre las miniaturas */
-    }
-    
-    .main-image1 {
-      max-width: 300px; /* Define el ancho máximo deseado para las imágenes principales */
-      height: auto; /* Mantén la relación de aspecto de las imágenes principales */
-    }
-  </style>
-  
-  <div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-starter" class="card-img-top p-4 mx-auto main-image1 main-image"   src="../image/pescaycamping/starter2.png" onclick="expandImage(this.src)" /> 
-    <!-- Paleta de imágenes debajo de la imagen-->
-    <div class="colors text-center mt-3"  >
-      <img class="color-img" src="../image/pescaycamping/starter2.png" onclick="changeImageasastarter('../image/pescaycamping/starter2.png')">
-      <img class="color-img"  src="../image/pescaycamping/starter1.png" onclick="changeImageasastarter('../image/pescaycamping/starter1.png')">
-      <img class="color-img"  src="../image/pescaycamping/starter3.png" onclick="changeImageasastarter('../image/pescaycamping/starter3.png')">
-    </div>
-    <!-- Product details-->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder">Set Trento <br>Starter 5 piezas </h5>
-        Cuchillo Acero Inoxidable <br> Cocina Chef <hr>
-        <!-- Product price-->  
-        <!-- <p style="color: red;"><b>Agotado</b></p> --> 
-        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 45.800,00 </span> <br>
-        <span>$ 38.930,00 <br>
-        4 cuotas de <br>$ 9.732,50 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-        $ 47.000,00                  
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImageasastarter(imageSrc) {
-    var mainImage = document.getElementById('main-starter');
-    // Cambia la ruta de la imagen principal según la imagen seleccionada
-    mainImage.src = imageSrc;
-  }
-</script>
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/starter2.png"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Set Trento <br>Starter 5 piezas </h5>
+            Cuchillo Acero Inoxidable <br> Cocina Chef <hr>
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 45.800,00 </span> <br>
+            <span class="price-socio">$ 38.930,00 <br></span>
+            4 cuotas de <br> $ 9.732,50<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 47.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
   
 
-
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-esential" class="card-img-top p-4 mx-auto main-image1 main-image "   src="../image/pescaycamping/esential.png" onclick="expandImage(this.src)" /> 
-    <!-- Paleta de imágenes debajo de la imagen-->
-    <div class="colors text-center "  >
-      <img class="color-img" src="../image/pescaycamping/esential.png" onclick="changeImageesential('../image/pescaycamping/esential.png')">
-      <img class="color-img"  src="../image/pescaycamping/esential1.png" onclick="changeImageesential('../image/pescaycamping/esential1.png')">
-      <img class="color-img"  src="../image/pescaycamping/esential2.png" onclick="changeImageesential('../image/pescaycamping/esential2.png')">
-    </div>
-    <!-- Product details--> 
-    <div class="card-body">
-      <div class="text-center">     
-        <h5 class="fw-bolder">Set Trento <br>Essential 5p    </h5>
-         Acero Inoxidable <br>Chef Cocina  <hr>
-          <!-- Product price-->  
-           <p style="color: red;"><b>Sin stock</b></p><!-- 
-          <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-          <span class="text-danger text-decoration-line-through">$ 53.500,00 </span> <br>
-          <span>$ 45.475,00 <br>
-          4 cuotas de <br>$ 11.368,75 <br><hr>
-          <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-           $ 57.000,00                  -->
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImageesential(imageSrc) {
-    var mainImage = document.getElementById('main-esential');
-    // Cambia la ruta de la imagen principal según la imagen seleccionada
-    mainImage.src = imageSrc;
-  }
-</script>
-
-
-<div class="col mb-5">
-  <div class="card h-100">
-    <!-- Sale badge-->
-    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image-->  
-    <img id="main-stelmaster" class="card-img-top p-4 mx-auto main-image1 main-image "   src="../image/pescaycamping/stelmaster.png" onclick="expandImage(this.src)" /> 
-    <!-- Paleta de imágenes debajo de la imagen-->
-    <div class="colors text-center "  >
-      <img class="color-img" src="../image/pescaycamping/stelmaster.png" onclick="changeImagestelmaster('../image/pescaycamping/stelmaster.png')">
-      <img class="color-img"  src="../image/pescaycamping/stelmaster1.png" onclick="changeImagestelmaster('../image/pescaycamping/stelmaster1.png')">
-      <img class="color-img"  src="../image/pescaycamping/stelmaster2.png" onclick="changeImagestelmaster('../image/pescaycamping/stelmaster2.png')">
-    </div>
-    <!-- Product details--> 
-    <div class="card-body">
-      <div class="text-center">     
-        <h5 class="fw-bolder">Set Trento <br>Steelmaster 5p    </h5>
-         Acero Inoxidable <br>Chef Cocina  <hr>
-        <!-- Product price-->  
-          <p style="color: red;"><b>Sin stock</b></p> 
-          <!-- <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-        <span class="text-danger text-decoration-line-through">$ 87.900,00 </span> <br>
-        <span>$ 74.715,00 <br>
-        4 cuotas de <br>$ 18.678,75 <br><hr>
-        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-        $ 89.000,00        -->            
-      </div>
-    </div>
-  </div>
-</div>
-<script>
-  function changeImagestelmaster(imageSrc) {
-    var mainImage = document.getElementById('main-stelmaster');
-    // Cambia la ruta de la imagen principal según la imagen seleccionada
-    mainImage.src = imageSrc;
-  }
-</script>
-
-
- 
-<div class="col mb-5">
-  <div class="card h-100"> 
-  <!-- Sale badge-->
-  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image--> 
-   <img class="card-img-top mx-auto zoomable" src="../image/pescaycamping/MCKINLEY.webp"/> 
-      <!-- Product details-->
-       <div class="card-body ">
-        <div class="text-center ">
-            <!-- Product name-->  
-              <h5 class="fw-bolder  ">Carpa  <br>Automática </h5>
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/MCKINLEY.webp"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Carpa  <br>Automática </h5>
               McKinley<br><hr>
-                <!-- Product price-->  
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-danger text-decoration-line-through">$ 125.500,00 </span> <br>
-              <span>$ 106.675,00 <br>
-              4 cuotas de <br>$ 26.669,00 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-               $ 130.000,00                 
-     </div>
-  </div>
-  </div>
-  </div>   
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 125.500,00 </span> <br>
+            <span class="price-socio">$ 106.675,00 <br></span>
+            4 cuotas de <br> $ 26.669,00<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 130.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
 
- 
-<div class="col mb-5">
-  <div class="card h-100"> 
-  <!-- Sale badge-->
-  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image--> 
-   <img class="card-img-top mx-auto zoomable pt-4" src="../image/pescaycamping/ECO.png"/> 
-      <!-- Product details-->
-       <div class="card-body ">
-        <div class="text-center ">
-            <!-- Product name-->  
-              <h5 class="fw-bolder  ">Carpa <br> Playera </h5>
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/ECO.png"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Carpa <br> Playera </h5>
               Eco<br><hr>
-                <!-- Product price-->  
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-danger text-decoration-line-through">$ 66.700,00 </span> <br>
-              <span>$ 56.695,00 <br>
-              4 cuotas de <br>$ 14.174,00 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-               $ 69.000,00                 
-     </div>
-  </div>
-  </div>
-  </div>   
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 66.700,00 </span> <br>
+            <span class="price-socio">$ 56.695,00 <br></span>
+            4 cuotas de <br> $ 14.174,00<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 69.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
   
-  
-<div class="col mb-5">
-  <div class="card h-100"> 
-  <!-- Sale badge-->
-  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image--> 
-   <img class="card-img-top mx-auto zoomable pt-4" src="../image/pescaycamping/BROSKOL.jpg"/> 
-      <!-- Product details-->
-       <div class="card-body ">
-        <div class="text-center ">
-            <!-- Product name-->  
-              <h5 class="fw-bolder pt-4 ">Carpa<br>Automática </h5>
+
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/BROSKOL.jpg"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Carpa<br>Automática </h5>
               Brocksol<br><hr>
-                <!-- Product price-->  
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-danger text-decoration-line-through">$ 112.500,00 </span> <br>
-              <span>$ 95.625,00 <br>
-              4 cuotas de <br>$ 23.906,00 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-               $ 115.000,00                 
-     </div>
-  </div>
-  </div>
-  </div>   
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 112.500,00 </span> <br>
+            <span class="price-socio">$ 95.625,00 <br></span>
+            4 cuotas de <br> $ 23.906,00<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 115.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
 
-<div class="col mb-5">
-  <div class="card h-100"> 
-  <!-- Sale badge-->
-  <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-15%</div>
-    <!-- Product image--> 
-   <img class="card-img-top mx-auto zoomable" src="../image/pescaycamping/SPINING.jpg"/> 
-      <!-- Product details-->
-       <div class="card-body ">
-        <div class="text-center ">
-            <!-- Product name-->  
-              <h5 class="fw-bolder  ">Carpa <br> Automática</h5>
+    <div class="col mb-5">
+      <div class="card h-100">
+        <span class="badge-discount">15% OFF</span> 
+         <!-- Product image-->   
+        <img  class="card-img-top mx-auto pt-4 mt-4" src="../image/pescaycamping/SPINING.jpg"/>
+         <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder "> Carpa <br> Automática</h5>
               Spinning<br><hr>
-                <!-- Product price-->  
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-danger text-decoration-line-through">$ 84.500,00 </span> <br>
-              <span>$ 71.825,00 <br>
-              4 cuotas de <br>$ 17.956,00 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-               $ 88.000,00                 
-     </div>
-  </div>
-  </div>
-  </div>   
- 
+            <!-- Product price -->   
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 84.500,00 </span> <br>
+            <span class="price-socio">$ 71.825,00 <br></span>
+            4 cuotas de <br> $ 17.956,00<br><hr>
+            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
+            $ 88.000,00
+            </span> 
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
 
 
 
+    </div> 
+</div>
+
+</section>
 
 
+<script>
+document.querySelectorAll('.filtro-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const categoria = this.getAttribute('data-categoria');
+    const productos = document.querySelectorAll('.col');
 
-          </div>
-    </div>
-</section> 
+    // Muestra u oculta los productos según la categoría seleccionada
+    productos.forEach(function(producto) {
+      if (categoria === 'todos') {
+        producto.style.display = 'block';
+      } else {
+        if (producto.classList.contains(categoria)) {
+          producto.style.display = 'block';
+        } else {
+          producto.style.display = 'none';
+        }
+      }
+    });
 
-<br><br>
+    // Mostrar filtros específicos para cada categoría
+    if (categoria === 'cofres') {
+      document.getElementById('filtro-cofres').classList.remove('d-none');
+      document.getElementById('filtro-perfumes').classList.add('d-none');
+    } else if (categoria === 'categoria1') {
+      document.getElementById('filtro-cofres').classList.add('d-none');
+      document.getElementById('filtro-perfumes').classList.remove('d-none');
+    } else {
+      document.getElementById('filtro-cofres').classList.add('d-none');
+      document.getElementById('filtro-perfumes').classList.add('d-none');
+    }
+
+    // Quitar clase activa a todos los botones y agregarla al seleccionado
+    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// Filtro para Cofres: Filtrar por tipo de cofre
+document.getElementById('tipoCofres').addEventListener('change', function() {
+  const tipoSeleccionado = this.value;
+  const productosCofres = document.querySelectorAll('.cofres');
+
+  productosCofres.forEach(function(producto) {
+    if (tipoSeleccionado === 'todos' || producto.classList.contains(tipoSeleccionado)) {
+      producto.style.display = 'block';
+    } else {
+      producto.style.display = 'none';
+    }
+  });
+});
+
+// Filtro para Perfumes: Filtrar por marca
+document.getElementById('marcaPerfumes').addEventListener('change', function() {
+  const marcaSeleccionada = this.value;
+  const productosPerfumes = document.querySelectorAll('.categoria1');
+
+  productosPerfumes.forEach(function(producto) {
+    if (marcaSeleccionada === 'todos' || producto.classList.contains(marcaSeleccionada)) {
+      producto.style.display = 'block';
+    } else {
+      producto.style.display = 'none';
+    }
+  });
+});
+</script>
+
+
+<section>
+  <p class="text-center">Precios sujetos a modificación sin previo aviso</p>
+</section>
+
+<br>
+
 
 
 <div id="footer"></div>
@@ -1361,15 +963,78 @@
     });
 </script>
 
-  
 
     <!-- JAVA -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
- 
-    <script src="../canjes5.js"></script>
-    <script src="../pasarimagenes.js"></script>
-    <script src="../canjes4.js"></script>    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
      
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <div id="zoomModal" class="zoom-modal" onclick="cerrarZoom()">
+      <img id="zoomImg" src="" alt="Imagen ampliada">
+    </div>
+    <script>
+      const zoomModal = document.getElementById("zoomModal");
+      const zoomImg = document.getElementById("zoomImg");
+    
+      document.querySelectorAll(".card img").forEach(img => {
+        img.addEventListener("click", () => {
+          zoomImg.src = img.src;
+          zoomModal.style.display = "flex";
+        });
+      });
+    
+      function cerrarZoom() {
+        zoomModal.style.display = "none";
+        zoomImg.src = "";
+      }
+    </script>
+    
+      <div id="navbar"></div>
+    <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Mover aquí el contenido de navbar.js
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuClose = document.getElementById("menu-close");
+
+      if (menuToggle && menu && menuClose) {
+        menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+        });
+
+        menuClose.addEventListener("click", function () {
+          menu.classList.remove("active");
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+</script>
+
+<script>
+  document.querySelectorAll('.color-options .color-circle').forEach(circle => {
+    circle.addEventListener('click', function() {
+      const newImgSrc = this.getAttribute('data-img');
+      const card = this.closest('.card');
+      const imgTag = card.querySelector('.card-img-top');
+      imgTag.src = newImgSrc;
+    });
+  });
+</script>
+
+ </body>
 </html>

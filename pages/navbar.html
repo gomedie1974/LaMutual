@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO -->
+  <title>Mutual La Nacion</title>
+  <meta name="keywords" content="Mutual La Nación">
+  <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
+  
+
+  <!-- Whatsapp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- pone el logo en la pestana -->
+  <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
+  
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }  
+        
+        .resultado img {
+            max-width: 10%;
+            height: auto;
+            display: block; /* Para evitar márgenes extra en la parte inferior */
+            margin: 0 auto; /* Centrar la imagen dentro del contenedor */
+            max-height: 200px; /* Establecer la altura máxima deseada */
+            margin-top: 2%;
+        } 
+
+        #busquedaInputForm {
+            width: 100%; /* Ajusta el ancho según tus necesidades */
+            max-width: 600px; /* Puedes establecer un ancho máximo si lo deseas */
+            margin: 0 auto; /* Centra la barra de búsqueda en la pantalla */
+            border: 2px solid #000000; /* Agrega un borde */
+            overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
+            display: flex; /* Para alinear el ícono y el campo de entrada en la misma línea */
+        }
+
+        #busquedaInput {
+            width: 60%; /* Ajusta el ancho del campo de entrada según tus necesidades */
+            padding: 10px; /* Ajusta el relleno según tus necesidades */
+            float: left; /* Permite que el botón de búsqueda esté en la misma línea */
+            border-radius: 20px; /* Establece bordes redondeados */
+        }
+
+        .cerrar-btn {
+            position: fixed;
+            bottom: 100px;
+            right: 10px;
+            background-color: #000000;
+            border: 1px solid #000000;
+            padding: 5px 10px;
+            cursor: pointer;
+            color: aliceblue;    
+            z-index: 1000; /* Ajusta este valor según sea necesario */
+        }
+
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px; /* Ajusta este valor según la altura del nav */
+
+        }
+
+        header {
+           position: relative; /* Asegura que el header no esté afectado por la posición fija del nav */
+        }
+
+      /* Estilo del nav */
+      nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          position: fixed; /* Hace que el nav sea fijo */
+          top: 0; /* Posiciona el nav en la parte superior de la página */
+          left: 0; /* Asegura que el nav esté alineado a la izquierda */
+          width: 100%; /* Hace que el nav ocupe todo el ancho de la página */
+          z-index: 1000; /* Asegura que el nav esté encima de otros elementos */
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil para darle profundidad */
+      }
+
+    /* Espacio adicional para el contenido debajo del nav fijo */
+    
+        .menu-hamburguesa {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;   
+        }
+
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #212529; 
+        }
+ 
+        .menu li a {
+             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+
+        }
+
+     
+
+        .close-btn-li {
+            display: none; /* Ocultar el botón de cierre por defecto */
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                position: fixed;
+                left: -350px; /* Inicialmente fuera de la pantalla a la izquierda */
+                top: 0;
+                height: auto;
+                width: 250px;
+                 transition: left 0.3s;
+                z-index: 1000; /* Asegura que el menú se superpone a otros elementos */
+                overflow-y: 100%; /* Permite desplazarse si el contenido excede la altura de la pantalla */
+                
+            }
+
+            .menu.active {
+                left: 0; /* Cuando está activo, se muestra en pantalla */
+            }
+
+            .menu-hamburguesa {
+                display: block;
+            }
+
+            .close-btn-li {
+                display: block; /* Mostrar el botón de cierre en dispositivos móviles */
+            }
+
+            .close-btn {
+                font-size: 30px;
+                padding: 10px;
+                cursor: pointer;
+                text-align: right;
+             }
+        }
+
+        @media (min-width: 769px) {
+            .menu {
+                flex-direction: row;
+                position: static;
+                height: auto;
+                width: auto;
+                background-color: transparent;
+                transition: none;
+            }
+
+            .close-btn-li {
+                display: none; /* Asegurarse de que la "X" no aparezca en pantallas grandes */
+            }
+        }
+         /* Estilos para los botones de navegación */
+        .nav-btn {
+          position: absolute;
+          top: 40%;
+          transform: translateY(-50%);
+          width: 30px;
+          height: 30px;
+           border-radius: 50%;
+           text-align: center;
+          line-height: 30px;
+          cursor: pointer;
+          z-index: 1000;
+        }
+
+        .prev-slide {
+          left: 10px; /* Ajusta la posición a la izquierda */
+        }
+
+        .next-slide {
+          right: 10px; /* Ajusta la posición a la derecha */
+        }
+
+        /* Puedes añadir iconos o texto dentro de los botones */
+        .nav-btn::before {
+          content: '<'; /* Texto o icono para la flecha izquierda */
+        }
+
+        .next-slide::before {
+          content: '>'; /* Texto o icono para la flecha derecha */
+        }
+        @media (max-width: 768px) {
+          .nav-btn {
+            margin-top: -10px; /* Ajusta según sea necesario */
+          }
+        }
+
+       .textomov {
+            width: 100%;
+            overflow: hidden;
+            background-color: #000000;
+            color: white;
+            white-space: nowrap;
+            position: relative;
+            height: 50px;  
+        }
+
+        .marquee {
+            display: inline-block;
+            padding: 10px;
+            font-size: 24px;
+            white-space: nowrap;
+            position: absolute;
+            will-change: transform;
+            animation: marquee 20s linear infinite;
+        }
+        @media (max-width: 768px) {
+            .marquee {
+                font-size: 18px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+                animation: marquee 7s linear infinite; /* Ajusta la duración de la animación en pantallas pequeñas */
+            }
+        }
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);  
+            }
+            to {
+                transform: translateX(-100%);  
+            }
+        }  
+        /* Estilos para los botones */
+        .styledButton {
+          background-color: #08007d; /* Color de fondo verde */
+          border: none; /* Sin borde */
+          color: white; /* Color de texto blanco */
+          padding: 15px 32px; /* Espaciado interno del botón */
+          text-align: center; /* Centrar el texto */
+          text-decoration: none; /* Sin subrayado */
+          display: inline-block; /* Mostrar como bloque en línea */
+          font-size: 16px; /* Tamaño de la fuente */
+          margin: 4px 2px; /* Espaciado entre botones */
+          cursor: pointer; /* Cambia el cursor a una mano cuando pases sobre el botón */
+          border-radius: 12px; /* Esquinas redondeadas */
+          transition: background-color 0.3s ease; /* Efecto de transición para el color de fondo */
+        }
+
+        .styledButton:hover {
+          background-color: #ffff59; /* Cambia a un verde más oscuro al pasar el ratón */
+          color: black;
+        }
+
+ 
+    /* Estilo para el contenido principal */
+    .content {
+      padding: 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+    
+    </style>
+          <!-- Custom styles for this template -->
+          <link href="headers.css" rel="stylesheet">
+   
+
+</head>
+<body>
+  
+    <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >      
+        <!-- Ícono de WhatsApp -->
+        <i class="fab fa-whatsapp"></i>                
+    </a>
+    
+
+
+  
+    <header >
+         <div class="container " > 
+            <nav class="bg-dark">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-center" sty>
+                 <img src="../image/logosinfondo.webp" width="100" alt="" srcset=""> 
+            </div>
+                <div class="menu-hamburguesa " id="menu-toggle">
+                    &#9776; <!-- Icono de hamburguesa -->
+                </div>
+                
+                <ul class="nav justify-content-center menu " id="menu">
+                    <li class="close-btn-li"><a href="#" class="close-btn" id="menu-close">&times;</a></li>
+
+                    <li><a href="#">Descuentos <i class="fas fa-chevron-down"></i></a>
+                      <ul class="bg-dark" >
+                            <li><a href="../pages/accesorios.html" class="nav-link px-2 ">Accesorios </i></a>
+                            <li><a href="../pages/perfumes.html" class="nav-link px-2 ">Belleza </i></a></li>    
+                            <li><a href="../pages/bioalquimia.html" class="nav-link px-2 ">Bioalquimia</i></a></li>    
+                            <li><a href="../pages/canjes.html" class="nav-link px-2 ">Canjes</a></li>
+                            <li><a href="#" class="nav-link px-1 ">Gastronomia <i class="fas fa-chevron-right"></i></a>
+                              <ul class="bg-dark" >
+                                <li><a href="../pages/almacen.html" class="nav-link px-2 ">Almacén</a></li>
+                                <li><a href="../pages/aperitivos.html" class="nav-link px-2">Bebidas</a></li>    
+                                <li><a href="../pages/puravida.html" class="nav-link px-2 ">Pura Vida</a></li>
+                              </ul>
+                            </li>   
+                            <li><a href="#" class="nav-link px-2 ">Hogar <i class="fas fa-chevron-right"></i></a>
+                              <ul class="bg-dark" >
+                                <li><a href="../pages/hogar.html" class="nav-link px-2 ">Blanco</a></li>
+                                 <li><a href="../pages/feria.html" class="nav-link px-2 ">Feria</a></li> 
+                                  <li><a href="../pages/kankay.html" class="nav-link px-2">Kankay</a></li>  
+                                  <li><a href="../pages/nega.html" class="nav-link px-2 ">Nega Velas y Aromas</a></li>
+                                  <li><a href="../pages/camping.html" class="nav-link px-2 ">Waterdog/Stanley</a></li>
+                              </ul></li>        
+                              <li><a href="../pages/juegos.html" class="nav-link px-2">Juegos</a></li>  
+                              <li><a href="../pages/swissbrand.html  " class="nav-link px-2">SwissBrand</a></li>  
+                              <li><a href="#" class="nav-link px-2 ">Tienda <i class="fas fa-chevron-right"></i></a>
+                                <ul class="bg-dark" >
+                                  <li><a href="../pages/calzado.html" class="nav-link px-2 ">Calzado </a></li>
+                                  <li><a href="../pages/deportes.html" class="nav-link px-2 ">Deportes </a></li>
+                                  <li><a href="../pages/tienda.html" class="nav-link px-2 ">Indumentaria</a></li>
+                                  <li><a href="../pages/pijamas.html" class="nav-link px-2 ">Pijamas</a></li>
+                                </ul>
+                              </li>
+                             
+                            </ul> 
+
+                          <li><a href="#">Beneficios <i class="fas fa-chevron-down"></i></a>
+                            <ul class="bg-dark" >
+                              <li><a href="../pages/ayudaeconomica.html" class="nav-link px-2 ">Ayuda económica </i></a>
+                              <li><a href="../pages/cocheras.html" class="nav-link px-2 ">Cocheras</a></li>
+                              <li><a href="../pages/colecciones.html" class="nav-link px-2 ">Opcionales</a></li> 
+                              <li><a href="../pages/productos.html" class="nav-link px-2 ">Productos publicados</a></li>
+                              <li><a href="../pages/subsidios.html" class="nav-link px-2 ">Subsidios</a></li>
+                            </ul></li>
+                            <li><a href="../pages/asociarse.html" class="nav-link px-2 ">Asociarse </a></li>
+                            <li><a href="../pages/contacto.html" class="nav-link px-2 ">Contacto</a></li>   
+                                 
+                            <li><a href="../pages/datos.php" class="nav-link px-2" style="color: rgb(27, 98, 212);"><b>Detalle Gastos</b></a> </li>  
+                            <li><a href="../index.html" class="nav-link px-2"><i class="fas fa-home"></i></a></li>  
+
+                             
+            </nav>
+        </div>
+    </header>
+
+    <section  > 
+  
+   
+    
+     <!-- JAVA -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+      
+    <!-- Smooth Scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+            const menuClose = document.getElementById("menu-close");
+
+            menuToggle.addEventListener("click", function() {
+                menu.classList.toggle("active");
+            });
+
+            menuClose.addEventListener("click", function() {
+                menu.classList.remove("active");
+            });
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

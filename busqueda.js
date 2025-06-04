@@ -1,78 +1,41 @@
-//Busqueda de productos
-// Variables
-/* const baseDeDatos = [];
-class Producto {
-    constructor (codigo, nombre, precio, marca, cantidad){
-        this.id = this.id;
-        this.nombre = nombre;
-        this.precio = parseFloat(precio);
-        this.marca = marca;
-        this.cantidad = cantidad;
-        this.disponible = true;
-    }
-}
+function initBusqueda() {
+  const btnBuscar = document.getElementById("btnBuscar");
+  const btnCerrar = document.getElementById("btnCerrar");
+  const inputBusqueda = document.getElementById("busquedaInput");
+  const resultadosDiv = document.getElementById("resultados");
 
-baseDeDatos.push(new Producto("FB12", "FERNET", 990, "BRANCA", 94 ));
-baseDeDatos.push(new Producto("FV32", "CYNAR", 490, "BLACK", 24 ));
-baseDeDatos.push(new Producto("AP23", "APEROL", 690, "SPIRITZ", 27 ));
-baseDeDatos.push(new Producto("CP12", "CAMPARI", 490, "ROJO", 39 ));
-baseDeDatos.push(new Producto("F1881", "VODKA", 290, "ORANGE", 143 ));
-baseDeDatos.push(new Producto("F1882", "FERNET", 290, "1882", 143 ));
-baseDeDatos.push(new Producto("FBM,", "FERNET", 390, "FERNET", 15 ));
+  const paginas = [
+    "aperitivos.html", "almacen.html", "tienda.html", "canjes.html", "hogar.html",
+    "feria.html", "juegos.html", "puravida.html", "lidherma.html", "perfumes.html",
+    "nega.html", "accesorios.html", "calzado.html", "camping.html", "swissbrand.html",
+    "deportfem.html", "deportmasc.html", "kankay.html"
+  ];
 
+  btnBuscar.addEventListener("click", function () {
+    const consulta = inputBusqueda.value.toLowerCase();
+    const fetches = paginas.map(p => fetch("pages/" + p));
 
-document.getElementById("botonBuscar").addEventListener("click", function(){
-    let buscarDato = document.getElementById("inputDato").value.toUpperCase();
-    const prod = baseDeDatos.find(function(producto){
-        return producto.nombre === buscarDato;
-    });
-    if (prod){
-        Swal.fire ({
-            text:`El precio del  ${prod.nombre} ${prod.marca} es $ ${prod.precio} y la cantidad actual en stock es ${prod.cantidad} botellas`});
-        
-    }else{ 
-        Swal.fire({
-            imageUrl: "/image/noencontrado.png",
-            title: 'Producto no encontrado',
-            imageWidth: 400,
-            imageHeight: 200,
-            imageAlt: 'Custom image',
-          })   
+    Promise.all(fetches)
+      .then(responses => Promise.all(responses.map(res => res.text())))
+      .then(htmlArray => {
+        const temporalDiv = document.createElement("div");
+        temporalDiv.innerHTML = htmlArray.join("");
 
-    } 
-})
-   */
+        const productos = temporalDiv.querySelectorAll(".card");
+        const resultados = Array.from(productos).filter(card =>
+          card.querySelector("h5")?.innerText.toLowerCase().includes(consulta)
+        );
 
-  // Obtén el elemento del botón y el campo de búsqueda por su ID.
-  const boton = document.getElementById('boton');
-  const formulario = document.getElementById('formulario');
-  const mensajeError = document.getElementById('mensaje-error');
+        resultadosDiv.innerHTML = resultados.length
+          ? resultados.map(p => `<div class="resultado">${p.outerHTML}</div>`).join("")
+          : "<p>No se encontraron resultados.</p>";
 
-
-  // Agrega un controlador de eventos para el clic en el botón.
-  boton.addEventListener('click', function() {
-    // Obtén el valor ingresado en el campo de búsqueda.
-    const busqueda = formulario.value;
-
-    if (busqueda === 'campari' || busqueda === 'cynar' || busqueda === 'aperol' || busqueda === 'gin' || busqueda === 'whisky' || busqueda === 'aceite' || busqueda === 'fernet') {
-      // Redirige a la página de aperitivos.
-      window.location.href = 'http://127.0.0.1:5504/pages/aperitivos.html';
-    } else if (busqueda === 'canjes') {
-      // Redirige a la página de canjes.
-      window.location.href = 'http://127.0.0.1:5504/pages/canjes.html';
-    } else if (busqueda === 'lidherma') {
-      // Redirige a la página de canjes.
-      window.location.href = 'http://127.0.0.1:5504/pages/lidherma.html';
-    } else {
-      // Redirige a otra página por defecto o muestra un mensaje de error.
-      mensajeError.style.display = 'block';
-            // Establece un temporizador para ocultar el mensaje después de 5 segundos.
-            setTimeout(function() {
-        mensajeError.style.display = 'none';
-      }, 5000);
-
-    }
+        btnCerrar.style.display = resultados.length ? "block" : "none";
+      });
   });
 
-
-  
+  btnCerrar?.addEventListener("click", () => {
+    resultadosDiv.innerHTML = "";
+    btnCerrar.style.display = "none";
+  });
+}

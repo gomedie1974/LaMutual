@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- SEO -->
+        <title>Ingreso</title>
+        <meta name="keywords" content="mutual">
+        <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
+        <!-- Whatsapp -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">     
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+ 
+        <!-- BOOTSTRAP -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- pone el logo en la pestana -->
+        <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
+         <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    </head>
+    
+        
+<body >
+  <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
+    <!-- Ícono de WhatsApp -->
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .form-section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .form-section h5 {
+      color: #495057;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #dee2e6;
+      padding-bottom: 0.5rem;
+    }
+    .container {
+     overflow: visible;
+    }
+    label{
+        color: rgb(7, 30, 99);        
+    }
+  </style>
+  
+    <div class="container my-5">
+
+        <h2 class="text-center mb-4 text-primary" style="font-weight: bold;">
+            <i class="bi bi-journal-text"></i> Solicitud de Ingreso </h2>
+
+        <form id="solicitudForm" action="https://formspree.io/f/mkgrabze" method="POST">
+            <!-- Datos personales -->
+            <div class="form-section">
+                <h5><b>Datos Personales</b></h5>
+                <div class="row g-3">
+                    <div class="col-md-6"><label>Nombre y Apellido</label><input name="Nombre y Apellido" type="text" class="form-control" required /></div>
+                    <div class="col-md-3">
+                    <label for="tipo_documento">Tipo de documento</label>
+                    <select name="Tipo de documento" id="tipo_documento" class="form-select" required>
+                        <option value="" disabled selected>Seleccione</option>
+                        <option value="dni">DNI</option>
+                        <option value="pasaporte">Pasaporte</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    </div>
+
+                    <div class="col-md-3">
+                    <label for="numero_documento">Número de documento</label>
+                    <input type="number"  name="Numero de documento" id="numero_documento" type="text" class="form-control" required min="0" step="1">
+                    </div>
+                    <div class="row g-3">
+                    <div class="col-md-3">
+                        <label for="Cuil">CUIL</label>
+                        <input name="cuil" id="cuil" type="text" class="form-control" placeholder="XX-XXXXXXXX-X" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Fecha de Nacimiento</label>
+                        <input name="Fecha de nacimiento" type="date" class="form-control" required/>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Nacionalidad</label>
+                        <input name="Nacionalidad" type="text" class="form-control" />
+                    </div>
+                    <div class="col-md-3">
+                        <label>Estado Civil</label>
+                        <input name="Estado civil" type="text" class="form-control" />
+                    </div>
+                    </div>
+
+                    <div class="col-md-8"><label>Mail</label><input type="email" name="Mail" type="email" class="form-control" required /></div>
+                    <div class="col-md-4"><label>Celular</label><input type="number" name="Celular" type="text" class="form-control" required min="0" step="1"/></div>
+
+                    <div class="col-12"><label>Domicilio</label><input name="Domicilio" type="text" class="form-control" required/></div>
+                    
+                    <div class="col-md-5"><label>Localidad</label><input name="Localidad" type="text" class="form-control" required/></div>
+                    <div class="col-md-5"><label>Provincia</label><input name="Provincia" type="text" class="form-control" required/></div>
+                    <div class="col-md-2"><label>CP</label><input name="CP" type="text" class="form-control" required/></div>
+                </div>
+            </div>
+
+            <!-- Empresa -->
+            <div class="form-section">
+                <h5><b>Empresa</b></h5>
+                <div class="row g-3">
+                    <div class="col-md-6"><label>Empresa</label><input name="Empresa" type="text" class="form-control" required/></div>
+                    <div class="col-md-6"><label>Sección</label><input name="Seccion" type="text" class="form-control" /></div>
+                    <div class="col-md-6"><label>Legajo</label><input type="number" name="Legajo" type="text" class="form-control" required min="0" step="1"/></div>
+                    <div class="col-md-6"><label>Fecha de ingreso</label><input name="Fecha de ingreso" type="date" class="form-control" /></div>
+                </div>
+            </div>
+
+            <!-- Esposo/a -->
+            <div class="form-section">
+                <h5><b>Datos del/la Esposo/a</b></h5>
+                <div class="row g-3">
+                    <div class="col-md-6"><label>Nombre y Apellido</label><input name="Conyuge nombre y apellido" type="text" class="form-control" /></div>
+                    <div class="col-md-3">
+                    <label for="conyuge_tipo_documento">Tipo de documento</label>
+                    <select name="Conyuge tipo de documento" id="conyuge_tipo_documento" class="form-select" >
+                        <option value="" disabled selected hidden>Seleccione</option>
+                        <option value="dni">DNI</option>
+                        <option value="pasaporte">Pasaporte</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    </div>
+
+                    <div class="col-md-3">
+                    <label for="conyuge_numero_documento">Número de documento</label>
+                    <input name="Conyuge numero de documento" id="conyuge_numero_documento" type="number" class="form-control" min="0" step="1">
+                    </div>                    
+                    <div class="col-md-6"><label>Fecha de Nacimiento</label><input name="Conyuge fecha de nacimiento" type="date" class="form-control" /></div>
+                    <div class="col-md-6"><label>Nacionalidad</label><input name="Conyuge nacionalidad" type="text" class="form-control" /></div>
+                </div>
+            </div>
+
+        <!-- Hijos -->
+        <div class="form-section">
+            <h5><b>Hijos</b></h5>
+
+                <!-- Tabla visible solo en pantallas medianas y grandes -->
+                <div class="table-responsive d-none d-md-block" style="overflow: unset;">
+                <table class="table table-bordered align-middle" id="tabla-hijos">
+                    <thead class="table-light">
+                    <tr>
+                        <th style="width: 23%;">Apellido</th>
+                        <th style="width: 23%;">Nombre</th>
+                        <th style="width: 23%;">Fecha Nac.</th>
+                        <th style="width: 20%;">Nro doc</th>
+                        <th style="width: 11%;"></th>
+                    </tr>
+                    </thead>
+                    <tbody id="hijos-body">
+                    </tbody>
+                </table>
+                </div>
+
+                <!-- Vista móvil: tarjetas para hijos -->
+                <div id="hijos-mobile" class="d-block d-md-none">
+                <!-- Las tarjetas de hijos se agregan dinámicamente acá -->
+                </div>
+
+                <button type="button" class="btn btn-success btn-sm" onclick="agregarHijo()" title="Agregar hijo">
+                <i class="bi bi-plus-lg"></i> Agregar hijo
+                </button>
+
+
+                <!-- Botón de envío -->
+                <div class="text-center mt-4 w-100">
+                <button type="submit" class="btn btn-primary px-5">Enviar Solicitud</button>
+                </div>
+
+                <script>
+                function agregarHijo() {
+                // ---- Versión de escritorio ----
+                const tbody = document.getElementById("hijos-body");
+                const nuevaFila = document.createElement("tr");
+                nuevaFila.innerHTML = `
+                    <td><input name="Hijo apellido" type="text" class="form-control" required /></td>
+                    <td><input name="Hijo nombre" type="text" class="form-control" required /></td>
+                    <td><input name="Hijo fecha" type="date" class="form-control" required /></td>
+                    <td><input name="Hijo doc" type="number" class="form-control" required /></td>
+                    <td class="text-center">
+                    <button type="button" class="btn btn-outline-danger btn-sm rounded-circle" onclick="eliminarFila(this)" title="Eliminar hijo">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    </td>`;
+                tbody.appendChild(nuevaFila);
+
+                // ---- Versión móvil ----
+                const contenedorMobile = document.getElementById("hijos-mobile");
+                const card = document.createElement("div");
+                card.className = "card mb-2 p-3";
+                card.innerHTML = `
+                    <div class="mb-2">
+                    <label>Apellido</label>
+                    <input name="Hijo apellido" type="text" class="form-control" required />
+                    </div>
+                    <div class="mb-2">
+                    <label>Nombre</label>
+                    <input name="Hijo nombre" type="text" class="form-control" required />
+                    </div>
+                    <div class="mb-2">
+                    <label>Fecha Nac.</label>
+                    <input name="Hijo fecha" type="date" class="form-control" required />
+                    </div>
+                    <div class="mb-2">
+                    <label>Nro doc</label>
+                    <input name="Hijo doc" type="number" class="form-control" required />
+                    </div>
+                    <div class="text-end">
+                    <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarCard(this)" title="Eliminar hijo">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    </div>
+                `;
+                contenedorMobile.appendChild(card);
+                }
+
+                function eliminarFila(boton) {
+                const fila = boton.closest("tr");
+                fila.remove();
+                }
+
+                function eliminarCard(boton) {
+                const card = boton.closest(".card");
+                card.remove();
+                }
+                </script>
+
+
+            </div>
+            </div>
+
+            
+
+        
+        </form>
+    </div>
+
+    <div class="mt-4" id="footer"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+ 
+    <!-- SweetAlert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="../achavalferrer.js"></script>
+
+    <div id="navbar"></div>
+    <script>
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("navbar").innerHTML = data;
+
+                const menuToggle = document.getElementById("menu-toggle");
+                const menu = document.getElementById("menu");
+                const menuClose = document.getElementById("menu-close");
+
+                if (menuToggle && menu && menuClose) {
+                    menuToggle.addEventListener("click", function () {
+                        menu.classList.toggle("active");
+                    });
+
+                    menuClose.addEventListener("click", function () {
+                        menu.classList.remove("active");
+                    });
+                }
+
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            });
+    </script>
+
+    <!-- Envío con fetch + mensaje + redirección -->
+    <script>
+        const form = document.getElementById('solicitudForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Formulario enviado correctamente',
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+                        setTimeout(() => {
+                            window.location.href = '../index.html'; // Cambia aquí si tu página de inicio tiene otra URL
+                        }, 2000);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error al enviar el formulario',
+                            text: 'Por favor, intente nuevamente.'
+                        });
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error de red',
+                        text: 'Por favor, revise su conexión y vuelva a intentarlo.'
+                    });
+                });
+        });
+    </script>
+    <script src="https://unpkg.com/imask"></script>
+    <script>
+    const cuilInput = document.getElementById('cuil');
+    if (cuilInput) {
+        IMask(cuilInput, {
+        mask: '00-00000000-0',
+        lazy: false, // Esto hace que los guiones aparezcan siempre
+        placeholderChar: '_' // Muestra guiones fijos y guiones bajos como guía
+        });
+    }
+    </script>
+
+
+</body>
+</html>

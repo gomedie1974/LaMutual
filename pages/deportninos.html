@@ -18,49 +18,154 @@
         <link rel="stylesheet" href="../style/style.css">        
     </head>
  
+
+    <style>
+      .card {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: all 0.3s ease-in-out;
+      background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+      font-family: 'Segoe UI', sans-serif;
+    }
+ 
+    
+    .card img {
+      padding: 10px;
+      max-height: 400px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      cursor: zoom-in; /* 👈 cambia el puntero a "+" */
+    
+    }
+    
+    
+    .card h5 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #333;
+        
+    }
+    
+    .card-body {
+      padding: 1.25rem;
+      background-color: #fff;
+    }
+    
+    .card .badge {
+      background-color: #ff3366;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.35em 0.7em;
+      border-radius: 1rem;
+    }
+    
+    .card .card-actions {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .card .btn-primary {
+      background-color: #0066cc;
+      border: none;
+      padding: 8px 14px;
+      font-size: 0.9rem;
+      border-radius: 6px;
+      transition: 0.3s ease;
+    }
+    
+    .card .btn-primary:hover {
+      background-color: #004c99;
+      transform: scale(1.05);
+    }
+    
+    .price-section {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    
+    .price-section span {
+      display: block;
+    }
+    .price-box {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 0.95rem;
+}
+
+.label-socio {
+  color: #129c00;
+  font-weight: bold;
+}
+
+.price-socio {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #129c00;
+}
+
+.label-nosocio {
+  color: #2b319f;
+  font-weight: bold;
+}
+
+.price-nosocio {
+  font-size: 1.05rem;
+  color: #2b319f;
+}
+
+.cuotas {
+  font-size: 0.85rem;
+  color: #555;
+} 
+     
+    .badge-discount {
+          position: absolute;
+          top: 12px;
+          left: 12px;
+          background-color: #dc2727;
+          color: white;
+          padding: 6px 10px;
+          font-size: 0.85rem;
+          font-weight: bold;
+          border-radius: 8px;
+    } 
+   /* Fondo oscuro al hacer zoom */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Imagen centrada en pantalla */
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
+  cursor: zoom-out;
+}
+
+           </style>
+
+
+
 <body >
   <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
     <!-- Ícono de WhatsApp -->
     <i class="fab fa-whatsapp"></i>
   </a>
-  <nav class="navbar navbar-dark fixed-top bg-secondary">    
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">Deportes</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <li class="nav-item">
-              <hr class="bg-light">
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
-              <ul class="dropdown-menu"> 
-              <li><a href="../pages/almacen.html" class="nav-link px-2 text-white bg-secondary">Almacen</a></li>    
-              <li><a href="../pages/aperitivos.html" class="nav-link px-2 text-white bg-secondary">Bebidas</a></li>    
-              <li><a href="../pages/canjes.html" class="nav-link px-2 text-white bg-secondary">Canjes</a></li>
-              <li><a href="../pages/feria.html" class="nav-link px-2 text-white bg-secondary">Feria</a></li>  
-              <li><a href="../pages/hogar.html" class="nav-link px-2 text-white bg-secondary">Hogar</a></li>
-              <li><a href="../pages/juegos.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
-              <li><a href="../pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
-                 </ul> 
-              </li>
-              
-                <a class="nav-link active" aria-current="page" href="../pages/ayudaeconomica.html">Ayuda Económica</a>
-                <a class="nav-link active" aria-current="page" href="../pages/colecciones.html">Colecciones LN</a>
-                <a class="nav-link active" aria-current="page" href="../pages/productos.html">Productos</a>
-                <a class="nav-link active" aria-current="page" href="../pages/subsidios.html">Subsidios</a>
-                <a class="nav-link active" aria-current="page" href="../pages/asociarse.html">Asociarse</a>
-                <a class="nav-link active" aria-current="page" href="../pages/contacto.html">Contacto</a>
-                <hr class="bg-light">
-                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-              </li>
-          </li>
-        </ul> 
-      </div>
-    </div>
-  </nav>
+   
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -75,7 +180,7 @@
   </script>
 
   <section > 
-    <div class="container-fluid pt-4 mt-4">    
+    <div class="container-fluid ">    
     
      
       <div id="contenido" class="mt-4 ">
@@ -123,7 +228,7 @@
                 <div class="col mb-5 categoria4 H 8 talle-8  ">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240977 REMERA NIÑO UNDER ARMOUR TALLE 6.jpeg"  />
                       <!-- Product details-->
@@ -134,11 +239,11 @@
                              Under Armour</h5>
                                 Talle 6<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -149,7 +254,7 @@
                 <div class="col mb-5 categoria4 U 12 talle-12  ">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240975 REMERA UNISEX NIÑOS ART CLASS TALLE 12-14.jpeg"  />
                       <!-- Product details-->
@@ -160,11 +265,11 @@
                              Art Class</h5>
                                 Talle 12-14<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -175,7 +280,7 @@
                 <div class="col mb-5 categoria4 U 10 talle-10  ">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240973 REMERA UNISEX NIÑOS TALLE 10-12.jpeg"  />
                       <!-- Product details-->
@@ -186,11 +291,11 @@
                              Nike</h5>
                                 Talle 10-12<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -201,7 +306,7 @@
                 <div class="col mb-5 categoria4 H 8 talle-8  ">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240972 REMERA NIÑOS NAUTICA TALLE 5.jpeg"  />
                       <!-- Product details-->
@@ -212,11 +317,11 @@
                              Nautica</h5>
                                 Talle 5<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -227,7 +332,7 @@
                 <div class="col mb-5 categoria4 H 8 talle-8  ">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240971 REMERA UNISEX NIÑOS UNDER ARMOUR TALLE 7.jpeg"  />
                       <!-- Product details-->
@@ -238,11 +343,11 @@
                              Under Armour</h5>
                                 Talle 7<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -253,7 +358,7 @@
                 <div class="col mb-5 categoria4 H 8 talle-8  ">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240966 REMERA NIÑO ONEILL TALLE 8.jpeg"  />
                       <!-- Product details-->
@@ -264,11 +369,11 @@
                              O'Neill</h5>
                                 Talle 8<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -279,7 +384,7 @@
                 <div class="col mb-5 categoria4 H 10 talle-10  ">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240965 REMERA NIÑO UNDER ARMOUR TALLE 10-12.jpeg"  />
                       <!-- Product details-->
@@ -290,11 +395,11 @@
                              Under Armour</h5>
                                 Talle 10-12<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -305,7 +410,7 @@
                 <div class="col mb-5 categoria4 M 8 talle-8  ">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240964 REMERA NIÑA NIKE TALLE 4-5.jpeg"  />
                       <!-- Product details-->
@@ -316,11 +421,11 @@
                              Nike</h5>
                                 Talle 4-5<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -331,7 +436,7 @@
                 <div class="col mb-5 categoria4 H 12 talle-12  ">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240963 REMERA NIÑO UNDER ARMOUR TALLE 12-14.jpeg"  />
                       <!-- Product details-->
@@ -342,11 +447,11 @@
                              Under Armour</h5>
                                 Talle 12-14<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -357,7 +462,7 @@
                 <div class="col mb-5 categoria4 M 8 10 talle-8 talle-10">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240962 REMERA NIÑA COOLIBAR TALLE 8-10.jpeg"  />
                       <!-- Product details-->
@@ -368,11 +473,11 @@
                              Coolibar</h5>
                                 Talle 8-10<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -383,7 +488,7 @@
                 <div class="col mb-5 categoria4 M 14 talle-14">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240959 REMERA NIÑA ALL IN MOTION TALLE 14-16.jpeg"  />
                       <!-- Product details-->
@@ -394,11 +499,11 @@
                              All In Motion</h5>
                                 Talle 14-16<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -409,7 +514,7 @@
                 <div class="col mb-5 categoria4 H 14 talle-14">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240958 REMERA NIÑO MANGO TALLE 14-16.jpeg"  />
                       <!-- Product details-->
@@ -420,11 +525,11 @@
                              Mango</h5>
                                 Talle 14-16<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -435,7 +540,7 @@
                 <div class="col mb-5 categoria4 U 16 talle-16">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240957 REMERA UNISEX COLUMBIA TALLE 16-18.jpeg"  />
                       <!-- Product details-->
@@ -446,11 +551,11 @@
                              Columbia</h5>
                                 Talle 16-18<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -461,7 +566,7 @@
                 <div class="col mb-5 categoria4 H 16 talle-16">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240956 REMERA NIÑO NIKE TALLE 16-18.jpeg"  />
                       <!-- Product details-->
@@ -472,11 +577,11 @@
                              Nike</h5>
                                 Talle 16-18<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -487,7 +592,7 @@
                 <div class="col mb-5 categoria4 U 8 talle-8">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240950 REMERA UNISEX NIÑOS PLACE SPORTS TALLE 5.jpeg"  />
                       <!-- Product details-->
@@ -498,11 +603,11 @@
                              Place Sports</h5>
                                 Talle 5<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -513,7 +618,7 @@
                 <div class="col mb-5 categoria4 U 16 talle-16">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/REMERAS/240814 REMERA UNISEX NIÑOS WAVE LIFE TALLE 18.jpeg"  />
                       <!-- Product details-->
@@ -524,11 +629,11 @@
                               Wave Life</h5>
                                 Talle 18<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 25.715,00</span> <br>
                             <span>$ 18.000,50<br> 
                             4 cuotas de <br> $ 4.500,12<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 30.000,00
                             </span>         
                           </div>
@@ -539,7 +644,7 @@
                 <div class="col mb-5 categoria5 M 14 talle-14">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/SHORTS/240530 POLLERA PANTALON ALL IN MOTION T 1416 ESTAMPADA NEGRA.jpg"  />
                       <!-- Product details-->
@@ -550,11 +655,11 @@
                               All In Motion</h5>
                                 Talle 14-16<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 31.430,00</span> <br>
                             <span>$ 22.001,00<br> 
                             4 cuotas de <br> $ 5.550,25<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 35.000,00
                             </span>         
                           </div>
@@ -566,7 +671,7 @@
                 <div class="col mb-5 categoria5 H 14 talle-14">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/SHORTS/240587 SHORT NIÑOS MANGO TALLE 14-16 20000.jpeg"  />
                       <!-- Product details-->
@@ -577,11 +682,11 @@
                               Mango</h5>
                                 Talle 14-16<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 31.430,00</span> <br>
                             <span>$ 22.001,00<br> 
                             4 cuotas de <br> $ 5.550,25<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 35.000,00
                             </span>         
                           </div>
@@ -592,7 +697,7 @@
                 <div class="col mb-5 categoria5 H 12 talle-12">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/SHORTS/240589 SHORT NIÑO MANGO TALLE 12-14.jpeg"  />
                       <!-- Product details-->
@@ -603,11 +708,11 @@
                               Mango</h5>
                                 Talle 12-14<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 31.430,00</span> <br>
                             <span>$ 22.001,00<br> 
                             4 cuotas de <br> $ 5.550,25<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 35.000,00
                             </span>         
                           </div>
@@ -619,7 +724,7 @@
                 <div class="col mb-5 categoria5 H 8 talle-8">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/SHORTS/240591 SHORT NIÑO UNDER ARMOUR TALLE 8.jpeg"  />
                       <!-- Product details-->
@@ -630,11 +735,11 @@
                               Under Armour</h5>
                                 Talle 8<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 31.430,00</span> <br>
                             <span>$ 22.001,00<br> 
                             4 cuotas de <br> $ 5.550,25<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 35.000,00
                             </span>         
                           </div>
@@ -645,7 +750,7 @@
                 <div class="col mb-5 categoria5 M 10 talle-10">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/SHORTS/240592 SHORT NIÑA ADIDAS TALLE 10-12.jpeg"  />
                       <!-- Product details-->
@@ -656,11 +761,11 @@
                               Adidas</h5>
                                 Talle 10-12<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 31.430,00</span> <br>
                             <span>$ 22.001,00<br> 
                             4 cuotas de <br> $ 5.550,25<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 35.000,00
                             </span>         
                           </div>
@@ -672,7 +777,7 @@
                 <div class="col mb-5 categoria5 H 10 talle-10">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/SHORTS/240594 MALLA SHORT NIÑO HURLEY TALLE 10-12.jpeg"  />
                       <!-- Product details-->
@@ -683,11 +788,11 @@
                               Hurley</h5>
                                 Talle 10-12<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 31.430,00</span> <br>
                             <span>$ 22.001,00<br> 
                             4 cuotas de <br> $ 5.550,25<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 35.000,00
                             </span>         
                           </div>
@@ -698,7 +803,7 @@
                 <div class="col mb-5 categoria5 H 12 talle-12">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/SHORTS/240595 SHORT NIÑO TOMY HILFIGER TALLE 12-14.jpeg"  />
                       <!-- Product details-->
@@ -709,11 +814,11 @@
                               Tomy Hilfiger</h5>
                                 Talle 12-14<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 31.430,00</span> <br>
                             <span>$ 22.001,00<br> 
                             4 cuotas de <br> $ 5.550,25<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 35.000,00
                             </span>         
                           </div>
@@ -725,7 +830,7 @@
                 <div class="col mb-5 categoria5 H 14 talle-14">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/SHORTS/240596 SHORT NIÑO MANGO TALLE 14-16.jpeg"  />
                       <!-- Product details-->
@@ -736,11 +841,11 @@
                               Mango</h5>
                                 Talle 14-16<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 31.430,00</span> <br>
                             <span>$ 22.001,00<br> 
                             4 cuotas de <br> $ 5.550,25<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 35.000,00
                             </span>         
                           </div>
@@ -752,7 +857,7 @@
                 <div class="col mb-5 categoria5 H 10 talle-10">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/SHORTS/240598 SHORT NIÑO WONDER NATION TALLE 10-12.jpeg"  />
                       <!-- Product details-->
@@ -763,11 +868,11 @@
                               Wonder Nation</h5>
                                 Talle 10-12<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 31.430,00</span> <br>
                             <span>$ 22.001,00<br> 
                             4 cuotas de <br> $ 5.550,25<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 35.000,00
                             </span>         
                           </div>
@@ -779,7 +884,7 @@
                 <div class="col mb-5 categoria5 H 10 talle-10">
                   <div class="card h-100">
                       <!-- Sale badge-->
-                      <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
+                    <span class="badge-discount">30% OFF</span>
                       <!-- Product image-->
                       <img class="card-img-top mx-auto zoomable" src="../image/deportes/NIÑOS/SHORTS/240601 SHORT NIÑO ADIDAS TALLE 10-12.jpeg"  />
                       <!-- Product details-->
@@ -790,11 +895,11 @@
                               Adidas</h5>
                                 Talle 10-12<br>
                             <!-- Product price-->  
-                            <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+                            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
                             <span class="text-danger text-decoration-line-through">$ 31.430,00</span> <br>
                             <span>$ 22.001,00<br> 
                             4 cuotas de <br> $ 5.550,25<br><hr>
-                            <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+                            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
                               $ 35.000,00
                             </span>         
                           </div>
@@ -883,6 +988,41 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+     <div id="navbar"></div>
+    <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Mover aquí el contenido de navbar.js
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuClose = document.getElementById("menu-close");
+
+      if (menuToggle && menu && menuClose) {
+        menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+        });
+
+        menuClose.addEventListener("click", function () {
+          menu.classList.remove("active");
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+</script>
      
 </body>
 </html>

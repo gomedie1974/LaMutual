@@ -25,420 +25,525 @@
     <!-- Ícono de WhatsApp -->
     <i class="fab fa-whatsapp"></i>
   </a>
-  <nav class="navbar navbar-dark fixed-top bg-secondary">    
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Feria</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <li class="nav-item">
-              <hr class="bg-light">
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
-              <ul class="dropdown-menu"> 
-              <li><a href="../pages/almacen.html" class="nav-link px-2 text-white bg-secondary">Almacen</a></li>    
-              <li><a href="../pages/aperitivos.html" class="nav-link px-2 text-white bg-secondary">Bebidas</a></li>    
-              <li><a href="../pages/canjes.html" class="nav-link px-2 text-white bg-secondary">Canjes</a></li>
-              <li><a href="../pages/feria.html" class="nav-link px-2 text-white bg-secondary">Feria</a></li>  
-              <li><a href="../pages/hogar.html" class="nav-link px-2 text-white bg-secondary">Hogar</a></li>
-              <li><a href="../pages/juegos.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
-              <li><a href="../pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
-              <li><a href="../pages/solares.html" class="nav-link px-2 text-white bg-secondary">Solares</a></li>
-                </ul> 
-              </li>
-              
-                <a class="nav-link active" aria-current="page" href="../pages/ayudaeconomica.html">Ayuda Económica</a>
-                <a class="nav-link active" aria-current="page" href="../pages/colecciones.html">Colecciones LN</a>
-                <a class="nav-link active" aria-current="page" href="../pages/productos.html">Productos</a>
-                <a class="nav-link active" aria-current="page" href="../pages/subsidios.html">Subsidios</a>
-                <a class="nav-link active" aria-current="page" href="../pages/asociarse.html">Asociarse</a>
-                <a class="nav-link active" aria-current="page" href="../pages/contacto.html">Contacto</a>
-                <hr class="bg-light">
-                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-              </li>
-          </li>
-        </ul> 
+   
+
+
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f2f2f2;
+      }
+  
+      h1 {
+        text-align: center;
+        margin: 40px 0;
+        font-weight: 600;
+        color: #222;
+      }
+  
+      .product-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.2s ease;
+      }
+  
+      .product-card:hover {
+        transform: scale(1.02);
+      }
+  
+      .product-card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* o "cover", dependiendo del efecto deseado */
+      max-height: 100%;
+  }
+   
+      .product-info {
+        padding: 20px;
+      }
+  
+      .product-info h5 {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        color: #333;
+      }
+  
+      .product-info p {
+        color: #666;
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+      }
+  
+      .btn-modern {
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        font-weight: 500;
+        border-radius: 8px;
+        transition: background 0.3s;
+      }
+  
+      .btn-modern:hover {
+        background-color: #e95c5c;
+      }
+  
+      .badge-discount {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background-color: #ff6b6b;
+        color: white;
+        padding: 6px 10px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        border-radius: 8px;
+      }
+      .price-box {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+  
+  .label-socio {
+    color: #129c00;
+    font-weight: bold;
+  }
+  
+  .price-socio {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #129c00;
+  }
+  
+  .label-nosocio {
+    color: #2b319f;
+    font-weight: bold;
+  }
+  
+  .price-nosocio {
+    font-size: 1.05rem;
+    color: #2b319f;
+  }
+  
+  .cuotas {
+    font-size: 0.85rem;
+    color: #555;
+  }
+   /* Estilo para el filtro */
+   .row {
+    align-items: flex-start;
+  }
+  
+  .filter-container {
+    background-color: #f2f2f2;
+    padding-bottom: 20px;
+    position: relative;  /* Cambié de sticky a relative para móviles */
+  }
+  
+  @media (min-width: 768px) {
+    .filter-container {
+      position: sticky;
+      top: 120px; /* ajusta si el navbar tiene otra altura */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .filter-container {
+      position: relative; /* Cambié a relative para móviles */
+    }
+  }
+  
+   
+  .product-card img {
+      height: 260px;
+      object-fit: cover;
+      width: 100%;
+  }
+  .carousel-inner img {
+    padding-top: 20px;
+    max-height: 300px;
+    object-fit: contain;
+  }
+  .badge-new {
+  background-color: #16095e;    
+  color: rgb(255, 251, 41);
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+    </style>
+
+
+<section class="pb-2 " >
+  <div class="container mt-5 ">
+    <div class="row">
+      
+
+  <!-- Productos -->
+  <div class="col-md-12">
+    <div class="row g-4">
+
+      
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">25% OFF</span>
+        <span class="badge-new">¡Nuevo!</span> 
+        <img class="mt-4 pt-4" src="../image/cava.png" style="height: auto;">
+        <div class="product-info">
+          <h5>Cava De Vinos   <br>Whirlpool 12 Botellas</h5>
+          <p>Wzc12a</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 420.000,00</span><br>
+              <span class="price-socio">$ 315.000,00</span><br>
+              <small class="cuotas">4 cuotas de $ 78.750,00</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 420.000,00</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-      <!-- <div>
-        <a href="../index.html">
-          <img class="logoPaginas " width="150" src="../image/Logo Asociacion Mutual.JPG" alt=""></a>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">35% OFF</span>
+        <img class="mt-4 pt-4" src="../image/batidorapeabody.jpg" style="height: auto;">
+        <div class="product-info">
+          <h5>Batidora de mano    <br>Peabody</h5>
+          <p>PE-HMA550</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 64.999,00</span><br>
+              <span class="price-socio">$ 42.249,35</span><br>
+              <small class="cuotas">4 cuotas de $ 7.041,56</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 65.000,00</span>
+            </div>
+          </div>
+        </div>
       </div>
-       -->
+    </div>
 
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">30% OFF</span>
+        <img class="mt-4 pt-4" src="../image/plancha.png" style="height: auto;">
+        <div class="product-info">
+          <h5>Plancha Grill<br>Antiadherente</h5>
+          <p>28 cm diámetro</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 19.990,00</span><br>
+              <span class="price-socio">$ 13.993,00</span><br>
+              <small class="cuotas">4 cuotas de $ 3.498,25</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 19.900,00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <section class="py-4"><br><br>
-        <div class="container px-4 px-lg-5 mt-2">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">45% OFF</span>
+        <img class="mt-4 pt-4" src="../image/calefactorpared.jpg" style="height: auto;">
+        <div class="product-info">
+          <h5>Calefactor de pared<br>Liliana</h5>
+          <p>para exterior</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 97.000,00</span><br>
+              <span class="price-socio">$ 53.350,00</span><br>
+              <small class="cuotas">4 cuotas de $ 13.337,50</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 100.000,00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
                  
-                
-    <div class="col mb-5">
-      <div class="card h-100">
-        <!-- Sale badge-->
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-35%</div>
-          <!-- Product image-->  
-          <img class="card-img-top" src="../image/batidorapeabody.jpg"/>
-          <!-- Product details-->
-          <div class="card-body p-4">
-              <div class="text-center">
-                  <!-- Product name--> 
-                  <h5 class="fw-bolder">Batidora de mano <br>Peabody </h5>
-                  <span>PE-HMA550</span> <br>
-                     <!-- Product price -->
-                    <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-muted text-decoration-line-through">$ 64.999,00</span> <br>
-                  <span>$ 42.249,35 <br>
-                  6 cuotas de $ 7.041,56<br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                  $ 65.000,00
-                  </span>
-              </div>  
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">45% OFF</span>
+        <img src="../image/cargador.jpg" style="height: auto;">
+        <div class="product-info">
+          <h5>Cargador portatil<br>Megalite</h5>
+          <p>2200mAh</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 11.100,00</span><br>
+              <span class="price-socio">$ 6.105,00</span><br>
+              <small class="cuotas">4 cuotas de $ 1.526,25</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 11.100,00</span>
+            </div>
           </div>
+        </div>
       </div>
-      </div>
-       
-                
-    <div class="col mb-5">
-      <div class="card h-100">
-        <!-- Sale badge-->
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-          <!-- Product image-->  
-          <img class="card-img-top" src="../image/first/mouse.png"/>
-          <!-- Product details-->
-          <div class="card-body p-4">
-              <div class="text-center">
-                  <!-- Product name--> 
-                  <h5 class="fw-bolder">Mouse Inalambrico <br>Crown Mustang Kaneda </h5>
-                     <!-- Product price -->
-                    <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-muted text-decoration-line-through">$ 36.800,00</span> <br>
-                  <span>$ 25.760,00 <br>
-                  4 cuotas de $ 6.440,00<br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                  $ 38.000,00
-                  </span>
-              </div>
+    </div>
+
+                 
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">45% OFF</span>
+        <img class="mt-4 pt-4" src="../image/PESAS.png" style="height: auto;">
+        <div class="product-info mt-4 pt-4">
+          <h5 class="mt-4 ">Pesas Rusas <br>2 kg</h5>
+          <p>VALOR UNITARIO</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 6.000,00</span><br>
+              <span class="price-socio">$ 3.300,00</span><br>
+              <small class="cuotas">4 cuotas de $ 825,00</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 7.000,00</span>
+            </div>
           </div>
+        </div>
       </div>
-      </div>
-                
-    <div class="col mb-5">
-      <div class="card h-100">
-        <!-- Sale badge-->
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-          <!-- Product image-->  
-          <img class="card-img-top" src="../image/plancha.png"/>
-          <!-- Product details-->
-          <div class="card-body p-4">
-              <div class="text-center">
-                  <!-- Product name--> 
-                  <h5 class="fw-bolder">Plancha Grill<br>Antiadherente</h5>
-                  <span>28 cm diámetro</span> <br>
-                    <!-- Product price -->
-                    <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-muted text-decoration-line-through">$ 19.990,00</span> <br>
-                  <span>$ 13.993,00 <br>
-                  4 cuotas de $ 3.498,25<br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                  $ 20.000,00
-                  </span>
-              </div>
+    </div>
+
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">45% OFF</span>
+        <img src="../image/lamparaled.jfif"  style="height: auto;">
+        <div class="product-info">
+          <h5>Lámpara Led  </h5>
+          <p>ALIC 7w</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 1.200,00</span><br>
+              <span class="price-socio">$ 660,00</span><br>
+              <small class="cuotas">4 cuotas de $ 165,00</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 2.000,00</span>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">45% OFF</span>
+        <img src="../image/piscina.jpg"  style="height: auto;">
+        <div class="product-info">
+          <h5>Piscina Mor <br>  1,15 x 1,06 x 33 cm </h5>
+          <p>Capacidad 400 ltds</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
+              <span class="price-socio">$ 22.000,00</span><br>
+              <small class="cuotas">4 cuotas de $ 5.500,00</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 40.000,00</span>
+            </div>
+          </div>
+        </div>
       </div>
-                
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">45% OFF</span>
+        <img src="../image/silla.png"  style="height: auto;">
+        <div class="product-info">
+          <h5>Silla  </h5>
+          <p>para oficina </p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 50.000,00</span><br>
+              <span class="price-socio">$ 27.500,00</span><br>
+              <small class="cuotas">4 cuotas de $ 6.875,00</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 60.000,00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">45% OFF</span>
+        <img src="../image/sillabici.png"  style="height: auto;">
+        <div class="product-info">
+          <h5>Silla + Casco   </h5>
+          <p>para bici </p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 55.000,00</span><br>
+              <span class="price-socio">$ 30.250,00</span><br>
+              <small class="cuotas">4 cuotas de $ 7.562,50</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 60.000,00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">45% OFF</span>
+        <img src="../image/almohadasilla.png" class="mt-2"  style="height: auto;">
+        <div class="product-info">
+          <h5>Cojin</h5>
+          <p>TheraMart</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 95.000,00</span><br>
+              <span class="price-socio">$ 52.250,00</span><br>
+              <small class="cuotas">4 cuotas de $ 13.062,50</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 111.000,00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                 
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">45% OFF</span>
+        <img src="../image/zapatos2.jpg" class="mt-4" style="height: auto;">
+        <div class="product-info">
+          <h5>Botas</h5>
+          <p>Talle: 35</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 55.000,00</span><br>
+              <span class="price-socio">$ 30.250,00</span><br>
+              <small class="cuotas">4 cuotas de $ 7.562,50</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 60.000,00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     
-      
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
-            <!-- Product image--> 
-            <img class="card-img-top" src="../image/calefactorpared.jpg" alt="lamparA" />
-            <!-- Product details-->
-            <div class="card-body p-4">
-                <div class="text-center">
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder">Calefactor de pared <br>para exterior<br>Liliana <br></h5>
-                      <!-- Product price -->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                    <span class="text-muted text-decoration-line-through">$ 97.000,00</span> <br>
-                    <span>$ 53.350,00 <br>
-                    4 cuotas de $ 13.337,50 <br><hr>
-                    <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                    $ 116.000,00
-                    </span>
-                </div>
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">30% OFF</span>
+        <img src="../image/spider018.png" style="height: auto;">
+        <div class="product-info">
+          <h5>Spider Man </h5>
+          <p>Libro Nro 18</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 1.490,00</span><br>
+              <span class="price-socio">$ 1.043,00</span><br>
+              <small class="cuotas">4 cuotas de $ 260,75</small>
             </div>
-        </div>
-      </div>
-                
-    <div class="col mb-5">
-      <div class="card h-100">
-        <!-- Sale badge-->
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
-          <!-- Product image-->  
-          <img class="card-img-top" src="../image/cargador.jpg" alt="lamparA" />
-          <!-- Product details-->
-          <div class="card-body p-4">
-              <div class="text-center">
-                  <!-- Product name--> 
-                  <h5 class="fw-bolder">Cargador portatil <br>Megalite 2200mAh</h5>
-                    <!-- Product price -->
-                    <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-muted text-decoration-line-through">$ 11.100,00</span> <br>
-                  <span>$ 6.105,00 <br>
-                  4 cuotas de $ 1.526,25<br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                  $ 11.100,00
-                  </span>
-              </div>
-          </div>
-      </div>
-      </div>
-
-
-                                     
-                <div class="col mb-5">
-                  <div class="card h-100">
-                    <!-- Sale badge--> 
-                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
-                      <!-- Product image--> <br><br> 
-                      <img class="card-img-top mt-4 pt-4" src="../image/PESAS.png" alt="" />
-                      <!-- Product details-->
-                      <div class="card-body p-2">  
-                          <div class="text-center pt-4 mt-4">
-                              <!-- Product name-->
-                              <h5 class="fw-bolder pt-4 mt-4">Pesas Rusas 
-                              <br>2 kg</h5>
-                              valor por cada una <br>
-                                <!-- Product price -->
-                                <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                              <span class="text-muted text-decoration-line-through">$ 6.000,00</span> <br>
-                              <span>$ 3.300,00 <br>
-                              4 cuotas de $ 825,00 <br><hr>
-                              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                              $ 9.000,00
-                              </span>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-                          
-                <div class="col mb-5">
-                  <div class="card h-100">
-                    <!-- Sale badge--> 
-                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-30%</div>
-                      <!-- Product image-->  
-                      <img class="card-img-top  " src="../image/spider018.png" alt="" />
-                      <!-- Product details-->
-                      <div class="card-body p-2">  
-                          <div class="text-center">
-                              <!-- Product name-->
-                              <h5 class="fw-bolder">Spider Man 
-                              <br>Libro nro 18</h5>
-                                <!-- Product price -->
-                                <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                              <span class="text-muted text-decoration-line-through">$ 1.490,00</span> <br>
-                              <span>$ 1.043,00 <br>
-                              4 cuotas de $ 260,75 <br><hr>
-                              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                              $ 1.490,00
-                              </span>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-  
-               
-
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
-            <!-- Product image--> 
-            <img class="card-img-top mt-4 pt-4" src="../image/lamparaled.jfif" alt="lamparA" />
-            <!-- Product details-->
-            <div class="card-body p-4">
-                <div class="text-center"> 
-                    <!-- Product name-->
-                    <h5 class="fw-bolder">Lámpara Led  <br> 
-                      ALIC 7w</h5>
-                     <!-- Product price -->
-                     <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                    <span class="text-muted text-decoration-line-through">$ 1.200,00</span> <br>
-                    <span>$ 660,00 <br>
-                    4 cuotas de $ 165,00<br><hr>
-                    <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                    $ 1.200,00
-                    </span>
-                </div>
-            </div>
-        </div>
-        </div>
-  
- 
-             
-      
-
-    <div class="col mb-5">
-      <div class="card h-100">
-        <!-- Sale badge-->
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
-          <!-- Product image-->  
-          <img class="card-img-top mt-4 pt-4 " src="../image/piscina.jpg"  />
-          <!-- Product details-->
-          <div class="card-body p-2">
-              <div class="text-center">
-                  <!-- Product name-->  
-                  <h5 class="fw-bolder">Piscina Mor <br>  1,15 x 1,06 x 33 cm</h5> 
-                  <b> Capacidad 400 ltds</b> <br>
-                    <!-- Product price -->
-                    <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                  <span class="text-muted text-decoration-line-through">$ 40.000,00</span> <br>
-                  <span>$ 22.000,00 <br>
-                  4 cuotas de $ 5.500,00 <br><hr>
-                  <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                  $ 41.500,00
-                  </span>
-              </div>
-          </div>
-      </div>
-      </div>
-
-
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
-            <!-- Product image--> 
-            <img class="card-img-top " src="../image/silla.png" alt="lamparA" />
-            <!-- Product details-->
-            <div class="card-body p-2">
-                <div class="text-center">
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder">Silla para oficina</h5> 
-                      <!-- Product price -->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                    <span class="text-muted text-decoration-line-through">$ 50.000,00</span> <br>
-                    <span>$ 27.500,00 <br>
-                    4 cuotas de $ 6.875,00<br><hr>
-                    <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                    $ 60.500,00
-                    </span>
-                </div>
-            </div>
-        </div>
-        </div>
-
-        
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
-            <!-- Product image-->    
-            <img class="card-img-top " src="../image/sillabici.png" alt="lamparA" />
-            <!-- Product details-->
-            <div class="card-body p-2">
-                <div class="text-center pt-4">
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder">Silla + Casco para bici</h5> 
-                      <!-- Product price -->
-                      <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                    <span class="text-muted text-decoration-line-through">$ 55.000,00</span> <br>
-                    <span>$ 30.250,00 <br>
-                    4 cuotas de $ 7.562,50 <br><hr>
-                    <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                    $ 65.500,00
-                  </span>
-                </div>
-            </div>
-        </div>
-        </div>
-  
-        <div class="col mb-5">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
-              <!-- Product image-->    
-              <img class="card-img-top pt-4 mt-4" src="../image/almohadasilla.png" alt="lamparA" />
-              <!-- Product details-->
-              <div class="card-body p-2">
-                  <div class="text-center">
-                      <!-- Product name-->  
-                      <h5 class="fw-bolder ">Cojin</h5> 
-                      TheraMart<br> 
-                        <!-- Product price -->
-                        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-muted text-decoration-line-through">$ 95.000,00</span> <br>
-                      <span>$ 52.250,00 <br>
-                      4 cuotas de $ 13.062,50 <br><hr>
-                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                      $ 110.500,00
-                      </span>
-                  </div>
-              </div>
-          </div>
-          </div>
-
-                                
-
-
-        <div class="col mb-5">
-          <div class="card h-100">
-            <!-- Sale badge-->
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
-              <!-- Product image-->    
-              <img class="card-img-top mt-4 pt-4" src="../image/zapatos2.jpg" alt="" />
-              <!-- Product details-->
-              <div class="card-body p-2">
-                  <div class="text-center">
-                      <!-- Product name-->  
-                      <h5 class="fw-bolder pt-4  ">Botas</h5>
-                      Talle: 35<br> 
-                        <!-- Product price -->
-                        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-muted text-decoration-line-through">$ 28.000,00</span> <br>
-                      <span>$ 15.400,00 <br>
-                      4 cuotas de $ 3.850,00 <br><hr>
-                      <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                      $ 30.500,00
-                      </span>
-                  </div>
-              </div>
-          </div>
-          </div>
-
-      
-          <div class="col mb-5">
-            <div class="card h-100">
-              <!-- Sale badge--> 
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
-                <!-- Product image-->  
-                <img class="card-img-top pt-4 mt-4" src="../image/mutuallibre/pawpatrol.jpg" alt="" />
-                <!-- Product details-->
-                <div class="card-body p-2">  
-                    <div class="text-center">
-                        <!-- Product name-->
-                        <h5 class="fw-bolder pt-4 mt-4">Juego PS4 
-                        <br>Paw Patrol</h5>
-                          <!-- Product price -->
-                          <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                        <span class="text-muted text-decoration-line-through">$ 21.500,00</span> <br>
-                        <span>$ 11.825,00 <br>
-                        4 cuotas de $ 2.956,25 <br><hr>
-                        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                        $ 21.500,00
-                        </span>
-                    </div>
-                </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 2.000,00</span>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-12 col-sm-6 col-lg-3">
+      <div class="product-card tinto">
+        <span class="badge-discount">45% OFF</span>
+        <img src="../image/mutuallibre/pawpatrol.jpg" style="height: auto;">
+        <div class="product-info">
+          <h5>Juego PS4</h5>
+          <p>Paw Patrol</p><hr>
+            <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 21.500,00</span><br>
+              <span class="price-socio">$ 11.825,00</span><br>
+              <small class="cuotas">4 cuotas de $ 2.956,25</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 22.000,00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                 
+     
      
 
             
@@ -464,6 +569,41 @@
 
     <!-- JAVA -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+     <div id="navbar"></div>
+    <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Mover aquí el contenido de navbar.js
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuClose = document.getElementById("menu-close");
+
+      if (menuToggle && menu && menuClose) {
+        menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+        });
+
+        menuClose.addEventListener("click", function () {
+          menu.classList.remove("active");
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+</script>
      
     </html>
 </body>

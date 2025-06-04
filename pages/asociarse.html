@@ -76,48 +76,9 @@
     <!-- Ícono de WhatsApp -->
     <i class="fab fa-whatsapp"></i>
   </a>
-  <nav class="navbar navbar-dark fixed-top bg-secondary">    
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Asociarse</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <li class="nav-item">
-              <hr class="bg-light">
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
-              <ul class="dropdown-menu"> 
-              <li><a href="../pages/almacen.html" class="nav-link px-2 text-white bg-secondary">Almacen</a></li>    
-              <li><a href="../pages/aperitivos.html" class="nav-link px-2 text-white bg-secondary">Bebidas</a></li>    
-              <li><a href="../pages/canjes.html" class="nav-link px-2 text-white bg-secondary">Canjes</a></li>
-              <li><a href="../pages/feria.html" class="nav-link px-2 text-white bg-secondary">Feria</a></li>  
-              <li><a href="../pages/hogar.html" class="nav-link px-2 text-white bg-secondary">Hogar</a></li>
-              <li><a href="../pages/juegos.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
-              <li><a href="../pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
-                </ul> 
-              </li>
-              
-                <a class="nav-link active;" aria-current="page" href="../pages/ayudaeconomica.html">Ayuda Económica</a>
-                <a class="nav-link active" aria-current="page" href="../pages/colecciones.html">Colecciones LN</a>
-                <a class="nav-link active" aria-current="page" href="../pages/productos.html">Productos</a>
-                <a class="nav-link active" aria-current="page" href="../pages/subsidios.html">Subsidios</a>
-                <a class="nav-link active" aria-current="page" href="../pages/asociarse.html">Asociarse</a>
-                <a class="nav-link active" aria-current="page" href="../pages/contacto.html">Contacto</a>
-                <hr class="bg-light">
-                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-              </li>
-          </li>
-        </ul> 
-      </div>
-    </div>
-  </nav>
-   
   
  
-  <div class="container mt-5 pt-4">
+  <div class="container  ">
     <div class="row justify-content-center align-items-center">
       <div class="col-12 col-md-10 col-lg-10">
         <div class="card shadow-sm rounded p-4 border-0">
@@ -126,8 +87,8 @@
             Para asociarse a la Mutual debe contar con al menos <strong>3 meses de antigüedad</strong> en la compañía.
             Complete el formulario de alta, envíelo por mail y recibirá una confirmación con su número de socio correspondiente.
           </p>
-          <a href="../image/Solicitudingreso.xls" class="btn btn-outline-primary mb-4" style="padding-left: 8px; padding-right: 8px;">
-            <i class="fas fa-file-download me-2"></i> Descargar formulario
+          <a href="../pages/ingreso.html" class="btn btn-outline-primary mb-4" style="padding-left: 8px; padding-right: 8px;">
+            <i class="fas fa-file-download me-2"></i> Cargar formulario
         </a>
  
                 
@@ -135,13 +96,13 @@
           <h5 class="fw-bold text-secondary">Valor de la cuota social</h5>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
-              <strong>Socios Activos:</strong> <span class="text-success"><b>$ 12.400,00</b></span><br>
+              <strong>Socios Activos:</strong> <span class="text-success"><b>$ 14.800,00</b></span><br>
               Serán consideradas las personas de existencia visible, mayores de 21 años, que pertenezcan al personal de LA NACIÓN y abonen las cuotas establecidas. <br> Gozarán de los servicios sociales y tendrán derecho a integrar y a elegir los órganos directivos previstos en los Estatutos. <br> Las cuotas serán fijadas de acuerdo con una escala que establecerá la Asamblea tomando como pauta el monto del sueldo abonado por la Sociedad Anónima LA NACION a cada uno de sus miembros.             </li>
             <li class="list-group-item">
-              <strong>Socios Jubilados:</strong> <span class="text-success"><b>$ 6.200,00</b></span><br>
+              <strong>Socios Jubilados:</strong> <span class="text-success"><b>$ 7.400,00</b></span><br>
               Los socios de esta categoría conservarán su calidad de socios abonando el 50% de la cuota que pague el personal en actividad.</li>
             <li class="list-group-item">
-              <strong>Socios Adherentes:</strong> <span class="text-success"><b>$ 12.400,00</b></span><br>
+              <strong>Socios Adherentes:</strong> <span class="text-success"><b>$ 14.800,00</b></span><br>
               Serán las personas mayores de 21 años que hayan pertenecido a La Nación, abonando el mismo valor que a las cuotas fijadas para los socios activos. </li>
           </ul>
         </div>
@@ -164,7 +125,40 @@
 
     <!-- JAVA -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
+     <div id="navbar"></div>
+    <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Mover aquí el contenido de navbar.js
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuClose = document.getElementById("menu-close");
+
+      if (menuToggle && menu && menuClose) {
+        menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+        });
+
+        menuClose.addEventListener("click", function () {
+          menu.classList.remove("active");
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+</script>
 
 </body>
 </html>

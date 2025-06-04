@@ -1,0 +1,48 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const consulta = localStorage.getItem("terminoBusqueda") || "";
+  const resultadosDiv = document.getElementById("resultados");
+
+  if (!consulta) {
+    resultadosDiv.innerHTML = "<p>No se proporcionó un término de búsqueda.</p>";
+    return;
+  }
+
+  const paginas = [
+    "aperitivos.html", "almacen.html", "tienda.html",
+    "canjes.html", "hogar.html", "electro.html",
+    "feria.html", "juegos.html", "puravida.html",
+    "biferdil.html", "lidherma.html", "perfumes.html",
+    "nega.html", "accesorios.html", "calzado.html",
+    "camping.html", "swissbrand.html", "deportfem.html",
+    "deportmasc.html", "kankay.html", "pijamas.html"
+  ];
+
+  const fetchPromises = paginas.map(pagina => fetch("pages/" + pagina));
+
+  Promise.all(fetchPromises)
+    .then(responses => Promise.all(responses.map(r => r.text())))
+    .then(htmlArray => {
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = htmlArray.join("");
+      const productos = tempDiv.querySelectorAll(".card, .product-card");
+
+      const resultados = Array.from(productos).filter(p => {
+        const titulo = p.querySelector("h5")?.innerText.toLowerCase() || "";
+        return titulo.includes(consulta.toLowerCase());
+      });
+
+      resultadosDiv.innerHTML = resultados.length > 0
+        ? `
+          <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="color: #0e0157;">Resultados para: "${consulta}"</h2>
+            <p>${resultados.length} resultado${resultados.length !== 1 ? 's' : ''} encontrado${resultados.length !== 1 ? 's' : ''}.</p>
+          </div>
+          <div class="grid-resultados">
+            ${resultados.map(p => `<div class="resultado">${p.outerHTML}</div>`).join("")}
+          </div>
+        `
+        : `<p style="text-align:center;">No se encontraron resultados para <b>${consulta}</b>.</p>`;
+    });
+});
+</script>

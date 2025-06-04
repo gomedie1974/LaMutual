@@ -151,49 +151,9 @@
     <!-- Ícono de WhatsApp -->
     <i class="fab fa-whatsapp"></i>
   </a>
-<nav class="navbar navbar-dark  bg-secondary">    
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Detalle de Gastos</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <li class="nav-item">
-                  <hr class="bg-light">
-                  <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
-                  <ul class="dropdown-menu"> 
-                  <li><a href="../pages/almacen.html" class="nav-link px-2 text-white bg-secondary">Almacen</a></li>    
-                  <li><a href="../pages/aperitivos.html" class="nav-link px-2 text-white bg-secondary">Bebidas</a></li>    
-                  <li><a href="../pages/canjes.html" class="nav-link px-2 text-white bg-secondary">Canjes</a></li>
-                  <li><a href="../pages/feria.html" class="nav-link px-2 text-white bg-secondary">Feria</a></li>  
-                  <li><a href="../pages/hogar.html" class="nav-link px-2 text-white bg-secondary">Hogar</a></li>
-                  <li><a href="../pages/juegos.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
-                  <li><a href="../pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
-                    </ul> 
-                  </li>
-                  
-                    <a class="nav-link active" aria-current="page" href="../pages/ayudaeconomica.html">Ayuda Económica</a>
-                    <a class="nav-link active" aria-current="page" href="../pages/colecciones.html">Colecciones LN</a>
-                    <a class="nav-link active" aria-current="page" href="../pages/productos.html">Productos</a>
-                    <a class="nav-link active" aria-current="page" href="../pages/subsidios.html">Subsidios</a>
-                    <a class="nav-link active" aria-current="page" href="../pages/asociarse.html">Asociarse</a>
-                    <a class="nav-link active" aria-current="page" href="../pages/contacto.html">Contacto</a>
-                    <hr class="bg-light">
-                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-                  </li>
-              </li>
-            </ul> 
-          </div>
-        </div>
-      </nav>
-      <br> 
-<br> 
-      <div >
-        <p style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">05/05/2025 13:00 hs</strong></p>
+       <div >
+        <p class='mt-2' style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
+        <p style="text-align: center">Última actualización: <strong style="color: red;">04/06/2025 10:00 hs</strong></p>
           <!-- <p style="text-align: center; color: blue"><b><u>PRÓXIMA ACTUALIZACIÓN 03/02/2025 </u></b></p> -->
           <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
@@ -239,7 +199,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
 
      // Obtengo el apellido y nombre desde la base de datos
-     $sqlNombre = "SELECT apellidoNombre FROM cc050525 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
+     $sqlNombre = "SELECT apellidoNombre FROM cc04062025 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
      $resultNombre = $conn->query($sqlNombre);
      if ($resultNombre->num_rows > 0) {
          $rowNombre = $resultNombre->fetch_assoc();
@@ -249,7 +209,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      }            
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM cc050525               
+                FROM cc04062025               
                 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
         
@@ -424,6 +384,41 @@ function validarFormulario() {
   <!-- JAVA -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <div id="navbar"></div>
+    <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Mover aquí el contenido de navbar.js
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuClose = document.getElementById("menu-close");
+
+      if (menuToggle && menu && menuClose) {
+        menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+        });
+
+        menuClose.addEventListener("click", function () {
+          menu.classList.remove("active");
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+</script>
 
 </body>
 </html>

@@ -18,52 +18,109 @@
         <link rel="stylesheet" href="../style/style.css">
         
     </head>
-    
+
+<style>
+
+     .card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+ 
+.card h5 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.card-body {
+  padding: 1.25rem;
+  background-color: #fff;
+}
+
+.card .badge {
+  background-color: #ff3366;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35em 0.7em;
+  border-radius: 1rem;
+}
+
+.card .card-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card .btn-primary {
+  background-color: #0066cc;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.card .btn-primary:hover {
+  background-color: #004c99;
+  transform: scale(1.05);
+}
+
+.price-section {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.price-section span {
+  display: block;
+}
+
+.zoom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.zoom-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+.badge-discount {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: #ff6b6b;
+      color: white;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      border-radius: 8px;
+}
+
+</style>
         
 <body >
   <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
     <!-- Ícono de WhatsApp -->
     <i class="fab fa-whatsapp"></i>
   </a>
-  <nav class="navbar navbar-dark fixed-top bg-secondary">    
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Juegos</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <li class="nav-item">
-              <hr class="bg-light">
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
-              <ul class="dropdown-menu"> 
-              <li><a href="../pages/almacen.html" class="nav-link px-2 text-white bg-secondary">Almacen</a></li>    
-              <li><a href="../pages/aperitivos.html" class="nav-link px-2 text-white bg-secondary">Bebidas</a></li>    
-              <li><a href="../pages/canjes.html" class="nav-link px-2 text-white bg-secondary">Canjes</a></li>
-              <li><a href="../pages/feria.html" class="nav-link px-2 text-white bg-secondary">Feria</a></li>  
-              <li><a href="../pages/hogar.html" class="nav-link px-2 text-white bg-secondary">Hogar</a></li>
-              <li><a href="../pages/juegos.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
-              <li><a href="../pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
-              <li><a href="../pages/solares.html" class="nav-link px-2 text-white bg-secondary">Solares</a></li>
-                </ul> 
-              </li>
-              
-                <a class="nav-link active" aria-current="page" href="../pages/ayudaeconomica.html">Ayuda Económica</a>
-                <a class="nav-link active" aria-current="page" href="../pages/colecciones.html">Colecciones LN</a>
-                <a class="nav-link active" aria-current="page" href="../pages/productos.html">Productos</a>
-                <a class="nav-link active" aria-current="page" href="../pages/subsidios.html">Subsidios</a>
-                <a class="nav-link active" aria-current="page" href="../pages/asociarse.html">Asociarse</a>
-                <a class="nav-link active" aria-current="page" href="../pages/contacto.html">Contacto</a>
-                <hr class="bg-light">
-                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-              </li>
-          </li>
-        </ul> 
-      </div>
-    </div>
-  </nav>
+  
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -76,7 +133,7 @@
     }
   });
   </script>
-  <section class="py-4"> <br><br> 
+  <section class="py-4">  
    
      <div class="container px-4 px-lg-5 mt-2">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -84,7 +141,7 @@
           
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/CARRERADEMENTECARTAS1.jpg" alt="uno" />
                 <!-- Product details-->
@@ -105,7 +162,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/CarreradeMenteCartas2.png" alt="uno" />
                 <!-- Product details-->
@@ -127,7 +184,7 @@
                     
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/digalo.jpg" alt="uno" />
                 <!-- Product details-->
@@ -137,10 +194,10 @@
                         <h5 class="fw-bolder pt-2">Dígalo con Lapíz</h5>
                         <!-- Product price-->
                         <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-muted text-decoration-line-through">$ 34.995,00</span> <br>  
-                        $ 27.996,00 <br> 4 cuotas de $ 6.999,00 <br><hr>
+                      <span class="text-muted text-decoration-line-through">$ 44.995,00</span> <br>  
+                        $ 35.996,00 <br> 4 cuotas de $ 8.999,00 <br><hr>
                     <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                      $ 36.500,00
+                      $ 50.500,00
                       </div>
                 </div>
             </div>
@@ -148,7 +205,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/conejos.jpg" alt="uno" />
                 <!-- Product details-->
@@ -158,10 +215,10 @@
                         <h5 class="fw-bolder pt-2">Conejos en el Huerto</h5>
                         <!-- Product price-->
                         <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-muted text-decoration-line-through">$ 44.559,00</span> <br>  
-                        $ 35.647,20 <br> 4 cuotas de $ 8.911,80 <br><hr>
+                      <span class="text-muted text-decoration-line-through">$ 54.559,00</span> <br>  
+                        $ 43.647,20 <br> 4 cuotas de $ 10.911,80 <br><hr>
                     <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                      $ 46.500,00
+                      $ 60.500,00
                       </div>
                 </div>
             </div>
@@ -169,7 +226,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/misterio.png" alt="uno" />
                 <!-- Product details-->
@@ -179,10 +236,10 @@
                         <h5 class="fw-bolder pt-2">Misterio</h5>
                         <!-- Product price-->
                         <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-muted text-decoration-line-through">$ 24.088,00</span> <br>  
-                        $ 19.270,40 <br> 4 cuotas de $ 4.817,60 <br><hr>
+                      <span class="text-muted text-decoration-line-through">$ 34.088,00</span> <br>  
+                        $ 27.270,40 <br> 4 cuotas de $ 6.817,60 <br><hr>
                     <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                      $ 25.500,00
+                      $ 40.500,00
                       </div>
                 </div>
             </div>
@@ -190,7 +247,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/trustfciero.jpg" alt="uno" />
                 <!-- Product details-->
@@ -200,10 +257,10 @@
                         <h5 class="fw-bolder pt-2">Trust Financiero</h5>
                         <!-- Product price-->
                         <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-muted text-decoration-line-through">$ 24.404,00</span> <br>  
-                        $ 19.523,20 <br> 4 cuotas de $ 4.880,80 <br><hr>
+                      <span class="text-muted text-decoration-line-through">$ 40.404,00</span> <br>  
+                        $ 32.323,20 <br> 4 cuotas de $ 8.080,80 <br><hr>
                     <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                      $ 25.500,00
+                      $ 45.500,00
                       </div>
                 </div>
             </div>
@@ -212,7 +269,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/carreraaniversario.png" alt="uno" />
                 <!-- Product details-->
@@ -222,10 +279,10 @@
                         <h5 class="fw-bolder pt-2">Carrera de Mente Aniversario</h5>
                         <!-- Product price-->
                         <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-muted text-decoration-line-through">$ 37.050,00</span> <br>  
-                        $ 29.640,00 <br> 4 cuotas de $ 7.410,00 <br><hr>
+                      <span class="text-muted text-decoration-line-through">$ 47.050,00</span> <br>  
+                        $ 37.640,00 <br> 4 cuotas de $ 9.410,00 <br><hr>
                     <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                      $ 39.500,00
+                      $ 59.500,00
                       </div>
                 </div>
             </div>
@@ -233,7 +290,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/donrastrillo.jpg" alt="uno" />
                 <!-- Product details-->
@@ -243,10 +300,10 @@
                         <h5 class="fw-bolder pt-2">Don Rastrillo en la Granja</h5>
                         <!-- Product price-->
                         <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-muted text-decoration-line-through">$ 17.607,00</span> <br>  
-                        $ 14.085,60 <br> 4 cuotas de $ 3.521,40 <br><hr>
+                      <span class="text-muted text-decoration-line-through">$ 25.607,00</span> <br>  
+                        $ 20.485,60 <br> 4 cuotas de $ 5.121,40 <br><hr>
                     <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                      $ 19.500,00
+                      $ 39.500,00
                       </div>
                 </div>
             </div>
@@ -254,7 +311,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/primerasletras.jpg" alt="uno" />
                 <!-- Product details-->
@@ -275,7 +332,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/dominoanimales.jpg" alt="uno" />
                 <!-- Product details-->
@@ -296,7 +353,7 @@
  
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/Ruibal/losopuestos.jpg" alt="uno" />
                 <!-- Product details-->
@@ -317,7 +374,7 @@
 
         <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div> 
+            <span class="badge-discount">20% OFF</span>
                 <!-- Product image-->
                 <img class="card-img-top zoomable" src="../image/Ruibal/animalesescondidos.jpg" alt="carrera" />
                 <!-- Product details-->
@@ -342,7 +399,7 @@
  
       <div class="col mb-5">
           <div class="card h-100">
-            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+         <span class="badge-discount">20% OFF</span>
               <!-- Product image-->
               <img class="card-img-top zoomable" src="../image/Ruibal/crucigrama.jpg" alt="carrera" />
               <!-- Product details-->
@@ -353,10 +410,10 @@
                       </h5>
                       <!-- Product price-->
                       <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                    <span class="text-muted text-decoration-line-through">$ 20.400,00</span> <br>  
-                      $ 16.320,00 <br> 4 cuotas de $ 4.080,00   <br><hr>
+                    <span class="text-muted text-decoration-line-through">$ 40.400,00</span> <br>  
+                      $ 32.320,00 <br> 4 cuotas de $ 8.080,00   <br><hr>
                       <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>    
-                      $ 22.000,00            
+                      $ 52.000,00            
                   </div>
               </div>            
           </div>
@@ -366,7 +423,7 @@
     
     <div class="col mb-5">
       <div class="card h-100">
-        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
           <!-- Product image-->
           <img class="card-img-top zoomable  " src="../image/Ruibal/mrsabio.jpg" alt="uno" />
           <!-- Product details-->
@@ -376,10 +433,10 @@
                   <h5 class="fw-bolder  ">Mister Sabio</h5>
                   <!-- Product price-->
                   <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br>         
-                  <span class="text-muted text-decoration-line-through">$ 18.590,00</span> <br>  
-                  $ 14.872,00 <br> 4 cuotas de $ 3.718,00 <br><hr>
+                  <span class="text-muted text-decoration-line-through">$ 28.590,00</span> <br>  
+                  $ 22.872,00 <br> 4 cuotas de $ 5.718,00 <br><hr>
                   <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                  $ 19.900,00 
+                  $ 32.900,00 
                  </div> 
           </div>
       </div>
@@ -388,7 +445,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/vehiculoelectrico.jpeg" />
                 <!-- Product details-->
@@ -410,7 +467,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/librodidactico.jpeg" />
                 <!-- Product details-->
@@ -432,7 +489,7 @@
     
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/1.png" />
                 <!-- Product details-->
@@ -454,7 +511,7 @@
              
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/10.png" alt="uno" />
                 <!-- Product details-->
@@ -476,7 +533,7 @@
           
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/11.png" alt="uno" />
                 <!-- Product details-->
@@ -498,7 +555,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/12.png" alt="uno" />
                 <!-- Product details-->
@@ -520,7 +577,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> 
                 <img class="card-img-top zoomable" src="../image/novedades/popithelado1.jpg" style="width: 80%;" alt="uno" />
                 <!-- Product details-->
@@ -543,7 +600,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/16.png" alt="uno" />
                 <!-- Product details-->
@@ -565,7 +622,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/17.png" alt="uno" />
                 <!-- Product details-->
@@ -587,7 +644,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image-->  
                 <img class="card-img-top zoomable" src="../image/novedades/18.png" alt="uno" />
                 <!-- Product details-->
@@ -609,7 +666,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image-->  
                 <img class="card-img-top zoomable" src="../image/novedades/19.png" alt="uno" />
                 <!-- Product details-->
@@ -632,7 +689,7 @@
  
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/22.png" alt="uno" />
                 <!-- Product details-->
@@ -651,33 +708,11 @@
                 </div>
             </div>
         </div>
-
-          <div class="col mb-5">
-            <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
-                <!-- Product image-->  
-                <img class="card-img-top zoomable" src="../image/novedades/23.png" alt="uno" />
-                <!-- Product details-->
-                <div class="card-body ">
-                    <div class="text-center">
-                        <!-- Product name--> 
-                        <h5 class="fw-bolder ">Slime huevo dinosaurio
-                        </h5>
-                        <!-- Product price-->
-                        <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-                      <span class="text-muted text-decoration-line-through">$ 6.500,00</span> <br>  
-                        $ 5.200,00 <br> 4 cuotas de $ 1.300,00 <br><hr>
-                    <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-                      $ 8.000,00
-                      </div>
-                </div>
-            </div>
-        </div>
  
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/25.png" alt="uno" />
                 <!-- Product details-->
@@ -700,7 +735,7 @@
  
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/28.png" alt="uno" />
                 <!-- Product details-->
@@ -722,7 +757,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/29.png" alt="uno" />
                 <!-- Product details-->
@@ -744,7 +779,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/30.png" alt="uno" />
                 <!-- Product details-->
@@ -766,7 +801,7 @@
  
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/32.png" alt="uno" />
                 <!-- Product details-->
@@ -790,7 +825,7 @@
  
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/36.png" alt="uno" />
                 <!-- Product details-->
@@ -814,7 +849,7 @@
 
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image-->  
                 <img class="card-img-top zoomable" src="../image/novedades/44.png" alt="uno" />
                 <!-- Product details-->
@@ -837,7 +872,7 @@
           
           <div class="col mb-5">
             <div class="card h-100">
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
                 <!-- Product image--> <br>
                 <img class="card-img-top zoomable" src="../image/novedades/47.jpg" alt="uno" />
                 <!-- Product details-->
@@ -861,7 +896,7 @@
           <div class="col mb-5">
             <div class="card h-100">
               <!-- Sale badge--> 
-              <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-45%</div>
+            <span class="badge-discount">45% OFF</span>
                 <!-- Product image-->  
                 <img class="card-img-top zoomable" src="../image/mutuallibre/pawpatrol.jpg" alt="" />
                 <!-- Product details-->
@@ -892,7 +927,7 @@
       <div class="col mb-5">
         <div class="card h-100">
           <!-- Sale badge--> 
-          <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">-20%</div>
+        <span class="badge-discount">20% OFF</span>
             <!-- Product image-->  
             <img class="card-img-top zoomable" src="../image/novedades/disfraz.png"  />
             <!-- Product details-->
@@ -937,5 +972,40 @@
     <!-- JAVA -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
      
+ <div id="navbar"></div>
+    <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Mover aquí el contenido de navbar.js
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuClose = document.getElementById("menu-close");
+
+      if (menuToggle && menu && menuClose) {
+        menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+        });
+
+        menuClose.addEventListener("click", function () {
+          menu.classList.remove("active");
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+</script>
+
 </body>
 </html>

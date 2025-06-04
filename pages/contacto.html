@@ -23,49 +23,84 @@
     <!-- Bootstrap core CSS -->
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          user-select: none;
-        }
-  
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
-        }
+<style>
+ body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f9fafb, #e9eff5);
 
-  .form {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  .form-group span {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    display: block;
-    color: #555;
-  }
-  .form-control, .form-select {
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    box-shadow: none;
-    transition: border-color 0.3s ease-in-out;
-  }
-  .form-control:focus, .form-select:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 5px rgba(13,110,253,0.25);
-  }
-  button[type="submit"] {
-    width: 100%;
-    padding: 0.75rem;
-    font-weight: 600;
-    border-radius: 10px;
-  }
+  
+}
+
+.contact-wrapper {
+  max-width: 700px;
+  margin: auto;
+  padding: 3rem 1rem;
+}
+
+.contact-card {
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-image {
+  flex: 1 1 300px;
+  background: url('../image/contact-illustration.svg') no-repeat center center;
+  background-size: cover;
+  min-height: 350px;
+}
+
+.contact-form {
+  flex: 1 1 400px;
+  padding: 2rem;
+}
+
+.contact-form h2 {
+  color: #0d6efd;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  transition: 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+.contact-form button {
+  width: 100%;
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.contact-form .btn-primary {
+  background: linear-gradient(135deg, #0d6efd, #007bff);
+  border: none;
+}
+
+.contact-form .btn-outline-primary {
+  border: 2px solid #0d6efd;
+  color: #0d6efd;
+  background-color: transparent;
+}
+
+.contact-form .btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
 
     </style>
     
@@ -77,123 +112,50 @@
 </head>
 
 <body>
+
+
   <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
     <!-- Ícono de WhatsApp -->
     <i class="fab fa-whatsapp"></i>
   </a>
-  <nav class="navbar navbar-dark fixed-top bg-secondary">    
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Contacto</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <li class="nav-item">
-              <hr class="bg-light">
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Descuentos</a>
-              <ul class="dropdown-menu"> 
-              <li><a href="../pages/almacen.html" class="nav-link px-2 text-white bg-secondary">Almacen</a></li>    
-              <li><a href="../pages/aperitivos.html" class="nav-link px-2 text-white bg-secondary">Bebidas</a></li>    
-              <li><a href="../pages/canjes.html" class="nav-link px-2 text-white bg-secondary">Canjes</a></li>
-              <li><a href="../pages/feria.html" class="nav-link px-2 text-white bg-secondary">Feria</a></li>  
-              <li><a href="../pages/hogar.html" class="nav-link px-2 text-white bg-secondary">Hogar</a></li>
-              <li><a href="../pages/juegos.html" class="nav-link px-2 text-white bg-secondary">Juegos</a></li>
-              <li><a href="../pages/puravida.html" class="nav-link px-2 text-white bg-secondary">Pura Vida</a></li>
-                 </ul> 
-              </li>
-              
-                <a class="nav-link active" aria-current="page" href="../pages/ayudaeconomica.html">Ayuda Económica</a>
-                <a class="nav-link active" aria-current="page" href="../pages/colecciones.html">Colecciones LN</a>
-                <a class="nav-link active" aria-current="page" href="../pages/productos.html">Productos</a>
-                <a class="nav-link active" aria-current="page" href="../pages/subsidios.html">Subsidios</a>
-                <a class="nav-link active" aria-current="page" href="../pages/asociarse.html">Asociarse</a>
-                <a class="nav-link active" aria-current="page" href="../pages/contacto.html">Contacto</a>
-                <hr class="bg-light">
-                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-              </li>
-          </li>
-        </ul> 
-      </div>
-    </div>
-  </nav>
+   
 
-    <section ><br><br>
-         <div class="col-md-7 mx-auto pt-5">
-          <div class="card shadow-sm p-4" >
-            <h2 class="text-center mb-4 d-flex justify-content-center align-items-center">Contacto
-              <img src="../image/Logo Asociacion Mutual.JPG" alt="Logo" width="100" height="60" class="me-2">
-            </h2>
-            
-            <form id="form" name="contact-form" method="post" action="https://formspree.io/f/maykebag">
-              
-              <div class="mb-3">
-                <label for="nombre" class="form-label">
-                  <i class="fas fa-user me-2"></i> Nombre y apellido
-                </label>
-                <input type="text" id="nombre" name="nombre" class="form-control" required>
-              </div>
-              
-              <div class="mb-3">
-                <label for="email" class="form-label">
-                  <i class="fas fa-envelope me-2"></i> Mail
-                </label>
-                <input type="email" id="email" name="email" class="form-control" required>
-              </div>
-              
-              <div class="mb-3">
-                <label for="tema" class="form-label">
-                  <i class="fas fa-tag me-2"></i> Tema
-                </label>
-                <select id="tema" name="tema" class="form-select">
-                  <option selected>Elija tema...</option>
-                  <option>Ayuda Económica</option>
-                  <option>Beca Secundaria</option>
-                  <option>Canjes</option>
-                  <option>Colecciones LN</option>
-                  <option>Útiles Escolares</option>
-                  <option>Sugerencias</option>
-                  <option>Reclamos</option>
-                  <option>Otros</option>
-                </select>
-              </div>
-              
-              <div class="mb-3">
-                <label for="mensaje" class="form-label">
-                  <i class="fas fa-comment-dots me-2"></i> Mensaje
-                </label>
-                <textarea id="mensaje" name="mensaje" class="form-control" rows="5"></textarea>
-              </div>
-              <br> 
-              <div class="mb-3">
-                  <div class="g-recaptcha" data-sitekey="6LeTnfMhAAAAAFOe6WEYBcEcxjpoxHIPvzrCsYW0"></div>
-              </div>    
-      
-              <div class="form-group d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary btn-sm rounded me-2" style="width: 20%;">
-                  <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-                  Enviar
-                </button>
-                <button type="button" class="btn btn-primary btn-sm rounded ms-2" style="width: 20%;" onclick="window.location.href = '../index.html';">
-                  Volver
-                </button>
-              </div>
-              
-              
-              
-              
-              
-              
-              
-                      
-            </form>
+   <section class="contact-wrapper">
+  <div class="contact-card">
+    <div class="d-none d-md-block"></div>
+    <div class="contact-form">
+      <h2 class="text-center">Contacto</h2>
+      <form id="form" method="post" action="https://formspree.io/f/maykebag">
+        <input type="text" name="nombre" placeholder="Nombre y apellido" class="form-control" required>
+        <input type="email" name="email" placeholder="Mail" class="form-control" required>
+        <select name="tema" class="form-select">
+          <option selected disabled>Elija tema...</option>
+          <option>Ayuda Económica</option>
+          <option>Beca Secundaria</option>
+          <option>Canjes</option>
+          <option>Colecciones LN</option>
+          <option>Útiles Escolares</option>
+          <option>Sugerencias</option>
+          <option>Reclamos</option>
+          <option>Otros</option>
+        </select>
+        <textarea name="mensaje" rows="4" placeholder="Mensaje" class="form-control"></textarea>
+        <div class="my-3 text-center">
+          <div class="g-recaptcha" data-sitekey="6LeTnfMhAAAAAFOe6WEYBcEcxjpoxHIPvzrCsYW0"></div>
+        </div>
+        <div class="row g-2">
+          <div class="col-12 col-md-6">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+          <div class="col-12 col-md-6">
+            <button type="button" class="btn btn-outline-primary" onclick="window.location.href = '../index.html';">Volver</button>
           </div>
         </div>
-        
-   
+      </form>
+    </div>
+  </div>
 </section>
+
 
 
         
@@ -275,6 +237,40 @@
       });
     </script>
     
+     <div id="navbar"></div>
+    <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Mover aquí el contenido de navbar.js
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuClose = document.getElementById("menu-close");
+
+      if (menuToggle && menu && menuClose) {
+        menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+        });
+
+        menuClose.addEventListener("click", function () {
+          menu.classList.remove("active");
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+</script>
     
 
     
