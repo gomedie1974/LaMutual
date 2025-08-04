@@ -58,7 +58,7 @@ btnrumrene.addEventListener("click", rene);
 function rene() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Vela Rene</u></span>',
-     html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Dimensiones:</b> 8,5 cm. de diámetro x 8,5 cm. de alto.<br><b>Aromas:</b> <br>Bambú / Jazmín Chino</span></div>'})   
+     html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Dimensiones:</b> 8,5 cm. de diámetro x 8,5 cm. de alto.<br><b>Aromas:</b> <br>Bambú <br>Jazmín Chino<br> Flores Blancas<br>Sandia Frambuesa<br>Vainilla Especiada</span></div>'})   
 }
 
 
@@ -78,13 +78,19 @@ function Nana() {
     html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Aromas:</b> <br>Vainilla Especiada.<br>Flores Blancas.<br>Tilo y Lavanda.<br>Pera Pepino Manzana.<br>Bambú.</span></div>'})   
 }
 
-
+const btnrum60 = document.getElementById("Aromatizador60");
+btnrum60.addEventListener("click", Aromatizador60);
+function Aromatizador60() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Aromatizador 60ml</u></span>',
+    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Un delicado aroma que perfuma sábanas, toallas, cortinas y géneros de tu casa.<br><br>Disponible en los siguientes blends:<br><br>▪️ Bambú <br>▪️ Pera Pepino Manzana <br>▪️ SYDNEY <br>▪️ Manhattan <br>▪️ Coco Lima <br>▪️ Vainilla Especiada <br>▪️ Fresh Grass</span></div>'   })   
+}
 const btnrumN1 = document.getElementById("Aromatizador");
 btnrumN1.addEventListener("click", Aromatizador);
 function Aromatizador() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Aromatizador textil</u></span>',
-    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Un delicado aroma que perfuma sábanas, toallas, cortinas y géneros de tu casa.<br><br>Disponible en los siguientes blends:<br><br>▪️ Flor de Loto <br> ▪️ Nega <br>▪️ Bambú <br>▪️ Sandía Frambuesa <br>▪️ Pera Pepino Manzana <br>▪️ SYDNEY </span></div>'   })   
+    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Un delicado aroma que perfuma sábanas, toallas, cortinas y géneros de tu casa.<br><br>Disponible en los siguientes blends:<br><br>▪️ Flor de Loto <br> ▪️ Nega <br>▪️ Bambú <br>▪️ Sandía Frambuesa <br>▪️ Pera Pepino Manzana <br>▪️ SYDNEY <br>▪️ Manhattan <br>▪️ Coco Lima</span></div>'   })   
 }
   
 
@@ -93,7 +99,7 @@ btnrumDR1.addEventListener("click", DifusorRefill);
 function DifusorRefill() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Difusor Refill</u></span>',
-    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Disponible en los siguientes blends:<br><br>▪️ Lavanda<br>▪️ Nega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br>▪️ Vainilla Especiada</span></div>'})   
+    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Disponible en los siguientes blends:<br><br>▪️ Lavanda<br>▪️ Nega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br>▪️ Vainilla Especiada<br>▪️ Manhattan <br>▪️ Coco Lima</span></div>'})   
 }
 
 const btnrumKaikoura = document.getElementById("Kaikoura");
@@ -123,6 +129,22 @@ function apaga() {
 }
  
 
+
+const btnrumRoma1 = document.getElementById("roma1");
+btnrumRoma1.addEventListener("click", roma1);
+function roma1() {
+Swal.fire({
+  title: '<span style="font-size: 25px;"><u>Combo Mini Difusor + Refill</u></span>',
+  html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Mini difusor para autos o placard + Refill mini difusor.<br>Mini difusor de 8ml y refill difusor de 60 ml.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Bambú<br>▪️ Sydney<br>▪️ Vainilla Especiada<br>▪️ Manhattan<br>▪️ Pera Pepino Manzana<br>▪️ Coco Lima</span></div>'})   
+}
+
+const btnrumauto = document.getElementById("auto");
+btnrumauto.addEventListener("click", auto);
+function auto() {
+Swal.fire({
+  title: '<span style="font-size: 25px;"><u>Refill Difusor Auto</u></span>',
+  html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Envase de 60 ml.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Bambú<br>▪️ Coco Lima</span></div>'})   
+}
 
 const btnrumRoma = document.getElementById("Roma");
 btnrumRoma.addEventListener("click", Roma);

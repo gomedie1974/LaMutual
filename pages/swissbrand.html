@@ -70,7 +70,6 @@
           <select id="filtro" onchange="mostrarSubfiltro()">
               <option value="todos">Todos</option>
               <option value="categoria2">Calzado</option>
-              <option value="categoria4">Campera</option>
               <option value="categoria3">Mochilas</option>
               <option value="categoria1">Valijas</option>
           </select><br><br>
@@ -1044,110 +1043,6 @@
       </div>
     
  
-
-      <div class="col mb-5 categoria4">
-        <div class="card h-100">
-          <!-- Sale badge-->
-        <span class="badge-discount">30% OFF</span> 
-          <!-- Product image-->  
-          <img id="main-Vostok" class="card-img-top mx-auto pt-4 mt-4 main-image zoomable" src="../image/swissbrand/vostokNegro.jpg" onclick="expandImage(this.src)" />  
-          <!-- Paleta de colores debajo de la imagen-->
-          <div class="colors text-center mt-3">
-            <div class="color-btn" style="background-color: black;" onclick="changeImageVostok('negro')"></div>
-            <div class="color-btn" style="background-color: #161c91;" onclick="changeImageVostok('azul')"></div>
-            <div class="color-btn" style="background-color: gray" onclick="changeImageVostok('gris')"></div>
-           </div>
-          <!-- Product details-->
-          <div class="card-body">
-            <div class="text-center">
-              <h5 class="fw-bolder  ">Campera Hombre <br>
-                Vostok Swissbrand
-              </h5> 
-              <p>S a XL</p>
-              <!-- Product price-->  
-               <p style="color: red;"><b>Sin stock</b></p><!-- 
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-danger text-decoration-line-through">$ 149.990,00 </span> <br>
-              <span>$ 104.993,00 <br>
-              4 cuotas de <br>$ 26.248,25 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-               $ 150.000,00            -->      
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
-        function changeImageVostok(color) {
-          var mainImage = document.getElementById('main-Vostok');
-          // Cambia la ruta de la imagen principal según el color seleccionado
-          switch(color) {
-            case 'negro':
-              mainImage.src = '../image/swissbrand/vostokNegro.jpg';
-              break;
-            case 'azul':
-              mainImage.src = '../image/swissbrand/vostokAzul.jpg';
-              break;
-            case 'gris':
-              mainImage.src = '../image/swissbrand/vostokGris.jpg';
-              break;     
-          
-           }
-        }
-      </script>
-      
-      <div class="col mb-5 categoria4">
-        <div class="card h-100">
-          <!-- Sale badge-->
-        <span class="badge-discount">30% OFF</span> 
-          <!-- Product image-->  
-          <img id="main-nary" class="card-img-top mx-auto pt-4 mt-4 main-image zoomable" src="../image/swissbrand/narynNegro.jpg" onclick="expandImage(this.src)" />  
-          <!-- Paleta de colores debajo de la imagen-->
-          <div class="colors text-center mt-3">
-            <div class="color-btn" style="background-color: black;" onclick="changeImageNaryn('negro')"></div>
-            <div class="color-btn" style="background-color: #161c91;" onclick="changeImageNaryn('navy')"></div>
-            <div class="color-btn" style="background-color: rgb(155, 103, 185)" onclick="changeImageNaryn('plum')"></div>
-            <div class="color-btn" style="background-color: rgb(119, 16, 91)" onclick="changeImageNaryn('wine')"></div>
-          </div>
-          <!-- Product details-->
-          <div class="card-body">
-            <div class="text-center">
-              <h5 class="fw-bolder  ">Campera Mujer <br>
-                Naryn Swissbrand
-              </h5> 
-              <p>S a XL</p>
-              <!-- Product price-->  
-              <p style="color: red;"><b>Sin stock</b></p><!-- 
-              <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
-              <span class="text-danger text-decoration-line-through">$ 149.990,00 </span> <br>
-              <span>$ 104.993,00 <br>
-              4 cuotas de <br>$ 26.248,25 <br><hr>
-              <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
-              $ 150.000,00                  -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
-        function changeImageNaryn(color) {
-          var mainImage = document.getElementById('main-nary');
-          // Cambia la ruta de la imagen principal según el color seleccionado
-          switch(color) {
-            case 'negro':
-              mainImage.src = '../image/swissbrand/narynNegro.jpg';
-              break;
-            case 'navy':
-              mainImage.src = '../image/swissbrand/narynNavy.jpg';
-              break;
-            case 'plum':
-              mainImage.src = '../image/swissbrand/narynPlum.jpg';
-              break;     
-            case 'wine':
-              mainImage.src = '../image/swissbrand/narynWine.jpg';
-              break;     
-           }
-        }
-      </script>
-          
       
        <div class="col mb-5 categoria1">
         <div class="card h-100">

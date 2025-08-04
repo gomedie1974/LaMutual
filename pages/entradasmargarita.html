@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pedidos de Entradas con Resumen</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light" style="background-image: url(../image/margarita.jpg); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+
+  <div class="container my-5">
+    <h2 class="mb-4 text-center" style="color: white;">Entradas MARGARITA</h2>
+
+    <form id="pedidoForm" class="p-4 bg-white rounded shadow">
+      <div class="mb-3">
+        <label for="nombreApellido" class="form-label">Nombre y Apellido:</label>
+        <input type="text" id="nombreApellido" name="nombreApellido" class="form-control" required />
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-3">
+          <label for="fecha" class="form-label">Fecha:</label>
+          <input type="date" id="fecha" name="fecha" class="form-control" required />
+        </div>
+
+        <div class="col-md-3">
+          <label for="ubicacion" class="form-label">Ubicación:</label>
+          <select id="ubicacion" name="ubicacion" class="form-select" required>
+            <option value="" disabled selected>Seleccione ubicación</option>
+            <option value="Platea Alta">Platea Alta</option>
+            <option value="Platea Baja Lateral">Platea Baja Lateral</option>
+            <option value="Platea Baja Central">Platea Baja Central</option>
+            <option value="Preferencial">Platea Preferencial</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label for="cantidad" class="form-label">Cantidad:</label>
+          <input type="number" id="cantidad" name="cantidad" class="form-control" min="1" value="1" required />
+        </div>
+
+        <div class="col-md-3">
+          <label for="precio" class="form-label">Precio Unitario:</label>
+          <input type="text" id="precio" name="precio" class="form-control" readonly placeholder="$0" />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Cargar Pedido</button>
+    </form>
+
+    <div class="mt-5">
+      <h4 style="color: white;">Pedidos Cargados:</h4>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+            <th style="background-color: rgb(180, 177, 223);">Nombre y Apellido</th>
+            <th style="background-color: rgb(180, 177, 223); text-align:center;">Fecha</th>
+            <th style="background-color: rgb(180, 177, 223);">Ubicación</th>
+            <th style="background-color: rgb(180, 177, 223); width:80px; text-align:center;">Cantidad</th>
+            <th style="background-color: rgb(180, 177, 223); text-align:center;">Precio Unitario</th>
+            <th style="background-color: rgb(180, 177, 223); text-align:center;">Subtotal</th>
+        </tr>
+        </thead>
+        <tbody id="tablaPedidos"></tbody>
+        <tfoot>
+        <tr>
+            <th colspan="3" class="text-end">TOTAL</th>
+            <th id="totalCantidad" class="text-center">0</th>
+            <th></th>
+            <th id="totalGeneral" class="text-center">$0</th>
+        </tr>
+        </tfoot>
+      </table>
+
+<!--       <button id="borrarPedidos" class="btn btn-danger mt-3">Borrar Todos los Pedidos</button>
+ -->    </div>
+
+    <!-- Resumen -->
+    <div class="mt-5">
+    <h4 style="color: white;">📅 Resumen por Fecha y Ubicación:</h4>
+    <table class="table table-bordered bg-white">
+    <thead>
+      <tr>
+        <th style="background-color: bisque;">📅 Fecha</th>
+        <th style="background-color: bisque;">📍 Ubicación</th>
+        <th style="background-color: bisque; width: 150px; text-align: center;">🎫 Cantidad</th>
+      </tr>
+    </thead>
+        <tbody id="tablaResumen"></tbody>
+    </table>
+    </div>
+
+  </div>
+
+  <!-- Modal para pedir clave -->
+  <div class="modal fade" id="claveModal" tabindex="-1" aria-labelledby="claveModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="formClave" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="claveModalLabel">Ingrese la clave para borrar pedidos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <input type="password" id="inputClave" class="form-control" placeholder="Clave" required autofocus />
+          <div id="errorClave" class="text-danger mt-2" style="display:none;">Clave incorrecta</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-danger">Borrar pedidos</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal para mensajes -->
+  <div class="modal fade" id="mensajeModal" tabindex="-1" aria-labelledby="mensajeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mensajeModalLabel">Mensaje</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="mensajeModalBody"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+
+ const firebaseConfig = {
+    apiKey: "AIzaSyAX3NKFjMQ5lXOZlpVneGANmOTcFJMSsQA",
+    authDomain: "entradas-margarita.firebaseapp.com",
+    projectId: "entradas-margarita",
+    storageBucket: "entradas-margarita.firebasestorage.app",
+    messagingSenderId: "797791862885",
+    appId: "1:797791862885:web:a7310bb6852c1f5328868c",
+    measurementId: "G-SNZ1R4FL57"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const pedidoForm = document.getElementById("pedidoForm");
+    const tablaPedidos = document.getElementById("tablaPedidos");
+    const tablaResumen = document.getElementById("tablaResumen");
+    const borrarPedidosBtn = document.getElementById("borrarPedidos");
+    const totalGeneral = document.getElementById("totalGeneral");
+    const totalCantidadEl = document.getElementById("totalCantidad");
+    const selectUbicacion = document.getElementById("ubicacion");
+    const inputPrecio = document.getElementById("precio");
+
+    const mensajeModal = new bootstrap.Modal(document.getElementById("mensajeModal"));
+    const claveModal = new bootstrap.Modal(document.getElementById("claveModal"));
+    const inputClave = document.getElementById("inputClave");
+    const errorClave = document.getElementById("errorClave");
+
+    const preciosPorUbicacion = {
+      "Platea Alta": 44800,
+      "Platea Baja Lateral": 67200,
+      "Platea Baja Central": 78400,
+      "Preferencial": 100800,
+    };
+
+    selectUbicacion.addEventListener("change", () => {
+      const precio = preciosPorUbicacion[selectUbicacion.value] || 0;
+      inputPrecio.value = precio ? `$${precio.toLocaleString("es-AR")}` : "";
+    });
+
+    function mostrarMensajeModal(titulo, mensaje) {
+      document.getElementById("mensajeModalLabel").textContent = titulo;
+      document.getElementById("mensajeModalBody").textContent = mensaje;
+      mensajeModal.show();
+    }
+
+    function mostrarTablaOrdenada(pedidos) {
+      tablaPedidos.innerHTML = "";
+
+      pedidos.sort((a, b) => {
+        if (a.fecha === b.fecha) {
+          return a.ubicacion.localeCompare(b.ubicacion);
+        }
+        return a.fecha.localeCompare(b.fecha);
+      });
+
+      let totalPrecio = 0;
+      let totalCantidad = 0;
+
+      pedidos.forEach((pedido) => {
+        const subtotal = pedido.cantidad * pedido.precio;
+        totalPrecio += subtotal;
+        totalCantidad += pedido.cantidad;
+
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+        <td>${pedido.nombreApellido}</td>
+        <td class="text-center">${pedido.fecha}</td>
+        <td>${pedido.ubicacion}</td>
+        <td class="text-center">${pedido.cantidad}</td>
+        <td class="text-center">$${Number(pedido.precio).toLocaleString("es-AR")}</td>
+        <td class="text-center">$${subtotal.toLocaleString("es-AR")}</td>
+        `;
+        tablaPedidos.appendChild(fila);
+      });
+
+      totalGeneral.textContent = `$${totalPrecio.toLocaleString("es-AR")}`;
+      totalCantidadEl.textContent = totalCantidad;
+
+      mostrarResumen(pedidos);
+    }
+
+    function mostrarResumen(pedidos) {
+      const resumen = {};
+
+      pedidos.forEach((pedido) => {
+        const key = `${pedido.fecha}_${pedido.ubicacion}`;
+        if (!resumen[key]) {
+          resumen[key] = { fecha: pedido.fecha, ubicacion: pedido.ubicacion, cantidad: 0 };
+        }
+        resumen[key].cantidad += pedido.cantidad;
+      });
+
+      tablaResumen.innerHTML = "";
+
+      Object.values(resumen).sort((a, b) => {
+        if (a.fecha === b.fecha) {
+          return a.ubicacion.localeCompare(b.ubicacion);
+        }
+        return a.fecha.localeCompare(b.fecha);
+      }).forEach((item) => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+        <td>${item.fecha}</td>
+        <td>${item.ubicacion}</td>
+        <td class="text-center">${item.cantidad}</td>
+        `;
+        tablaResumen.appendChild(fila);
+      });
+    }
+
+    function cargarPedidosFirestore() {
+      db.collection("pedidos").get().then((querySnapshot) => {
+        const pedidos = [];
+        querySnapshot.forEach((doc) => pedidos.push(doc.data()));
+        mostrarTablaOrdenada(pedidos);
+      }).catch((error) => {
+        console.error("Error al cargar pedidos:", error);
+        mostrarMensajeModal("Error", "No se pudieron cargar los pedidos.");
+      });
+    }
+
+    cargarPedidosFirestore();
+
+    pedidoForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const pedido = {
+        nombreApellido: document.getElementById("nombreApellido").value,
+        fecha: document.getElementById("fecha").value,
+        ubicacion: document.getElementById("ubicacion").value,
+        cantidad: parseInt(document.getElementById("cantidad").value),
+        precio: preciosPorUbicacion[document.getElementById("ubicacion").value] || 0
+      };
+
+      db.collection("pedidos").add(pedido).then(() => {
+        cargarPedidosFirestore();
+        pedidoForm.reset();
+        inputPrecio.value = "";
+      }).catch((error) => {
+        console.error("Error al guardar pedido:", error);
+        mostrarMensajeModal("Error", "No se pudo guardar el pedido.");
+      });
+    });
+
+    borrarPedidosBtn.addEventListener("click", () => {
+      errorClave.style.display = "none";
+      inputClave.value = "";
+      claveModal.show();
+    });
+
+    document.getElementById("formClave").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (inputClave.value.trim() !== "ruyyoro") {
+        errorClave.style.display = "block";
+        return;
+      }
+
+      claveModal.hide();
+
+      if (!confirm("¿Estás seguro que querés borrar todos los pedidos?")) return;
+
+      try {
+        const snapshot = await db.collection("pedidos").get();
+        const batch = db.batch();
+        snapshot.forEach((doc) => batch.delete(doc.ref));
+        await batch.commit();
+
+        tablaPedidos.innerHTML = "";
+        totalGeneral.textContent = "$0";
+        totalCantidadEl.textContent = "0";
+        tablaResumen.innerHTML = "";
+
+        mostrarMensajeModal("Éxito", "Todos los pedidos fueron borrados.");
+      } catch (error) {
+        console.error("Error al borrar pedidos:", error);
+        mostrarMensajeModal("Error", "Error al borrar pedidos, inténtalo de nuevo.");
+      }
+    });
+  </script>
+
+</body>
+</html>

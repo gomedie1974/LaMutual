@@ -93,8 +93,14 @@
                         <input name="Nacionalidad" type="text" class="form-control" />
                     </div>
                     <div class="col-md-3">
-                        <label>Estado Civil</label>
-                        <input name="Estado civil" type="text" class="form-control" />
+                         <label for="estado_civil">Estado Civil</label>
+                            <select name="Estado civil" id="estado_civil" class="form-select" required>
+                                <option value="" disabled selected>Seleccione</option>
+                                <option value="soltero">Soltero/a</option>
+                                <option value="casado">Casado/a</option>
+                                <option value="divorciado">Divorciado/a</option>
+                                <option value="viudo">Viudo/a</option>
+                            </select>
                     </div>
                     </div>
 

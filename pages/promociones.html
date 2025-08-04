@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- SEO -->
+        <title>Mutual LN Canjes</title>
+        <meta name="keywords" content="mutual">
+        <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
+        <!-- Whatsapp -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
+        <!-- BOOTSTRAP -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- pone el logo en la pestana -->
+        <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../style/style.css">        
+    </head>
+
+  <style>
+    .promo-modal-content button {
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+    body {
+      background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .promo {
+      background: linear-gradient(90deg, #00796b, #004d40);
+      color: white;
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    .promo h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .promo p {
+      font-size: 1.2rem;
+    }
+
+    .filter-container {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .filter-btn {
+      border: none;
+      background: #004d40;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background-color: #00796b;
+    }
+
+    .promo-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .promo-card {
+      background: white;
+      position: relative;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .promo-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .promo-img-icon {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #00796b;
+    }
+
+    .promo-title-card {
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin: 10px 0;
+      color: #00695c;
+    }
+
+    .promo-text {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .promo-btn {
+      margin-top: 20px;
+      display: inline-block;
+      background: #00796b;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .promo-btn:hover {
+      background: #004d40;
+    }
+
+    @media (max-width: 768px) {
+      .promo-section {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+      }
+
+      .promo-card {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+      }
+    }
+    .promo-info {
+  display: none; /* Inicialmente oculta */
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  
+}
+
+.promo-btn {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.promo-btn:hover {
+  text-decoration: underline;
+}
+
+/* Estilo del modal (inicialmente oculto) */
+.promo-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Bien alto para estar por delante */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh; /* Limita el alto visible */
+  overflow-y: auto;  /* Activa scroll si el contenido es muy largo */
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ff0000; /* Cambia de color al pasar el ratón */
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+  .price-box {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+  
+  .label-socio {
+    color: #129c00;
+    font-weight: bold;
+  }
+  
+  .price-socio {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #129c00;
+  }
+  
+  .label-nosocio {
+    color: #2b319f;
+    font-weight: bold;
+  }
+  
+  .price-nosocio {
+    font-size: 1.05rem;
+    color: #2b319f;
+  }
+  
+  .cuotas {
+    font-size: 0.85rem;
+    color: #555;
+  }
+  .promo {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(133, 19, 19, 0.5)),
+              url(' ') center/cover no-repeat;
+  color: white;
+  padding: 50px 20px; /* más alto para que se note */
+  text-align: center;
+}
+ .badge-discount {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: #ff6b6b;
+      color: white;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+<body>
+  <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
+    <!-- Ícono de WhatsApp -->
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+<header class="promo text-center">
+  <div class="mes-banner">Julio 2025</div>
+  <h1>🎁 Promociones Exclusivas</h1>
+  <h4>Elegí tu beneficio favorito del mes</h4> 
+</header>
+
+<style>
+.mes-banner {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  color: #120181;
+  font-weight: bold;
+  padding: 6px 20px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+</style>
+ 
+  
+  <section class="promo-section">
+   
+
+    <div class="container my-2">
+  <div class="row g-4">
+
+  
+ <div class="col-12 col-md-6 col-lg-4 promo-item bebidas ">
+  <div class="promo-card h-100">
+    <span class="badge-discount">30% OFF</span>
+    <div class="promo-emoji">
+      <img src="../image/martini.webp" alt="terma" class="promo-img-icon">
+    </div>
+    <div class="promo-title-card">Martini Bianco</div>
+    <!-- Sección de información adicional oculta -->
+    <div class="promo-info" >
+      <p>Martini 1 litro </p>
+       <div class="price-box text-center mt-3">
+         <div class="socio mb-2">
+          <span class="label-socio">Valor Socio</span><br>
+          <span class="text-decoration-line-through text-muted">$ 5.650,00</span><br>
+          <span class="price-socio">$ 3.955,00</span><br>
+          <small class="cuotas">4 cuotas de $ 988,75</small>
+        </div>
+        <hr>
+        <div class="no-socio">
+          <span class="label-nosocio">Valor NO Socio</span><br>
+          <span class="price-nosocio">$ 8.100,00</span>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary promo-btn">Ver más</button>
+   </div>
+</div>
+
+
+   
+ <div class="col-12 col-md-6 col-lg-4 promo-item hogar">
+  <div class="promo-card h-100">
+    <span class="badge-discount">30% OFF</span>
+    <div class="promo-emoji">
+      <img src="../image/cava.png" alt="terma" class="promo-img-icon">
+    </div>
+    <div class="promo-title-card">Cava De Vinos</div>
+    
+    <!-- Sección de información adicional oculta -->
+    <div class="promo-info">
+       <p style="text-align: justify;">Cava Whirlpool (Wzc12a) para 12 Botellas la cual fue pensada para quien disfruta de servir un buen vino a la temperatura ideal. Con capacidad para 12 botellas y dimensiones compactas. <br> Cuenta con iluminación LED interna y control electrónico touch con display de temperatura. <br> 
+        El control electrónico de la cava Whirlpool permite que la temperatura interna sea regulada de manera simple e intuitiva por medio de su display digital.
+        </p><hr>
+       <div class="price-box text-center mt-3">
+             <div class="socio mb-2">
+              <span class="label-socio">Valor Socio</span><br>
+              <span class="text-decoration-line-through text-muted">$ 410.000,00</span><br>
+              <span class="price-socio">$ 287.000,00</span><br>
+              <small class="cuotas">4 cuotas de $ 71.750,00</small>
+            </div>
+            <hr>
+            <div class="no-socio">
+              <span class="label-nosocio">Valor NO Socio</span><br>
+              <span class="price-nosocio">$ 410.000,00</span>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary promo-btn">Ver más</button>
+   </div>
+</div>
+
+
+<div class="col-12 col-md-6 col-lg-4 promo-item bebidas">
+  <div class="promo-card h-100">
+    <span class="badge-discount">30% OFF</span>
+    <div class="promo-emoji">
+      <img src="../image/termacitrus.webp" alt="terma" class="promo-img-icon">
+    </div>
+    <div class="promo-title-card">Terma </div>
+    <!-- Sección de información adicional oculta -->
+    <div class="promo-info">
+      <p>Terma varios sabores <br> bot 1.35l</p>
+       <div class="price-box text-center mt-3">
+         <div class="socio mb-2">
+          <span class="label-socio">Valor Socio</span><br>
+          <span class="text-decoration-line-through text-muted">$ 2.180,00</span><br>
+          <span class="price-socio">$ 1.526,00</span><br>
+          <small class="cuotas">4 cuotas de $ 381,50</small>
+        </div>
+        <hr>
+        <div class="no-socio">
+          <span class="label-nosocio">Valor NO Socio</span><br>
+          <span class="price-nosocio">$ 3.800,00</span>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary promo-btn">Ver más</button>
+   </div>
+</div>
+
+<div class="col-12 col-md-6 col-lg-4 promo-item bebidas">
+  <div class="promo-card h-100">
+    <span class="badge-discount">30% OFF</span>
+    <div class="promo-emoji">
+      <img src="../image/ganciaamericano.webp" alt="terma" class="promo-img-icon">
+    </div>
+    <div class="promo-title-card">Gancia Americano</div>
+    <!-- Sección de información adicional oculta -->
+    <div class="promo-info">
+      <p> Botella 950cc</p>
+       <div class="price-box text-center mt-3">
+         <div class="socio mb-2">
+          <span class="label-socio">Valor Socio</span><br>
+          <span class="text-decoration-line-through text-muted">$ 7.000,00</span><br>
+          <span class="price-socio">$ 4.900,00</span><br>
+          <small class="cuotas">4 cuotas de $ 1.225,00</small>
+        </div>
+        <hr>
+        <div class="no-socio">
+          <span class="label-nosocio">Valor NO Socio</span><br>
+          <span class="price-nosocio">$ 8.800,00</span>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary promo-btn">Ver más</button>
+   </div>
+</div>
+
+<div class="col-12 col-md-6 col-lg-4 promo-item bebidas">
+  <div class="promo-card h-100">
+    <span class="badge-discount">30% OFF</span>
+    <div class="promo-emoji">
+      <img src="../image/ronbacardi.jpeg" alt="terma" class="promo-img-icon">
+    </div>
+    <div class="promo-title-card">Ron Baccardi</div>
+    <!-- Sección de información adicional oculta -->
+    <div class="promo-info">
+      <p> Carta de Oro <br>Botella 750cc</p>
+       <div class="price-box text-center mt-3">
+         <div class="socio mb-2">
+          <span class="label-socio">Valor Socio</span><br>
+          <span class="text-decoration-line-through text-muted">$ 14.900,00</span><br>
+          <span class="price-socio">$ 10.430,00</span><br>
+          <small class="cuotas">4 cuotas de $ 2.607,50</small>
+        </div>
+        <hr>
+        <div class="no-socio">
+          <span class="label-nosocio">Valor NO Socio</span><br>
+          <span class="price-nosocio">$ 15.800,00</span>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary promo-btn">Ver más</button>
+   </div>
+</div>
+
+<div class="col-12 col-md-6 col-lg-4 promo-item bebidas">
+  <div class="promo-card h-100">
+    <span class="badge-discount">40% OFF</span>
+    <div class="promo-emoji">
+      <img src="../image/rumrum.png" alt="terma" class="promo-img-icon">
+    </div>
+    <div class="promo-title-card">Rum Rum</div>
+    <!-- Sección de información adicional oculta -->
+    <div class="promo-info">
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+          <img src="../image/rumrum/pantalongabardinaleclercazulmarino.png" alt="Pantalón Gabardina Leclerc" style="width: 50px; height: auto; margin-right: 10px;">
+          <div>
+            Pantalón Gabardina Leclerc / Talle 2 / Color: azulino<br>
+            <span style="color: rgb(0, 78, 6);"><b>Precio c/desc</b><br>
+            $15.588,00 en 4 cuotas de $3.897,00
+            </span>
+          </div>
+        </div>
+        <hr>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+          <img src="../image/rumrum/pantalonsilvitocorderoyazulmarino.png" alt="Pantalón Silvito Negro" style="width: 50px; height: auto; margin-right: 10px;">
+          <div>
+            Pantalón Silvito Corderoy / Talles 4 y 6 / Color: negro<br>
+            <span style="color: rgb(0, 78, 6);"><b>Precio c/desc</b><br>
+            $11.567,53 en 4 cuotas de $2.891,88
+            </span>
+          </div>
+        </div>
+        <hr>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+          <img src="../image/rumrum/pantalonsilvitocorderoybordo.png" alt="Pantalón Silvito Bordó" style="width: 50px; height: auto; margin-right: 10px;">
+          <div>
+            Pantalón Silvito Corderoy / Talle 4 / Color: bordó<br>
+            <span style="color: rgb(0, 78, 6);"><b>Precio c/desc</b><br>
+            $11.567,53 en 4 cuotas de $2.891,88
+            </span>
+          </div>
+        </div>
+        <hr>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+          <img src="../image/rumrum/pantalonsilvitogabardinaazulmarino.png" alt="Pantalón Silvito Gabardina Azulino" style="width: 50px; height: auto; margin-right: 10px;">
+          <div>
+            Pantalón Silvito Gabardina / Talle 2 / Color: azulino<br>
+            <span style="color: rgb(0, 78, 6);"><b>Precio c/desc</b><br>
+            $14.988,00 en 4 cuotas de $3.747,00
+            </span>
+          </div>
+        </div>
+         
+    </div>
+    <button class="btn btn-primary promo-btn">Ver más</button>
+   </div>
+</div>
+
+<div class="col-12 col-md-6 col-lg-4 promo-item belleza">
+  <div class="promo-card h-100">
+    <span class="badge-discount">30% OFF</span>
+    <div class="promo-emoji">
+      <img src="../image/definit.png" alt="terma" class="promo-img-icon">
+    </div>
+    <div class="promo-title-card">Definit </div>
+    <!-- Sección de información adicional oculta -->
+    <div class="promo-info">
+      <p style="text-align: justify;">La misión de DEFINIT es proveer la mejor experiencia y eficacia en eI tratamiento de depilación láser. <br>
+          Nos comprometimos a estar constantemente actualizados con eI mercado internacional para seguir ofreciendo siempre la mejor tecnología disponible a nuestros clientes. <br>
+          Así como en la constante capacitación de nuestros empleados y las locaciones más convenientes.</p>
+          <a href="https://definit.com.ar/" target="_blank" rel="noopener noreferrer">Definit</a>
+       <div class="price-box text-center mt-3">
+         <div class="socio mb-2">
+          <span class="label-socio">30% de descuento en 6 cuotas</span><br>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary promo-btn">Ver más</button>
+   </div>
+</div>
+ 
+
+<div class="col-12 col-md-6 col-lg-4 promo-item belleza">
+  <div class="promo-card h-100">
+    <span class="badge-discount">30% OFF</span>
+    <div class="promo-emoji">
+      <img src="../image/hogar/ponchoboca.webp" alt="terma" class="promo-img-icon">
+    </div>
+    <div class="promo-title-card">Poncho de toalla </div>
+    <!-- Sección de información adicional oculta -->
+    <div class="promo-info">
+      <p style="text-align: justify;">Con capucha y mochila<br>Club Boca.</p>
+       <div class="price-box text-center mt-3">
+          <div class="socio mb-2">
+            <span class="label-socio">Valor Socio</span><br>
+            <span class="text-decoration-line-through text-muted">$ 25.000,00</span><br>
+            <span class="price-socio">$ 17.500,00</span><br>
+            <small class="cuotas">4 cuotas de $ 4.375,00</small> 
+          </div>
+          <hr> 
+          <div class="no-socio">
+            <span class="label-nosocio">Valor NO Socio</span><br>
+            <span class="price-nosocio">$ 30.000,00</span>
+          </div>  
+        </div>
+    </div>
+    <button class="btn btn-primary promo-btn">Ver más</button>
+   </div>
+</div>
+ 
+ 
+   
+
+<div class="col-12 col-md-6 col-lg-4 promo-item belleza">
+  <div class="promo-card h-100">
+    <span class="badge-discount">20% OFF</span>
+    <div class="promo-emoji">
+      <img src="../image/accesorios/957d68cb-b426-4bc9-89d4-65b51242236c.JPG" alt="terma" class="promo-img-icon">
+    </div>
+    <div class="promo-title-card">Bolso Matero </div>
+    <!-- Sección de información adicional oculta -->
+    <div class="promo-info">
+      <p style="text-align: justify;">Consultar modelos disponibles.</p>
+        <!-- Product price -->
+          <spam style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </spam><br> 
+        <span class="text-danger text-decoration-line-through">$ 30.000,00</span> <br>
+        <span>$ 24.000,00 <br>
+        6 cuotas de <br> $ 4.000,00<br><hr>
+        <spam style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </spam><br>
+        $ 32.000,00
+        </span>
+    </div>
+    <button class="btn btn-primary promo-btn">Ver más</button>
+   </div>
+</div>
+ 
+
+<div class="col-12 col-md-6 col-lg-4 promo-item belleza">
+  <div class="promo-card h-100">
+    <span class="badge-discount">35% OFF</span>
+    <div class="promo-emoji">
+      <img src="../image/elpuente.jpg" alt="terma" class="promo-img-icon">
+    </div>
+    <div class="promo-title-card">EL Puente </div>
+    <!-- Sección de información adicional oculta -->
+     <div class="promo-info">
+      <p style="text-align: justify;">Se abona con vouchers que se envían por mail <br>
+          Valor de los códigos:<br>
+          $30.000<br>
+          $40.000<br>
+          Vto. 31/10/2025. <br></p>
+       <div class="price-box text-center mt-3">
+         <div class="socio mb-2">
+          <span class="label-socio">35% de descuento en 4 cuotas</span><br>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary promo-btn">Ver más</button>
+   </div>
+</div>
+ 
+ 
+   
+
+  
+<div class="text-center mt-4">
+  <button id="toggleBtn" class="btn btn-outline-primary">Ver más promociones</button>
+</div>
+
+
+
+  </div>
+</div>
+
+  </section>
+
+<section class="w-100 my-5 px-3">
+  <div class="card border-0 shadow-lg rounded-4 overflow-hidden" style="background: linear-gradient(135deg, #00796b, #004d40); color: white;">
+    <div class="row g-0">
+      
+      <!-- Texto -->
+      <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
+        <h2 class="mb-3">👟 ¡Zapatillas en Promoción!</h2>
+        <p class="mb-4 fs-4 fw-semibold">Aprovechá <span style="color: #ffeb3b;">hasta 6 cuotas</span> y <span style="color: #ffeb3b;">precios preferenciales</span> hasta fin de mes. ¡No te quedes sin las tuyas hasta agotar stock!</p>
+        <a href="../pages/calzado.html" class="btn btn-light rounded-pill px-4 shadow">Ver ahora</a>
+      </div>  
+      
+      <!-- Galería de Zapatillas -->
+      <div class="col-md-6 p-4 d-flex justify-content-center align-items-center">
+        <div class="row g-1">
+          <div class="col-3 p-1 text-center">
+            <img src="../image/calzado/chinabca.png" alt="Zapatilla 1" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/calzado/chinanegro.png" alt="Zapatilla 2" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/calzado/zarabco1.png" alt="Zapatilla 3" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/calzado/mallorcanude1.png" alt="Zapatilla 4" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+ 
+
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+  
+
+    <!-- JAVA -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
+    <script src="../canjes5.js"></script>
+    <script src="../pasarimagenes.js"></script>
+    <script src="../canjes4.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+     <div id="navbar"></div>
+    <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+
+      // Mover aquí el contenido de navbar.js
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuClose = document.getElementById("menu-close");
+
+      if (menuToggle && menu && menuClose) {
+        menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+        });
+
+        menuClose.addEventListener("click", function () {
+          menu.classList.remove("active");
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+</script>
+
+
+
+
+<script>
+  function filtrarPromos(categoria) {
+    const promos = document.querySelectorAll('.promo-section .col-12');
+
+    promos.forEach(promo => {
+      if (categoria === 'all' || promo.classList.contains(categoria)) {
+        promo.style.display = 'block';
+      } else {
+        promo.style.display = 'none';
+      }
+    });
+
+    // Marcar botón activo
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.querySelector(`.filter-btn[onclick*="${categoria}"]`);
+    if (activeBtn) activeBtn.classList.add('active');
+  }
+</script>
+
+<script>
+document.querySelectorAll(".promo-btn").forEach(function(button) {
+  button.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var card = button.closest(".promo-card");
+    var info = card.querySelector(".promo-info");
+
+    if (info) {
+      const modal = document.getElementById("promoModal");
+      const modalContent = document.getElementById("modalContent");
+      
+      modalContent.innerHTML = info.innerHTML; // Inserta el contenido al modal
+      modal.style.display = "flex"; // Mostrar el modal (usa flex para centrar)
+    }
+  });
+});
+
+// Hacelo global
+window.cerrarModal = function() {
+  const modal = document.getElementById("promoModal");
+  modal.style.display = "none";
+};
+</script>
+<div id="promoModal" class="promo-modal">
+  <div class="promo-modal-content position-relative">
+     <div id="modalContent"></div>
+    <button class="btn btn-outline-secondary mt-4" onclick="cerrarModal()">Cerrar</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Mostrar modal
+    document.querySelectorAll(".promo-btn").forEach(function(button) {
+      button.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        const card = button.closest(".promo-card");
+        const info = card.querySelector(".promo-info");
+
+        if (info) {
+          const modal = document.getElementById("promoModal");
+          const modalContent = document.getElementById("modalContent");
+          modalContent.innerHTML = info.innerHTML;
+          modal.style.display = "flex";
+        }
+      });
+    });
+
+    // Cerrar modal al hacer clic en el botón de cierre
+    const closeBtn = document.querySelector(".close-btn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        document.getElementById("promoModal").style.display = "none";
+      });
+    }
+
+    // Opcional: cerrar haciendo clic fuera del contenido del modal
+    const modal = document.getElementById("promoModal");
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  });
+</script>
+
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".promo-item");
+    const toggleBtn = document.getElementById("toggleBtn");
+    const paso = 6;
+    let mostradas = paso;
+
+    function actualizarVista() {
+      cards.forEach((card, index) => {
+        if (index < mostradas) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      if (mostradas >= cards.length) {
+        toggleBtn.textContent = "Ver menos promociones";
+      } else {
+        toggleBtn.textContent = "Ver más promociones";
+      }
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      if (mostradas >= cards.length) {
+        // Volver al principio
+        mostradas = paso;
+      } else {
+        // Mostrar más
+        mostradas += paso;
+      }
+      actualizarVista();
+    });
+
+    // Estado inicial
+    actualizarVista();
+  });
+</script>
+
+
+</body>
+</html>

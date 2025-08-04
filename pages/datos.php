@@ -153,11 +153,12 @@
   </a>
        <div >
         <p class='mt-2' style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">04/06/2025 10:00 hs</strong></p>
+        <p style="text-align: center">Última actualización: <strong style="color: red;">24/07/2025 11:00 hs</strong></p>
           <!-- <p style="text-align: center; color: blue"><b><u>PRÓXIMA ACTUALIZACIÓN 03/02/2025 </u></b></p> -->
           <!-- Agrega el cuadro de información al lado derecho del título -->
         <div class="info-box">
-            <span>Pago por transferencia </span>  <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
+            <span>Pago por transferencia <br> <b> BANCO GALICIA</b> </span>  
+            <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
             <span ><b><u>Fechas de pago</u></b> <br>ADHERENTES y JUBILADOS<strong><br> 1 al 8 de cada mes</strong></span>
         </div><br>
     </div>
@@ -199,7 +200,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
 
      // Obtengo el apellido y nombre desde la base de datos
-     $sqlNombre = "SELECT apellidoNombre FROM cc04062025 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
+     $sqlNombre = "SELECT apellidoNombre FROM cc24072025 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
      $resultNombre = $conn->query($sqlNombre);
      if ($resultNombre->num_rows > 0) {
          $rowNombre = $resultNombre->fetch_assoc();
@@ -209,7 +210,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      }            
         // Consulta SQL para recuperar datos filtrados
         $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM cc04062025               
+                FROM cc24072025               
                 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
         $result = $conn->query($sql);
         

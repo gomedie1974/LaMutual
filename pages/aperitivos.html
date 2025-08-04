@@ -172,6 +172,59 @@
   object-fit: contain;
 }
 
+.zoom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.zoom-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+/* Contenedor de la imagen para poder posicionar el + */
+.product-card img,
+.carousel-inner img {
+  position: relative;
+  cursor: zoom-in;
+}
+
+/* Efecto + al pasar el mouse */
+.product-card img::after,
+.carousel-inner img::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* no bloquea clics */
+}
+
+/* Mostrar el + cuando el mouse está encima */
+.product-card img:hover::after,
+.carousel-inner img:hover::after {
+  opacity: 1;
+}
+
+
   </style>
 </head>
  
@@ -187,9 +240,10 @@
             <select class="form-select" id="productFilter">
               <option value="todos">Todos</option>
               <option value="aceite">Aceite</option>
+              <option value="aceto">Aceto</option>
               <option value="aperitivos">Aperitivos</option>
               <option value="combinada">Cajas Combinadas</option>
-              <option value="champagne">Champagne</option> 
+              <option value="champagne">Champagne</option>
               <option value="sinalcohol">Sin Alcohol</option>
               <option value="blanco">Vino Blanco</option>
               <option value="tinto">Vino Tinto</option>
@@ -206,6 +260,16 @@
                 <option value="huberto">San Huberto</option>
               </select>
             </div>
+
+            <div class="mb-3">
+              <label for="minPrice" class="form-label"><b>Precio mínimo</b></label>
+              <input type="number" class="form-control" id="minPrice" placeholder="Ej: 20000" min="0">
+            </div>
+            <div class="mb-3">
+              <label for="maxPrice" class="form-label"><b>Precio máximo</b></label>
+              <input type="number" class="form-control" id="maxPrice" placeholder="Ej: 80000" min="0">
+            </div>
+
 
 
           </div>  
@@ -493,14 +557,14 @@
           <button id="CajaNinaGold" class="btn btn-primary">+info</button> <br><br>
         <div class="socio mb-2">
           <span class="label-socio">Valor Socio</span><br>
-          <span class="text-decoration-line-through text-muted">$ 51.968,00</span><br>
-          <span class="price-socio">$ 31.180,80</span><br>
-          <small class="cuotas">4 cuotas de $ 7.795,20</small>
+          <span class="text-decoration-line-through text-muted">$ 66.582,00</span><br>
+          <span class="price-socio">$ 39.949,20</span><br>
+          <small class="cuotas">4 cuotas de $ 9.987,30</small>
         </div>
         <hr>
         <div class="no-socio">
           <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 51.968,00</span>
+          <span class="price-nosocio">$ 67.000,00</span>
         </div>
       </div>
     </div>
@@ -544,14 +608,14 @@
           <button id="CajaCombinadaGranNina" class="btn btn-primary">+info</button> <br><br>
         <div class="socio mb-2">
           <span class="label-socio">Valor Socio</span><br>
-          <span class="text-decoration-line-through text-muted">$ 90.271,00</span><br>
-          <span class="price-socio">$ 54.162,60</span><br>
-          <small class="cuotas">4 cuotas de $ 13.540,65</small>
+          <span class="text-decoration-line-through text-muted">$ 115.358,00</span><br>
+          <span class="price-socio">$ 69.214,80</span><br>
+          <small class="cuotas">4 cuotas de $ 17.303,70</small>
         </div>
         <hr>
         <div class="no-socio">
           <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 90.271,00</span>
+          <span class="price-nosocio">$ 116.000,00</span>
         </div>
       </div>
     </div>
@@ -765,30 +829,7 @@
     </div>
   </div>
 </div>
- 
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card aperitivos">
-     <img class="mt-4 pt-4" src="../image/aperolhd.png" style="height: auto;">
-    <div class="product-info">
-      <h5>Aperol  </h5>
-      <p> <b>bot 750ml</b></p><hr>
-        <div class="price-box text-center mt-3">
-         <div class="socio mb-2">
-          <span class="label-socio">Valor Socio</span><br>
-           <span class="price-socio">$ 8.990,00</span><br>
-          <small class="cuotas">4 cuotas de $ 2.247,50</small>
-        </div>
-        <hr>
-        <div class="no-socio">
-          <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 10.587,00</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- 
+  
 
 <div class="col-12 col-sm-6 col-lg-4">
   <div class="product-card aperitivos">
@@ -909,30 +950,6 @@
   </div>
 </div>
  
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card tinto huberto">
-    <span class="badge-discount">40% OFF</span>
-    <img class="mt-4 pt-4" src="../image/ninanatural.jfif" style="height: auto;">
-    <div class="product-info">
-      <h5>Vino <br>Nina Natural <br>Tinto</h5>
-      <p> <b>caja x 6</b></p><hr>
-        <div class="price-box text-center mt-3">
-         <div class="socio mb-2">
-          <span class="label-socio">Valor Socio</span><br>
-          <span class="text-decoration-line-through text-muted">$ 39.000,00</span><br>
-          <span class="price-socio">$ 23.400,00</span><br>
-          <small class="cuotas">4 cuotas de  $ 5.850,00</small>
-        </div>
-        <hr>
-        <div class="no-socio">
-          <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 39.000,00</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
  
 
 <div class="col-12 col-sm-6 col-lg-4">
@@ -1083,30 +1100,6 @@
   </div>
 </div>
  
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card champagne sophenia">
-    <span class="badge-discount">40% OFF</span>
-    <img class="mt-4 pt-4" src="../image/sopheniaBrutNature.jpg"  style="height: auto;">
-    <div class="product-info">
-      <h5>Champagne <br>Finca Sophenia<br>Brut Nature</h5>
-      <p> <b>caja x 6</b></p><hr>
-        <div class="price-box text-center mt-3">
-         <div class="socio mb-2">
-          <span class="label-socio">Valor Socio</span><br>
-          <span class="text-decoration-line-through text-muted">$ 121.800,00</span><br>
-          <span class="price-socio">$ 73.080,00 </span><br>
-          <small class="cuotas">4 cuotas de $ 18.270,00</small>
-        </div>
-        <hr>
-        <div class="no-socio">
-          <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 121.800,00</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
  
 
 <div class="col-12 col-sm-6 col-lg-4">
@@ -1144,14 +1137,14 @@
         <div class="price-box text-center mt-3">
          <div class="socio mb-2">
           <span class="label-socio">Valor Socio</span><br>
-          <span class="text-decoration-line-through text-muted">$ 90.271,00</span><br>
-          <span class="price-socio">$ 54.162,60  </span><br>
-          <small class="cuotas">4 cuotas de $ 13.540,65</small>
+          <span class="text-decoration-line-through text-muted">$ 115.358,00</span><br>
+          <span class="price-socio">$ 69.214,80  </span><br>
+          <small class="cuotas">4 cuotas de $ 17.303,70</small>
         </div>
         <hr>
         <div class="no-socio">
           <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 90.271,00</span>
+          <span class="price-nosocio">$ 116.000,00</span>
         </div>
       </div>
     </div>
@@ -1167,16 +1160,16 @@
       <h5>Vino Gran Nina  <br>Cab. Franc </h5>
       <p> <b>caja x 6</b></p><hr>
         <div class="price-box text-center mt-3">
-         <div class="socio mb-2">
+        <div class="socio mb-2">
           <span class="label-socio">Valor Socio</span><br>
-          <span class="text-decoration-line-through text-muted">$ 90.271,00</span><br>
-          <span class="price-socio">$ 54.162,60  </span><br>
-          <small class="cuotas">4 cuotas de $ 13.540,65</small>
+          <span class="text-decoration-line-through text-muted">$ 115.358,00</span><br>
+          <span class="price-socio">$ 69.214,80  </span><br>
+          <small class="cuotas">4 cuotas de $ 17.303,70</small>
         </div>
         <hr>
         <div class="no-socio">
           <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 90.271,00</span>
+          <span class="price-nosocio">$ 116.000,00</span>
         </div>
       </div>
     </div>
@@ -1194,14 +1187,89 @@
         <div class="price-box text-center mt-3">
          <div class="socio mb-2">
           <span class="label-socio">Valor Socio</span><br>
-          <span class="text-decoration-line-through text-muted">$ 90.271,00</span><br>
-          <span class="price-socio">$ 54.162,60  </span><br>
-          <small class="cuotas">4 cuotas de $ 13.540,65</small>
+          <span class="text-decoration-line-through text-muted">$ 115.358,00</span><br>
+          <span class="price-socio">$ 69.214,80  </span><br>
+          <small class="cuotas">4 cuotas de $ 17.303,70</small>
         </div>
         <hr>
         <div class="no-socio">
           <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 90.271,00</span>
+          <span class="price-nosocio">$ 116.000,00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card blanco huberto">
+    <span class="badge-discount">40% OFF</span>
+    <img class="mt-4 pt-4" src="../image/ninagoldchardonnayhd.png" style="height: auto;">
+    <div class="product-info">
+      <h5>Vino Nina gold  <br>Chardonnay</h5>
+      <p> <b>caja x 6</b></p><hr>
+        <div class="price-box text-center mt-3">
+         <div class="socio mb-2">
+          <span class="label-socio">Valor Socio</span><br>
+          <span class="text-decoration-line-through text-muted">$ 66.582,00</span><br>
+          <span class="price-socio">$ 39.949,20  </span><br>
+          <small class="cuotas">4 cuotas de $ 9.987,30</small>
+        </div>
+        <hr>
+        <div class="no-socio">
+          <span class="label-nosocio">Valor NO Socio</span><br>
+          <span class="price-nosocio">$ 67.000,00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card tinto huberto">
+    <span class="badge-discount">40% OFF</span>
+    <img class="mt-4 pt-4" src="../image/ninagoldpetitverdot.png" style="height: auto;">
+    <div class="product-info">
+      <h5>Vino Nina gold  <br>Petit Verdot</h5>
+      <p> <b>caja x 6</b></p><hr>
+        <div class="price-box text-center mt-3">
+          <div class="socio mb-2">
+          <span class="label-socio">Valor Socio</span><br>
+          <span class="text-decoration-line-through text-muted">$ 66.582,00</span><br>
+          <span class="price-socio">$ 39.949,20  </span><br>
+          <small class="cuotas">4 cuotas de $ 9.987,30</small>
+        </div>
+        <hr>
+        <div class="no-socio">
+          <span class="label-nosocio">Valor NO Socio</span><br>
+          <span class="price-nosocio">$ 67.000,00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card tinto huberto">
+    <span class="badge-discount">40% OFF</span>
+    <img class="mt-4 pt-4" src="../image/ninagoldcabmalbec.png" style="height: auto;">
+    <div class="product-info">
+      <h5>Vino Nina gold  <br>Cabernet Malbec</h5>
+      <p> <b>caja x 6</b></p><hr>
+        <div class="price-box text-center mt-3">
+          <div class="socio mb-2">
+          <span class="label-socio">Valor Socio</span><br>
+          <span class="text-decoration-line-through text-muted">$ 66.582,00</span><br>
+          <span class="price-socio">$ 39.949,20  </span><br>
+          <small class="cuotas">4 cuotas de $ 9.987,30</small>
+        </div>
+        <hr>
+        <div class="no-socio">
+          <span class="label-nosocio">Valor NO Socio</span><br>
+          <span class="price-nosocio">$ 67.000,00</span>
         </div>
       </div>
     </div>
@@ -1217,16 +1285,16 @@
       <h5>Vino Nina gold  <br>Malbec </h5>
       <p> <b>caja x 6</b></p><hr>
         <div class="price-box text-center mt-3">
-         <div class="socio mb-2">
+          <div class="socio mb-2">
           <span class="label-socio">Valor Socio</span><br>
-          <span class="text-decoration-line-through text-muted">$ 51.968,00</span><br>
-          <span class="price-socio">$ 31.180,80  </span><br>
-          <small class="cuotas">4 cuotas de $ 7.795,20</small>
+          <span class="text-decoration-line-through text-muted">$ 66.582,00</span><br>
+          <span class="price-socio">$ 39.949,20  </span><br>
+          <small class="cuotas">4 cuotas de $ 9.987,30</small>
         </div>
         <hr>
         <div class="no-socio">
           <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 51.968,00</span>
+          <span class="price-nosocio">$ 67.000,00</span>
         </div>
       </div>
     </div>
@@ -1242,16 +1310,16 @@
       <h5>Vino Nina gold  <br>Cab. Franc </h5>
       <p> <b>caja x 6</b></p><hr>
         <div class="price-box text-center mt-3">
-         <div class="socio mb-2">
+          <div class="socio mb-2">
           <span class="label-socio">Valor Socio</span><br>
-          <span class="text-decoration-line-through text-muted">$ 51.968,00</span><br>
-          <span class="price-socio">$ 31.180,80  </span><br>
-          <small class="cuotas">4 cuotas de $ 7.795,20</small>
+          <span class="text-decoration-line-through text-muted">$ 66.582,00</span><br>
+          <span class="price-socio">$ 39.949,20  </span><br>
+          <small class="cuotas">4 cuotas de $ 9.987,30</small>
         </div>
         <hr>
         <div class="no-socio">
           <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 51.968,00</span>
+          <span class="price-nosocio">$ 67.000,00</span>
         </div>
       </div>
     </div>
@@ -1282,6 +1350,32 @@
     </div>
   </div>
 </div>
+
+
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card champagne huberto">
+    <span class="badge-discount">40% OFF</span>
+    <img class="mt-4 pt-4" src="../image/ninaextrabrut.webp" style="height: auto;">
+    <div class="product-info">
+      <h5>Champagne Nina <br>Extra Brut </h5>
+      <p> <b>caja x 6</b></p><hr>
+        <div class="price-box text-center mt-3">
+         <div class="socio mb-2">
+          <span class="label-socio">Valor Socio</span><br>
+          <span class="text-decoration-line-through text-muted">$ 115.358,00</span><br>
+          <span class="price-socio">$ 69.214,80  </span><br>
+          <small class="cuotas">4 cuotas de $ 17.303,70</small>
+        </div>
+        <hr>
+        <div class="no-socio">
+          <span class="label-nosocio">Valor NO Socio</span><br>
+          <span class="price-nosocio">$ 116.000,00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 
 <div class="col-12 col-sm-6 col-lg-4">
   <div class="product-card tinto bianchi">
@@ -1357,50 +1451,28 @@
   </div>
 </div>
  
- 
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card tinto bianchi">
-    <span class="badge-discount">40% OFF</span>
-    <img class="mt-4 pt-4" src="../image/bianchiparticular.webp" style="height: auto;">
-    <div class="product-info">
-      <h5>Vino Bianchi Particular   <br>Malbec </h5>
-      <p> <b>caja x 6</b></p><hr>
-        <div class="price-box text-center mt-3">
-         <div class="socio mb-2">
-          <span class="label-socio">Valor Socio</span><br>
-          <span class="text-decoration-line-through text-muted">$ 175.200,00</span><br>
-          <span class="price-socio">$ 105.120,00  </span><br>
-          <small class="cuotas">4 cuotas de $ 26.280,00</small>
-         </div>
-        <hr>
-        <div class="no-socio">
-          <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 176.000,00</span>
-        </div>
-      </div> 
-    </div>
-  </div>
-</div>
- 
+  
 
 <div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card aceite">
-     <img class="mt-4 pt-2" src="../image/zucardigenovese.jpg" style="height: auto;">
+  <div class="product-card aceite bianchi">
+    <span class="badge-discount">30% OFF</span>
+    <img class="mt-4 pt-2" src="../image/olivaarbequina.webp" style="height: auto;">
     <div class="product-info">
-      <h5>Aceite de Oliva <br>Genovesa <br>Zuccardi </h5>
+      <h5>Aceite de Oliva <br>Arbequina <br>Famiglia </h5>
       <p> <b>bot 500ml</b></p><hr>
         <div class="price-box text-center mt-3">
-          <p style="color: red;"><b>Sin stock</b></p>
-            <!-- <div class="socio mb-2">
+          <p style="color: rgb(5, 13, 133);"><b>Proximamente</b></p>
+           <div class="socio mb-2">
            <span class="label-socio">Valor Socio</span><br>
-            <span class="price-socio">$ 19.300,00  </span><br>
-           <small class="cuotas">4 cuotas de $ 4.825,00</small>
-         </div>   -->
+            <span class="text-decoration-line-through text-muted">19.623,25</span><br>
+            <span class="price-socio">$ 13.736,28  </span><br>
+           <small class="cuotas">4 cuotas de $ 3.434,07</small>
+         </div>  
          <hr>
-    <!-- <div class="no-socio">
+      <div class="no-socio">
            <span class="label-nosocio">Valor NO Socio</span><br>
-           <span class="price-nosocio">$ 25.000,00</span>
-         </div>   -->
+           <span class="price-nosocio">$ 20.000,00</span>
+         </div>  
       </div>
     </div>
   </div>
@@ -1408,23 +1480,103 @@
  
 
 <div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card aceite">
-     <img class="mt-4 pt-2" src="../image/zucardipicual.png" style="height: auto;">
+  <div class="product-card aceite bianchi">
+    <span class="badge-discount">30% OFF</span>
+     <img class="mt-4 pt-2" src="../image/olivablend.webp" style="height: auto;">
     <div class="product-info">
-      <h5>Aceite de Oliva <br>Picual <br>Zuccardi </h5>
+      <h5>Aceite de Oliva <br>Blend<br>Famiglia </h5>
       <p> <b>bot 500ml</b></p><hr>
         <div class="price-box text-center mt-3">
-          <p style="color: red;"><b>Sin stock</b></p>
-         <!-- <div class="socio mb-2">
-          <span class="label-socio">Valor Socio</span><br>
-           <span class="price-socio">$ 19.300,00  </span><br>
-          <small class="cuotas">4 cuotas de $ 4.825,00</small>
-        </div> -->
-        <hr>
-        <!-- <div class="no-socio">
-          <span class="label-nosocio">Valor NO Socio</span><br>
-          <span class="price-nosocio">$ 25.000,00</span>
-        </div> -->
+        <p style="color: rgb(5, 13, 133);"><b>Proximamente</b></p>
+           <div class="socio mb-2">
+           <span class="label-socio">Valor Socio</span><br>
+            <span class="text-decoration-line-through text-muted">19.623,25</span><br>
+            <span class="price-socio">$ 13.736,28  </span><br>
+           <small class="cuotas">4 cuotas de $ 3.434,07</small>
+         </div>  
+         <hr>
+        <div class="no-socio">
+           <span class="label-nosocio">Valor NO Socio</span><br>
+           <span class="price-nosocio">$ 20.000,00</span>
+         </div>   
+        </div>
+    </div>
+  </div>
+</div>
+ 
+
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card aceite bianchi">
+    <span class="badge-discount">30% OFF</span>
+     <img class="mt-4 pt-2" src="../image/olivaarauco.webp" style="height: auto;">
+    <div class="product-info">
+      <h5>Aceite de Oliva <br>Arauco<br>Famiglia </h5>
+      <p> <b>bot 500ml</b></p><hr>
+        <div class="price-box text-center mt-3">
+         <p style="color: rgb(5, 13, 133);"><b>Proximamente</b></p>
+           <div class="socio mb-2">
+           <span class="label-socio">Valor Socio</span><br>
+            <span class="text-decoration-line-through text-muted">19.623,25</span><br>
+            <span class="price-socio">$ 13.736,28  </span><br>
+           <small class="cuotas">4 cuotas de $ 3.434,07</small>
+         </div>  
+         <hr>
+      <div class="no-socio">
+           <span class="label-nosocio">Valor NO Socio</span><br>
+           <span class="price-nosocio">$ 20.000,00</span>
+         </div>  
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card aceto bianchi">
+    <span class="badge-discount">30% OFF</span>
+     <img class="mt-4 pt-2" src="../image/acetofamiglia.webp" style="height: auto;">
+    <div class="product-info">
+      <h5>Aceto <br>Balsámico<br>Famiglia </h5>
+      <p> <b>bot 250ml</b></p><hr>
+        <div class="price-box text-center mt-3">
+         <p style="color: rgb(5, 13, 133);"><b>Proximamente</b></p>
+           <div class="socio mb-2">
+           <span class="label-socio">Valor Socio</span><br>
+            <span class="text-decoration-line-through text-muted">10.900,00</span><br>
+            <span class="price-socio">$ 7.630,00  </span><br>
+           <small class="cuotas">4 cuotas de $ 1.907,50</small>
+         </div>  
+         <hr>
+      <div class="no-socio">
+           <span class="label-nosocio">Valor NO Socio</span><br>
+           <span class="price-nosocio">$ 11.000,00</span>
+         </div>  
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card champagne bianchi">
+    <span class="badge-discount">30% OFF</span>
+     <img class="mt-4 pt-2" src="../image/FamigliaBianchiBrtuNature.webp" style="height: auto;">
+    <div class="product-info">
+      <h5>Champagne Famiglia<br>Brut Nature </h5>
+      <p> <b>caja x 6</b></p><hr>
+        <div class="price-box text-center mt-3">
+         <p style="color: rgb(5, 13, 133);"><b>Proximamente</b></p>
+           <div class="socio mb-2">
+           <span class="label-socio">Valor Socio</span><br>
+            <span class="text-decoration-line-through text-muted">68.750,00</span><br>
+            <span class="price-socio">$ 48.125,00  </span><br>
+           <small class="cuotas">4 cuotas de $ 12.031,25</small>
+         </div>  
+         <hr>
+      <div class="no-socio">
+           <span class="label-nosocio">Valor NO Socio</span><br>
+           <span class="price-nosocio">$ 70.000,00</span>
+         </div>  
       </div>
     </div>
   </div>
@@ -1454,25 +1606,41 @@
   const productFilter = document.getElementById('productFilter');
   const bodegaFilter = document.getElementById('bodegaFilter');
   const productCards = document.querySelectorAll('.product-card');
+  const priceFilter = document.getElementById('priceFilter');
 
-  function filterProducts() {
-    const selectedProduct = productFilter.value;
-    const selectedBodega = bodegaFilter.value;
+  function parsePrice(text) {
+  const match = text.replace(/\./g, '').replace(',', '.').match(/[\d.]+/);
+  return match ? parseFloat(match[0]) : null;
+}
 
-    productCards.forEach(card => {
-      const matchesProduct = selectedProduct === 'todos' || card.classList.contains(selectedProduct);
-      const matchesBodega = selectedBodega === 'todas' || card.classList.contains(selectedBodega);
+function filterProducts() {
+  const selectedProduct = productFilter.value;
+  const selectedBodega = bodegaFilter.value;
+  const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+  const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
 
-      if (matchesProduct && matchesBodega) {
-        card.parentElement.style.display = 'block';
-      } else {
-        card.parentElement.style.display = 'none';
-      }
-    });
-  }
+  productCards.forEach(card => {
+    const matchesProduct = selectedProduct === 'todos' || card.classList.contains(selectedProduct);
+    const matchesBodega = selectedBodega === 'todas' || card.classList.contains(selectedBodega);
+    const priceText = card.querySelector('.price-socio')?.innerText.replace(/[^\d,]/g, '').replace(',', '.');
+    const price = parseFloat(priceText) || 0;
+
+    const matchesPrice = price >= minPrice && price <= maxPrice;
+
+
+    if (matchesProduct && matchesBodega && matchesPrice) {
+      card.parentElement.style.display = 'block';
+    } else {
+      card.parentElement.style.display = 'none';
+    }
+  });
+}
 
   productFilter.addEventListener('change', filterProducts);
   bodegaFilter.addEventListener('change', filterProducts);
+  document.getElementById('minPrice').addEventListener('input', filterProducts);
+  document.getElementById('maxPrice').addEventListener('input', filterProducts);
+
 </script>
 
     <!-- JAVA -->
@@ -1513,6 +1681,26 @@
         });
       });
     });
+</script>
+
+<!-- Modal para zoom -->
+<div id="zoomModal" class="zoom-modal">
+  <img id="zoomedImage" src="" alt="Zoomed Image">
+</div>
+<script>
+  const zoomModal = document.getElementById("zoomModal");
+  const zoomedImage = document.getElementById("zoomedImage");
+
+  document.querySelectorAll(".product-card img, .carousel-inner img").forEach(img => {
+    img.addEventListener("click", () => {
+      zoomedImage.src = img.src;
+      zoomModal.style.display = "flex";
+    });
+  });
+
+  zoomModal.addEventListener("click", () => {
+    zoomModal.style.display = "none";
+  });
 </script>
 </body>
 </html>

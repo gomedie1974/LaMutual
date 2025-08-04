@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Encuesta ACA</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      padding: 2rem;
+    }
+
+    .card-container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      padding: 2rem;
+    }
+
+    .card-container img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      color: #0d47a1;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .form-control, .form-select {
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      width: 100%;
+      border-radius: 10px;
+      padding: 0.75rem;
+      background-color: #0d47a1;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #888;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+  .linea {
+  height: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0a0f3c;
+}
+ </style>
+</head>
+<body>
+
+  <div class="card-container">
+    <h1>Consulta sobre posible canje con ACA </h1>
+
+    <!-- Imagen superior -->
+    <img src="../image/Presentación1.jpg" alt="Presentación ACA">
+
+    <!-- Texto explicativo -->
+    <p style="color: blue;"><strong>Objetivo de esta consulta</strong></p>
+    <hr class="linea" >
+    <p style="text-align: justify;">Explorar el interés de los afiliados en contar con un beneficio exclusivo a través del ACA,
+      que les brinde respaldo, asistencia en ruta y descuentos en servicios clave para su vida
+      diaria. Esta etapa es preliminar y no implica ningún compromiso.</p>
+
+    <p style="color: blue;"><strong>Queremos saber si te gustaría acceder a cosas como:</strong></p>
+    <hr class="linea" >
+    <ul>
+      <li>✔️ Sentirte acompañado cada vez que salís a la ruta.</li>
+      <li>✔️ Ahorrar en lo que usás todos los días, sin cambiar tu rutina.</li>
+      <li>✔️ Escaparte un fin de semana y pagar menos.</li>
+      <li>✔️ Tener acceso a experiencias especiales en gastronomía, salud o viajes.</li>
+      <li>✔️ Saber que, si algo pasa, tenés a alguien que responde.</li>
+    </ul>
+
+    <p style="color: blue;"><strong>¿Qué es ACA en tu Mutual?</strong></p>
+    <hr class="linea" >
+    <p style="text-align: justify;">Es un programa que permite acercar a los afiliados de tu mutual una membresía preferencial del ACA, con acceso a:</p>
+    <ul>
+      <li>✔️ Asistencia mecánica en todo el país, incluso si el vehículo no es propio.</li>
+      <li>✔️ Descuentos en combustibles y lubricantes.</li>
+      <li>✔️ Beneficios en alojamientos y escapadas.</li>
+      <li>✔️ Promociones en gastronomía, salud, entretenimiento y más.</li>
+    </ul>
+
+    <p style="color: blue;"><strong>¿A quién está dirigido este beneficio?</strong></p>
+    <hr class="linea" >
+    <ul>
+      <li>✔️ A cualquier afiliado que se mueva en auto, moto o como acompañante frecuente.</li>
+      <li>✔️ A quienes valoran tener respaldo ante imprevistos en la ruta.</li>
+      <li>✔️ A los que buscan ahorrar mes a mes en servicios que ya usan.</li>
+      <li>✔️ Si ya lo tenes contratado, podes cambiarte a este nuevo plan.</li>
+    </ul>
+    <br><hr>
+    <!-- Formulario -->
+    <form id="encuesta-form" action="https://formspree.io/f/xzzgqbyw" method="POST">
+      <label><b>Nombre y apellido</b></label>
+      <input type="text" class="form-control" name="nombre" required>
+
+      <label><b>Correo electrónico</b></label>
+      <input type="email" class="form-control" name="email" required>
+
+      <label><b>¿Te gustaría acceder a este beneficio a través de tu mutual?</b></label>
+      <select class="form-select" name="interes" required>
+        <option value="" disabled selected>Seleccioná una opción</option>
+        <option>Sí, por favor</option>
+        <option>No por ahora</option>
+      </select>
+
+      <button class="mt-3" type="submit">Enviar respuesta</button>
+    </form>
+
+    
+<!-- Mensaje de éxito centrado en pantalla -->
+<div id="mensaje-exito" class="d-none" style="
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d4edda;
+  color: #155724;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 9999;
+  max-width: 90%;
+  font-size: 1.2rem;
+">
+  ✅ ¡Gracias por tu respuesta! <br> Serás redirigido en unos segundos...
+</div>
+  
+
+    <br>
+  <!-- Imagen superior -->
+    <img src="../image/Presentación2.jpg" alt="Presentación ACA">
+
+  </div>
+
+
+
+  <script>
+    const form = document.getElementById('encuesta-form');
+    const mensajeExito = document.getElementById('mensaje-exito');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.reset();
+          mensajeExito.classList.remove('d-none');
+          setTimeout(() => {
+            window.location.href = 'https://www.lnmutual.com.ar';
+          }, 3000);
+        } else {
+          alert('Hubo un problema al enviar la encuesta. Intentalo nuevamente.');
+        }
+      })
+      .catch(() => {
+        alert('Error de conexión. Por favor intentá más tarde.');
+      });
+    });
+  </script>
+<footer>
+    &copy; 2025 Mutual LN — Todos los derechos reservados.
+  </footer>
+
+
+</body>
+</html>

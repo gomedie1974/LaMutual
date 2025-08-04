@@ -124,12 +124,23 @@
   <div class="contact-card">
     <div class="d-none d-md-block"></div>
     <div class="contact-form">
-      <h2 class="text-center">Contacto</h2>
+      <h2 class="text-center">✍🏻 Contacto</h2>
       <form id="form" method="post" action="https://formspree.io/f/maykebag">
-        <input type="text" name="nombre" placeholder="Nombre y apellido" class="form-control" required>
-        <input type="email" name="email" placeholder="Mail" class="form-control" required>
-        <select name="tema" class="form-select">
-          <option selected disabled>Elija tema...</option>
+
+         
+
+        <i class="fas fa-user"></i> Nombre y apellido
+        <input type="text" name="nombre"  class="form-control" required>
+
+        <i class="fas fa-id-badge"></i> Legajo
+        <input type="number" name="legajo"   class="form-control" required>
+
+        <i class="fas fa-envelope"></i> Correo electrónico 
+        <input type="email" name="email"  class="form-control" required>
+
+        <i class="fas fa-list"></i> Tema 
+        <select name="tema" class="form-select" required>
+          <option value="" selected disabled>Seleccionar...</option>
           <option>Ayuda Económica</option>
           <option>Beca Secundaria</option>
           <option>Canjes</option>
@@ -139,7 +150,26 @@
           <option>Reclamos</option>
           <option>Otros</option>
         </select>
-        <textarea name="mensaje" rows="4" placeholder="Mensaje" class="form-control"></textarea>
+
+        <i class="fas fa-comment-alt"></i> Mensaje 
+         
+        <textarea name="mensaje" rows="4"   class="form-control"></textarea>
+        
+        <!-- Campos adicionales para Ayuda Económica -->
+          <div id="campos-ayuda" style="display: none; color: rgb(0, 5, 144); font-weight: bold;">
+            <i class="fas fa-dollar-sign"></i> Monto a solicitar
+            <input type="number" name="monto" class="form-control" min="0">
+
+            <i class="fas fa-user"></i> Banco
+            <input type="text" name="banco" class="form-control">
+
+            <i class="fas fa-barcode"></i> CBU / Alias
+            <input type="text" name="cbu" class="form-control">
+
+            <i class="fas fa-id-card"></i> CUIL
+            <input type="text" name="cuil" class="form-control">
+          </div>
+
         <div class="my-3 text-center">
           <div class="g-recaptcha" data-sitekey="6LeTnfMhAAAAAFOe6WEYBcEcxjpoxHIPvzrCsYW0"></div>
         </div>
@@ -272,6 +302,21 @@
     });
 </script>
     
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const selectTema = document.querySelector('select[name="tema"]');
+    const camposAyuda = document.getElementById('campos-ayuda');
+
+    selectTema.addEventListener('change', function () {
+      if (this.value === 'Ayuda Económica') {
+        camposAyuda.style.display = 'block';
+      } else {
+        camposAyuda.style.display = 'none';
+      }
+    });
+  });
+</script>
+
 
     
     
