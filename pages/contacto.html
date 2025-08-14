@@ -125,14 +125,13 @@
     <div class="d-none d-md-block"></div>
     <div class="contact-form">
       <h2 class="text-center">✍🏻 Contacto</h2>
-      <form id="form" method="post" action="https://formspree.io/f/maykebag">
 
-         
+      <form id="form" method="post" action="https://formspree.io/f/maykebag">     
 
         <i class="fas fa-user"></i> Nombre y apellido
         <input type="text" name="nombre"  class="form-control" required>
 
-        <i class="fas fa-id-badge"></i> Legajo
+        <i class="fas fa-id-badge"></i> Nro. Legajo/Socio
         <input type="number" name="legajo"   class="form-control" required>
 
         <i class="fas fa-envelope"></i> Correo electrónico 
@@ -163,8 +162,34 @@
             <i class="fas fa-user"></i> Banco
             <input type="text" name="banco" class="form-control">
 
-            <i class="fas fa-barcode"></i> CBU / Alias
-            <input type="text" name="cbu" class="form-control">
+              <i class="fas fa-barcode"></i> CBU
+              <small id="charCount" style="color: gray;">0/22</small>
+              <input type="text" id="cbuInput" name="cbu" class="form-control"
+              maxlength="22"
+              placeholder="Ingresá los 22 dígitos del CBU">
+              <!-- Mensaje de error con estilo -->
+              <div id="errorCBU" style="
+                display: none;
+                margin-top: 10px;
+                color: #fff;
+                background-color: #f44336;
+                padding: 10px 20px;
+                border-radius: 6px;
+                font-weight: bold;
+                text-align: center;
+              "></div>
+
+
+              <style>
+              @keyframes fadeIn {
+                from { opacity: 0; top: 0; }
+                to { opacity: 1; top: 50%; }
+              }
+              </style>
+
+
+            <i class="fas fa-barcode"></i> Alias
+            <input type="text" name="alias" class="form-control">
 
             <i class="fas fa-id-card"></i> CUIL
             <input type="text" name="cuil" class="form-control">
@@ -175,8 +200,12 @@
         </div>
         <div class="row g-2">
           <div class="col-12 col-md-6">
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">
+              <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+              <span class="ms-2">Enviar</span>
+            </button>
           </div>
+          
           <div class="col-12 col-md-6">
             <button type="button" class="btn btn-outline-primary" onclick="window.location.href = '../index.html';">Volver</button>
           </div>
@@ -190,6 +219,7 @@
 
         
 <div id="footer"></div>
+
 <script>
   fetch("footer.html")
     .then(response => response.text())
@@ -207,68 +237,107 @@
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="../contacto.js"></script>
+    
 
-    <script>
-      const form = document.getElementById('form');
-      const submitButton = form.querySelector('button[type="submit"]');
-      const spinner = submitButton.querySelector('.spinner-border');
-    
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-    
-        // Mostrar el spinner y cambiar texto
-        submitButton.disabled = true;
-        spinner.classList.remove('d-none');
-        submitButton.childNodes[1].nodeValue = 'Enviando...'; // Cambia el texto después del spinner
-    
-        const formData = new FormData(form);
-    
-        fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        })
-        .then(response => {
-          if (response.ok) {
-            Swal.fire({
-              icon: 'success',
-              title: '¡Gracias por contactarnos!',
-              text: 'Te responderemos a la brevedad.',
-              confirmButtonColor: '#0d6efd',
-              confirmButtonText: 'Ok'
-            });
-            form.reset();
-          } else {
-            Swal.fire({
-              icon: 'error',
-              title: '¡Oops!',
-              text: 'Hubo un problema al enviar el formulario. Intentalo de nuevo.',
-              confirmButtonColor: '#dc3545'
-            });
-          }
-        })
-        .catch(error => {
-          Swal.fire({
-            icon: 'error',
-            title: '¡Error de conexión!',
-            text: 'No se pudo enviar el mensaje.',
-            confirmButtonColor: '#dc3545'
-          });
-        })
-        .finally(() => {
-          // Ocultar el spinner y restaurar el texto
-          spinner.classList.add('d-none');
-          submitButton.childNodes[1].nodeValue = 'Enviar';
-          submitButton.disabled = false;
-        });
-      });
-    </script>
+  <script>
+  const miform = document.getElementById('form');
+  const cbuInput = document.getElementById('cbuInput');
+  const charCount = document.getElementById('charCount');
+  const errorCBU = document.getElementById('errorCBU');
+  const camposAyuda = document.getElementById('campos-ayuda');
+  const selectTema = document.querySelector('select[name="tema"]');
+
+  // Mostrar/ocultar campos según el tema
+  selectTema.addEventListener('change', function () {
+    if (this.value === 'Ayuda Económica') {
+      camposAyuda.style.display = 'block';
+    } else {
+      camposAyuda.style.display = 'none';
+      errorCBU.style.display = 'none';
+    }
+  });
+
+  // Validación de input CBU en tiempo real
+  cbuInput.addEventListener('input', function () {
+    const value = cbuInput.value.replace(/\D/g, '');
+    cbuInput.value = value;
+    charCount.textContent = `${value.length}/22`;
+    charCount.style.color = value.length === 22 ? 'green' : 'gray';
+
+    if (value.length === 22) {
+      errorCBU.style.display = 'none';
+    }
+  });
+
+  // NO dejar salir del campo CBU hasta que tenga 22 dígitos
+  cbuInput.addEventListener('blur', function () {
+    if (selectTema.value === 'Ayuda Económica') {
+      const value = cbuInput.value.trim();
+      if (value.length !== 22 || !/^\d{22}$/.test(value)) {
+        errorCBU.textContent = "⚠️ El CBU debe tener exactamente 22 números.";
+        errorCBU.style.display = 'block';
+        setTimeout(() => {
+          cbuInput.focus(); // Devuelve el foco al campo
+        }, 50);
+      }
+    }
+  });
+
+  // Validación final al enviar
+miform.addEventListener('submit', function (e) {
+  e.preventDefault(); // Siempre prevenir el envío predeterminado
+
+  const tema = selectTema.value;
+  const cbuFieldVisible = camposAyuda.style.display === 'block'; // ¿Está visible el campo CBU?
+  const cbu = cbuFieldVisible ? cbuInput.value.trim() : '';
+
+  // Validar CBU solo si está visible y es requerido
+  if (cbuFieldVisible) {
+    if (cbu.length !== 22 || !/^\d{22}$/.test(cbu)) {
+      errorCBU.textContent = "⚠️ El CBU debe contener exactamente 22 números.";
+      errorCBU.style.display = "block";
+      cbuInput.focus();
+      return; // Cancelar envío
+    } else {
+      errorCBU.style.display = "none";
+    }
+  }
+
+  // Enviar formulario manualmente con fetch a Formspree
+  const formData = new FormData(miform);
+
+  fetch("https://formspree.io/f/maykebag", {
+    method: "POST",
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      // ✅ Mostrar mensaje de éxito
+      document.getElementById("mensajeExito").style.display = "block";
+
+      // Redirigir luego de 2.5s
+      setTimeout(() => {
+        window.location.href = "https://www.lnmutual.com.ar";
+      }, 2500);
+    } else {
+      alert("❌ Hubo un error al enviar el formulario. Intente nuevamente.");
+    }
+  })
+  .catch(error => {
+    alert("❌ Error de conexión. Intente más tarde.");
+  });
+});
+
+</script>
+
+
     
      <div id="navbar"></div>
-    <script>
+
+<script>
   fetch("navbar.html")
     .then(response => response.text())
     .then(data => {
@@ -318,6 +387,24 @@
 </script>
 
 
+  <!-- Toast de éxito -->
+  <div id="mensajeExito" style="
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-weight: bold;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease-out;
+  ">
+    ✅ ¡Mensaje enviado correctamente! Redirigiendo...
+  </div>
     
     
     </body>

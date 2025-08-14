@@ -29,30 +29,239 @@
   </a>
   
   
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .form-section {
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .form-section h5 {
-      color: #495057;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #dee2e6;
-      padding-bottom: 0.5rem;
-    }
-    .container {
-     overflow: visible;
-    }
-    label{
-        color: rgb(7, 30, 99);        
-    }
+    <style>
+/* ==== Estilos base ==== */
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f8f9fa;
+  color: #212529;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==== Contenedor general ==== */
+.container {
+  overflow: visible;
+  max-width: 900px;
+}
+
+/* ==== Form sections ==== */
+.form-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.12);
+  transition: box-shadow 0.3s ease;
+}
+
+.form-section:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* ==== Títulos secciones ==== */
+.form-section h5 {
+  color: #343a40;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #0d6efd; /* bootstrap primary */
+  padding-bottom: 0.6rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* ==== Labels ==== */
+label {
+  color: #333333;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ==== Inputs ==== */
+input.form-control,
+select.form-select {
+  border-radius: 8px;
+  border: 1.8px solid #ced4da;
+  padding: 10px 12px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+}
+
+input.form-control::placeholder {
+  font-style: italic;
+  color: #999999;
+}
+
+/* Focus para inputs */
+input.form-control:focus,
+select.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 8px rgba(13,110,253,0.25);
+  outline: none;
+}
+
+/* ==== Botón enviar ==== */
+button[type="submit"] {
+  font-weight: 700;
+  padding: 0.75rem 2.5rem;
+  border-radius: 50px;
+  background-color: #0d6efd;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: 0 5px 15px rgba(13,110,253,0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+button[type="submit"]:hover {
+  background-color: #004085;
+  transform: scale(1.05);
+}
+
+/* ==== Botón agregar hijo ==== */
+.btn-success.btn-sm {
+  border-radius: 30px;
+  padding: 0.4rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 8px rgba(40,167,69,0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-success.btn-sm:hover {
+  background-color: #27632a;
+  transform: scale(1.05);
+}
+
+/* ==== Tabla hijos ==== */
+.table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.12);
+  background-color: #fff;
+}
+
+.table th, .table td {
+  vertical-align: middle !important;
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+}
+
+.table thead {
+  background-color: #e9ecef;
+  color: #495057;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f5f9;
+  cursor: pointer;
+}
+
+/* ==== Tarjetas hijos (mobile) ==== */
+#hijos-mobile .card {
+  border-radius: 12px;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+#hijos-mobile .card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Margen interno de inputs en tarjetas */
+#hijos-mobile label {
+  color: #555;
+  font-weight: 600;
+}
+
+#hijos-mobile input.form-control {
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+/* ==== Ícono WhatsApp ==== */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 28px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.15);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ==== Animaciones simples para filas y tarjetas agregadas ==== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#hijos-body tr:last-child {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+#hijos-mobile .card:last-child {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* ==== Mejoras generales ==== */
+.text-center {
+  text-align: center !important;
+}
+
+/* Hacer que inputs tipo number no tengan las flechas (opcional) */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;  /* Firefox */
+  appearance: textfield;       /* estándar */
+}
+
+ 
+/* Responsive tweaks para inputs más anchos en móvil */
+@media (max-width: 575.98px) {
+  input.form-control, select.form-select {
+    font-size: 1rem;
+  }
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.85rem 1rem;
+  }
+}
+
+
   </style>
+
   
     <div class="container my-5">
 
@@ -128,7 +337,7 @@
 
             <!-- Esposo/a -->
             <div class="form-section">
-                <h5><b>Datos del/la Esposo/a</b></h5>
+                <h5><b>Datos Conyuge</b></h5>
                 <div class="row g-3">
                     <div class="col-md-6"><label>Nombre y Apellido</label><input name="Conyuge nombre y apellido" type="text" class="form-control" /></div>
                     <div class="col-md-3">

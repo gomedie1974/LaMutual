@@ -1,5 +1,154 @@
+<?php
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// Datos de conexión
+$servername = "localhost";
+$username = "c2510725";
+$password = "BAkagi34se";
+$database = "c2510725_socios";
+
+// Conexión a MySQL
+$conn = new mysqli($servername, $username, $password, $database);
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+$resultados = "";
+$mensaje = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $dni = isset($_POST['dni']) ? trim($_POST['dni']) : '';
+    $numeroSocio = isset($_POST['numeroSocio']) ? trim($_POST['numeroSocio']) : '';
+
+    if ($dni === '' || $numeroSocio === '') {
+        $mensaje = "Faltan datos: complete DNI y Número de socio.";
+    } else {
+        // Obtener nombre
+        $apellidoNombre = "No encontrado";
+        $sqlNombre = "SELECT apellidoNombre FROM cc130825 WHERE dni = ? AND numeroSocio = ?";
+        if ($stmt = $conn->prepare($sqlNombre)) {
+            $stmt->bind_param("ss", $dni, $numeroSocio);
+            $stmt->execute();
+            $resName = $stmt->get_result();
+            if ($resName && $resName->num_rows > 0) {
+                $rowN = $resName->fetch_assoc();
+                $apellidoNombre = htmlspecialchars($rowN['apellidoNombre']);
+            }
+            $stmt->close();
+        }
+
+        // Obtener datos principales
+        $sql = "SELECT fecha, cuota, detalle, concepto, monto 
+        FROM cc130825
+        WHERE dni = ? AND numeroSocio = ?
+        ORDER BY STR_TO_DATE(
+            CONCAT(
+              '01-', 
+              CASE 
+                WHEN LEFT(fecha,3) = 'ENE' THEN '01'
+                WHEN LEFT(fecha,3) = 'FEB' THEN '02'
+                WHEN LEFT(fecha,3) = 'MAR' THEN '03'
+                WHEN LEFT(fecha,3) = 'ABR' THEN '04'
+                WHEN LEFT(fecha,3) = 'MAY' THEN '05'
+                WHEN LEFT(fecha,3) = 'JUN' THEN '06'
+                WHEN LEFT(fecha,3) = 'JUL' THEN '07'
+                WHEN LEFT(fecha,3) = 'AGO' THEN '08'
+                WHEN LEFT(fecha,3) = 'SEP' THEN '09'
+                WHEN LEFT(fecha,3) = 'OCT' THEN '10'
+                WHEN LEFT(fecha,3) = 'NOV' THEN '11'
+                WHEN LEFT(fecha,3) = 'DIC' THEN '12'
+                ELSE '00'
+              END,
+              '-20', RIGHT(fecha,2)
+            ),
+            '%d-%m-%Y'
+        ) ASC";
+
+        if ($stmt2 = $conn->prepare($sql)) {
+            $stmt2->bind_param("ss", $dni, $numeroSocio);
+            $stmt2->execute();
+            $result = $stmt2->get_result();
+
+            if ($result->num_rows > 0) {
+              ob_start();
+echo '<div class="container my-4">';
+echo "<div class='card shadow-sm mb-4'>
+        <div class='card-body text-center'>
+          <h5 class='card-title text-primary mb-0'>$apellidoNombre</h5>
+        </div>
+      </div>";
+echo '<div class="table-responsive">';
+echo "<table class='table table-striped table-hover table-bordered align-middle mb-0'>"; // SIN margenes extra
+echo "<thead class='table-dark'>
+        <tr>
+            <th>Fecha</th>
+            <th>Cuota</th>
+            <th>Detalle</th>
+            <th>Comprobante</th>
+            <th>Monto</th>
+        </tr>
+      </thead>";
+echo "<tbody>";
+ 
+$contadorFilas = 0;
+$mesActual = null;
+$subtotal = 0.00;
+$totalGeneral = 0.00;
+
+while ($row = $result->fetch_assoc()) {
+    if ($mesActual !== $row["fecha"]) {
+        if ($mesActual !== null) {
+            echo "<tr class='table-secondary fw-bold'>
+                    <td colspan='4'>Subtotal</td>
+                    <td>$ " . number_format($subtotal, 2) . "</td>
+                  </tr>";
+        }
+        $mesActual = $row["fecha"];
+        $subtotal = 0;
+    }
+
+    $subtotal += floatval($row["monto"]);
+    $totalGeneral += floatval($row["monto"]);
+
+    echo "<tr>
+            <td>" . htmlspecialchars($row["fecha"]) . "</td>
+            <td>" . htmlspecialchars($row["cuota"]) . "</td>
+            <td>" . htmlspecialchars($row["detalle"]) . "</td>
+            <td>" . htmlspecialchars($row["concepto"]) . "</td>
+            <td>$ " . number_format($row["monto"], 2) . "</td>
+          </tr>";
+}
+
+echo "<tr class='fw-bold table-secondary text-center'>
+        <td colspan='4'>Subtotal</td>
+        <td>$ " . number_format($subtotal, 2) . "</td>
+      </tr>";
+
+echo "<tr class='fw-bold table-primary text-center'>
+        <td colspan='4'>Total General</td>
+        <td>$ " . number_format($totalGeneral, 2) . "</td>
+      </tr>";
+echo "</tbody>";
+echo "</table>";
+echo "</div>"; // table-responsive
+echo "</div>"; // container
+$resultados = ob_get_clean();
+
+            } else {
+                $mensaje = "No se encontraron resultados para DNI $dni y socio $numeroSocio.";
+            }
+
+            $stmt2->close();
+        }
+    }
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,377 +165,277 @@
     <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
     <title>CSS</title>
     <link rel="stylesheet" href="../style/style.css">
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  
     <!-- Bootstrap core CSS -->
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">   
     <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
     <!-- Para PDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>    <title>Consulta de Socios</title>
+
+    <div id="form-alert" class="alert alert-danger text-center d-none" role="alert" style="font-size: 1.1rem;"></div>
 
 
-    <title>Buscar por Número de dni</title>
     <style>
-        .content-container {
-            margin-left: 20px; /* Ajusta el margen izquierdo según tus necesidades */
-            margin-right: 20px; /* Ajusta el margen derecho según tus necesidades */
-        }
-        .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          user-select: none;
-        }
-  
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
-        }
-        /* Alineo algunos campos */
-        th:nth-child(1), td:nth-child(1) {
+      .table td, .table th {
+        vertical-align: middle;
         text-align: center;
-        }
-        th:nth-child(2), td:nth-child(2) {
-            text-align: center;
-            }
-        th:nth-child(3), td:nth-child(3) {
-            text-align: center;
-            }
-        th:nth-child(4), td:nth-child(4) {
-            text-align: center;
-            }
-        th:nth-child(5), td:nth-child(5) {
-            text-align: center;
-            }
-        th:nth-child(6), td:nth-child(6) {
-        text-align: center;
-        }
-    
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            font-family: 'Udemy Sans', 'SF Pro Text', 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';            
-        }
-        th {
-            position: sticky;
-            top: 0;
-            background-color: #f2f2f2;  
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        #volverContainer {
-            text-align: right;
-            margin-top: 10px;
-            margin-right: 20px;
-        }
-    
-        .info-box {
-            float: right; /* Alinea el cuadro a la derecha */
-            width: 300px; /* Ajusta el ancho según tus necesidades */
-            padding: 1px;
-            border: 1px solid #800404;
-            border-radius: 5px;
-            margin-left: 20px; /* Espacio entre el título y el cuadro */
-            margin-right: 40px;
-            box-sizing: border-box; /* Incluye el padding y border en el ancho y alto */
-            margin-top: -10px; /* Ajusta este valor para subir o bajar el cuadro */ 
-        }
-                /* Media query para hacer el cuadro responsive */
-        @media (max-width: 767px) {
-            .info-box {
-                float: none; /* Desactiva la alineación a la derecha */
-                width: 90%; /* Ocupa todo el ancho disponible */
-                /* margin-left: 0; */ /* Elimina el margen izquierdo */
-                margin-top: 10px; /* Ajusta el espacio entre el título y el cuadro */
-            }
-        }
-        
-      #tablaDatos {
-        width: 100%;
-        border-collapse: collapse; /* Elimina los espacios entre celdas */
-        margin-top: 20px;
-        text-align: center;
-        background-color: #f9f9f9;
-    }
+      }
+      .table td:nth-child(3) {
+        text-align: left; /* Detalle */
+      }
 
-    #tablaDatos th, #tablaDatos td {
-        border: 1px solid #ccc; /* Borde para celdas */
-        padding: 10px;
-        text-align: center;
-    }
+      .table {
+          border-collapse: separate;
+          border-spacing: 0;
+          border-radius: 10px;
+        }
+           /* Responsive tabla */
+        .table-responsive {
+          max-height: 400px;     /* Altura fija para scroll */
+          overflow-y: auto;      /* Scroll vertical */
+          border-radius: 8px;
+        }
 
-    #tablaDatos th {
-        background-color: #007bff; /* Color de encabezado */
-        color: #ffffff; /* Texto blanco */
-        font-weight: bold;
-    }
+        .table thead th {
+          position: sticky;
+          top: 0;
+          background: linear-gradient(90deg, #0d6efd, #0a58ca); /* fondo sólido */
+          color: white;
+          z-index: 10;
+        }
 
-    #tablaDatos tr:nth-child(even) {
-        background-color: #f2f2f2; /* Color para filas pares */
-    }
 
-    .subtotal-row {
-        font-weight: bold;
-    }
 
-    .total-general {
-        background-color:rgb(113, 175, 242);
-        color:rgb(18, 15, 15);
-        font-weight: bold;
-    }
-    .page-break {
-    page-break-before: always; /* Hace que el contenido siguiente empiece en una nueva página */
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    }
-  
-    </style>
+        .table tbody tr:nth-child(odd) {
+          background-color: #f8f9fa;
+        }
+
+        .table tbody tr:hover {
+          background-color: #d1e7fd !important;
+          transform: scale(1.01);
+          transition: 0.2s;
+        }
+
+
+      .table-hover tbody tr:hover {
+        background-color: #d1e7fd;
+        cursor: pointer;
+      }
+
+      .table-secondary {
+        background-color: #e9ecef !important;
+      }
+
+      .table-primary {
+        background-color: #cfe2ff !important;
+        font-size: 1.1rem;
+      }
+      h2.section-title {
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 1.5rem;
+          color: #0d6efd;
+        }
+
+        .custom-form {
+          max-width: 500px;
+          margin: 0 auto;
+          background: #ffffff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .custom-form label {
+          font-weight: 600;
+        }
+
+        .custom-form input[type="text"] {
+          border-radius: 6px;
+        }
+
+        .custom-form input[type="submit"] {
+          width: 100%;
+        }
+        .custom-input {
+          max-width: 250px;  /* límite del ancho */
+          margin: 0 auto;    /* centra el input */
+        }
+
+        .member-name {
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #0d6efd;
+          background: #f8f9fa;
+          padding: 12px;
+          margin-bottom: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        }
+        /* Nombre y apellido */
+        .member-name {
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #0d6efd;
+          background: #f8f9fa;
+          padding: 12px;
+          margin: 20px auto;
+          border-radius: 8px;
+          max-width: 500px;
+          box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        }
+
+        /* Título del formulario */
+        .form-title {
+          background: linear-gradient(90deg, #0d6efd, #0a58ca);
+          color: white;
+          padding: 15px;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.15);        }
+
+     
+
+
+
+ </style>
 </head>
 <body>
-<a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
-    <!-- Ícono de WhatsApp -->
-    <i class="fab fa-whatsapp"></i>
-  </a>
-       <div >
-        <p class='mt-2' style=" text-align: center; color: rgb(0, 0, 0); font-size: 130%; font-family: prumo;"><b><u>DETALLE DE GASTOS</u></b></p>
-        <p style="text-align: center">Última actualización: <strong style="color: red;">24/07/2025 11:00 hs</strong></p>
-          <!-- <p style="text-align: center; color: blue"><b><u>PRÓXIMA ACTUALIZACIÓN 03/02/2025 </u></b></p> -->
-          <!-- Agrega el cuadro de información al lado derecho del título -->
-        <div class="info-box">
-            <span>Pago por transferencia <br> <b> BANCO GALICIA</b> </span>  
-            <button id="infocbu" class="btn btn-primary btn-sm">CBU</button><br>
-            <span ><b><u>Fechas de pago</u></b> <br>ADHERENTES y JUBILADOS<strong><br> 1 al 8 de cada mes</strong></span>
-        </div><br>
-    </div>
 
-    
-<div class="content-container">
-    <form action="" method="post" onsubmit="return validarFormulario()">
-        <label for="numeroSocioInput">DNI (sin . ni ,):</label>
-        <input type="text" id="dniInput" name="dni" required style="width: 100px;" autocomplete="off">
-           
-        <label for="numeroSocioInput">Socio:</label>
-        <input type="text" id="numeroSocioInput" name="numeroSocio" required style="width: 50px; margin-right: 10px;" autocomplete="off">
-         <button class='btn btn-dark btn-sm' type='submit' >Buscar </button>
-         
-    </form>
-</div>
 
 <?php
-// Crear la conexión a la base de datos
-$servername = "localhost";
-$username = "c2510725";
-$password = "BAkagi34se";
-$database = "c2510725_socios";
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+// Mostrar resultados si existen
+if ($resultados) {
+    echo $resultados;
 }
-
-
-
-// Verifico si se envió el formulario  
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener los datos del formulario
-    $dni = $_POST["dni"];
-    $numeroSocio = $_POST["numeroSocio"];
- 
-
-     // Obtengo el apellido y nombre desde la base de datos
-     $sqlNombre = "SELECT apellidoNombre FROM cc24072025 WHERE dni = '$dni' AND numeroSocio = '$numeroSocio'";
-     $resultNombre = $conn->query($sqlNombre);
-     if ($resultNombre->num_rows > 0) {
-         $rowNombre = $resultNombre->fetch_assoc();
-         $apellidoNombre = $rowNombre["apellidoNombre"];
-     } else {
-         $apellidoNombre = "No encontrado"; // Puedes ajustar este valor predeterminado según sea necesario
-     }            
-        // Consulta SQL para recuperar datos filtrados
-        $sql = "SELECT dni,numeroSocio, apellidoNombre, fecha, cuota, detalle, concepto, monto 
-                FROM cc24072025               
-                WHERE dni = '$dni' AND numeroSocio = '$numeroSocio' ";
-        $result = $conn->query($sql);
-        
-        // Variable para almacenar el subtotal
-        $subTotal = 0;
-        // Variable para almacenar el mes actual
-        $mesActual = null;
-        // Variable para almacenar el total general
-        $totalGeneral = 0;
-        
-        if ($result->num_rows > 0) {
-            echo '<div style="margin: 20px;"><br><br>'; // Inicio del contenedor con margen
-            // Mostrar el apellido y nombre
-            echo "<div style='text-align: center; font-weight: bold; font-size: 18px;'>$apellidoNombre</div> ";
-
-
-            echo "<table id='tablaDatos' border='1'>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Cuota</th>
-                        <th>Detalle</th>
-                        <th>Comprobante</th>
-                        <th>Monto</th>
-                    </tr>";
-          
-                    
-// Contador de filas
-$contadorFilas = 0;
-
-while ($row = $result->fetch_assoc()) {
-    // Salto de página cada 15 filas
-    if ($contadorFilas % 13 == 0 && $contadorFilas != 0) {
-        echo "<tr><td colspan='5'><div class='page-break'></div></td></tr>";
-    }
-
-    // Verificar si la fecha ha cambiado para agregar un subtotal
-    if ($mesActual !== $row["fecha"]) {
-        if ($mesActual !== null) {
-            echo "<tr class='subtotal-row'>
-                    <td colspan='4'>Subtotal</td> 
-                    <td>$ " . number_format($subtotal, 2) . "</td>
-                  </tr>";
-        }
-        $mesActual = $row["fecha"];
-        $subtotal = 0;
-    }
-
-    $subtotal += $row["monto"];
-    $totalGeneral += $row["monto"];
-
-    // Imprimir fila con datos
-    echo "<tr>
-            <td>" . $row["fecha"] . "</td>
-            <td>" . $row["cuota"] . "</td>
-            <td>" . $row["detalle"] . "</td>
-            <td>" . $row["concepto"] . "</td>
-            <td>$ " . number_format($row["monto"], 2) . "</td>
-          </tr>";
-
-    $contadorFilas++;
-}
-
-        
-            // Agregar el último subtotal y el total general
-            echo "<tr class='subtotal-row'>
-                  <td colspan='4'>Subtotal</td> <!-- Ajustar el número de celdas -->
-                  <td >$ " . number_format($subtotal, 2) . "</td>
-                  </tr>";
-            echo "<tr class='total-general'>
-                  <td colspan='4' ><br>Total General</td>
-                  <td><br> $ " . number_format($totalGeneral, 2) .  "</td> 
-                  </tr>";
-        
-            echo "</table>";
-        } else {
-            echo "<br> <spam style='margin: 20px;' > <b>No se encontraron resultados.</b></spam><br> ";
-        }
-      }
- 
-// Cerrar la conexión
-$conn->close();
 ?>
 
-<script>
-     //informacion CBU
-     const boton1 = document.getElementById("infocbu");
-      boton1.addEventListener("click", infocbu);
-      function infocbu() {
-              Swal.fire({
-                  imageUrl: '../image/CBU.png',
-                  imageWidth: 400,
-                  imageHeight: 200,
-                  })   
-                }
-function validarFormulario() {
-    var numeroSocioInput = document.getElementById("numeroSocioInput").value;
-    var apellidoNombreInput = document.getElementById("apellidoNombreInput").value;
-
-    if (numeroSocioInput.trim() === "" || apellidoNombreInput.trim() === "") {
-        alert("Por favor, complete ambos campos.");
-        return false;
-    }
-
-    if (apellidoNombreInput.length < 5) {
-        alert("El campo 'Apellido y Nombre' es erroneo.");
-        return false;
-    }
-
-    return true;
-}                               
-</script>
-<br>
-
-
-<style>
-       #spinner-container {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: none;
-        }
-
-        #spinner {
-            width: 100px; /* Ajusta el ancho según sea necesario */
-            height: 100px; /* Ajusta la altura según sea necesario */
-        }
-  </style>
-
- <!-- Botón para descargar como PDF -->
- <button class='btn btn-primary m-2' onclick="descargarPDF()">Descargar como PDF</button>
-
-<!-- Spinner Container (por defecto oculto) -->
-<div id="spinner-container" style="display: none;">
-    <div id="spinner">
-        <img src="../image/loading.gif" alt="Loading..." />
+<!-- Mensaje de aviso/error -->
+<?php if ($mensaje != ''): ?>
+    <div class="alert alert-warning text-center" style="margin: 20px; font-size:1.1rem;">
+        <?php echo $mensaje; ?>
     </div>
+<?php endif; ?>
+
+<hr>
+
+<!-- Formulario -->
+<div class="container my-4">
+  <h2 class="form-title text-center">🔍 Detalle de gastos</h2>
+  <p class="text-center"> <b>Fecha de actualización 13/08/2025</b></p>
+  
+  <div class="row justify-content-center g-4">
+    
+    <!-- Columna formulario -->
+    <div class="col-md-4">
+      <form method="POST" onsubmit="return validarFormulario();" class="p-4 rounded shadow-sm bg-white">
+        
+        <div class="mb-3 text-center">
+          <label for="dniInput" class="form-label fw-bold">DNI</label>
+          <input type="text" id="dniInput" name="dni" class="form-control custom-input" placeholder="Ingrese su DNI sin . ni ,">
+        </div>
+
+        <div class="mb-3 text-center">
+          <label for="numeroSocioInput" class="form-label fw-bold">Número de Socio</label>
+          <input type="text" id="numeroSocioInput" name="numeroSocio" class="form-control custom-input" placeholder="Ingrese su número de socio">
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary px-5">Buscar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Columna datos bancarios fijos -->
+   <div class="col-md-6">
+  <div class="border-primary shadow-lg rounded p-4" style="background: #f8f9fa;">
+    <h5 class="text-primary mb-4 fw-bold">
+      <i class="fas fa-hand-holding-usd me-2"></i> Pagos por transferencia
+    </h5>
+    <p class="mb-3">
+      <i class="fas fa-landmark fa-lg text-primary me-2"></i>
+      <strong>Banco:</strong> Galicia
+    </p>
+    <p class="mb-3 d-flex align-items-center">
+      <i class="fas fa-hashtag fa-lg text-primary me-2"></i>
+      <strong>CBU: </strong> 
+      <span id="cbu" style="letter-spacing: 2px; user-select: all; cursor: pointer;"> 0070055920000006288080</span>
+      <button type="button" class="btn btn-sm btn-outline-primary ms-2" onclick="copyToClipboard('cbu')">Copiar</button>
+    </p>
+
+    <p class="mb-3">
+      <i class="fas fa-id-card fa-lg text-primary me-2"></i> <!-- Para CUIT -->
+      <strong>CUIT:</strong> <span style="letter-spacing: 2px;">30-64701754-8</span>
+    </p>
+    <p class="mb-0">
+      <i class="fas fa-user-circle fa-lg text-primary me-2"></i> <!-- Titular persona o entidad -->
+      <strong>Titular:</strong> Asociación Mutual del personal de La Nación
+    </p>
+  </div>
+</div>
+
+  </div>
 </div>
 
 <script>
-    function descargarPDF() {
-        // Desplazar la pantalla hacia el inicio
-        document.documentElement.scrollTop = 0;
+function mostrarAlerta(tipo, mensaje) {
+    var alerta = document.getElementById("mensajeAlerta");
 
-        // Mostrar el spinner al iniciar la descarga
-        document.getElementById("spinner-container").style.display = "block";
+    // Resetear clases y mostrar mensaje
+    alerta.className = "alert text-center fade show";
+    alerta.textContent = mensaje;
 
-        const element = document.getElementById("tablaDatos");
-        html2pdf(element);
-
-        // Ocultar el spinner cuando la descarga haya finalizado
-        setTimeout(function() {
-            document.getElementById("spinner-container").style.display = "none";
-        }, 5000); // Ajusta el tiempo según sea necesario
+    // Aplicar color según tipo
+    if (tipo === "error") {
+        alerta.classList.add("alert-danger");
+    } else if (tipo === "exito") {
+        alerta.classList.add("alert-success");
     }
-  </script>
 
+    alerta.classList.remove("d-none");
+    alerta.style.opacity = "1";
 
+    // Desaparecer después de 3 segundos
+    setTimeout(function() {
+        alerta.style.opacity = "0";
+        setTimeout(function() {
+            alerta.classList.add("d-none");
+        }, 500);
+    }, 3000);
+}
 
-<div id="footer"></div>
-<script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer").innerHTML = data;
-    });
+function validarFormulario() {
+    var dniInput = document.getElementById("dniInput").value.trim();
+    var numeroSocioInput = document.getElementById("numeroSocioInput").value.trim();
+
+    if (dniInput === "" || numeroSocioInput === "") {
+        mostrarAlerta("error", "⚠️ Por favor, complete ambos campos (DNI y Número de socio).");
+        return false;
+    }
+
+    // Mensaje de éxito antes de enviar
+    mostrarAlerta("exito", "✅ Datos completos. Buscando información...");
+
+    // Simular pequeña espera antes de enviar el formulario
+    setTimeout(function() {
+        document.querySelector("form").submit();
+    }, 1000);
+
+    return false; // prevenir envío inmediato
+}
 </script>
 
+<style>
+.custom-input {
+    max-width: 250px;
+    margin: 0 auto;
+}
+</style>
 
-
-
-  <!-- JAVA -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <div id="navbar"></div>
+ <div id="navbar"></div>
     <script>
   fetch("navbar.html")
     .then(response => response.text())
@@ -421,5 +470,48 @@ function validarFormulario() {
     });
 </script>
 
+
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+<!-- Toast de copia -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+  <div id="copyToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toastBody">
+        Copiado al portapapeles
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
+
+    <script>
+  // Inicializar el toast de Bootstrap (requiere Bootstrap 5)
+  const copyToastEl = document.getElementById('copyToast');
+  const copyToast = new bootstrap.Toast(copyToastEl);
+
+  function copyToClipboard(id) {
+    const text = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      // Cambiar mensaje dinámicamente (opcional)
+      document.getElementById('toastBody').textContent = `Copiado: ${text}`;
+      copyToast.show();
+    }).catch(() => {
+      document.getElementById('toastBody').textContent = `Error al copiar`;
+      copyToast.show();
+    });
+  }
+</script>
+
+
 </body>
+
 </html>
