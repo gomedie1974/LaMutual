@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- SEO -->
-        <title>Mutual LN Canjes</title>
+        <title>Promociones</title>
         <meta name="keywords" content="mutual">
         <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
+        <link rel="canonical" href="https://www.lnmutual.com.ar/promociones.html">
         <!-- Whatsapp -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
         <!-- BOOTSTRAP -->
@@ -19,6 +20,16 @@
     </head>
 
   <style>
+    button, .promo-btn {
+    border-radius: 50px !important;
+    padding: 12px 28px;
+  }
+    header{
+  border-radius: 30px;
+  overflow: hidden;
+  margin: 20px;
+}
+
     .promo-modal-content button {
   font-weight: bold;
   padding: 10px 20px;
@@ -276,11 +287,10 @@
   </a>
   
 <header class="promo text-center">
-  <div class="mes-banner">Julio 2025</div>
+  <div class="mes-banner">Agosto 2025</div>
   <h1>🎁 Promociones Exclusivas</h1>
   <h4>Elegí tu beneficio favorito del mes</h4> 
 </header>
-
 <style>
 .mes-banner {
   background: rgba(255, 255, 255, 0.2);
@@ -293,8 +303,78 @@
   margin-bottom: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+.banner-box {
+  background: linear-gradient(135deg, #00796b, #004d40);
+  color: white;
+}
+.banner-destacado h2 {
+  font-size: 2rem;
+}
+.banner-destacado p {
+  color: #f1f1f1;
+}
+
 </style>
  
+
+<!-- 🔹 Banner destacado debajo de Promociones -->
+<section class="banner-destacado text-center my-4">
+  <div class="container">
+    <div class="card border-0 shadow-lg rounded-4 overflow-hidden banner-box">
+      <div class="row g-0">
+        
+        <!-- Texto -->
+        
+<div class="col-md-7 p-5 d-flex flex-column justify-content-center align-items-start">
+  <h2 class="fw-bold mb-3">🌟 Beneficio Especial </h2>
+  <p class="fs-5">Aprovechá este <span style="color:#ffeb3b;">descuento exclusivo</span> 30% en 4 cuotas.</p>
+  
+  <!-- Botón que abre el modal -->
+  <button type="button" class="btn btn-warning rounded-pill px-4 shadow fw-bold" data-bs-toggle="modal" data-bs-target="#voucherModal">
+    🎟️ Información sobre los Vouchers
+  </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="voucherModal" tabindex="-1" aria-labelledby="voucherModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header bg-warning text-dark rounded-top-4">
+        <h5 class="modal-title fw-bold" id="voucherModalLabel">ℹ️ Información sobre los Vouchers</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body fs-6 text-start">
+        <ul class="list-unstyled mb-0" style="color: black;">
+          <li>✔️ Se abona con vouchers que se retiran en La Mutual.</li>
+          <li>✔️ Válidos para cualquier combo línea Clásica/Urbana.</li>
+          <li>✔️ Válido para todos los locales.</li>
+          <li>✔️ Valor bruto <strong>$15.513.-</strong></li>
+          <li>✔️ No tienen devolución.</li>
+          <li>✔️ Vto. <strong>31/12/2026</strong></li>
+          <li>✔️ Pasada la fecha de vto no pueden revalidarse.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <!-- Imagen -->
+        <div class="col-md-5 d-flex justify-content-center align-items-center bg-dark">
+          <img src="../image/D&D.jpg" alt="Banner Promoción" 
+               class="img-fluid rounded-3" style="max-height:220px; object-fit:cover;">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
   
   <section class="promo-section">
    

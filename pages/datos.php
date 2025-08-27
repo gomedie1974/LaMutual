@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Obtener nombre
         $apellidoNombre = "No encontrado";
-        $sqlNombre = "SELECT apellidoNombre FROM cc130825 WHERE dni = ? AND numeroSocio = ?";
+        $sqlNombre = "SELECT apellidoNombre FROM cc250825 WHERE dni = ? AND numeroSocio = ?";
         if ($stmt = $conn->prepare($sqlNombre)) {
             $stmt->bind_param("ss", $dni, $numeroSocio);
             $stmt->execute();
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Obtener datos principales
         $sql = "SELECT fecha, cuota, detalle, concepto, monto 
-        FROM cc130825
+        FROM cc250825
         WHERE dni = ? AND numeroSocio = ?
         ORDER BY STR_TO_DATE(
             CONCAT(
@@ -166,7 +166,7 @@ $conn->close();
     <title>CSS</title>
     <link rel="stylesheet" href="../style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  
+    <link rel="canonical" href="https://www.lnmutual.com.ar/datos.php">
     <!-- Bootstrap core CSS -->
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">   
     <!-- Custom styles for this template -->
@@ -325,7 +325,7 @@ if ($resultados) {
 <!-- Formulario -->
 <div class="container my-4">
   <h2 class="form-title text-center">🔍 Detalle de gastos</h2>
-  <p class="text-center"> <b>Fecha de actualización 13/08/2025</b></p>
+  <p class="text-center"> <b>Fecha de actualización 25/08/2025</b></p>
   
   <div class="row justify-content-center g-4">
     
@@ -412,7 +412,7 @@ function validarFormulario() {
     var numeroSocioInput = document.getElementById("numeroSocioInput").value.trim();
 
     if (dniInput === "" || numeroSocioInput === "") {
-        mostrarAlerta("error", "⚠️ Por favor, complete ambos campos (DNI y Número de socio).");
+        mostrarAlerta("error", "⚠️ Por favor, complete ambos campos (Número de DNI y número de socio).");
         return false;
     }
 

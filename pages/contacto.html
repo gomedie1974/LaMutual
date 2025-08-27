@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,9 @@
     <title>Mutual LN</title>
     <meta name="keywords" content="mutual">
     <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+
     <!-- Whatsapp -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">          
     <!-- BOOTSTRAP -->
@@ -17,93 +20,101 @@
     <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
     
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
+    <link rel="canonical" href="https://www.lnmutual.com.ar/contacto.html">
 
 
-    <!-- Bootstrap core CSS -->
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f9fafb, #e9eff5);
+    }
 
-<style>
- body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f9fafb, #e9eff5);
+    .contact-wrapper {
+      max-width: 750px;
+      margin: auto;
+      padding: 3rem 1rem;
+    }
 
-  
-}
+    .contact-card {
+      background-color: white;
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 2rem;
+      animation: fadeInUp 0.7s ease;
+    }
 
-.contact-wrapper {
-  max-width: 700px;
-  margin: auto;
-  padding: 3rem 1rem;
-}
+    .contact-card h2 {
+      color: #0d6efd;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 0.5rem;
+    }
 
-.contact-card {
-  background-color: white;
-  border-radius: 25px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-}
+    .contact-card p {
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+    }
 
-.contact-image {
-  flex: 1 1 300px;
-  background: url('../image/contact-illustration.svg') no-repeat center center;
-  background-size: cover;
-  min-height: 350px;
-}
+    .input-group-text {
+      background-color: #f8f9fa;
+      border-radius: 12px 0 0 12px;
+    }
 
-.contact-form {
-  flex: 1 1 400px;
-  padding: 2rem;
-}
+    .form-control, .form-select {
+      border-radius: 0 12px 12px 0;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      transition: all 0.3s ease;
+    }
 
-.contact-form h2 {
-  color: #0d6efd;
-  margin-bottom: 1.5rem;
-}
+    .form-control:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 6px rgba(13, 110, 253, 0.25);
+    }
 
-.contact-form .form-control,
-.contact-form .form-select {
-  border-radius: 12px;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  transition: 0.3s ease;
-}
+    .btn {
+      border-radius: 12px;
+      padding: 0.75rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
 
-.contact-form .form-control:focus {
-  border-color: #0d6efd;
-  box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
-}
+    .btn-primary {
+      background: linear-gradient(135deg, #0d6efd, #007bff);
+      border: none;
+    }
 
-.contact-form button {
-  width: 100%;
-  border-radius: 12px;
-  padding: 0.75rem;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
 
-.contact-form .btn-primary {
-  background: linear-gradient(135deg, #0d6efd, #007bff);
-  border: none;
-}
+    .btn-outline-primary:hover {
+      background-color: #0d6efd;
+      color: white;
+    }
 
-.contact-form .btn-outline-primary {
-  border: 2px solid #0d6efd;
-  color: #0d6efd;
-  background-color: transparent;
-}
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.contact-form .btn-outline-primary:hover {
-  background-color: #0d6efd;
-  color: white;
-}
-
-
-    </style>
-    
+    /* Toast de éxito */
+    #mensajeExito {
+      display: none;
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #4caf50;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      z-index: 9999;
+      animation: fadeInUp 0.5s ease-out;
+    }
+  </style>    
       <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
     
@@ -120,39 +131,54 @@
   </a>
    
 
-   <section class="contact-wrapper">
+<section class="contact-wrapper">
   <div class="contact-card">
     <div class="d-none d-md-block"></div>
     <div class="contact-form">
-      <h2 class="text-center">✍🏻 Contacto</h2>
+      <h2 class="text-center mb-4">✍🏻 Contacto</h2>
 
       <form id="form" method="post" action="https://formspree.io/f/maykebag">     
 
-        <i class="fas fa-user"></i> Nombre y apellido
-        <input type="text" name="nombre"  class="form-control" required>
+                <!-- Nombre -->
+        <div class="input-group mb-4">
+          <span class="input-group-text "><i class="fas fa-user"></i></span>
+          <input type="text" name="nombre" class="form-control" placeholder="Nombre y apellido" required>
+        </div>
 
-        <i class="fas fa-id-badge"></i> Nro. Legajo/Socio
-        <input type="number" name="legajo"   class="form-control" required>
+        <!-- Legajo -->
+        <div class="input-group mb-4">
+          <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+          <input type="number" name="legajo" class="form-control" placeholder="Nro. Legajo/Socio" min="1" required>
+        </div>
 
-        <i class="fas fa-envelope"></i> Correo electrónico 
-        <input type="email" name="email"  class="form-control" required>
+        <!-- Email -->
+        <div class="input-group mb-4">
+          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+          <input type="email" name="email" class="form-control" placeholder="Correo electrónico" required>
+        </div>
 
-        <i class="fas fa-list"></i> Tema 
-        <select name="tema" class="form-select" required>
-          <option value="" selected disabled>Seleccionar...</option>
-          <option>Ayuda Económica</option>
-          <option>Beca Secundaria</option>
-          <option>Canjes</option>
-          <option>Colecciones LN</option>
-          <option>Útiles Escolares</option>
-          <option>Sugerencias</option>
-          <option>Reclamos</option>
-          <option>Otros</option>
-        </select>
+        <!-- Tema -->
+        <div class="input-group mb-4">
+          <span class="input-group-text"><i class="fas fa-list"></i></span>
+          <select name="tema" class="form-select" required>
+            <option value="" selected disabled>Seleccionar tema...</option>
+            <option>Ayuda Económica</option>
+            <option>Beca Secundaria</option>
+            <option>Canjes</option>
+            <option>Colecciones LN</option>
+            <option>Útiles Escolares</option>
+            <option>Sugerencias</option>
+            <option>Reclamos</option>
+            <option>Otros</option>
+          </select>
+        </div>
 
-        <i class="fas fa-comment-alt"></i> Mensaje 
-         
-        <textarea name="mensaje" rows="4"   class="form-control"></textarea>
+        <!-- Mensaje -->
+        <div class="input-group mb-4">
+          <span class="input-group-text"><i class="fas fa-comment-alt"></i></span>
+          <textarea name="mensaje" rows="4" class="form-control" placeholder="Escribe tu mensaje..."></textarea>
+        </div>
+
         
         <!-- Campos adicionales para Ayuda Económica -->
           <div id="campos-ayuda" style="display: none; color: rgb(0, 5, 144); font-weight: bold;">
@@ -207,7 +233,8 @@
           </div>
           
           <div class="col-12 col-md-6">
-            <button type="button" class="btn btn-outline-primary" onclick="window.location.href = '../index.html';">Volver</button>
+            <button type="button" role="button" class="btn btn-outline-primary" onclick="window.location.href = '../index.html';">Volver</button>
+
           </div>
         </div>
       </form>
@@ -275,10 +302,7 @@
       const value = cbuInput.value.trim();
       if (value.length !== 22 || !/^\d{22}$/.test(value)) {
         errorCBU.textContent = "⚠️ El CBU debe tener exactamente 22 números.";
-        errorCBU.style.display = 'block';
-        setTimeout(() => {
-          cbuInput.focus(); // Devuelve el foco al campo
-        }, 50);
+        errorCBU.style.display = 'block';      
       }
     }
   });
@@ -371,24 +395,10 @@ miform.addEventListener('submit', function (e) {
     });
 </script>
     
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const selectTema = document.querySelector('select[name="tema"]');
-    const camposAyuda = document.getElementById('campos-ayuda');
-
-    selectTema.addEventListener('change', function () {
-      if (this.value === 'Ayuda Económica') {
-        camposAyuda.style.display = 'block';
-      } else {
-        camposAyuda.style.display = 'none';
-      }
-    });
-  });
-</script>
 
 
   <!-- Toast de éxito -->
-  <div id="mensajeExito" style="
+  <div id="mensajeExito" role="alert" style="
     display: none;
     position: fixed;
     top: 50%;
