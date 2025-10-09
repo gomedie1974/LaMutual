@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Celebrá el Día de la Madre con beneficios exclusivos de La Nación Mutual. Descuentos en tiendas, cafeterías, spas y más.">
+  <meta property="og:title" content="Promociones Día de la Madre | La Nación Mutual">
+  <meta property="og:description" content="Beneficios exclusivos para agasajar a mamá.">
+  <meta property="og:image" content="https://lnmutual.com.ar/img/madre-banner.jpg">
+  <meta property="og:type" content="website"> 
+  <title>Promociones Día de la Madre</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style/style.css"> 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+<style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+    /* Banner animado superior */
+    .banner-top {
+      background-color: #c2185b;
+      color: white;
+      text-align: center;       /* centra el texto */
+      position: relative;       /* necesario para posicionar el botón */
+      padding: 10px 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      animation: slideIn 1s ease-out;
+    }
+
+    .banner-top a {
+  position: absolute;
+  right: 15px;              /* lo coloca a la derecha */
+  top: 50%;                 /* centra verticalmente */
+  transform: translateY(-50%);
+  width: 40px;              /* tamaño compacto */
+  height: 40px;
+  padding: 0;
+  font-size: 20px;          /* tamaño del icono */
+  border-radius: 50%;       /* botón redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3); /* sombra sutil */
+}
+
+
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+   .hero {
+  background: url('../image/diadelamadre.jpg');
+  background-size: cover;
+  background-position: center;
+  color: rgba(225, 0, 0, 0.339);
+  text-align: center;
+  padding: 120px 20px;
+}
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .promo-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      background-color: #fff;
+    }
+    .promo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .promo-card img {
+      height: 220px;
+      object-fit: cover;
+    }
+    .badge-descuento {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #c2185b;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .cta {
+      background-color: #002850;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .cta h2 {
+      font-weight: 600;
+    }
+    footer {
+      background-color: #002850;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Sección testimonios */
+    .testimonios {
+      background-color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .testimonios h3 {
+      font-weight: 600;
+      color: #002850;
+      margin-bottom: 40px;
+    }
+    .testimonio {
+      max-width: 300px;
+      margin: auto;
+      font-style: italic;
+      color: #555;
+    }
+    .testimonio img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    /* Botón flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+      z-index: 999;
+      transition: transform 0.2s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+  </style>
+  <!-- Banner animado -->
+  <div class="banner-top">
+    🌷 Especial Día de la Madre — Beneficios exclusivos hasta el 19 de octubre 💖
+    <a href="../index.html" class="btn btn-light btn-lg mb-3">🏠</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" data-aos="fade-up">
+    <h1>💐 Promociones Día de la Madre</h1>
+    <p>Celebrá con beneficios exclusivos para agasajar a mamá.</p>
+    <a href="#promos" class="btn btn-light btn-lg mt-3">Ver Promociones</a>
+  </section>
+
+  <!-- Promociones -->
+  <section id="promos" class="container my-5">
+    
+<div class="text-center mb-5">
+  <h2 class="fw-bold text-primary">🎀 Beneficios especiales por el Día de la Madre</h2>
+  <p class="text-muted fs-5 mt-2">
+    Regalos, experiencias y descuentos para celebrar con mamá.
+  </p>
+  <div class="d-flex justify-content-center align-items-center mt-3">
+    <hr style="width:60px; border:2px solid #c2185b; border-radius:5px; margin:0 10px;">
+    <i class="bi bi-flower3" style="color:#c2185b; font-size:1.5rem;"></i>
+    <hr style="width:60px; border:2px solid #c2185b; border-radius:5px; margin:0 10px;">
+  </div>
+</div>
+
+
+
+    <div class="row g-4">
+      <!-- Tarjetas promocionales -->
+       
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card promo-card position-relative">
+        <span class="badge-descuento">20% OFF</span>
+        <img src="../image/perfumes/mamaperfumes.jpg" alt="Perfumería" class="card-img-top">
+        <div class="card-body text-center"> <br>
+          <h5 class="card-title text-primary">Perfumería</h5>
+          <p class="card-text">Descubrí fragancias únicas para mamá.</p>
+          <button class="btn btn-outline-primary" onclick="openModal('Perfumería', '<div class=\'modal-body\'><p><strong>Beneficio:</strong> 20% de descuento en 4 cuotas.</p><p><strong>Ubicación:</strong> Productos disponibles en La Mutual.</p><p><strong>Web:</strong> <a href=\'../pages/perfumes.html\' target=\'_blank\' rel=\'noopener noreferrer\'>Ver productos</a></p></div>')">Más información</button>
+        </div>
+      </div>
+    </div>
+
+ <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card promo-card position-relative">
+    <span class="badge-descuento">40% OFF</span>
+    <img src="../image/colonia.png" alt="colonia" class="card-img-top">
+    <div class="card-body text-center"> <br>
+      <h5 class="card-title text-primary">Colonia Express</h5>
+      <p class="card-text">Escapate a Uruguay con Colonia Express, ¡sin perder tiempo!</p>
+      <button class="btn btn-outline-primary" onclick="openModal('Colonia Express', '<div class=\'modal-body\'><p><strong>Descuento:</strong> 40% de descuento en 6 cuotas.</p><p><strong>Reservas:</strong> Envia tu reserva a La Mutual.</p><p><strong>Web:</strong> <a href=\'https://www.coloniaexpress.com/ar\' target=\'_blank\' rel=\'noopener noreferrer\'>Colonia</a></p></div>')">Más información</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card promo-card position-relative">
+    <span class="badge-descuento">30% OFF</span>
+    <img src="../image/definit.png" alt="definit" class="card-img-top">
+    <div class="card-body text-center"> <br>
+      <h5 class="card-title text-primary">Definit</h5>
+      <p class="card-text">Olvídate de las depilaciones tradicionales. Definit ofrece resultados permanentes y una piel perfecta todo el año.</p>
+      <button class="btn btn-outline-primary" onclick="openModal('Definit', '<div class=\'modal-body\'><p><strong>Descuento:</strong> 30% de descuento en 6 cuotas.</p><p><strong>Valores:</strong> Precio de lista no aplica a promociones.</p><p><strong>Información:</strong> El local NO emite fc, el comprobante será la orden de La Mutual.</p><p><strong>Web:</strong> <a href=\'https://definit.com.ar/\' target=\'_blank\' rel=\'noopener noreferrer\'>Definit</a></p></div>')">Más información</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card promo-card position-relative">
+    <span class="badge-descuento">30% OFF</span>
+    <img src="../image/norimoto.jpg" alt="norimoto" class="card-img-top">
+    <div class="card-body text-center"> <br>
+      <h5 class="card-title text-primary">Norimoto</h5>
+      <p class="card-text">En Norimoto encontrarás más que sushi, encontrarás una experiencia única. Sabores frescos y creaciones únicas.</p>
+      <button class="btn btn-outline-primary" onclick="openModal('Norimoto','<div class=\'modal-body\'><p><strong>Descuento:</strong> 30% de descuento en 4 cuotas.</p><p><strong>Valores:</strong><br> 🔹 Amenabar 3 Palermo GC $ 100.000 <br>🔹 Virrey Aviles 3298 Colegiales GC $ 100.000 <br>🔹 Av. Libertador 6739 Nuñez GC $ 150.000.</p><p><strong>Información:</strong> Sirve para consumir en el Local o take away.</p><p><strong>GC:</strong> Se solicitan en La Mutual y se envían por mail.</p></div>')">Más información</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card promo-card position-relative">
+    <span class="badge-descuento">20% OFF</span>
+    <img src="../image/bigbox.jpg" alt="bb" class="card-img-top">
+    <div class="card-body text-center"> <br>
+      <h5 class="card-title text-primary">BigBox</h5>
+      <p class="card-text">Regalos sorprendentes que van más allá de lo esperado, ideales para sorprender a mamá en su día.</p>
+      <button class="btn btn-outline-primary" onclick="openModal('BigBox', '<div class=\'modal-body\'><p><strong>Descuento:</strong> 20% de descuento en 4 cuotas.</p><p><strong>Ubicación:</strong> Productos disponibles en La Mutual.</p><p><strong>Instructivo:</strong> <a href=\'https://lnmutual.com.ar/image/bigboxinstructivo.pdf\' target=\'_blank\' rel=\'noopener noreferrer\'>Descargar Instructivo</a></p><p><strong>Web:</strong> <a href=\'https://bigboxlnmutual.com.ar/\' target=\'_blank\' rel=\'noopener noreferrer\'>Ver productos</a></p></div>')">Más información</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card promo-card position-relative">
+    <span class="badge-descuento">15% OFF</span>
+    <img src="../image/nega/Nega.png" alt="nega" class="card-img-top">
+    <div class="card-body text-center"> <br>
+    <h5 class="card-title text-primary">Nega</h5>
+    <p class="card-text">Transforma cualquier ambiente con las elegantes velas aromáticas de Nega. Perfectas para crear momentos únicos de relajación y bienestar.</p>
+      <button class="btn btn-outline-primary" onclick="openModal('Nega', '<div class=\'modal-body\'><p><strong>Descuento:</strong> 15% de descuento en 4 cuotas.</p><p><strong>Ubicación:</strong> Productos disponibles en La Mutual.</p><p><strong>Web:</strong> <a href=\'https://lnmutual.com.ar/pages/nega.html\' target=\'_blank\' rel=\'noopener noreferrer\'>Ver productos</a></p></div>')">Más información</button>
+    </div>
+  </div>
+</div>
+  
+
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card promo-card position-relative">
+    <span class="badge-descuento">45% OFF</span>
+    <img src="../image/megatlon.jpg" alt="nega" class="card-img-top">
+    <div class="card-body text-center"> <br>
+    <h5 class="card-title text-primary">Megatlon</h5>
+    <p class="card-text">Mejora tu calidad de vida — Tenemos Sala de Musculación, Cardio, Salones de Técnicas, Spinning y Natatorio..</p>
+      <button class="btn btn-outline-primary" onclick="openModal('Megatlon', '<div class=\'modal-body\'><p><strong>Descuento:</strong> 45% de descuento en 12 cuotas.</p><p><strong>Ubicación:</strong> Freepass que se envían por mail.</p><p><strong>Web:</strong> <a href=\'https://freepass.megatlon.com.ar\' target=\'_blank\' rel=\'noopener noreferrer\'>link de activación </a></p></div>')">Más información</button>
+    </div>
+  </div>
+</div>
+  
+
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card promo-card position-relative">
+    <span class="badge-descuento">30% OFF</span>
+    <img src="../image/SOUTHTIME.png" alt="reloj" class="card-img-top">
+    <div class="card-body text-center"> <br>
+    <h5 class="card-title text-primary">South Time</h5>
+    <p class="card-text">Distribuidor exclusivo de las marcas de relojes Victorinox Swiss Army, Edox y Claude Bernard by Edox.</p>
+      <button class="btn btn-outline-primary" onclick="openModal('South Time', '<div class=\'modal-body\'><p><strong>Descuento:</strong> 30% de descuento en 6 cuotas.</p><p><strong>Ubicación:</strong> Se solicitan por mail en La Mutual.</p><p><strong>Web:</strong> <a href=\'https://southtimegroup.com/\' target=\'_blank\' rel=\'noopener noreferrer\'>Ver productos </a></p></div>')">Más información</button>
+    </div>
+  </div>
+</div>
+  
+
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card promo-card position-relative">
+    <span class="badge-descuento">20% OFF</span>
+    <img src="../image/bioalquimia/AGUA MICELAR.jpg" alt="bioalquimia" class="card-img-top">
+    <div class="card-body text-center"> <br>
+      <h5 class="card-title text-primary">Bioalquimia</h5>
+      <p class="card-text">Productos naturales para una vida plena.</p>
+      <button class="btn btn-outline-primary" onclick="openModal('Bioalquimia', '<div class=\'modal-body\'><p><strong>Descuento:</strong> 20% de descuento en 4 cuotas.</p><p><strong>Ubicación:</strong> Productos disponibles en La Mutual.</p><p><strong>Web:</strong> <a href=\'../pages/bioalquimia.html\' target=\'_blank\' rel=\'noopener noreferrer\'>Ver productos</a></p></div>')">Más información</button>
+    </div>
+  </div>
+</div>
+  
+
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card promo-card position-relative">
+    <img src="../image/tienda/20241109_125419.jpg" alt="tienda" class="card-img-top">
+    <div class="card-body text-center"> <br>
+      <h5 class="card-title text-primary">Indumentaria</h5>
+      <p class="card-text">Indumentaria varios modelos.</p>
+      <button class="btn btn-outline-primary" onclick="openModal('Indumentaria', '<div class=\'modal-body\'><p><strong>Descuento:</strong> 4 cuotas.</p><p><strong>Ubicación:</strong> Productos disponibles en La Mutual.</p><p><strong>Web:</strong> <a href=\'../pages/tienda.html\' target=\'_blank\' rel=\'noopener noreferrer\'>Ver productos</a></p></div>')">Más información</button>
+    </div>
+  </div>
+</div>
+  
+
+<div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+  <div class="card promo-card position-relative">
+    <img src="../image/bebidas.jpg" alt="bebidas" class="card-img-top">
+    <div class="card-body text-center"> <br>
+      <h5 class="card-title text-primary">Vinos y mas...</h5>
+      <p class="card-text">Amplia variedad de vinos y aperitivos.</p>
+      <button class="btn btn-outline-primary" onclick="openModal('Bebidas, aperitivos y más...', '<div class=\'modal-body\'><p><strong>Descuento:</strong> Hasta 40% en 4 cuotas.</p><p><strong>Ubicación:</strong> Productos disponibles en La Mutual.</p><p><strong>Web:</strong> <a href=\'../pages/aperitivos.html\' target=\'_blank\' rel=\'noopener noreferrer\'>Ver productos</a></p></div>')">Más información</button>
+    </div>
+  </div>
+</div>
+  
+
+    </div>
+  </section>
+
+  <!-- Modal Genérico -->
+  <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog"><div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="modalTitle">Modal Title</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <p>Contenido del modal...</p>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>🎁 Asociate y accedé a beneficios exclusivos todo el año</h2>
+    <a href="../pages/asociarse.html" class="btn btn-light btn-lg mt-3">Quiero asociarme</a>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Asegúrate de que el DOM esté completamente cargado
+    document.addEventListener("DOMContentLoaded", function() {
+      // Inicializar AOS
+      AOS.init({ duration: 800, once: true });
+
+      // Función para abrir modales dinámicamente
+      window.openModal = function(title, body) {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalBody').innerHTML = body;
+        
+        // Crear una instancia de Bootstrap Modal
+        var myModal = new bootstrap.Modal(document.getElementById('modal'));
+        myModal.show();
+      };
+    });
+  </script>
+</body>
+</html>

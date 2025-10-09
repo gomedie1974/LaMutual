@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -343,10 +343,86 @@ transition: 0.3s ease;
 </head>
 <body>
 
-    <div>
+  <!-- Banner Día de la Madre -->
+<div id="madreBanner" class="banner-container">
+  <button id="cerrarBanner" class="btn-cerrar">&times;</button>
+  <a href="./pages/diadelamadre.html" target="_blank" rel="noopener noreferrer">
+    <img src="./image/diadelamadrebanner.png" alt="Día de la Madre" class="banner-img">
+  </a>
+</div>
+
+<style>   
+  /* Contenedor general */
+  .banner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* ocupa toda la pantalla */
+    background-color: rgba(0, 0, 0, 0.8); /* fondo oscuro semitransparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  /* Imagen del banner */
+  .banner-img {
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    object-fit: cover;
+  }
+
+  /* Botón de cierre */
+  .btn-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-cerrar:hover {
+    background: #c2185b;
+    color: #fff;
+  }
+
+  /* Adaptable a móviles */
+  @media (max-width: 768px) {
+    .banner-img {
+      width: 100%;
+      height: auto;
+    }
+    .btn-cerrar {
+      top: 15px;
+      right: 15px;
+      font-size: 1.8rem;
+    }
+  }
+</style>
+
+<script>
+  // Cerrar el banner al hacer clic
+  document.getElementById("cerrarBanner").addEventListener("click", function() {
+    document.getElementById("madreBanner").style.display = "none";
+  });
+</script>
+ <!-- FIN Banner Día de la Madre -->
+
+
+
+  <!-- <div>
     <a href="./pages/promociones.html" target="_blank" rel="noopener noreferrer">
     <img src="./image/promociones.png" alt="Promociones" class="img-fluid w-100"></a>
-  </div>    
+  </div>     -->
 
   <div class="owl-carousel owl-theme " >
       <div class="item"><a href="./pages/aperitivos.html"><img src="./image/5.webp" class="carrouselimagen" alt="gin"></a></div>
@@ -482,7 +558,7 @@ transition: 0.3s ease;
                                 <li><a href="./pages/almacen.html" class="nav-link px-2 ">Almacén</a></li>
                                 <li><a href="./pages/aperitivos.html" class="nav-link px-2">Bebidas</a></li>    
                                 <li><a href="./pages/bonafide.html" class="nav-link px-2">Bonafide</a></li>    
-                                <li><a href="./pages/puravida.html" class="nav-link px-2 ">Pura Vida</a></li>
+                                <li><a href="../pages/kuati.html" class="nav-link px-2 ">Kuati</a></li>                              
                               </ul>
                             </li>   
                             <li><a href="#" class="nav-link px-2 ">Hogar <i class="fas fa-chevron-right"></i></a>
@@ -499,12 +575,16 @@ transition: 0.3s ease;
                               <!-- <li><a href="./pages/calzado.html" class="nav-link px-2 ">Calzado </a></li>
                               -->  <li><a href="./pages/deportes.html" class="nav-link px-2 ">Deportes </a></li>
                                   <li><a href="./pages/tienda.html" class="nav-link px-2 ">Indumentaria</a></li>
+                                  <li><a href="./pages/medias.html" class="nav-link px-2">Medias</a></li>  
                                   <li><a href="./pages/pijamas.html" class="nav-link px-2 ">Pijamas</a></li>
-                                  <li><a href="./pages/swissbrand.html  " class="nav-link px-2">SwissBrand</a></li>  
-                                </ul>
+                                  </ul>
                               </li>
-                               <hr style="color: rgb(0, 0, 0);">  
-                              <li><a href="javascript:void(0);"class="nav-link px-2" onclick="showPasswordPrompt()">Config</a></li>    
+                               <hr style="color: rgb(0, 0, 0);">   
+                              <li><a href="javascript:void(0);" class="nav-link px-2" onclick="showPasswordPrompt()">Config</a></li>
+
+                              <!-- Contenedor desplegable debajo del nav -->
+                              <div id="configContainer" style="margin-top: 10px;"></div>
+
                             </ul> 
 
                           <li><a href="#">Beneficios <i class="fas fa-chevron-down"></i></a>
@@ -944,6 +1024,7 @@ transition: 0.3s ease;
           <p class="mb-2 mb-md-0 small flex-grow-1 text-center">© 2025 Mutual LN — Todos los derechos reservados</p>
         
           <!-- Derecha: AFIP -->
+           
           <a href="http://qr.afip.gob.ar/?qr=..." target="_F960AFIPInfo" class="mb-2 mb-md-0">
             <img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" style="width: 50px;" alt="AFIP">
           </a>

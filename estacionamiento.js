@@ -1,40 +1,41 @@
-/* INGRESO CON CLAVE AL SISTEMA */
+// JS   con “ofuscación” básica
+const encodedPassword = "bGFkZ3M1NQ==";  
+
 function showPasswordPrompt() {
   const passwordForm = document.getElementById("passwordForm");
   const optionsDiv = document.getElementById("optionsDiv");
   const parkingButton = document.getElementById("parkingButton");
- 
+  const procesos = document.getElementById("procesos");
+
   passwordForm.style.display = "block";
-  
+
   const passwordInputForm = document.getElementById("passwordInputForm");
 
-  passwordInputForm.addEventListener("submit", function(event) {
+  passwordInputForm.onsubmit = function(event) {
     event.preventDefault();
-    const passwordInput = document.getElementById("password");
-    const enteredPassword = passwordInput.value;
-    const correctPassword = "ladgs55"; // Reemplaza "tuclave" con la clave correcta
+    const enteredPassword = document.getElementById("password").value;
+
+    // decodificar la clave correcta
+    const correctPassword = atob(encodedPassword);
 
     if (enteredPassword === correctPassword) {
-      // Oculta el formulario de la clave
       passwordForm.style.display = "none";
-
-      // Muestra las opciones
       optionsDiv.style.display = "block";
 
-      // Agrega eventos a los botones
-      parkingButton.addEventListener("click", function() {
+      parkingButton.onclick = function() {
         window.location.href = "./pages/estacionamiento.html";
-      });
-
-      procesos.addEventListener("click", function() {
+      };
+      procesos.onclick = function() {
         window.location.href = "./pages/procesos.html";
-      });
-
+      };
     } else {
       alert("Clave incorrecta. Acceso denegado.");
     }
-  });
+  };
 }
+
+
+
 
 
 
@@ -125,35 +126,51 @@ function generarCodigoAleatorio() {
       }
       
       function mostrarCodigosQR(codigos) {
-        var codigosDiv = document.getElementById("codigos");
-        codigosDiv.innerHTML = "";
-      
-        for (var i = 0; i < codigos.length; i++) {
-          var codigoDiv = document.createElement("div");
-          var codigoQRDiv = document.createElement("div");
-      
-          codigoQRDiv.id = "qrcode" + i;
-          codigosDiv.appendChild(codigoQRDiv);
-          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Nombre: ${codigos[i].nombre}</span><br>`;
-          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Código: ${codigos[i].codigo}</span><br>`;
-          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Vehículo: ${codigos[i].vehiculo}</span><br>`;
-          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Patente: ${codigos[i].patente}</span><br>`;
-          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Fecha de generación: ${codigos[i].fecha}</span><br>`;
-          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Fecha de vencimiento: ${codigos[i].fechaVencimiento}</span><br><br>`;
-          codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Sello:</span> <span style="margin-left: 100px;"> Firma:</span> <br><br><br><br><br><br>`;
-          
-          // Aplicar margen izquierdo al contenedor
-          codigoQRDiv.style.marginLeft = "120px";
-      
-          codigosDiv.appendChild(codigoDiv);
-      
-          var qrcode = new QRCode(codigoQRDiv, {
-            text: codigos[i].codigo,
-            width: 100,
-            height: 100,
-          });
-        }
-      }
+  var codigosDiv = document.getElementById("codigos");
+  codigosDiv.innerHTML = "";
+
+  for (var i = 0; i < codigos.length; i++) {
+    var codigoDiv = document.createElement("div");
+    var codigoQRDiv = document.createElement("div");
+
+    codigoQRDiv.id = "qrcode" + i;
+    codigosDiv.appendChild(codigoQRDiv);
+
+    codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Nombre: ${codigos[i].nombre}</span><br>`;
+    codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Código: ${codigos[i].codigo}</span><br>`;
+    codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Vehículo: ${codigos[i].vehiculo}</span><br>`;
+    codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Patente: ${codigos[i].patente}</span><br>`;
+    codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Fecha de generación: ${codigos[i].fecha}</span><br>`;
+    codigoDiv.innerHTML += `<span style="margin-left: 20px;"> Fecha de vencimiento: ${codigos[i].fechaVencimiento}</span><br><br>`;
+
+    // ✅ Agregar sello como imagen en vez de solo texto
+    codigoDiv.innerHTML += `
+      <div style="display:flex; align-items:center; margin-left:20px; gap:100px;">
+        <div>
+          <span>Sello:</span><br>
+          <img src="../image/SELLO.png" alt="Sello" style="width:80px; margin-top:5px;">
+        </div>
+        <div>
+          <span>Firma:</span><br><br><br> <!-- espacio para firmar -->
+        </div>
+      </div>
+      <hr>
+    `;
+
+    // Aplicar margen al contenedor del QR
+    codigoQRDiv.style.marginLeft = "120px";
+
+    codigosDiv.appendChild(codigoDiv);
+
+    // Generar el QR
+    var qrcode = new QRCode(codigoQRDiv, {
+      text: codigos[i].codigo,
+      width: 100,
+      height: 100,
+    });
+  }
+}
+
          
 /* IMPRIMIR CODIGO QR */
 
