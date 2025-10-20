@@ -172,8 +172,69 @@
     object-fit: cover;
     width: 100%;
 }
+.cuotas-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #ff6b6b;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.switch-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: blue;
+  font-weight: bold;
+}
+
   </style>
 </head>
+
  
 <section class="pb-5">
   <div class="container mt-5">
@@ -188,7 +249,6 @@
               <option value="alfombra">Alfombra</option>
               <option value="poncho">Bata/Poncho </option>
               <option value="cortina">Cortina de baño</option>
-              <option value="edredon">Edredón</option>
               <option value="repasador">Repasador</option>
               <option value="sabanas">Sábanas</option>
               <option value="toalla">Toalla y Toallón
@@ -211,157 +271,149 @@
       <!-- Productos -->
       <div class="col-md-9">
         <div class="row g-4">
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card sabanas king">
-              <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/sabanaDanubiocolors.jpg">
-              <div class="product-info">
-                <h5>Sábanas "Danubio"</h5>
-                <p>Juego de sábanas King Size <br> color blanco.</p>
-                <p>200 hilos.</p>
-                <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p><!-- 
-                  <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 110.000,00</span><br>
-                    <span class="price-socio">$ 77.000,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 19.250,00</small>
-                  </div>  -->
-                  <hr>
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 120.000,00</span>
-                  </div>  -->
-                </div>
-              </div>
+         
+          
+         
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="product-card sabanas king">
+            <span class="badge-discount">30% OFF</span>
+            <img src="../image/hogar/sabanaalcoyana112.jpg">
+            <div class="product-info">
+              <h5>Sábanas "Alcoyana"</h5>
+              <p>Juego de sábanas King Size <br> color gris</p>
+              <p>144 hilos.</p>
+              <div class="price-box text-center mt-3">
+
+ 
+                <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 70.900,00</span>
+                  <span class="precio4" style="display:none;">$ 79.600,00 <br>4 c de $ 19.900,00 </span>
+                  
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 80.000,00</span>
+                </div>    
+              </div>   
             </div>
           </div>
+        </div>
+
+
            <div class="col-12 col-sm-6 col-lg-4">
             <div class="product-card sabanas queen">
               <span class="badge-discount">30% OFF</span>
               <img src="../image/hogar/sabana23.png">
               <div class="product-info">
                 <h5>Sábanas "Hotelero"</h5>
-                <p>Juego de sábanas Queen Size <br> color blanco</p>
+                <p>Juego de sábanas Queen Size <br> color natural</p>
                 <p>230 hilos.</p>
                 <div class="price-box text-center mt-3">
-                    <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 72.000,00</span><br>
-                    <span class="price-socio">$ 50.400,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 12.600,00</small>
-                  </div>  
-                  <hr>
-                   <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 80.000,00</span>
-                  </div>  
+             
+                      <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 67.900,00</span>
+                  <span class="precio4" style="display:none;">$ 76.500,00<br>4 c de $ 19.125,00</span>
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 80.000,00</span>
+                </div>    
+
                 </div>   
               </div>
             </div>
           </div>
-          
            
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card sabanas dos">
+
+           <div class="col-12 col-sm-6 col-lg-4">
+            <div class="product-card sabanas queen">
               <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/sabanadanubio2.jpg" >
-              <div class="product-info">
-                <h5>Sábanas "Danubio"</h5>
-                <p>Juego de sábanas 2 1/2 plaza<br> color azul/celeste.</p>
-                <p>144 hilos.</p>
-                <div class="price-box text-center mt-3">
-                  <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 69.000,00</span><br>
-                    <span class="price-socio">$ 48.300,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 12.075,00</small>
-                  </div>
-                  <hr>
-                  <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 72.000,00</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
- 
-            
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card sabanas dos">
-              <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/sabanahotelero.jpg" >
-              <div class="product-info">
-                <h5>Sábanas Hotelero</h5>
-                <p>Juego de sábanas 2 1/2 plaza<br> color blanco.</p>
-                <p>160 hilos. <br>1.40 de ancho</p>
-                <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 60.000,00</span><br>
-                    <span class="price-socio">$ 42.000,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 10.500,00</small>
-                  </div> -->
-                  <hr>
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 70.000,00</span>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-           
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card sabanas dos">
-              <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/sabana11.jpg" >
-              <div class="product-info">
-                <h5>Sábanas "Danubio"</h5>
-                <p>Juego de sábanas 2 1/2 plaza<br> color verde claro.</p>
-                <p>180 hilos. <br>para colchón de hasta 1,40</p>
-                <div class="price-box text-center mt-3">
-                <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 60.000,00</span><br>
-                    <span class="price-socio">$ 42.000,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 10.500,00</small>
-                  </div> -->
-                  <hr>
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 70.000,00</span>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
- 
-           
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card sabanas dos">
-              <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/sabanabeige.jpg" >
+              <img src="../image/hogar/sabanacannon.jpg">
               <div class="product-info">
                 <h5>Sábanas "Cannon"</h5>
-                <p>Juego de sábanas 2 1/2 plaza<br> color beige.</p>
-                <p>200 hilos. <br>para colchón de hasta 1,40</p>
+                <p>Juego de sábanas Queen Size <br> color blanco</p>
+                <p>200 hilos.</p>
                 <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 99.000,00</span><br>
-                    <span class="price-socio">$ 69.300,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 17.325,00</small>
-                  </div> -->
-                  <hr>
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 100.000,00</span>
-                  </div> -->
+                      <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 91.900,00</span>
+                  <span class="precio4" style="display:none;">$ 105.200,00<br>4 c de $ 26.300,00</span>
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 110.000,00</span>
+                </div>    
+                </div>   
+              </div>
+            </div>
+          </div>
+           
+            
+           
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="product-card sabanas dos">
+              <span class="badge-discount">30% OFF</span>
+              <img src="../image/hogar/sabanaalcoyanados.jpg" >
+              <div class="product-info">
+                <h5>Sábanas "Alcoyana"</h5>
+                <p>Juego de sábanas 2 1/2 plaza<br> color verde/beige.</p>
+                <p>144 hilos.</p>
+                <div class="price-box text-center mt-3">
+                       <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 64.900,00</span>
+                  <span class="precio4" style="display:none;">$ 72.800,00<br>4 c de $ 18.200,00</span>
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 80.000,00</span>
+                </div>    
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+           
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="product-card sabanas uno">
+              <span class="badge-discount">30% OFF</span>
+              <img src="../image/hogar/sabanapaletebasicpalette.jpg" >
+              <div class="product-info">
+                <h5>Sábanas "Palette Look"</h5>
+                <p>Juego de sábanas 1 1/2 plaza<br> color gris/beige.</p>
+                <p>144 hilos.</p>
+                <div class="price-box text-center mt-3">
+                      <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 39.900,00</span>
+                  <span class="precio4" style="display:none;">$ 46.00,00<br>4 c de $ 11.500,00</span>
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 50.000,00</span>
+                </div>    
                 </div>
               </div>
             </div>
@@ -375,17 +427,19 @@
                 <h5>Sábanas "Fantasia" Kids</h5>
                 <p>Juego de sábanas 1 1/2 plaza<br> color piratas.</p>
                 <div class="price-box text-center mt-3">
-                  <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 36.000,00</span><br>
-                    <span class="price-socio">$ 25.200,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 6.300,00</small>
-                  </div>
-                  <hr>
-                  <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 40.000,00</span>
-                  </div>
+                     <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 26.000,00</span>
+                  <span class="precio4" style="display:none;">$  28.500,00<br>4 c de $ 7.125,00</span>
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 30.000,00</span>
+                </div>    
                 </div>
               </div>
             </div>
@@ -400,118 +454,46 @@
                 <h5>Sábanas "Fantasia" Kids</h5>
                 <p>Juego de sábanas 1 1/2 plaza<br> color Candy.</p>
                 <div class="price-box text-center mt-3">
-                  <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 36.000,00</span><br>
-                    <span class="price-socio">$ 25.200,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 6.300,00</small>
-                  </div>
-                  <hr>
-                  <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 40.000,00</span>
-                  </div>
+                     <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 26.000,00</span>
+                  <span class="precio4" style="display:none;">$  28.500,00<br>4 c de $ 7.125,00</span>
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 30.000,00</span>
+                </div>    
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card edredon dos">
-              <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/edredon.jpg"  >
-              <div class="product-info">
-                <h5>Edredón Hotelero</h5>
-                <p> 2 1/2 plazas 90 grs<br>Microfibra<br> color petroleo.</p>
-                <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 68.000,00</span><br>
-                    <span class="price-socio">$ 47.600,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 11.900,00</small>
-                  </div> -->
-                  <hr>
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 70.000,00</span>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
- 
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card edredon dos">
-              <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/edredon2.jpg">
-              <div class="product-info">
-                <h5>Edredón Microfibra</h5>
-                <p> 2 1/2 plazas 90 grs<br> Doble Faz <br> color cobre.</p>
-                <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 110.000,00</span><br>
-                    <span class="price-socio">$ 77.000,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 19.250,00</small>
-                  </div> -->
-                  <hr>
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 120.000,00</span>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card toalla">
-              <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/toallapalette.jpg">
-              <div class="product-info">
-                <h5>Toalla y Toallón</h5>
-                <p> Palette 550 grs<br> Algodón egipcio <br> colores blanco/aero</p>
-                <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 42.000,00</span><br>
-                    <span class="price-socio">$ 29.400,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 7.350,00</small>
-                  </div>
- -->                  <hr>
-<!--                   <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 47.000,00</span>
-                  </div>
- -->                </div>
-              </div>
-            </div>
-          </div>
-
+       
           <div class="col-12 col-sm-6 col-lg-4">
             <div class="product-card toalla">
               <span class="badge-discount">30% OFF</span>
               <img src="../image/hogar/toalloncaro.jpg">
               <div class="product-info">
-                <h5>Toalla y Toallón</h5>
-                <p> Arcor Iris Edy 600 grs<br> 100% algodón <br> color: blanco.</p>
+                <h5>Set Toalla y Toallón</h5>
+                <p> Danubio 600 grs<br> Puro algodón <br> color: blanco/plata/verde.</p>
                 <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                       <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 44.000,00</span><br>
-                    <span class="price-socio">$ 30.800,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 7.700,00</small>  
-                  </div> -->
-                  <hr>  
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 47.000,00</span>
-                  </div>   -->
+                     <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 34.990,00</span>
+                  <span class="precio4" style="display:none;">$ 39.200,00<br>4 c de $ 9.800,00</span>
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 40.000,00</span>
+                </div>    
                 </div>
               </div>
             </div>
@@ -525,20 +507,22 @@
               <div class="product-info">
                 <h5>Toalla de piso</h5>
                 <p> Arcor Iris 650 grs<br>50x80cm<br> color: blanco.</p>
+                <p style="color: red;"><b>Sin stock</b></p>
                 <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                       <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 8.400,00</span><br>
-                    <span class="price-socio">$ 5.880,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 1.470,00</small>  
-                  </div> -->
-                  <hr>  
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 10.000,00</span>
-                  </div>   -->
-                </div>
+                 <!-- Precio socio -->
+                <!-- <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 70.900,00</span>
+                  <span class="precio4" style="display:none;">4 c de $ 9.600,00</span>
+                </div> -->    
+                <hr> 
+
+                <!-- Precio no socio -->
+                <!-- <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 80.000,00</span>
+                </div> -->
+                </div> 
               </div>
             </div>
           </div>
@@ -552,92 +536,47 @@
                 <h5>Poncho de toalla</h5>
                 <p> Con capucha y mochila<br>Boca</p>
                 <div class="price-box text-center mt-3">
-                  <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 25.000,00</span><br>
-                    <span class="price-socio">$ 17.500,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 4.375,00</small> 
-                  </div>
-                  <hr> 
-                  <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 30.000,00</span>
-                  </div>  
-                </div>
-              </div>
-            </div>
-          </div>
+                      <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 17.500,00</span>
+                  <span class="precio4" style="display:none;">$ 22.000,00<br>4 c de $ 5.500,00</span>
+                </div>   
+                <hr> 
 
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card poncho">
-              <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/bata.jpg">
-              <div class="product-info">
-                <h5>Bata de toalla</h5>
-                <p> "Palette Crepé"<br> Algodón <br> colores verde. <br>Talles: XL</p>
-                <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p><!-- 
-                  <div class="socio mb-2">
-                       <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 51.000,00</span><br>
-                    <span class="price-socio">$ 35.700,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 8.925,00</small>  
-                  </div> -->
-                  <hr>  
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 60.000,00</span>
-                  </div>   -->
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 30.000,00</span>
+                </div>    
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card poncho">
-              <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/batabeige.jpg">
-              <div class="product-info">
-                <h5>Bata de baño</h5>
-                <p> "Arco Iris"<br> Algodón <br> colores beige. <br>Talles: M</p>
-                <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                       <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 55.000,00</span><br>
-                    <span class="price-socio">$ 38.500,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 9.625,00</small>  
-                  </div> -->
-                  <hr>  
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 60.000,00</span>
-                  </div>   -->
-                </div>
-              </div>
-            </div>
-          </div>
+ 
+ 
 
           <div class="col-12 col-sm-6 col-lg-4">
             <div class="product-card repasador">
               <span class="badge-discount">30% OFF</span>
               <img src="../image/hogar/repasadorpesado.jpg">
               <div class="product-info">
-                <h5>Repasador Pesado </h5>
-                <p> Toalla "Fluor" <br> colores consultar.</p>
+                <h5>Repasador "Fantasía" </h5>
+                <p> Toalla 40x60 <br> colores consultar.</p>
                 <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p><!-- 
-                  <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 3.600,00</span><br>
-                    <span class="price-socio">$ 2.520,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 630,00</small>
-                  </div> -->
-                  <hr><!-- 
-                  <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 4.000,00</span>
-                  </div> -->
+                      <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 3.800,00</span>
+                  <span class="precio4" style="display:none;">$ 4.800,00<br>4 c de $ 1.200,00</span>
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 5.000,00</span>
+                </div>    
                 </div>
               </div>
             </div>
@@ -651,17 +590,19 @@
                 <h5>Repasador Rayas</h5>
                 <p> Degrade 40x58 <br> Algodón </p>
                 <div class="price-box text-center mt-3">
-                     <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 3.600,00</span><br>
-                    <span class="price-socio">$ 2.520,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 630,00</small>
-                  </div>  
-                  <hr>
-                    <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 4.000,00</span>
-                  </div>  
+                       <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 2.600,00</span>
+                  <span class="precio4" style="display:none;">$ 3.500,00<br>4 c de $ 875,00</span>
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 3.000,00</span>
+                </div>    
                 </div>
               </div>
             </div>
@@ -673,49 +614,27 @@
               <img src="../image/hogar/alfombrabanobco.jpg">
               <div class="product-info">
                 <h5>Alfombra de baño</h5>
-                <p> Comfort Memory Foam <br> 40 x 60 <br> colores blanco.</p>
+                <p> Comfort Memory Foam <br> 40 x 60 <br> colores natural.</p>
                 <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 12.000,00</span><br>
-                    <span class="price-socio">$ 8.400,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 2.100,00</small>
-                  </div> -->
-                  <hr>
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 4.000,00</span>
-                  </div> -->
+                       <!-- Precio socio -->
+                <div class="socio mb-2">
+                  <span class="label-socio">Valor Socio</span><br>
+                  <span class="precio1" style="display:inline;">$ 8.600,00</span>
+                  <span class="precio4" style="display:none;">$ 9.500,00<br>4 c de $ 2.375,00</span>
+                </div>   
+                <hr> 
+
+                <!-- Precio no socio -->
+                <div class="no-socio">
+                  <span class="label-nosocio">Valor NO Socio</span><br>
+                  <span class="price-nosocio">$ 10.000,00</span>
+                </div>    
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-sm-6 col-lg-4">
-            <div class="product-card cortina">
-              <span class="badge-discount">30% OFF</span>
-              <img src="../image/hogar/cortina.jpg">
-              <div class="product-info">
-                <h5>Cortina de baño</h5>
-                <p> Teflón estampada <br> 180 x 180 </p>
-                <div class="price-box text-center mt-3">
-                  <p style="color: red;"><b>Sin stock</b></p>
-                  <!-- <div class="socio mb-2">
-                    <span class="label-socio">Valor Socio</span><br>
-                    <span class="text-decoration-line-through text-muted">$ 17.000,00</span><br>
-                    <span class="price-socio">$ 11.900,00</span><br>
-                    <small class="cuotas">4 cuotas de $ 2.975,00</small>
-                  </div> -->
-                  <hr>
-                  <!-- <div class="no-socio">
-                    <span class="label-nosocio">Valor NO Socio</span><br>
-                    <span class="price-nosocio">$ 20.000,00</span>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
+   
  
 
 
@@ -793,6 +712,49 @@
       });
     });
 </script>
-     
+
+<script>
+// Selecciona todas las cards
+document.querySelectorAll('.product-card').forEach(card => {
+
+  // Crear el contenedor del switch
+  const switchDiv = document.createElement('div');
+  switchDiv.className = 'cuotas-switch';
+  switchDiv.innerHTML = `
+    <label class="switch">
+      <input type="checkbox" class="toggle-cuotas">
+      <span class="slider"></span>
+    </label>
+    <span class="switch-label">1 cuota</span>
+  `;
+
+  // Insertar el switch al principio del price-box
+  const priceBox = card.querySelector('.price-box');
+  priceBox.insertBefore(switchDiv, priceBox.firstChild);
+});
+
+// Agregar funcionalidad a todos los switches creados
+document.querySelectorAll('.toggle-cuotas').forEach(toggle => {
+  toggle.addEventListener('change', e => {
+    const card = e.target.closest('.product-card');
+    const cuotasLabel = card.querySelector('.switch-label');
+    const socio = card.querySelector('.socio');
+    const precio1 = socio.querySelector('.precio1');
+    const precio4 = socio.querySelector('.precio4');
+
+    if(toggle.checked){
+      precio1.style.display = 'none';
+      precio4.style.display = 'inline';
+      cuotasLabel.textContent = '4 cuotas';
+    } else {
+      precio1.style.display = 'inline';
+      precio4.style.display = 'none';
+      cuotasLabel.textContent = '1 cuota';
+    }
+  });
+});
+</script>
+
+
 </body>
 </html>
