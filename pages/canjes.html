@@ -17,6 +17,8 @@
         <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../style/style.css">        
+        
+      
     </head>
     
         
@@ -25,6 +27,7 @@
     <!-- Ícono de WhatsApp -->
     <i class="fab fa-whatsapp"></i>
   </a>
+
   
  
   <style>
@@ -180,6 +183,40 @@
 
 
 <div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card ">
+      <span class="badge-discount">30%  OFF</span> 
+       <img src="../image/etiquretanegra.png">
+    <div class="product-info">
+      <h5>Etiqueta Negra</h5>
+       <p>30% de descuento <br> en 4 cuotas <br>Se abona con Mutualchek   </p>   
+       <div>
+          <button class="btn btn-primary" onclick="toggleSpoiler('spoileren')">Locales</button>
+        </div>            
+        <div id="spoileren" class="spoiler mt-2" style="display: none; text-align: left;">
+         <p>✔️ Galerías Pacífico.<br>
+            ✔️ Honduras 4850.  <br>
+            ✔️ Nordelta.<br>
+            ✔️ Patio Bullrich.<br>
+            ✔️ Palmas del Pilar.<br>
+            ✔️ Unicenter.<br>
+            ✔️ <b><u>Vto. Mutualchek para devolver a La Mutual 15 días.</u></b><br>
+            ✔️ <b><u>Vto. Mutualchek para uso 31/01/2026.</u></b><br>
+        </div>
+        <script>
+          function toggleSpoiler(id) {
+            const element = document.getElementById(id);
+            element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+          }
+        </script>       <br> 
+       <button class="btn btn-primary"> <a href="https://www.etiquetanegra.us/" target="_blank" rel="noopener noreferrer" style="color: white;">web</a></button>
+     
+    </div>
+</div>
+</div>
+
+
+
+<div class="col-12 col-sm-6 col-lg-4">
   <div class="product-card">
     <span class="badge-discount">45% OFF</span>
     <img src="../image/megatlon.jpg" alt="Megatlon" class="img-fluid">
@@ -196,10 +233,66 @@
         <a href="../image/megatlonPrecios.png" target="_blank" rel="noopener noreferrer">
           <button class="btn btn-primary">Ver precios</button>
         </a>
+        <a href="https://freepass.megatlon.com.ar/" target="_blank" rel="noopener noreferrer">
+          <button class="btn btn-primary">Link activación</button>
+        </a>
       </div>
     </div>
   </div>
 </div>
+
+
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card ">
+    <span class="badge-discount">40%  OFF</span>
+     <img src="../image/wanamakids.png">
+    <div class="product-info">
+      <h5>Wanama Kids</h5>
+        <p>40%  de descuento <br> en 4 cuotas  </p>  
+        <a href="https://www.wanamakids.com/" target="_blank" rel="noopener noreferrer"><p><b>WanamaKids</b></p></a>
+        <div class="text-center">
+          <button class="btn btn-primary" onclick="toggleSpoiler('spoilerwk')">Condiciones</button>
+        </div>            
+        <div id="spoilerwk" class="spoiler mt-2" style="display: none; text-align: left;">
+          <p>✔️ Se abona con GC que se envían por mail.<br>
+            ✔️ Giftcards de $ 50.000 y $ 80.000  <br>
+            ✔️ Válido para compra online.<br>
+            ✔️ Se debe usar una GC por compra y consumir el total en la misma.<br>
+            ✔️ <b>No tienen devolución.</b><br>
+            ✔️ <u>Vto. 31/12/2025.</u><br>
+            ✔️ Pasada la fecha de vto <span style="color: red;">no pueden revalidarse.</span></p>   
+            <u>IMPORTANTE</u> <br>En caso de cambios de prendas o talles pueden realizarse tanto por ecommerce o en <a href="https://www.wanamakids.com/storelocator" target="_blank" rel="noopener noreferrer"> locales habilitados</a>
+        </div>
+        <script>
+          function toggleSpoiler(id) {
+            const element = document.getElementById(id);
+            element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+          }
+        </script>       <br> 
+      </div>
+  </div>
+</div>
+
+<!-- 
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card ">
+   <span class="badge-discount">10% + 35%  OFF</span>
+     <img src="../image/landmark.png">
+    <div class="product-info">
+      <h5>Landmark/Mihran</h5>
+       <p>10% + 35% de descuento <br> en 6 cuotas  </p> 
+       <p>Se abona con Mutualchek <br><br><u>Local:</u> <br><b>Unicenter</b></p>
+      <button class="btn btn-primary mb-2" >
+        <a href="https://www.landmark.com.ar/" target="_blank"   class="text-center" style="color: white;">Landmark</a> 
+      </button>   
+      <button class="btn btn-primary mb-2" >
+        <a href="https://www.mihranalfombras.com.ar/" target="_blank"   class="text-center" style="color: white;">Mihran</a>
+      </button>   
+    </div>
+ </div>
+</div>
+        
+     -->
 
 <div class="col-12 col-sm-6 col-lg-4">
   <div class="product-card ">
@@ -230,36 +323,6 @@
 </div>    
 </div>
 
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">40%  OFF</span>
-     <img src="../image/wanamakids.png">
-    <div class="product-info">
-      <h5>Wanama Kids</h5>
-        <p>40%  de descuento <br> en 4 cuotas  </p>  
-        <a href="https://www.wanamakids.com/" target="_blank" rel="noopener noreferrer"><p><b>WanamaKids</b></p></a>
-    <div class="text-center">
-          <button class="btn btn-primary" onclick="toggleSpoiler('spoilerwk')">Condiciones</button>
-        </div>            
-        <div id="spoilerwk" class="spoiler mt-2" style="display: none; text-align: left;">
-          <p>✔️ Se abona con GC que se envían por mail.<br>
-            ✔️ Giftcards de $ 50.000 y $ 80.000  <br>
-            ✔️ Válido para compra online.<br>
-            ✔️ Se debe usar una GC por compra y consumir el total en la misma.<br>
-            ✔️ <b>No tienen devolución.</b><br>
-            ✔️ <u>Vto. 31/12/2025.</u><br>
-            ✔️ Pasada la fecha de vto <span style="color: red;">no pueden revalidarse.</span></p>   
-            <u>IMPORTANTE</u> <br>En caso de cambios de prendas o talles pueden realizarse tanto por ecommerce o en <a href="https://www.wanamakids.com/storelocator" target="_blank" rel="noopener noreferrer"> locales habilitados</a>
-        </div>
-        <script>
-          function toggleSpoiler(id) {
-            const element = document.getElementById(id);
-            element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
-          }
-        </script>       <br>       </div>
-</div>
-</div>
 
 
 
@@ -479,7 +542,8 @@
             <p> 30% de descuento <br>
               en 8 cuotas </p>
               <p><b>Válido del <br>15/03/2025 al 02/05/2025</b></p>
-              <a href="../image/BAHIACONDICIONES.png" target="_blank" rel="noopener noreferrer">Condiciones</a> <br><br>          </div>
+              <a href="../image/BAHIACONDICIONES.png" target="_blank" rel="noopener noreferrer">Condiciones</a> <br><br>   
+            </div>
         </div>
       </div>
 
@@ -833,6 +897,20 @@
  </div>
 </div>
 
+
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card ">
+      <span class="badge-discount">30%  OFF</span> 
+       <img src="../image/bonafideBoxStandard.png">
+    <div class="product-info">
+      <h5>Cajas Navideñas <br>Bonafide  2025</h5>
+       <p>30%  de descuento <br> en 4 cuotas  </p>   
+       <button class="btn btn-primary"><a href="../pages/bonafide.html"><span style="color: white;">Cajas</span></a></button> <br><br>
+    </div>
+  </div>
+</div>
+
+
   
 
 <div class="col-12 col-sm-6 col-lg-4">
@@ -842,7 +920,6 @@
     <div class="product-info">
       <h5>Kuati</h5>
        <p>30%  de descuento <br> en 4 cuotas  </p>  
-       <p style="color: blue;"><b>Proximamente</b></p> 
          <button class="btn btn-primary mb-2" >
       <a href="../pages/kuati.html" style="color: white;">Productos</a>
       </button>  
@@ -850,18 +927,6 @@
 </div>
 </div>
 
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-      <!-- <span class="badge-discount">30%  OFF</span> -->
-       <img src="../image/piero.png">
-    <div class="product-info">
-      <h5>Piero</h5>
-       <!-- <p>30%  de descuento <br> en 4 cuotas  </p>   -->
-       <p style="color: blue;"><b>Proximamente</b></p> 
-     
-    </div>
-</div>
-</div>
 
 <div class="col-12 col-sm-6 col-lg-4">
   <div class="product-card ">
@@ -878,14 +943,29 @@
 </div>
 
 
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="product-card ">
+      <!-- <span class="badge-discount">30%  OFF</span> -->
+       <img src="../image/piero.png">
+    <div class="product-info">
+      <h5>Piero</h5>
+       <!-- <p>30%  de descuento <br> en 4 cuotas  </p>   -->
+       <p style="color: blue;"><b>Proximamente</b></p> 
+     
+    </div>
+</div>
+</div>
+
+
+
+
+
 
  
 
     </div> <!-- cierre row -->
   </div> <!-- cierre container -->
 </section>
-
-<br><br>
 
 
 
@@ -910,38 +990,39 @@
 
      <div id="navbar"></div>
     <script>
-  fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
+      fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("navbar").innerHTML = data;
 
-      // Mover aquí el contenido de navbar.js
-      const menuToggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("menu");
-      const menuClose = document.getElementById("menu-close");
+          // Mover aquí el contenido de navbar.js
+          const menuToggle = document.getElementById("menu-toggle");
+          const menu = document.getElementById("menu");
+          const menuClose = document.getElementById("menu-close");
 
-      if (menuToggle && menu && menuClose) {
-        menuToggle.addEventListener("click", function () {
-          menu.classList.toggle("active");
-        });
+          if (menuToggle && menu && menuClose) {
+            menuToggle.addEventListener("click", function () {
+              menu.classList.toggle("active");
+            });
 
-        menuClose.addEventListener("click", function () {
-          menu.classList.remove("active");
-        });
-      }
+            menuClose.addEventListener("click", function () {
+              menu.classList.remove("active");
+            });
+          }
 
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
+          // Smooth scroll
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+              e.preventDefault();
 
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+              });
+            });
           });
         });
-      });
-    });
-</script>
+    </script>
      
-</body>
+
+ </body>
 </html>

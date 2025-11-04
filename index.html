@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<head>
-  <html lang="es">
+<html lang="es">
+  <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -140,6 +140,8 @@
 
   header {
       position: relative; /* Asegura que el header no esté afectado por la posición fija del nav */
+      overflow: visible; /* IMPORTANTE */
+
   }
 
 /* Estilo del nav */
@@ -148,7 +150,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-      position: fixed; /* Hace que el nav sea fijo */
+    position: fixed; /* Hace que el nav sea fijo */
     top: 0; /* Posiciona el nav en la parte superior de la página */
     left: 0; /* Asegura que el nav esté alineado a la izquierda */
     width: 100%; /* Hace que el nav ocupe todo el ancho de la página */
@@ -179,6 +181,30 @@ body {
 
   }
 
+  /* Submenús desplegables */
+.menu li ul {
+    position: absolute; /* Para que se superpongan y no afecten el layout */
+    top: 100%;          /* Justo debajo del elemento padre */
+    left: 0;
+    display: none;      /* Oculto por defecto */
+    z-index: 9999;      /* Más alto que el nav para que siempre quede encima */
+    min-width: 200px;   /* Ajusta según necesites */
+    background-color: #212529; /* Fondo oscuro */
+    font-size: 15px;
+}
+
+/* Mostrar submenú al hover */
+.menu li:hover > ul {
+    display: block;
+}
+
+/* Sub-submenús */
+.menu li ul li ul {
+    top: -40px;
+    left: 100%; /* Se abre a la derecha */
+    z-index: 10000; /* Aún más alto */
+    font-size: 15px;
+}
 
   .menu li a {
       color: rgb(255, 255, 255);
@@ -343,7 +369,8 @@ transition: 0.3s ease;
 </head>
 <body>
 
-  <!-- Banner Día de la Madre -->
+  
+<!-- Banner Día de la Madre -->
 <!-- <div id="madreBanner" class="banner-container">
   <button id="cerrarBanner" class="btn-cerrar">&times;</button>
   <a href="./pages/diadelamadre.html" target="_blank" rel="noopener noreferrer">
@@ -426,7 +453,7 @@ transition: 0.3s ease;
 
   <div class="owl-carousel owl-theme " >
       <div class="item"><a href="./pages/aperitivos.html"><img src="./image/5.webp" class="carrouselimagen" alt="gin"></a></div>
-      <div class="item"><a href="https://southtimegroup.com/" target="_blank"><img src="./image/15.webp" class="carrouselimagen" alt="kankay" loading="lazy"></a></div>
+      <div class="item"><a href="./pages/relojes.html" target="_blank"><img src="./image/15.webp" class="carrouselimagen" alt="kankay" loading="lazy"></a></div>
       <div class="item"><a href="https://bigboxlnmutual.com.ar/"><img src="./image/11.webp" class="carrouselimagen" alt="bigbox" loading="lazy"></a></div>
       <div class="item"><a href="https://rutatlantica.com.ar/" target="_blank"><img src="./image/13.webp" class="carrouselimagen" alt="rutatlantica" loading="lazy"></a></div>
   </div> 
@@ -545,7 +572,6 @@ transition: 0.3s ease;
 
                     <li><a href="#">Descuentos <i class="fas fa-chevron-down"></i></a>
                       <ul style="background-color: #212529;" >
-                            <li><a href="./pages/accesorios.html" class="nav-link px-2 ">Accesorios </i></a>
                             <li><a href="#" class="nav-link px-1 ">Belleza <i class="fas fa-chevron-right"></i></a>
                               <ul class="bg-dark" >
                                 <li><a href="../pages/bioalquimia.html" class="nav-link px-2 ">Bioalquimia</a></li>
@@ -570,14 +596,16 @@ transition: 0.3s ease;
                                 <li><a href="./pages/camping.html" class="nav-link px-2 ">Waterdog/Stanley</a></li>
                               </ul></li>        
                               <li><a href="./pages/juegos.html" class="nav-link px-2">Juegos</a></li>  
-                              <li><a href="#" class="nav-link px-2 ">Tienda <i class="fas fa-chevron-right"></i></a>
+                                 <li><a href="#" class="nav-link px-2 ">Tienda <i class="fas fa-chevron-right"></i></a>
                                 <ul style="background-color: #212529;" >
-                              <!-- <li><a href="./pages/calzado.html" class="nav-link px-2 ">Calzado </a></li>
-                              -->  <li><a href="./pages/deportes.html" class="nav-link px-2 ">Deportes </a></li>
+                                  <li><a href="./pages/accesorios.html" class="nav-link px-2 ">Accesorios </i></a></li> 
+                                  <li><a href="./pages/calzado.html" class="nav-link px-2 ">Calzado </a></li>
+                                  <li><a href="./pages/deportes.html" class="nav-link px-2 ">Deportes </a></li>
                                   <li><a href="./pages/tienda.html" class="nav-link px-2 ">Indumentaria</a></li>
                                   <li><a href="./pages/medias.html" class="nav-link px-2">Medias</a></li>  
                                   <li><a href="./pages/pijamas.html" class="nav-link px-2 ">Pijamas</a></li>
-                                  </ul>
+                                   <li><a href="./pages/relojes.html" class="nav-link px-2">Relojes</a></li>  
+                                </ul>
                               </li>
                                <hr style="color: rgb(0, 0, 0);">   
                               <li><a href="javascript:void(0);" class="nav-link px-2" onclick="showPasswordPrompt()">Config</a></li>
@@ -984,7 +1012,8 @@ transition: 0.3s ease;
           <!-- Columna 1: Información -->
           <div class="col-md-4 mb-4">
             <h5  >Mutual LN</h5>
-            <p class="small">Asociación Mutual del personal de La Nación. Beneficios exclusivos, productos y servicios pensados para vos.</p>
+            <p class="small">Asociación Mutual del personal de La Nación. Beneficios exclusivos, productos y servicios pensados para vos.</p>            
+            <h5>🕒 Horario de atención:</h5> <p class="small"> Lunes a Jueves de 9 a 19 hs <br>Viernes de 9 a 17 hs</p>
           </div>
     
           <!-- Columna 2: Contacto -->
@@ -997,7 +1026,8 @@ transition: 0.3s ease;
               <li><i class="fab fa-instagram me-2"></i>@lnmutual</li>
             </ul>
           </div>
-    
+          
+
           <!-- Columna 3: Mapa -->
           <div class="col-md-4 mb-4">
             <h5  >Ubicación</h5>
@@ -1025,7 +1055,7 @@ transition: 0.3s ease;
         
           <!-- Derecha: AFIP -->
            
-          <a href="http://qr.afip.gob.ar/?qr=..." target="_F960AFIPInfo" class="mb-2 mb-md-0">
+          <a href="https://auth.afip.gob.ar/contribuyente_/login.xhtml" target="_F960AFIPInfo" class="mb-2 mb-md-0">
             <img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" style="width: 50px;" alt="AFIP">
           </a>
         </div>

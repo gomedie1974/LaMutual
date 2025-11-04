@@ -103,7 +103,30 @@
           z-index: 1000; /* Asegura que el nav esté encima de otros elementos */
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil para darle profundidad */
       }
+  /* Submenús desplegables */
+.menu li ul {
+    position: absolute; /* Para que se superpongan y no afecten el layout */
+    top: 100%;          /* Justo debajo del elemento padre */
+    left: 0;
+    display: none;      /* Oculto por defecto */
+    z-index: 9999;      /* Más alto que el nav para que siempre quede encima */
+    min-width: 200px;   /* Ajusta según necesites */
+    background-color: #212529; /* Fondo oscuro */
+    font-size: 15px;
+}
 
+/* Mostrar submenú al hover */
+.menu li:hover > ul {
+    display: block;
+}
+
+/* Sub-submenús */
+.menu li ul li ul {
+    top: -40px;
+    left: 100%; /* Se abre a la derecha */
+    z-index: 10000; /* Aún más alto */
+    font-size: 15px;
+}
     /* Espacio adicional para el contenido debajo del nav fijo */
     
         .menu-hamburguesa {
@@ -312,7 +335,6 @@
 
                     <li><a href="#">Descuentos <i class="fas fa-chevron-down"></i></a>
                       <ul class="bg-dark" >
-                            <li><a href="../pages/accesorios.html" class="nav-link px-2 ">Accesorios </i></a>
                             <li><a href="#" class="nav-link px-1 ">Belleza <i class="fas fa-chevron-right"></i></a>
                               <ul class="bg-dark" >
                                 <li><a href="../pages/bioalquimia.html" class="nav-link px-2 ">Bioalquimia</a></li>
@@ -339,11 +361,13 @@
                               <li><a href="../pages/juegos.html" class="nav-link px-2">Juegos</a></li>  
                               <li><a href="#" class="nav-link px-2 ">Tienda <i class="fas fa-chevron-right"></i></a>
                                 <ul class="bg-dark" >
-                                  <!--<li><a href="../pages/calzado.html" class="nav-link px-2 ">Calzado </a></li>
-                                  --><li><a href="../pages/deportes.html" class="nav-link px-2 ">Deportes </a></li>
+                                  <li><a href="../pages/accesorios.html" class="nav-link px-2 ">Accesorios </i></a></li>
+                                  <li><a href="../pages/calzado.html" class="nav-link px-2 ">Calzado </a></li>
+                                  <li><a href="../pages/deportes.html" class="nav-link px-2 ">Deportes </a></li>
                                   <li><a href="../pages/tienda.html" class="nav-link px-2 ">Indumentaria</a></li>
                                   <li><a href="../pages/pijamas.html" class="nav-link px-2 ">Pijamas</a></li>
-                                <li><a href="./pages/medias.html" class="nav-link px-2">Medias</a></li>  
+                                  <li><a href="./pages/medias.html" class="nav-link px-2">Medias</a></li>  
+                                  <li><a href="./relojes.html" class="nav-link px-2">Relojes</a></li>  
                                  </ul>
                               </li>
                              
