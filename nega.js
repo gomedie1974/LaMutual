@@ -1,11 +1,44 @@
 
-const btnrummama = document.getElementById("mama");
-btnrummama.addEventListener("click", mama);
-function mama() {
+const btnrumCAPRI = document.getElementById("CAPRI");
+btnrumCAPRI.addEventListener("click", CAPRI);
+function CAPRI() {
   Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Box Día de la Madre</u></span>',
-    html: '<div style="text-align: left;"> <span   style="font-size: 15px;">Cada box trae: vela aromática en cerámica, difusor de 200grs y aromatizador de 250grs.<br><b>Box sandia frambuesa:</b><br> Vela ROSA <br><b>Box pera pepino manzana:</b><br> Vela AMARILLA <br> <b>Box vainilla especiada:</b><br> Vela NATURAL <br><b>Box bambú:</b><br> Vela VERDE SECO  </span></div>'})   
+    title: '<span style="font-size: 25px;"><u>Difusor Refill Capri </u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Inspirado en la distinción de un decantador de vino, el Difusor Capri es una pieza de diseño que va más allá de lo decorativo. Su frasco de vidrio con un delicado cordón de cuero es un detalle de sofisticación que transforma cualquier ambiente en un refugio sensorial.<br><br>Envase de vidrio elegante, acompañado por un delicado cordoncito de cuero que le aporta un toque de sofisticación y diseño exclusivo.<br><br>Incluye un refill de 500 ml, ideal para que disfrutes de tu aroma favorito por mucho más tiempo sin preocuparte por recambios inmediatos.</span></div>'})   
 }
+
+
+const btnrumBALI = document.getElementById("BALI");
+btnrumBALI.addEventListener("click", BALI);
+function BALI() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Difusor Refill Bali </u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Este difusor fue creado especialmente para ambientes grandes, asegurando que el aroma se sienta en cada rincón de tu hogar.<br><br>Envase de vidrio elegante, acompañado por un delicado cordoncito de cuero que le aporta un toque de sofisticación y diseño exclusivo.<br><br>Incluye un refill de 500 ml, ideal para que disfrutes de tu aroma favorito por mucho más tiempo sin preocuparte por recambios inmediatos.</span></div>'})   
+}
+
+const btnrumMykonostexturado = document.getElementById("Mykonostexturado");
+btnrumMykonostexturado.addEventListener("click", Mykonostexturado);
+function Mykonostexturado() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Difusor Refill Mykonos Texturado </u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">El Difusor Mykonos está diseñado con un envase de vidrio texturado y con color que aporta estilo y calidez a cualquier rincón de tu hogar. Sus varillas de alta calidad permiten una difusión constante y pareja del perfume, creando un ambiente acogedor y lleno de personalidad.<br><br>Incluye un refill de 500 ml, ideal para que disfrutes de tu aroma favorito por mucho más tiempo sin preocuparte por recambios inmediatos.</span></div>'})   
+}
+const btnrumMykonos = document.getElementById("Mykonos");
+btnrumMykonos.addEventListener("click", Mykonos);
+function Mykonos() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Difusor Refill Mykonos</u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">El Difusor Mykonos está diseñado con un envase de vidrio con color que aporta estilo y calidez a cualquier rincón de tu hogar. Sus varillas de alta calidad permiten una difusión constante y pareja del perfume, creando un ambiente acogedor y lleno de personalidad.<br><br>Incluye un refill de 500 ml, ideal para que disfrutes de tu aroma favorito por mucho más tiempo sin preocuparte por recambios inmediatos.</span></div>'})   
+}
+
+const btnrumMarruecos = document.getElementById("Marruecos");
+btnrumMarruecos.addEventListener("click", Marruecos);
+function Marruecos() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Difusor Refill Marruecos</u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">El Difusor Marruecos está diseñado con un envase de vidrio texturado y con color que aporta estilo y calidez a cualquier rincón de tu hogar. Sus varillas de alta calidad permiten una difusión constante y pareja del perfume, creando un ambiente acogedor y lleno de personalidad.<br><br>Incluye un refill de 500 ml, ideal para que disfrutes de tu aroma favorito por mucho más tiempo sin preocuparte por recambios inmediatos.</span></div>'})   
+}
+
 const btnrumJAZMIN = document.getElementById("JAZMIN");
 btnrumJAZMIN.addEventListener("click", JAZMIN);
 function JAZMIN() {
@@ -62,20 +95,12 @@ function rene() {
 }
 
 
-const btnrumjuli = document.getElementById("juli");
-btnrumjuli.addEventListener("click", juli);
-function juli() {
+const btnrumDR1 = document.getElementById("DifusorRefill");
+btnrumDR1.addEventListener("click", DifusorRefill);
+function DifusorRefill() {
   Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Vela Juli</u></span>',
-    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Dimensiones:</b> 11,2 cm. de diámetro x 7 cm. de alto.<br><b>Aromas:</b> <br>Tilo y Lavanda / Naranja y Pimienta</span></div>'})   
-}
-
-const btnrumNana = document.getElementById("Nana");
-btnrumNana.addEventListener("click", Nana);
-function Nana() {
-  Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Vela Nana</u></span>',
-    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Aromas:</b> <br>Vainilla Especiada.<br>Flores Blancas.<br>Tilo y Lavanda.<br>Pera Pepino Manzana.<br>Bambú.</span></div>'})   
+    title: '<span style="font-size: 25px;"><u>Difusor Refill</u></span>',
+    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Disponible en los siguientes blends:<br><br>▪️ Lavanda<br>▪️ Nega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br>▪️ Vainilla Especiada<br>▪️ Manhattan <br>▪️ Coco Lima</span></div>'})   
 }
 
 const btnrum60 = document.getElementById("Aromatizador60");
@@ -85,6 +110,7 @@ function Aromatizador60() {
     title: '<span style="font-size: 25px;"><u>Aromatizador 60ml</u></span>',
     html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Un delicado aroma que perfuma sábanas, toallas, cortinas y géneros de tu casa.<br><br>Disponible en los siguientes blends:<br><br>▪️ Bambú <br>▪️ Pera Pepino Manzana <br>▪️ SYDNEY <br>▪️ Manhattan <br>▪️ Coco Lima <br>▪️ Vainilla Especiada <br>▪️ Fresh Grass</span></div>'   })   
 }
+
 const btnrumN1 = document.getElementById("Aromatizador");
 btnrumN1.addEventListener("click", Aromatizador);
 function Aromatizador() {
@@ -94,13 +120,14 @@ function Aromatizador() {
 }
   
 
-const btnrumDR1 = document.getElementById("DifusorRefill");
-btnrumDR1.addEventListener("click", DifusorRefill);
-function DifusorRefill() {
+const btnAmbar = document.getElementById("Ambar");
+btnAmbar.addEventListener("click", Ambar);
+function Ambar() {
   Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Difusor Refill</u></span>',
-    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Disponible en los siguientes blends:<br><br>▪️ Lavanda<br>▪️ Nega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br>▪️ Vainilla Especiada<br>▪️ Manhattan <br>▪️ Coco Lima</span></div>'})   
+    title: '<span style="font-size: 25px;"><u>Difusor Ambar</u></span>',
+    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Un delicado aroma disponible en los siguientes blends:<br><br> ▪️ Nega <br>▪️ Bambú <br></span></div>'   })   
 }
+  
 
 const btnrumKaikoura = document.getElementById("Kaikoura");
 btnrumKaikoura.addEventListener("click", Kaikoura);
@@ -151,5 +178,13 @@ btnrumRoma.addEventListener("click", Roma);
 function Roma() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Combo Refill + Difusor ROMA</u></span>',
-    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Envase pet de 500ml. <br>Difusor Roma envase de vidrio labrado de 110 ml.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Lavanda<br>▪️ Nega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br></span></div>'})   
+    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Envase pet de 500ml. <br>Difusor Roma envase de vidrio labrado de 110 ml.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Lavanda<br>▪️ `N`ega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br></span></div>'})   
 }
+const btnrumNana = document.getElementById("Nana");
+btnrumNana.addEventListener("click", Nana);
+function Nana() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Vela Nana</u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Aromas:</b> <br>Vainilla Especiada.<br>Flores Blancas.<br>Tilo y Lavanda.<br>Pera Pepino Manzana.<br>Bambú.</span></div>'})   
+}
+
