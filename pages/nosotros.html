@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historia, Visión, Misión y Valores - Mutual La Nación</title>
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ICONOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <style>
+    /* HERO */
+    .hero-section {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 32, 96, 0.75); /* azulino + transparencia */
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* TEXTOS */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1b3a57;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .section-text {
+      font-size: 1rem;
+      color: #444;
+      line-height: 2;
+    }
+
+    /* VALORES */
+    .info-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+  }
+  
+
+  /* Espacio entre las cards Historia y Quiénes Somos */
+.info-box {
+  padding: 40px;
+  border-radius: 12px;
+  height: 100%;
+  margin-bottom: 2px;
+}
+
+  /* Fondos */
+  .info-left {
+    background: rgba(0, 123, 255, 0.05);
+    border-right: 2px solid rgba(0,0,0,0.15);
+    padding-right: 30px; /* separación extra */
+  }
+
+  .info-right {
+    background: rgba(0,0,0,0.03);
+    padding-left: 30px;  /* separación extra */
+  }
+
+  /* Títulos con íconos */
+  .section-title {
+    font-size: 1.3rem;
+    color: #1b3a57;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .section-title i {
+    color: #0056b3;
+    margin-right: 8px;
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+    .info-left {
+      border-right: none;
+      border-bottom: 2px solid rgba(0,0,0,0.15);
+      padding-right: 20px;
+      margin-bottom: 25px;
+    }
+
+    .info-right {
+      padding-left: 20px;
+    }
+  }
+  
+/* VALORES - CUADRADOS IGUALES */
+.icon-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  height: 100%;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-box i {
+  font-size: 45px;
+  color: #0056b3;
+}
+
+.icon-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+ 
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+
+
+  </style>
+</head>
+
+<body>
+
+   <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
+    <!-- Ícono de WhatsApp -->
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- NAVBAR -->
+<div id="navbar" class="sticky-top"></div>
+  <script>
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+        const menuClose = document.getElementById("menu-close");
+
+        if (menuToggle && menu && menuClose) {
+          menuToggle.addEventListener("click", () => menu.classList.toggle("active"));
+          menuClose.addEventListener("click", () => menu.classList.remove("active"));
+        }
+      });
+  </script>
+
+
+
+  <!-- HERO CON IMAGEN -->
+  <section class="hero-section" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h5 class="mt-3" style=" opacity: .9;">
+          Asociación Mutual del Personal de la Nación
+        </h5>
+      <p class="fw-bold" style="font-size: 2rem;">Nuestra Historia, Misión, Visión y Valores</p>
+      <p class="mt-2" style="font-size: 1rem; opacity: .85;">
+        Fundada el <strong>1 de noviembre de 1955</strong>
+      </p>
+    </div>
+  </section>
+
+
+
+<!-- SECCIÓN DIVIDIDA EN DOS COLUMNAS IGUALES -->
+<section class="info-section">
+  <div class="container">
+    <div class="row g-0">
+
+      <!-- HISTORIA -->
+      <div class="col-md-6">
+        <div class="info-box info-left">
+          <h2 class="section-title">
+            <i class="bi bi-clock-history"></i> Nuestra Historia
+          </h2>
+          <p style="text-align: justify;">
+            La <strong>Asociación Mutual del Personal de la Nación</strong> fue fundada el 
+            <strong>1 de noviembre de 1955</strong> con el propósito de brindar apoyo y 
+            protección a los trabajadores y sus familias mediante un sistema solidario 
+            y accesible.
+          </p>
+          <p style="text-align: justify;">
+            Con más de siete décadas de trayectoria, nuestra institución ha crecido y 
+            evolucionado, incorporando nuevos servicios, beneficios y herramientas 
+            orientadas al bienestar integral de nuestros asociados.
+          </p>
+        </div>
+      </div>
+
+      <!-- QUIÉNES SOMOS -->
+      <div class="col-md-6">
+        <div class="info-box info-right">
+          <h2 class="section-title">
+            <i class="bi bi-people-fill"></i> Quiénes Somos
+          </h2>
+          <p style="text-align: justify;">
+            Somos una institución solidaria, moderna y comprometida, guiada por los 
+            valores del mutualismo: la ayuda recíproca, la solidaridad, la transparencia 
+            y la igualdad de oportunidades.
+          </p>
+          <p style="text-align: justify;">
+            Nuestro trabajo diario se enfoca en ofrecer servicios confiables, accesibles 
+            y sostenibles, fortaleciendo una comunidad más justa y equitativa para todos 
+            nuestros asociados.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- MISIÓN -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Misión</h2>
+      <p class="section-text" style="text-align: justify;">
+        Promover el bienestar integral de nuestros asociados mediante servicios confiables, accesibles y
+        sustentables, diseñados para mejorar su calidad de vida y acompañarlos en cada etapa.
+        <br>
+        Desarrollamos soluciones solidarias que responden a necesidades reales, impulsando beneficios que aportan
+        protección, oportunidades y crecimiento personal y familiar.
+        <br>
+        Actuamos con compromiso, transparencia y vocación de servicio, fortaleciendo día a día el espíritu
+        mutualista que nos guía desde 1955.
+        </p>
+    </div>
+  </section>
+
+  <!-- VISIÓN -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Visión</h2>
+      <p class="section-text" style="text-align: justify;">
+        Ser una institución mutual líder, moderna e innovadora, reconocida por la calidad de sus servicios, la
+        cercanía con sus asociados y la capacidad de brindar soluciones que generen bienestar y desarrollo
+        comunitario.
+        <br> 
+        Aspiramos a consolidar un modelo de gestión eficiente, transparente y sostenible, que fortalezca la
+        participación activa de nuestros asociados y potencie los valores del mutualismo en cada acción.
+        </p>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Nuestros Valores</h2>
+
+      <div class="row g-4 mt-4">
+
+        <div class="col-md-4">
+          <div class="icon-box">
+            <i class="bi bi-people-fill"></i>
+            <h5 class="fw-bold mt-2">Solidaridad</h5>
+            <p class="section-text">Promovemos la cooperación y el apoyo mutuo como pilares fundamentales de nuestra institución, acompañando a cada asociado en sus distintas necesidades.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="icon-box">
+            <i class="bi bi-shield-check"></i>
+            <h5 class="fw-bold mt-2">Transparencia</h5>
+            <p class="section-text">Actuamos con responsabilidad, claridad y honestidad en cada proceso, generando confianza y fortaleciendo la relación con nuestros asociados.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="icon-box">
+            <i class="bi bi-stars"></i>
+            <h5 class="fw-bold mt-2">Compromiso</h5>
+            <p class="section-text">Trabajamos con vocación de servicio y dedicación permanente, buscando siempre brindar soluciones que aporten valor real a nuestra comunidad.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+ 
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+  <script>
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,1045 +1,1388 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- SEO -->
-        <title>Mutual LN Canjes</title>
-        <meta name="keywords" content="mutual">
-        <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
-        <link rel="canonical" href="https://www.lnmutual.com.ar/canjes.html">
-        <!-- Whatsapp -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
-        <!-- BOOTSTRAP -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <!-- pone el logo en la pestana -->
-        <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../style/style.css">        
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual LN | Canjes y Beneficios</title>
+    <!-- pone el logo en la pestana -->
+    <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #2b319f;
+            --accent-red: #ff6b6b;
+            --bg-light: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: #333;
+        }
+
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 20px;
+            background: #ffffff;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12) !important;
+        }
+
+        .badge-discount {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-red);
+            color: white;
+            padding: 5px 12px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            border-radius: 50px;
+            z-index: 10;
+        }
+
+        .img-container {
+            height: 200px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+        }
+
+        .img-container img, .img-container video {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: 1.25rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .product-info h5 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+        }
+
+        .desc-text {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+            min-height: 40px;
+        }
+
+        .btn-action {
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 8px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
         
-      
-    </head>
-    
+        .btn-main { background-color: var(--primary-blue); color: white; border: none; }
+        .btn-main:hover { background-color: #1a1e7a; color: white; }
         
-<body >
-  <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
-    <!-- Ícono de WhatsApp -->
-    <i class="fab fa-whatsapp"></i>
-  </a>
+        .btn-outline { border: 1.5px solid var(--primary-blue); color: var(--primary-blue); background: transparent; }
+        .btn-outline:hover { background: var(--primary-blue); color: white; }
 
-  
- 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f2f2f2;
-    }
+        .collapse-content {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            text-align: left;
+            border-left: 3px solid var(--primary-blue);
+        }
 
-    h1 {
-      text-align: center;
-      margin: 40px 0;
-      font-weight: 600;
-      color: #222;
-    }
+        /* ===============================
+   FILTROS PREMIUM
+================================= */
 
-    .product-card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      position: relative;
-      transition: transform 0.2s ease;
-    }
-
-    .product-card:hover {
-      transform: scale(1.02);
-    }
-
-    .product-card img {
-      height: 260px;
-      object-fit: cover;
-      width: 100%;
-    }
-
-    .product-info {
-      padding: 20px;
-    }
-
-    .product-info h5 {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: #333;
-    }
-
-    .product-info p {
-      color: #666;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-
-    .btn-modern {
-      background-color: #ff6b6b;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      font-weight: 500;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    .btn-modern:hover {
-      background-color: #e95c5c;
-    }
-
-    .badge-discount {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background-color: #ff6b6b;
-      color: white;
-      padding: 6px 10px;
-      font-size: 0.85rem;
-      font-weight: bold;
-      border-radius: 8px;
-    }
-    .price-box {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 12px;
-  font-size: 0.95rem;
+.filter-wrapper {
+background: rgba(255,255,255,0.7);
+backdrop-filter: blur(10px);
+padding: 20px;
+border-radius: 20px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-.label-socio {
-  color: #129c00;
-  font-weight: bold;
+.search-box,
+.select-box {
+position: relative;
+width: 100%;
 }
 
-.price-socio {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #129c00;
+.search-box i,
+.select-box i {
+position: absolute;
+left: 18px;
+top: 50%;
+transform: translateY(-50%);
+color: #2b319f;
+font-size: 14px;
 }
 
-.label-nosocio {
-  color: #2b319f;
-  font-weight: bold;
+.search-box input,
+.select-box select {
+width: 100%;
+padding: 14px 18px 14px 45px;
+border-radius: 14px;
+border: 1.5px solid #e2e8f0;
+font-size: 0.95rem;
+transition: all 0.3s ease;
+background: #fff;
+outline: none;
 }
 
-.price-nosocio {
-  font-size: 1.05rem;
-  color: #2b319f;
+.search-box input:focus,
+.select-box select:focus {
+border-color: #2b319f;
+box-shadow: 0 0 0 4px rgba(43,49,159,0.08);
 }
 
-.cuotas {
-  font-size: 0.85rem;
-  color: #555;
-}
- /* Estilo para el filtro */
- .row {
-  align-items: flex-start;
+.select-box select {
+appearance: none;
+cursor: pointer;
 }
 
-.filter-container {
-  background-color: #f2f2f2;
-  padding-bottom: 20px;
-  position: relative;  /* Cambié de sticky a relative para móviles */
+/* Responsive */
+@media (max-width: 768px) {
+.filter-wrapper {
+padding: 15px;
+}
+}
+/* Contador */
+.results-info {
+font-size: 0.95rem;
+color: #555;
+font-weight: 500;
+opacity: 0;
+transform: translateY(-5px);
+transition: all 0.3s ease;
 }
 
-@media (min-width: 768px) {
-  .filter-container {
-    position: sticky;
-    top: 120px; /* ajusta si el navbar tiene otra altura */
-  }
+.results-info.active {
+opacity: 1;
+transform: translateY(0);
 }
 
-@media (max-width: 767px) {
-  .filter-container {
-    position: relative; /* Cambié a relative para móviles */
-  }
+/* Botón limpiar animado */
+.btn-clear {
+background: transparent;
+border: 1.5px solid #ff6b6b;
+color: #ff6b6b;
+padding: 14px;
+border-radius: 14px;
+font-weight: 600;
+font-size: 0.9rem;
+transition: all 0.3s ease;
+display: none;
+align-items: center;
+justify-content: center;
+gap: 6px;
 }
-.product-card {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.2s ease;
+
+.btn-clear.show {
+display: flex;
+animation: fadeIn 0.3s ease forwards;
 }
-.product-card img {
-    height: 260px;
-    object-fit: cover;
-    width: 100%;
+
+.btn-clear:hover {
+background: #ff6b6b;
+color: white;
+box-shadow: 0 8px 18px rgba(255,107,107,0.25);
 }
-  </style>
 
+@keyframes fadeIn {
+from { opacity: 0; transform: scale(0.95); }
+to { opacity: 1; transform: scale(1); }
+}
+/* ===============================
+   MENSAJE SIN RESULTADOS
+================================= */
 
+.no-results {
+display: none;
+text-align: center;
+padding: 40px 20px;
+background: white;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+margin-top: 20px;
+animation: fadeInResults 0.4s ease forwards;
+}
 
-<section class="pb-5" >
-  <div class="container mt-5">
-    <div class="row g-4">
-      
+.no-results i {
+font-size: 40px;
+color: #ff6b6b;
+margin-bottom: 15px;
+}
 
+.no-results h5 {
+font-weight: 700;
+color: #2b319f;
+margin-bottom: 10px;
+}
 
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-      <span class="badge-discount">30%  OFF</span> 
-       <img src="../image/etiquretanegra.png">
-    <div class="product-info">
-      <h5>Etiqueta Negra</h5>
-       <p>30% de descuento <br> en 4 cuotas <br>Se abona con Mutualchek   </p>   
-       <div>
-          <button class="btn btn-primary" onclick="toggleSpoiler('spoileren')">Locales</button>
-        </div>            
-        <div id="spoileren" class="spoiler mt-2" style="display: none; text-align: left;">
-         <p>✔️ Galerías Pacífico.<br>
-            ✔️ Honduras 4850.  <br>
-            ✔️ Nordelta.<br>
-            ✔️ Patio Bullrich.<br>
-            ✔️ Palmas del Pilar.<br>
-            ✔️ Unicenter.<br>
-            ✔️ <b><u>Vto. Mutualchek para devolver a La Mutual 15 días.</u></b><br>
-            ✔️ <b><u>Vto. Mutualchek para uso 31/01/2026.</u></b><br>
-        </div>
-        <script>
-          function toggleSpoiler(id) {
-            const element = document.getElementById(id);
-            element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
-          }
-        </script>       <br> 
-       <button class="btn btn-primary"> <a href="https://www.etiquetanegra.us/" target="_blank" rel="noopener noreferrer" style="color: white;">web</a></button>
-     
+.no-results p {
+color: #666;
+font-size: 0.9rem;
+margin-bottom: 0;
+}
+
+@keyframes fadeInResults {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+/* ===============================
+   BOTÓN VOLVER ARRIBA
+================================= */
+
+.scroll-top-btn {
+position: fixed;
+bottom: 100px; /* arriba del botón de WhatsApp */
+right: 25px;
+width: 55px;
+height: 55px;
+border-radius: 50%;
+border: none;
+background: #2b319f;
+color: white;
+font-size: 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+opacity: 0;
+visibility: hidden;
+transform: translateY(10px);
+transition: all 0.3s ease;
+z-index: 999;
+}
+
+.scroll-top-btn.show {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+background: #1a1e7a;
+transform: translateY(-3px);
+box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+    </style>
+</head>
+<body>
+
+    <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+<div id="navbar" class="sticky-top"></div>
+
+    <div class="container py-5">
+
+    <div class="header-container text-center mb-5">
+      <p style="font-size: 32px; font-weight: bold; color: #2b319f; margin-bottom: 10px;">
+        Ser socio tiene sus privilegios
+      </p>
+      <p style="font-size: 18px; color: #555; margin-bottom: 20px;">
+        Descubrí beneficios exclusivos, experiencias únicas y oportunidades que solo nuestros socios pueden aprovechar.
+      </p>
+      <div style="width: 200px; height: 5px; background: linear-gradient(90deg, #2b319f, #ffb400); margin: 0 auto; border-radius: 3px;"></div>
     </div>
-</div>
-</div>
 
-
-  <div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card">
-    <span class="badge-discount">20% OFF</span>
-    <video src="../image/DrMartens_web.mp4" 
-          controls 
-          poster="../image/drmartens.jpg" 
-          style="width:100%; height:300px; object-fit:cover; border-radius:8px;">
-    </video>
-    <div class="product-info">
-      <h5>Dr. Martens</h5>
-      <p>20% de descuento <br> en 4 cuotas <br>Se abona con Mutualchek <br>
-      <b>El Salvador 4757, caba</b></p>   
-    </div>
-  </div>
-</div>
-
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card">
-    <span class="badge-discount">45% OFF</span>
-    <img src="../image/megatlon.jpg" alt="Megatlon" class="img-fluid">
-    <div class="product-info">
-      <h5>Megatlon</h5>
-      <p>45% de descuento <br> en 12 cuotas</p>
-      <div class="mt-2" style="text-align: left;">
-        <b>
-          Freepass 12 meses <br>
-          Vto. 26/12/2025 <br>
-          Categoría BLACK
-        </b>
-        <br><br>
-        <a href="../image/megatlonPrecios.png" target="_blank" rel="noopener noreferrer">
-          <button class="btn btn-primary">Ver precios</button>
-        </a>
-        <a href="https://freepass.megatlon.com.ar/" target="_blank" rel="noopener noreferrer">
-          <button class="btn btn-primary">Link activación</button>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">40%  OFF</span>
-     <img src="../image/wanamakids.png">
-    <div class="product-info">
-      <h5>Wanama Kids</h5>
-        <p>40%  de descuento <br> en 4 cuotas  </p>  
-        <a href="https://www.wanamakids.com/" target="_blank" rel="noopener noreferrer"><p><b>WanamaKids</b></p></a>
-        <div class="text-center">
-          <button class="btn btn-primary" onclick="toggleSpoiler('spoilerwk')">Condiciones</button>
-        </div>            
-        <div id="spoilerwk" class="spoiler mt-2" style="display: none; text-align: left;">
-          <p>✔️ Se abona con GC que se envían por mail.<br>
-            ✔️ Giftcards de $ 50.000 y $ 80.000  <br>
-            ✔️ Válido para compra online.<br>
-            ✔️ Se debe usar una GC por compra y consumir el total en la misma.<br>
-            ✔️ <b>No tienen devolución.</b><br>
-            ✔️ <u>Vto. 31/12/2025.</u><br>
-            ✔️ Pasada la fecha de vto <span style="color: red;">no pueden revalidarse.</span></p>   
-            <u>IMPORTANTE</u> <br>En caso de cambios de prendas o talles pueden realizarse tanto por ecommerce o en <a href="https://www.wanamakids.com/storelocator" target="_blank" rel="noopener noreferrer"> locales habilitados</a>
-        </div>
-        <script>
-          function toggleSpoiler(id) {
-            const element = document.getElementById(id);
-            element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
-          }
-        </script>       <br> 
-      </div>
-  </div>
-</div>
-
-<!-- 
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-   <span class="badge-discount">10% + 35%  OFF</span>
-     <img src="../image/landmark.png">
-    <div class="product-info">
-      <h5>Landmark/Mihran</h5>
-       <p>10% + 35% de descuento <br> en 6 cuotas  </p> 
-       <p>Se abona con Mutualchek <br><br><u>Local:</u> <br><b>Unicenter</b></p>
-      <button class="btn btn-primary mb-2" >
-        <a href="https://www.landmark.com.ar/" target="_blank"   class="text-center" style="color: white;">Landmark</a> 
-      </button>   
-      <button class="btn btn-primary mb-2" >
-        <a href="https://www.mihranalfombras.com.ar/" target="_blank"   class="text-center" style="color: white;">Mihran</a>
-      </button>   
-    </div>
- </div>
-</div>
         
-     -->
+         <!-- 🔎 FILTROS PREMIUM -->
+          <div class="filter-wrapper mb-5">
+            <div class="row g-3 align-items-center">
 
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-     <span class="badge-discount">30%  OFF</span>
-    <img src="../image/deandennys.png">
-    <div class="product-info">
-      <h5>Dean and Dennys</h5>
-       <p>30%  de descuento <br> en 4 cuotas  </p>  
-    </div>
-        <div class="text-center">
-          <button class="btn btn-primary" onclick="toggleSpoiler('spoilerdd')">Condiciones</button>
-        </div>            
-        <div id="spoilerdd" class="spoiler mt-2" style="display: none; text-align: left;">
-          <p>✔️ Se abona con vouchers que se retiran en La Mutual.<br>
-            ✔️ Válidos para cualquier combo línea Clásica/Urbana.  <br>
-            ✔️ Válido para todos los locales.<br>
-            ✔️ Valor bruto $ 15.513.-<br>
-            ✔️ <b>No tienen devolución.</b><br>
-            ✔️ <u>Vto. 31/12/2026.</u><br>
-            ✔️ Pasada la fecha de vto <span style="color: red;">no pueden revalidarse.</span></p>   
-        </div>
-        <script>
-          function toggleSpoiler(id) {
-            const element = document.getElementById(id);
-            element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
-          }
-        </script>       <br>            
-</div>    
-</div>
-
-
-
-
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="product-card ">
-          <span class="badge-discount">40% OFF</span>
-          <img src="../image/colonia.png">
-          <div class="product-info">
-            <h5>Colonia Express</h5>
-             <p> 40% de descuento <br> en 6 cuotas</p>
-            <div class="text-center"> 
-              <button class="btn btn-outline-primary" onclick="toggleSpoiler('condiciones')">Condiciones</button>
-            </div>
-            <div id="condiciones" class="spoiler mt-2" style="display: none; text-align: left;">
-              <span><b>* LOS PEDIDOS DEBEN SER ENVIADOS CON 15 DÍAS DE ANTICIPACIÓN COMO MÍNIMO </b></span><br>
-              * Válido para pasajes y bodega. <br>
-              * A las tarifas publicadas en la página, se realiza el 40% de descuento. <br>
-              <span style="background-color: rgb(195, 195, 255);"><u><b>* No valido para fines de semana largo, ni feriados.</b> </u></span><br>
-              <span style="color: red;"><b>* No se podrán realizar cambios ni anulaci
-                ones sobre los pasajes ya emitidos.</b></span><br>                                
-            </div>
-            <script>
-              function toggleSpoiler(id) {
-                const element = document.getElementById(id);
-                element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
-              }
-            </script>
-              <br>
-             <div class="text-center">
-              <button class="btn btn-outline-primary" onclick="toggleSpoiler('reserva')">Reserva</button>
-            </div>
-            <div id="reserva" class="spoiler mt-2" style="display: none; text-align: left;">
-              <u> Enviar un mail a <b>mutual@lanacion.com.ar</b> indicando:</u> <br>
-            <p style="color: red;"> 1-Fecha y hora de salida.<br>
-            2-Fecha y hora de regreso.<br>
-            3-Apellido y nombre de los pasajeros.<br>
-            4-DNI de los pasajeros.<br>
-            5-Fecha de Nacimiento de los pasajeros.<br>
-            6-Teléfono de contacto.</p>
-            <a href="https://coloniaexpress.com/ar/" target="_blank" rel="noopener noreferrer">Colonia Express</a>                        
-            </div>
-            <script>
-              function toggleSpoiler(id) {
-                const element = document.getElementById(id);
-                element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
-              }
-            </script> 
-          </div>
-        </div>
-      </div>
-
-
-      
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">35% + 35%  OFF</span> 
-    <img src="../image/columbia.jpg">
-    <div class="product-info">
-      <h5>Columbia</h5>
-      <p>35% + 35% de descuento <br> en 6 cuotas  </p>             
-            <div class="text-center">
-              <button class="btn btn-primary" onclick="toggleSpoiler('spoilercolumbia')">Condiciones</button>
-            </div>            
-            <div id="spoilercolumbia" class="spoiler mt-2" style="display: none; text-align: left;">
-             <p>✔️ El local tomara precio de lista y hará el descuento correspondiente.<br>
-                ✔️ Se abona con vouchers.<br>
-                ✔️ Valor de los vouchers:
-                <div style="margin-left: 10%; color: blue;">
-                  *️⃣ $ 200.000<br>
-                  *️⃣ $ 300.000<br>
-                  *️⃣ $ 500.000 <br>
-                </div>  
-                ✔️ Se puede usar mas de un voucher por compra. <br>
-                ✔️ Cada voucher debe usarse por completo.<br>
-                ✔️ <b>No tienen devolución.</b><br>
-                ✔️ <u>Vto. 31/12/2025.</u><br>
-                ✔️ Pasada la fecha de vto <span style="color: red;">no pueden revalidarse.</span></p>   
-            </div>
-            <script>
-              function toggleSpoiler(id) {
-                const element = document.getElementById(id);
-                element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
-              }
-            </script>       
-            <br>
-            <div class="text-center">
-            <button class="btn btn-outline-info">
-            <a href="../image/columbia.png" target="_blank" rel="noopener noreferrer">Locales</a></button>
-            </div>
-        </div>
-    </div>
-  </div>
-
-      
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-      <span class="badge-discount">30%  OFF</span>
-       <img src="../image/definit.png">
-    <div class="product-info">
-      <h5>Definit</h5>
-        <p>30%  de descuento <br> en 6 cuotas  </p>  
-        <div class="text-center">
-          <button class="btn btn-primary mb-2" >
-            <a href="http://definit.com.ar" target="_blank" rel="noopener noreferrer" style="color: white;">Locales</a>
-            </button></div>
-             <div class="text-center">
-                <button class="btn btn-primary" onclick="toggleSpoiler('spoilerdef')">Condiciones</button>
-              </div>            
-              <div id="spoilerdef" class="spoiler mt-2" style="display: none; text-align: left;">
-              ✔️ Precio de lista no aplica a promociones<br>
-              ✔️ El local <b>NO</b>  emite fc, el comprobante sera la orden de La Mutual<br>
-              ✔️ Se abona con <b> Mutualchek</b>
+              <!-- Buscador -->
+              <div class="col-lg-6">
+                <div class="search-box">
+                  <i class="fas fa-search"></i>
+                  <input type="text" id="searchInput"
+                    placeholder="Buscar por marca...">
+                </div>
               </div>
-              <script>
-                function toggleSpoiler(id) {
-                  const element = document.getElementById(id);
-                  element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
-                }
-              </script>       
-     </div>
-  </div>
-</div>
 
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">30%  OFF</span>
-     <img src="../image/norimoto.jpg">
-    <div class="product-info">
-      <h5>Norimoto</h5>
-        <p>30%  de descuento <br> en 4 cuotas  </p>  <br>
-        <div class="text-center">
-                <button class="btn btn-primary" onclick="toggleSpoiler('spoilernori')">Condiciones</button>
-              </div>            
-              <div id="spoilernori" class="spoiler mt-2" style="display: none; text-align: left;">
-                 <p>✔️ Sirve para consumir en el Local o take away</p>
-                 <p>✔️ No es necesario consumir el total de la GC en la compra</p>
-                 <p>🔹 Amenabar 3 Palermo <br>GC $ 100.000</p>
-                <p>🔹 Virrey Aviles 3298 Colegiales <br>GC $ 100.000</p>
-                <p>🔹 Av. Libertador 6739 Nuñez <br>GC $ 150.000</p>
+              <!-- Categorías -->
+              <div class="col-lg-4">
+                <div class="select-box">
+                  <i class="fas fa-layer-group"></i>
+                  <select id="categoryFilter">
+                    <option value="all">Todas las categorías</option>
+                    <option value="ropa">Ropa / Indumentaria</option>
+                    <option value="comida">Comida / Bebidas</option>
+                    <option value="bienestar">Belleza / Bienestar</option>
+                    <option value="hogar">Hogar</option>
+                    <option value="turismo">Turismo</option>
+                    <option value="proximamente">Proximamente</option>
+                    <option value="otros">Otros</option>
+                  </select>
+                </div>
               </div>
-              <script>
-                function toggleSpoiler(id) {
-                  const element = document.getElementById(id);
-                  element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
-                }
-              </script>   
-    </div>
-</div>
-</div>
-  
 
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-   <span class="badge-discount">30%  OFF</span>
-     <img src="../image/SOUTHTIME.png">
-    <div class="product-info">
-      <h5>Relojes</h5>
-       <p>30%  de descuento <br> en 6 cuotas  </p> 
-        <button id="cond" class="btn btn-primary mb-2" >
-         Condiciones 
-      </button>  
-      <script>
-          const btncond = document.getElementById("cond");
-          btncond.addEventListener("click", cond);
-          function cond() {
-            Swal.fire({
-              imageUrl: '../image/relojescondiciones.jpeg',
-              imageWidth: 350,
-              imageHeight: 350,
-              imageAlt: 'Custom image',
-            })
-            }
-        </script>
-      <button class="btn btn-primary mb-2" >
-        <a href="../pages/relojes.html" target="_blank"   class="text-center" style="color: white;">Productos  </a>
-      </button>   
-    </div>
- </div>
-</div>
-        
-    
+              <!-- Botón Limpiar -->
+              <div class="col-lg-2">
+                <button id="clearFilters" class="btn-clear w-100">
+                  <i class="fas fa-rotate-left"></i> Limpiar
+                </button>
+              </div>
 
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="product-card ">
-          <span class="badge-discount">30% OFF</span>
-          <img src="../image/costagalana-logo.jpg">
-          <div class="product-info">
-            <h5>Costa Galana</h5>
-            <p> 30% de descuento <br>
-              en 4 cuotas </p>
-              <a href="../image/costagalanaprecios.png" target="_blank">condiciones y precios</a>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="product-card ">
-          <span class="badge-discount">40% OFF</span>
-          <img src="../image/LosCauquenesfoto.jpg">
-          <div class="product-info">
-            <h5>Hotel Los Cauquenes</h5>
-            <p> 40% de descuento <br>
-              en 6 cuotas </p>
-              <p>Válido hasta el 30/06/2025<br> 
-              Válido desde el 01/10/2025 al 31/10/2025</p>
-              <a href="../image/cauquenescondiciones.pdf" target="_blank">Precios</a>   
+          <!-- 📊 Contador de resultados -->
+          <div class="results-info mb-4" id="resultsInfo">
+            Mostrando <strong id="resultsCount">0</strong> beneficios
           </div>
-        </div>
-      </div>
+          <!-- ❌ Mensaje sin resultados -->
+          <div class="no-results" id="noResults">
+            <i class="fas fa-search-minus"></i>
+            <h5>No encontramos beneficios con ese criterio</h5>
+            <p>Probá cambiando la búsqueda o limpiando los filtros.</p>
+          </div>
 
-       <div class="col-12 col-sm-6 col-lg-4">
-        <div class="product-card ">
-          <span class="badge-discount">30% OFF</span>
-          <img src="../image/bahiamanzano.jpg">
-          <div class="product-info">
-            <h5>Bahía Manzano</h5>
-            <p> 30% de descuento <br>
-              en 8 cuotas </p>
-              <p><b>Válido del <br>15/03/2025 al 02/05/2025</b></p>
-              <a href="../image/BAHIACONDICIONES.png" target="_blank" rel="noopener noreferrer">Condiciones</a> <br><br>   
+
+
+
+         <div class="row g-4" id="productContainer">
+
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="bienestar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">45% OFF</span>
+                    <div class="img-container"><img src="../image/megatlon.jpg"></div>
+                    <div class="product-info">
+                        <h5>Megatlon</h5>
+                        <p class="desc-text">Freepass 12 meses BLACK. 12 cuotas.</p>
+                        <div class="d-grid gap-1">
+                            <a href="../image/megatlonPrecios.png" target="_blank" class="btn-action btn-main">Ver Precios</a>
+                            <a href="https://freepass.megatlon.com.ar/" target="_blank" class="btn-action btn-outline">Link Activación</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="hogar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">50% + 25% OFF</span>
+                    <div class="img-container"><img src="../image/arkimia/arkimia.webp"></div>
+                    <div class="product-info">
+                        <h5>Arkimia</h5>
+                        <p class="desc-text">Utensilios de cocina en hierro en 4 cuotas.</p>
+                        <div class="d-grid gap-1">
+                            <a href="../image/arkimia/Catalogo Arkimia.pdf" target="_blank" class="btn-action btn-main">Catálogo</a>
+                            <a href="../image/arkimia/Lista de precios Arkimia.pdf" target="_blank" class="btn-action btn-outline">Precios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="hogar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">35% OFF</span>
+                    <div class="img-container"><img src="../image/fontenla.jpg"></div>
+                    <div class="product-info">
+                        <h5>Fontenla</h5>
+                        <p class="desc-text">Muebles de diseño en 9 cuotas (Mutualchek).</p>
+                        <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#localesFontenla">Ver Locales</button>
+                        <div class="collapse" id="localesFontenla">
+                            <div class="collapse-content small">Design Mall, Nordelta, Madero Harbour, Recoleta, Palermo, Hudson, Pilar.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="bienestar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/definit.png"></div>
+                    <div class="product-info">
+                        <h5>Definit</h5>
+                        <p class="desc-text">Depilación láser en <span style="color: red;"><b>12 cuotas</b></span>.</p>
+                        <div class="d-grid gap-1">
+                            <a href="http://definit.com.ar" target="_blank" class="btn-action btn-main">Sitio Web</a>
+                            <button class="btn-action btn-outline" data-bs-toggle="collapse" data-bs-target="#definitCond">Condiciones</button>
+                        </div>
+                        <div class="collapse" id="definitCond">
+                            <div class="collapse-content">Precio lista. El local no emite factura (orden Mutual). Pago con Mutualchek.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="turismo">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/hoteldelglaciar.png"></div>
+                    <div class="product-info">
+                        <h5>Hotel del Glaciar</h5>
+                        <p class="desc-text">Estadías exclusivas en 4 cuotas.</p>
+                        <a href="../image/HOTEL DEL GLACIAR.pdf" target="_blank" class="btn-action btn-main">Reservas y Precios</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="ropa">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">20% OFF</span>
+                    <div class="img-container">
+                        <video src="../image/DrMartens_web.mp4" muted loop onmouseover="this.play()" onmouseout="this.pause()" poster="../image/drmartens.jpg"></video>
+                    </div>
+                    <div class="product-info">
+                        <h5>Dr. Martens</h5>
+                         <p class="desc-text"> Calzado en 4 cuotas <br> (Mutualchek) </p>
+                        <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#localesMarten">Ver Locales</button>
+                        <div class="collapse" id="localesMarten">
+                            <div class="collapse-content small">El Salvador 4757, CABA.</div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="ropa">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">40% OFF</span>
+                    <div class="img-container"><img src="../image/wanamakids.png"></div>
+                    <div class="product-info">
+                        <h5>Wanama Kids</h5>
+                        <p class="desc-text">Indumentaria infantil en 4 cuotas.</p>
+                        <div class="d-grid gap-1">
+                            <a href="../pages/wanamakids.html" class="btn-action btn-main">Ver Prendas</a>
+                            <button class="btn-action btn-outline" data-bs-toggle="collapse" data-bs-target="#wanamaCond">Condiciones</button>
+                        </div>
+                        <div class="collapse" id="wanamaCond">
+                            <div class="collapse-content">Giftcards $25k/$50k. Válido online. Vto 31/03/26. Sin devolución.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/deandennys.png"></div>
+                    <div class="product-info">
+                        <h5>Dean and Dennys</h5>
+                        <p class="desc-text">Hamburguesas en combos Clásica/Urbana en 4 cuotas.</p>
+                        <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#ddCond">Vouchers</button>
+                        <div class="collapse" id="ddCond">
+                            <div class="collapse-content">Válido en todos los locales. <br> Valor bruto $15.513,00 <br><b>Valor c/descuento $ 10.859,10 </b><br>4 cuotas de $ 2.714,78 <br> Vto 20/06/2026.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="turismo">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">40% OFF</span>
+                    <div class="img-container"><img src="../image/colonia.png"></div>
+                    <div class="product-info">
+                        <h5>Colonia Express</h5>
+                        <p class="desc-text">Pasajes y bodega en 6 cuotas.</p>
+                        <div class="d-grid gap-1">
+                            <button class="btn-action btn-main" data-bs-toggle="collapse" data-bs-target="#coloniaRes">Cómo Reservar</button>
+                            <button class="btn-action btn-outline" data-bs-toggle="collapse" data-bs-target="#coloniaCond">Condiciones</button>
+                        </div>
+                        <div class="collapse" id="coloniaRes">
+                            <div class="collapse-content">Mail a mutual@lanacion.com.ar con 15 días de anticipación y datos de pasajeros.</div>
+                        </div>
+                        <div class="collapse" id="coloniaCond">
+                            <div class="collapse-content">No válido feriados ni fines de semana largos. Sin cambios ni anulaciones.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="ropa">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">35% + 35% OFF</span>
+                    <div class="img-container"><img src="../image/columbia.jpg"></div>
+                    <div class="product-info">
+                        <h5>Columbia</h5>
+                        <p class="desc-text">Outdoor en 6 cuotas. Stock limitado.</p>
+                        <a href="../pages/columbia.html" class="btn-action btn-main">Ver Productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="hogar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/hogar/saban21.png"></div>
+                    <div class="product-info">
+                        <h5>Ropa de Blanco</h5>
+                        <p class="desc-text">Hasta en 4 cuotas. Stock limitado.</p>
+                        <a href="../pages/hogar.html" class="btn-action btn-main">Ver Productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="ropa">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">25% OFF</span>
+                    <div class="img-container"><img src="../image/calzado/zaranegro2.png"></div>
+                    <div class="product-info">
+                        <h5>Zapatillas</h5>
+                        <p class="desc-text">Hasta en 6 cuotas. Stock limitado.</p>
+                        <a href="../pages/calzado.html" class="btn-action btn-main">Ver Productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="ropa">
+                <div class="product-card shadow-sm">
+                    <div class="img-container"><img src="../image/tienda/Pijamas/4.jpg"></div>
+                    <div class="product-info">
+                        <h5>Pijamas</h5>
+                        <p class="desc-text">Hasta en 4 cuotas. Stock limitado.</p>
+                        <a href="../pages/pijamas.html" class="btn-action btn-main">Ver Productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/norimoto.jpg"></div>
+                    <div class="product-info">
+                        <h5>Norimoto</h5>
+                        <p class="desc-text">Sushi & Gastro en 4 cuotas.</p>
+                        <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#noriCond">Locales</button>
+                        <div class="collapse" id="noriCond">
+                            <div class="collapse-content">Palermo (Amenabar 3), Nuñez (Libertador 6739). Giftcards disponibles.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">10% + 30% OFF</span>
+                    <div class="img-container"><img src="../image/macchiato.jpg"></div>
+                    <div class="product-info">
+                        <h5>Cápsulas Macchiato</h5>
+                        <p class="desc-text">Compatibles con Nespresso en 4 cuotas.</p>
+                        <a href="../image/cafemac.png" target="_blank" class="btn-action btn-main">Precios</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="hogar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/taza80palteado.png"></div>
+                    <div class="product-info">
+                        <h5>Tazas Macchiato</h5>
+                        <p class="desc-text">Varios tamaños en 4 cuotas.</p>
+                        <a href="../image/tazasprecio.pdf" target="_blank" class="btn-action btn-main">Precios</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="hogar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/portacapsulas.jpg"></div>
+                    <div class="product-info">
+                        <h5>Porta Cápsulas</h5>
+                        <p class="desc-text">Guarda todas tus cápsulas en un solo lugar y en 4 cuotas.</p>
+                         <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#localesFontenla">Precios</button>
+                        <div class="collapse" id="localesFontenla">
+                            <div class="collapse-content small">
+                              <p class="text-success fw-bold mb-3"><i class="fas fa-star me-2"></i>VALOR SOCIO</p>
+                              <span class="text-danger text-decoration-line-through">$ 49.500,00</span> <br>
+                              <span>$ 34.650,00<br><b>4 cuotas de<br>$ 8.662,50</b></span><hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <div class="img-container"><img src="../image/taragui.jfif"></div>
+                    <div class="product-info">
+                        <h5>Yerba Taragui</h5>
+                        <p class="desc-text">Precio preferencial para socios.</p>
+                         <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#localestaragui">Precios</button>
+                        <div class="collapse" id="localestaragui">
+                            <div class="collapse-content small">
+                              <p class="text-success fw-bold mb-3"><i class="fas fa-star me-2"></i>VALOR SOCIO</p>
+                              <span>$ 2.300,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <div class="img-container"><img src="../image/playadito500.png"></div>
+                    <div class="product-info">
+                        <h5>Yerba Playadito</h5>
+                        <p class="desc-text">Precio preferencial para socios.</p>
+                         <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#localesplayadito">Precios</button>
+                        <div class="collapse" id="localesplayadito">
+                            <div class="collapse-content small">
+                              <p class="text-success fw-bold mb-3"><i class="fas fa-star me-2"></i>VALOR SOCIO</p>
+                              <span>$ 2.850,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="ropa">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/SOUTHTIME.png"></div>
+                    <div class="product-info">
+                        <h5>Relojes South Time</h5>
+                        <p class="desc-text">Variedad de marcas en 6 cuotas.</p>
+                        <a href="../pages/relojes.html" class="btn-action btn-main">Ver Catálogo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="turismo">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/costagalana-logo.jpg"></div>
+                    <div class="product-info">
+                        <h5>Costa Galana</h5>
+                        <p class="desc-text">Mar del Plata en 4 cuotas.</p>
+                        <a href="../image/costagalanaprecios.png" target="_blank" class="btn-action btn-main">Precios y Condiciones</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="turismo">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">40% OFF</span>
+                    <div class="img-container"><img src="../image/LosCauquenesfoto.jpg"></div>
+                    <div class="product-info">
+                        <h5>Hotel Los Cauquenes</h5>
+                        <p class="desc-text">Ushuaia en 6 cuotas.</p>
+                        <a href="../image/cauquenescondiciones.pdf" target="_blank" class="btn-action btn-main">Ver Precios</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="turismo">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/bahiamanzano.jpg"></div>
+                    <div class="product-info">
+                        <h5>Bahía Manzano</h5>
+                        <p class="desc-text">V. La Angostura en 8 cuotas.</p>
+                        <a href="../image/BAHIACONDICIONES.png" target="_blank" class="btn-action btn-outline">Ver Condiciones</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="hogar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/kankay.png"></div>
+                    <div class="product-info">
+                        <h5>Kankay</h5>
+                        <p class="desc-text">Fuegos y parrillas en 6 cuotas.</p>
+                        <a href="./kankay.html" class="btn-action btn-main">Ver Productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="otros">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">20% OFF</span>
+                    <div class="img-container"><img src="../image/bigbox.jpg"></div>
+                    <div class="product-info">
+                        <h5>Bigbox</h5>
+                        <p class="desc-text">Experiencias en 4 cuotas.</p>
+                        <div class="d-grid gap-1">
+                            <a href="https://bigboxlnmutual.com.ar/" target="_blank" class="btn-action btn-main">Sitio Bigbox</a>
+                            <a href="../image/bigboxinstructivo.pdf" target="_blank" class="btn-action btn-outline">Instructivo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="hogar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">15% OFF</span>
+                    <div class="img-container">
+                        <img src="../image/nega/Nega.png" alt="Nega Velas y Aromas">
+                    </div>
+                    <div class="product-info">
+                        <h5>Nega</h5>
+                        <p class="desc-text">Velas de soja, difusores y home sprays artesanales en 4 cuotas.</p>
+                         <div class="d-grid gap-1">
+                            <a href="./nega.html" class="btn-action btn-main">Ver productos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="bienestar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">20% OFF</span>
+                    <div class="img-container"><img src="../image/fragancia.jpg"></div>
+                    <div class="product-info">
+                        <h5>Fragancias Importadas</h5>
+                        <p class="desc-text">Perfumería de lujo en 4 cuotas.</p>
+                        <div class="d-grid gap-1">
+                            <a href="./perfumes.html" class="btn-action btn-main">Stock Oficina</a>
+                            <a href="../image/perfumes/fragancias.xlsx" class="btn-action btn-outline">Descargar Catálogo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="bienestar">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">20% OFF</span>
+                    <div class="img-container"><img src="../image/laroche.png"></div>
+                    <div class="product-info">
+                        <h5>Dermoestética</h5>
+                        <p class="desc-text">Vichy y La Roche Posay en 4 cuotas.</p>
+                        <div class="d-grid gap-1">
+                            <a href="../image/VICHY.xlsx" class="btn-action btn-outline">Catálogo Vichy</a>
+                            <a href="../image/LA ROCHE POSAY.xlsx" class="btn-action btn-outline">Catálogo La Roche</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="ropa">
+              <div class="product-card shadow-sm">
+                  <span class="badge-discount">15% OFF</span>
+                  <div class="img-container">
+                      <img src="../image/elemento.png" alt="Elemento Medias">
+                  </div>
+                  <div class="product-info">
+                      <h5>Elemento</h5>
+                      <p class="desc-text">Medias para toda la familia en 4 cuotas sin interés.</p>
+                      <div class="d-grid gap-2">
+                          <a href="./medias.html" class="btn-main">
+                              <i class="fas fa-tshirt"></i> Ver Catálogo
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="ropa">
+            <div class="product-card shadow-sm">
+                <span class="badge-discount">40% OFF</span>
+                <div class="img-container">
+                    <img src="../image/rumrum.png" alt="Rum Rum Indumentaria">
+                </div>
+                <div class="product-info">
+                    <h5>Rum Rum</h5>
+                    <p class="desc-text">Indumentaria de diseño para niños y niñas en 4 cuotas sin interés.</p>
+                    <div class="d-grid gap-2">
+                        <a href="./tienda.html" class="btn-main">
+                            <i class="fas fa-child"></i> Ver Colección
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-      </div>
 
-       <div class="col-12 col-sm-6 col-lg-4">
-        <div class="product-card ">
-          <span class="badge-discount">40% OFF</span>
-          <img src="../image/rutatlantica.png">
-          <div class="product-info">
-            <h5>Ruta Atlántica</h5>
-            <p> 40% de descuento <br>
-              en 4 cuotas </p>
-              <p>Micros solo operados por Rutatlantica</b></span><br><br>
-                <span><b>Al valor del pasaje se debe sumar un seguro de viaje obligatorio según destino</b></span><br><br>
-                <a href="../image/rutatlanticaRestricciones.png" target="_blank">Restricciones</a>  <br><br>
-                <a href="https://rutatlantica.com.ar/" target="_blank">Destinos y tarifas</a> <br><br>
-                <a href="../image/rutatlanticaReservas.png" target="_blank">Datos para reservar</a><br><br>
-              </div>
-        </div>
-      </div>
-
-       <div class="col-12 col-sm-6 col-lg-4">
-        <div class="product-card ">
-          <span class="badge-discount">30% OFF</span>
-          <img src="../image/kankay.png">
-          <div class="product-info">
-            <h5>Kankay</h5>
-            <p> 30% de descuento <br>
-              en 6 cuotas </p> <br>
-              <button type="button" class="btn btn-outline-info"><a href="./kankay.html" target="_blank">Productos</a> </button>
-              </div>
-        </div>
-      </div>
-
-       <div class="col-12 col-sm-6 col-lg-4">
-        <div class="product-card ">
-          <span class="badge-discount">20% OFF</span>
-          <img src="../image/bigbox.jpg">
-          <div class="product-info">
-            <h5>Bigbox</h5>
-            <p> 20% de descuento <br>
-              en 4 cuotas </p> <br>
-              <a href="../image/bigboxinstructivo.pdf" target="_blank">Instructivo</a> <br><hr>
-              <a href="https://bigboxlnmutual.com.ar/" target="_blank">BigBox</a>
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="hogar">
+                <div class="product-card shadow-sm">
+                    <div class="img-container"><img src="../image/psa.jpg"></div>
+                    <div class="product-info">
+                        <h5>PSA Purificadores</h5>
+                        <p class="desc-text">Agua pura en hasta 12 cuotas.</p>
+                        <div class="d-grid gap-1">
+                            <a href="../image/preciospsa.pdf" target="_blank" class="btn-action btn-main">Ver Precios</a>
+                            <a href="../image/modelos.png" target="_blank" class="btn-action btn-outline">Modelos</a>
+                            <a href="../image/DuchaPsa.jpg" target="_blank" class="btn-action btn-outline">Ducha</a>        
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-      </div>
 
-
-       <div class="col-12 col-sm-6 col-lg-4">
-        <div class="product-card ">
-          <span class="badge-discount">35% OFF</span>
-          <img src="../image/biferdil.png" >
-          <div class="product-info">
-            <h5>Biferdil</h5>
-            <p> 35% de descuento <br>
-              en 4 cuotas </p> <br>
-              <button class="btn btn-outline-info">
-              <a href="../pages/perfumes.html" rel="noopener noreferrer" class="text-center"><strong> Ver stock en la oficina</strong></a></button>
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="otros">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">20% OFF</span>
+                    <div class="img-container"><img src="../image/ruibal.png"></div>
+                    <div class="product-info">
+                        <h5>Ruibal</h5>
+                        <p class="desc-text">Juegos de mesa en 4 cuotas.</p>
+                        <a href="../pages/juegos.html" class="btn-action btn-main">Ver Productos</a>
+                    </div>
+                </div>
             </div>
-        </div>
-      </div>
 
-       <div class="col-12 col-sm-6 col-lg-4">
-        <div class="product-card ">
-          <span class="badge-discount">20% OFF</span>
-          <img src="../image/fragancia.jpg"  >
-          <div class="product-info">
-            <h5>Fragancias Importadas</h5>
-            <p> 20% de descuento <br>
-              en 4 cuotas </p> <br>
-                
-            <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#stockfrag">
-            Stock en la oficina 
-          </button>
-          <!-- Contenido oculto -->
-          <div class="collapse" id="stockfrag">
-            <a href="./perfumes.html" rel="noopener noreferrer"><strong>Ver </strong></a><br>
-            <span><b>Consulte stock y precios</b></span>
-          </div> <br>
-          
-            <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#catalogoContenido">
-            Ver Catálogos
-          </button>
-          <!-- Contenido oculto -->
-          <div class="collapse" id="catalogoContenido">
-            <a href="../image/perfumes/fragancias.xlsx" target="_blank"><strong>Fragancias</strong></a><br>
-            <span><b>Consulte stock y precios</b></span>
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="otros">
+              <div class="product-card shadow-sm" style="border: 1px dashed var(--primary-blue);">
+                  <span class="badge-discount" style="background: #ffc107; color: #000;">Compra y Venta</span>
+                  <div class="img-container">
+                      <img src="../image/productosvarios.jfif" alt="Mercado Mutual">
+                  </div>
+                  <div class="product-info">
+                      <h5>Productos Varios</h5>
+                      <p class="desc-text">Productos nuevos y usados publicados por los socios. ¡Encontrá lo que buscás o vendé lo que ya no usás!</p>
+                      <div class="d-grid gap-2">
+                          <a href="../pages/productos.html" class="btn-main">
+                              <i class="fas fa-shopping-cart"></i> Ver Clasificados
+                          </a>
+                          <a href="https://api.whatsapp.com/send?phone=5491139546021&text=Hola!%20Quiero%20publicar%20un%20producto" target="_blank" class="btn-outline">
+                              <i class="fas fa-plus-circle"></i> Quiero Publicar
+                          </a>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="product-card ">
-        <span class="badge-discount">15% OFF</span>
-        <img src="../image/nega/Nega.png">
-        <div class="product-info">
-          <h5>Nega</h5>
-          <p> 15% de descuento <br>
-            en 4 cuotas </p> <br>
-          
-            <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#nega">
-              <a href="./nega.html" target="_blank"><strong style="color: white;">Stock</strong></a>
-            </button>
-          </div>
-      </div>
-    </div>
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">40% OFF</span>
+                    <div class="img-container"><img src="../image/sanhuberto.jfif"></div>
+                    <div class="product-info">
+                        <h5>Bodega San Huberto</h5>
+                        <p class="desc-text">Vinos seleccionados en 4 cuotas.</p>
+                        <a href="../pages/aperitivos.html" class="btn-action btn-main">Ver Vinos</a>
+                    </div>
+                </div>
+            </div>
 
-
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="product-card ">
-        <span class="badge-discount">20% OFF</span>
-        <img src="../image/vichy.png">
-        <div class="product-info">
-          <h5>Vichy</h5>
-          <p> 20% de descuento <br>
-            en 4 cuotas </p> <br> 
-            <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#vichy">
-              <a href="../image/VICHY.xlsx" target="_blank"><strong style="color: white;">Catálogo</strong></a>
-            </button>
-          </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="product-card ">
-        <span class="badge-discount">20% OFF</span>
-        <img src="../image/laroche.png">
-        <div class="product-info">
-          <h5>La Roche Posay</h5>
-          <p> 20% de descuento <br>
-            en 4 cuotas </p> <br> 
-            <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#laroche">
-              <a href="../image/LA ROCHE POSAY.xlsx" target="_blank"><strong style="color: white;">Catálogo</strong></a>
-            </button>
-          </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="product-card ">
-        <span class="badge-discount">15% OFF</span>
-         <img src="../image/elemento.png" >
-        <div class="product-info">
-          <h5>Elemento</h5>
-          <p> Medias<br>Varios modelos <br> 20% de descuento <br>
-            en 4 cuotas </p> 
-            <button class="btn btn-primary"><a href="../pages/medias.html"><span style="color: white;">Productos</span></a></button>
-      </div>
-    </div>
-   </div>
-
-
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="product-card ">
-         <img src="../image/psa.jpg">
-        <div class="product-info">
-          <h5>PSA</h5>
-          <p>  Purificadores de agua<br>Hasta 12 cuotas </p> <br> 
-          <button class="btn btn-primary mb-2">
-            <a href="../image/modelos.png" target="_blank" rel="noopener noreferrer" style="color: white;">Purificadores</a>
-          </button> 
-          <button class="btn btn-primary mb-2">
-            <a href="../image/DuchaPsa.jpg" target="_blank" rel="noopener noreferrer" style="color: white;">Ducha</a>
-          </button><br>
-          <button class="btn btn-primary mb-2" >
-            <a href="../image/preciospsa.pdf" target="_blank" style="color: white;">Precios</a>   
-          </button>
-        </div>
-        </div>
-    </div>
-
-
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="product-card ">
-        <span class="badge-discount">20% OFF</span>
-         <img src="../image/ruibal.png">
-        <div class="product-info">
-          <h5>Ruibal</h5>
-          <p> 20% de descuento <br>
-            en 4 cuotas </p> <br> 
-          <button class="btn btn-primary mb-2" >
-            <a href="../pages/juegos.html"   class="text-center" style="color: white;"> Ver productos  </a>
-          </button>
-      </div>
-    </div>
-   </div>
-
-   <div class="col-12 col-sm-6 col-lg-4">
-    <div class="product-card ">
-      <span class="badge-discount">40% OFF</span>
-       <img src="../image/rumrum.png" >
-      <div class="product-info">
-        <h5>Rum Rum </h5>
-        <p> 40% de descuento <br>
-          en 4 cuotas </p>  
-        <button class="btn btn-primary mb-2" >
-          <a href="../pages/tienda.html"   class="text-center" style="color: white;"> Ver productos  </a>
-        </button>
-    </div>
-  </div>
- </div>
-
-   <div class="col-12 col-sm-6 col-lg-4">
-    <div class="product-card ">
-        <img src="../image/productosvarios.jfif"  >
-      <div class="product-info">
-        <h5>Venta Productos </h5>
-        <p>Nuevos y Usados</p>  
-        <button class="btn btn-primary mb-2" >
-          <a href="../pages/productos.html"   class="text-center" style="color: white;"> Ver productos  </a>
-        </button>
-    </div>
-  </div>
- </div>
-
-      
-
- <div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">40% OFF</span>
-     <img src="../image/sanhuberto.jfif" >
-    <div class="product-info">
-      <h5>Bodega San Huberto </h5>
-      <p> 40% de descuento <br>
-        en 4 cuotas </p>  
-      <button class="btn btn-primary mb-2" >
-        <a href="../pages/aperitivos.html"   class="text-center" style="color: white;"> Ver productos  </a>
-      </button>
-  </div>
-</div>
-</div>
-
- <div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">30% OFF</span>
-     <img src="../image/lidherma.png" >
-    <div class="product-info">
-      <h5>Lidherma</h5>
-      <p> 30% de descuento <br>
-        en 4 cuotas </p>  
-      <button class="btn btn-primary mb-2" >
-        <a href="../pages/perfumes.html"   class="text-center" style="color: white;"> Ver productos  </a>
-      </button>
-  </div>
-</div>
-</div>
-
-
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">15% OFF</span>
-     <img src="../image/pesca.jpg" >
-    <div class="product-info">
-      <h5>Camping y Pesca </h5>
-       15% de descuento <br> en 4 cuotas  <br>
-      <button class="btn btn-primary mb-2" >
-        <a href="../pages/camping.html"   class="text-center" style="color: white;"> Ver productos  </a>
-      </button>
-      
-    </div>
-</div>
-</div>
- 
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">30% + 40% OFF</span>
-     <img src="../image/sophenia.png" >
-    <div class="product-info">
-      <h5>Finca Sophenia</h5>
-      <p>30% + 40%  de descuento <br> en 4 cuotas </p>  
-      <button class="btn btn-primary mb-2" >
-        <a href="../pages/aperitivos.html"   class="text-center" style="color: white;"> Ver productos  </a>
-      </button>  
-    </div>
-</div>
-</div>
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">30% OFF</span>
-     <img src="../image/deportes/USA SPORTS full circle.jpg" >
-    <div class="product-info">
-      <h5>Moda Circular</h5>
-      <p>30% de descuento <br> en 4 cuotas <br>
-        Ropa deportiva de las mejores marcas internacionales, cuidadosamente inspeccionada y lista para una segunda vida. </p>  
-      <button class="btn btn-primary mb-2" >
-        <a href="../pages/deportes.html"   class="text-center" style="color: white;"> Ver productos  </a>
-      </button>  
-    </div>
-</div>
-</div>
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">30% + 30%  OFF</span>
-     <img src="../image/achavalferrer.jpg" >
-    <div class="product-info">
-      <h5>Achaval Ferrer</h5>
-      <p>30% + 30%  de descuento <br> en 4 cuotas  </p>  
-      <button class="btn btn-primary mb-2" >
-        <a href="../pages/aperitivos.html"   class="text-center" style="color: white;"> Ver productos  </a>
-      </button>  
-    </div>
-</div>
-</div>
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">40%  OFF</span>
-     <img src="../image/bianchi.png">
-    <div class="product-info">
-      <h5>Bodega Bianchi</h5>
-      <p>40%  de descuento <br> en 4 cuotas  </p>  
-      <button class="btn btn-primary mb-2" >
-        <a href="../pages/aperitivos.html"   class="text-center" style="color: white;"> Ver productos  </a>
-      </button>  
-    </div>
-</div>
-</div>
- 
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">20% OFF</span>
-     <img src="../image/bioalquimia/bioalquimia.png" >
-    <div class="product-info">
-      <h5>Bioalquimia</h5>
-      20% de descuento <br> en 4 cuotas </p>  
-       <button class="btn btn-primary mb-2" >
-      <a href="../pages/bioalquimia.html" style="color: white;">Productos</a>
-      </button>  
-    </div>
-</div>
-</div>
-
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-    <span class="badge-discount">30%  OFF</span>
-      <img src="../image/bonafide.jpg">
-    <div class="product-info">
-      <h5>Bonafide</h5>
-        <p>30%  de descuento <br> en 4 cuotas  </p>  
-         <button class="btn btn-primary mb-2" >
-      <a href="../pages/bonafide.html" style="color: white;">Productos</a>
-      </button>  
-    </div>
- </div>
-</div>
-
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-      <span class="badge-discount">30%  OFF</span> 
-       <img src="../image/bonafideBoxStandard.png">
-    <div class="product-info">
-      <h5>Cajas Navideñas <br>Bonafide  2025</h5>
-       <p>30%  de descuento <br> en 4 cuotas  </p>   
-       <button class="btn btn-primary"><a href="../pages/bonafide.html"><span style="color: white;">Cajas</span></a></button> <br><br>
-    </div>
-  </div>
-</div>
-
-
-  
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-      <span class="badge-discount">30%  OFF</span>
-       <img src="../image/kuati.png">
-    <div class="product-info">
-      <h5>Kuati</h5>
-       <p>30%  de descuento <br> en 4 cuotas  </p>  
-         <button class="btn btn-primary mb-2" >
-      <a href="../pages/kuati.html" style="color: white;">Productos</a>
-      </button>  
-    </div>
-</div>
-</div>
-
-
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-      <!-- <span class="badge-discount">30%  OFF</span> -->
-       <img src="../image/lollapalooza.jpg">
-    <div class="product-info">
-      <h5>Lollapalooza 2026</h5>
-       <!-- <p>30%  de descuento <br> en 4 cuotas  </p>   -->
-       <p style="color: blue;"><b>Proximamente</b></p> 
-       <button class="btn btn-primary"><a href="../pages/lollapalooza.html" style="color: white;">+info</a></button>
-     
-    </div>
-</div>
-</div>
-
-
-<div class="col-12 col-sm-6 col-lg-4">
-  <div class="product-card ">
-      <!-- <span class="badge-discount">30%  OFF</span> -->
-       <img src="../image/piero.png">
-    <div class="product-info">
-      <h5>Piero</h5>
-       <!-- <p>30%  de descuento <br> en 4 cuotas  </p>   -->
-       <p style="color: blue;"><b>Proximamente</b></p> 
-     
-    </div>
-</div>
-</div>
-
-
-
-
-
-
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/olivaarauco.webp"></div>
+                    <div class="product-info">
+                        <h5>Aceite Famiglia</h5>
+                        <p class="desc-text">Aceite de oliva, bot 500ml en 4 cuotas.</p>
+                        <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#localesAceite">Precios</button>
+                        <div class="collapse" id="localesAceite">
+                            <div class="collapse-content small">
+                              <p class="text-success fw-bold mb-3"><i class="fas fa-star me-2"></i>VALOR SOCIO</p>
+                              <span class="text-danger text-decoration-line-through">$ 19.623,25</span> <br>
+                              <span>$ 13.736,28<br><b>4 cuotas de<br>$ 3.434,07</b></span><hr>
+                            </div>
+                        </div>
+                        <a href="../pages/aperitivos.html" class="btn-action btn-main">Ver productos</a>
+                    </div>
+                </div>
+            </div>
  
 
-    </div> <!-- cierre row -->
-  </div> <!-- cierre container -->
-</section>
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <div class="img-container"><img src="../image/hibiscus.png"></div>
+                    <div class="product-info">
+                        <h5>Gancia Hibiscus</h5>
+                        <p class="desc-text">bot 750ml en 4 cuotas.</p>
+                        <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#hibiscus">Precios</button>
+                        <div class="collapse" id="hibiscus">
+                            <div class="collapse-content small">
+                              <p class="text-success fw-bold mb-3"><i class="fas fa-star me-2"></i>VALOR SOCIO</p>
+                              <span class="text-danger">$ 6.587,00 </span><br><span><b>4 cuotas de<br>$ 1.646,75</b></span><hr>
+                            </div>
+                        </div>
+                        <a href="../pages/aperitivos.html" class="btn-action btn-main">Ver productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <div class="img-container"><img src="../image/befetear.jpeg"></div>
+                    <div class="product-info">
+                        <h5>Gin Beefeater</h5>
+                        <p class="desc-text">bot 1 litro en 4 cuotas.</p>
+                        <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#befeater">Precios</button>
+                        <div class="collapse" id="befeater">
+                            <div class="collapse-content small">
+                              <p class="text-success fw-bold mb-3"><i class="fas fa-star me-2"></i>VALOR SOCIO</p>
+                              <span class="text-danger">$ 35.800,00 </span><br><span><b>4 cuotas de<br>$ 8.950,00</b></span><hr>
+                            </div>
+                        </div>
+                        <a href="../pages/aperitivos.html" class="btn-action btn-main">Ver productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                  <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/ginbombay.webp"></div>
+                    <div class="product-info">
+                        <h5>Gin Bombay</h5>
+                        <p class="desc-text">bot 750ml en 4 cuotas.</p>
+                        <button class="btn-action btn-outline w-100" data-bs-toggle="collapse" data-bs-target="#bombay">Precios</button>
+                        <div class="collapse" id="bombay">
+                            <div class="collapse-content small">
+                              <p class="text-success fw-bold mb-3"><i class="fas fa-star me-2"></i>VALOR SOCIO</p>
+                              <span class="text-danger text-decoration-line-through">$ 35.800,00</span> <br>
+                              <span>$ 25.060,00<br><b>4 cuotas de<br>$ 6.265,00</b></span><hr>
+                            </div>
+                        </div>
+                        <a href="../pages/aperitivos.html" class="btn-action btn-main">Ver productos</a>
+                    </div>
+                </div>
+            </div>
+ 
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">30% OFF</span>
+                    <div class="img-container"><img src="../image/bonafide.jpg"></div>
+                    <div class="product-info">
+                        <h5>Bonafide</h5>
+                        <p class="desc-text">Café y chocolates en 4 cuotas.</p>
+                        <a href="../pages/bonafide.html" class="btn-action btn-main">Ver Productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="otros">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">15% OFF</span>
+                    <div class="img-container"><img src="../image/pesca.jpg"></div>
+                    <div class="product-info">
+                        <h5>Waterdog/Stanley</h5>
+                        <p class="desc-text">Equipamiento outdoor en 4 cuotas.</p>
+                        <a href="../pages/camping.html" class="btn-action btn-main">Ver Catálogo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="ropa">
+              <div class="product-card shadow-sm" style="border: 1px solid #d1e7dd;">
+                    <span class="badge-discount">30% OFF</span>
+                  <div class="img-container">
+                      <img src="../image/deportes/USA SPORTS full circle.jpg" alt="Moda Circular">
+                  </div>
+                  <div class="product-info">
+                      <h5>Moda Circular</h5>
+                      <p class="desc-text">Dale una segunda oportunidad a las prendas. Ropa seleccionada en excelente estado.</p>
+                      <div class="d-grid gap-2">
+                          <a href="./deportes.html" class="btn-main">
+                              <i class="fas fa-sync-alt"></i> Ver Catálogo
+                          </a>
+                          <a href="https://api.whatsapp.com/send?phone=5491139546021&text=Hola!%20Tengo%20ropa%20para%20moda%20circular" target="_blank" class="btn-outline">
+                              <i class="fas fa-hand-holding-heart"></i> Quiero Sumar Ropa
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+                <div class="product-card shadow-sm">
+                    <span class="badge-discount">40% OFF</span>
+                    <div class="img-container"><img src="../image/bianchi.png"></div>
+                    <div class="product-info">
+                        <h5>Bodega Bianchi</h5>
+                        <p class="desc-text">Vinos y Espumantes en 4 cuotas.</p>
+                        <a href="../pages/aperitivos.html" class="btn-action btn-main">Ver Productos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+              <div class="product-card shadow-sm">
+                  <span class="badge-discount">30%+40% OFF</span>
+                  <div class="img-container">
+                      <img src="../image/sophenia.png" alt="Finca Sophenia">
+                  </div>
+                  <div class="product-info">
+                      <h5>Finca Sophenia</h5>
+                      <p class="desc-text">Vinos de alta gama de Gualtallary en 4 cuotas sin interés.</p>
+                      <div class="d-grid gap-2">
+                       <a href="../pages/aperitivos.html" class="btn-action btn-main">Ver Productos</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+            <div class="product-card shadow-sm">
+                  <span class="badge-discount">30%+30% OFF</span>
+                <div class="img-container">
+                    <img src="../image/achavalferrer.jpg" alt="Achaval Ferrer">
+                </div>
+                <div class="product-info">
+                    <h5>Achaval Ferrer</h5>
+                    <p class="desc-text">Vinos tintos de clase mundial y malbecs de guarda en 4 cuotas sin interés.</p>
+                    <div class="d-grid gap-2">
+                        <a href="../pages/aperitivos.html" class="btn-main">
+                            <i class="fas fa-wine-bottle"></i> Ver Selección
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="bienestar">
+            <div class="product-card shadow-sm">
+                <span class="badge-discount">20% OFF</span>
+                <div class="img-container">
+                    <img src="../image/bioalquimia/bioalquimia.png" alt="Bioalquimia">
+                </div>
+                <div class="product-info">
+                    <h5>Bioalquimia</h5>
+                    <p class="desc-text">Cosmética natural, aceites esenciales y bienestar holístico en 4 cuotas.</p>
+                    <div class="d-grid gap-2">
+                        <a href="./bioalquimia.html" class="btn-main">
+                            <i class="fas fa-leaf"></i> Ver Productos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+            <div class="product-card shadow-sm">
+                <span class="badge-discount">30% OFF</span>
+                <div class="img-container">
+                    <img src="../image/kuati.png" alt="Kuati Alimentos Naturales">
+                </div>
+                <div class="product-info">
+                    <h5>Kuati</h5>
+                    <p class="desc-text">Frutos secos, semillas y productos naturales de calidad premium en 4 cuotas.</p>
+                    <div class="d-grid gap-2">
+                        <a href="./kuati.html" class="btn-main">
+                            <i class="fas fa-seedling"></i> Ver Productos
+                        </a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="comida">
+            <div class="product-card shadow-sm">
+                <span class="badge-discount">35% OFF</span>
+                <div class="img-container">
+                    <img src="../image/elpuente.jpg" alt="El Puente">
+                </div>
+                <div class="product-info">
+                    <h5>El Puente</h5>
+                    <p class="desc-text">Quesos, fiambres y productos gourmet de selección en 4 cuotas sin interés.</p>
+                    <div class="d-grid gap-1">
+                      <button class="btn-action btn-outline" data-bs-toggle="collapse" data-bs-target="#puneteCond">Condiciones</button>
+                      </div>
+                      <div class="collapse" id="puneteCond">
+                          <div class="collapse-content">✔️ Se abona con vouchers que se envían por mail.<br>
+                            ✔️ Los mismos son de: <br> $ 50.000 y $ 80.000  <br>
+                            ✔️ Válido para compra presencial.<br>
+                            ✔️ Se debe usar uno por compra y consumir el total en la misma.<br>
+                            ✔️ <b>No tienen devolución.</b><br>
+                            ✔️ Los vouchers no son acumulables con otros beneficios y/o promociones.<br>
+                            ✔️ <b>Se puede canjear un voucher por persona por día.</b><br>
+                            ✔️ <u>Vto. 20/06/2026.</u><br>
+                            ✔️ Pasada la fecha de vto <span style="color: red;">no pueden revalidarse.</span></p>   </div>
+                      </div>
+                </div>
+            </div>
+        </div>
 
 
+         <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="ropa">
+            <div class="product-card shadow-sm">
+                <div class="img-container">
+                    <img src="../image/tienda/LOGO.png" alt="Kuati Alimentos Naturales">
+                </div>
+                <div class="product-info">
+                    <h5>Tienda</h5>
+                    <p class="desc-text">Indumentaria con estilo en 4 cuotas.</p>
+                    <div class="d-grid gap-2">
+                        <a href="./tienda.html" class="btn-main">
+                            <i class="fas fa-shopping-bag"></i> Ver Productos
+                        </a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        
 
-<div id="footer"></div>
-<script>
-  fetch("footer.html")
+        <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="proximamente">
+            <div class="product-card shadow-sm" style="opacity: 0.85; border: 1px dashed #ccc;">
+                <span class="badge-discount" style="background: #3184fd;">Se viene</span>
+                <div class="img-container" style="filter: grayscale(0.5);">
+                    <img src="../image/gola.png" alt="Gola">
+                </div>
+                <div class="product-info">
+                    <h5>Gola</h5>
+                    <p class="desc-text">Estamos preparando beneficios exclusivos en calzado e indumentaria Gola.</p>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" style="border-radius: 10px; font-weight: 600; font-size: 0.8rem;">
+                            <i class="fas fa-hourglass-half"></i> Próximamente
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="proximamente">
+            <div class="product-card shadow-sm">
+                <span class="badge-discount" style="background: #3184fd;">Se viene</span>
+                <div class="img-container">
+                    <img src="../image/piero.png" alt="Piero">
+                </div>
+                <div class="product-info">
+                    <h5>Piero</h5>
+                    <p class="desc-text">Colchones y sommiers diseñados para el mejor descanso.</p>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" style="border-radius: 10px; font-weight: 600; font-size: 0.8rem;">
+                            <i class="fas fa-hourglass-half"></i> Próximamente
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="proximamente">
+            <div class="product-card shadow-sm">
+                <span class="badge-discount" style="background: #3184fd;">Se viene</span>
+                <div class="img-container">
+                    <img src="../image/jetsmart.webp" alt="js">
+                </div>
+                <div class="product-info">
+                    <h5>Jet Smart</h5>
+                    <p class="desc-text">El canje es para todos los destinos que vuele la Aerolínea.</p>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" style="border-radius: 10px; font-weight: 600; font-size: 0.8rem;">
+                            <i class="fas fa-hourglass-half"></i> Próximamente
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="proximamente">
+            <div class="product-card shadow-sm">
+                <span class="badge-discount" style="background: #3184fd;">Se viene</span>
+                <div class="img-container">
+                    <img src="../image/bgh.jpeg" alt="bgh">
+                </div>
+                <div class="product-info">
+                    <h5>BGH</h5>
+                    <p class="desc-text">Canje con aires acondicionados.</p>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" style="border-radius: 10px; font-weight: 600; font-size: 0.8rem;">
+                            <i class="fas fa-hourglass-half"></i> Próximamente
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4 item-card" data-cat="proximamente">
+            <div class="product-card shadow-sm">
+                <span class="badge-discount" style="background: #3184fd;">Se viene</span>
+                <div class="img-container">
+                    <img src="../image/cat.png" alt="bgh">
+                </div>
+                <div class="product-info">
+                    <h5>CAT</h5>
+                    <p class="desc-text">Canje con borcegos, zapatillas.</p>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" style="border-radius: 10px; font-weight: 600; font-size: 0.8rem;">
+                            <i class="fas fa-hourglass-half"></i> Próximamente
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+        </div> 
+      </div> 
+      
+      <div id="footer"></div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+       <script>
+  fetch("navbar.html")
     .then(response => response.text())
     .then(data => {
-      document.getElementById("footer").innerHTML = data;
+      document.getElementById("navbar").innerHTML = data;
+
+      // Mover aquí el contenido de navbar.js
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      const menuClose = document.getElementById("menu-close");
+
+      if (menuToggle && menu && menuClose) {
+        menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+        });
+
+        menuClose.addEventListener("click", function () {
+          menu.classList.remove("active");
+        });
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
     });
 </script>
 
-  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JAVA -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
- 
-    <script src="../canjes5.js"></script>
-    <script src="../pasarimagenes.js"></script>
-    <script src="../canjes4.js"></script>    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-     <div id="navbar"></div>
-    <script>
-      fetch("navbar.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("navbar").innerHTML = data;
+    <!-- ⬆️ Botón Volver Arriba -->
+    <button id="scrollTopBtn" class="scroll-top-btn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
-          // Mover aquí el contenido de navbar.js
-          const menuToggle = document.getElementById("menu-toggle");
-          const menu = document.getElementById("menu");
-          const menuClose = document.getElementById("menu-close");
+     <script>
+      document.addEventListener("DOMContentLoaded", function () {
 
-          if (menuToggle && menu && menuClose) {
-            menuToggle.addEventListener("click", function () {
-              menu.classList.toggle("active");
-            });
+      const searchInput = document.getElementById("searchInput");
+      const categoryFilter = document.getElementById("categoryFilter");
+      const clearBtn = document.getElementById("clearFilters");
+      const products = document.querySelectorAll("#productContainer .item-card");
+      const resultsCount = document.getElementById("resultsCount");
+      const resultsInfo = document.getElementById("resultsInfo");
+      const noResults = document.getElementById("noResults");
 
-            menuClose.addEventListener("click", function () {
-              menu.classList.remove("active");
-            });
-          }
+      function filterProducts() {
 
-          // Smooth scroll
-          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-              e.preventDefault();
+      const searchValue = searchInput.value.toLowerCase();
+      const selectedCategory = categoryFilter.value;
 
-              document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-              });
-            });
-          });
+      let visibleCount = 0;
+
+      products.forEach(product => {
+
+      const text = product.innerText.toLowerCase();
+      const category = product.getAttribute("data-cat");
+
+      const matchesSearch = text.includes(searchValue);
+      const matchesCategory =
+      selectedCategory === "all" ||
+      category === selectedCategory;
+
+      if (matchesSearch && matchesCategory) {
+      product.style.display = "";
+      visibleCount++;
+      } else {
+      product.style.display = "none";
+      }
+
+      });
+
+      // Actualizar contador
+      resultsCount.textContent = visibleCount;
+      resultsInfo.classList.add("active");
+
+      // Mostrar u ocultar botón limpiar
+      if (searchValue !== "" || selectedCategory !== "all") {
+      clearBtn.classList.add("show");
+      } else {
+      clearBtn.classList.remove("show");
+      }
+
+      // Mostrar mensaje si no hay resultados
+      if (visibleCount === 0) {
+      noResults.style.display = "block";
+      } else {
+      noResults.style.display = "none";
+      }
+
+      }
+
+      // Eventos
+      searchInput.addEventListener("keyup", filterProducts);
+      categoryFilter.addEventListener("change", filterProducts);
+
+      clearBtn.addEventListener("click", function () {
+      searchInput.value = "";
+      categoryFilter.value = "all";
+      filterProducts();
+      });
+
+      // Ejecutar al cargar
+      filterProducts();
+
+      });
+      
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        // Mostrar botón al hacer scroll
+        window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+        scrollTopBtn.classList.add("show");
+        } else {
+        scrollTopBtn.classList.remove("show");
+        }
         });
-    </script>
-     
 
- </body>
+        // Scroll suave hacia arriba
+        scrollTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+        });
+        });
+      </script>
+
+
+
+</body>
 </html>

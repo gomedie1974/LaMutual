@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Obtener nombre
         $apellidoNombre = "No encontrado";
-        $sqlNombre = "SELECT apellidoNombre FROM cc061125 WHERE dni = ? AND numeroSocio = ?";
+        $sqlNombre = "SELECT apellidoNombre FROM cc090326 WHERE dni = ? AND numeroSocio = ?";
         if ($stmt = $conn->prepare($sqlNombre)) {
             $stmt->bind_param("ss", $dni, $numeroSocio);
             $stmt->execute();
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Obtener datos principales
         $sql = "SELECT fecha, cuota, detalle, concepto, monto 
-        FROM cc061125
+        FROM cc090326
         WHERE dni = ? AND numeroSocio = ?
         ORDER BY STR_TO_DATE(
             CONCAT(
@@ -172,7 +172,8 @@ $conn->close();
     <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
     <!-- Para PDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>    <title>Consulta de Socios</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>    
+    <title>Consulta de Socios</title>
 
     <div id="form-alert" class="alert alert-danger text-center d-none" role="alert" style="font-size: 1.1rem;"></div>
 
@@ -304,6 +305,8 @@ $conn->close();
  </style>
 </head>
 <body>
+<div id="navbar" class="sticky-top"></div>
+
 
 
 <?php
@@ -325,7 +328,8 @@ if ($resultados) {
 <!-- Formulario -->
 <div class="container my-4">
   <h2 class="form-title text-center">🔍 Detalle de gastos</h2>
-  <p class="text-center"> <b>Fecha de actualización 06/11/2025</b></p>
+  <p class="text-center"> <b>Fecha de actualización 09/03/2026</b></p>
+  <!-- <p class="text-center" style="color: red;"><b><u>PRÓXIMA ACTUALIZACIÓN 02-02-2026</u></b></p> -->
   
   <div class="row justify-content-center g-4">
     
@@ -435,7 +439,6 @@ function validarFormulario() {
 }
 </style>
 
- <div id="navbar"></div>
     <script>
   fetch("navbar.html")
     .then(response => response.text())

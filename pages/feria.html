@@ -1,594 +1,478 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- SEO -->
-        <title>Feria de productos</title>
-        <meta name="keywords" content="mutual">
-        <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
-        <!-- Whatsapp -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
-        <!-- BOOTSTRAP -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <!-- pone el logo en la pestana -->
-        <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
-        <title>CSS</title>
-        <link rel="stylesheet" href="../style/style.css">
-        <link rel="canonical" href="https://www.lnmutual.com.ar/feria.html">              
-    </head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feria de Productos | Mutual La Nación</title>
     
-        
-<body >
-  <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
-    <!-- Ícono de WhatsApp -->
-    <i class="fab fa-whatsapp"></i>
-  </a>
-   
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #f2f2f2;
-      }
-  
-      h1 {
-        text-align: center;
-        margin: 40px 0;
-        font-weight: 600;
-        color: #222;
-      }
-  
-      .product-card {
-        background: white;
-        border-radius: 16px;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-        overflow: hidden;
-        position: relative;
-        transition: transform 0.2s ease;
-      }
-  
-      .product-card:hover {
-        transform: scale(1.02);
-      }
-  
-      .product-card img {
-      width: 100%;
-      height: auto;
-      object-fit: contain; /* o "cover", dependiendo del efecto deseado */
-      max-height: 100%;
-  }
-   
-      .product-info {
-        padding: 20px;
-      }
-  
-      .product-info h5 {
-        font-weight: 600;
-        font-size: 1.1rem;
-        margin-bottom: 8px;
-        color: #333;
-      }
-  
-      .product-info p {
-        color: #666;
-        font-size: 0.95rem;
-        margin-bottom: 12px;
-      }
-  
-      .btn-modern {
-        background-color: #ff6b6b;
+        :root {
+            --primary: #2b319f;
+            --primary-dark: #161a5e;
+            --accent: #ff6b6b;
+            --socio: #129c00;
+            --bg-light: #f0f2f5;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: #333;
+            margin: 0;
+        }
+
+        /* --- HEADER --- */
+        .page-header {
+            padding: 20px 0 40px 0;
+            color: #000;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 60px;
+            background: white;
+            position: relative;
+        }
+
+        .header-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1.5px;
+        }
+
+        .header-description {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* --- BUSCADOR CON BOTÓN LIMPIAR --- */
+        .search-container {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            padding: 10px;
+            border-radius: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 10;
+            border: 1px solid #eee;
+            align-items: center;
+        }
+
+        .search-wrapper {
+            position: relative;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            width: 100%;
+            border: none;
+            padding: 15px 15px 15px 55px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            outline: none;
+            color: #333;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        /* Botón de Limpiar Texto */
+        .btn-limpiar-texto {
+            background: #f0f0f0;
+            color: #666;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 10px;
+            cursor: pointer;
+            display: none; /* Se activa por JS */
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-limpiar-texto:hover {
+            background: #e0e0e0;
+            color: var(--accent);
+        }
+
+        .search-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            background: var(--accent);
+            transform: scale(1.02);
+        }
+
+        /* --- CARDS DE PRODUCTOS --- */
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .img-container {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .img-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .badge-discount {
+            position: absolute;
+            top: 15px; left: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 12px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            border-radius: 50px;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-info h5 {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            min-height: 45px;
+            line-height: 1.4;
+            color: #1a1a1a;
+        }
+
+        .price-section {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .label-socio { display: block; color: var(--socio); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; }
+        .price-old { font-size: 0.85rem; color: #bbb; text-decoration: line-through; }
+        .price-socio { font-size: 1.15rem; font-weight: 800; color: var(--socio); display: block; }
+        .cuotas { font-size: 0.8rem; color: #777; display: block; margin-bottom: 8px; }
+        .no-socio-box { border-top: 1px dashed #ddd; padding-top: 8px; margin-top: 5px; }
+        .price-nosocio { font-size: 0.9rem; font-weight: 700; color: var(--primary); display: block; }
+
+        .whatsapp-icon {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            z-index: 9999; text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .whatsapp-icon:hover { transform: scale(1.1); color: white; }
+
+        #no-results { text-align: center; padding: 100px 0; display: none; }
+
+        @media (max-width: 768px) {
+            .header-title { font-size: 2.2rem; }
+            .search-btn { display: none; }
+            .search-container { margin: 0 15px; }
+        }
+        .btn-whatsapp-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #25d366;
         color: white;
-        border: none;
-        padding: 8px 16px;
-        font-weight: 500;
-        border-radius: 8px;
-        transition: background 0.3s;
-      }
-  
-      .btn-modern:hover {
-        background-color: #e95c5c;
-      }
-  
-      .badge-discount {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        background-color: #ff6b6b;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-top: 15px;
+        transition: background 0.3s ease;
+    }
+
+    .btn-whatsapp-card:hover {
+        background-color: #128c7e;
         color: white;
-        padding: 6px 10px;
-        font-size: 0.85rem;
-        font-weight: bold;
-        border-radius: 8px;
-      }
-      .price-box {
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    padding: 12px;
-    font-size: 0.95rem;
-  }
-  
-  .label-socio {
-    color: #129c00;
-    font-weight: bold;
-  }
-  
-  .price-socio {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #129c00;
-  }
-  
-  .label-nosocio {
-    color: #2b319f;
-    font-weight: bold;
-  }
-  
-  .price-nosocio {
-    font-size: 1.05rem;
-    color: #2b319f;
-  }
-  
-  .cuotas {
-    font-size: 0.85rem;
-    color: #555;
-  }
-   /* Estilo para el filtro */
-   .row {
-    align-items: flex-start;
-  }
-  
-  .filter-container {
-    background-color: #f2f2f2;
-    padding-bottom: 20px;
-    position: relative;  /* Cambié de sticky a relative para móviles */
-  }
-  
-  @media (min-width: 768px) {
-    .filter-container {
-      position: sticky;
-      top: 120px; /* ajusta si el navbar tiene otra altura */
     }
-  }
-  
-  @media (max-width: 767px) {
-    .filter-container {
-      position: relative; /* Cambié a relative para móviles */
+
+    /* Ajuste para que el info-box no empuje el botón fuera de la card */
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
-  }
-  
-   
-  .product-card img {
-      height: 260px;
-      object-fit: cover;
-      width: 100%;
-  }
-  .carousel-inner img {
-    padding-top: 20px;
-    max-height: 300px;
-    object-fit: contain;
-  }
-  .badge-new {
-  background-color: #16095e;    
-  color: rgb(255, 251, 41);
-  padding: 5px 10px;
-  border-radius: 3px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  </style>
+</head>
+<body>
+
+<div id="navbar" class="sticky-top"></div>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="header-title">Feria de Productos</h1>
+            <p class="header-description">Beneficios exclusivos y financiación en cuotas para socios.</p>
+            
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="buscador" class="search-input" placeholder="Buscá por nombre o categoría...">
+                    <button id="btnLimpiar" class="btn-limpiar-texto"><i class="fas fa-rotate-left"></i>Limpiar</button>
+                </div>
+                <button class="search-btn">Buscar</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mb-5">
+        <div class="row g-4" id="contenedor-productos"></div>
+        <div id="no-results">
+            <i class="fas fa-search mb-4" style="font-size: 3rem; color: #ccc;"></i>
+            <h3>No encontramos lo que buscás</h3>
+            <p>Intentá con palabras más simples o generales.</p>
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 1. DATA DE TODOS LOS PRODUCTOS
+        const productos = [
+            { 
+                nombre: "Lunchera", 
+                nuevo: true, // nuevo ingreso
+                imagen: "../image/accesorios/lunchera1.jpeg", 
+                descuento: "20% OFF", 
+                precioViejo: "29.500,00", 
+                precioSocio: "23.600,00", 
+                cuotas: "4 cuotas de $ 6.000,00", 
+                precioNoSocio: "29.500,00" 
+            },
+            { nombre: "Lunchera ", nuevo: true, imagen: "../image/accesorios/lunchera2.jpeg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 6.000,00", precioNoSocio: "49.500,00" },
+            { nombre: "Lunchera ", nuevo: true, imagen: "../image/accesorios/lunchera3.jpeg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 6.000,00", precioNoSocio: "49.500,00" },
+            { nombre: "Lunchera ",nuevo: true, imagen: "../image/accesorios/lunchera4.jpeg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 6.000,00", precioNoSocio: "49.500,00" },
+            { nombre: "Zapatilla <br>Carter´s<br>talle 6",nuevo: true, imagen: "../image/accesorios/zapa.jpeg", descuento: "20% OFF", precioViejo: "39.500,00", precioSocio: "31.600,00", cuotas: "4 cuotas de $ 7.900,00", precioNoSocio: "59.500,00" },
+            { nombre: "Babero <br>Water Resistant",nuevo: true, imagen: "../image/accesorios/babero.jpg", descuento: "20% OFF", precioViejo: "19.500,00", precioSocio: "15.600,00", cuotas: "4 cuotas de $ 3.900,00", precioNoSocio: "29.500,00" },
+            { nombre: "Babero<br>Carter´s ",nuevo: true, imagen: "../image/accesorios/babero1.jpg", descuento: "20% OFF", precioViejo: "19.500,00", precioSocio: "15.600,00", cuotas: "4 cuotas de $ 3.900,00", precioNoSocio: "29.500,00" },
+            { nombre: "Babero<br>Carter´s ",nuevo: true, imagen: "../image/accesorios/babero2.jpg", descuento: "20% OFF", precioViejo: "19.500,00", precioSocio: "15.600,00", cuotas: "4 cuotas de $ 3.900,00", precioNoSocio: "29.500,00" },
+            { nombre: "Body<br>Carter´s<br>talle 12m ",nuevo: true, imagen: "../image/accesorios/body.jpg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 5.900,00", precioNoSocio: "49.500,00" },
+            { nombre: "Calza<br>Osh Kosh<br>talle 6 ",nuevo: true, imagen: "../image/accesorios/calza.jpg", descuento: "20% OFF", precioViejo: "31.900,00", precioSocio: "25.520,00", cuotas: "4 cuotas de $ 6.380,00", precioNoSocio: "41.500,00" },
+            { nombre: "Calza<br>Osh Kosh<br>talle 6 ",nuevo: true, imagen: "../image/accesorios/calza1.jpg", descuento: "20% OFF", precioViejo: "31.900,00", precioSocio: "25.520,00", cuotas: "4 cuotas de $ 6.380,00", precioNoSocio: "41.500,00" },
+            { nombre: "Calza<br>Osh Kosh<br>talle 6 ",nuevo: true, imagen: "../image/accesorios/calza2.jpg", descuento: "20% OFF", precioViejo: "31.900,00", precioSocio: "25.520,00", cuotas: "4 cuotas de $ 6.380,00", precioNoSocio: "41.500,00" },
+            { nombre: "Calza<br>H&M<br>talle 5-6y ",nuevo: true, imagen: "../image/accesorios/calza3.jpg", descuento: "20% OFF", precioViejo: "31.900,00", precioSocio: "25.520,00", cuotas: "4 cuotas de $ 6.380,00", precioNoSocio: "41.500,00" },
+            { nombre: "Pantalón<br>H&M<br>talle 5-6y ",nuevo: true, imagen: "../image/accesorios/calza4.jpg", descuento: "20% OFF", precioViejo: "49.500,00", precioSocio: "39.600,00", cuotas: "4 cuotas de $ 9.900,00", precioNoSocio: "69.500,00" },
+            { nombre: "Camisa<br>Carter´s<br>talle 18m ",nuevo: true, imagen: "../image/accesorios/camisa.jpg", descuento: "20% OFF", precioViejo: "25.500,00", precioSocio: "20.400,00", cuotas: "4 cuotas de $ 5.100,00", precioNoSocio: "49.500,00" },
+            { nombre: "Medias<br>BB Cheeky<br>3/4 ",nuevo: true, imagen: "../image/accesorios/medias.jpg", descuento: "20% OFF", precioViejo: "7.900,00", precioSocio: "6.320,00", cuotas: "4 cuotas de $ 1.580,00", precioNoSocio: "10.500,00" },
+            { nombre: "Pijama<br>Carter´s<br>talle 3t ",nuevo: true, imagen: "../image/accesorios/pijama.jpg", descuento: "20% OFF", precioViejo: "36.700,00", precioSocio: "29.360,00", cuotas: "4 cuotas de $ 7.340,00", precioNoSocio: "49.500,00" },
+            { nombre: "Remera<br>H&M<br>talle 9-12m ",nuevo: true, imagen: "../image/accesorios/remera.jpg", descuento: "20% OFF", precioViejo: "39.500,00", precioSocio: "31.600,00", cuotas: "4 cuotas de $ 7.900", precioNoSocio: "49.400,00" },
+            { nombre: "Remera<br>H&M<br>talle 9-12m ",nuevo: true, imagen: "../image/accesorios/remera1.jpg", descuento: "20% OFF", precioViejo: "39.500,00", precioSocio: "31.600,00", cuotas: "4 cuotas de $ 7.900", precioNoSocio: "49.400,00" },
+            { nombre: "Remera<br>H&M<br>talle 4-6y ",nuevo: true, imagen: "../image/accesorios/remera2.jpg", descuento: "20% OFF", precioViejo: "39.500,00", precioSocio: "31.600,00", cuotas: "4 cuotas de $ 7.900", precioNoSocio: "49.400,00" },
+            { nombre: "Remera<br>H&M<br>talle 6-8y ",nuevo: true, imagen: "../image/accesorios/remera3.jpg", descuento: "20% OFF", precioViejo: "39.500,00", precioSocio: "31.600,00", cuotas: "4 cuotas de $ 7.900", precioNoSocio: "49.400,00" },
+            { nombre: "Remera<br>H&M<br>talle 6-8y ",nuevo: true, imagen: "../image/accesorios/remera4.jpg", descuento: "20% OFF", precioViejo: "39.500,00", precioSocio: "31.600,00", cuotas: "4 cuotas de $ 7.900", precioNoSocio: "49.400,00" },
+            { nombre: "Vestido<br>H&M<br>talle 4-6y ",nuevo: true, imagen: "../image/accesorios/vestido.jpg", descuento: "20% OFF", precioViejo: "30.500,00", precioSocio: "24.400,00", cuotas: "4 cuotas de $ 6.100,00", precioNoSocio: "39.500,00" },
+            { nombre: "Vestido<br>H&M<br>talle 4-6y ",nuevo: true, imagen: "../image/accesorios/vestido1.jpg", descuento: "20% OFF", precioViejo: "30.500,00", precioSocio: "24.400,00", cuotas: "4 cuotas de $ 6.100,00", precioNoSocio: "39.500,00" },
+            { nombre: "Vestido<br>H&M<br>talle 4-6y ",nuevo: true, imagen: "../image/accesorios/vestido2.jpg", descuento: "20% OFF", precioViejo: "30.500,00", precioSocio: "24.400,00", cuotas: "4 cuotas de $ 6.100,00", precioNoSocio: "39.500,00" },
+            { nombre: "Canilla Monocomando Cocina", imagen: "../image/monocomando.jpg", descuento: "30% OFF", precioViejo: "70.500,00", precioSocio: "49.350,00", cuotas: "4 cuotas de $ 12.337,50", precioNoSocio: "80.000,00" },
+            { nombre: "Monopatín Luces Led", imagen: "../image/monopatin.webp", descuento: "30% OFF", precioViejo: "90.000,00", precioSocio: "63.000,00", cuotas: "4 cuotas de $ 15.750,00", precioNoSocio: "100.000,00" },
+            { nombre: "Batimóvil Batman Movie", imagen: "../image/batimovil.webp", descuento: "30% OFF", precioViejo: "24.990,00", precioSocio: "17.493,00", cuotas: "4 cuotas de $ 4.373,25", precioNoSocio: "25.000,00" },
+            { nombre: "Moto clásica Triumph Bonneville", imagen: "../image/moto-triumph-bonneville-t120.webp", descuento: "30% OFF", precioViejo: "19.900,00", precioSocio: "13.993,00", cuotas: "4 cuotas de $ 3.498,25", precioNoSocio: "30.000,00" },
+            { nombre: "Peluche Mufasa + Libro", imagen: "../image/mufasa.webp", descuento: "30% OFF", precioViejo: "14.900,00", precioSocio: "10.493,00", cuotas: "4 cuotas de $ 2.623,25", precioNoSocio: "20.000,00" },
+            { nombre: "Piscina Mor 400 lts", imagen: "../image/piscina.jpg", descuento: "45% OFF", precioViejo: "40.000,00", precioSocio: "22.000,00", cuotas: "4 cuotas de $ 5.500,00", precioNoSocio: "40.000,00" },
+            { nombre: "Plancha Grill Antiadherente", imagen: "../image/plancha.png", descuento: "30% OFF", precioViejo: "19.900,00", precioSocio: "13.993,00", cuotas: "4 cuotas de $ 3.498,25", precioNoSocio: "30.000,00" },
+            { nombre: "Silla de Oficina Ergonómica", imagen: "../image/silla.png", descuento: "45% OFF", precioViejo: "50.000,00", precioSocio: "27.500,00", cuotas: "4 cuotas de $ 6.875,00", precioNoSocio: "60.000,00" },
+            { nombre: "Silla + Casco bici", imagen: "../image/sillabici.png", descuento: "45% OFF", precioViejo: "55.000,00", precioSocio: "30.250,00", cuotas: "4 cuotas de $ 7.562,50", precioNoSocio: "70.000,00" },
+            { nombre: "Cojín TheraMart", imagen: "../image/almohadasilla.png", descuento: "45% OFF", precioViejo: "95.000,00", precioSocio: "52.250,00", cuotas: "4 cuotas de $ 13.062,50", precioNoSocio: "111.000,00" }
+        ];
+
+        const buscador = document.getElementById('buscador');
+        const btnLimpiar = document.getElementById('btnLimpiar');
+        const contenedor = document.getElementById('contenedor-productos');
+        const noRes = document.getElementById('no-results');
+
+        // 2. RENDERIZADO
+function render(lista) {
+    const contenedor = document.getElementById('contenedor-productos');
+    const noRes = document.getElementById('no-results');
+    
+    if (!contenedor) return; // Seguridad por si el DOM no cargó
+    contenedor.innerHTML = '';
+    
+    if (lista.length === 0) {
+        if (noRes) noRes.style.display = 'block';
+    } else {
+        if (noRes) noRes.style.display = 'none';
+        
+        lista.forEach(p => {
+            // 1. Limpiamos los <br> del nombre para que no den error en WhatsApp
+            const nombreParaWhatsApp = p.nombre.replace(/<br\s*\/?>/gi, ' ');
+            
+            // 2. Preparamos la etiqueta de nuevo ingreso
+            const etiquetaNuevo = p.nuevo ? `
+                <br>
+                <span style="background: #007bff; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: 800; display: inline-block; margin-top: 5px; line-height: 1;">
+                    NUEVO INGRESO
+                </span>` : '';
+
+            // 3. Generamos el HTML
+            contenedor.innerHTML += `
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <span class="badge-discount">${p.descuento}</span>
+                        <div class="img-container">
+                            <img src="${p.imagen}" alt="${nombreParaWhatsApp}" onclick="abrirZoom('${p.imagen}')">
+                        </div>
+                        <div class="product-info">
+                            <h5>${p.nombre}${etiquetaNuevo}</h5>
+                            <div class="price-section">
+                                <span style="color: #129c00; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; display: block;">Socio</span>
+                                
+                                <span style="text-decoration: line-through; color: #999; font-size: 0.85rem; display: block; margin-bottom: -5px;">
+                                    $ ${p.precioViejo}
+                                </span>
+                                
+                                <span class="price-socio" style="color: #129c00; font-weight: 800; font-size: 1rem; display: block;">
+                                    $ ${p.precioSocio}
+                                </span>
+                                
+                                <small style="color: #666; font-size: 0.75rem; display: block; margin-bottom: 8px;">${p.cuotas}</small>
+                                
+                                <div style="border-top: 1px dashed #ccc; margin-top: 8px; padding-top: 8px;">
+                                    <span style="font-size: 0.85rem; color: #444; font-weight: 600;">
+                                        <small>No Socio:</small> $ ${p.precioNoSocio}
+                                    </span>
+                                    <a href="https://api.whatsapp.com/send?phone=5491139546021&text=Hola!%20Me%20interesa%20el%20producto:%20${encodeURIComponent(nombreParaWhatsApp)}" 
+                                       target="_blank" 
+                                       class="btn-whatsapp-card"> 
+                                        <i class="fab fa-whatsapp"></i> Consultar 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
 }
 
-    </style>
+// 3. EVENTOS (Búsqueda y Limpiar)
+        buscador.addEventListener('input', (e) => {
+            const valor = e.target.value.toLowerCase();
+            
+            // Mostrar botón limpiar si hay texto
+            btnLimpiar.style.display = valor.length > 0 ? 'block' : 'none';
 
+            const filtrados = productos.filter(p => 
+                p.nombre.toLowerCase().includes(valor)
+            );
+            render(filtrados);
+        });
 
-<section class="pb-2 " >
-  <div class="container mt-5 ">
-    <div class="row">
-      
+        btnLimpiar.addEventListener('click', () => {
+            buscador.value = '';
+            btnLimpiar.style.display = 'none';
+            render(productos);
+            buscador.focus();
+        });
 
-  <!-- Productos -->
-  <div class="col-md-12">
-    <div class="row g-4">
-
-      
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">30% OFF</span><br><br>
-        <img class="mt-4 pt-4" src="../image/monocomando.jpg" style="height: auto;">
-        <div class="product-info pt-4 mt-4">
-          <h5>Canilla Monocomando<br>Cocina</h5><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 70.500,00</span><br>
-              <span class="price-socio">$ 49.350,00</span><br>
-              <small class="cuotas">4 cuotas de $ 12.337,50</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 80.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      
-      
-      
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">30% OFF</span>
-        <img class="mt-4 pt-4" src="../image/monopatin.webp" style="height: auto;">
-        <div class="product-info">
-          <h5>Monopatín de 3 ruedas<br>C/luces Led</h5><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 90.000,00</span><br>
-              <span class="price-socio">$ 63.000,00</span><br>
-              <small class="cuotas">4 cuotas de $ 15.750,00</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 100.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      
-      
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">30% OFF</span>
-        <img class="mt-4 pt-4" src="../image/batimovil.webp" style="height: auto;">
-        <div class="product-info">
-          <h5>Batimóvil <br>Batman movie</h5><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 24.990,00</span><br>
-              <span class="price-socio">$ 17.493,00</span><br>
-              <small class="cuotas">4 cuotas de $ 4.373,25</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 25.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">30% OFF</span>
-        <img class="mt-4 pt-4" src="../image/moto-triumph-bonneville-t120.webp" style="height: auto;">
-        <div class="product-info">
-          <h5>Moto clásica Triumph<br> Bonneville T120</h5>
-          <p>28 cm diámetro</p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 19.990,00</span><br>
-              <span class="price-socio">$ 13.993,00</span><br>
-              <small class="cuotas">4 cuotas de $ 3.498,25</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 19.900,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">30% OFF</span>
-        <img class="mt-4 pt-4" src="../image/mufasa.webp" style="height: auto;">
-        <div class="product-info">
-          <h5>Peluche Mufasa + <br>Libro</h5><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 14.990,00</span><br>
-              <span class="price-socio">$ 10.493,00</span><br>
-              <small class="cuotas">4 cuotas de $ 2.623,25</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 15.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-      
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">30% OFF</span>
-        <img class="mt-4 pt-4" src="../image/plancha.png" style="height: auto;">
-        <div class="product-info">
-          <h5>Plancha Grill<br>Antiadherente</h5>
-          <p>28 cm diámetro</p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 19.990,00</span><br>
-              <span class="price-socio">$ 13.993,00</span><br>
-              <small class="cuotas">4 cuotas de $ 3.498,25</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 19.900,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">45% OFF</span>
-        <img src="../image/cargador.jpg" style="height: auto;">
-        <div class="product-info">
-          <h5>Cargador portatil<br>Megalite</h5>
-          <p>2200mAh</p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 11.100,00</span><br>
-              <span class="price-socio">$ 6.105,00</span><br>
-              <small class="cuotas">4 cuotas de $ 1.526,25</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 11.100,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-                 
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">45% OFF</span>
-        <img class="mt-4 pt-4" src="../image/PESAS.png" style="height: auto;">
-        <div class="product-info mt-4 pt-4">
-          <h5 class="mt-4 ">Pesas Rusas <br>2 kg</h5>
-          <p>VALOR UNITARIO</p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 6.000,00</span><br>
-              <span class="price-socio">$ 3.300,00</span><br>
-              <small class="cuotas">4 cuotas de $ 825,00</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 7.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">45% OFF</span>
-        <img src="../image/lamparaled.jfif"  style="height: auto;">
-        <div class="product-info">
-          <h5>Lámpara Led  </h5>
-          <p>ALIC 7w</p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 1.200,00</span><br>
-              <span class="price-socio">$ 660,00</span><br>
-              <small class="cuotas">4 cuotas de $ 165,00</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 2.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">45% OFF</span>
-        <img src="../image/piscina.jpg"  style="height: auto;">
-        <div class="product-info">
-          <h5>Piscina Mor <br>  1,15 x 1,06 x 33 cm </h5>
-          <p>Capacidad 400 ltds</p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-              <span class="price-socio">$ 22.000,00</span><br>
-              <small class="cuotas">4 cuotas de $ 5.500,00</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 40.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">45% OFF</span>
-        <img src="../image/silla.png"  style="height: auto;">
-        <div class="product-info">
-          <h5>Silla  </h5>
-          <p>para oficina </p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 50.000,00</span><br>
-              <span class="price-socio">$ 27.500,00</span><br>
-              <small class="cuotas">4 cuotas de $ 6.875,00</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 60.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">45% OFF</span>
-        <img src="../image/sillabici.png"  style="height: auto;">
-        <div class="product-info">
-          <h5>Silla + Casco   </h5>
-          <p>para bici </p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 55.000,00</span><br>
-              <span class="price-socio">$ 30.250,00</span><br>
-              <small class="cuotas">4 cuotas de $ 7.562,50</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 60.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">45% OFF</span>
-        <img src="../image/almohadasilla.png" class="mt-2"  style="height: auto;">
-        <div class="product-info">
-          <h5>Cojin</h5>
-          <p>TheraMart</p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 95.000,00</span><br>
-              <span class="price-socio">$ 52.250,00</span><br>
-              <small class="cuotas">4 cuotas de $ 13.062,50</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 111.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-                 
-
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">45% OFF</span>
-        <img src="../image/zapatos2.jpg" class="mt-4" style="height: auto;">
-        <div class="product-info">
-          <h5>Botas</h5>
-          <p>Talle: 35</p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 55.000,00</span><br>
-              <span class="price-socio">$ 30.250,00</span><br>
-              <small class="cuotas">4 cuotas de $ 7.562,50</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 60.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    
-    <div class="col-12 col-sm-6 col-lg-3">
-      <div class="product-card tinto">
-        <span class="badge-discount">30% OFF</span>
-        <img src="../image/spider018.png" style="height: auto;">
-        <div class="product-info">
-          <h5>Spider Man </h5>
-          <p>Libro Nro 18</p><hr>
-            <div class="price-box text-center mt-3">
-             <div class="socio mb-2">
-              <span class="label-socio">Valor Socio</span><br>
-              <span class="text-decoration-line-through text-muted">$ 1.490,00</span><br>
-              <span class="price-socio">$ 1.043,00</span><br>
-              <small class="cuotas">4 cuotas de $ 260,75</small>
-            </div>
-            <hr>
-            <div class="no-socio">
-              <span class="label-nosocio">Valor NO Socio</span><br>
-              <span class="price-nosocio">$ 2.000,00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
- 
-          
-
-
-  </div>
- </div>
-</section>
-  
- 
-
-<div id="footer"></div>
+        // 4. CARGA INICIAL
+        window.onload = () => {
+            render(productos);
+            
+        };
+    </script>
+    <div id="imageModal" style="display: none; position: fixed; z-index: 10000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; cursor: zoom-out;">
+    <img id="imgZoom" style="max-width: 90%; max-height: 90%; border-radius: 10px; transition: transform 0.3s ease; cursor: default;">
+</div>
 <script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer").innerHTML = data;
-    });
+const modal = document.getElementById("imageModal");
+const imgZoom = document.getElementById("imgZoom");
+
+// Al abrir, siempre empezamos sin zoom
+function abrirZoom(src) {
+    modal.style.display = "flex";
+    imgZoom.src = src;
+    imgZoom.style.transform = "scale(1)";
+    imgZoom.style.cursor = "zoom-in"; 
+    document.body.style.overflow = "hidden";
+}
+
+// Lógica de click en la imagen
+imgZoom.onclick = function(e) {
+    e.stopPropagation(); // Evita que el click pase al fondo
+    
+    if (this.style.transform === "scale(1.5)") {
+        // Si ya tiene zoom, el siguiente click hace "zoom out" y CIERRA
+        cerrarTodo();
+    } else {
+        // Si no tiene zoom, lo AGRANDA
+        this.style.transform = "scale(1.5)";
+        this.style.cursor = "zoom-out"; // Cambia la lupa a menos (-)
+    }
+};
+
+// Si tocan el fondo negro, también cerramos
+modal.onclick = cerrarTodo;
+
+function cerrarTodo() {
+    imgZoom.style.transform = "scale(1)";
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
 </script>
-
-
-
-    <!-- JAVA -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-     <div id="navbar"></div>
-    <script>
+ <script>
   fetch("navbar.html")
     .then(response => response.text())
     .then(data => {
@@ -621,6 +505,9 @@
       });
     });
 </script>
-     
-    </html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
+</html>

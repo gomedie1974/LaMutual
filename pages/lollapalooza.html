@@ -106,6 +106,8 @@ body {
 </style> 
 
 <body>
+  <div id="navbar" class="sticky-top"></div>
+
  <!-- Botón de reserva arriba a la derecha -->
 <div class="d-flex justify-content-end my-1">
 <a href="./proximamente.html" id="btnReservaFijo" class="btn btn-warning">
@@ -188,7 +190,6 @@ text.split(" ").forEach((word, wordIndex) => {
  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-     <div id="navbar"></div>
     <script>
   fetch("navbar.html")
     .then(response => response.text())

@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promos imperdibles | Mutual Diario La Nación</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Animaciones (AOS) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+
+    /* 🎄 Fondo con efecto */
+    body {
+      background-color: #001a33;
+      background-image: url('../image/1.gif');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+ 
+
+    /* ✨ Partículas doradas */
+    #particles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 3;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 215, 0, 0.8);
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: floatUp 7s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.4); opacity: 0; }
+      40% { opacity: 0.9; }
+      100% { transform: translateY(-20vh) scale(1); opacity: 0; }
+    }
+ 
+    /* HERO */
+    .hero {
+      padding: 9rem 1rem 6rem;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+    }
+
+    .countdown {
+      margin-top: 1rem;
+      color: #ffd700;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    /* Botón dorado */
+    .btn-gold {
+      background-color: #d4af37;
+      color: #002b55;
+      border-radius: 28px;
+      padding: 0.75rem 1.7rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      transition: 0.3s;
+    }
+
+    .btn-gold:hover {
+      background-color: #f1c94d;
+      color: #001a33;
+      transform: scale(1.05);
+    }
+
+    /* Tarjetas */
+    .promo-card {
+      border: none;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      transition: 0.3s;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .promo-card img {
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .promo-card h5 {
+      color: #002b55;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #002b55;
+      padding: 1.3rem;
+      color: white;
+      text-align: center;
+      margin-top: 40px; 
+    }
+
+    /* WhatsApp */
+    .btn-floating {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 14px 18px;
+      font-size: 20px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      z-index: 999;
+    }
+    .modal-header {
+      background-color: #002b55;
+      color: white;
+    }
+
+    .modal-content {
+      background-color: white;
+      color: #002b55;
+      border-radius: 10px;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- EFECTOS -->
+  <div class="lights"></div>
+  <div id="snow"></div>
+  <div id="particles"></div>
+
+  <script>
+    /* Crear partículas doradas */
+    const particles = document.getElementById("particles");
+    for (let i = 0; i < 40; i++) {
+      const p = document.createElement("div");
+      p.classList.add("particle");
+      const size = Math.random() * 8 + 4;
+      p.style.width = size + "px";
+      p.style.height = size + "px";
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.animationDelay = Math.random() * 6 + "s";
+      particles.appendChild(p);
+    }
+  </script>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1 data-aos="fade-down"><!-- 🎄 --> Promos imperdibles 2026</h1>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Ahorro y beneficios que te acompañan todo el año 🎁✨
+    </p>
+    <div class="countdown" id="countdown"></div>
+    <a href="#promos" class="btn btn-gold mt-4">Ver Beneficios</a>
+  </section>
+
+
+  <!-- ICONOS -->
+  <div class="container text-center my-5 py-3" data-aos="fade-up">
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3 icon-box">
+        <i class="fas fa-gift fa-2x mb-2" style="color:#d4af37"></i>
+        <p>Regalos exclusivos</p>
+      </div>
+      <div class="col-6 col-md-3 icon-box">
+        <i class="fas fa-percent fa-2x mb-2" style="color:#d4af37"></i>
+        <p>Importantes descuentos</p>
+      </div>
+      <div class="col-6 col-md-3 icon-box">
+        <i class="fas fa-credit-card fa-2x mb-2" style="color:#d4af37"></i>
+        <p>Cuotas sin interés</p>
+      </div>
+       
+      <div class="col-6 col-md-3 icon-box text-center">
+        <i class="fas fa-users fa-2x mb-2" style="color:#d4af37"></i>
+        <p>
+          <strong>Socios</strong>, <span style="color:#ffd700">amigos</span>, <span style="color:#ffd700">familiares</span> 
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- PROMOS -->
+<section id="promos" class="container py-5">
+  <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">
+    ✨ Ofertas exclusivas para regalar...
+  </h2>
+
+  <div class="row g-4">
+
+    <!-- GIN -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="100">
+      <div class="card promo-card h-100">
+        <img src="../image/fotos para promo/bombay.jpg" class="card-img-top" alt="gin">
+        <div class="card-body text-center">
+          <h5 class="card-title">Gin Bombay</h5>
+          <p class="card-text">Celebra con un clásico premium con precio especial...</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalGin">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VINOS -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="150">
+      <div class="card promo-card h-100">
+        <img src="../image/fotos para promo/vinos.jpg" class="card-img-top" alt="vinos">
+        <div class="card-body text-center">
+          <h5 class="card-title">Vinos Seleccionados</h5>
+          <p class="card-text">Regalá etiquetas premium con beneficios únicos.</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalVinos">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARTINI -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="200">
+      <div class="card promo-card h-100">
+        <img src="../image/fotos para promo/martini.jpg" class="card-img-top" alt="martini">
+        <div class="card-body text-center">
+          <h5 class="card-title">Martini Bianco</h5>
+          <p class="card-text">Un clásico internacional con precio especial para fiestas.</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalMartini">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELOJES -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="250">
+      <div class="card promo-card h-100">
+        <img src="../image/relojes/Victorinox-241813-2.webp" class="card-img-top" alt="relojes">
+        <div class="card-body text-center">
+          <h5 class="card-title">South Time</h5>
+          <p class="card-text">Relojería premium con descuentos exclusivos.</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalRelojes">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DR MARTENS -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="300">
+      <div class="card promo-card h-100">
+        <img src="../image/fotos para promo/drmartens.jpg" class="card-img-top" alt="dr">
+        <div class="card-body text-center">
+          <h5 class="card-title">Dr. Martens</h5>
+          <p class="card-text">Calzado icónico con precios especiales.</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalMartens">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BIGBOX -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="350">
+      <div class="card promo-card h-100">
+        <img src="../image/fotos para promo/bigbox.webp" class="card-img-top" alt="bigbox">
+        <div class="card-body text-center">
+          <h5 class="card-title">BigBox</h5>
+          <p class="card-text">Regalá experiencias únicas para estas fiestas.</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalBigbox">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAGANCIAS -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="400">
+      <div class="card promo-card h-100">
+        <img src="../image/fotos para promo/perfumes.jpg" class="card-img-top" alt="Perfumes">
+        <div class="card-body text-center">
+          <h5 class="card-title">Fragancias</h5>
+          <p class="card-text">Perfumes importados con precios preferenciales.</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalPerfumes">
+            Ver Detalles
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLUMBIA -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="450">
+      <div class="card promo-card h-100">
+        <img src="../image/columbia.jpg" class="card-img-top" alt="games">
+        <div class="card-body text-center">
+          <h5 class="card-title">Indumentaria</h5>
+          <p class="card-text">Indumentaria premium con descuentos especiales.</p> 
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalColumbia">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JUEGOS -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="450">
+      <div class="card promo-card h-100">
+        <img src="../image/fotos para promo/JUEGOS.jpg" class="card-img-top" alt="games">
+        <div class="card-body text-center">
+          <h5 class="card-title">Juegos</h5>
+          <p class="card-text">Diversión asegurada con descuentos especiales.</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalJuegos">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- KANKAY -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="300">
+      <div class="card promo-card h-100">
+        <img src="../image/kankay.png" class="card-img-top" alt="kankay">
+        <div class="card-body text-center">
+          <h5 class="card-title">Kankay</h5>
+          <p class="card-text">Utensilios de cocina de alta calidad, principalmente sartenes de hierro y accesorios.</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalKankay">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BONAFIDE -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="350">
+      <div class="card promo-card h-100">
+        <img src="../image/bonafide/Banner-combo-web-1600x450px-scaled.jpg" class="card-img-top" alt="bonafide">
+        <div class="card-body text-center">
+          <h5 class="card-title">Bonafide</h5>
+          <p class="card-text">Disfrutá de lo más rico en estas fiestas.</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalBonafide">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MEDIAS -->
+    <div class="col-md-4 promo-item" data-aos="fade-up" data-aos-delay="400">
+      <div class="card promo-card h-100">
+        <img src="../image/elemento.png" class="card-img-top" alt="medias">
+        <div class="card-body text-center">
+          <h5 class="card-title">Elemento</h5>
+          <p class="card-text">Medias para toda la familia, varios modelos.</p>
+          <button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#modalElemento">
+            Ver Promoción
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div> <!-- FIN ROW -->
+
+  <!-- BOTÓN MOSTRAR MÁS -->
+  <div class="text-center mt-4">
+    <button id="togglePromos" class="btn btn-danger">Mostrar más</button>
+  </div>
+</section>
+
+<!-- MODALES -->
+
+<!-- MODAL GIN -->
+<div class="modal fade" id="modalGin" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🎁 30% OFF en Gin BOMBAY</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/fotos para promo/bombay1.jpg" class="rounded mb-3" style="max-width: 60%; height: auto; display:block; margin:0 auto;">
+        <p>
+          Aprovechá un <strong>30% OFF</strong> exclusivo en Gin Bombay Sapphire.  
+          Disfrutá su calidad premium con financiación especial:  
+          <strong>4 sin interés</strong> para socios, amigos y familiares.  
+          El clásico perfecto para cocktails y brindis festivos. 🍸✨ <br>
+          <button class="btn btn-outline-warning"><a href="../pages/aperitivos.html">Ver</a></button>
+        </p>    
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL VINOS -->
+<div class="modal fade" id="modalVinos" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🍷 Descuento en Vinos Premium</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/fotos para promo/vinos1.jpg" class="rounded mb-3" style="max-width: 90%; height: auto; display:block; margin:0 auto;">
+        <p>
+          Descubrí nuestra selección de vinos con <strong>hasta 50% OFF</strong>.  
+          Etiquetas premium para brindar y regalar en estas fiestas.  
+          Disponible en <strong>cuotas sin interés</strong> para socios y familiares. 🍷✨<br>
+          <button class="btn btn-outline-warning"><a href="../pages/aperitivos.html">Ver</a></button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL MARTINI -->
+<div class="modal fade" id="modalMartini" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🍸 Martini Bianco - Oferta Especial</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/fotos para promo/martini1.jpg" class="rounded mb-3" style="max-width: 90%; height: auto; display:block; margin:0 auto;">
+        <p>
+          Llevate Martini Bianco con <strong>beneficio exclusivo</strong>.  
+          Perfecto para cocktails refrescantes y aperitivos festivos.  
+          <strong>30% OFF en 4 cuotas sin interés.</strong> 🍸✨<br>
+          <button class="btn btn-outline-warning"><a href="../pages/aperitivos.html">Ver</a></button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL RELOJES -->
+<div class="modal fade" id="modalRelojes" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">⌚ Descuentos en South Time</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/relojes/Victorinox-241813-3.webp" class="rounded mb-3" style="max-width: 70%; height: auto; display:block; margin:0 auto;">
+        <!-- <img src="../image/relojes/Victorinox241891.webp" class="img-fluid rounded mb-3"> -->
+        <p>
+          Accedé a <strong>30% OFF</strong> en relojes South Time.  
+          Diseño, precisión y calidad con un beneficio único.  
+          <strong>6 cuotas sin interés</strong> disponibles. ⌚✨<br>
+          <button class="btn btn-outline-warning"><a href="../pages/relojes.html">Ver</a></button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DR MARTENS -->
+<div class="modal fade" id="modalMartens" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">👞 Dr. Martens - Oferta Especial</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/fotos para promo/drmatens1.jpg" class="rounded mb-3" style="max-width: 70%; height: auto; display:block; margin:0 auto;">
+        <p>
+          Aprovechá <strong>descuentos exclusivos</strong> en Dr. Martens <br>  
+          Estilo, calidad y durabilidad en un calzado único. <br>  
+          Disponible con <strong>20% OFF y 4 cuotas sin interés.</strong> 👞✨
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL BIGBOX -->
+<div class="modal fade" id="modalBigbox" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🎁 BigBox - Experiencias</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/fotos para promo/Bigbox1.jpg" class="rounded mb-3" style="max-width: 70%; height: auto; display:block; margin:0 auto;">
+        <p>
+          Regalá momentos inolvidables con <strong>beneficios exclusivos</strong> en BigBox.  
+          Gastronomía, aventuras, relax y más opciones premium.  
+          <strong>20% OFF en 4 cuotas sin interés.</strong> 🎁✨<br>
+          <button class="btn btn-outline-warning"><a href="https://bigboxlnmutual.com.ar/">Ver</a></button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL FRAGANCIAS -->
+<div class="modal fade" id="modalPerfumes" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🎁 Perfumes Importados</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/fotos para promo/fragancias1.jpg" class="rounded mb-3" style="max-width: 70%; height: auto; display:block; margin:0 auto;">
+        <p>
+          Fragancias importadas con <strong>20% OFF </strong> <br> 
+          Las mejores marcas internacionales para regalar o darte un gusto.  <br>
+          <strong>4 y 6 cuotas sin interés</strong>  🌸✨<br>
+          <button class="btn btn-outline-warning"><a href="../pages/perfumes.html">Ver</a></button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL COLUMBIA -->
+<div class="modal fade" id="modalColumbia" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Columbia Sportswear</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/fotos para promo/COLUMBIA1.jpeg" class="rounded mb-3" style="width: 100%; height: auto; display:block; margin:0 auto;">
+        <p>Beneficios exclusivos en indumentaria de primeras marcas.  <br>
+          <strong>Descuentos especiales y cuotas sin interés.</strong>  <br>
+          Ideal para renovar tu look estas fiestas. 👕✨ <br>
+          <button class="btn btn-outline-warning"><a href="../pages/columbia.html">Ver</a></button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL JUEGOS -->
+<div class="modal fade" id="modalJuegos" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🎲 Juegos - Oferta Especial</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/fotos para promo/JUEGOS1.jpg" class="rounded mb-3" style="width: 90%; height: auto; display:block; margin:0 auto;">
+        <p>Llevate juegos seleccionados con <strong>20% OFF</strong> y financiación especial.  <br>
+          Regalos ideales para chicos y grandes estas fiestas.  <br>
+          <strong>Cuotas sin interés.</strong> 🎲✨<br>
+          <button class="btn btn-outline-warning"><a href="../pages/juegos.html">Ver</a></button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL KANKAY -->
+<div class="modal fade" id="modalKankay" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🍳 Kankay</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/kankay/cuchillomadera.png"
+             class="rounded mb-3"
+             style="width: 70%; height: auto; display:block; margin:0 auto;">
+        <p>
+          ¡Oferta especial en utensilios de cocina! 🍳<br>
+          <strong>30% OFF</strong> y 4 cuotas.✨<br>
+          <button class="btn btn-outline-warning">
+            <a href="../pages/kankay.html">Ver</a>
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL BONAFIDE -->
+<div class="modal fade" id="modalBonafide" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🍬 Golosina</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/bonafide/Banner-combo-web-1600x450px-scaled.jpg"
+             class="rounded mb-3"
+             style="width: 100%; height: auto; display:block; margin:0 auto;">
+        <p>
+          ¡Promo dulce! 🍭<br>
+          <strong>30% OFF</strong> y 4 cuotas sin interés.✨<br>
+          <button class="btn btn-outline-warning">
+            <a href="../pages/bonafide.html">Ver más</a>
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL ELEMENTO -->
+<div class="modal fade" id="modalElemento" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🧦 Promo de Medias</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../image/medias/(Art 023E)_Mujer - Medias Invisibles Pack x 2.jpeg"
+             class="rounded mb-3"
+             style="width: 50%; height: auto; display:block; margin:0 auto;">
+        <p>
+          ¡Promo medias! 🧦✨<br>
+          <strong>15% OFF</strong> y 4 cuotas sin interés.✨<br>
+          <button class="btn btn-outline-warning">
+            <a href="../pages/medias.html">Ver más</a>
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="w-100 my-2 px-3">
+  <div class="card border-0 shadow-lg rounded-4 overflow-hidden" style="background: linear-gradient(135deg, #2984c5, #004d40); color: white;">
+    <div class="row g-0">
+      
+      <!-- Texto -->
+      <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
+        <h2 class="mb-3">🎁 ¡Wanama Kids!</h2>
+        <p class="mb-4 fs-4 fw-semibold">Aprovechá <span style="color: #ffeb3b;">40% de descuento en 4 cuotas</span> y <span style="color: #ffeb3b;">precios preferenciales.</span> ¡hasta agotar stock!</p>
+        <a href="../pages/wanamakids.html" class="btn btn-light rounded-pill px-4 shadow">Ver ahora</a>
+      </div>  
+      
+      <!-- Galería de Zapatillas -->
+      <div class="col-md-6 p-4 d-flex justify-content-center align-items-center">
+        <div class="row g-1">
+          <div class="col-3 p-1 text-center">
+            <img src="../image/wanamakids/bermudatoni.webp" alt="wk 1" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/wanamakids/camperadenimoversize.webp" alt="wk 2" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/wanamakids/remerasoulrock.webp" alt="wk 3" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/wanamakids/remeracityfucsia.webp" alt="wk 4" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="w-100 my-2 px-3">
+  <div class="card border-0 shadow-lg rounded-4 overflow-hidden" style="background: linear-gradient(135deg, #00796b, #004d40); color: white;">
+    <div class="row g-0">
+      
+      <!-- Texto -->
+      <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
+        <h2 class="mb-3">👟 ¡Zapatillas en Promoción!</h2>
+        <p class="mb-4 fs-4 fw-semibold">Aprovechá <span style="color: #ffeb3b;">hasta 6 cuotas</span> y <span style="color: #ffeb3b;">precios preferenciales.</span> ¡No te quedes sin las tuyas hasta agotar stock!</p>
+        <a href="../pages/calzado.html" class="btn btn-light rounded-pill px-4 shadow">Ver ahora</a>
+      </div>  
+      
+      <!-- Galería de Zapatillas -->
+      <div class="col-md-6 p-4 d-flex justify-content-center align-items-center">
+        <div class="row g-1">
+          <div class="col-3 p-1 text-center">
+            <img src="../image/calzado/chinabca.png" alt="Zapatilla 1" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/calzado/chinanegro.png" alt="Zapatilla 2" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/calzado/zarabco1.png" alt="Zapatilla 3" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/calzado/mallorcanude1.png" alt="Zapatilla 4" class="img-fluid rounded-3 shadow-sm" style="max-height: 150px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="w-100 my-2 px-3">
+  <div class="card border-0 shadow-lg rounded-4 overflow-hidden" 
+       style="background: linear-gradient(135deg, #6a1b9a, #4a0072); color: white;">
+    <div class="row g-0">
+      
+      <!-- Texto -->
+      <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
+        <h2 class="mb-3">🛍️ ¡Tienda Destacada!</h2>
+        <p class="mb-4 fs-4 fw-semibold">
+          Descubrí nuestros <span style="color: #ffeb3b;">nuevos ingresos</span>, 
+          productos destacados y <span style="color: #ffeb3b;">ofertas especiales</span>. 
+        </p>
+        <a href="../pages/tienda.html" class="btn btn-light rounded-pill px-4 shadow">Entrar a la tienda</a>
+      </div>  
+      
+      <!-- Galería -->
+      <div class="col-md-6 p-4 d-flex justify-content-center align-items-center">
+        <div class="row g-1">
+          <div class="col-3 p-1 text-center">
+            <img src="../image/tienda/20251228_140652.jpg" alt="Producto 1" 
+                 class="img-fluid rounded-3 shadow-sm" 
+                 style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/tienda/20251228_141736.jpg" alt="Producto 2" 
+                 class="img-fluid rounded-3 shadow-sm" 
+                 style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-47[1].jpg" alt="Producto 3" 
+                 class="img-fluid rounded-3 shadow-sm" 
+                 style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/tienda/Pijamas/6.jpg" alt="Producto 4" 
+                 class="img-fluid rounded-3 shadow-sm" 
+                 style="max-height: 150px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="w-100 my-2 px-3">
+  <div class="card border-0 shadow-lg rounded-4 overflow-hidden" 
+       style="background: linear-gradient(135deg, #e65100, #bf360c); color: white;">
+    <div class="row g-0">
+      
+      <!-- Texto -->
+      <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
+        <h2 class="mb-3">🏋️‍♂️ Ropa Deportiva</h2>
+        <p class="mb-4 fs-4 fw-semibold">
+          Viví la moda circular con nuestra <span style="color: #ffeb3b;">indumentaria deportiva</span>, reutilizable, sustentable y con la misma calidad y comodidad que buscás para tus entrenamientos.
+        </p>
+        <a href="../pages/deportes.html" class="btn btn-light rounded-pill px-4 shadow">
+          Ver Ropa Deportiva
+        </a>
+      </div>  
+      
+      <!-- Galería -->
+      <div class="col-md-6 p-4 d-flex justify-content-center align-items-center">
+        <div class="row g-1">
+          <div class="col-3 p-1 text-center">
+            <img src="../image/deportes/240806 CAMPERA UNISEX NIKE TALLE XS.jpg" alt="Ropa deportiva 1"
+                 class="img-fluid rounded-3 shadow-sm"
+                 style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/deportes/240808 CAMPERA NIÑA RIP CURL TALLE 12-14.jpeg" alt="Ropa deportiva 2"
+                 class="img-fluid rounded-3 shadow-sm"
+                 style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/deportes/240528 REMERA CICLISTA MONTON ESTAMPADA ROSA XL - copia (2).jpg" alt="Ropa deportiva 3"
+                 class="img-fluid rounded-3 shadow-sm"
+                 style="max-height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-3 p-1 text-center">
+            <img src="../image/deportes/240530 REMERA CICLISTA PEARL IZUMI BLANCA Y NEGRA M.jpg" alt="Ropa deportiva 4"
+                 class="img-fluid rounded-3 shadow-sm"
+                 style="max-height: 150px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+      <!-- MÁS BENEFICIOS -->
+<div class="container my-5" >
+  <div class="p-4 p-md-5 text-center rounded-4 shadow-lg" 
+       style="background: rgba(255, 215, 0, 0.15); 
+              border: 1px solid rgba(255, 215, 0, 0.4); 
+              backdrop-filter: blur(6px);">
+
+    <h3 class="fw-bold mb-3" style="color:#ffd700;">
+      ✨ ¡Y MUCHÍSIMO MÁS!
+    </h3>
+
+    <p class="mb-4" style="font-size:1.2rem;">
+      Descubrí todos los beneficios en nuestro sitio.
+    </p>
+
+    <a href="https://www.lnmutual.com.ar" target="_blank" 
+       class="btn btn-gold px-4 py-2">
+      Ingresá...
+    </a>
+
+  </div>
+</div>
+
+
+
+
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Mutual del Diario La Nación | Beneficios válidos todo el año</p>
+</footer>
+
+<!-- BOTÓN FLOTANTE -->
+<a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" 
+   style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; align-items: center; text-decoration: none;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+       alt="WhatsApp" style="width:50px; height:50px; border-radius:50%;">
+  <span style="background-color:#25D366; color:white; font-weight:bold; padding:5px 10px; margin-left:8px; border-radius:12px; font-size:0.9rem;">
+    Consulta Beneficios
+  </span>
+</a>
+  
+
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  // Inicializar AOS
+  AOS.init();
+
+  // Cuenta regresiva
+  const countdown = document.getElementById('countdown');
+  const promoEndDate = new Date("Dec 31, 2025 23:59:59").getTime();
+
+/*   setInterval(() => {
+    const now = new Date().getTime();
+    const diff = promoEndDate - now;
+
+    if (diff < 0) {
+      countdown.textContent = "🎉 Promociones finalizadas";
+      return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdown.textContent = `⏰ Finaliza en ${d}d ${h}h ${m}m ${s}s`;
+  }, 1000);
+ */
+  // Mostrar más / menos promos
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".promo-item");
+    const btn = document.getElementById("togglePromos");
+    const maxVisible = 6;
+
+    items.forEach((item, i) => { if (i >= maxVisible) item.style.display = "none"; });
+
+    let expanded = false;
+
+    btn.addEventListener("click", () => {
+      expanded = !expanded;
+      if (expanded) {
+        items.forEach(item => item.style.display = "block");
+        btn.textContent = "Mostrar menos";
+      } else {
+        items.forEach((item, i) => { if (i >= maxVisible) item.style.display = "none"; });
+        btn.textContent = "Mostrar más";
+      }
+    });
+  });
+</script>
+</body>
+</html>

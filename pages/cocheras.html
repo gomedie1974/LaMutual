@@ -21,6 +21,7 @@
     
         
 <body >
+<div id="navbar" class="sticky-top"></div>
   <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
     <!-- Ícono de WhatsApp -->
     <i class="fab fa-whatsapp"></i>
@@ -52,7 +53,7 @@
           </span> <br>
           <hr style="color: orange; border: 4px solid;">
           <span style="color: rgb(0, 0, 0);"><b>Tarifas tickets diarios de estacionamiento</b></span> <hr style="color: orange; border: 4px solid;"> 
-          <p class="justificado"><b>Socios: $ 1.800,00*</b> | <span style="color: red;"><b>No socios: $ 2.800,00*</b></span> </p>
+          <p class="justificado"><b>Socios: $ 2.000,00*</b> | <span style="color: red;"><b>No socios: $ 3.100,00*</b></span> </p>
           <span style="font-size: small;">*La Mutual podrá realizar ajustes inflacionarios sobre dicha tarifa cuando lo considere necesario.</span> <br><br>
               
 
@@ -60,15 +61,6 @@
     </div>
   </div>
 
- 
-<div id="footer"></div>
-<script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer").innerHTML = data;
-    });
-</script>
 
 
     <!-- JAVA -->
@@ -76,7 +68,7 @@
  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-     <div id="navbar"></div>
+     
     <script>
   fetch("navbar.html")
     .then(response => response.text())
@@ -111,5 +103,14 @@
     });
 </script>
      
+ 
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
 </body>
 </html>

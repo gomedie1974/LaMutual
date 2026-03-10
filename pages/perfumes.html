@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- SEO -->
-        <title>Mutual LN Canjes</title>
+        <title>Belleza y Salud - Mutual LN Canjes</title>
         <meta name="keywords" content="mutual">
         <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
           <!-- Fonts -->
@@ -108,6 +108,7 @@
   display: block;
 }
 
+
 .zoom-modal {
   display: none;
   position: fixed;
@@ -142,6 +143,19 @@
         z-index: 10;
 
 }
+.badge-discount-tester {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background-color: #2f0a87;
+      color: white;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      border-radius: 8px;
+      z-index: 10;
+
+}
 .filtro-select {
   width: 100%;
   max-width: 200px; /* Ancho máximo deseado */
@@ -152,13 +166,52 @@
   text-align: center; /* Centra horizontalmente */
   margin: 0 auto;     /* Asegura que el contenedor esté centrado si tiene un ancho fijo */
 }
-  
-       </style>
+.filtro-btn i {
+  margin-right: 8px;
+  color: #0066cc; /* Color acento */
+}  
+.search-container {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.15);
+}
+
+#buscador {
+    height: 45px;
+    border-radius: 0 12px 12px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+#buscador:focus {
+    box-shadow: none;
+    border-color: #dee2e6;
+}
+
+</style>
    
      
+<div id="navbar" class="sticky-top"></div>
 
 <section class="py-4"> 
   <div class="container px-4 px-lg-5 mt-2 ">
+    
+    
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <div class="input-group search-container">
+                <span class="input-group-text bg-white border-end-0">
+                    <i class="fas fa-search text-muted"></i>
+                </span>
+                <input type="text" id="buscador" class="form-control border-start-0 ps-0" placeholder="Buscar perfume, marca o set...">
+            </div>
+        </div>
+    </div>    
 
 <!-- Filtro de Categorías -->
 <div class="mb-4 text-center">
@@ -168,14 +221,8 @@
       <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="todos">
         <i class="fas fa-th-large"></i> Todos
       </button>
-      <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="bifferdil">
-        <i class="fas fa-spray-can"></i> Bifferdil
-      </button>
       <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="cofres">
         <i class="fas fa-gift"></i> Cofres
-      </button>
-      <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="lidherma">
-        <i class="fas fa-spray-can"></i> Lidherma
       </button>
       <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="categoria1">
         <i class="fas fa-spray-can"></i> Perfumes
@@ -185,6 +232,9 @@
       </button>
       <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="otros">
         <i class="fas fa-box"></i> Otros
+      </button>
+      <button type="button" class="btn btn-outline-dark filtro-btn" data-categoria="tester">
+        <i class="fas fa-box"></i> Tester
       </button>
     </div>
   
@@ -198,7 +248,7 @@
         <option value="prada">Agatha Ruiz De La Prada</option>
         <option value="banderas">Antonio Banderas</option>
         <option value="benetton">Benetton</option>
-        <option value="Lattafa">Lattafa</option>
+        <option value="Lataffa">Lattafa</option>
         <option value="moschino">Moschino</option>
         <option value="paco">Paco Rabbane</option>
         <option value="shakira">Shakira</option>
@@ -215,27 +265,28 @@
         <!-- <option value="AlHaramain">Al Haramain</option> -->
         <option value="AlWataniah">Al Wataniah</option>
         <option value="Armaf">Armaf</option>
-        <!-- <option value="Benetton">Benetton</option>
-        <option value="Bharara">Bharara</option> -->
+        <option value="Benetton">Benetton</option>
+        <!-- <option value="Bharara">Bharara</option> -->
         <option value="Boss">Boss</option>
-        <!-- <option value="cabotine">Cabotine</option>
-        <option value="Calvin">Calvin Klein</option>
+        <!-- <option value="cabotine">Cabotine</option>-->
+        <option value="Calvin">Calvin Klein</option> 
         <option value="Cher">Cher</option>
         <option value="clinique">Clinique</option>
         <option value="Davidoff">Davidoff</option>
-        <option value="diesel">Diesel</option>
-        <option value="Dkny">Dkny</option> -->
-        <option value="dolce">Dolce Gabbana</option>
+        <!-- <option value="diesel">Diesel</option>
+        <option value="Dkny">Dkny</option>  -->
+        <!-- <option value="dolce">Dolce Gabbana</option> -->
         <!-- <option value="arden">Elizabeth Arden</option> -->
         <option value="escada">Escada</option>
-        <!-- <option value="Ferrari">Ferrari</option> -->
-        <option value="Issey">Issey Miyake</option>
+        <option value="Ferrari">Ferrari</option> 
+        <option value="jpg">Jean Paul Gaultter</option>
+        <option value="lancome">Lancome</option>
         <option value="Lataffa">Lataffa</option>
         <option value="Maison">Maison Alhambra</option>
-        <option value="Moschino">Moschino</option>
-        <!-- <option value="Nautica">Nautica</option> -->
-        <option value="Paris">Paris Corner</option>
-        <!-- <option value="Shakira">Shakira</option>
+<!--         <option value="Moschino">Moschino</option>
+ -->        <!-- <option value="Nautica">Nautica</option> -->
+<!--         <option value="Paris">Paris Corner</option>
+ -->        <!-- <option value="Shakira">Shakira</option>
         <option value="Tester">Tester</option> -->
         <option value="Tommy">Tommy Hilfiger</option>
         <!-- <option value="versace">Versace</option>
@@ -261,211 +312,331 @@
 <div class="pt-4 row gx-2 gx-lg-3 row-cols-1 row-cols-md-4 row-cols-xl-3 justify-content-center">
 
 
-   <div class="col mb-5 categoria3">
+  
+  
+    <div class="col mb-5 categoria1 Cher">
       <div class="card h-100">
         <span class="badge-discount">20% OFF</span>
         <!-- Product image-->   
-          <img class="card-img-top  mx-auto  " src="../image/perfumes/isdinfotoprotectorfusioncolor.webp" />
-         <!-- Product details-->
-           <div class="card-body ">
-              <div class="text-center">
-                <!-- Product name-->  
-                <h5 class="fw-bolder ">Fotoprotector fusion water
-                  <br> Color Bronze Fps50 <br>Isdin<br>x 50ml
-                 </h5> 
-               <!-- Product price--> <hr>
-                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-               <span class="text-danger text-decoration-line-through">$ 49.800,00</span> <br>
-               <span>$ 39.840,00 <br>
-               4 cuotas de <br>$ 9.960,00 <br><hr>
-               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                $ 50.000,00
-              </div>
-          </div>  
-      </div>
-    </div> 
-    
-
-   <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-          <img class="card-img-top  mx-auto  " src="../image/perfumes/isdinfotoprotectorfusion.webp" />
-         <!-- Product details-->
-           <div class="card-body ">
-              <div class="text-center">
-                <!-- Product name-->
-                <h5 class="fw-bolder ">Fotoprotector fusion water
-                  <br> urban spf30 <br>Isdin<br>x 50ml
-                 </h5> 
-               <!-- Product price--> <hr>
-                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-               <span class="text-danger text-decoration-line-through">$ 49.800,00</span> <br>
-               <span>$ 39.840,00 <br>
-               4 cuotas de <br>$ 9.960,00 <br><hr>
-               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                $ 50.000,00
-              </div>
-          </div>  
-      </div>
-    </div> 
-    
-
-   <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-          <img class="card-img-top  mx-auto  " src="../image/perfumes/vichy30.png" />
-         <!-- Product details-->
-           <div class="card-body ">
-              <div class="text-center">
-                <!-- Product name-->
-                <h5 class="fw-bolder ">Vichy Capital Soleil
-                  <br>fps30 <br>x 300ml
-                 </h5> 
-               <!-- Product price--> <hr>
-                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-               <span class="text-danger text-decoration-line-through">$ 61.500,00</span> <br>
-               <span>$ 49.200,00 <br>
-               4 cuotas de <br>$ 12.300,00 <br><hr>
-               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                $ 70.000,00     
-              </div>
-          </div>  
-      </div>
-    </div> 
-    
-
-   <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-          <img class="card-img-top  mx-auto  " src="../image/perfumes/larochebruma.png" />
-         <!-- Product details-->
-           <div class="card-body ">
-              <div class="text-center">
-                <!-- Product name-->
-                <h5 class="fw-bolder ">Anthelios XL spf50 
-                  <br>Bruma Corporal Ultraligera
-                  <br>  
-                  La Roche-Posay<br> 200ml
-                 </h5> 
-               <!-- Product price--> <hr>
-                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-               <span class="text-danger text-decoration-line-through">$ 53.960,00</span> <br>
-               <span>$ 43.168,00 <br>
-               4 cuotas de <br>$ 10.792,00 <br><hr>
-               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                $ 60.000,00     
-              </div>
-          </div>  
-      </div>
-    </div> 
-    
-
-   <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-          <img class="card-img-top  mx-auto  " src="../image/perfumes/laroche50.png" />
-         <!-- Product details-->
-           <div class="card-body ">
-              <div class="text-center">
-                <!-- Product name-->
-                <h5 class="fw-bolder ">Anthelios spf50 
-                  <br>Spray
-                  <br>  
-                  La Roche-Posay<br> 200ml
-                 </h5> 
-               <!-- Product price--> <hr>
-                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-               <span class="text-danger text-decoration-line-through">$ 54.800,00</span> <br>
-               <span>$ 43.840,00 <br>
-               4 cuotas de <br>$ 10.960,00 <br><hr>
-               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                $ 60.000,00     
-              </div>
-          </div>  
-      </div>
-    </div> 
-    
-   <div class="col mb-5 categoria1 dolce">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-          <img class="card-img-top  mx-auto  " src="../image/perfumes/dolcegabbanalightblue.webp" />
-         <!-- Product details-->
-           <div class="card-body ">
-              <div class="text-center">
-                <!-- Product name-->
-                <h5 class="fw-bolder ">Light Blue 
-                  <br>Pour Femme 
-                  <br>  
-                  Dolce Gabbana<br> edt 100ml
-                 </h5> 
-               <!-- Product price--> <hr>
-                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-               <span class="text-danger text-decoration-line-through">$ 200.000,00</span> <br>
-               <span>$ 160.000,00 <br>
-               4 cuotas de <br>$ 40.000,00 <br><hr>
-               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                $ 200.000,00     
-              </div>
-          </div>  
-      </div>
-    </div> 
-
-   <div class="col mb-5 categoria1 Issey">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-          <img class="card-img-top  mx-auto  " src="../image/perfumes/leaudissey.webp" />
-         <!-- Product details-->
-           <div class="card-body ">
-              <div class="text-center">
-                <!-- Product name-->
-                <h5 class="fw-bolder ">L'Eau D'Issey 
-                  <br>Pour Femme 
-                  <br>  
-                  Issey Miyake<br> edt 100ml
-                 </h5> 
-               <!-- Product price--> <hr>
-                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-               <span class="text-danger text-decoration-line-through">$ 228.000,00</span> <br>
-               <span>$ 182.400,00 <br>
-               4 cuotas de <br>$ 45.600,00 <br><hr>
-               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                $ 228.000,00     
-              </div>
-          </div>  
-      </div>
-    </div> 
-
-    <div class="col mb-5 categoria1 adolfo  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/adolfo-dominguez-adn-sandalo-sacro-edp-100-ml-.jpg" />
+        <img class="card-img-top" src="../image/perfumes/chercartera.webp" />
         <!-- Product details-->
         <div class="card-body ">
           <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder ">Adn Sandalo Sacro<br> Adolfo Dominguez  
-              <br>edp 100ml
+            <!-- Product name-->
+            <h5 class="fw-bolder"> Set Perfume + <span style="color: red;">Cartera</span></span><br>Cher 
+              <br>edp 50ml
             </h5> 
-             <!-- Product price--> <hr>
+            <!-- Product price--> <hr>
             <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 59.900,00</span> <br>
-            <span>$ 47.920,00 <br>
-              4 cuotas de <br>$ 11.980,00 <br><hr>
+            <span class="text-danger text-decoration-line-through">$ 79.900,00</span> <br>
+            <span>$ 63.920,00 <br>
+              4 cuotas de <br>$ 15.980,00 <br><hr>
               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 60.000,00    
+              $ 90.000,00  
             </div>
           </div>  
         </div>
       </div> 
-
-    <div class="col mb-5 categoria1 Maison  ">
+  
+  
+    <div class="col mb-5 categoria1 Ferrari">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top" src="../image/perfumes/ferrari.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder"> Perfume Black + <span style="color: red;">Gorra</span><br>Ferrari 
+              <br>edt 125ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 161.930,00</span> <br>
+            <span>$ 129.544,00 <br>
+              4 cuotas de <br>$ 32.386,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 170.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+  
+    <div class="col mb-5 otros">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top " src="../image/perfumes/maletin3.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">Maletin Maquillaje 
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 89.900,00</span> <br>
+            <span>$ 71.920,00 <br>
+              4 cuotas de <br>$ 17.980,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 100.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+  
+    <div class="col mb-5 categoria1 Lataffa">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->    
+        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/lattafaSetBadee5x5ml.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder pt-4 mt-4"> Set 5 Badee Al Oud <br>Lattafa 
+              <br>edp 5ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 60.900,00</span> <br>
+            <span>$ 48.720,00 <br>
+              4 cuotas de <br>$ 12.180,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 65.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+  
+    <div class="col mb-5 categoria1 Cher">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top " src="../image/perfumes/cheronyxsealight.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">Onyx Sealight<br>Cher
+              <br>edp 100ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 52.500,00</span> <br>
+            <span>$ 42.000,00 <br>
+              4 cuotas de <br>$ 10.500,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 60.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+  
+    <div class="col mb-5 categoria1 Cher">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top " src="../image/perfumes/dieciocho.png" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">Dieciocho<br>Cher
+              <br>edp 100ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 52.500,00</span> <br>
+            <span>$ 42.000,00 <br>
+              4 cuotas de <br>$ 10.500,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 60.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+  
+    <div class="col mb-5 categoria1 Cher">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top " src="../image/perfumes/dieciochoglossy.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">Dieciocho Glossy<br>Cher
+              <br>edp 100ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 52.500,00</span> <br>
+            <span>$ 42.000,00 <br>
+              4 cuotas de <br>$ 10.500,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 60.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+    <div class="col mb-5 categoria1 adolfo">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top " src="../image/perfumes/rosasblancas.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">Rosas Blancas<br>Adolfo Dominguez
+              <br>edt 120ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 80.500,00</span> <br>
+            <span>$ 64.400,00 <br>
+              4 cuotas de <br>$ 16.100,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 100.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+  
+    <div class="col mb-5 categoria1 Calvin">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top " src="../image/perfumes/one.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">One<br>Calvin Klein
+              <br>edt 200ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 225.000,00</span> <br>
+            <span>$ 180.000,00 <br>
+              4 cuotas de <br>$ 45.000,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 230.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+    
+  
+    <div class="col mb-5 categoria1 jpg">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top " src="../image/perfumes/scandal.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">Scandal <br>JPG
+              <br>edp 80ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 249.865,00</span> <br>
+            <span>$ 199.892,00 <br>
+              4 cuotas de <br>$ 49.973,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 260.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+    
+  
+    <div class="col mb-5 categoria1 Davidoff">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top " src="../image/perfumes/davidoff.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">Cool Water<br>Davidoff 
+              <br>edt 100ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 107.000,00</span> <br>
+            <span>$ 85.600,00 <br>
+              4 cuotas de <br>$ 21.400,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 120.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+    
+    <div class="col mb-5 categoria1 Davidoff">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top " src="../image/perfumes/davidoorhombre.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">Cool Water<br>Davidoff 
+              <br>edt 125ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 107.000,00</span> <br>
+            <span>$ 85.600,00 <br>
+              4 cuotas de <br>$ 21.400,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 120.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+    
+     
+  
+    <div class="col mb-5 categoria1 Tommy">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+        <img class="card-img-top  " src="../image/perfumes/tommygirl.webp" />
+        <!-- Product details-->
+        <div class="card-body ">
+          <div class="text-center">
+            <!-- Product name-->
+            <h5 class="fw-bolder ">Tommy Girl<br>Tommy Hilfiger 
+              <br>edt 100ml
+            </h5> 
+            <!-- Product price--> <hr>
+            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+            <span class="text-danger text-decoration-line-through">$ 178.000,00</span> <br>
+            <span>$ 142.400,00 <br>
+              4 cuotas de <br>$ 35.600,00 <br><hr>
+              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+              $ 180.000,00  
+            </div>
+          </div>  
+        </div>
+      </div> 
+    
+  
+    <div class="col mb-5 categoria1 Armaf">
       <div class="card h-100">
         <span class="badge-discount">20% OFF</span>
         <!-- Product image-->   
@@ -473,547 +644,131 @@
         <!-- Product details-->
         <div class="card-body ">
           <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Odyssey <br> Mandarin Sky<br>Armaf 
-              <br>edp 100ml
-            </h5> 
-             <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 87.900,00</span> <br>
-            <span>$ 70.230,00 <br>
-              4 cuotas de <br>$ 17.580,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 90.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-
-    <div class="col mb-5 categoria1 Maison  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/roseorigami.jpg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Rose Origami<br>M. Alhambra 
-              <br>edp 100ml
-            </h5> 
-             <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 80.900,00</span> <br>
-            <span>$ 64.720,00 <br>
-              4 cuotas de <br>$ 16.180,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 90.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-
-    <div class="col mb-5 categoria1 Maison  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/yourtouvhoud.jpg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Your Touch Oud<br>M. Alhambra 
-              <br>edp 100ml
+            <!-- Product name-->
+            <h5 class="fw-bolder ">Mandaryn Sky   
+              <br> Armaf <br> 
+              edp 100ml
             </h5> 
             <!-- Product price--> <hr>
             <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 80.900,00</span> <br>
-            <span>$ 64.720,00 <br>
-              4 cuotas de <br>$ 16.180,00 <br><hr>
+            <span class="text-danger text-decoration-line-through">$ 90.750,00</span> <br>
+            <span>$ 72.600,00 <br>
+              4 cuotas de <br>$ 18.150,00 <br><hr>
               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 90.000,00    
+              $ 110.000,00  
             </div>
           </div>  
         </div>
       </div> 
-
-    <div class="col mb-5 categoria1 Maison  ">
+    
+        
+   
+   <div class="col mb-5 categoria1 Lataffa  ">
       <div class="card h-100">
         <span class="badge-discount">20% OFF</span>
         <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/yourtouvhambert.jpg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Your Touch Amber <br>M. Alhambra 
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 80.900,00</span> <br>
-            <span>$ 64.720,00 <br>
-              4 cuotas de <br>$ 16.180,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 90.000,00    
-            </div>
+          <img class="card-img-top  mx-auto  " src="../image/perfumes/yararosa.webp" />
+         <!-- Product details-->
+           <div class="card-body ">
+              <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder ">Yara Rosa
+                  <br> Lattafa <br> 
+                  100ml
+                </h5> 
+               <!-- Product price--> <hr>
+                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+               <span class="text-danger text-decoration-line-through">$ 64.900,00</span> <br>
+               <span>$ 51.920,00 <br>
+               4 cuotas de <br>$ 12.980,00 <br><hr>
+               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                $ 70.000,00
+              </div>
           </div>  
-        </div>
-      </div> 
-
- 
-    <div class="col mb-5 categoria1 Lataffa  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/victoria-LATAFFA.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Victoria <br>Lattafa
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 103.900,00</span> <br>
-            <span>$ 83.120,00 <br>
-              4 cuotas de <br>$ 20.780,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 110.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-    <div class="col mb-5 categoria1 Maison  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/KISMETmagic.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Kismet Magic<br>M. Alhambra  
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 81.900,00</span> <br>
-            <span>$ 65.536,00 <br>
-              4 cuotas de <br>$ 16.384,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 90.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-    <div class="col mb-5 categoria1 Lattafa  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/khamrah.jpg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Khamrah<br>Lattafa  
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 115.900,00</span> <br>
-            <span>$ 92.720,00 <br>
-              4 cuotas de <br>$ 23.180,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 120.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-    <div class="col mb-5 categoria1 Lattafa  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/asadlattafa.jpg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Asad<br>Lattafa  
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-    <div class="col mb-5 categoria1 Lattafa  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/asadbourbon.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Asad Bourbon<br>Lattafa  
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-
-    <div class="col mb-5 categoria1 Lattafa  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/yaramoi.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Yara Moi<br>Lattafa  
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-    <div class="col mb-5 categoria1 Lattafa  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/yaratous.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Yara Tous<br>Lattafa  
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-    <div class="col mb-5 categoria1 Lattafa  ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/yararosa.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Yara<br>Lattafa  
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-    <div class="col mb-5 categoria1 Paris ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/khairpistacho.jpg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Khair  <br>Pistacho 
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-
-    <div class="col mb-5 categoria1 Lataffa ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/pridefakharmen.jpg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Fakhar <br>Pride Men 
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-
-    <div class="col mb-5 categoria1 Lataffa ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/pridefakhar.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Fakhar <br>Pride Woman 
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-    <div class="col mb-5 categoria1 Lataffa ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/pridefakharwoman.jpg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> Fakhar Extrait  <br>Pride Woman 
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-
-    <div class="col mb-5 categoria1 Afnan ">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/9pm.jpg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder "> 9 PM  <br>Black 
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
- 
-
-    <div class="col mb-5 categoria1 Lataffa">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/now.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder pt-4  "> Now <br> Rave
-              <br>edp 100ml
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-
-
- 
-
-<div class="col mb-5 otros">
-  <div class="card h-100">
-    <span class="badge-discount">20% OFF</span>
-    <!-- Carrusel pequeño dentro de la card -->
-    <div id="carouselVS" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victorialovespell.webp" alt="victoria 1">
-        </div>
-        <div class="carousel-item">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriaaguakiss.webp" alt="victoria 2">
-        </div>
-        <div class="carousel-item">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriatempation.webp" alt="victoria 3">
-        </div>
-        <div class="carousel-item">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriaamberromance.webp" alt="victoria 4">
-        </div>
-        <div class="carousel-item">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriapureseductionbrillo.webp" alt="victoria 5">
-        </div>
-        <div class="carousel-item">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriapureseductionsol.webp" alt="victoria 6">
-        </div>
       </div>
-
-      <!-- Botones -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselVS" data-bs-slide="prev">
-        <i class="bi bi-chevron-left fs-1 text-dark"></i>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselVS" data-bs-slide="next">
-        <i class="bi bi-chevron-right fs-1 text-dark"></i>
-      </button>
-    </div>
-
-    <!-- Product details -->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder">Victoria's Secret<br>Mist Corporal</h5>
-        <hr>
-        <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br>
-        <span class="text-danger text-decoration-line-through">$ 39.900,00</span> <br>
-        <span>$ 31.920,00 <br>
-          4 cuotas de <br>$ 7.980,00 <br><hr>
-          <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-          $ 50.000,00
+    </div> 
+    
+   
+   <div class="col mb-5 categoria1 lancome  ">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+          <img class="card-img-top mx-auto pt-4 mt-2 " src="../image/perfumes/lavitabella.png" />
+         <!-- Product details-->
+           <div class="card-body ">
+              <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder ">La vida es bella
+                  <br> Lancome<br> 
+                  edp 100ml
+                </h5> 
+               <!-- Product price--> <hr>
+                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+               <span class="text-danger text-decoration-line-through">$ 269.000,00</span> <br>
+               <span>$ 215.200,00 <br>
+               4 cuotas de <br>$ 53.800,00 <br><hr>
+               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                $ 300.000,00
+              </div>
+          </div>  
       </div>
-    </div>
-  </div>
-</div>
- 
-
-<div class="col mb-5 otros">
-  <div class="card h-100">
-    <span class="badge-discount">20% OFF</span>
-    <!-- Carrusel pequeño dentro de la card -->
-    <div id="carouselLocion" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriaamberromancelocion.webp" alt="victoria 1">
-        </div>
-        <div class="carousel-item">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriamidnightbloonlocion.webp" alt="victoria 2">
-        </div>
-        <div class="carousel-item">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriacoconutlocion.webp" alt="victoria 3">
-        </div>
-        <div class="carousel-item">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriaruchlocion.webp" alt="victoria 4">
-        </div>
-        <div class="carousel-item">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriaromanticlocion.jfif" alt="victoria 5">
-        </div>
-        <div class="carousel-item">
-          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victorialovespelllocion.webp" alt="victoria 6">
-        </div>
+    </div> 
+    
+       
+   
+   <div class="col mb-5 categoria1 Armaf">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+          <img class="card-img-top mx-auto pt-4 mt-2 " src="../image/perfumes/clubnuitintense.webp" />
+         <!-- Product details-->
+           <div class="card-body ">
+              <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder ">Club De Nuit Intense 
+                  <br> Armaf<br> 
+                  edt 105ml
+                </h5> 
+               <!-- Product price--> <hr>
+                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+               <span class="text-danger text-decoration-line-through">$ 90.750,00</span> <br>
+               <span>$ 72.600,00 <br>
+               4 cuotas de <br>$ 18.150,00 <br><hr>
+               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                $ 100.000,00
+              </div>
+          </div>  
       </div>
-
-      <!-- Botones -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselLocion" data-bs-slide="prev">
-        <i class="bi bi-chevron-left fs-1 text-dark"></i>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselLocion" data-bs-slide="next">
-        <i class="bi bi-chevron-right fs-1 text-dark"></i>
-      </button>
-    </div>
-
-    <!-- Product details -->
-    <div class="card-body">
-      <div class="text-center">
-        <h5 class="fw-bolder">Victoria's Secret<br>Loción Corporal</h5>
-        <hr>
-        <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br>
-        <span class="text-danger text-decoration-line-through">$ 39.900,00</span> <br>
-        <span>$ 31.920,00 <br>
-          4 cuotas de <br>$ 7.980,00 <br><hr>
-          <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-          $ 50.000,00
+    </div> 
+   
+   <div class="col mb-5 categoria1 dolce">
+      <div class="card h-100">
+        <span class="badge-discount">20% OFF</span>
+        <!-- Product image-->   
+          <img class="card-img-top mx-auto pt-4 mt-2 " src="../image/perfumes/dolcegabbanalightblue.webp" />
+         <!-- Product details-->
+           <div class="card-body ">
+              <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder ">Light Blue Girl
+                  <br> Dolce Gabbana<br> 
+                  edt 200ml
+                </h5> 
+               <!-- Product price--> <hr>
+                <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
+               <span class="text-danger text-decoration-line-through">$ 271.600,00</span> <br>
+               <span>$ 217.280,00 <br>
+               4 cuotas de <br>$ 54.320,00 <br><hr>
+               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+                $ 300.000,00
+              </div>
+          </div>  
       </div>
-    </div>
-  </div>
-</div>
- 
-
-     
-    <div class="col mb-5 cofres Lattafa">
+    </div> 
+    
+   
+    
+    <div class="col mb-5 cofres Lataffa">
       <div class="card h-100">
         <span class="badge-discount">20% OFF</span>
         <!-- Product image-->   
@@ -1026,120 +781,27 @@
             </h5> 
             <!-- Product price--> <hr>
             <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 131.000,00</span> <br>
-            <span>$ 104.800,00 <br>
-              4 cuotas de <br>$ 26.200,00 <br><hr>
+            <span class="text-danger text-decoration-line-through">$ 77.218,00</span> <br>
+            <span>$ 61.774,40 <br>
+              4 cuotas de <br>$ 15.443,60 <br><hr>
               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 140.000,00    
+              $ 90.000,00    
             </div>
           </div>  
         </div>
       </div> 
-     
-    <div class="col mb-5 cofres Lattafa">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/lattafa-yara-5th-anniversary.jpeg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder ">5th Anniversary <br> Yara  <br>Set Lattafa
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 110.000,00</span> <br>
-            <span>$ 88.000,00 <br>
-              4 cuotas de <br>$ 22.000,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 120.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-     
-    <div class="col mb-5 cofres Lattafa">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/setasad.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->   
-            <h5 class="fw-bolder ">5th Anniversary <br> Asad  <br>Set Lattafa
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 110.000,00</span> <br>
-            <span>$ 88.000,00 <br>
-              4 cuotas de <br>$ 22.000,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 120.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-     
-      
-    <div class="col mb-5 categoria1 Moschino">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/moschinocheap.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder ">Cheap & Chic  <br>Moschino <br>edt 100 ml 
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 115.300,00</span> <br>
-            <span>$ 92.240,00 <br>
-              4 cuotas de <br>$ 23.060,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 120.000,00    
-            </div>
-          </div>  
-        </div>
-      </div> 
-     
-    <div class="col mb-5 categoria1 Tommy">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/tommygirl.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder "> Tommy Hilfiger <br>Girl<br>edt 100 ml 
-            </h5> 
-            <!-- Product price--> <hr>
-             <p style="color: red;"><b>Sin stock</b></p><!-- 
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 92.900,00</span> <br>
-            <span>$ 74.320,00 <br>
-              4 cuotas de <br>$ 18.580,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 100.000,00       -->
-            </div>
-          </div>  
-        </div>
-      </div> 
-  
+       
+           
     <div class="col mb-5 otros">
       <div class="card h-100">
         <span class="badge-discount">20% OFF</span>
         <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/karselcolageno.webp" />
+        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/karselarganacondicionador.webp" />
         <!-- Product details-->
         <div class="card-body ">
           <div class="text-center">
             <!-- Product name-->
-            <h5 class="fw-bolder "> Karseell <br>Máscara de Colageno
+            <h5 class="fw-bolder "> Karseell <br>Acondicionador
               <br>   
               500 ml
             </h5> 
@@ -1155,7 +817,8 @@
           </div>  
         </div>
       </div> 
-  
+
+      
     <div class="col mb-5 otros">
       <div class="card h-100">
         <span class="badge-discount">20% OFF</span>
@@ -1181,7 +844,9 @@
           </div>  
         </div>
       </div> 
-  
+
+
+      
     <div class="col mb-5 otros">
       <div class="card h-100">
         <span class="badge-discount">20% OFF</span>
@@ -1207,185 +872,8 @@
           </div>  
         </div>
       </div> 
-
       
-    <div class="col mb-5 bifferdil">
-      <div class="card h-100">
-         <span class="badge-discount" style="background-color: rgb(0, 0, 107)">35% OFF</span>
-         <!-- Product image-->   
-        <img class="card-img-top mx-auto pt-4 mt-4" src="../image/biferdil/antiquiebre$3641.png"/>
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder "> Shampoo anti-quiebre<br> 250 ml
-            </h5> 
-            <!-- Product price -->   <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 13.284,00 </span> <br>
-            <span class="price-socio">$ 8.634,60 <br></span>
-            4 cuotas de <br> $ 2.158,65<br><hr>
-            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-            $ 20.000,00
-            </span>
-            </div>
-          </div>  
-        </div>
-      </div> 
-     
-    
-    <div class="col mb-5 lidherma">
-      <div class="card h-100">
-         <span class="badge-discount" style="background-color: rgb(13, 9, 9)">Lidherma</span>
-         <!-- Product image-->   
-        <img class="card-img-top mx-auto pt-4 mt-4" src="../image/lidherma/demaquillanteojos.jpg" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder "> Demaquillante de ojos<br>125grs
-            </h5> 
-            <!-- Product price -->   <hr>
-               <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-               <span>$ 22.270,00 <br>
-               4 cuotas de <br>$ 5.567,50 <br><hr>
-               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-               $ 27.000,00
-            </div>
-          </div>  
-        </div>
-      </div> 
-     
-    
-    <div class="col mb-5 lidherma">
-      <div class="card h-100">
-         <span class="badge-discount" style="background-color: rgb(13, 9, 9)">Lidherma</span>
-         <!-- Product image-->   
-        <img class="card-img-top mx-auto pt-4 mt-4" src="../image/lidherma/brumissage.jpg"  />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder "> Brumissage<br>  200grs
-            </h5> 
-            <!-- Product price -->   <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span>$ 18.700,00 <br>
-            4 cuotas de <br>$ 4.676,00 <br><hr>
-            <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-            $ 22.000,00
-            </div>
-          </div>  
-        </div>
-      </div> 
-     
-            
-    
-    <div class="col mb-5 cofres paco">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top mx-auto pt-4 mt-4" src="../image/perfumes/cofrerabaneinvictus.png" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder "> Cofre 
-              <br>Paco Rabbane<br> 
-              edt 100ml + gel ducha 
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 219.000,00</span> <br>
-            <span>$ 175.200,00 <br>
-              4 cuotas de <br>$ 43.800,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 231.000,00  
-            </div>
-          </div>  
-        </div>
-      </div> 
-     
-     
-     
-    
-    <div class="col mb-5 cofres paco">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top mx-auto pt-4" src="../image/perfumes/cofrerabane.png" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder "> Cofre 
-              <br>Paco Rabbane<br> 
-              edt 100ml + gel ducha 
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 219.000,00</span> <br>
-            <span>$ 175.200,00 <br>
-              4 cuotas de <br>$ 43.800,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 231.000,00  
-            </div>
-          </div>  
-        </div>
-      </div> 
-    
-    
-    <div class="col mb-5 cofres Lattafa">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top mx-auto pt-4" src="../image/perfumes/cofrekharan.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder ">Cofre Khamrah 
-              <br>Lattafa <br> 
-              edp 100ml + deo spray 200ml 
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 110.000,00</span> <br>
-            <span>$ 88.000,00 <br>
-              4 cuotas de <br>$ 22.000,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 120.000,00  
-            </div>
-          </div>  
-        </div>
-      </div> 
-    
-    
-    <div class="col mb-5 categoria1 afnan">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top mx-auto pt-4" src="../image/perfumes/supremacy.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder "> Supremacy Silver Men 
-              <br>Afnan <br> 
-              edp 100ML
-            </h5> 
-            <!-- Product price--> <hr>
-            <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 120.000,00</span> <br>
-            <span>$ 96.000,00 <br>
-              4 cuotas de <br>$ 24.000,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 120.000,00  
-            </div>
-          </div>  
-        </div>
-      </div> 
-     
+      
     
     <div class="col mb-5 otros">
       <div class="card h-100">
@@ -1411,459 +899,146 @@
           </div>  
         </div>
       </div> 
-    
       
+    
     <div class="col mb-5 otros">
       <div class="card h-100">
         <span class="badge-discount">20% OFF</span>
         <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/necesaireaquiyahora.webp" />
+        <img class="card-img-top  pt-4 mt-4" src="../image/perfumes/karselshampoo.jpg" />
         <!-- Product details-->
         <div class="card-body ">
           <div class="text-center">
             <!-- Product name-->
-            <h5 class="fw-bolder "> Set de Regalo 
-              <br>   
-              Cuidado Personal
-            </h5> 
-            <!-- Product price--> <hr>
-               <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 42.900,00</span> <br>
-            <span>$ 34.320,00 <br>
-              4 cuotas de <br>$ 8.580,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 47.000,00      
-            </div>
-          </div>  
-        </div>
-      </div> 
-    
-      
-    <div class="col mb-5 otros">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/necesaireaquiyahora1.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder "> Set de Regalo 
-              <br>   
-              Cuidado Personal
-            </h5> 
-            <!-- Product price--> <hr>
-               <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 42.900,00</span> <br>
-            <span>$ 34.320,00 <br>
-              4 cuotas de <br>$ 8.580,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 47.000,00      
-            </div>
-          </div>  
-        </div>
-      </div> 
-    
-      
-    <div class="col mb-5 otros">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top pt-4 mt-4" src="../image/perfumes/kitaqui.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder "> Locion Corporal y Jabon Liquido 
-              <br>   
-              Aqui y Ahora
-            </h5> 
-            <!-- Product price--> <hr>
-               <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 42.900,00</span> <br>
-            <span>$ 34.320,00 <br>
-              4 cuotas de <br>$ 8.580,00 <br><hr>
-              <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 47.000,00      
-            </div>
-          </div>  
-        </div>
-      </div> 
-    
-      
-    
-    <div class="col mb-5 categoria1 escada">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-        <img class="card-img-top  mx-auto " src="../image/perfumes/escada.webp" />
-        <!-- Product details-->
-        <div class="card-body ">
-          <div class="text-center">
-            <!-- Product name-->
-            <h5 class="fw-bolder ">Magnetism  
-              <br>  Escada<br> 
-              edp 75ml
+            <h5 class="fw-bolder "> Karseell   
+              <br> Shampoo <br> 
+              500ml
             </h5> 
             <!-- Product price--> <hr>
             <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 111.700,00</span> <br>
-            <span>$ 89.360,00 <br>
-              4 cuotas de <br>$ 22.340,00 <br><hr>
+            <span class="text-danger text-decoration-line-through">$ 43.650,00</span> <br>
+            <span>$ 34.920,00 <br>
+              4 cuotas de <br>$ 8.730,00 <br><hr>
               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 120.000,00  
+              $ 50.000,00  
             </div>
           </div>  
         </div>
       </div> 
+
     
-     
-    
-    <div class="col mb-5 categoria1 Issey">
+    <div class="col mb-5 otros">
       <div class="card h-100">
         <span class="badge-discount">20% OFF</span>
         <!-- Product image-->   
-        <img class="card-img-top  mx-auto  " src="../image/perfumes/fusiondissey.webp" />
+        <img class="card-img-top  pt-4 mt-4" src="../image/perfumes/karselshampoo1.png" />
         <!-- Product details-->
         <div class="card-body ">
           <div class="text-center">
             <!-- Product name-->
-            <h5 class="fw-bolder ">Fusion D'issey   
-              <br>  
-              Issey Miyake <br> edt 100ml
+            <h5 class="fw-bolder "> Karseell   
+              <br> Shampoo <br> 
+              500ml
             </h5> 
             <!-- Product price--> <hr>
             <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-            <span class="text-danger text-decoration-line-through">$ 141.500,00</span> <br>
-            <span>$ 113.200,00 <br>
-              4 cuotas de <br>$ 28.300,00 <br><hr>
+            <span class="text-danger text-decoration-line-through">$ 43.650,00</span> <br>
+            <span>$ 34.920,00 <br>
+              4 cuotas de <br>$ 8.730,00 <br><hr>
               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-              $ 150.000,00  
+              $ 50.000,00  
             </div>
           </div>  
         </div>
       </div> 
-    
+
+
       
-        <div class="col mb-5 categoria1 Boss">
-          <div class="card h-100">
-            <span class="badge-discount">20% OFF</span>
-              <!-- Product image-->   
-              <img class="card-img-top  mx-auto pt-4 mt-4 " src="../image/perfumes/hugoman.webp" />
-             <!-- Product details-->
-               <div class="card-body ">
-                  <div class="text-center">
-                    <!-- Product name-->
-                    <h5 class="fw-bolder ">Hugo 
-                      Man 
-                      <br>  
-                       Boos <br> edt 125ml
-                     </h5> 
-                   <!-- Product price--> <hr>
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-                   <span class="text-danger text-decoration-line-through">$ 172.000,00</span> <br>
-                   <span>$ 137.600,00 <br>
-                   4 cuotas de <br>$ 34.400,00 <br><hr>
-                   <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                    $ 180.000,00    
-                  </div>
-              </div>  
-          </div>
-        </div> 
-      
-      
-    <div class="col mb-5 categoria1 Issey">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>        
-          <!-- Product image-->   
-          <img class="card-img-top  mx-auto  " src="../image/perfumes/adrop.webp" />
-         <!-- Product details-->
-           <div class="card-body ">
-              <div class="text-center">
-                <!-- Product name-->
-                <h5 class="fw-bolder ">A Drop
-                  <br>  
-                  Issey Miyake<br> edp 90ml
-                 </h5> 
-               <!-- Product price--> <hr>
-                <p style="color: red;"><b>Sin stock</b></p><!-- 
-               <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-               <span class="text-danger text-decoration-line-through">$ 242.000,00</span> <br>
-               <span>$ 193.600,00 <br>
-               4 cuotas de <br>$ 48.400,00 <br><hr>
-               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                $ 252.000,00   -->
-              </div>
-          </div>  
+<div class="col mb-5 otros">
+  <div class="card h-100">
+    <span class="badge-discount">20% OFF</span>
+    <!-- Carrusel pequeño dentro de la card -->
+    <div id="carouselVS" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriacoconutpassion.webp" alt="victoria 1">
+        </div>
+        <div class="carousel-item">
+          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriaabarevainilla.webp" alt="victoria 2">
+        </div>
+         
       </div>
-    </div> 
-    
-  
-    <div class="col mb-5 categoria1 Issey">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span>
-        <!-- Product image-->   
-          <img class="card-img-top  mx-auto  " src="../image/perfumes/isseysport.jpg" />
-         <!-- Product details-->
-           <div class="card-body ">
-              <div class="text-center">
-                <!-- Product name-->
-                <h5 class="fw-bolder ">L'Eau D'Issey 
-                  <br> Sport <br> 
-                  Issey Miyake<br> edt 100ml
-                 </h5> 
-               <!-- Product price--> <hr>
-               <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-               <span class="text-danger text-decoration-line-through">$ 212.000,00</span> <br>
-               <span>$ 169.600,00 <br>
-               4 cuotas de <br>$ 42.400,00 <br><hr>
-               <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                $ 212.000,00  
-              </div>
-          </div>  
-      </div>
-    </div> 
-  
-     
-     
-   
-    <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span> 
-          <!-- Product image-->   
-          <img class="card-img-top  mx-auto " src="../image/perfumes/laroche50ninos.png"/>
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">La Roche Posay
-                    <br> dermo pediatrico <br>
-                    Anthelios 50+  <br>Invisible Spray<br>200ml
-                   </h5> 
-                 <!-- Product price--> <hr>
-                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-                 <span class="text-danger text-decoration-line-through">$ 71.800,00</span> <br>
-                 <span>$ 57.440,00 <br>
-                 4 cuotas de <br>$ 14.360,00 <br><hr>
-                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                  $ 72.000,00  
-              </div>
-          </div>  
-      </div>
-    </div> 
-    
-     
-    
-    <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span> 
-          <!-- Product image-->   
-          <img class="card-img-top  mx-auto " src="../image/perfumes/larochegelcrema.jpg" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">La Roche Posay
-                    <br>
-                    Anthelios  <br>Oil Control <br>UVMune 400
-                   </h5> 
-                <!-- Product price--> <hr>
-                   <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-                  <span class="text-danger text-decoration-line-through">$ 59.900,00</span> <br>
-                  <span>$ 47.920,00 <br>
-                  4 cuotas de <br>$ 11.980,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                   $ 65.000,00   
-              </div>
-          </div>  
-      </div>
-    </div> 
-    
-    <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span> 
-          <!-- Product image-->   
-          <img class="card-img-top  mx-auto " src="../image/perfumes/larocheoilcontrol.jpg" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">La Roche Posay
-                    <br>
-                    Con Color  <br>Oil Control <br>UVMune 400
-                   </h5> 
-                  <!-- Product price--> <hr>
-                   <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-                  <span class="text-danger text-decoration-line-through">$ 59.900,00</span> <br>
-                  <span>$ 47.920,00 <br>
-                  4 cuotas de <br>$ 11.980,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                   $ 65.000,00   
-              </div>
-          </div>  
-      </div>
-    </div> 
 
- 
-    <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span> 
-          <!-- Product image-->   
-          <img class="card-img-top  mx-auto " src="../image/perfumes/vichy30capital.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Vichy Capital Soleil 
-                    <br>
-                    Agua protectora fps30 x 200ml
-                   </h5> 
-                   <span> <b>Potencia el bronceado</b></span>
-                 <!-- Product price--> <hr>
-                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-                 <span class="text-danger text-decoration-line-through">$ 67.600,00</span> <br>
-                 <span>$ 54.080,00 <br>
-                 4 cuotas de <br>$ 13.520,00 <br><hr>
-                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                  $ 68.000,00  
-              </div>
-          </div>  
-      </div>
-    </div> 
+      <!-- Botones -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselVS" data-bs-slide="prev">
+        <i class="bi bi-chevron-left fs-1 text-dark"></i>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselVS" data-bs-slide="next">
+        <i class="bi bi-chevron-right fs-1 text-dark"></i>
+      </button>
+    </div>
 
-    <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span> 
-          <!-- Product image-->   
-          <img class="card-img-top  mx-auto " src="../image/perfumes/vichy50capital.jpg" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Vichy Capital Soleil 
-                    <br>
-                    Agua protectora fps50 x 200ml 
-                   </h5>  
-                  <span> Potencia el bronceado</span>
-                 <!-- Product price--> <hr>
-                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-                 <span class="text-danger text-decoration-line-through">$ 67.600,00</span> <br>
-                 <span>$ 54.080,00 <br>
-                 4 cuotas de <br>$ 13.520,00 <br><hr>
-                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                  $ 68.000,00  
-              </div>
-          </div>  
+    <!-- Product details -->
+    <div class="card-body">
+      <div class="text-center">
+        <h5 class="fw-bolder">Victoria's Secret<br>Mist Corporal</h5>
+        <hr>
+        <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br>
+        <span class="text-danger text-decoration-line-through">$ 69.000,00</span> <br>
+        <span>$ 55.200,00 <br>
+          4 cuotas de <br>$ 13.800,00 <br><hr>
+          <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+          $ 80.000,00
       </div>
-    </div> 
+    </div>
+  </div>
+</div>
 
-    <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span> 
-          <!-- Product image-->   
-          <img class="card-img-top  mx-auto " src="../image/perfumes/vichy50capital.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Vichy Capital Soleil 
-                    <br>
-                    Agua protectora fps50 x 200ml
-                   </h5> 
-                   <span> Hidratación </span>
-                 <!-- Product price--> <hr>
-                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-                 <span class="text-danger text-decoration-line-through">$ 67.600,00</span> <br>
-                 <span>$ 54.080,00 <br>
-                 4 cuotas de <br>$ 13.520,00 <br><hr>
-                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                  $ 68.000,00  
-              </div>
-          </div>  
+
+<div class="col mb-5 otros">
+  <div class="card h-100">
+    <span class="badge-discount">20% OFF</span>
+    <!-- Carrusel pequeño dentro de la card -->
+    <div id="carouselLocion" class="carousel slide " data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriaaguakiisa.jpeg" alt="victoria 1">
+        </div>
+        <div class="carousel-item">
+          <img class="card-img-top pt-4 mt-4 zoomable" src="../image/perfumes/victoriabarevainilla.webp" alt="victoria 2">
+        </div>
+         
       </div>
-    </div> 
+
+      <!-- Botones -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselLocion" data-bs-slide="prev">
+        <i class="bi bi-chevron-left fs-1 text-dark"></i>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselLocion" data-bs-slide="next">
+        <i class="bi bi-chevron-right fs-1 text-dark"></i>
+      </button>
+    </div>
+
+    <!-- Product details -->
+    <div class="card-body">
+      <div class="text-center">
+        <h5 class="fw-bolder ">Victoria's Secret<br>Loción Corporal</h5>
+        <hr>
+        <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br>
+        <span class="text-danger text-decoration-line-through">$ 69.000,00</span> <br>
+        <span>$ 55.200,00 <br>
+          4 cuotas de <br>$ 13.800,00 <br><hr>
+          <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
+          $ 80.000,00
+      </div>
+    </div>
+  </div>
+</div>
  
 
-    <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span> 
-          <!-- Product image-->   
-          <img class="card-img-top  mx-auto " src="../image/perfumes/vichy50.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->  
-                   <h5 class="fw-bolder ">Vichy Capital Soleil 
-                    <br>
-                    fps50 <br> x 300ml
-                   </h5> 
-                 <!-- Product price--> <hr>
-                 <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-                 <span class="text-danger text-decoration-line-through">$ 63.000,00</span> <br>
-                 <span>$ 50.400,00 <br>
-                 4 cuotas de <br>$ 12.600,00 <br><hr>
-                 <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                  $ 65.000,00   
-              </div>
-          </div>  
-      </div>
-    </div> 
-  
-  
 
-    <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span> 
-          <!-- Product image-->   
-          <img class="card-img-top  mx-auto " src="../image/perfumes/isdinfotoprotector.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Isdin  <br>
-                    Fusion Water <br>
-                    Magic 50 ml
-                   </h5> 
-                  <!-- Product price--> <hr>
-                   <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-                  <span class="text-danger text-decoration-line-through">$ 57.500,00</span> <br>
-                  <span>$ 46.000,00 <br>
-                  4 cuotas de <br>$ 11.500,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                   $ 60.000,00     
-              </div>
-          </div>  
-      </div>
-    </div> 
- 
 
-    <div class="col mb-5 categoria3">
-      <div class="card h-100">
-        <span class="badge-discount">20% OFF</span> 
-          <!-- Product image-->   
-          <img class="card-img-top  mx-auto " src="../image/perfumes/isdinfotoprotectorpediatrico.png" />
-         <!-- Product details-->
-           <div class="card-body  ">
-              <div class="text-center">
-                  <!-- Product name-->
-                   <h5 class="fw-bolder ">Isdin  <br>
-                    Pediatrico<br>
-                    Fusion Fluid
-                   </h5> 
-                  <!-- Product price--> <hr>
-                   <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> </span><br> 
-                  <span class="text-danger text-decoration-line-through">$ 52.100,00</span> <br>
-                  <span>$ 41.680,00 <br>
-                  4 cuotas de <br>$ 10.420,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> </span><br>
-                   $ 55.000,00     
-              </div>
-          </div>  
-      </div>
-    </div> 
- 
-
-    </div> 
+  </div> 
 </div>
 
 </section>
@@ -1980,7 +1155,6 @@ document.getElementById('marcaPerfumes').addEventListener('change', function() {
       }
     </script>
     
-      <div id="navbar"></div>
     <script>
   fetch("navbar.html")
     .then(response => response.text())
@@ -2013,6 +1187,30 @@ document.getElementById('marcaPerfumes').addEventListener('change', function() {
         });
       });
     });
+    
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const buscador = document.getElementById('buscador');
+    const tarjetas = document.querySelectorAll('.col.mb-5'); // Selecciona los contenedores de las cards
+
+    buscador.addEventListener('input', function(e) {
+        const termino = e.target.value.toLowerCase().trim();
+
+        tarjetas.forEach(tarjeta => {
+            // Obtenemos el texto de la marca y el nombre del producto
+            const nombreProducto = tarjeta.querySelector('h5').innerText.toLowerCase();
+            
+            // Si el término de búsqueda está incluido en el nombre o marca
+            if (nombreProducto.includes(termino)) {
+                tarjeta.style.display = 'block'; // Muestra la tarjeta
+            } else {
+                tarjeta.style.display = 'none';  // Oculta la tarjeta
+            }
+        });
+    });
+});
 </script>
  </body>
 </html>

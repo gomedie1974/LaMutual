@@ -39,39 +39,39 @@ function Marruecos() {
     html: '<div style="text-align: left;"> <span style="font-size: 15px;">El Difusor Marruecos está diseñado con un envase de vidrio texturado y con color que aporta estilo y calidez a cualquier rincón de tu hogar. Sus varillas de alta calidad permiten una difusión constante y pareja del perfume, creando un ambiente acogedor y lleno de personalidad.<br><br>Incluye un refill de 500 ml, ideal para que disfrutes de tu aroma favorito por mucho más tiempo sin preocuparte por recambios inmediatos.</span></div>'})   
 }
 
-const btnrumJAZMIN = document.getElementById("JAZMIN");
-btnrumJAZMIN.addEventListener("click", JAZMIN);
-function JAZMIN() {
+const btnrumMunnar = document.getElementById("munnar");
+btnrumMunnar.addEventListener("click", munnar);
+function munnar() {
   Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Vela Jazmín</u></span>',
-    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Envase de vidrio.<br><b>Aromas:</b><br> Pera-Pepino-Manzana </span></div>'})   
+    title: '<span style="font-size: 25px;"><u>Vela Munnar</u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Creá un ambiente único con nuestra vela de soja MUNNAR, presentada en un atemporal envase de vidrio. Su diseño, es perfecto para cualquier rincón de tu hogar, aportando calidez y un estilo sutil.<br><b>Aromas:</b><br> Vainilla Especiada<br>Sandia Frambuesa </span></div>'})   
 }
 
-const btnrumFelipa = document.getElementById("Felipa");
-btnrumFelipa.addEventListener("click", Felipa);
-function Felipa() {
+const btnrumonce = document.getElementById("once");
+btnrumonce.addEventListener("click", once);
+function once() {
   Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Vela Felipa</u></span>',
-    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br> <b>Dimensiones:</b> 7.8 cm. de diámetro x 8.8 cm. de alto.<br><b>Capacidad:</b> 250cc.<br><b>Aroma:</b> Flores Blancas / Tilo Lavanda.</span></div>'    })   
-}
-
-
-const btnrumPipa = document.getElementById("Pipa");
-btnrumPipa.addEventListener("click", Pipa);
-function Pipa() {
-  Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Vela Pipa</u></span>',
-    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de aluminio.<br><b> Dimensiones:</b> 7.9 cm. de diámetro x 7.8 cm. de alto.<br><b>Capacidad:</b> 300cc.<br><b>Aroma:</b><br> Vainilla Especiada<br>Naranja Pimienta<br>Jazmín<br>Flores Blancas</span></div>'    })   
+    title: '<span style="font-size: 25px;"><u>Vela 11:11</u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Creada para acompañarte en esos instantes donde todo se alinea, esta vela te invita a detenerte, respirar y poner una intención.<br>Porque cada vez que la enciendas, no solo vas a disfrutar su aroma favorito, sino también conectar con aquello que querés atraer.<br><b>Aroma:</b> <br>Sandia Frambuesa <br> Pera Pepino Manzana.</span></div>'    })   
 }
 
 
-
-const btnrummena= document.getElementById("mena");
-btnrummena.addEventListener("click", mena);
-function mena() {
+const btnrumJuli = document.getElementById("Juli");
+btnrumJuli.addEventListener("click", Juli);
+function Juli() {
   Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Vela Mena</u></span>',
-    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de aluminio.<br><b> Dimensiones: </b>10 cm. de diámetro x 8 cm. de alto.<br><b>Capacidad:</b> 260grs.<br><b>Aroma:</b><br> Naranja-Pimienta</span></div>'})   
+    title: '<span style="font-size: 25px;"><u>Vela Juli</u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b> Dimensiones:</b> 11.2 cm. de alto x 7 cm. de ancho.<br><b>Capacidad:</b> 210cc.<br><b>Aroma:</b><br> Coco Lima<br>Vainilla Especiada</span></div>'    })   
+}
+
+
+
+const btnrumindiana= document.getElementById("indiana");
+btnrumindiana.addEventListener("click", indiana);
+function indiana() {
+  Swal.fire({
+    title: '<span style="font-size: 25px;"><u>Vela Indiana</u></span>',
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de aluminio acanalado.<br><b> Dimensiones: </b>8 cm. de diámetro x 6.2 cm. de alto.<br><b>Capacidad:</b> 230grs.<br><b>Aroma:</b><br> Vanilla Especiada <br>Jazmin Chino</span></div>'})   
 }
 
 
@@ -81,7 +81,7 @@ btnrumlola.addEventListener("click", lola);
 function lola() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Vela Lola</u></span>',
-    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja.<br> Vela de soja. Envase vidrio. <br> <b>Dimensiones:</b> 0,7 cm. de diámetro x 12 cm. de alto.<br><b>Capacidad:</b> 400grs.<br><b>Aroma:</b> <br>Tilo y Lavanda / Vainilla Especiada</span></div>'})   
+    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase vidrio. <br> <b>Dimensiones:</b> 0,7 cm. de diámetro x 12 cm. de alto.<br><b>Capacidad:</b> 400grs.<br><b>Aroma:</b> <br>Tilo Lavanda <br> Coco Lima <br>Flores Blancas</span></div>'})   
 }
 
 
@@ -91,7 +91,7 @@ btnrumrene.addEventListener("click", rene);
 function rene() {
   Swal.fire({
     title: '<span style="font-size: 25px;"><u>Vela Rene</u></span>',
-     html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Dimensiones:</b> 8,5 cm. de diámetro x 8,5 cm. de alto.<br><b>Aromas:</b> <br>Bambú <br>Jazmín Chino<br> Flores Blancas<br>Sandia Frambuesa<br>Vainilla Especiada</span></div>'})   
+     html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Dimensiones:</b> 8,5 cm. de diámetro x 8,5 cm. de alto.<br><b>Aromas:</b> <br>Pera Pepino Manzana<br>Sandia Frambuesa<br>Vainilla Especiada</span></div>'})   
 }
 
 
@@ -144,47 +144,13 @@ function Hawaii() {
     title: '<span style="font-size: 25px;"><u>Combo Refill + Difusor HAWAII</u></span>',
     html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Envase pet de 500ml. <br>Difusor Hawaii envase de vidrio Altura: 12,5cm, Capacidad: 450ml, Diámetro de boca: 6,5cm. con tapa de madera.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Lavanda<br>▪️ Nega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br></span></div>'})   
 }
-
-
-
-const btnrumapaga = document.getElementById("apaga");
-btnrumapaga.addEventListener("click", apaga);
-function apaga() {
-  Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Apagevelas</u></span>',
-    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Apagavelas rígido de acero. <br>Para los amantes de las velas y las fragancias del hogar! Este elegante accesorio apaga tus velas de manera rápida y segura, evitando cualquier salpicadura de cera. Fabricado en acero cilíndrico, es el complemento perfecto para tu colección. ¡Combínalo con una de nuestras velas y será el regalo ideal ! Disponible en negro, rosa champagne y plata.<br><br><b>Medidas:</b> 18cm x 4 cm.<br><br><b>Colores disponibles:</b>Negro/Plata. </span></div>'})   
-}
  
-
 
 const btnrumRoma1 = document.getElementById("roma1");
 btnrumRoma1.addEventListener("click", roma1);
 function roma1() {
 Swal.fire({
   title: '<span style="font-size: 25px;"><u>Combo Mini Difusor + Refill</u></span>',
-  html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Mini difusor para autos o placard + Refill mini difusor.<br>Mini difusor de 8ml y refill difusor de 60 ml.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Bambú<br>▪️ Sydney<br>▪️ Vainilla Especiada<br>▪️ Manhattan<br>▪️ Pera Pepino Manzana<br>▪️ Coco Lima</span></div>'})   
+  html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Mini difusor para autos o placard + Refill mini difusor.<br>Mini difusor de 8ml y refill difusor de 60 ml.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Bambú<br>▪️ Coco Lima</span></div>'})   
 }
-
-const btnrumauto = document.getElementById("auto");
-btnrumauto.addEventListener("click", auto);
-function auto() {
-Swal.fire({
-  title: '<span style="font-size: 25px;"><u>Refill Difusor Auto</u></span>',
-  html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Envase de 60 ml.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Bambú<br>▪️ Coco Lima</span></div>'})   
-}
-
-const btnrumRoma = document.getElementById("Roma");
-btnrumRoma.addEventListener("click", Roma);
-function Roma() {
-  Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Combo Refill + Difusor ROMA</u></span>',
-    html: ' <div style="text-align: left;"> <span style="font-size: 15px;">Envase pet de 500ml. <br>Difusor Roma envase de vidrio labrado de 110 ml.<br><br><b>Disponible en los siguientes blends:</b><br>▪️ Lavanda<br>▪️ `N`ega<br>▪️ Sandía Frambuesa<br>▪️ Bambú<br>▪️ Flor de Loto<br></span></div>'})   
-}
-const btnrumNana = document.getElementById("Nana");
-btnrumNana.addEventListener("click", Nana);
-function Nana() {
-  Swal.fire({
-    title: '<span style="font-size: 25px;"><u>Vela Nana</u></span>',
-    html: '<div style="text-align: left;"> <span style="font-size: 15px;">Vela de soja. Envase de vidrio.<br><b>Aromas:</b> <br>Vainilla Especiada.<br>Flores Blancas.<br>Tilo y Lavanda.<br>Pera Pepino Manzana.<br>Bambú.</span></div>'})   
-}
-
+ 

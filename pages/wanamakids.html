@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanama Kids - Mutual La Nación</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body { background-color: #f5f8fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    .banner-exclusivo {
+      background-image: url("../image/wanamakids/banner1.png");
+      background-size: cover;
+      background-position: center;
+      height: 350px;
+      margin-bottom: 20px;
+      background-size: 100% 100%;
+      
+    }
+
+    @media (max-width: 768px) {
+      .banner-exclusivo { height: 180px; background-size: contain; background-repeat: no-repeat; }
+    }
+
+    /* Filtros Sticky */
+    .filtros-full {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      width: 100%;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      border-bottom: 3px solid #0a66c2;
+    }
+
+    .categoria-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #04356c;
+      margin-top: 50px;
+      border-left: 6px solid #0a66c2;
+      padding-left: 12px;
+      margin-bottom: 25px;
+    }
+
+    /* Cards Estilizadas */
+    .card {
+      height: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .3s;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: white;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    
+    .img-container { position: relative; width: 100%; height: 280px; overflow: hidden; }
+    .card img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+
+    .badge-discount {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ff6b6b;
+      color: white;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 6px;
+      z-index: 10;
+    }
+
+    .precio-no-socio { color: #6c757d; text-decoration: line-through; font-size: 0.85rem; }
+    .precio-socio { color: #0a66c2; font-weight: bold; font-size: 1.1rem; line-height: 1.2; }
+
+    /* Botón WhatsApp */
+    .btn-whatsapp-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 12px;
+      transition: 0.3s;
+    }
+    .btn-whatsapp-card:hover { background-color: #128c7e; color: white; }
+    .btn-whatsapp-card i { margin-right: 6px; }
+
+    /* Utilidades */
+    .ir-arriba {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #0a66c2;
+      color: white;
+      border-radius: 50%;
+      padding: 10px 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+
+    .lightbox {
+      position: fixed;
+      top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.9);
+      display:none; justify-content:center; align-items:center;
+      z-index: 2000; cursor: pointer;
+    }
+    .lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
+  </style>
+</head>
+<body>
+
+<div id="navbar" class="sticky-top"></div>
+
+  <div class="banner-exclusivo"></div>
+
+  <div class="filtros-full">
+    <div class="d-flex justify-content-center flex-wrap py-3">
+      <div class="d-none d-md-flex">
+        <a href="#accesorios" class="btn btn-outline-primary mx-2">Accesorios</a>
+        <a href="#camisas" class="btn btn-outline-primary mx-2">Camisas</a>
+        <a href="#campera" class="btn btn-outline-primary mx-2">Camperas y Buzos</a>
+        <a href="#pantalon" class="btn btn-outline-primary mx-2">Pantalones</a>
+        <a href="#remeras" class="btn btn-outline-primary mx-2">Remeras</a>
+      </div>
+      <div class="d-md-none w-100 px-3">
+        <select class="form-select" onchange="location.href=this.value;">
+          <option value="">Buscar por categoría...</option>
+          <option value="#accesorios">Accesorios</option>
+          <option value="#camisas">Camisas</option>
+          <option value="#campera">Camperas y Buzos</option>
+          <option value="#pantalon">Pantalones</option>
+          <option value="#remeras">Remeras</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <main class="pb-5">
+    <section id="accesorios" class="container"><h2 class="categoria-title">Accesorios</h2><div class="row g-3"></div></section>
+    <section id="camisas" class="container"><h2 class="categoria-title">Camisas</h2><div class="row g-3"></div></section>
+    <section id="campera" class="container"><h2 class="categoria-title">Camperas y Buzos</h2><div class="row g-3"></div></section>
+    <section id="pantalon" class="container"><h2 class="categoria-title">Pantalones y Shorts</h2><div class="row g-3"></div></section>
+    <section id="remeras" class="container"><h2 class="categoria-title">Remeras</h2><div class="row g-3"></div></section>
+  </main>
+
+  <div class="ir-arriba" id="irArriba"><i class="bi bi-chevron-up"></i></div>
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'"><img src=""></div>
+
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    const productos = [
+      // ACCESORIOS
+      { cat: "accesorios", nom: "Cartuchera Eva", col: "Rosa", pNo: "27.889", pSo: "16.733,40", cuo: "4 de $4.183,35", img: "../image/wanamakids/accesorioEva.jpeg" },
+      { cat: "accesorios", nom: "Cartuchera Rider", col: "Crudo", pNo: "19.889", pSo: "11.933,40", cuo: "4 de $2.983,35", img: "../image/wanamakids/cartucherarider.webp" },
+      { cat: "accesorios", nom: "Cinto Boys Ander", col: "Azul", pNo: "29.889", pSo: "17.933,40", cuo: "4 de $4.483,35", img: "../image/wanamakids/cinturonander.webp" },
+      { cat: "accesorios", nom: "Cinto Girls Estrellas", col: "Dorado", pNo: "29.889", pSo: "17.933,40", cuo: "4 de $4.483,35", img: "../image/wanamakids/cinturonestrellas.webp" },
+      { cat: "accesorios", nom: "Cinto Girls Tachas", col: "Negro", pNo: "34.889", pSo: "20.933,40", cuo: "4 de $5.233,35", img: "../image/wanamakids/cinturontachas.webp" },
+      { cat: "accesorios", nom: "Cuaderno", col: "Estampado", pNo: "18.889", pSo: "11.333,40", cuo: "4 de $2.833,35", img: "../image/wanamakids/cuaderno.webp" },
+      { cat: "accesorios", nom: "Gorra Tiger", col: "Camuflada", pNo: "29.189", pSo: "17.513,40", cuo: "4 de $4.378,35", img: "../image/wanamakids/gorratiger.webp" },
+      { cat: "accesorios", nom: "Gorra W Bordo", col: "Roja", pNo: "31.889", pSo: "19.133,40", cuo: "4 de $4.783,35", img: "../image/wanamakids/gorrawbordo.webp" },
+      { cat: "accesorios", nom: "Gorra W Negra", col: "Negra", pNo: "31.889", pSo: "19.133,40", cuo: "4 de $4.783,35", img: "../image/wanamakids/gorrawnegra.webp" },
+      
+      // CAMISAS
+      { cat: "camisas", nom: "Camisa Basic", col: "Blanco", tall: "12", pNo: "69.890", pSo: "41.934", cuo: "4 de $10.483,50", img: "../image/wanamakids/camisabasic.webp" },
+      { cat: "camisas", nom: "Camisa Bluden", col: "Azul", tall: "8, 10, 14", pNo: "94.889", pSo: "56.933,40", cuo: "4 de $14.233,35", img: "../image/wanamakids/camisabluden.webp" },
+      { cat: "camisas", nom: "Camisa Salva", col: "Azul", tall: "4", pNo: "89.888", pSo: "53.932,80", cuo: "4 de $13.483,20", img: "../image/wanamakids/camisasalva.webp" },
+      
+      // CAMPERAS Y BUZOS
+      { cat: "campera", nom: "Buzo Buffy", col: "Verde", tall: "8", pNo: "74.889", pSo: "44.933,40", cuo: "4 de $11.233,35", img: "../image/wanamakids/buzobuffyverde.webp" },
+      { cat: "campera", nom: "Buzo Trucker", col: "Gris", tall: "12, 14", pNo: "79.889", pSo: "47.933,40", cuo: "4 de $11.983,35", img: "../image/wanamakids/buzotruckergris.webp" },
+      { cat: "campera", nom: "Buzo Trucker", col: "Negro", tall: "8", pNo: "79.889", pSo: "47.933,40", cuo: "4 de $11.983,35", img: "../image/wanamakids/buzotruckernegro.webp" },
+      { cat: "campera", nom: "Campera Denim", col: "Azul", tall: "10", pNo: "99.889", pSo: "59.933,40", cuo: "4 de $14.983,35", img: "../image/wanamakids/camperadenimoversize.webp" },
+
+      // PANTALONES
+      { cat: "pantalon", nom: "Jean Polka", col: "Azul", tall: "10", pNo: "109.889", pSo: "65.933,40", cuo: "4 de $16.483,35", img: "../image/wanamakids/jeanpolka.webp" },
+      { cat: "pantalon", nom: "Bermuda Toni", col: "Azul", tall: "12", pNo: "74.889", pSo: "44.933,40", cuo: "4 de $11.233,35", img: "../image/wanamakids/bermudatoni.webp" },
+      { cat: "pantalon", nom: "Short Bloson", col: "Estampado", tall: "14", pNo: "89.888", pSo: "53.932,80", cuo: "4 de $13.483,20", img: "../image/wanamakids/shortbloson.webp" },
+
+      // REMERAS
+      { cat: "remeras", nom: "Remera Stones", col: "Beige", tall: "14", pNo: "55.889,00", pSo: "33.533,40", cuo: "4 de $8.383,35", img: "../image/wanamakids/remerabillbeige.webp" },
+      { cat: "remeras", nom: "Remera Stones", col: "Gris", tall: "6", pNo: "55.889,00", pSo: "33.533,40", cuo: "4 de $8.383,35", img: "../image/wanamakids/remerabillgris.webp" },
+      { cat: "remeras", nom: "Remera Cassie", col: "Blanca", tall: "6", pNo: "45.889,00", pSo: "27.533,40", cuo: "4 de $6.883,35", img: "../image/wanamakids/remeracassiebco.webp" },
+      { cat: "remeras", nom: "Remera Cassie", col: "Lila", tall: "6", pNo: "45.889,00", pSo: "27.533,40", cuo: "4 de $6.883,35", img: "../image/wanamakids/remeracassielila.webp" },
+      { cat: "remeras", nom: "Remera City", col: "Fucsia", tall: "6", pNo: "39.889,00", pSo: "23.933,40", cuo: "4 de $5.983,35", img: "../image/wanamakids/remeracityfucsia.webp" },
+      { cat: "remeras", nom: "Remera City", col: "Verde", tall: "4 y 6", pNo: "39.889,00", pSo: "23.933,40", cuo: "4 de $5.983,35", img: "../image/wanamakids/remeracityverde.webp" },
+      { cat: "remeras", nom: "Remera", col: "Camel", tall: "10 y 14", pNo: "45.889,00", pSo: "27.533,40", cuo: "4 de $6.883,35", img: "../image/wanamakids/remeraloudcamel.webp" },
+      { cat: "remeras", nom: "Remera Estampa", col: "Crudo", tall: "6", pNo: "45.889,00", pSo: "27.533,40", cuo: "4 de $6.883,35", img: "../image/wanamakids/remeramonte.webp" },
+      { cat: "remeras", nom: "Remera Originals", col: "Blanca", tall: "8", pNo: "49.890,00", pSo: "29.934,00", cuo: "4 de $7.483,50", img: "../image/wanamakids/remeraoribca.webp" },
+      { cat: "remeras", nom: "Remera Silver", col: "Beige", tall: "6", pNo: "59.889,00", pSo: "35.933,40", cuo: "4 de $8.983,35", img: "../image/wanamakids/remerasilverbeige.webp" },
+      { cat: "remeras", nom: "Remera Silver", col: "Negro", tall: "6", pNo: "59.889,00", pSo: "35.933,40", cuo: "4 de $8.983,35", img: "../image/wanamakids/remerasilvernegro.webp" },
+      { cat: "remeras", nom: "Remera Rock", col: "Estampa", tall: "10 y 14", pNo: "39.889,00", pSo: "23.933,40", cuo: "4 de $5.983,35", img: "../image/wanamakids/remerasoulrock.webp" },
+      { cat: "remeras", nom: "Remera Up", col: "Azul", tall: "14", pNo: "39.889,00", pSo: "23.933,40", cuo: "4 de $5.983,35", img: "../image/wanamakids/remeraupazul.webp" },
+      { cat: "remeras", nom: "Remera Up", col: "Natural", tall: "14", pNo: "39.889,00", pSo: "23.933,40", cuo: "4 de $5.983,35", img: "../image/wanamakids/remeraupnatural.webp" },
+      { cat: "remeras", nom: "Remera Basica", col: "Negro", tall: "6 y 8", pNo: "28.889,00", pSo: "17.333,40", cuo: "4 de $4.333,35", img: "../image/wanamakids/remerabasicatalle6y8.jpeg" }
+    ];
+    function renderTienda() {
+      const categorias = ["accesorios", "camisas", "campera", "pantalon", "remeras"];
+      categorias.forEach(cat => {
+        const contenedor = document.querySelector(`#${cat} .row`);
+        const filtrados = productos.filter(p => p.cat === cat);
+        
+        contenedor.innerHTML = filtrados.map(p => `
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card shadow-sm">
+              <span class="badge-discount">40% OFF</span>
+              <div class="img-container">
+                <img src="${p.img}" onclick="openZoom('${p.img}')" loading="lazy">
+              </div>
+              <div class="card-body p-2 p-md-3">
+                <h6 class="card-title fw-bold mb-1" style="font-size: 0.9rem;">${p.nom}</h6>
+                <p class="text-muted mb-2" style="font-size: 0.8rem;">Col: ${p.col} ${p.tall ? '<br>Talles: '+p.tall : ''}</p>
+                <div class="precio-no-socio">$ ${p.pNo}</div>
+                <div class="precio-socio">$ ${p.pSo}</div>
+                <small class="text-secondary" style="font-size: 0.7rem;">${p.cuo}</small>
+                <a href="https://api.whatsapp.com/send?phone=5491139546021&text=Hola!%20Me%20interesa:%20${encodeURIComponent(p.nom + ' ' + p.col)}" 
+                   target="_blank" class="btn-whatsapp-card">
+                  <i class="bi bi-whatsapp"></i> Consultar
+                </a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      });
+    }
+
+    function openZoom(s) { 
+      const l = document.getElementById('lightbox');
+      l.querySelector('img').src = s;
+      l.style.display = 'flex';
+    }
+
+    // Loaders
+    fetch("navbar.html").then(r => r.text()).then(d => document.getElementById("navbar").innerHTML = d);
+    fetch("footer.html").then(r => r.text()).then(d => document.getElementById("footer").innerHTML = d);
+
+    window.onscroll = () => document.getElementById('irArriba').style.display = window.scrollY > 400 ? 'block' : 'none';
+    document.getElementById('irArriba').onclick = () => window.scrollTo({top:0, behavior:'smooth'});
+
+    document.addEventListener('DOMContentLoaded', renderTienda);
+  </script>
+</body>
+</html>

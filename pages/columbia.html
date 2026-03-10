@@ -1,0 +1,532 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Columbia - Mutual La Nación</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  
+
+  <style>
+    body {
+      background-color: #f5f8fa;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Banner */
+    .banner-exclusivo {
+      background: linear-gradient(135deg, #04356c, #0a66c2);
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    /* Ofertas Oficina */
+    .oferta-box {
+      background: #0a66c2;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      border-radius: 12px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 20px 0 40px 0;
+      letter-spacing: 1px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    }
+
+    /* Barra de filtros */
+    .filtros-full {
+      position: relative;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      width: 100%;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      border-bottom: 3px solid #0a66c2;
+    }
+    .filtros-full .btn {
+      margin: 5px;
+      /* text-transform: uppercase; */
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .filtros-full .btn:hover {
+      background: #04356c;
+      color: white;
+      transform: scale(1.05);
+    }
+    .filtros-full .btn.active {
+      background: #0a66c2;
+      color: white;
+    }
+
+    /* Sección títulos */
+    .categoria-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #04356c;
+      /* text-transform: uppercase; */
+      margin-top: 60px;
+      letter-spacing: 1px;
+      border-left: 6px solid #0a66c2;
+      padding-left: 12px;
+
+    }
+
+    /* Cards */
+    .card {
+      height: 100%;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
+    }
+    .card img {
+      height: 260px;
+      object-fit: cover;
+      transition: transform .4s ease;
+    border-radius: 6px;
+    }
+    .card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+    .card-body {
+      background: white;
+      padding: 20px;
+    }
+    .card-title {
+    min-height: 48px;
+    }
+
+    /* Precios */
+    .precio-no-socio {
+      color: #6c757d;
+      text-decoration: line-through;
+      font-size: 0.9rem;
+    }
+    .precio-socio {
+      color: #0a66c2;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-top: -8px;
+    }
+    
+    .card-body p {
+    margin-bottom: 6px;
+    }
+
+    /* Botón ir arriba */
+    .ir-arriba {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      background-color: #0a66c2;
+      color: white;
+      border-radius: 50%;
+      padding: 12px 15px;
+      font-size: 1.8rem;
+      display: none;
+      z-index: 999;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform .3s;
+    }
+    .ir-arriba:hover {
+      transform: scale(1.15);
+    }
+
+    /* Lightbox para zoom */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      cursor: pointer;
+      
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .badge-discount {
+          position: absolute;
+          top: 2px;
+          left: 12px;
+          background-color: #ff6b6b;
+          color: white;
+          padding: 6px 10px;
+          font-size: 0.75rem;
+          font-weight: bold;
+          border-radius: 8px;
+        }
+  </style>
+</head>
+<body>
+
+
+<div id="navbar" class="sticky-top"></div>
+
+    <script>
+      fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("navbar").innerHTML = data;
+
+          // Mover aquí el contenido de navbar.js
+          const menuToggle = document.getElementById("menu-toggle");
+          const menu = document.getElementById("menu");
+          const menuClose = document.getElementById("menu-close");
+
+          if (menuToggle && menu && menuClose) {
+            menuToggle.addEventListener("click", function () {
+              menu.classList.toggle("active");
+            });
+
+            menuClose.addEventListener("click", function () {
+              menu.classList.remove("active");
+            });
+          }
+
+          // Smooth scroll
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+              });
+            });
+          });
+        });
+    </script>
+     
+
+
+  <!-- BANNER -->
+  <div class="banner-exclusivo">
+    Productos Exclusivos Columbia
+        <div style="font-size:1.1rem; font-weight:300; margin-top:8px;">
+        Venta especial en La Mutual – ¡Stock Limitado! <br>
+        </div>
+  </div>
+  
+
+  <!-- OFERTAS EXCLUSIVAS -->
+  <div class="container">
+    <div class="oferta-box">
+  🔥 <span class="fw-bold text-warning">35% + 35% de descuento en 6 cuotas <br>
+    Llevate tu producto con tk de cambio hasta el 10-01-2026</span>
+    </div>
+  </div>
+
+  <!-- BARRA DE FILTROS ADAPTATIVA -->
+  <div class="filtros-full">
+    <div class="d-flex justify-content-center flex-wrap py-3">
+      <!-- Desktop -->
+      <div class="d-none d-md-flex flex-wrap justify-content-center">
+        <a href="#camperas" class="btn btn-outline-primary mx-2">Camperas</a>
+        <a href="#gorras" class="btn btn-outline-primary mx-2">Gorras</a>
+        <a href="#mochilas" class="btn btn-outline-primary mx-2">Mochilas</a>
+        <a href="#remeras" class="btn btn-outline-primary mx-2">Remeras</a>
+        
+      </div>
+      <!-- Mobile -->
+      <div class="d-md-none w-100 px-3">
+        <select class="form-select" id="filtroMobile">
+          <option value="">Selecciona categoría</option>
+          <option value="#camperas">Camperas</option>
+          <option value="#gorras">Gorras</option>
+          <option value="#mochilas">Mochilas</option>
+          <option value="#remeras">Remeras</option>
+        
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIONES DE PRODUCTOS -->
+
+
+  <section id="camperas" class="container">
+    <h2 class="categoria-title">Camperas</h2>
+    <div class="row g-4 mt-2">
+       
+       <div class="col-md-4">
+        <div class="card shadow">
+          <span class="badge-discount">35%+35% OFF</span>
+          <img src="../image/columbia/AVENAL GREEN talle S y M nexxt.webp" class="zoomable">
+          <div class="card-body">
+            <h5 class="card-title">Campera Nexxt<br>Mujer </h5>
+            <p>Color: Verde<br>Talle M</p>
+            <p class="precio-no-socio">$ 135.680,00 <br>
+            <span style="color: red;">$ 88.192,00</span></p>
+            <p class="precio-socio">$ 57.324,80 <br>6 cuotas de $ 9.554,13</p>
+          </div>
+        </div>
+      </div>
+
+        <div class="col-md-4">
+        <div class="card shadow">
+            <span class="badge-discount">35%+35% OFF</span>
+          <img src="../image/columbia/labyrinth loop talleS columbia.webp" class="zoomable">
+          <div class="card-body">
+            <h5 class="card-title">Campera Columbia  <br>Mujer </h5>
+            <p>Color: Negro <br>Talle S</p>
+            <p class="precio-no-socio">$ 585.580,00 <br>
+            <span style="color: red;">$ 380.627,00</span></p>
+            <p class="precio-socio">$ 247.407,55 <br>6 cuotas de $ 41.234,59</p>
+          </div>
+        </div>
+      </div>
+ 
+     
+
+    </div>
+  </section>  
+
+  <section id="gorras" class="container">
+    <h2 class="categoria-title">Gorras</h2>
+    <div class="row g-4 mt-2">
+
+      <div class="col-md-4">
+        <div class="card shadow">
+            <span class="badge-discount">35%+35% OFF</span>
+          <img src="../image/columbia/gorra.webp" class="zoomable">
+          <div class="card-body">
+            <h5 class="card-title">Gorra </h5>
+            <p>Color: Marrón </p>
+            <p class="precio-no-socio">$ 90.730,00 <br>
+            <span style="color: red;"> $ 58.974,50</span></p>
+            <p class="precio-socio">$ 38.333,43 <br>6 cuotas de $ 6.388,90</p>
+          </div>
+        </div>
+      </div>
+       
+      <div class="col-md-4">
+        <div class="card shadow">
+            <span class="badge-discount">35%+35% OFF</span>
+          <img src="../image/columbia/gorra2.webp" class="zoomable">
+          <div class="card-body">
+            <h5 class="card-title">Gorra </h5>
+            <p>Color: Azul   
+            <p class="precio-no-socio">$ 90.730,00 <br>
+            <span style="color: red;"> $ 58.974,50</span></p>
+            <p class="precio-socio">$ 38.333,43 <br>6 cuotas de $ 6.388,90</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+   
+
+  <section id="mochilas" class="container">
+    <h2 class="categoria-title">Mochilas</h2>
+    <div class="row g-4 mt-2">
+
+    
+      <div class="col-md-4">
+        <div class="card shadow">
+            <span class="badge-discount">35%+35% OFF</span>
+          <img src="../image/columbia/Mochila Atlas Explorer Backpack.webp" class="zoomable">
+          <div class="card-body">
+            <h5 class="card-title">Mochila Columbia</h5>
+            <p>Color: Gris/Negro</p>
+            <p class="precio-no-socio">$ 135.140,00 <br>
+            <span style="color: red;"> $ 87.841,00</span></p>
+            <p class="precio-socio">$ 57.096,65 <br>6 cuotas de $ 9.516,10</p>
+          </div>
+        </div>
+      </div>
+ 
+
+      <div class="col-md-4">
+        <div class="card shadow">
+            <span class="badge-discount">35%+35% OFF</span>
+          <img src="../image/columbia/mochila dakine 365.webp" class="zoomable">
+          <div class="card-body">
+            <h5 class="card-title">Mochila 365 Backpack </h5>
+            <p>Color: Floral</p>
+            <p class="precio-no-socio">$ 169.000,00 <br>
+            <span style="color: red;"> $ 109.850,00</span></p>
+            <p class="precio-socio">$ 71.402,50 <br>6 cuotas de $ 11.900,42</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow">
+            <span class="badge-discount">35%+35% OFF</span>
+          <img src="../image/columbia/mochila columbia zig zag.webp" class="zoomable">
+          <div class="card-body">
+            <h5 class="card-title">Mochila Columbia </h5>
+            <p>Color: Negro</p>
+            <p class="precio-no-socio">$ 154.190,00 <br>
+            <span style="color: red;">$ 100.223,50</span></p>
+            <p class="precio-socio">$ 65.145,28 <br>6 cuotas de $ 10.857,55</p>
+          </div>
+        </div>
+      </div>    
+ 
+      <div class="col-md-4">
+        <div class="card shadow">
+            <span class="badge-discount">35%+35% OFF</span>
+          <img src="../image/columbia/mochila nexxt flicker.webp" class="zoomable">
+          <div class="card-body">
+            <h5 class="card-title">Mochila Nexxt </h5>
+            <p>Color: Steel/Black</p>
+            <p class="precio-no-socio">$ 101.650 <br>
+            <span style="color: red;"> $ 66.072,50</span></p>
+            <p class="precio-socio">$ 42.947,13 <br>6 cuotas de $ 7.157,85</p>
+          </div>
+        </div>
+      </div>
+
+    
+
+    </div>
+  </section>
+
+
+  <section id="remeras" class="container">
+    <h2 class="categoria-title">Remeras</h2>
+    <div class="row g-4 mt-2">
+
+     
+     <div class="col-md-4">
+        <div class="card shadow">
+            <span class="badge-discount">35%+35% OFF</span>
+          <img src="../image/columbia/Remera Crew Tee Terrain talle M XL.webp" class="zoomable">
+          <div class="card-body">
+            <h5 class="card-title">Nexxt</h5>
+            <p>Color: Crudo<br>Talle XL</p>
+            <p class="precio-no-socio">$ 44.330,00 <br>
+            <span style="color: red;"> $ 28.814,50</span></p>
+            <p class="precio-socio">$ 18.729,43 <br>6 cuotas de $ 3.121,57</p>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="col-md-4">
+        <div class="card shadow">
+            <span class="badge-discount">35%+35% OFF</span>
+          <img src="../image/columbia/Polo talle L.jpg" class="zoomable">
+          <div class="card-body">
+            <h5 class="card-title">Polo Mountain</h5>
+            <p>Color: Bordó<br>Talle L</p>
+            <p class="precio-no-socio">$ 155.410,00 <br>
+            <span style="color: red;"> $ 101.016,50</span></p>
+            <p class="precio-socio">$ 65.660,73 <br>6 cuotas de $ 10.943,45</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+
+
+
+  <!-- IR ARRIBA -->
+  <div class="ir-arriba" id="irArriba">
+    <i class="bi bi-chevron-up"></i>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Imagen ampliada">
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Botón ir arriba
+    const irArriba = document.getElementById('irArriba');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 400) {
+        irArriba.style.display = 'block';
+      } else {
+        irArriba.style.display = 'none';
+      }
+    });
+    irArriba.addEventListener('click', () => {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+    // Efecto activo de los filtros
+    const filtros = document.querySelectorAll('.filtros-full .btn');
+    filtros.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filtros.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Scroll al seleccionar categoría en móvil
+    const filtroMobile = document.getElementById('filtroMobile');
+    filtroMobile.addEventListener('change', () => {
+      const value = filtroMobile.value;
+      if (value) {
+        const seccion = document.querySelector(value);
+        if (seccion) {
+          seccion.scrollIntoView({behavior: 'smooth'});
+        }
+      }
+    });
+
+    // Lightbox zoom
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+  </script>
+
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+
+
+
+</body>
+</html>

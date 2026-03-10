@@ -1,2239 +1,295 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- SEO -->
-        <title>Indumentaria</title>
-        <meta name="keywords" content="mutual">
-        <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
-        <!-- Whatsapp -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
-        <!-- BOOTSTRAP -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <!-- pone el logo en la pestana -->
-        <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../style/style.css">
-        <link rel="canonical" href="https://www.lnmutual.com.ar/tienda.html">              
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indumentaria | Mutual La Nación</title>
+    <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
+    <!-- Whatsapp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- pone el logo en la pestana -->
+    <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
     
     <style>
-      .card {
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      transition: all 0.3s ease-in-out;
-      background: linear-gradient(to bottom, #ffffff, #f9f9f9);
-      font-family: 'Segoe UI', sans-serif;
-    }
- 
-    
-    .card img {
-      padding: 10px;
-      max-height: 400px;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-      cursor: zoom-in; /* 👈 cambia el puntero a "+" */
-    
-    }
-    
-    
-    .card h5 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      color: #333;
+        :root {
+            --primary: #2b319f;
+            --primary-dark: #161a5e;
+            --accent: #ff6b6b;
+            --socio: #129c00;
+            --bg-light: #f0f2f5;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: #333;
+            margin: 0;
+        }
+
+        /* --- HEADER: BLANCO CON LETRAS NEGRAS --- */
+        .page-header {
+            padding: 10px 0 30px 0;
+            background-color: #ffffff; /* Fondo blanco */
+            color: #000000; /* Letras negras */
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -1.5px; }
         
-    }
-    
-    .card-body {
-      padding: 1.25rem;
-      background-color: #fff;
-    }
-    
-    .card .badge {
-      background-color: #ff3366;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.35em 0.7em;
-      border-radius: 1rem;
-    }
-    
-    .card .card-actions {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .card .btn-primary {
-      background-color: #0066cc;
-      border: none;
-      padding: 8px 14px;
-      font-size: 0.9rem;
-      border-radius: 6px;
-      transition: 0.3s ease;
-    }
-    
-    .card .btn-primary:hover {
-      background-color: #004c99;
-      transform: scale(1.05);
-    }
-    
-    .price-section {
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-    
-    .price-section span {
-      display: block;
-    }
-    .price-box {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 12px;
-  font-size: 0.95rem;
-}
+        .header-description {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
 
-.label-socio {
-  color: #129c00;
-  font-weight: bold;
-}
+        /* --- BUSCADOR --- */
+        .search-container {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            padding: 10px;
+            border-radius: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* Tu sombra original */
+            position: relative;
+            z-index: 10;
+        }
 
-.price-socio {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #129c00;
-}
+        .search-wrapper { position: relative; flex-grow: 1; }
 
-.label-nosocio {
-  color: #2b319f;
-  font-weight: bold;
-}
+        .search-input {
+            width: 100%;
+            border: none;
+            padding: 15px 20px 15px 55px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            outline: none;
+        }
 
-.price-nosocio {
-  font-size: 1.05rem;
-  color: #2b319f;
-}
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
 
-.cuotas {
-  font-size: 0.85rem;
-  color: #555;
-} 
-     
-    .badge-discount {
-          position: absolute;
-          top: 12px;
-          left: 12px;
-          background-color: #dc2727;
-          color: white;
-          padding: 6px 10px;
-          font-size: 0.85rem;
-          font-weight: bold;
-          border-radius: 8px;
-    } 
-   /* Fondo oscuro al hacer zoom */
-.image-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
+        .search-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
 
-/* Imagen centrada en pantalla */
-.image-overlay img {
-  max-width: 90%;
-  max-height: 90%;
-  transition: transform 0.3s ease-in-out;
-  border-radius: 10px;
-  cursor: zoom-out;
-}
-.card-img-top {
-  height: 250px;       /* 👈 todas las imágenes tendrán esta altura */
-  object-fit: contain; /* 👈 ajusta la imagen sin deformarla */
-  background-color: #f8f9fa; /* 👈 opcional, fondo gris clarito detrás */
-  padding: 10px;
-}
+        /* --- CARDS ORIGINALES --- */
+        .product-card {
+            background: white;
+            border: none;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-</style>
-            
-<body >
-  <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
-    <!-- Ícono de WhatsApp -->
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  
+        .product-card:hover { transform: translateY(-10px); }
 
-  
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const overlay = document.getElementById("imageOverlay");
-      const zoomedImage = document.getElementById("zoomedImage");
-  
-      // Al hacer clic en la imagen de la card
-      document.querySelectorAll(".zoomable").forEach(img => {
-        img.addEventListener("click", () => {
-          zoomedImage.src = img.src;
-          overlay.style.display = "flex";
-        });
-      });
-  
-      // Cerrar al hacer clic en la imagen ampliada
-      overlay.addEventListener("click", () => {
-        overlay.style.display = "none";
-      });
-    });
-  </script>
-  
-  <section class="py-4"> 
-    <div class="container px-lg-2">
-        <div class="row gx-4 gx-lg-3 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center">
-          
+        .img-container {
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            cursor: zoom-in;
+        }
 
+        .img-container img { max-height: 100%; max-width: 100%; object-fit: contain; }
 
-          
-          <!-- ROPA GERMAN -->
+        .product-info { padding: 20px; text-align: center; flex-grow: 1; }
+        
+        .price-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 10px;
+        }
 
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251108_132537.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Cardigan 
-                      <br> Hilo
-                    </h5> Talle: U<br>  
-                    Color: azul marino
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 44.000,00 </span><br> 4 cuotas de <br> $ 11.000,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 52.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251108_132703.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Sweater 
-                      <br> Lurex
-                    </h5> Talle: U<br>  
-                    Color: negro
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 41.500,00 </span><br> 4 cuotas de <br> $ 10.375,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 48.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251108_133133.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Palazzo 
-                    </h5> Talle: 2<br>  
-                    Color: cemento
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 42.600,00 </span><br> 4 cuotas de <br> $ 10.650,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 51.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20250927_132639.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Musculosa 
-                      <br> c/bordado 
-                    </h5> Talle: U<br>  
-                    Color: negro/crudo
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 34.500,00 </span><br> 4 cuotas de <br> $ 8.625,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 42.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251031_115024.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Top 
-                      <br> Lino
-                    </h5> Talle: M/L<br>  
-                    Color: natural
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 32.900,00 </span><br> 4 cuotas de <br> $ 8.225,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 38.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251031_115324.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Blusa  
-                      <br> Broderie
-                    </h5> Talle: L<br>  
-                    Color: natural
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 36.900,00 </span><br> 4 cuotas de <br> $ 9.225,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 43.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251031_115428.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Short 
-                      <br> Lino c/gipure 
-                    </h5> Talle: M/L<br>  
-                    Color: natural
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 34.900,00 </span><br> 4 cuotas de <br> $ 8.725,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 41.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251031_120823.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Palazzo  
-                      <br> Jaspeado
-                    </h5> Talle: 3<br>  
-                    Color: blanco
-                    <br><hr> 
-                    <!-- Product price--> 
-                      <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 42.600,00 </span><br> 4 cuotas de <br> $ 10.650,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 48.000,00    </span>  
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251031_121735.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Palazzo  
-                      <br> Jaspeado
-                    </h5> Talle: 4<br>  
-                    Color: negro
-                    <br><hr> 
-                    <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 42.600,00 </span><br> 4 cuotas de <br> $ 10.650,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 48.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251031_154201.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera 
-                      <br> Tejida crochet 
-                    </h5> Talle: U<br>  
-                    Color: crudo
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 29.900,00 </span><br> 4 cuotas de <br> $ 7.475,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 35.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251025_145106.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Camisa 
-                      <br> Crop
-                    </h5> Talle: L<br>  
-                    Color: negro
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 27.600,00 </span><br> 4 cuotas de <br> $ 6.900,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 33.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251028_171117.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Camisa  
-                      <br> Broderie
-                    </h5> Talle: L<br>
-                    Color: blanco
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 41.500,00 </span><br> 4 cuotas de <br> $ 10.375,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 48.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251028_183205.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Musculosa 
-                      <br> Deportiva
-                    </h5> Talle: 2<br>
-                    Color: chocolate
-                    <br><hr> 
-                    <!-- Product price--> 
-                      <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 11.500,00 </span><br> 4 cuotas de <br> $ 2.875,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 17.000,00    </span>  
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251028_192123.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                     <!-- Product name-->  
-                    <h5 class="fw-bolder ">Musculosa 
-                      <br> Deportiva
-                    </h5> Talle: 3<br>
-                    Color: blanco
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 11.500,00 </span><br> 4 cuotas de <br> $ 2.875,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 17.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251028_195234.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                     <!-- Product name-->  
-                    <h5 class="fw-bolder ">Musculosa 
-                      <br> Deportiva
-                    </h5> Talle: 3<br>
-                    Color: beige
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 11.500,00 </span><br> 4 cuotas de <br> $ 2.875,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 17.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251028_195341.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                     <!-- Product name-->  
-                    <h5 class="fw-bolder ">Musculosa 
-                      <br> Deportiva
-                    </h5> Talle: 2-4<br>
-                    Color: negro
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 11.500,00 </span><br> 4 cuotas de <br> $ 2.875,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 17.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251028_164057.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                   <!-- Product name-->  
-                    <h5 class="fw-bolder ">Camisa 
-                      <br> Crop
-                    </h5> Talle: M<br>  
-                    Color: blanco/gris
-                    <br><hr> 
-                    <!-- Product price--> 
-                      <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 27.600,00 </span><br> 4 cuotas de <br> $ 6.900,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 33.000,00    </span>   
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251028_164719.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Musculosa 
-                      <br> Crochet
-                    </h5> Talle: U<br>
-                    Color: natural
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 25.500,00 </span><br> 4 cuotas de <br> $ 6.375,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 32.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251028_165612.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Blusa
-                      <br> Seda
-                    </h5> Talle: XL<br>
-                    Color: blanco
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 32.500,00 </span><br> 4 cuotas de <br> $ 8.125,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 40.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251028_170259.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Sweater 
-                      <br> Lurex
-                    </h5> Talle: U<br>
-                    Color: dorado
-                    <br><hr> 
-                    <p style="color: red;"><b>Sin stock</b></p>
-                   <!-- Product price--> 
-                    <!-- <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 41.500,00 </span><br> 4 cuotas de <br> $ 10.375,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 47.000,00    </span> -->
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251011_141841.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Chaleco 
-                      <br> Tejido
-                    </h5> Talle: U<br>
-                    Color: negro/natural
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 34.900,00 </span><br> 4 cuotas de <br> $ 8.725,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 40.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251011_142121.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Falda 
-                      <br> Mini tejida
-                    </h5> Talle: U<br>
-                    Color: negro/natural
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 32.800,00 </span><br> 4 cuotas de <br> $ 8.200,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 38.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251025_144207.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Blusa 
-                      <br> Broderie
-                    </h5> Talle: XL<br>
-                    Color: blanco
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 39.100,00 </span><br> 4 cuotas de <br> $ 9.775,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 45.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251025_144615.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Chaleco 
-                      <br> Crochet
-                    </h5> Talle: U<br>
-                    Color: natural
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 31.200,00 </span><br> 4 cuotas de <br> $ 7.800,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 37.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251025_144954.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera 
-                      <br> Algodón
-                    </h5> Talle: L<br>
-                    Color: blanco
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 32.900,00 </span><br> 4 cuotas de <br> $ 8.225,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 39.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251025_145446.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Saquito 
-                      <br> Corto encaje
-                    </h5> Talle: U<br>
-                    Color: negro
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 31.900,00 </span><br> 4 cuotas de <br> $ 7.975,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 38.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251025_150432.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Pollera 
-                      <br> C/puntilla
-                    </h5> Talle: U<br>
-                    Color: chocolate
-                    <br><hr> 
-                   <!-- Product price--> 
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 52.900,00 </span><br> 4 cuotas de <br> $ 13.225,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 59.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-              
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251015_172333.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Falda  
-                      <br> Broderie
-                    </h5> Talle: L<br>
-                    Color: negro
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 46.000,00 </span><br> 4 cuotas de <br> $ 11.500,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 51.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-              
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251011_142235.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Media   
-                      <br> Polera
-                    </h5> Talle: U<br>
-                    Color: natural
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 9.900,00 </span><br> 4 cuotas de <br> $ 2.475,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 15.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251011_142427.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Media   
-                      <br> Polera
-                    </h5> Talle: U<br>
-                    Color: zuela
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 9.900,00 </span><br> 4 cuotas de <br> $ 2.475,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 15.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251008_170606.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Blusa  
-                      <br> Manga globo
-                    </h5> Talle: L<br>
-                    Color: negro
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 29.500,00 </span><br> 4 cuotas de <br> $ 7.375,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 35.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-               
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251008_174047.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Short
-                      <br>Lino
-                    </h5> Talle: L<br>
-                    Color: DDL
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 16.900,00 </span><br> 4 cuotas de <br> $ 4.225,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 25.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251008_174345.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Camisa
-                      <br> Lino s/mangas
-                    </h5> Talle: L<br>
-                    Color: negro
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 19.900,00 </span><br> 4 cuotas de <br> $ 4.975,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 25.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251008_175108.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Blusa  
-                      <br>S/mangas
-                    </h5> Talle: M<br>
-                    Color: blanca/rojo
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 13.600,00 </span><br> 4 cuotas de <br> $ 3.400,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 19.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251008_180009.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Blusa  
-                      <br>S/mangas
-                    </h5> Talle: L<br>
-                    Color: amarillo
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 13.600,00 </span><br> 4 cuotas de <br> $ 3.400,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 19.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251008_180216.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Blusa  
-                      <br>S/mangas
-                    </h5> Talle: L<br>
-                    Color: celeste
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 13.600,00 </span><br> 4 cuotas de <br> $ 3.400,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 19.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-              
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251003_154808.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Palazzo  
-                      <br> Midi
-                    </h5> Talle: M<br>
-                    Color: blanco
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 41.400,00 </span><br> 4 cuotas de <br> $ 10.350,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 48.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251003_155030.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera 
-                      <br> Estampada
-                    </h5> Talle: L<br>
-                    Color: azul navy
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 21.300,00 </span><br> 4 cuotas de <br> $ 5.325,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 28.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251003_155156.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera  
-                      <br> Estampada 
-                    </h5> Talle: L<br>
-                    Color: natural
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 17.800,00 </span><br> 4 cuotas de <br> $ 4.450,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 25.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20251003_155555.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera 
-                      <br> Estampada 
-                    </h5> Talle: L<br>
-                    Color: natural
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 16.500,00 </span><br> 4 cuotas de <br> $ 4.125,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 21.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-             
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20250927_131903.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Short
-                      <br> Lino Cotton
-                    </h5> Talle: M<br>
-                    Color: chocolate
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 19.790,00 </span><br> 4 cuotas de <br> $ 4.947,50 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 25.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-              
-             
-          <div class="col mb-5">
-            <div class="card h-100  ">
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/20250927_132948.jpg"/> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Chaleco 
-                      <br> Largo Gipiure
-                    </h5> Talle: U<br>
-                    Color: natural
-                    <br><hr> 
-                   <!-- Product price-->
-                    <span style="color: rgb(18, 156, 0);"><b> Valor Socio</b> <br> 
-                      $ 41.500,00 </span><br> 4 cuotas de <br> $ 10.375,00 <br><hr>
-                  <span style="color: rgb(43, 49, 159);"><b> Valor NO Socio</b> <br>
-                   $ 48.000,00    </span>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-             
-            
-   
-          <!-- REMERAS GIRARD -->     
+        .price-socio { color: var(--socio); font-weight: 800; font-size: 1xrem; display: block; }
+        .price-nosocio { color: var(--primary); font-weight: 700; font-size: 0.9rem; display: block; opacity: 0.8; }
+        
+        /* --- ZOOM OVERLAY --- */
+        .image-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none; justify-content: center; align-items: center;
+            z-index: 10000; cursor: zoom-out;
+        }
+        .image-overlay img { max-width: 90%; max-height: 90%; border-radius: 10px; }
 
-          
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-46.jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                     <!-- Product name-->  
-                     <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-    
-                    <div> 
-                    </div>        
-                   </div>
+        .whatsapp-icon {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 999; text-decoration: none;
+        }
+        .btn-whatsapp-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+
+        .btn-whatsapp-card:hover {
+            background-color: #128c7e;
+            color: white;
+        }
+
+        /* Ajuste para que el info-box no empuje el botón fuera de la card */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+<div id="navbar" class="sticky-top"></div>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="header-title">Indumentaria</h1>
+            <p class="header-description">Prendas seleccionadas con beneficios exclusivos para nuestros asociados.</p>
+
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="buscador" class="search-input" placeholder="Buscá por nombre, color o talle...">
                 </div>
+                <button class="search-btn">BUSCAR</button>
             </div>
-          </div>
-          
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-47.jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                     <!-- Product name-->  
-                     <h5 class="fw-bolder ">Remera <br>Estampada
-                     </h5> 
-                       Talle consultar
-                       <br><hr> 
-                     <div class="price-box text-center mt-3">
-                       <div class="socio mb-2">
-                         <span class="label-socio">Valor Socio</span><br>
-                         <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                         <span class="price-socio">$ 30.000,00</span><br>
-                         <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                       </div>
-                       <hr>
-                       <div class="no-socio">
-                         <span class="label-nosocio">Valor NO Socio</span><br>
-                         <span class="price-nosocio">$ 42.000,00</span>
-                       </div>
-                      </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-          
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-47[1].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-          
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-48.jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                     <!-- Product name-->  
-                     <!-- Product name-->  
-                     <h5 class="fw-bolder ">Remera <br>Estampada
-                     </h5> 
-                       Talle consultar
-                       <br><hr> 
-                     <div class="price-box text-center mt-3">
-                       <div class="socio mb-2">
-                         <span class="label-socio">Valor Socio</span><br>
-                         <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                         <span class="price-socio">$ 30.000,00</span><br>
-                         <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                       </div>
-                       <hr>
-                       <div class="no-socio">
-                         <span class="label-nosocio">Valor NO Socio</span><br>
-                         <span class="price-nosocio">$ 42.000,00</span>
-                       </div>
-                      </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-          
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-48[1].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                     <!-- Product name-->  
-                     <h5 class="fw-bolder ">Remera <br>Estampada
-                     </h5> 
-                       Talle consultar
-                       <br><hr> 
-                     <div class="price-box text-center mt-3">
-                       <div class="socio mb-2">
-                         <span class="label-socio">Valor Socio</span><br>
-                         <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                         <span class="price-socio">$ 30.000,00</span><br>
-                         <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                       </div>
-                       <hr>
-                       <div class="no-socio">
-                         <span class="label-nosocio">Valor NO Socio</span><br>
-                         <span class="price-nosocio">$ 42.000,00</span>
-                       </div>
-                      </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-          
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-48[2].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-49.jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-49[1].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                   <!-- Product name-->  
-                   <h5 class="fw-bolder ">Remera <br>Estampada
-                   </h5> 
-                     Talle consultar
-                     <br><hr> 
-                   <div class="price-box text-center mt-3">
-                     <div class="socio mb-2">
-                       <span class="label-socio">Valor Socio</span><br>
-                       <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                       <span class="price-socio">$ 30.000,00</span><br>
-                       <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                     </div>
-                     <hr>
-                     <div class="no-socio">
-                       <span class="label-nosocio">Valor NO Socio</span><br>
-                       <span class="price-nosocio">$ 42.000,00</span>
-                     </div>
-                    </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-49[2].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                     <!-- Product name-->  
-                     <h5 class="fw-bolder ">Remera <br>Estampada
-                     </h5> 
-                       Talle consultar
-                       <br><hr> 
-                     <div class="price-box text-center mt-3">
-                       <div class="socio mb-2">
-                         <span class="label-socio">Valor Socio</span><br>
-                         <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                         <span class="price-socio">$ 30.000,00</span><br>
-                         <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                       </div>
-                       <hr>
-                       <div class="no-socio">
-                         <span class="label-nosocio">Valor NO Socio</span><br>
-                         <span class="price-nosocio">$ 42.000,00</span>
-                       </div>
-                      </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-50.jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-50[1].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-50[2].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-51.jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-51[1].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                   <!-- Product name-->  
-                   <h5 class="fw-bolder ">Remera <br>Estampada
-                   </h5> 
-                     Talle consultar
-                     <br><hr> 
-                   <div class="price-box text-center mt-3">
-                     <div class="socio mb-2">
-                       <span class="label-socio">Valor Socio</span><br>
-                       <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                       <span class="price-socio">$ 30.000,00</span><br>
-                       <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                     </div>
-                     <hr>
-                     <div class="no-socio">
-                       <span class="label-nosocio">Valor NO Socio</span><br>
-                       <span class="price-nosocio">$ 42.000,00</span>
-                     </div>
-                    </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-52.jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-52[1].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-53.jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-53[1].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                     <!-- Product name-->  
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-53[2].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-54.jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-54[1].jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">25% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/tienda/Remera/PHOTO-2025-05-13-14-34-55.jpg"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  "> 
-                    <!-- Product name-->  
-                    <h5 class="fw-bolder ">Remera <br>Estampada
-                    </h5> 
-                      Talle consultar
-                      <br><hr> 
-                    <div class="price-box text-center mt-3">
-                      <div class="socio mb-2">
-                        <span class="label-socio">Valor Socio</span><br>
-                        <span class="text-decoration-line-through text-muted">$ 40.000,00</span><br>
-                        <span class="price-socio">$ 30.000,00</span><br>
-                        <small class="cuotas">4 cuotas de $ 7.500,00</small>
-                      </div>
-                      <hr>
-                      <div class="no-socio">
-                        <span class="label-nosocio">Valor NO Socio</span><br>
-                        <span class="price-nosocio">$ 42.000,00</span>
-                      </div>
-                     </div>
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-  
-
-          <!-- RUM RUM -->     
-
-         
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">40% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/rumrum/pantalonsilvitocorderoyazulmarino.png"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  ">
-                      <!-- Product name-->  
-                      <h5 class="fw-bolder ">RUM RUM  
-                        <br></h5>
-                        Pantalón Silvito Gabardina 
-                        <br>
-                      Talle 2<br>Color: azulino<br><hr>
-                      <!-- Product price-->
-                      <span style="color: rgb(1, 21, 108);" ><b> Precio bruto</b> <br>
-                        $ 24.980,00  </span><br> <hr>     
-                        <span style="color: rgb(0, 78, 6);" ><b>Precio c/desc</b> </span><br>
-                        $ 14.988,00 <br>
-                        4 cuotas de <br> $ 3.747.00
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-             <span class="badge-discount">40% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/rumrum/pantalonsilvitocorderoybordo.png"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center">
-                      <!-- Product name-->  
-                      <h5 class="fw-bolder ">RUM RUM  
-                        <br></h5>
-                        Pantalón Silvito Corderoy 
-                        <br>
-                      Talle 4<br>Color: bordó<br><hr>
-                      <!-- Product price-->
-                      <span style="color: rgb(1, 21, 108);" ><b> Precio bruto</b> <br>
-                        $ 19.279,00  </span><br> <hr>     
-                        <span style="color: rgb(0, 78, 6);" ><b>Precio c/desc</b></span> <br>
-                        $ 11.567,53 <br>
-                        4 cuotas de <br> $ 2.891.88
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">40% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/rumrum/pantalonsilvitogabardinaazulmarino.png"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center  ">
-                      <!-- Product name-->  
-                      <h5 class="fw-bolder ">RUM RUM  
-                        <br></h5>
-                        Pantalón Silvito Corderoy 
-                        <br>
-                      Talles 4 y 6<br>Color: negro<br><hr>
-                      <!-- Product price-->
-                      <span style="color: rgb(1, 21, 108);" ><b> Precio bruto</b> <br>
-                        $ 19.279,00  </span><br> <hr>     
-                        <span style="color: rgb(0, 78, 6);" ><b>Precio c/desc</b></span> <br>
-                        $ 11.567,53 <br>
-                        4 cuotas de <br> $ 2.891.88
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-
-          
-          <div class="col mb-5">
-            <div class="card h-100  ">
-              <span class="badge-discount">40% OFF</span>
-                <!-- Product image--> 
-                <img class="card-img-top zoomable" src="../image/rumrum/pantalongabardinaleclercazulmarino.png"  /> 
-                <!-- Product details-->
-                 <div class="card-body ">
-                    <div class="text-center">
-                      <!-- Product name-->  
-                      <h5 class="fw-bolder ">RUM RUM  
-                        <br></h5>
-                        Pantalon Gabardina Leclerc
-                        <br>
-                      Talle 2<br>Color: azulino<br><hr>
-                      <!-- Product price-->
-                      <span style="color: rgb(1, 21, 108);" ><b> Precio bruto</b> <br>
-                        $ 25.980,00  </span><br> <hr>     
-                        <span style="color: rgb(0, 78, 6);" ><b>Precio c/desc</b> </span><br>
-                        $ 15.588,00 <br>
-                        4 cuotas de <br> $ 3.897.00
-                    <div> 
-                    </div>        
-                   </div>
-                </div>
-            </div>
-          </div>
-   
-             
-
-
-
-
-         </div>
         </div>
+    </header>
+
+    <div class="container mb-5">
+        <div class="row g-4" id="contenedor-productos"></div>
     </div>
-</section>
- 
 
-
-<div id="footer"></div>
-<script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer").innerHTML = data;
-    });
-</script>
-
-    <!-- JAVA -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
- 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-    <!-- Contenedor del zoom en pantalla completa -->
     <div class="image-overlay" id="imageOverlay">
-      <img id="zoomedImage" src="" alt="Zoomed image">
+        <img id="zoomedImage" src="" alt="Zoom">
     </div>
-    
-    <div id="navbar"></div>
+
+    <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div id="footer"></div>
+
     <script>
-  fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
+        const productos = [
+            { nombre: "Musculosa Deportiva", talle: "2", color: "Moka", imagen: "../image/tienda/20251028_183205.jpg", precioSocio: "11.500,00", cuotas: "$ 2.875,00", precioNoSocio: "17.000,00", descuento: "" },
+            { nombre: "Musculosa Deportiva", talle: "3", color: "Gris Acero", imagen: "../image/tienda/20260123_133336.jpg", precioSocio: "11.500,00", cuotas: "$ 2.875,00", precioNoSocio: "17.000,00", descuento: "" },
+            { nombre: "Remera Morley", talle: "4", color: "Negro", imagen: "../image/tienda/20260128_163133.jpg", precioSocio: "14.500,00", cuotas: "$ 3.625,00", precioNoSocio: "20.000,00", descuento: "" },
+            { nombre: "Remera Morley", talle: "3", color: "Colorada", imagen: "../image/tienda/20260303_122942.jpg", precioSocio: "14.500,00", cuotas: "$ 3.625,00", precioNoSocio: "20.000,00", descuento: "" },
+            { nombre: "Remera Morley", talle: "3", color: "Pistacho", imagen: "../image/tienda/20260303_123122.jpg", precioSocio: "14.500,00", cuotas: "$ 3.625,00", precioNoSocio: "20.000,00", descuento: "" },
+            { nombre: "Musculosa Cuello alto", talle: "L", color: "Uva", imagen: "../image/tienda/20260303_123321.jpg", precioSocio: "17.300,00", cuotas: "$ 4.325,00", precioNoSocio: "25.000,00", descuento: "" },
+            { nombre: "Sweater Hilo", talle: "U", color: "Natural", imagen: "../image/tienda/20260303_123511.jpg", precioSocio: "43.700,00", cuotas: "$ 10.925,00", precioNoSocio: "51.000,00", descuento: "" },
+            { nombre: "Buzo Rayado", talle: "3", color: "Azul", imagen: "../image/tienda/20260303_123721.jpg", precioSocio: "41.000,00", cuotas: "$ 10.250,00", precioNoSocio: "51.000,00", descuento: "" },
+            { nombre: "Sweater Bremer", talle: "L", color: "Chocolate", imagen: "../image/tienda/20260303_123915.jpg", precioSocio: "41.500,00", cuotas: "$ 10.375,00", precioNoSocio: "51.000,00", descuento: "" },
+            { nombre: "Cardigan Bremer", talle: "U", color: "Pistacho", imagen: "../image/tienda/20260303_124101.jpg", precioSocio: "38.500,00", cuotas: "$ 9.625,00", precioNoSocio: "45.000,00", descuento: "" },
+            { nombre: "Sweater Chomba", talle: "U", color: "Negro", imagen: "../image/tienda/20260303_124403.jpg", precioSocio: "37.500,00", cuotas: "$ 9.375,00", precioNoSocio: "45.000,00", descuento: "" },
+            { nombre: "Sweater Chomba", talle: "U", color: "Beige", imagen: "../image/tienda/20260303_124602.jpg", precioSocio: "37.500,00", cuotas: "$ 9.375,00", precioNoSocio: "45.000,00", descuento: "" },
+            { nombre: "Pantalon Sastrero", talle: "40", color: "Bordo", imagen: "../image/tienda/20260303_124838.jpg", precioSocio: "36.900,00", cuotas: "$ 9.225,00", precioNoSocio: "47.000,00", descuento: "" },
+            { nombre: "Pantalon Sastrero", talle: "38", color: "Gris", imagen: "../image/tienda/20260303_125144.jpg", precioSocio: "41.700,00", cuotas: "$ 10.425,00", precioNoSocio: "51.000,00", descuento: "" },
+           
+           
+            { nombre: "RUM RUM - Pantalón Silvito Gabardina", talle: "2", color: "Azulino", imagen: "../image/rumrum/pantalonsilvitocorderoyazulmarino.png", precioSocio: "14.988,00", cuotas: "$ 3.747,00", precioNoSocio: "24.980,00", descuento: "40% OFF" },
+            { nombre: "RUM RUM - Pantalón Silvito Corderoy", talle: "4", color: "Bordó", imagen: "../image/rumrum/pantalonsilvitocorderoybordo.png", precioSocio: "11.567,53", cuotas: "$ 2.891,88", precioNoSocio: "19.279,00", descuento: "40% OFF" },
+            { nombre: "RUM RUM - Pantalón Silvito Corderoy", talle: "4 y 6", color: "Negro", imagen: "../image/rumrum/pantalonsilvitogabardinaazulmarino.png", precioSocio: "11.567,53", cuotas: "$ 2.891,88", precioNoSocio: "19.279,00", descuento: "40% OFF" },
+            { nombre: "RUM RUM - Pantalón Gabardina Leclerc", talle: "2", color: "Azulino", imagen: "../image/rumrum/pantalongabardinaleclercazulmarino.png", precioSocio: "15.588,00", cuotas: "$ 3.897,00", precioNoSocio: "25.980,00", descuento: "40% OFF" }
+        ];
 
-      // Mover aquí el contenido de navbar.js
-      const menuToggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("menu");
-      const menuClose = document.getElementById("menu-close");
+        function render(lista) {
+            const container = document.getElementById('contenedor-productos');
+            container.innerHTML = '';
+            lista.forEach(p => {
+                container.innerHTML += `
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="product-card">
+                            ${p.descuento ? `<span style="position:absolute;top:15px;left:15px;background:var(--accent);color:white;padding:5px 12px;font-size:0.8rem;font-weight:800;border-radius:50px;z-index:2">${p.descuento}</span>` : ''}
+                            <div class="img-container" onclick="abrirZoom('${p.imagen}')">
+                                <img src="${p.imagen}" alt="${p.nombre}">
+                            </div>
+                            <div class="product-info">
+                                <h5>${p.nombre}</h5>
+                                <small>Talle: ${p.talle} | Color: ${p.color}</small>
+                                <div class="price-box">
+                                    <span style="font-size:0.7rem; font-weight:800; color:var(--socio)">SOCIO</span>
+                                    <span class="price-socio">$ ${p.precioSocio}</span>
+                                    <small class="text-muted">4 cuotas de <br> ${p.cuotas}</small>
+                                    <hr>
+                                    <span style="font-size:0.7rem; font-weight:800; color:var(--primary)">NO SOCIO</span>
+                                    <span class="price-nosocio">$ ${p.precioNoSocio}</span>
+                                    
+                                     <a href="https://api.whatsapp.com/send?phone=5491139546021&text=Hola!%20Me%20interesa%20el%20producto:%20${encodeURIComponent(p.nombre)}%20en%20color%20${p.color}" target="_blank" class="btn-whatsapp-card"> <i class="fab fa-whatsapp"></i> Consultar </a>   
 
-      if (menuToggle && menu && menuClose) {
-        menuToggle.addEventListener("click", function () {
-          menu.classList.toggle("active");
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function abrirZoom(src) {
+            document.getElementById('zoomedImage').src = src;
+            document.getElementById('imageOverlay').style.display = 'flex';
+        }
+
+        document.getElementById('imageOverlay').onclick = function() { this.style.display = 'none'; }
+
+        // BUSCADOR CORREGIDO
+        document.getElementById('buscador').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtrados = productos.filter(p => 
+                p.nombre.toLowerCase().includes(term) || 
+                p.color.toLowerCase().includes(term) ||
+                p.talle.toLowerCase().includes(term)
+            );
+            render(filtrados);
         });
 
-        menuClose.addEventListener("click", function () {
-          menu.classList.remove("active");
-        });
-      }
-
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
-      });
-    });
-</script>
-
-
-
-     
+        window.onload = () => {
+            render(productos); // Esto asegura que carguen al inicio
+            fetch("navbar.html").then(r => r.text()).then(d => document.getElementById("navbar").innerHTML = d);
+            fetch("footer.html").then(r => r.text()).then(d => document.getElementById("footer").innerHTML = d);
+        };
+    </script>
 </body>
 </html>

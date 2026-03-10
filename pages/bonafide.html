@@ -1,32 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- SEO -->
-        <title>Bonafide</title>
-        <meta name="keywords" content="mutual">
-        <meta name="description" content="Mutual del personal de La Nación, productos y servicios con beneficios exclusivos para todos sus empleados">
-        <!-- Whatsapp -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
-        <!-- BOOTSTRAP -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <!-- pone el logo en la pestana -->
-        <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../style/style.css">
-        <link rel="canonical" href="https://www.lnmutual.com.ar/bonafide.html">              
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonafide | Mutual La Nación</title>
+    <!-- pone el logo en la pestana -->
+    <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
+        :root {
+            --primary-color: #0056b3;
+            --success-color: #198754;
+            --discount-bg: #ff6b6b;
+            --card-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        body { font-family: 'Roboto', sans-serif; background-color: #f8f9fa; }
+
+        /* Icono WhatsApp */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-decoration: none;
+        }
+
+        /* Banner */
+        .banner-bonafide img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 0 0 15px 15px;
+        }
+
+        /* Cards Estilizadas */
         .card {
+            border: none;
             border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease-in-out;
-            background: linear-gradient(to bottom, #ffffff, #f9f9f9);
-            font-family: 'Segoe UI', sans-serif;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
         }
 
         .card:hover {
@@ -34,789 +63,286 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
 
-        .card img {
-            padding: 10px;
-            max-height: 200px;
+        .card-img-top {
+            padding: 20px;
+            height: 180px;
             object-fit: contain;
-            transition: transform 0.3s ease;
             cursor: zoom-in;
+            transition: transform 0.3s ease;
         }
 
-    
-        /* Modal de Zoom */
-        .image-overlay {
+        .badge-discount {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: var(--discount-bg);
+            color: white;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 8px;
+            z-index: 10;
+        }
+
+        /* Zoom Overlay */
+        #imageOverlay {
             display: none;
             position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10000;
             justify-content: center;
             align-items: center;
+            backdrop-filter: blur(5px);
             cursor: zoom-out;
         }
 
-        .image-overlay img {
+        #imageOverlay img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 12px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease-in-out;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
         }
-        .badge-discount {
-          position: absolute;
-          top: 12px;
-          left: 12px;
-          background-color: #ff6b6b;
-          color: white;
-          padding: 6px 10px;
-          font-size: 0.85rem;
-          font-weight: bold;
-          border-radius: 8px;
-        }
-        .banner-bonafide img {
-          width: 100%;
-          max-height: 250px; /* antes 400px → ahora más chico */
-          object-fit: cover;
-          border-radius: 12px;
-          box-shadow: 0 6px 25px rgba(0,0,0,0.2);
-        }
-
-
     </style>
+</head>
+<body>
 
+    <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-<body >
-  <a href="https://api.whatsapp.com/send?phone=5491139546021" target="_blank" class="whatsapp-icon" >
-    <!-- Ícono de WhatsApp -->
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  
+<div id="navbar" class="sticky-top"></div>
 
-  
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const overlay = document.getElementById("imageOverlay");
-      const zoomedImage = document.getElementById("zoomedImage");
-  
-      // Al hacer clic en la imagen de la card
-      document.querySelectorAll(".zoomable").forEach(img => {
-        img.addEventListener("click", () => {
-          zoomedImage.src = img.src;
-          overlay.style.display = "flex";
-        });
-      });
-  
-      // Cerrar al hacer clic en la imagen ampliada
-      overlay.addEventListener("click", () => {
-        overlay.style.display = "none";
-      });
-    });
-  </script>
-  
-<!-- Banner Bonafide -->
-<section class="banner-bonafide">
-  <div class="container-fluid p-0">
-    <img src="../image/bonafide/Banner-combo-web-1600x450px-scaled.jpg" alt="Bonafide Banner" class="img-fluid w-100">
-  </div>
-</section>
- 
-
-
-<section id="productos" class="py-5">
-    <div class="container">
-         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-
-
-<!-- Producto -->
-<div class="col">
-  <div class="card h-100 shadow-sm">
-    <span class="badge-discount">30% OFF</span>
-    <img class="card-img-top zoomable" src="../image/bonafideBoxStandard.png" alt="standard">
-
-    <div class="card-body text-center">
-      <h5 class="fw-bold">Caja Navideña</h5>
-      <span class="text-primary fw-bold">Box Standard</span>
-      <p class="small text-secondary mb-3">9 productos</p>
-
-      <div class="d-flex justify-content-between align-items-center">
-        <span class="text-primary fw-bold">Standard</span>
-        <button class="btn btn-outline-primary btn-sm ver-detalle-btn" data-bs-toggle="modal" data-bs-target="#detalleModal">
-          <i class="fas fa-info-circle me-1"></i> Detalle
-        </button>
-      </div>
-
-      <!-- Contenido oculto para el modal -->
-      <div class="detalle-contenido d-none">
-        <h5 class="fw-bold mb-3">Caja Navideña - Box Standard</h5>
-        <p><strong>Productos:</strong></p>
-        <ul class="text-start small">
-          <li>✔️ Nugaton postre x 100grs</li>
-          <li>✔️ Turrón maní c/frutas x 80grs</li>
-          <li>✔️ Pan Dulce c/frutas x 400grs</li>
-          <li>✔️ Turrón cremona de Maní x 80grs</li>
-          <li>✔️ Garrapiñada x 100grs</li>
-          <li>✔️ Budín limón x 180grs</li>
-          <li>✔️ Vizzio pasas de uva x 80grs</li>
-          <li>✔️ Maní x 80grs</li>
-          <li>✔️ Cereal cubierto c/leche x 80grs</li>
-        </ul>
-        <div class="socio mb-2">
-          <span style="color: blue;">Valor Socio </span><br>
-          <span class="text-decoration-line-through text-danger">$ 28.000,00</span><br>
-          <span >$ 19.600,00  </span><br>
-          <small style="color: blue;">4 cuotas de $ 4.900,00</small>
+    <section class="banner-bonafide">
+        <div class="container-fluid p-0">
+            <img src="../image/bonafide/Banner-combo-web-1600x450px-scaled.jpg" alt="Bonafide Banner" class="img-fluid">
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
 
-<!-- Modal -->
-<div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title">Contenido</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body" id="modalDetalleBody">
-        <!-- El contenido se inyecta aquí -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+    <section id="productos" class="py-5">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="contenedor-productos">
+                </div>
+        </div>
+    </section>
 
-<!-- Producto -->
-<div class="col">
-  <div class="card h-100 shadow-sm">
-    <span class="badge-discount">30% OFF</span>
-    <img class="card-img-top zoomable" src="../image/bonafideBoxPremiun.png" alt="Premium">
-
-    <div class="card-body text-center">
-      <h5 class="fw-bold">Caja Navideña</h5>
-      <span class="text-danger fw-bold">Box Premium</span>
-      <p class="small text-secondary mb-3">15 productos</p>
-
-      <div class="d-flex justify-content-between align-items-center">
-        <span class="text-danger fw-bold">Premium</span>
-        <button class="btn btn-outline-primary btn-sm ver-detalle-btn" data-bs-toggle="modal" data-bs-target="#detalleModal">
-          <i class="fas fa-info-circle me-1"></i> Detalle
-        </button>
-      </div>
-
-      <!-- Contenido oculto para el modal -->
-      <div class="detalle-contenido d-none">
-        <h5 class="fw-bold mb-3">Caja Navideña - Box Premium</h5>
-        <p><strong>Productos:</strong></p>
-        <ul class="text-start small">
-          <li>✔️ Turrón maní c/frutas x 80grs</li>
-          <li>✔️ Vizzio pasas de uva x 80grs</li>
-          <li>✔️ Pan Dulce c/frutas x 400grs</li>
-          <li>✔️ Pan Dulce chips chocolate x 400grs</li>
-          <li>✔️ Turrón cremona de Maní x 80grs</li>
-          <li>✔️ Garrapiñada x2 x 100grs</li>
-          <li>✔️ Budín marmolado x 180grs</li>
-          <li>✔️ Budín limón x 180grs</li>
-          <li>✔️ Budín chip x 180grs</li>
-          <li>✔️ Maní cub. baño leche x 80grs</li>
-          <li>✔️ Vizzio maní crocante x 80grs</li>
-          <li>✔️ Vizzio estuche almendras x 70grs</li>
-          <li>✔️ Nugaton postre x 100grs</li>
-          <li>✔️ Pionono dulce x 180grs</li>
-        </ul>
-        <div class="socio mb-2">
-          <span style="color: blue;">Valor Socio </span><br>
-          <span class="text-decoration-line-through text-danger">$ 43.750,00</span><br>
-          <span >$ 30.625,00  </span><br>
-          <small style="color: blue;">4 cuotas de $ 7.656,25</small>
-        </div> 
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content border-0 shadow">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title">Contenido</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body" id="modalDetalleBody">
-        <!-- El contenido se inyecta aquí -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- Script -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const botones = document.querySelectorAll('.ver-detalle-btn');
-  
-  botones.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const contenido = btn.closest('.card-body').querySelector('.detalle-contenido').innerHTML;
-      document.getElementById('modalDetalleBody').innerHTML = contenido;
-    });
-  });
-});
-</script>
-
-
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/cafemolidoequilibrado.jpg" alt="Café Molido Tostado">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Café Molido Tostado</h5>
-              <p class="text-muted">EQUILIBRADO</p>
-                <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold"> 200grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Café Molido Tostado EQUILIBRADO 200grs"
-                  data-socio-descuento="$ 8.500,00"
-                  data-socio-precio="$ 5.950,00"
-                  data-socio-cuotas="4 cuotas de $ 1.487,50"
-                  data-no-socio="$ 8.500,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div> 
+    <div class="modal fade" id="modalPrecio" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 20px;">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="m-nombre">Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="p-3 mb-3" style="background-color: #f0fff4; border-radius: 15px;">
+                        <p class="text-success fw-bold mb-3"><i class="fas fa-star me-2"></i>VALOR SOCIO</p>
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="text-decoration-line-through text-muted me-2" id="m-original" style="font-size: 1.2 rem;"></span>
+                            <span class="badge bg-danger">30% OFF</span>
+                        </div>
+                        <p class="text-success fw-bold mb-2" id="m-socio"></p>
+                        <p class="mb-0 fw-bold" id="m-cuotas"></p>
+                    </div>
+                    <div class="p-3" style="background-color: #f8f9fa; border-radius: 15px;">
+                        <p class="text-primary fw-bold mb-2">VALOR NO SOCIO</p>
+                        <p class="h5 mb-0" id="m-nosocio"></p>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal" style="border-radius: 10px;">Cerrar</button>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/cafemolidointenso.jpg" alt="Café Molido Tostado">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Café Molido Tostado</h5>
-              <p class="text-muted">INTENSO</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold"> 200grs</span>
-               <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Café Molido Tostado EQUILIBRADO 200grs"
-                  data-socio-descuento="$ 8.500,00"
-                  data-socio-precio="$ 5.950,00"
-                  data-socio-cuotas="4 cuotas de $ 1.487,50"
-                  data-no-socio="$ 8.500,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-
- 
-      
-
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/dolceespresso.jpg" alt="Café espresso">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Cápsulas Espresso</h5>
-              <p class="text-muted">Compatibles <br> Dolce Gusto</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold"> X 10</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Cápsulas compatibles con Dolce - Espresso"
-                  data-socio-descuento="$ 8.200,00"
-                  data-socio-precio="$ 5.740,00"
-                  data-socio-cuotas="4 cuotas de $ 1.435,00"
-                  data-no-socio="$ 8.500,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/dolcelungo.jpg" alt="Café lungo">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Cápsulas Lungo</h5>
-              <p class="text-muted">Compatibles <br> Dolce Gusto</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold"> X 10</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Cápsulas compatibles con Dolce - Espresso"
-                  data-socio-descuento="$ 8.200,00"
-                  data-socio-precio="$ 5.740,00"
-                  data-socio-cuotas="4 cuotas de $ 1.435,00"
-                  data-no-socio="$ 8.500,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/dolcortado.jpg" alt="Café cortado">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Cápsulas Cortado</h5>
-              <p class="text-muted">Compatibles <br> Dolce Gusto</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold"> X 10</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Cápsulas compatibles con Dolce - Espresso"
-                  data-socio-descuento="$ 8.200,00"
-                  data-socio-precio="$ 5.740,00"
-                  data-socio-cuotas="4 cuotas de $ 1.435,00"
-                  data-no-socio="$ 8.500,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-
- 
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/monedas.webp" alt="monedas">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Monedas </h5>
-              <p class="text-muted">Chocolate</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold">88grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Monedas de chocholate"
-                  data-socio-descuento="$ 7.500,00"
-                  data-socio-precio="$ 5.250,00"
-                  data-socio-cuotas="4 cuotas de $ 1,312,50"
-                  data-no-socio="$ 7.500,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
- 
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/chocolate60.jpg" alt="Cacao">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Chocolate </h5>
-              <p class="text-muted">60% Cacao</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold">100grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Chocholate 60% Cacao"
-                  data-socio-descuento="$ 5.300,00"
-                  data-socio-precio="$ 3.710,00"
-                  data-socio-cuotas="4 cuotas de $ 927,50"
-                  data-no-socio="$ 5.500,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/bocadito.jpg" alt="bocadito">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Bocadito </h5>
-              <p class="text-muted">DDL</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold">16grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Bocadito de dulce de leche"
-                  data-socio-descuento="$ 780,00"
-                  data-socio-precio="$ 546,00"
-                  data-socio-cuotas="4 cuotas de $ 136,50"
-                  data-no-socio="$  800,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-
- 
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/Chocman-30-x-35g-COCO_1024x1024-768x768.jpg" alt="Chocman">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Chocman </h5>
-              <p class="text-muted">Coco</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold">35grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Chocman-BLACK"
-                  data-socio-descuento="$ 750,00"
-                  data-socio-precio="$ 525,00"
-                  data-socio-cuotas="4 cuotas de $ 131,25"
-                  data-no-socio="$ 600,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-
- 
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/Chocman-Mini-torta.jpg" alt="Chocman">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Chocman </h5>
-              <p class="text-muted">Mini Torta</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold">68grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Chocman-BLACK"
-                  data-socio-descuento="$ 1.300,00"
-                  data-socio-precio="$ 910,00"
-                  data-socio-cuotas="4 cuotas de $ 227,50"
-                  data-no-socio="$ 1.300,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
- 
-
-  
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/DONUTS-LECHE.jpg" alt="leche">
-            <div class="card-body text-center">
-              <h5 class="fw-bold">Donuts </h5>
-              <p class="text-muted">Leche</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold">78grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Donuts Leche"
-                  data-socio-descuento="$ 1.850,00"
-                  data-socio-precio="$ 1.295,00"
-                  data-socio-cuotas="4 cuotas de $ 323,75"
-                  data-no-socio="$ 1.900,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-
- 
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/donutsblanco.jpg" alt="blanco">
-            <div class="card-body text-center ">
-              <h5 class="fw-bold">Donuts </h5>
-              <p class="text-muted">Blanco</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold">78grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Donuts chocolate blanco"
-                  data-socio-descuento="$ 1.850,00"
-                  data-socio-precio="$ 1.295,00"
-                  data-socio-cuotas="4 cuotas de $ 323,75"
-                  data-no-socio="$ 1.900,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
- 
- 
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/Nugaton-Leche-x27g.jpg" alt="nugaton leche">
-            <div class="card-body text-center ">
-              <h5 class="fw-bold">Nugaton  </h5>
-              <p class="text-muted">Leche</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold">27grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Nugaton Leche"
-                  data-socio-descuento="$ 880,00"
-                  data-socio-precio="$ 616,00"
-                  data-socio-cuotas="4 cuotas de $ 154,00"
-                  data-no-socio="$ 900,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-
-   
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/MECANO-Laminas-1024x1024-TABLETAS-45g-Blanco-400x400.jpg" alt="BLANCO">
-            <div class="card-body text-center ">
-              <h5 class="fw-bold">Tableta Mecano </h5>
-              <p class="text-muted">Blanco</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold">45grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Tableta Mecano"
-                  data-socio-descuento="$ 2.200,00"
-                  data-socio-precio="$ 1.540,00"
-                  data-socio-cuotas="4 cuotas de $ 385,00"
-                  data-no-socio="$ 2.200,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-   
-        <!-- Producto -->
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <span class="badge-discount">30% OFF</span>
-            <img class="card-img-top zoomable" src="../image/bonafide/Mecano_tuerca_leche-633x800.png" alt="tuerca">
-            <div class="card-body text-center ">
-              <h5 class="fw-bold">Mecano </h5>
-              <p class="text-muted">DDL</p>
-               <div class="d-flex justify-content-between align-items-center">
-                <span class="text-success fw-bold">19grs</span>
-                <button 
-                  class="btn btn-outline-primary btn-sm ver-precio-btn"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#modalPrecio"
-                  data-producto="Mecano Leche"
-                  data-socio-descuento="$ 880,00"
-                  data-socio-precio="$ 616,00"
-                  data-socio-cuotas="4 cuotas de $ 154,00"
-                  data-no-socio="$ 900,00"
-                  >
-                  <i class="fas fa-info-circle me-1"></i> Ver precio
-                </button>
-              </div>  
-            </div>
-          </div>
-        </div>
-
-  
-
-
-             
         </div>
     </div>
-</section>
 
+    <div id="imageOverlay" onclick="this.style.display='none'">
+        <img id="zoomedImage" src="" alt="Zoom">
+    </div>
 
+    <div id="footer"></div>
 
-
-<div id="footer"></div>
-<script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer").innerHTML = data;
-    });
-</script>
-
-    <!-- JAVA -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="../canjes5.js"></script>
-
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Contenedor del zoom en pantalla completa -->
-    <div class="image-overlay" id="imageOverlay">
-      <img id="zoomedImage" src="" alt="Zoomed image">
-    </div>
-    
-    <div id="navbar"></div>
     <script>
-  fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("navbar").innerHTML = data;
+        // BASE DE DATOS DE PRODUCTOS
+        const productos = [
+            {
+                nombre: "Café Molido Tostado",
+                desc: "EQUILIBRADO",
+                presentacion: "200grs",
+                img: "../image/bonafide/cafemolidoequilibrado.jpg",
+                precioOriginal: "$ 11.100,00",
+                precioSocio: "$ 7.770,00",
+                cuotas: "4 cuotas de $ 1.942,50",
+                noSocio: "$ 12.000,00"
+            },
+            {
+                nombre: "Café Molido Tostado",
+                desc: "INTENSO",
+                presentacion: "200grs",
+                img: "../image/bonafide/cafemolidointenso.jpg",
+                precioOriginal: "$ 11.100,00",
+                precioSocio: "$ 7.770,00",
+                cuotas: "4 cuotas de $ 1.942,50",
+                noSocio: "$ 12.000,00"
+            },
+            {
+                nombre: "Cápsulas Espresso",
+                desc: "Compatibles Dolce Gusto",
+                presentacion: "X 10",
+                img: "../image/bonafide/dolceespresso.jpg",
+                precioOriginal: "$ 9.200,00",
+                precioSocio: "$ 6.440,00",
+                cuotas: "4 cuotas de $ 1.610,00",
+                noSocio: "$ 10.000,00"
+            },
+            {
+                nombre: "Cápsulas Lungo",
+                desc: "Compatibles Dolce Gusto",
+                presentacion: "X 10",
+                img: "../image/bonafide/dolcelungo.jpg",
+                precioOriginal: "$ 9.200,00",
+                precioSocio: "$ 6.440,00",
+                cuotas: "4 cuotas de $ 1.610,00",
+                noSocio: "$ 10.000,00"
+            },
+            {
+                nombre: "Cápsulas Cortado",
+                desc: "Compatibles Dolce Gusto",
+                presentacion: "X 10",
+                img: "../image/bonafide/dolcortado.jpg",
+                precioOriginal: "$ 9.200,00",
+                precioSocio: "$ 6.440,00",
+                cuotas: "4 cuotas de $ 1.610,00",
+                noSocio: "$ 10.000,00"
+            },
+            {
+                nombre: "Monedas",
+                desc: "Chocolate",
+                presentacion: "88grs",
+                img: "../image/bonafide/monedas.webp",
+                precioOriginal: "$ 7.500,00",
+                precioSocio: "$ 5.250,00",
+                cuotas: "4 cuotas de $ 1.312,50",
+                noSocio: "$ 7.500,00"
+            },
+            {
+                nombre: "Chocolate",
+                desc: "60% Cacao",
+                presentacion: "100grs",
+                img: "../image/bonafide/chocolate60.jpg",
+                precioOriginal: "$ 5.300,00",
+                precioSocio: "$ 3.710,00",
+                cuotas: "4 cuotas de $ 927,50",
+                noSocio: "$ 5.500,00"
+            },
+            {
+                nombre: "Bocadito",
+                desc: "DDL",
+                presentacion: "16grs",
+                img: "../image/bonafide/bocadito.jpg",
+                precioOriginal: "$ 780,00",
+                precioSocio: "$ 546,00",
+                cuotas: "4 cuotas de $ 136,50",
+                noSocio: "$ 800,00"
+            },
+             
+            {
+                nombre: "Chocman",
+                desc: "Mini Torta",
+                presentacion: "68grs",
+                img: "../image/bonafide/Chocman-Mini-torta.jpg",
+                precioOriginal: "$ 1.300,00",
+                precioSocio: "$ 910,00",
+                cuotas: "4 cuotas de $ 227,50",
+                noSocio: "$ 1.300,00"
+            },
+            
+            {
+                nombre: "Donuts",
+                desc: "Blanco",
+                presentacion: "78grs",
+                img: "../image/bonafide/donutsblanco.jpg",
+                precioOriginal: "$ 1.850,00",
+                precioSocio: "$ 1.295,00",
+                cuotas: "4 cuotas de $ 323,75",
+                noSocio: "$ 1.900,00"
+            },
+            {
+                nombre: "Nugaton",
+                desc: "Leche",
+                presentacion: "27grs",
+                img: "../image/bonafide/Nugaton-Leche-x27g.jpg",
+                precioOriginal: "$ 880,00",
+                precioSocio: "$ 616,00",
+                cuotas: "4 cuotas de $ 154,00",
+                noSocio: "$ 900,00"
+            },
+            {
+                nombre: "Tableta Mecano",
+                desc: "Blanco",
+                presentacion: "45grs",
+                img: "../image/bonafide/MECANO-Laminas-1024x1024-TABLETAS-45g-Blanco-400x400.jpg",
+                precioOriginal: "$ 2.200,00",
+                precioSocio: "$ 1.540,00",
+                cuotas: "4 cuotas de $ 385,00",
+                noSocio: "$ 2.200,00"
+            },
+             
+        ];
 
-      // Mover aquí el contenido de navbar.js
-      const menuToggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("menu");
-      const menuClose = document.getElementById("menu-close");
-
-      if (menuToggle && menu && menuClose) {
-        menuToggle.addEventListener("click", function () {
-          menu.classList.toggle("active");
+        // RENDERIZAR PRODUCTOS
+        const contenedor = document.getElementById('contenedor-productos');
+        
+        productos.forEach((p, index) => {
+            const card = `
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <span class="badge-discount">30% OFF</span>
+                        <img class="card-img-top zoomable" src="${p.img}" alt="${p.nombre}">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="fw-bold mb-1">${p.nombre}</h5>
+                            <p class="text-muted small mb-3">${p.desc}</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="text-success fw-bold">${p.presentacion}</span>
+                                <button class="btn btn-outline-primary btn-sm rounded-pill px-3" 
+                                        onclick="abrirModal(${index})">
+                                    <i class="fas fa-info-circle me-1"></i> Ver precio
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            contenedor.innerHTML += card;
         });
 
-        menuClose.addEventListener("click", function () {
-          menu.classList.remove("active");
+        // FUNCIONES LOGICA
+        function abrirModal(index) {
+            const p = productos[index];
+            document.getElementById('m-nombre').textContent = p.nombre + " " + p.desc;
+            document.getElementById('m-original').textContent = p.precioOriginal;
+            document.getElementById('m-socio').textContent = p.precioSocio;
+            document.getElementById('m-cuotas').textContent = p.cuotas;
+            document.getElementById('m-nosocio').textContent = p.noSocio;
+            
+            new bootstrap.Modal(document.getElementById('modalPrecio')).show();
+        }
+
+        // ZOOM
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('zoomable')) {
+                document.getElementById('zoomedImage').src = e.target.src;
+                document.getElementById('imageOverlay').style.display = 'flex';
+            }
         });
-      }
 
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
+        // Carga de Navbar/Footer (tu lógica actual)
+        ['navbar', 'footer'].forEach(id => {
+            fetch(`${id}.html`)
+                .then(r => r.text())
+                .then(data => document.getElementById(id).innerHTML = data);
         });
-      });
-    });
-</script>
-
-<!-- Modal Reutilizable -->
-<div class="modal fade" id="modalPrecio" tabindex="-1" aria-labelledby="modalPrecioLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalProductoNombre">Producto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-
-      <div class="modal-body text-start">
-        <h5 class="text-success fw-bold">Valor Socio</h5>
-        <ul class="mb-3">
-          <li><s class="text-danger" id="precioSocioDescuento"></s> → <strong id="precioSocioFinal"></strong></li>
-          <li id="cuotasSocio"></li>
-        </ul>
-        <hr>
-        <h5 class="text-primary fw-bold">Valor No Socio</h5>
-        <ul>
-          <li><strong id="precioNoSocio"></strong></li>
-        </ul>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const botones = document.querySelectorAll('.ver-precio-btn');
-
-    botones.forEach(btn => {
-      btn.addEventListener('click', function () {
-        // Obtener datos desde el botón
-        const producto = this.getAttribute('data-producto');
-        const socioDescuento = this.getAttribute('data-socio-descuento');
-        const socioPrecio = this.getAttribute('data-socio-precio');
-        const cuotas = this.getAttribute('data-socio-cuotas');
-        const noSocio = this.getAttribute('data-no-socio');
-
-        // Llenar el modal con los datos
-        document.getElementById('modalProductoNombre').textContent = producto;
-        document.getElementById('precioSocioDescuento').textContent = socioDescuento;
-        document.getElementById('precioSocioFinal').textContent = socioPrecio;
-        document.getElementById('cuotasSocio').textContent = cuotas;
-        document.getElementById('precioNoSocio').textContent = noSocio;
-      });
-    });
-  });
-</script>
-
-
-
-
-     
+    </script>
 </body>
 </html>
