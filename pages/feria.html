@@ -290,28 +290,63 @@
     <script>
         // 1. DATA DE TODOS LOS PRODUCTOS
         const productos = [
+            /* GATTI PABLO */
+            
             { 
-                nombre: "Lunchera", 
-                nuevo: true, // nuevo ingreso
-                imagen: "../image/accesorios/lunchera1.jpeg", 
-                descuento: "20% OFF", 
-                precioViejo: "29.500,00", 
-                precioSocio: "23.600,00", 
-                cuotas: "4 cuotas de $ 6.000,00", 
-                precioNoSocio: "29.500,00" 
-            },
-            { nombre: "Lunchera ", nuevo: true, imagen: "../image/accesorios/lunchera2.jpeg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 6.000,00", precioNoSocio: "49.500,00" },
-            { nombre: "Lunchera ", nuevo: true, imagen: "../image/accesorios/lunchera3.jpeg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 6.000,00", precioNoSocio: "49.500,00" },
-            { nombre: "Lunchera ",nuevo: true, imagen: "../image/accesorios/lunchera4.jpeg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 6.000,00", precioNoSocio: "49.500,00" },
+                nombre: "Mate Botines",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/MATEBOTIN.jpeg", descuento: "20% OFF", precioViejo: "13.000,00", precioSocio: "10.400,00", cuotas: "3 cuotas de $ 3.466,66", precioNoSocio: "17.500,00"},
+            { 
+                nombre: "Mate Clubes",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/MATES.jpeg", descuento: "20% OFF", precioViejo: "11.000,00", precioSocio: "8.800,00", cuotas: "3 cuotas de $ 2.933,33", precioNoSocio: "15.500,00"},
+            { 
+                nombre: "Milkshaeks Copa",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/copamilk.jpeg", descuento: "20% OFF", precioViejo: "19.900,00", precioSocio: "15.920,00", cuotas: "3 cuotas de $ 5.306,67", precioNoSocio: "25.500,00"},
+            { 
+                nombre: "Caja Truco",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/truco.jpg", descuento: "20% OFF", precioViejo: "16.500,00", precioSocio: "13.200,00", cuotas: "3 cuotas de $ 4.400,00", precioNoSocio: "21.500,00"},
+            { 
+                nombre: "Vaso Chop Futbol",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/chopcerveza.jpeg", descuento: "20% OFF", precioViejo: "25.900,00", precioSocio: "20.720,00", cuotas: "3 cuotas de $ 6.906,67", precioNoSocio: "29.500,00"},
+            { 
+                nombre: "Vaso Fernet",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/vasofernet.jpg", descuento: "20% OFF", precioViejo: "18.900,00", precioSocio: "15.120,00", cuotas: "3 cuotas de $ 5.040,00", precioNoSocio: "22.500,00"},
+
+            { 
+                nombre: "Chop un poco de...",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/vasoamarillo.jpg", descuento: "20% OFF", precioViejo: "18.900,00", precioSocio: "15.120,00", cuotas: "3 cuotas de $ 5.040,00", precioNoSocio: "22.500,00"},
+            { 
+                nombre: "Copa 500ml",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/copa500.jpg", descuento: "20% OFF", precioViejo: "22.900,00", precioSocio: "18.320,00", cuotas: "3 cuotas de $ 6.106,67", precioNoSocio: "29.500,00"},
+            { 
+                nombre: "Copa 750ml",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/copa750.jpg", descuento: "20% OFF", precioViejo: "31.500,00", precioSocio: "25.200,00", cuotas: "3 cuotas de $ 8.400,00", precioNoSocio: "43.500,00"},
+            { 
+                nombre: "Caja mechas",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/cajavarias.jpg", descuento: "20% OFF", precioViejo: "13.500,00", precioSocio: "10.800,00", cuotas: "3 cuotas de $ 3.600,00", precioNoSocio: "23.500,00"},
+            { 
+                nombre: "Caja cilindro",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/cajacilindro.png", descuento: "20% OFF", precioViejo: "5.990,00", precioSocio: "4.792,00", cuotas: "3 cuotas de $ 1.597,33", precioNoSocio: "12.500,00"},
+            { 
+                nombre: "Llaveros",nuevo: true, // nuevo ingreso 
+                imagen: "../image/accesorios/llaveros.jpg", descuento: "20% OFF", precioViejo: "2.690,00", precioSocio: "2.152,00", cuotas: "3 cuotas de $ 717,33", precioNoSocio: "4.500,00"},
+
+
+
+
+
+            
+            { nombre: "Lunchera ", nuevo: true, imagen: "../image/accesorios/lunchera2.jpeg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 6.000,00", precioNoSocio: "33.500,00" },
+            { nombre: "Lunchera ", nuevo: true, imagen: "../image/accesorios/lunchera3.jpeg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 6.000,00", precioNoSocio: "33.500,00" },
+            { nombre: "Lunchera ",nuevo: true, imagen: "../image/accesorios/lunchera4.jpeg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 6.000,00", precioNoSocio: "33.500,00" },
             { nombre: "Zapatilla <br>Carter´s<br>talle 6",nuevo: true, imagen: "../image/accesorios/zapa.jpeg", descuento: "20% OFF", precioViejo: "39.500,00", precioSocio: "31.600,00", cuotas: "4 cuotas de $ 7.900,00", precioNoSocio: "59.500,00" },
             { nombre: "Babero <br>Water Resistant",nuevo: true, imagen: "../image/accesorios/babero.jpg", descuento: "20% OFF", precioViejo: "19.500,00", precioSocio: "15.600,00", cuotas: "4 cuotas de $ 3.900,00", precioNoSocio: "29.500,00" },
             { nombre: "Babero<br>Carter´s ",nuevo: true, imagen: "../image/accesorios/babero1.jpg", descuento: "20% OFF", precioViejo: "19.500,00", precioSocio: "15.600,00", cuotas: "4 cuotas de $ 3.900,00", precioNoSocio: "29.500,00" },
             { nombre: "Babero<br>Carter´s ",nuevo: true, imagen: "../image/accesorios/babero2.jpg", descuento: "20% OFF", precioViejo: "19.500,00", precioSocio: "15.600,00", cuotas: "4 cuotas de $ 3.900,00", precioNoSocio: "29.500,00" },
             { nombre: "Body<br>Carter´s<br>talle 12m ",nuevo: true, imagen: "../image/accesorios/body.jpg", descuento: "20% OFF", precioViejo: "29.500,00", precioSocio: "23.600,00", cuotas: "4 cuotas de $ 5.900,00", precioNoSocio: "49.500,00" },
-            { nombre: "Calza<br>Osh Kosh<br>talle 6 ",nuevo: true, imagen: "../image/accesorios/calza.jpg", descuento: "20% OFF", precioViejo: "31.900,00", precioSocio: "25.520,00", cuotas: "4 cuotas de $ 6.380,00", precioNoSocio: "41.500,00" },
+            
             { nombre: "Calza<br>Osh Kosh<br>talle 6 ",nuevo: true, imagen: "../image/accesorios/calza1.jpg", descuento: "20% OFF", precioViejo: "31.900,00", precioSocio: "25.520,00", cuotas: "4 cuotas de $ 6.380,00", precioNoSocio: "41.500,00" },
             { nombre: "Calza<br>Osh Kosh<br>talle 6 ",nuevo: true, imagen: "../image/accesorios/calza2.jpg", descuento: "20% OFF", precioViejo: "31.900,00", precioSocio: "25.520,00", cuotas: "4 cuotas de $ 6.380,00", precioNoSocio: "41.500,00" },
-            { nombre: "Calza<br>H&M<br>talle 5-6y ",nuevo: true, imagen: "../image/accesorios/calza3.jpg", descuento: "20% OFF", precioViejo: "31.900,00", precioSocio: "25.520,00", cuotas: "4 cuotas de $ 6.380,00", precioNoSocio: "41.500,00" },
+            
             { nombre: "Pantalón<br>H&M<br>talle 5-6y ",nuevo: true, imagen: "../image/accesorios/calza4.jpg", descuento: "20% OFF", precioViejo: "49.500,00", precioSocio: "39.600,00", cuotas: "4 cuotas de $ 9.900,00", precioNoSocio: "69.500,00" },
             { nombre: "Camisa<br>Carter´s<br>talle 18m ",nuevo: true, imagen: "../image/accesorios/camisa.jpg", descuento: "20% OFF", precioViejo: "25.500,00", precioSocio: "20.400,00", cuotas: "4 cuotas de $ 5.100,00", precioNoSocio: "49.500,00" },
             { nombre: "Medias<br>BB Cheeky<br>3/4 ",nuevo: true, imagen: "../image/accesorios/medias.jpg", descuento: "20% OFF", precioViejo: "7.900,00", precioSocio: "6.320,00", cuotas: "4 cuotas de $ 1.580,00", precioNoSocio: "10.500,00" },

@@ -1,125 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan de Pagos Mutual - Gestión Profesional</title>
-    <link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
-    
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Pagos Mutual - Gestión Profesional</title>
+<link rel="shortcut icon" href="../image/Logo Asociacion Mutual.JPG">
 
-    <style>
-        :root { --primary: #003366; --secondary: #6c757d; --bg: #f8f9fa; --success: #28a745; --bank: #e3f2fd; --danger: #dc3545; }
-        
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: #333; padding: 10px; margin: 0; }
-        .container { max-width: 1150px; margin: 10px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        
-        /* Header y Layout */
-        .header-container { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; gap: 15px; flex-wrap: wrap; }
-        .header-left, .header-right { flex: 1; min-width: 150px; display: flex; align-items: center; }
-        .header-right { justify-content: flex-end; gap: 10px; }
-        .header-logo { height: 60px; width: auto; object-fit: contain; }
-        h2 { color: var(--primary); margin: 0; text-align: center; flex: 2; font-size: 1.6rem; min-width: 300px; }
+<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        /* Botón de Seguridad */
-        .btn-lock { background-color: #f1f3f5; border: 1px solid #ced4da; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
-        .btn-lock.unlocked { background-color: #fff3cd; border-color: #ffeeba; color: #856404; box-shadow: 0 4px 12px rgba(255,193,7,0.2); }
-        .btn-reset { background-color: #fff; color: var(--danger); border: 1px solid var(--danger); padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.85em; transition: 0.3s; }
-        .btn-reset:hover { background: var(--danger); color: white; }
+<style>
+:root { --primary: #003366; --secondary: #6c757d; --bg: #f8f9fa; --success: #28a745; --danger: #dc3545; }
+body { font-family: 'Segoe UI', sans-serif; background-color: var(--bg); color: #333; padding: 10px; margin: 0; }
+.container { max-width: 1100px; margin: 10px auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.header-container { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; gap: 15px; }
+.header-left, .header-right { flex: 1; display: flex; align-items: center; }
+.header-logo { height: 55px; width: auto; object-fit: contain; }
+h2 { color: var(--primary); margin: 0; text-align: center; flex: 2; font-size: 1.6rem; }
+p.subtitle { text-align: center; color: var(--secondary); margin-top: -15px; margin-bottom: 25px; font-size: 0.9em; }
 
-        /* Tarjetas de Resumen */
-        .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 25px; }
-        .card { background: #eef2f7; padding: 18px; border-radius: 10px; border-left: 5px solid var(--primary); transition: transform 0.2s; }
-        .card:hover { transform: translateY(-3px); }
-        .card span { display: block; font-size: 0.85em; color: var(--secondary); margin-bottom: 5px; }
-        .card strong { font-size: 1.4em; color: var(--primary); }
+.btn-lock { background-color: #f1f3f5; border: 1px solid #ced4da; padding: 8px 15px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; display: flex; align-items: center; gap: 8px; font-size: 0.85em; }
+.btn-lock.unlocked { background-color: #fff3cd; border-color: #ffeeba; color: #856404; box-shadow: 0 4px 12px rgba(255,193,7,0.2); }
+.btn-reset { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 0.8em; margin-left: 10px; }
 
-        /* Formulario de Inputs */
-        .inputs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; background: #fff; padding: 20px; border: 1px solid #eee; border-radius: 10px 10px 0 0; align-items: flex-end; }
-        .bank-panel { display: flex; flex-wrap: wrap; background: var(--bank); padding: 20px; border: 1px solid #bbdefb; border-radius: 0 0 10px 10px; margin-bottom: 30px; align-items: center; gap: 25px; }
-        
-        .group { display: flex; flex-direction: column; }
-        label { font-weight: 600; margin-bottom: 8px; font-size: 0.85em; color: var(--primary); }
-        input { padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; width: 100%; transition: 0.2s; }
-        input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(0,51,102,0.1); }
-        input:disabled { background-color: #f8f9fa; border-color: transparent; color: #666; cursor: not-allowed; }
+.summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 25px; }
+.card { background: #eef2f7; padding: 15px; border-radius: 10px; border-left: 5px solid var(--primary); }
+.card span { display: block; font-size: 0.8em; color: var(--secondary); }
+.card strong { font-size: 1.3em; color: var(--primary); }
+.card.deuda-viva { border-left-color: var(--danger); background: #fff5f5; }
 
-        /* Tabla */
-        .table-wrapper { overflow-x: auto; border-radius: 8px; border: 1px solid #eee; }
-        table { width: 100%; border-collapse: collapse; font-size: 0.95em; min-width: 900px; }
-        th { background: var(--primary); color: white; padding: 15px; text-align: left; }
-        td { padding: 14px 10px; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
-        tr.pagado { background-color: #f1f9f1 !important; color: #2e7d32; }
-        
-        /* Acciones de Fila */
-        .ver-comp { color: var(--primary); text-decoration: none; font-weight: bold; border: 1.5px solid var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.8em; transition: 0.2s; }
-        .ver-comp:hover { background: var(--primary); color: white; }
-        .btn-pay { background: white; border: 2px solid var(--success); color: var(--success); padding: 8px 15px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; }
-        .btn-pay.active { background: var(--success); color: white; }
-        .btn-pay:disabled { border-color: #eee; color: #ccc; cursor: default; }
+.inputs-grid { display: flex; flex-wrap: nowrap; justify-content: flex-start; gap: 20px; background: #fff; padding: 15px 20px; border: 1px solid #eee; border-radius: 10px 10px 0 0; align-items: flex-end; }
+.group { display: flex; flex-direction: column; flex: 1; max-width: 200px; }
+label { font-weight: 600; margin-bottom: 5px; font-size: 0.75em; color: var(--primary); text-transform: uppercase; }
+input { padding: 8px 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.9rem; width: 100%; box-sizing: border-box; }
 
-        /* Estado de Sincronización */
-        #statusSync { font-size: 0.8em; color: var(--secondary); margin-left: auto; font-weight: 500; }
+.btn-add-adelanto { background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.85em; width: 100%; }
+.btn-print { background: var(--success); color: white; border: none; padding: 10px 15px; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 0.85em; width: 100%; }
+.btn-del { background: none; border: none; color: var(--danger); cursor: pointer; font-weight: bold; padding: 5px; font-size: 1.2em; }
 
-        @media print {
-            .inputs-grid, .btn-lock, .btn-pay, .btn-reset, #statusSync, .btn-link-action { display: none !important; }
-            .container { box-shadow: none; border: none; width: 100%; max-width: 100%; }
-            body { background: white; }
-        }
-    </style>
+.table-wrapper { overflow-x: auto; border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9em; min-width: 850px; }
+th { background: var(--primary); color: white; padding: 12px; text-align: left; }
+td { padding: 10px; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
+tr.pagado { background-color: #e8f5e9 !important; color: #2e7d32; }
+tr.adelanto-row { background-color: #f1f8ff; }
+.input-concepto { border: none; background: transparent; font-weight: bold; color: inherit; width: 100%; outline: none; padding: 4px; border-radius: 4px; }
+.input-monto-adelanto { border: 1px solid #ddd; padding: 5px; border-radius: 4px; width: 130px; font-weight: bold; text-align: right; background: white; }
+.btn-pay { background: white; border: 1.5px solid var(--success); color: var(--success); padding: 5px 10px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100px; }
+.btn-pay.active { background: var(--success); color: white; }
+
+@media (max-width: 850px) { .inputs-grid { flex-wrap: wrap; } .group { max-width: 48%; min-width: 140px; } }
+@media print { .inputs-grid, .btn-lock, .btn-pay, .btn-reset, .btn-link-edit, .btn-del { display: none !important; } }
+</style>
 </head>
 <body>
 
 <div class="container">
     <div class="header-container">
-        <div class="header-left">
-            <img src="../image/Logo Asociacion Mutual.JPG" alt="Logo" class="header-logo">
-        </div>
+        <div class="header-left"><img src="../image/Logo Asociacion Mutual.JPG" alt="Logo" class="header-logo"></div>
         <h2>Plan de Pagos: La Nación</h2>
         <div class="header-right">
             <button id="lockBtn" class="btn-lock" onclick="toggleEdicion()">🔒 Solo Lectura</button>
             <button id="resetBtn" class="btn-reset" style="display:none" onclick="resetearTodo()">Reiniciar</button>
         </div>
     </div>
+    <p class="subtitle">Mutual del Diario La Nación - Gestión de Deuda Consolidada</p>
 
     <div class="summary-cards">
-        <div class="card"><span>Deuda Original</span><strong>$ 27.784.837,27</strong></div>
-        <div class="card" style="border-left-color: var(--danger);"><span>Pendiente Actual</span><strong id="saldoPendienteReal">$ 0,00</strong></div>
+        <div class="card"><span>Deuda Original</span><strong>$ 27.784.837,27</strong>
+            <div style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed #ccc; font-size: 0.8em;">
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Galeno:</span><span style="font-weight: bold;">$ 24.564.272,22</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Circulación:</span><span style="font-weight: bold;">$ 3.220.565,05</span>
+                </div>
+            </div>
+        </div>
+        <div class="card deuda-viva"><span>Pendiente Actual</span><strong id="saldoPendienteReal">$ 0,00</strong></div>
         <div class="card"><span>Total Cobrado</span><strong id="totalPagado">$ 0,00</strong></div>
     </div>
 
     <div class="inputs-grid">
-        <div class="group"><label>Adelanto Pesos</label><input type="text" id="adelantoDisplay" class="edit-field" disabled oninput="manejarMoneda(this, 'adelanto')"></div>
-        <div class="group"><label>Monto USD</label><input type="number" id="montoUSD" class="edit-field" disabled oninput="guardar()"></div>
-        <div class="group"><label>Cotización</label><input type="number" id="cotizacionUSD" class="edit-field" disabled oninput="guardar()"></div>
-        <div class="group"><label>Cuotas</label><input type="number" id="cuotas" class="edit-field" disabled oninput="guardar()"></div>
-        <div class="group"><button style="background:var(--success); color:white; border:none; padding:12px; border-radius:8px; font-weight:bold; cursor:pointer;" onclick="window.print()">🖨️ Imprimir PDF</button></div>
-    </div>
-
-    <div class="bank-panel">
-        <div class="group" style="flex-direction:row; align-items:center; gap:10px;">
-            <label style="margin:0">Banco:</label>
-            <input type="text" id="saldoBancoDisplay" class="edit-field" disabled style="width:170px" oninput="manejarMoneda(this, 'banco')">
-        </div>
-        <div class="group" style="flex-direction:row; align-items:center; gap:10px;">
-            <label style="margin:0">Aguinaldo:</label>
-            <input type="text" id="aguinaldoDisplay" class="edit-field" disabled style="width:170px" oninput="manejarMoneda(this, 'aguinaldo')">
-        </div>
-        <div id="statusSync">☁ Conectado</div>
+        <div class="group"><label>Cuotas Mensuales</label><input type="number" id="cuotas" class="edit-field" oninput="actualizarCuotas()"></div>
+        <div class="group" style="max-width: 180px;"><label>&nbsp;</label><button class="btn-add-adelanto edit-field" onclick="agregarNuevoAdelanto()">➕ Agregar Adelanto</button></div>
+        <div class="group" style="max-width: 120px;"><label>&nbsp;</label><button class="btn-print" onclick="window.print()">🖨️ Imprimir</button></div>
     </div>
 
     <div class="table-wrapper">
         <table>
             <thead>
                 <tr>
-                    <th width="50">#</th>
+                    <th width="40">Tipo</th>
                     <th>Concepto</th>
-                    <th>Fecha Pago</th>
-                    <th>Comprobante</th>
+                    <th>Fecha</th>
+                    <th>Comp.</th>
                     <th>Monto</th>
-                    <th width="120">Estado</th>
+                    <th width="110">Estado</th>
+                    <th width="30"></th>
                 </tr>
             </thead>
             <tbody id="cuerpoTabla"></tbody>
@@ -128,197 +107,168 @@
 </div>
 
 <script>
-    // --- CONFIGURACIÓN FIREBASE ---
-    const firebaseConfig = {
-        apiKey: "AIzaSyC1nSg8R6qY_rt0y4A5Cjd6Ipl3kPAiqf8",
-        authDomain: "mutual-pagos-2895f.firebaseapp.com",
-        databaseURL: "https://mutual-pagos-2895f-default-rtdb.firebaseio.com/", 
-        projectId: "mutual-pagos-2895f",
-        storageBucket: "mutual-pagos-2895f.firebasestorage.app",
-        messagingSenderId: "1003553822362",
-        appId: "1:1003553822362:web:d0f23c4678dbeb98643123"
-    };
+const firebaseConfig = {
+    apiKey: "AIzaSyC1nSg8R6qY_rt0y4A5Cjd6Ipl3kPAiqf8",
+    authDomain: "mutual-pagos-2895f.firebaseapp.com",
+    databaseURL: "https://mutual-pagos-2895f-default-rtdb.firebaseio.com/",
+    projectId: "mutual-pagos-2895f",
+    storageBucket: "mutual-pagos-2895f.firebasestorage.app",
+    messagingSenderId: "1003553822362",
+    appId: "1:1003553822362:web:d0f23c4678dbeb98643123"
+};
 
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
-    const dbRef = db.ref("mutual/planUnico");
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+const dbRef = db.ref("mutual/planUnico");
 
-    let modoEdicion = false;
-    let llaveTemporal = ""; 
-    const DEUDA_TOTAL = 27784837.27;
-    let datos = { adelantoP: 0, mUSD: 0, cUSD: 0, cuotas: 12, sBanco: 0, sAguinaldo: 0, pagos: {}, fechas: {}, conceptosCustom: {}, links: {} };
-    const fmt = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' });
+let modoEdicion = false;
+let llaveTemporal = "";
+const DEUDA_TOTAL = 27784837.27;
+let datos = { cuotas: 12, adelantos: [], pagosCuotas: {}, fechasCuotas: {}, conceptosCuotas: {}, links: {} };
 
-    // --- CARGA DE DATOS ---
-    dbRef.on('value', (snapshot) => {
-        const val = snapshot.val();
-        if (val) {
-            datos = val;
-            if(!datos.pagos) datos.pagos = {};
-            if(!datos.fechas) datos.fechas = {};
-            if(!datos.conceptosCustom) datos.conceptosCustom = {};
-            if(!datos.links) datos.links = {};
-            dibujarUI();
+const fmt = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', minimumFractionDigits: 2 });
+
+dbRef.on('value', (snapshot) => {
+    const val = snapshot.val();
+    if (val) { 
+        datos = {
+            ...val,
+            adelantos: val.adelantos || [],
+            pagosCuotas: val.pagosCuotas || {},
+            fechasCuotas: val.fechasCuotas || {},
+            conceptosCuotas: val.conceptosCuotas || {},
+            links: val.links || {}
+        };
+        dibujarUI(); 
+    }
+});
+
+async function toggleEdicion() {
+    if (!modoEdicion) {
+        const { value: pass } = await Swal.fire({ title: 'Acceso Restringido', input: 'password', inputLabel: 'Clave Maestra', confirmButtonColor: '#003366', showCancelButton: true });
+        if (pass) {
+            try { await db.ref("mutual/planUnico/admin_key").set(pass); llaveTemporal = pass; modoEdicion = true; dibujarUI(); }
+            catch(e){ Swal.fire({ icon: 'error', title: 'Clave Incorrecta' }); }
         }
+    } else { modoEdicion = false; llaveTemporal = ""; dibujarUI(); }
+}
+
+function dibujarUI() {
+    const lockBtn = document.getElementById('lockBtn');
+    lockBtn.innerHTML = modoEdicion ? "🔓 Modo Edición Activo" : "🔒 Solo Lectura";
+    lockBtn.classList.toggle('unlocked', modoEdicion);
+    document.getElementById('resetBtn').style.display = modoEdicion ? "block" : "none";
+    document.getElementById('cuotas').value = datos.cuotas || 12;
+    document.querySelectorAll('.edit-field').forEach(el => el.disabled = !modoEdicion);
+
+    const cuerpo = document.getElementById('cuerpoTabla');
+    cuerpo.innerHTML = "";
+    let totalCobrado = 0;
+    let sumaAdelantos = 0;
+
+    // --- ORDENAMIENTO POR FECHA ---
+    const adelantosOrdenados = datos.adelantos.map((ad, i) => ({...ad, idxOriginal: i}));
+    adelantosOrdenados.sort((a, b) => {
+        if (!a.fecha) return 1;
+        if (!b.fecha) return -1;
+        return new Date(a.fecha) - new Date(b.fecha);
     });
 
-    // --- SEGURIDAD CON SWEETALERT2 ---
-    async function toggleEdicion() {
-        if (!modoEdicion) {
-            const { value: pass } = await Swal.fire({
-                title: 'Acceso Restringido',
-                input: 'password',
-                inputLabel: 'Ingrese la Clave Maestra',
-                inputPlaceholder: 'Clave de administrador',
-                confirmButtonColor: '#003366',
-                showCancelButton: true,
-                confirmButtonText: 'Habilitar Edición',
-                cancelButtonText: 'Cancelar'
-            });
-
-            if (pass) {
-                llaveTemporal = pass;
-                modoEdicion = true;
-                actualizarEstadoEdicion(true);
-            }
-        } else {
-            modoEdicion = false;
-            llaveTemporal = "";
-            actualizarEstadoEdicion(false);
-        }
-        dibujarUI();
-    }
-
-    function actualizarEstadoEdicion(activo) {
-        const btn = document.getElementById('lockBtn');
-        const resetBtn = document.getElementById('resetBtn');
-        btn.innerHTML = activo ? "🔓 Modo Edición Activo" : "🔒 Solo Lectura";
-        if(activo) {
-            btn.classList.add('unlocked');
-            resetBtn.style.display = "block";
-            Swal.fire({ icon: 'success', title: 'Modo Edición Habilitado', timer: 1200, showConfirmButton: false });
-        } else {
-            btn.classList.remove('unlocked');
-            resetBtn.style.display = "none";
-        }
-    }
-
-    // --- DIBUJAR TABLA Y CARDS ---
-    function dibujarUI() {
-        document.getElementById('montoUSD').value = datos.mUSD || "";
-        document.getElementById('cotizacionUSD').value = datos.cUSD || "";
-        document.getElementById('cuotas').value = datos.cuotas || 12;
-        document.getElementById('adelantoDisplay').value = fmt.format(datos.adelantoP || 0);
-        document.getElementById('saldoBancoDisplay').value = fmt.format(datos.sBanco || 0);
-        document.getElementById('aguinaldoDisplay').value = fmt.format(datos.sAguinaldo || 0);
+    // --- RENDERIZAR ADELANTOS ---
+    adelantosOrdenados.forEach((ad) => {
+        sumaAdelantos += ad.monto || 0;
+        if(ad.pagado) totalCobrado += ad.monto || 0;
         
-        document.querySelectorAll('.edit-field').forEach(el => el.disabled = !modoEdicion);
+        const ds = !modoEdicion ? 'disabled' : '';
+        const link = datos.links[`ad_${ad.idxOriginal}`] || "";
 
-        const cuerpo = document.getElementById('cuerpoTabla');
-        cuerpo.innerHTML = "";
-        let totalP = 0;
-        let adelantoT = (datos.adelantoP || 0) + ((datos.mUSD || 0) * (datos.cUSD || 0));
-
-        const renderFila = (id, desc, monto) => {
-            const ok = datos.pagos[id];
-            const link = datos.links[id] || "";
-            const ds = !modoEdicion ? 'disabled' : '';
-            return `<tr class="${ok ? 'pagado' : ''}">
-                <td>${id === 'adelanto' ? '-' : id}</td>
-                <td><input type="text" value="${desc}" onchange="updateConcepto('${id}', this.value)" ${ds} style="border:none; background:transparent; font-weight:bold; width:100%"></td>
-                <td><input type="date" value="${datos.fechas[id] || ''}" onchange="updateFecha('${id}', this.value)" ${ds} style="border:none; background:transparent; font-family:inherit"></td>
+        cuerpo.innerHTML += `
+            <tr class="adelanto-row ${ad.pagado ? 'pagado' : ''}">
+                <td><b style="color:var(--primary)">A</b></td>
+                <td><input type="text" value="${ad.concepto || 'Adelanto'}" onchange="updateAdelanto(${ad.idxOriginal}, 'concepto', this.value)" ${ds} class="input-concepto"></td>
+                <td><input type="date" value="${ad.fecha || ''}" onchange="updateAdelanto(${ad.idxOriginal}, 'fecha', this.value)" ${ds} style="border:none; background:transparent; width:120px"></td>
                 <td>
-                    <button onclick="setLink('${id}')" ${ds} style="cursor:pointer; border:1px solid #ccc; background:#fff; border-radius:4px; padding:3px 6px;">🔗</button>
-                    ${link ? `<a href="${link}" target="_blank" class="ver-comp">Ver</a>` : ''}
+                    <button onclick="setLink('ad_${ad.idxOriginal}')" ${ds} class="btn-link-edit" style="cursor:pointer; border:1px solid #ccc; background:#fff; border-radius:4px;">🔗</button>
+                    ${link ? `<a href="${link}" target="_blank" style="margin-left:5px; font-size:0.8em">Ver</a>` : ''}
                 </td>
-                <td style="font-weight:bold">${fmt.format(monto)}</td>
-                <td><button class="btn-pay ${ok ? 'active' : ''}" onclick="togglePago('${id}')" ${ds}>${ok ? 'PAGADO' : 'IMPAGO'}</button></td>
+                <td><input type="text" value="${fmt.format(ad.monto || 0)}" onblur="manejarMontoAdelanto(${ad.idxOriginal}, this.value)" ${ds} class="input-monto-adelanto"></td>
+                <td><button class="btn-pay ${ad.pagado ? 'active' : ''}" onclick="togglePagoAdelanto(${ad.idxOriginal})" ${ds}>${ad.pagado ? 'Pagado!' : 'Impago'}</button></td>
+                <td><button class="btn-del" onclick="eliminarAdelanto(${ad.idxOriginal})" ${ds}>&times;</button></td>
             </tr>`;
-        };
+    });
 
-        if (adelantoT > 0) {
-            if(datos.pagos['adelanto']) totalP += adelantoT;
-            cuerpo.innerHTML += renderFila('adelanto', datos.conceptosCustom['adelanto'] || "Adelanto Inicial", adelantoT);
-        }
+    // --- RENDERIZAR CUOTAS ---
+    let remanente = Math.max(0, DEUDA_TOTAL - sumaAdelantos);
+    let mCuota = remanente / (datos.cuotas || 1);
 
-        let mCuota = Math.max(0, DEUDA_TOTAL - adelantoT) / (datos.cuotas || 1);
-        for (let i = 1; i <= (datos.cuotas || 12); i++) {
-            if(datos.pagos[i]) totalP += mCuota;
-            cuerpo.innerHTML += renderFila(i, datos.conceptosCustom[i] || `Cuota Mensual ${i}`, mCuota);
-        }
+    for (let i = 1; i <= (datos.cuotas || 1); i++) {
+        const pagada = datos.pagosCuotas[i];
+        if(pagada) totalCobrado += mCuota;
+        const link = datos.links[`c_${i}`] || "";
+        const ds = !modoEdicion ? 'disabled' : '';
 
-        document.getElementById('totalPagado').innerText = fmt.format(totalP);
-        document.getElementById('saldoPendienteReal').innerText = fmt.format(DEUDA_TOTAL - totalP);
+        cuerpo.innerHTML += `
+            <tr class="${pagada ? 'pagado' : ''}">
+                <td>${i}</td>
+                <td><input type="text" value="${datos.conceptosCuotas[i] || 'Cuota Mensual '+i}" onchange="updateConceptoCuota(${i}, this.value)" ${ds} class="input-concepto"></td>
+                <td><input type="date" value="${datos.fechasCuotas[i] || ''}" onchange="updateFechaCuota(${i}, this.value)" ${ds} style="border:none; background:transparent; width:120px"></td>
+                <td>
+                    <button onclick="setLink('c_${i}')" ${ds} class="btn-link-edit" style="cursor:pointer; border:1px solid #ccc; background:#fff; border-radius:4px;">🔗</button>
+                    ${link ? `<a href="${link}" target="_blank" style="margin-left:5px; font-size:0.8em">Ver</a>` : ''}
+                </td>
+                <td style="font-weight:bold">${fmt.format(mCuota)}</td>
+                <td><button class="btn-pay ${pagada ? 'active' : ''}" onclick="togglePagoCuota(${i})" ${ds}>${pagada ? 'Pagado!' : 'Impago'}</button></td>
+                <td></td>
+            </tr>`;
     }
 
-    // --- GUARDADO UNIFICADO ---
-    function guardar() {
-        if(!modoEdicion) return;
-        document.getElementById('statusSync').innerText = "☁ Guardando cambios...";
-        
-        datos.mUSD = parseFloat(document.getElementById('montoUSD').value) || 0;
-        datos.cUSD = parseFloat(document.getElementById('cotizacionUSD').value) || 0;
-        datos.cuotas = parseInt(document.getElementById('cuotas').value) || 12;
+    document.getElementById('totalPagado').innerText = fmt.format(totalCobrado);
+    document.getElementById('saldoPendienteReal').innerText = fmt.format(DEUDA_TOTAL - totalCobrado);
+}
 
-        const datosParaEnviar = { ...datos, admin_key: llaveTemporal };
+// --- LOGICA DE MONEDA ---
+function manejarMontoAdelanto(idx, valor) {
+    if(!modoEdicion) return;
+    let limpio = valor.replace(/[^\d,]/g, "").replace(",", ".");
+    let num = parseFloat(limpio) || 0;
+    datos.adelantos[idx].monto = num;
+    guardar();
+}
 
-        dbRef.set(datosParaEnviar).then(() => {
-            document.getElementById('statusSync').innerText = "☁ Sincronizado";
-        }).catch(err => {
-            Swal.fire({ icon: 'error', title: 'Clave Incorrecta', text: 'Firebase rechazó la operación.', confirmButtonColor: '#dc3545' });
-            document.getElementById('statusSync').innerText = "❌ Error Clave";
-            modoEdicion = false;
-            llaveTemporal = "";
-            actualizarEstadoEdicion(false);
-            dibujarUI();
-        });
-    }
+// --- FUNCIONES CORE ---
+function agregarNuevoAdelanto() {
+    if(!modoEdicion) return;
+    datos.adelantos.push({ concepto: 'Nuevo Adelanto', fecha: '', monto: 0, pagado: false });
+    guardar();
+}
 
-    // --- ACCIONES SECUNDARIAS ---
-    async function setLink(id) {
-        if(!modoEdicion) return;
-        const { value: url } = await Swal.fire({
-            title: 'Link de Comprobante',
-            input: 'url',
-            inputLabel: 'Dirección de Google Drive:',
-            inputValue: datos.links[id] || "",
-            showCancelButton: true,
-            confirmButtonColor: '#003366'
-        });
-        if (url !== undefined) {
-            datos.links[id] = url;
-            guardar();
-        }
-    }
+function updateAdelanto(idx, campo, valor) { if(modoEdicion) { datos.adelantos[idx][campo] = valor; guardar(); } }
+function togglePagoAdelanto(idx) { if(modoEdicion) { datos.adelantos[idx].pagado = !datos.adelantos[idx].pagado; guardar(); } }
+function eliminarAdelanto(idx) { if(modoEdicion) { datos.adelantos.splice(idx, 1); guardar(); } }
 
-    function togglePago(id) { if(modoEdicion) { datos.pagos[id] = !datos.pagos[id]; guardar(); } }
-    function updateFecha(id, f) { if(modoEdicion) { datos.fechas[id] = f; guardar(); } }
-    function updateConcepto(id, t) { if(modoEdicion) { datos.conceptosCustom[id] = t; guardar(); } }
+function updateConceptoCuota(i, v) { if(modoEdicion) { datos.conceptosCuotas[i] = v; guardar(); } }
+function updateFechaCuota(i, v) { if(modoEdicion) { datos.fechasCuotas[i] = v; guardar(); } }
+function togglePagoCuota(i) { if(modoEdicion) { datos.pagosCuotas[i] = !datos.pagosCuotas[i]; guardar(); } }
+function actualizarCuotas() { if(modoEdicion) { datos.cuotas = parseInt(document.getElementById('cuotas').value) || 1; guardar(); } }
 
-    function manejarMoneda(input, tipo) {
-        if(!modoEdicion) return;
-        let v = parseFloat(input.value.replace(/\D/g, "")) / 100 || 0;
-        if (tipo === 'adelanto') datos.adelantoP = v;
-        else if (tipo === 'banco') datos.sBanco = v;
-        else if (tipo === 'aguinaldo') datos.sAguinaldo = v;
-        input.value = fmt.format(v);
-        guardar();
-    }
+async function setLink(id) { 
+    if(!modoEdicion) return; 
+    const { value: url } = await Swal.fire({ title: 'URL Comprobante', input: 'url', inputValue: datos.links[id] || "", showCancelButton: true }); 
+    if (url !== undefined) { datos.links[id] = url; guardar(); } 
+}
 
-    async function resetearTodo() {
-        if(!modoEdicion) return;
-        const result = await Swal.fire({
-            title: '¿Reiniciar Plan?',
-            text: "Se borrarán todos los datos cargados permanentemente.",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#dc3545',
-            confirmButtonText: 'Borrar Todo'
-        });
-        if (result.isConfirmed) {
-            dbRef.set({ adelantoP:0, mUSD:0, cUSD:0, cuotas:12, sBanco:0, sAguinaldo:0, pagos:{}, fechas:{}, conceptosCustom:{}, links:{}, admin_key: llaveTemporal });
-        }
-    }
+function guardar() {
+    if(!modoEdicion) return;
+    const copia = JSON.parse(JSON.stringify(datos));
+    copia.admin_key = llaveTemporal;
+    dbRef.set(copia);
+}
+
+async function resetearTodo() { 
+    if(!modoEdicion) return; 
+    const res = await Swal.fire({ title: '¿Reiniciar sistema?', text: "Esto borrará los adelantos actuales para limpiar la base de datos.", icon: 'warning', showCancelButton: true }); 
+    if (res.isConfirmed) { dbRef.set({ cuotas: 12, adelantos: [], admin_key: llaveTemporal }); } 
+}
 </script>
 </body>
-</html> 
+</html>

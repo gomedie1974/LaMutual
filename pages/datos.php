@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Obtener nombre
         $apellidoNombre = "No encontrado";
-        $sqlNombre = "SELECT apellidoNombre FROM cc13032026 WHERE dni = ? AND numeroSocio = ?";
+        $sqlNombre = "SELECT apellidoNombre FROM cc260526 WHERE dni = ? AND numeroSocio = ?";
         if ($stmt = $conn->prepare($sqlNombre)) {
             $stmt->bind_param("ss", $dni, $numeroSocio);
             $stmt->execute();
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Obtener datos principales
         $sql = "SELECT fecha, cuota, detalle, concepto, monto 
-        FROM cc13032026
+        FROM cc260526
         WHERE dni = ? AND numeroSocio = ?
         ORDER BY STR_TO_DATE(
             CONCAT(
@@ -328,7 +328,7 @@ if ($resultados) {
 <!-- Formulario -->
 <div class="container my-4">
   <h2 class="form-title text-center">🔍 Detalle de gastos</h2>
-  <p class="text-center"> <b>Fecha de actualización 13/03/2026 <br>14.00 hs</b></p>
+  <p class="text-center"> <b>Fecha de actualización 26/05/2026 <br>08.00 hs</b></p>
   <!-- <p class="text-center" style="color: red;"><b><u>PRÓXIMA ACTUALIZACIÓN 02-02-2026</u></b></p> -->
   
   <div class="row justify-content-center g-4">

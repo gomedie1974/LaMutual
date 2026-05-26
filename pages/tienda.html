@@ -212,23 +212,29 @@
     <div id="footer"></div>
 
     <script>
-        const productos = [
-            { nombre: "Musculosa Deportiva", talle: "2", color: "Moka", imagen: "../image/tienda/20251028_183205.jpg", precioSocio: "11.500,00", cuotas: "$ 2.875,00", precioNoSocio: "17.000,00", descuento: "" },
-            { nombre: "Musculosa Deportiva", talle: "3", color: "Gris Acero", imagen: "../image/tienda/20260123_133336.jpg", precioSocio: "11.500,00", cuotas: "$ 2.875,00", precioNoSocio: "17.000,00", descuento: "" },
-            { nombre: "Remera Morley", talle: "4", color: "Negro", imagen: "../image/tienda/20260128_163133.jpg", precioSocio: "14.500,00", cuotas: "$ 3.625,00", precioNoSocio: "20.000,00", descuento: "" },
-            { nombre: "Remera Morley", talle: "3", color: "Colorada", imagen: "../image/tienda/20260303_122942.jpg", precioSocio: "14.500,00", cuotas: "$ 3.625,00", precioNoSocio: "20.000,00", descuento: "" },
-            { nombre: "Remera Morley", talle: "3", color: "Pistacho", imagen: "../image/tienda/20260303_123122.jpg", precioSocio: "14.500,00", cuotas: "$ 3.625,00", precioNoSocio: "20.000,00", descuento: "" },
-            { nombre: "Musculosa Cuello alto", talle: "L", color: "Uva", imagen: "../image/tienda/20260303_123321.jpg", precioSocio: "17.300,00", cuotas: "$ 4.325,00", precioNoSocio: "25.000,00", descuento: "" },
-            { nombre: "Sweater Hilo", talle: "U", color: "Natural", imagen: "../image/tienda/20260303_123511.jpg", precioSocio: "43.700,00", cuotas: "$ 10.925,00", precioNoSocio: "51.000,00", descuento: "" },
-            { nombre: "Buzo Rayado", talle: "3", color: "Azul", imagen: "../image/tienda/20260303_123721.jpg", precioSocio: "41.000,00", cuotas: "$ 10.250,00", precioNoSocio: "51.000,00", descuento: "" },
-            { nombre: "Sweater Bremer", talle: "L", color: "Chocolate", imagen: "../image/tienda/20260303_123915.jpg", precioSocio: "41.500,00", cuotas: "$ 10.375,00", precioNoSocio: "51.000,00", descuento: "" },
-            { nombre: "Cardigan Bremer", talle: "U", color: "Pistacho", imagen: "../image/tienda/20260303_124101.jpg", precioSocio: "38.500,00", cuotas: "$ 9.625,00", precioNoSocio: "45.000,00", descuento: "" },
-            { nombre: "Sweater Chomba", talle: "U", color: "Negro", imagen: "../image/tienda/20260303_124403.jpg", precioSocio: "37.500,00", cuotas: "$ 9.375,00", precioNoSocio: "45.000,00", descuento: "" },
-            { nombre: "Sweater Chomba", talle: "U", color: "Beige", imagen: "../image/tienda/20260303_124602.jpg", precioSocio: "37.500,00", cuotas: "$ 9.375,00", precioNoSocio: "45.000,00", descuento: "" },
-            { nombre: "Pantalon Sastrero", talle: "40", color: "Bordo", imagen: "../image/tienda/20260303_124838.jpg", precioSocio: "36.900,00", cuotas: "$ 9.225,00", precioNoSocio: "47.000,00", descuento: "" },
-            { nombre: "Pantalon Sastrero", talle: "38", color: "Gris", imagen: "../image/tienda/20260303_125144.jpg", precioSocio: "41.700,00", cuotas: "$ 10.425,00", precioNoSocio: "51.000,00", descuento: "" },
-           
-           
+        const productos = [ 
+            { nombre: "Ruana paño", talle: "U", color: "Chocolate", imagen: "../image/tienda/20260517_134327.jpg", precioSocio: "41.500,00", cuotas: "$ 10.375,00", precioNoSocio: "55.900,00", descuento: "" },      
+            { nombre: "Campera Morley Brush", talle: "U", color: "Bordó jaspeado", imagen: "../image/tienda/20260517_132140.jpg", precioSocio: "27.900,00", cuotas: "$ 6.975,00", precioNoSocio: "35.900,00", descuento: "" },      
+            { nombre: "Campera tejida", talle: "S/M", color: "Of White", imagen: "../image/tienda/20260517_132326.jpg", precioSocio: "48.000,00", cuotas: "$ 12.000,00", precioNoSocio: "61.900,00", descuento: "" },      
+            { nombre: "Sweater media polera", talle: "U", color: "blanco/negro", imagen: "../image/tienda/20260517_132615.jpg", precioSocio: "38.900,00", cuotas: "$ 9.725,00", precioNoSocio: "45.900,00", descuento: "" },      
+            { nombre: "Sweater polera", talle: "U", color: "Beige", imagen: "../image/tienda/20260517_132850.jpg", precioSocio: "28.900,00", cuotas: "$ 7.225,00", precioNoSocio: "35.900,00", descuento: "" },      
+            { nombre: "Cárdigan rombos", talle: "U", color: "Gris", imagen: "../image/tienda/20260517_133042.jpg", precioSocio: "49.900,00", cuotas: "$ 12.475,00", precioNoSocio: "65.900,00", descuento: "" },      
+            { nombre: "Sweater Bremer", talle: "U", color: "Bordó", imagen: "../image/tienda/20260517_133330.jpg", precioSocio: "38.900,00", cuotas: "$ 9.725,00", precioNoSocio: "45.900,00", descuento: "" },      
+            { nombre: "Chaleco punto inglés", talle: "U", color: "Chocolate", imagen: "../image/tienda/20260517_133523.jpg", precioSocio: "46.500,00", cuotas: "$ 11.625,00", precioNoSocio: "57.900,00", descuento: "" },      
+            { nombre: "Remera Morley", talle: "XL", color: "Blanco", imagen: "../image/tienda/20260517_133811.jpg", precioSocio: "12.900,00", cuotas: "$ 3.225,00", precioNoSocio: "20.900,00", descuento: "" },      
+            { nombre: "Sweater Escote V", talle: "U", color: "Ladrillo", imagen: "../image/tienda/20260517_134103.jpg", precioSocio: "38.900,00", cuotas: "$ 9.725,00", precioNoSocio: "45.900,00", descuento: "" },      
+
+
+            { nombre: "Remera Morley", talle: "U", color: "Chocolate", imagen: "../image/tienda/20260509_134445.jpg", precioSocio: "27.600,00", cuotas: "$ 6.900,00", precioNoSocio: "35.900,00", descuento: "" },      
+            { nombre: "Remera Morley ancho", talle: "U", color: "Bordó", imagen: "../image/tienda/20260509_134636.jpg", precioSocio: "29.900,00", cuotas: "$ 7.475,00", precioNoSocio: "37.900,00", descuento: "" },      
+            { nombre: "Sweater Bariloche", talle: "U", color: "Pistacho", imagen: "../image/tienda/20260509_134810.jpg", precioSocio: "37.500,00", cuotas: "$ 9.375,00", precioNoSocio: "55.900,00", descuento: "" },      
+            { nombre: "Cardigan Bordado", talle: "U", color: "Verde", imagen: "../image/tienda/20260509_135041.jpg", precioSocio: "39.900,00", cuotas: "$ 9.975,00", precioNoSocio: "65.900,00", descuento: "" },      
+            { nombre: "Sweater cuello polo", talle: "U", color: "Gris/Beige", imagen: "../image/tienda/20260509_135314.jpg", precioSocio: "38.500,00", cuotas: "$ 9.625,00", precioNoSocio: "55.900,00", descuento: "" },     
+
+            
+
+ 
+           /* RUMRUM */
             { nombre: "RUM RUM - Pantalón Silvito Gabardina", talle: "2", color: "Azulino", imagen: "../image/rumrum/pantalonsilvitocorderoyazulmarino.png", precioSocio: "14.988,00", cuotas: "$ 3.747,00", precioNoSocio: "24.980,00", descuento: "40% OFF" },
             { nombre: "RUM RUM - Pantalón Silvito Corderoy", talle: "4", color: "Bordó", imagen: "../image/rumrum/pantalonsilvitocorderoybordo.png", precioSocio: "11.567,53", cuotas: "$ 2.891,88", precioNoSocio: "19.279,00", descuento: "40% OFF" },
             { nombre: "RUM RUM - Pantalón Silvito Corderoy", talle: "4 y 6", color: "Negro", imagen: "../image/rumrum/pantalonsilvitogabardinaazulmarino.png", precioSocio: "11.567,53", cuotas: "$ 2.891,88", precioNoSocio: "19.279,00", descuento: "40% OFF" },

@@ -70,7 +70,24 @@
             cursor: zoom-in;
             transition: transform 0.3s ease;
         }
+        /* Estilo para productos sin stock */
+        .card.out-of-stock {
+            opacity: 0.7;
+            filter: grayscale(0.5);
+        }
 
+        .badge-no-stock {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: #6c757d;
+            color: white;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 8px;
+            z-index: 10;
+        }
         .badge-discount {
             position: absolute;
             top: 12px;
@@ -166,10 +183,41 @@
     <script>
         // BASE DE DATOS DE PRODUCTOS
         const productos = [
+             {
+                nombre: "Loly Choc",
+                desc: "Huevos ",
+                presentacion: "80grs",
+                img: "../image/bonafide/huevos1.jpg",
+                precioOriginal: "$ 4.000,00",
+                precioSocio: "$ 2.800,00",
+                cuotas: "4 cuotas de $ 700,00",
+                noSocio: "$ 5.000,00",
+            },
+             
             {
-                nombre: "Café Molido Tostado",
+                nombre: "Conejitos",
+                desc: "Huevos ",
+                presentacion: "140grs",
+                img: "../image/bonafide/huevos3.jpg",
+                precioOriginal: "$ 8.800,00",
+                precioSocio: "$ 6.160,00",
+                cuotas: "4 cuotas de $ 1.540,00",
+                noSocio: "$ 10.000,00",
+            },
+            {
+                nombre: "Rellenos",
+                desc: "Huevos ",
+                presentacion: "252grs",
+                img: "../image/bonafide/huevos4.jpg",
+                precioOriginal: "$ 13.450,00",
+                precioSocio: "$ 9.415,00",
+                cuotas: "4 cuotas de $ 2.353,75",
+                noSocio: "$ 15.000,00",
+            },
+            {
+                nombre: "Café Tostado Molido",
                 desc: "EQUILIBRADO",
-                presentacion: "200grs",
+                presentacion: "200g ",
                 img: "../image/bonafide/cafemolidoequilibrado.jpg",
                 precioOriginal: "$ 11.100,00",
                 precioSocio: "$ 7.770,00",
@@ -177,14 +225,24 @@
                 noSocio: "$ 12.000,00"
             },
             {
-                nombre: "Café Molido Tostado",
+                nombre: "Café Tostado Molido",
                 desc: "INTENSO",
-                presentacion: "200grs",
+                presentacion: "200g ",
                 img: "../image/bonafide/cafemolidointenso.jpg",
                 precioOriginal: "$ 11.100,00",
                 precioSocio: "$ 7.770,00",
                 cuotas: "4 cuotas de $ 1.942,50",
                 noSocio: "$ 12.000,00"
+            },
+            {
+                nombre: "Café Tostado Molido",
+                desc: "COLOMBIA",
+                presentacion: "250g ",
+                img: "../image/bonafide/CAFEMOLIDOCOLOMBIA.webp",
+                precioOriginal: "$ 22.900,00",
+                precioSocio: "$ 16.030,00",
+                cuotas: "4 cuotas de $ 4.007,50",
+                noSocio: "$ 23.000,00"
             },
             {
                 nombre: "Cápsulas Espresso",
@@ -204,7 +262,9 @@
                 precioOriginal: "$ 9.200,00",
                 precioSocio: "$ 6.440,00",
                 cuotas: "4 cuotas de $ 1.610,00",
-                noSocio: "$ 10.000,00"
+                noSocio: "$ 10.000,00",
+                stock: false 
+
             },
             {
                 nombre: "Cápsulas Cortado",
@@ -227,35 +287,76 @@
                 noSocio: "$ 7.500,00"
             },
             {
-                nombre: "Chocolate",
-                desc: "60% Cacao",
-                presentacion: "100grs",
-                img: "../image/bonafide/chocolate60.jpg",
-                precioOriginal: "$ 5.300,00",
-                precioSocio: "$ 3.710,00",
-                cuotas: "4 cuotas de $ 927,50",
-                noSocio: "$ 5.500,00"
+                nombre: "Tableta",
+                desc: "Maní",
+                presentacion: "30grs",
+                img: "../image/bonafide/tabletalecheymani.webp",
+                precioOriginal: "$ 1.000,00",
+                precioSocio: "$ 700,00",
+                cuotas: "4 cuotas de $ 175,00",
+                noSocio: "$ 1.100,00"
             },
             {
-                nombre: "Bocadito",
-                desc: "DDL",
-                presentacion: "16grs",
-                img: "../image/bonafide/bocadito.jpg",
-                precioOriginal: "$ 780,00",
-                precioSocio: "$ 546,00",
-                cuotas: "4 cuotas de $ 136,50",
-                noSocio: "$ 800,00"
+                nombre: "Tableta",
+                desc: "Vizzio Almendras",
+                presentacion: "35grs",
+                img: "../image/bonafide/VIZZIO-almendras-35.jpg",
+                precioOriginal: "$ 2.250,00",
+                precioSocio: "$ 1.575,00",
+                cuotas: "4 cuotas de $ 393,75",
+                noSocio: "$ 2.300,00"
             },
+            {
+                nombre: "Tableta",
+                desc: "Vizzio Leche",
+                presentacion: "90grs",
+                img: "../image/bonafide/tabletaVIZZIO-90g.leche.jpg",
+                precioOriginal: "$ 4.800,00",
+                precioSocio: "$ 3.360,00",
+                cuotas: "4 cuotas de $ 840,00",
+                noSocio: "$ 5.000,00"
+            },            
              
             {
                 nombre: "Chocman",
-                desc: "Mini Torta",
+                desc: "Clásico",
+                presentacion: "35grs",
+                img: "../image/bonafide/Chocman-SEMIAMARGO.jpg",
+                precioOriginal: "$ 950,00",
+                precioSocio: "$ 665,00",
+                cuotas: "4 cuotas de $ 166,25",
+                noSocio: "$ 1.000,00"
+            },
+            {
+                nombre: "Chocman",
+                desc: "Coco",
+                presentacion: "35grs",
+                img: "../image/bonafide/Chocman-30-x-35g-COCO_1024x1024-768x768.jpg",
+                precioOriginal: "$ 950,00",
+                precioSocio: "$ 665,00",
+                cuotas: "4 cuotas de $ 166,25",
+                noSocio: "$ 1.000,00"
+            },
+            {
+                nombre: "Chocman",
+                desc: "Black",
+                presentacion: "35grs",
+                img: "../image/bonafide/Chocman-BLACK.jpg",
+                precioOriginal: "$ 950,00",
+                precioSocio: "$ 665,00",
+                cuotas: "4 cuotas de $ 166,25",
+                noSocio: "$ 1.000,00"
+            },
+            
+            {
+                nombre: "Chocman",
+                desc: "Mini Torta Black",
                 presentacion: "68grs",
-                img: "../image/bonafide/Chocman-Mini-torta.jpg",
-                precioOriginal: "$ 1.300,00",
-                precioSocio: "$ 910,00",
-                cuotas: "4 cuotas de $ 227,50",
-                noSocio: "$ 1.300,00"
+                img: "../image/bonafide/ChocmanMini-Torta-black.webp",
+                precioOriginal: "$ 1.600,00",
+                precioSocio: "$ 1.120,00",
+                cuotas: "4 cuotas de $ 280,00",
+                noSocio: "$ 1.700,00"
             },
             
             {
@@ -263,10 +364,21 @@
                 desc: "Blanco",
                 presentacion: "78grs",
                 img: "../image/bonafide/donutsblanco.jpg",
-                precioOriginal: "$ 1.850,00",
-                precioSocio: "$ 1.295,00",
-                cuotas: "4 cuotas de $ 323,75",
-                noSocio: "$ 1.900,00"
+                precioOriginal: "$ 2.300,00",
+                precioSocio: "$ 1.610,00",
+                cuotas: "4 cuotas de $ 402,50",
+                noSocio: "$ 2.400,00",
+/*                 stock: false 
+ */            },
+            {
+                nombre: "Donuts",
+                desc: "Leche",
+                presentacion: "78grs",
+                img: "../image/bonafide/DONUTS-LECHE.jpg",
+                precioOriginal: "$ 2.300,00",
+                precioSocio: "$ 1.610,00",
+                cuotas: "4 cuotas de $ 402,50",
+                noSocio: "$ 2.400,00",
             },
             {
                 nombre: "Nugaton",
@@ -279,43 +391,76 @@
                 noSocio: "$ 900,00"
             },
             {
-                nombre: "Tableta Mecano",
-                desc: "Blanco",
-                presentacion: "45grs",
-                img: "../image/bonafide/MECANO-Laminas-1024x1024-TABLETAS-45g-Blanco-400x400.jpg",
-                precioOriginal: "$ 2.200,00",
-                precioSocio: "$ 1.540,00",
-                cuotas: "4 cuotas de $ 385,00",
-                noSocio: "$ 2.200,00"
+                nombre: "Mecano",
+                desc: "Dulce de leche",
+                presentacion: "19grs",
+                img: "../image/bonafide/mecano.png",
+                precioOriginal: "$ 1.050,00",
+                precioSocio: "$ 735,00",
+                cuotas: "4 cuotas de $ 183,75",
+                noSocio: "$ 1.100,00",
+                /* stock: false  */
             },
-             
+            {
+                nombre: "Bocadito",
+                desc: "DDL",
+                presentacion: "16grs",
+                img: "../image/bonafide/bocadito.jpg",
+                precioOriginal: "$ 780,00",
+                precioSocio: "$ 546,00",
+                cuotas: "4 cuotas de $ 136,50",
+                noSocio: "$ 800,00"
+            },
+            {
+                nombre: "Chocolate",
+                desc: "60% Cacao",
+                presentacion: "100grs",
+                img: "../image/bonafide/chocolate60.jpg",
+                precioOriginal: "$ 5.300,00",
+                precioSocio: "$ 3.710,00",
+                cuotas: "4 cuotas de $ 927,50",
+                noSocio: "$ 5.500,00",
+                stock: false
+            },
+                       
         ];
 
         // RENDERIZAR PRODUCTOS
         const contenedor = document.getElementById('contenedor-productos');
         
         productos.forEach((p, index) => {
-            const card = `
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <span class="badge-discount">30% OFF</span>
-                        <img class="card-img-top zoomable" src="${p.img}" alt="${p.nombre}">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="fw-bold mb-1">${p.nombre}</h5>
-                            <p class="text-muted small mb-3">${p.desc}</p>
-                            <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <span class="text-success fw-bold">${p.presentacion}</span>
-                                <button class="btn btn-outline-primary btn-sm rounded-pill px-3" 
-                                        onclick="abrirModal(${index})">
-                                    <i class="fas fa-info-circle me-1"></i> Ver precio
-                                </button>
-                            </div>
-                        </div>
+    // Verificamos si tiene stock (si no existe la propiedad, asumimos que sí tiene)
+    const tieneStock = p.stock !== false;
+
+    const card = `
+        <div class="col">
+            <div class="card h-100 shadow-sm ${tieneStock ? '' : 'out-of-stock'}">
+                
+                ${tieneStock ? '<span class="badge-discount">30% OFF</span>' : ''}
+                
+                ${tieneStock ? '' : '<span class="badge-no-stock text-uppercase">Sin Stock</span>'}
+                
+                <img class="card-img-top zoomable" src="${p.img}" alt="${p.nombre}">
+                
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="fw-bold mb-1">${p.nombre}</h5>
+                    <p class="text-muted small mb-3">${p.desc}</p>
+                    
+                    <div class="mt-auto d-flex justify-content-between align-items-center">
+                        <span class="text-success fw-bold">${p.presentacion}</span>
+                        
+                        <button class="btn ${tieneStock ? 'btn-outline-primary' : 'btn-secondary disabled'} btn-sm rounded-pill px-3" 
+                                ${tieneStock ? `onclick="abrirModal(${index})"` : 'disabled'}>
+                            <i class="fas ${tieneStock ? 'fa-info-circle' : 'fa-times-circle'} me-1"></i> 
+                            ${tieneStock ? 'Ver precio' : 'Agotado'}
+                        </button>
                     </div>
                 </div>
-            `;
-            contenedor.innerHTML += card;
-        });
+            </div>
+        </div>
+    `;
+    contenedor.innerHTML += card;
+});
 
         // FUNCIONES LOGICA
         function abrirModal(index) {

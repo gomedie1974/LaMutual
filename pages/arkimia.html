@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arkimia - Mutual La Nación</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body { background-color: #f5f8fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    .banner-exclusivo {
+      background-image: url("../image/arkimia/bannerarkimia.png");
+      background-size: cover;
+      background-position: center;
+      height: 350px;
+      margin-bottom: 20px;
+      background-size: 100% 100%;
+      
+    }
+
+    @media (max-width: 768px) {
+      .banner-exclusivo { height: 180px; background-size: contain; background-repeat: no-repeat; }
+    }
+
+    /* Filtros Sticky */
+    .filtros-full {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      width: 100%;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      border-bottom: 3px solid #0a66c2;
+    }
+
+    .categoria-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #04356c;
+      margin-top: 50px;
+      border-left: 6px solid #0a66c2;
+      padding-left: 12px;
+      margin-bottom: 25px;
+    }
+
+    /* Cards Estilizadas */
+    .card {
+      height: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform .3s;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: white;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    
+    .img-container { position: relative; width: 100%; height: 280px; overflow: hidden; }
+    .card img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+
+    .badge-discount {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ff6b6b;
+      color: white;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 6px;
+      z-index: 10;
+    }
+
+    .precio-no-socio { color: #6c757d; text-decoration: line-through; font-size: 0.85rem; }
+    .precio-socio { color: #0a66c2; font-weight: bold; font-size: 0.9rem; line-height: 1.2; }
+
+    /* Botón WhatsApp */
+    .btn-whatsapp-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 12px;
+      transition: 0.3s;
+    }
+    .btn-whatsapp-card:hover { background-color: #128c7e; color: white; }
+    .btn-whatsapp-card i { margin-right: 6px; }
+
+    /* Utilidades */
+    .ir-arriba {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #0a66c2;
+      color: white;
+      border-radius: 50%;
+      padding: 10px 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+
+    .lightbox {
+      position: fixed;
+      top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.9);
+      display:none; justify-content:center; align-items:center;
+      z-index: 2000; cursor: pointer;
+    }
+    .lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
+  </style>
+</head>
+<body>
+
+<div id="navbar" class="sticky-top"></div>
+
+  <div class="banner-exclusivo"></div>
+
+  <div class="filtros-full">
+    <div class="d-flex justify-content-center flex-wrap py-3">
+      <div class="d-none d-md-flex">
+        <a href="#accesorios" class="btn btn-outline-primary mx-2">Accesorios</a>
+        <a href="#cuenco" class="btn btn-outline-primary mx-2">Cuenco/Paella/Plato</a>
+        <a href="#sarten" class="btn btn-outline-primary mx-2">Sartén</a>
+        
+      </div>
+      <div class="d-md-none w-100 px-3">
+        <select class="form-select" onchange="location.href=this.value;">
+          <option value="">Buscar por categoría...</option>
+          <option value="#accesorios">Accesorios</option>
+          <option value="#cuenco">Cuenco/Paella/Plato</option>
+          <option value="#sarten">Sartén</option>
+        
+        </select> 
+      </div>
+    </div>
+  </div>
+
+  <main class="pb-5">
+    <section id="accesorios" class="container"><h2 class="categoria-title">Accesorios</h2><div class="row g-3"></div></section>
+    <section id="cuenco" class="container"><h2 class="categoria-title">Cuenco/Paella/Plato</h2><div class="row g-3"></div></section>
+    <section id="sarten" class="container"><h2 class="categoria-title">Sartén</h2><div class="row g-3"></div></section>
+    
+  </main>
+
+  <div class="ir-arriba" id="irArriba"><i class="bi bi-chevron-up"></i></div>
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'"><img src=""></div>
+
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    const productos = [
+      // ACCESORIOS
+      { cat: "accesorios", nom: "Espatula BBQ Saigon", pBo: "15.000", pNo: "7.500", pSo: "5.625,00", cuo: "4 de $ 1.406,25", img: "../image/arkimia/espatula-bbq-saigon.webp" },
+      { cat: "accesorios", nom: "Espatula Miphay Flex", pBo: "14.000", pNo: "7.000", pSo: "5.250,00", cuo: "4 de $ 1.312,50", img: "../image/arkimia/espatula-miphay-flex.webp" },
+      { cat: "accesorios", nom: "Pala Apain", pBo: "32.000", pNo: "16.000", pSo: "12.000,00", cuo: "4 de $ 3.000,00", img: "../image/arkimia/pala-apain-2.webp" },
+/*       { cat: "accesorios", nom: "Pala Pizzera", pBo: "41.000", pNo: "20.500", pSo: "15.375,00", cuo: "4 de $ 3.843,75", img: "../image/arkimia/pala-pizzera.webp" },
+ */      { cat: "accesorios", nom: "Pinza Hashi", pBo: "28.000", pNo: "14.000", pSo: "10.500,00", cuo: "4 de $ 2.625,00", img: "../image/arkimia/pinza-hashi.webp" },
+/*       { cat: "accesorios", nom: "Smasher", pBo: "8.000", pNo: "4.000", pSo: "3.000,00", cuo: "4 de $ 750,00", img: "../image/arkimia/smasher.webp" },
+ */      { cat: "accesorios", nom: "Tapa Tortillera S25", pBo: "16.000", pNo: "8.000", pSo: "6.000,00", cuo: "4 de $ 1.500,00", img: "../image/arkimia/tapa-curada-s25.webp" },
+      
+      
+      // CUENCO/PAELLA/PLATO
+      { cat: "cuenco", nom: "Cuenco Natural Blue S20", pBo: "37.000", pNo: "18.500", pSo: "13.875,00", cuo: "4 de $ 3.468,75", img: "../image/arkimia/cuenco-natural blu s20.webp" },
+      { cat: "cuenco", nom: "Paella Albufera S30", pBo: "88.000", pNo: "44.000", pSo: "33.000,00", cuo: "4 de $ 8.250,00", img: "../image/arkimia/paella albufera-s30.webp" },
+      { cat: "cuenco", nom: "Paella Albufera S45", pBo: "143.000", pNo: "71.500", pSo: "53.625,00", cuo: "4 de $ 13.406,25", img: "../image/arkimia/paella albufera-s45.webp" },
+      { cat: "cuenco", nom: "Plato Fenix S20", pBo: "24.000", pNo: "12.000", pSo: "9.000,00", cuo: "4 de $ 2.250,00", img: "../image/arkimia/platos-fenix S20.webp" },
+      { cat: "cuenco", nom: "Plato Inox S20", pBo: "26.000", pNo: "13.000", pSo: "9.750,00", cuo: "4 de $ 2.437,50", img: "../image/arkimia/platos-inox-s20.webp" },
+       
+       
+      
+      // SARTEN
+      { cat: "sarten", nom: "Sartén Diamante S15", pBo: "29.000", pNo: "14.500", pSo: "10.875,00", cuo: "4 de $ 2.718,75", img: "../image/arkimia/diamante-s15.webp" },
+      { cat: "sarten", nom: "Sartén fenix S15", pBo: "42.000", pNo: "21.000", pSo: "15.750,00", cuo: "4 de $ 3.937,50", img: "../image/arkimia/sarten fenix-s15.webp" },
+      { cat: "sarten", nom: "Sartén fenix-pro liviana S20", pBo: "65.000", pNo: "32.500", pSo: "24.375,00", cuo: "4 de $ 6.093,75", img: "../image/arkimia/sartenprolivianas20.webp" },
+      { cat: "sarten", nom: "Sartén fenix-pro liviana S22", pBo: "84.000", pNo: "42.000", pSo: "31.500,00", cuo: "4 de $ 7.875,00", img: "../image/arkimia/fenix-pro-liviana-s22.webp" },
+      { cat: "sarten", nom: "Sartén fenix-pro liviana S25", pBo: "88.000", pNo: "44.000", pSo: "33.000,00", cuo: "4 de $ 8.250,00", img: "../image/arkimia/fenix-pro-liviana-s25.webp" },
+      { cat: "sarten", nom: "Sartén fenix-pro S15", pBo: "53.000", pNo: "26.500", pSo: "19.875,00", cuo: "4 de $ 4.968,75", img: "../image/arkimia/sarten  fenix-pro-s15.webp" },
+      { cat: "sarten", nom: "Sartén Natural-blu S15", pBo: "26.000", pNo: "13.000", pSo: "9.750,00", cuo: "4 de $ 2.437,50", img: "../image/arkimia/sarten natural-blu-s15.webp" },
+      
+
+    ];
+    function renderTienda() {
+      const categorias = ["accesorios", "cuenco", "sarten"];
+      categorias.forEach(cat => {
+        const contenedor = document.querySelector(`#${cat} .row`);
+        const filtrados = productos.filter(p => p.cat === cat);
+        
+        contenedor.innerHTML = filtrados.map(p => `
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="card shadow-sm">
+              <span class="badge-discount">50% + 25% OFF</span>
+              <div class="img-container">
+                <img src="${p.img}" onclick="openZoom('${p.img}')" loading="lazy">
+              </div>
+              <div class="card-body p-2 p-md-3">
+                <h6 class="card-title fw-bold mb-1" style="font-size: 0.9rem;">${p.nom}</h6>                
+                <div class="precio-no-socio">$ ${p.pBo}</div>
+                <div class="precio-no-socio" style="color: green";>$ ${p.pNo}</div>
+                <div class="precio-socio">$ ${p.pSo}</div>
+                <small class="text-secondary" style="font-size: 0.9rem;">${p.cuo}</small>
+                <a href="https://api.whatsapp.com/send?phone=5491139546021&text=Hola!%20Me%20interesa:%20${encodeURIComponent(p.nom )}" 
+                   target="_blank" class="btn-whatsapp-card">
+                  <i class="bi bi-whatsapp"></i> Consultar
+                </a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      });
+    }
+
+    function openZoom(s) { 
+      const l = document.getElementById('lightbox');
+      l.querySelector('img').src = s;
+      l.style.display = 'flex';
+    }
+
+    // Loaders
+    fetch("navbar.html").then(r => r.text()).then(d => document.getElementById("navbar").innerHTML = d);
+    fetch("footer.html").then(r => r.text()).then(d => document.getElementById("footer").innerHTML = d);
+
+    window.onscroll = () => document.getElementById('irArriba').style.display = window.scrollY > 400 ? 'block' : 'none';
+    document.getElementById('irArriba').onclick = () => window.scrollTo({top:0, behavior:'smooth'});
+
+    document.addEventListener('DOMContentLoaded', renderTienda);
+  </script>
+</body>
+</html>
